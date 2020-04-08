@@ -1,0 +1,10 @@
+EmptySteamDepot
+game/*
+!game/dota_addons
+game/dota_addons/*
+!game/dota_addons/attackcopy
+game/dota_addons/attackcopy/tools_thumbnail_cache.bin
+content/*
+!content/dota_addons
+content/dota_addons/*
+!content/dota_addons/attackcopy

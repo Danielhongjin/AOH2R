@@ -1,0 +1,33 @@
+//Pulls data from an event.
+for k,v in pairs(keys) do
+	print(k,v)
+end
+	
+//proper shockwave effect.
+local particleIndex = ParticleManager:CreateParticleForTeam( particle, PATTACH_CUSTOMORIGIN, nil,DOTA_TEAM_GOODGUYS )
+ParticleManager:SetParticleControl(particleIndex, 0, castLocation )
+ParticleManager:SetParticleControl(particleIndex, 1, Vector(350, 0,0))
+ParticleManager:SetParticleControl(particleIndex, 2, Vector(6, 0,1))
+ParticleManager:SetParticleControl(particleIndex, 3, Vector(200, 0,0))
+
+//empty abilities.
+"Ability3""generic_hidden"
+"Ability4""generic_hidden"
+"Ability5""generic_hidden"
+"Ability6""generic_hidden"
+"Ability7""generic_hidden"
+"Ability8""generic_hidden"
+"Ability9""generic_hidden"
+"Ability10""generic_hidden"
+"Ability11""generic_hidden"
+"Ability12""generic_hidden"
+"Ability13""generic_hidden"
+"Ability14""generic_hidden"
+"Ability15""generic_hidden"
+"Ability16""generic_hidden"
+"Ability17""generic_hidden"
+			
+//commands to add to aohspawner for tarrasque cancelling.
+entUnit:SetControllableByPlayer(.1, true)
+entUnit:SetTeam(3)
+entUnit:SetOwner(PlayerResource:GetPlayer(0))

@@ -1,0 +1,57 @@
+<root>
+
+	<styles>
+		<include src="file://{resources}/styles/custom_game/damage.css"/>
+	
+	</styles>
+	
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/damage.js"/>
+	</scripts>
+	
+	<snippets>
+	 
+		<snippet name="Player">
+		
+			<Panel class="Player"> 
+				<Panel id="LeftSide"> 
+					<Label id="PlayerHeroSignal" text="Player Hero" />
+					<Label id="PlayerDamageDealtSignal" text="Damage Dealt" />
+					<Label id="PlayerDamageTakenSignal" text="Damage Taken" /> 
+					<Label id="PlayerDamageHealedSignal" text="Damage Healed" />
+					<Label id="PlayerDPSSignal" text="DPS" />
+					<Panel id="PlayerDamageTypes"> 
+						<Panel id="PlayerPhysical">
+							<Label id="Playerphysdamagepercent" text="0%" />
+						</Panel>
+						<Panel id="PlayerMagical">
+							<Label id="Playermagdamagepercent" text="0%" />
+						</Panel>
+						<Panel id="PlayerPure">
+							<Label id="Playerpuredamagepercent" text="0%" />
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id = "RightSide">
+					<Label id="EmptySpace"		text=""	/>
+					<Label id="PlayerDamageDealt" text="Sample" />
+					<Label id="PlayerDamageTaken" text="Sample" /> 
+					<Label id="PlayerDamageHealed" text="Sample" />
+					<Label id="PlayerDPS" text="Sample" />
+				</Panel>
+			</Panel>
+			
+		</snippet> 
+		
+	</snippets>
+	
+	<Panel class ="DamageList">
+
+		<Panel id="Players">
+		
+		</Panel>
+
+	</Panel>
+
+
+</root>

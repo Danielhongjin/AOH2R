@@ -1,0 +1,21 @@
+Ancient hp and repair kit regen are now properly identified.
+Many bosses have more powerful abilties, they now warn you when they will cast.
+Bosses past round 29 have higher hp, slightly lower armor.
+
+Crystal Maiden boss cooldowns increased, some damage increased.
+
+
+TO-DO
+
+
+buff omni
+
+Give PL boss vengeful spirit boss swap.
+Remove either CM or terrorblade and replace with spirit breaker boss.
+Add an incentive for players to play in hard mode.
+
+Change chest selector to an array.
+
+CURRENTLY MAKING RAX BEHAVIOR MORE SOPHISTICATED.
+
+ADD RELEASE PARTICLE INDEX TO GENERICS.

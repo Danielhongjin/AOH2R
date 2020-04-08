@@ -1,0 +1,134 @@
+.DamageList
+{
+	width: 400px;
+	height: 600px;
+	margin-top:135px;
+	horizontal-align: left;
+	vertical-align: top;
+}
+#PlayerDamageTypes
+{
+	flow-children:right;
+	width: 120px;
+	height: 18px;
+	background-color: #010000;
+}
+#PlayerPhysical
+{
+	width: 40px;
+	margin-top:3px;
+	margin-bottom:3px;
+	height: 18px;
+	background-color: #B9500B;
+}
+#Playerphysdamagepercent
+{
+	color:white;
+	font-size:13px;
+}
+#PlayerMagical
+{
+	width: 40px;
+	margin-top:3px;
+	margin-bottom:3px;
+	height: 18px;
+	background-color: #257DAE;
+}
+#Playermagdamagepercent
+{
+	color:white;
+	font-size:13px;
+}
+#PlayerPure
+{
+	width: 40px;
+	margin-top:3px;
+	margin-bottom:3px;
+	height: 18px;
+	background-color: #B2B2B2;
+}
+#Playerpuredamagepercent
+{
+	color:white;
+	font-size:13px;
+}
+#PlayerColor 
+{
+	horizontal-align: left;
+	font-size:24px;
+} 
+ 
+#Players
+{
+	flow-children:down;
+	margin-top:30px;
+} 
+.Player
+{  
+	background-color: #010000;
+	opacity:0.6;
+	flow-children:right;
+	color:white;
+	margin-bottom:2px;
+
+}
+#LeftSide
+{
+	flow-children:down;
+}
+
+#RightSide
+{
+	flow-children:down;
+}
+#EmptySpace
+{
+	color:white;
+	font-size:14px;
+}
+#PlayerHeroSignal
+{
+	color:Yellow;
+	font-size:14px;
+}
+
+#PlayerDamageDealtSignal
+{
+	color:white;
+	font-size:14px;
+}
+#PlayerDamageTakenSignal
+{
+	color:white;
+	font-size:14px;
+}
+#PlayerDamageHealedSignal
+{
+	color:white;
+	font-size:14px;
+}
+#PlayerDPSSignal
+{
+	color:white;
+	font-size:14px;
+}
+#PlayerDamageDealt
+{
+	color:white;
+	font-size:14px;
+}
+#PlayerDamageTaken
+{
+	color:white;
+	font-size:14px;
+}
+#PlayerDamageHealed
+{
+	color:white;
+	font-size:14px;
+}
+#PlayerDPS
+{
+	color:white;
+	font-size:14px;
+}

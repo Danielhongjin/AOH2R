@@ -173,7 +173,6 @@ function refresh_players()
 			end
 			hero:SetHealth(hero:GetMaxHealth())
 			hero:SetMana(hero:GetMaxMana())
-			hero:SetBaseMagicalResistanceValue(25)
 		end
 	end
 end

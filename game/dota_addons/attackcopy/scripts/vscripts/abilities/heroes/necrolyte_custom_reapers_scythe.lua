@@ -1,3 +1,4 @@
+require("lib/refresh")
 --[[Author: Pizzalol
 	Date: 06.01.2015.
 	Deals damage depending on missing hp
@@ -29,19 +30,9 @@ function ReapersScythe( keys )
 				local cooldown = ability2:GetCooldownTimeRemaining()
 				if cooldown > 0 and ability ~= ability2 then
 					ability2:EndCooldown()
-					ability2:StartCooldown(cooldown * percent_reduction)
 				end
 			end
 		end
-		for i = DOTA_ITEM_SLOT_1, DOTA_ITEM_SLOT_6 do
-			local item = caster:GetItemInSlot(i)
-			if item then
-				cooldown = item:GetCooldownTimeRemaining()
-				if item:GetCooldownTimeRemaining() > 0 then
-					item:EndCooldown()
-					item:StartCooldown(cooldown * percent_reduction)
-				end
-			end
-		end
+		refresh_items(caster, {item_maiar_pendant = true, item_custom_fusion_rune = true, item_conduit = true, item_custom_refresher = true, item_plain_ring = true, item_helm_of_the_undying = true, item_echo_wand = true, item_custom_ex_machina = true})
 	end
 end

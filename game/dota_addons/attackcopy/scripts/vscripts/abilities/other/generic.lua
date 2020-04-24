@@ -11,6 +11,10 @@ local spells_aoe = {[0] = "custom_crystal_nova",
 "custom_desolation",
 "custom_banish",
 "custom_dark_artistry",
+"custom_spectral_dagger",
+"custom_fissure", --index 10
+"custom_carrion_swarm",
+"custom_nyx_impale",
 }
 local spells_target = {[0] = "custom_static_link", 
 "custom_frostbite", 
@@ -24,7 +28,7 @@ local spells_target = {[0] = "custom_static_link",
 "custom_primal_roar",
 "custom_paralyzing_cask", --index 10
 }
-
+--Fires a warning aoe to a point and casts the spell immediately
 function generate_warning_aoe(keys)
 	local caster = keys.caster
 	local ability = keys.ability
@@ -33,11 +37,11 @@ function generate_warning_aoe(keys)
 	local delay = keys.delay
 	if keys.is_line and keys.is_line == 1 then
 		local norm = (point - caster:GetAbsOrigin()):Normalized()
-		norm = caster:GetAbsOrigin() + norm * keys.line_length
+		point = caster:GetAbsOrigin() + norm * keys.line_length
 		local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 		ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
-		ParticleManager:SetParticleControl(fx, 2, norm)
+		ParticleManager:SetParticleControl(fx, 2, point)
 		ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
 		ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
 	else 
@@ -98,6 +102,46 @@ function generic_aoe(keys)
 		ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
 		ParticleManager:SetParticleControl(fx, 2, norm)
+		ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
+		ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
+	else 
+		local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
+		ParticleManager:SetParticleControl(fx, 0, point)
+		ParticleManager:SetParticleControl(fx, 1, Vector(keys.radius, 1, 1))
+		ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
+		ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
+	end
+	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	if caster:IsMoving() then
+		caster:Stop()
+		caster:FaceTowards(point)
+	end
+	StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
+	caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
+	Timers:CreateTimer(
+		delay - spell:GetCastPoint(), 
+		function()
+			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
+				return 0.5
+			end
+			spell:EndCooldown()
+			caster:CastAbilityOnPosition(point, spell, -1)
+		end
+	)
+end
+
+function generic_aoe_farpoint(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local point = keys.target_points[1]
+	local delay = keys.delay
+	if keys.is_line and keys.is_line == 1 then
+		local norm = (point - caster:GetAbsOrigin()):Normalized()
+		point = caster:GetAbsOrigin() + norm * keys.line_length
+		local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
+		ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
+		ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
+		ParticleManager:SetParticleControl(fx, 2, point)
 		ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
 		ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
 	else 

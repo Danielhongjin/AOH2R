@@ -151,9 +151,6 @@
 }
 "npc_dota_hero_dark_willow"
 {
-    "Ability1"		"dark_willow_custom_bramble"
-	"Ability15"		"special_bonus_strength_15"
-    "Ability16"		"special_bonus_attack_speed_120"
 }
 "npc_dota_hero_death_prophet"
 {
@@ -355,9 +352,10 @@
 {
     "Ability4"		"nevermore_custom_necromastery"
     "Ability6"		"nevermore_custom_requiem"
-    "Ability12"		"special_bonus_attack_range_125"
+    "Ability12"		"special_bonus_all_stats_10"
+	"Ability13"		"special_bonus_attack_range_125"
     "Ability14"		"special_bonus_unique_nevermore_5"
-    "Ability16"		"nevermore_custom_bonus_unique_1"
+    "Ability16"		"special_bonus_unique_nevermore_1"
 }
 "npc_dota_hero_night_stalker"
 {

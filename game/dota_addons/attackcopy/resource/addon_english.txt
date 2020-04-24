@@ -12,6 +12,9 @@
 "DOTA_Tooltip_modifier_target_delay"					"Targeted"
 "DOTA_Tooltip_modifier_target_delay_Description"					"Something bad is about to happen to you."
 
+"DOTA_Tooltip_modifier_atr_fix"					"Intellect"
+"DOTA_Tooltip_modifier_atr_fix_Description"					"This hero is receieving %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% spell amp from intelligence."
+
 "DOTA_Tooltip_Ability_item_dev_heart"					"Developer Heart"
 "DOTA_Tooltip_Ability_item_dev_heart_Description"					"Good for tanking i guess"
 "DOTA_Tooltip_Ability_item_dev_dagon"					"Developer Dagon"
@@ -224,7 +227,7 @@
 "DOTA_Tooltip_ability_item_meteor_hammer_Description"                   "<h1>Active: Meteor Hammer</h1> CHANNELED - After a successful channel, summons a meteor that strikes a %impact_radius% AoE, stunning enemies for %stun_duration% seconds and dealing impact damage. Continues to deal damage over time to enemies indefinitely.<BR><BR>Impact Damage: %impact_damage_units% <BR>Over Time Damage: %burn_dps_units% <BR><BR>Channel Duration: %max_duration% seconds.<BR>Landing Time: %land_time% seconds."	
 "DOTA_Tooltip_Ability_item_pirate_hat_Description"						"<h1>Passive: Nothing</h1> Only increases your attack speed."
 "DOTA_Tooltip_Ability_item_pirate_hat_Lore"								"Sorry to disappoint you."
-"DOTA_Tooltip_ability_item_spirit_vessel_Description"					"<h1>Active: Soul Release</h1> When used against enemies, it reduces health by %enemy_hp_drain%%% of current health per second, and reduces HP regeneration and healing by %hp_regen_reduction_enemy%%%. Deals %soul_damage_amount% damage per second. <br><br>When used on allies, it provides %soul_heal_amount% health regeneration per second. <br><br>Lasts %duration% seconds.<br><br>Cast Range: %soul_release_range_tooltip% " 		
+"DOTA_Tooltip_ability_item_spirit_vessel_Description"					"<h1>Active: Soul Release</h1> When used against enemies, it reduces health by %enemy_hp_drain%%% of current health per second, and reduces HP regeneration and healing by %hp_regen_reduction_enemy%%%. Deals %soul_damage_amount% damage per second. <br><br>When used on allies, it provides %soul_heal_amount% health regeneration per second. <br><br>Lasts %duration% seconds. <br><br>Cast Range: %abilitycastrange% \n<h1>Passive: Spirit Vessel Degen Aura</h1> Reduces all heals, regeneration and lifesteal of nearby enemy units by %hp_regen_degen_aura%%% <br><br>Radius: %hp_regen_degen_aura_range%" 		
 "DOTA_Tooltip_ability_item_urn_of_shadows_Description"					"<h1>Active: Soul Release</h1> Provides %soul_heal_amount% health regeneration when cast on allies, and deals %soul_damage_amount% damage per second when cast on enemies. <br><br>Lasts %duration% seconds.<br><br>Cast Range: %soul_release_range_tooltip%" 
 
 
@@ -236,10 +239,11 @@
 "DOTA_Tooltip_modifier_boss_Description"				"This boss gains 1 percent damage every 3 seconds."
 
 "DOTA_Tooltip_modifier_hard_mode_boss"				"HARD MODE"
-"DOTA_Tooltip_modifier_hard_mode_boss_Description"				"This boss casts spells much more frequently and regenerates mana quicker."
+"DOTA_Tooltip_modifier_hard_mode_boss_Description"				"This boss casts spells more frequently and regenerates mana quicker."
 
 "npc_legion_summon"                     "Dragon Knight"
 "npc_playerhelp"                     	"Hired Goon"
+"npc_courier_replacement"                     	"Fake Courier"
 "npc_punching_bag"                     "Please don't hit me"
 "npc_armored_punching_bag"                     "Go ahead, make my day"
 "npc_tormented_soul"                     "Tormented Soul (Boss)"
@@ -259,7 +263,7 @@
 
 
 "DOTA_Tooltip_modifier_custom_no_heal_effect"					"No Heal"
-"DOTA_Tooltip_modifier_custom_no_heal_effect_Description"		"Ancient Apparition is blocking your health regenration."
+"DOTA_Tooltip_modifier_custom_no_heal_effect_Description"		"Ancient Apparition is blocking your health regeneration."
 
 "npc_boss_antimage"                     "Antimage (Boss)"
 
@@ -1883,7 +1887,7 @@
 "DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_Note2"								"Refresher only reduces 25% of this ability's cooldown."
 "DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_damage_per_health"				"DAMAGE PER MISSING HP:"
 "DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_stun_duration"					"STUN DURATION:"
-"DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_aghanim_description"				"If Reaper's Scythe does not kill the target, removes %scepter_cooldown_multiplier_tooltip%%% of necrolyte's non-ultimate cooldowns."
+"DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_aghanim_description"				"If Reaper's Scythe does not kill the target, refreshes necrolyte's non-ultimate cooldowns."
 
 
 "DOTA_Tooltip_ability_nevermore_custom_necromastery"									"<font color='#f2da5b'>Necromastery</font>"
@@ -2514,8 +2518,9 @@
 "DOTA_Tooltip_modifier_item_bloodstone_active"				        "Bloodpact"
 "DOTA_Tooltip_modifier_item_bloodstone_active_Description"	        "This unit is regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second."
 
+"DOTA_Tooltip_ability_item_skadi_Description"							"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement and attack speed for %cold_duration% seconds. Slows enemy units by %cold_slow_ranged%%% movement speed and by %cold_slow_ranged% attack speed."
 "DOTA_Tooltip_ability_item_dark_skadi"                                      "Dark Skadi"
-"DOTA_Tooltip_ability_item_dark_skadi_Description"							"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement and attack speed for %cold_duration% seconds. Slows enemy ranged units by %cold_slow_ranged%%% movement speed and by %cold_slow_ranged% attack speed. Slows enemy melee units by %cold_slow_melee%%% movement speed and by %cold_slow_melee% attack speed. "
+"DOTA_Tooltip_ability_item_dark_skadi_Description"							"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement and attack speed for %cold_duration% seconds. Slows enemy units by %cold_slow_ranged%%% movement speed and by %cold_slow_ranged% attack speed."
 "DOTA_Tooltip_ability_item_dark_skadi_Lore"									"Extremely rare artifact, guarded by the azure dragons."
 "DOTA_Tooltip_ability_item_dark_skadi_bonus_all_stats"						"+$all"
 "DOTA_Tooltip_ability_item_dark_skadi_bonus_health"							"+$health"
@@ -2649,7 +2654,7 @@
 "DOTA_Tooltip_ability_item_high_tech_boots"                             "High Tech Boots"
 "DOTA_Tooltip_ability_item_high_tech_boots_Description"					"<h1>Passive: Supersonic</h1> Avoids a portion of all incoming damage equal to %speed_as_block%%% of your movement speed for %duration% seconds."
 "DOTA_Tooltip_ability_item_high_tech_boots_Lore"						"Theorized to move the universe rather than move you."
-"DOTA_Tooltip_ability_item_high_tech_boots_bonus_movement_speed"		"%+$move_speed"
+"DOTA_Tooltip_ability_item_high_tech_boots_bonus_movement_speed"		"+$move_speed"
 "DOTA_Tooltip_ability_item_high_tech_boots_bonus_evasion"		"%+$evasion"
 "DOTA_Tooltip_ability_item_high_tech_boots_bonus_agility"		"+$agi"
 

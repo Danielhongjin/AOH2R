@@ -13,13 +13,17 @@ function modifier_atr_fix:IsPurgable()
     return false
 end
 
+function modifier_atr_fix:GetTexture()
+    return "atr_fix"
+end
+
 
 function modifier_atr_fix:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
 		MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 	}
-
 	return funcs
 end
 
@@ -43,5 +47,10 @@ function modifier_atr_fix:GetModifierConstantManaRegen()
     return m_regen
 end
 
+function modifier_atr_fix:GetModifierSpellAmplify_Percentage()
+	local parent_int = self.parent:GetIntellect()
+    local amp = parent_int * 0.12
+    return amp
+end
 
 

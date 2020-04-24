@@ -60,7 +60,6 @@ if IsServer() then
 				self.parent:AddNewModifier(self.parent, self.ability, "modifier_item_custom_octarine_core_reduction", {})
 			end
 		)
-		
 		self.particle_name = "particles/items3_fx/octarine_core_lifesteal.vpcf"
 	end
 	

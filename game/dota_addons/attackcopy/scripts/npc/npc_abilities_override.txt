@@ -770,6 +770,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_nevermore_1"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1"
+			}
+		}
+	}
 	"special_bonus_unique_nyx_2"
 	{
 		"AbilitySpecial"
@@ -2422,6 +2433,23 @@
 				}
 			}
 	}
+	"dark_willow_bramble_maze"
+	{
+		"AbilityCooldown"				"19"
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"latch_duration"		"0.5 0.75 1.0 1.25"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"latch_damage"		"125 175 225 275"
+			}
+		}
+	}
 	"dark_willow_bedlam"
 	{
 		"AbilitySpecial"
@@ -3015,7 +3043,7 @@
 			"04"
 			{
 				"var_type"					    "FIELD_INTEGER"
-				"creep_damage_penalty"			"100"
+				"creep_damage_penalty"			"50"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
@@ -3099,6 +3127,11 @@
 	{
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"tick_rate"				"1.5 1.5 1.5 1.5"
+			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
@@ -5705,16 +5738,10 @@
 				"var_type"					"FIELD_INTEGER"
 				"damage_pct"	"100 115 130 145" 
 			}
-			"04"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"scepter_duration"				"2"
-				"RequiresScepter"		"1"
-			}
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"scepter_attacks"				"9"
+				"scepter_attacks"				"12"
 				"RequiresScepter"		"1"
 			}
 		}

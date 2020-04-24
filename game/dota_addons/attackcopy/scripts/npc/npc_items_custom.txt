@@ -299,6 +299,14 @@
 		}
 	}
 }
+"item_recipe_black_king_bar"
+{
+	"ItemCost"						"300"	
+	"ItemRequirements"
+	{
+		"01"						"item_ogre_axe;item_mithril_hammer;item_black_king_bar_free"
+	}
+}
 "item_black_king_bar"
 {
 	"AbilitySharedCooldown"			"blackking"
@@ -1655,12 +1663,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen"			"12.0"
+			"health_regen"			"12.5"
 		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance"		"25"
+		}	
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"aura_health_regen"		"5"
+			"aura_health_regen"		"6"
 		}
 		"06"
 		{
@@ -1730,7 +1743,7 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-			"aura_damage"			"130 260"
+			"aura_damage"			"90 180"
         }
         "04"
         {
@@ -1985,21 +1998,21 @@
     "ItemBaseLevel"                 "1"
     "AbilitySpecial"
     {
-        "01"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_all_stats"		"25 50"
-        }
-        "02"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_health"			"225 350"
-        }
-        "03"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_mana"			"250 350"
-        }
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_all_stats"		"25 50"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"225"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"250"
+		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -2014,6 +2027,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cold_duration"	"1.5"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_reduction"	"50"
 		}
     }
 }
@@ -2104,55 +2122,55 @@
 	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 	"AbilitySpecial"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"250"
-		}
 		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_movement_speed"	"20"
-		}
-		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"bonus_mana_regen"		"2.5"
 		}
-		"04"
+		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_all_stats"		"6"
 		}
-		"05"
+		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"bonus_armor"			"3"
 		}
-		"09"
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"soul_initial_charge"	"99999"
+		}
+		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"soul_heal_amount"		"90"
 		}			
-		"10"
+		"09"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"soul_damage_amount"	"90"
 		}
-		"11"
+		"10"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"duration"			"6.0"
 		}
-		"12"
+		"11"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"hp_regen_reduction_enemy"	"90"
 		}
-		"13"
+		"12"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"enemy_hp_drain"		"0.5"
+		}
+		"13"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"hp_regen_degen_aura"	"30"
 		}
 	}
 }
@@ -2344,7 +2362,8 @@
 	"BaseClass"                     "item_black_king_bar"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityCooldown"				"20"
-	"ItemCost"						"0"
+	"ItemCost"						"700"
+	"ItemSellable"					"0"
 	"AbilityTextureName"		    "free_bar"
 	"ItemShopTags"					"str;damage;hard_to_tag"
 	"ItemQuality"					"common"
@@ -3408,7 +3427,7 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "aura_damage"			"130 260"
+            "aura_damage"			"90 180"
         }
         "04"
         {
@@ -3716,7 +3735,7 @@
 {
     "ID"							"70099"
     "BaseClass"                     "item_recipe_skadi"
-    "ItemCost"						"1200"	
+    "ItemCost"						"600"	
     "ItemShopTags"					""
     "ItemRecipe"					"1"
     "ItemResult"					"item_dark_skadi"
@@ -3739,21 +3758,21 @@
     "ItemBaseLevel"                 "2"
     "AbilitySpecial"
     {
-                "01"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_all_stats"		"25 50"
-        }
-        "02"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_health"			"225 350"
-        }
-        "03"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_mana"			"250 350"
-        }
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_all_stats"		"25 50"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"225"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"250"
+		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -3767,7 +3786,12 @@
 		"06"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"cold_duration"	"1.0"
+			"cold_duration"	"1.5"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"heal_reduction"	"50"
 		}
     }
 }
@@ -5089,7 +5113,7 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_movement_speed"	"45"
+            "bonus_movement_speed"	"130"
         }
 		"02"
         {
@@ -9132,18 +9156,18 @@
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
-	"AbilityCooldown"				"13.0"
+	"AbilityCooldown"				"20.0"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"			"55"
+			"bonus_strength"			"60"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"			"2.5"
+			"duration"			"4.5"
 		}
 	}
 }
@@ -9242,12 +9266,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"max_health"			"2400"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_mana"			"400"
+			"max_health"			"1800"
 		}
 	}
 }

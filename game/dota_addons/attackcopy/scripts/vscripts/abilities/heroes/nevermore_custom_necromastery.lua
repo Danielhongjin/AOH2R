@@ -30,26 +30,25 @@ modifier_nevermore_custom_necromastery = class({})
 
 function modifier_nevermore_custom_necromastery:DeclareFunctions()
 	return {
-		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
 		MODIFIER_EVENT_ON_DEATH,
 	}
 end
 
-function modifier_nevermore_custom_necromastery:GetModifierPreAttack_BonusDamage()
-	return self:GetStackCount()
-end
+
+
 if IsServer() then
 
-
-    function modifier_nevermore_custom_necromastery:OnCreated()
-        self.parent = self:GetParent()
+	function modifier_nevermore_custom_necromastery:OnCreated()
+		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
 		self.hasTalent = false
 		self.max_souls = 0
 		self.release = self.ability:GetSpecialValueFor("necromastery_soul_release")
-		self.talent_souls = 0
+		self.talent_ratio = 0
+		self.damage_per_soul = self.ability:GetSpecialValueFor("necromastery_damage_per_soul")
 		self:SetStackCount(1)
+		self.modifier = self.parent:AddNewModifier(self.parent, self.ability, "modifier_nevermore_custom_necromastery_buff", {})
 		if self.parent:HasScepter() then
 			self.max_souls = self.ability:GetSpecialValueFor("necromastery_max_souls_scepter")
 		else 
@@ -57,8 +56,11 @@ if IsServer() then
 		end
 		local think_interval = 3
 		self:StartIntervalThink(think_interval)
+	end
+
+	function modifier_nevermore_custom_necromastery:OnDestroy()
+		self.modifier:Destroy()
     end
-	
 	function modifier_nevermore_custom_necromastery:OnRefresh()
 		if self.parent:HasScepter() then
 			self.max_souls = self.ability:GetSpecialValueFor("necromastery_max_souls_scepter")
@@ -66,15 +68,15 @@ if IsServer() then
 			self.max_souls = self.ability:GetSpecialValueFor("necromastery_max_souls")
 		end
 		if self.hasTalent then
-			self.max_souls = self.max_souls + self.talent_souls
+			self.damage_per_soul = self.ability:GetSpecialValueFor("necromastery_damage_per_soul") + self.talent_ratio
 		end
     end
 	
 	function modifier_nevermore_custom_necromastery:OnIntervalThink()
-		local talent = self.parent:FindAbilityByName("nevermore_custom_bonus_unique_1")
+		local talent = self.parent:FindAbilityByName("special_bonus_unique_nevermore_1")
 		if talent and talent:GetLevel() > 0 then
 			self.hasTalent = true
-			self.talent_souls = self.parent:FindAbilityByName("nevermore_custom_bonus_unique_1"):GetSpecialValueFor("value")
+			self.talent_ratio = talent:GetSpecialValueFor("value")
 			self:ForceRefresh()
 			self:StartIntervalThink(-1)
 		end
@@ -87,6 +89,7 @@ if IsServer() then
 			local stacks = self:GetStackCount()
 			if stacks < self.max_souls then
 				self:IncrementStackCount()
+				self.modifier:SetStackCount(self:GetStackCount() * self.damage_per_soul)
 				if stacks % 3 == 0 then
 					ProjectileManager:CreateTrackingProjectile({
 						Target = self.parent,
@@ -114,9 +117,7 @@ if IsServer() then
 			end
 		end
 	end
-
 end
-
 
 function modifier_nevermore_custom_necromastery:IsHidden()
     return false
@@ -125,5 +126,26 @@ end
 function modifier_nevermore_custom_necromastery:IsPurgable()
 	return false
 end
+LinkLuaModifier("modifier_nevermore_custom_necromastery_buff", "abilities/heroes/nevermore_custom_necromastery.lua", LUA_MODIFIER_MOTION_NONE)
 
+modifier_nevermore_custom_necromastery_buff = class({})
 
+function modifier_nevermore_custom_necromastery_buff:IsHidden()
+    return true
+end
+function modifier_nevermore_custom_necromastery_buff:IsPurgable()
+	return false
+end
+
+function modifier_nevermore_custom_necromastery_buff:RemoveOnDeath()
+	return false
+end
+function modifier_nevermore_custom_necromastery_buff:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+	}
+end
+
+function modifier_nevermore_custom_necromastery_buff:GetModifierPreAttack_BonusDamage()
+	return self:GetStackCount()
+end

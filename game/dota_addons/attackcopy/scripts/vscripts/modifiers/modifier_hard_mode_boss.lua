@@ -21,27 +21,18 @@ function modifier_hard_mode_boss:DeclareFunctions()
 	local funcs = {
         MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
 		MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
-		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS,
-		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
 	}
 	return funcs
 end
 
 function modifier_hard_mode_boss:GetModifierPercentageCooldown()
-    return 20
+    return 10
 end
 
 function modifier_hard_mode_boss:GetModifierTotalPercentageManaRegen()
-	return 1.0
+	return 0.5
 end
 
-function modifier_hard_mode_boss:GetModifierPhysicalArmorBonus()
-	return 2
-end
-
-function modifier_hard_mode_boss:GetModifierMagicalResistanceBonus()
-	return 5
-end
 
 function modifier_hard_mode_boss:OnCreated() 
 	local parent = self:GetParent()

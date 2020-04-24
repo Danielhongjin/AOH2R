@@ -46,18 +46,22 @@ end
 
 if IsServer() then
     function modifier_bloodseeker_custom_rampage:OnCreated(keys)
+		self.parent = self:GetParent()
         local ability = self:GetAbility()
         self.max_hp = ability:GetSpecialValueFor("max_hp")
-
-        self:StartIntervalThink(0.1)
+		self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_bloodseeker/bloodseeker_rupture.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+		ParticleManager:SetParticleControlEnt(self.particle, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+		
+        self:StartIntervalThink(0.15)
+    end
+	function modifier_bloodseeker_custom_rampage:OnDestroy()
+        ParticleManager:DestroyParticle(self.particle, false)
     end
 
 
     function modifier_bloodseeker_custom_rampage:OnIntervalThink()
-        local parent = self:GetParent()
-
-        if parent and parent:GetHealthPercent() > self.max_hp then
-            parent:SetHealth(parent:GetMaxHealth() * self.max_hp * 0.01)
+        if self.parent and (self.parent:GetHealth() / self.parent:GetMaxHealth() * 100) > self.max_hp then
+            self.parent:SetHealth(self.parent:GetMaxHealth() * self.max_hp * 0.01)
         end
     end
 end

@@ -47,7 +47,7 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[2] = 0
 	AOHGameMode.numPhilo[3] = 0
 	AOHGameMode.numPhilo[4] = 0
-	self.hardMode = false
+	self._hardMode = false
 	AOHGameMode.isArcane = {}
 	AOHGameMode.isArcane[0] = false
 	AOHGameMode.isArcane[1] = false
@@ -100,7 +100,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 35)
 	self:_ReadGameConfiguration()
-
+	
 	GameRules:SetCustomGameSetupAutoLaunchDelay(3.0)
 	GameRules:SetTimeOfDay(0.75)
 	GameRules:SetHeroRespawnEnabled(false)
@@ -113,17 +113,15 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetHeroMinimapIconScale(1.2)
 	GameRules:SetCreepMinimapIconScale(1.2)
 	GameRules:SetRuneMinimapIconScale(1.2)
+	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride(true)
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible(false)
 	GameRules:GetGameModeEntity():SetCustomBuybackCostEnabled(true)
-	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
-	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(800)
+	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(900)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,15)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.2)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_MAGIC_RESISTANCE_PERCENT,0.0003)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.0875)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_SPELL_AMP_PERCENT,0.12)
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AOHGameMode, 'OnEntityKilled'), self)
 	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(AOHGameMode, "OnGameRulesStateChange"), self)
@@ -278,6 +276,10 @@ function AOHGameMode:InitVariables()
 			if PlayerResource:HasSelectedHero(playerID) then
 				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 				hero:AddItemByName("item_black_king_bar_free")
+				self._nPlayerHelp = CreateUnitByName("npc_courier_replacement", Vector(-2958, 2031, -969), true, hero, hero:GetOwner(), hero:GetTeamNumber())
+				self._nPlayerHelp:SetControllableByPlayer(hero:GetPlayerID(), true)
+				self._nPlayerHelp:SetTeam(hero:GetTeamNumber())
+				self._nPlayerHelp:SetOwner(hero)
 				CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 				self._playerNumber = self._playerNumber + 1
 			end
@@ -346,22 +348,18 @@ function AOHGameMode:OnUpdateThink()
 	return 0.66
 end
 
+local chests = {[0] = "item_chest_1", 
+"item_chest_2", 
+"item_chest_3", 
+"item_chest_4", 
+"item_chest_5", 
+}
+
 -- Distributes chests based on round number
 function AOHGameMode:DistributeChests()
-	local chestName
 	local temp = self._nRoundNumber / 6
-	if temp == 5 then
-		chestName = "item_chest_5"
-	elseif temp == 4 then
-		chestName = "item_chest_4"
-	elseif temp == 3 then
-		chestName = "item_chest_3"
-	elseif temp == 2 then
-		chestName = "item_chest_2"
-	elseif temp == 1 then
-		chestName = "item_chest_1"
-	end
 	if temp > 0 and temp < 6 then
+		local chestName = chests[temp - 1]
 		Notifications:TopToAll({text="Trade your chest in for a tier " .. temp .. " neutral item", duration=5})
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
 			if PlayerResource:HasSelectedHero(playerID) then
@@ -386,7 +384,9 @@ function AOHGameMode:OnThink()
 			if self._currentRound:IsFinished() then
 				self._currentRound:End()
 				self._currentRound = nil
-				refresh_players()
+				if not self._hardMode then
+					refresh_players()
+				end
 				if self._nRoundNumber % 6 == 0 then
 					self:DistributeChests()
 				end
@@ -525,6 +525,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._hardMode = true
 		Notifications:TopToAll({text="Hard mode has been activated.", style={color="red"}, duration=5})
+		self._flPrepTimeBetweenRounds = 2
 	end
 	if keys.text == "-renew" then
 		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(keys.playerid), "delete", {})

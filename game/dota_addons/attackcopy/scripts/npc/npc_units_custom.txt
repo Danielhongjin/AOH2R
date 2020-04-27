@@ -5486,18 +5486,23 @@
 }	
 "npc_dota_goodguys_melee_rax_mid"
 {
-	"Ability1"					"rax_targeting"			// Ability 1.
+	"Ability1"					"custom_rax_behavior"			// Ability 1.
 	"Ability2"					"rax_custom_refund"
 	"ArmorPhysical"				"8"
 	"StatusHealth"				"600"		// Base health.
 	"StatusHealthRegen"			"0"		// Health regeneration rate.
 }	
+"npc_dota_goodguys_range_rax_mid"
+{
+	"Ability1"					"custom_rax_behavior"			// Ability 1.
+	"Ability2"					"rax_custom_refund"
+	"ArmorPhysical"				"8"
+	"StatusHealth"				"600"		// Base health.
+	"StatusHealthRegen"			"0"		// Health regeneration rate.
+}
 "npc_dota_creep_goodguys_melee"
 {
 	"IsSummoned"				"1"
-	"BaseClass"					"npc_dota_creep_lane"	// Class of entity of link to.
-	"Model"						"models/creeps/lane_creeps/creep_radiant_melee/radiant_melee.vmdl"	// Model.
-	"SoundSet"					"Creep_Good_Melee"					// Name of sound set.
 	"ModelScale" 					"0.93"
 	"Level"						"3"
 	"ArmorPhysical"				"6"			// Physical protection.
@@ -5508,10 +5513,30 @@
 	"BountyXP"					"0"		// Experience earn.
 	"BountyGoldMin"				"1"		// Gold earned min.
 	"BountyGoldMax"				"1"		// Gold earned max.
-	"StatusHealth"				"750"		// Base health.
+	"StatusHealth"				"700"		// Base health.
 	"StatusHealthRegen"			"7.5"		// Health regeneration rate.
 	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
 }	
+"npc_dota_creep_goodguys_ranged"
+{
+	"IsSummoned"				"1"
+	"ModelScale" 					"0.82"
+	"Level"						"3"
+	"ArmorPhysical"				"2"			// Physical protection.
+	"MagicalResistance"				"40"			// Magical protection.
+	"AttackAcquisitionRange"	"900"
+	"AttackRange"				"700"
+	"AttackDamageMin"			"69"		// Damage range min.
+	"AttackDamageMax"			"72"		// Damage range max.
+	"AttackRate"				"0.9"	
+	"AttackAnimationPoint"		"0.45"
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"1"		// Gold earned min.
+	"BountyGoldMax"				"1"		// Gold earned max.
+	"StatusHealth"				"475"		// Base health.
+	"StatusHealthRegen"			"5"		// Health regeneration rate.
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
+}
 "npc_dota_courier"
 {
 	"Ability2"					"courier_invisibility"
@@ -5540,19 +5565,12 @@
 	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_HERO"
 				
 	"Ability1"					"courier_invincibility"
-	
-	// Armor
-	//----------------------------------------------------------------
 	"ArmorPhysical"				"10"		// Physical protection.
 	"MagicalResistance"				"0"			// Magical protection.
 
-	// Bounds
-	//----------------------------------------------------------------
 	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
 	"HealthBarOffset"			"140"	
 
-	// Movement
-	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
 	"MovementSpeed"				"375"		// Speed
 	"MovementTurnRate"			"0.5"		// Turning rate.
@@ -5621,6 +5639,7 @@
 	"ConsideredHero"			"1"
 	"HasInventory"				"1"
 	"AbilityLayout"				"4"
+	"vscripts"					"bosses/attack_move.lua"
 	"precache"
 	{
 		"particle_folder"			"particles/units/heroes/hero_spirit_breaker"
@@ -5630,22 +5649,36 @@
 	//----------------------------------------------------------------
 	
 	"Ability1"					"custom_charge_of_darkness"		// Ability 1
-	"Ability2"					"custom_rupture"		// Ability 2
+	"Ability2"					"custom_spiritbreaker_inner_fire"		// Ability 2
 	"Ability3"					"spirit_breaker_greater_bash"			// Ability 3
-	"Ability4"					"custom_nether_strike"			// Ability 4
+	"Ability4"					"custom_charge_wrapper"			// Ability 4
+	"Ability5"					"custom_spirits"
+	"Ability6"					"custom_nether_strike_wrapper"
+	"Ability7"					"custom_nether_strike"
+	"Ability8"					"custom_reverse_polarity"
+	"Ability9"					"custom_revenge_behavior"
+	"Ability10"					"custom_spiritbreaker_inner_fire_wrapper"
+	"Ability11"					"generic_hidden"
+	"Ability12"					"generic_hidden"
+	"Ability13"					"generic_hidden"
+	"Ability14"					"generic_hidden"
+	"Ability15"					"generic_hidden"
+	"Ability16"					"generic_hidden"
+	"Ability17"					"custom_spiritbreaker_revenge"
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"35"			// Physical protection.
+	"ArmorPhysical"				"41"			// Physical protection.
 	"MagicalResistance"				"25"			// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"700"		// Damage range min.
-	"AttackDamageMax"			"780"		// Damage range max.
+	"AttackDamageMin"			"1100"		// Damage range min.
+	"AttackDamageMax"			"1280"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-	"AttackRate"				"1.2"			// Speed of attack.
+	"AttackRate"				"3.3"			// Speed of attack.
+	"BaseAttackSpeed"			"250"
 	"AttackAnimationPoint"		"0.1"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"1600"		// Range within a target can be acquired.
 	"AttackRange"				"248"		// Range within a target can be attacked.
@@ -5682,10 +5715,10 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"88000"		// Base health.
-	"StatusHealthRegen"			"10"		// Health regeneration rate.
-	"StatusMana"				"2100"			// Base mana.
-	"StatusManaRegen"			"35"			// Mana regeneration rate.
+	"StatusHealth"				"188000"		// Base health.
+	"StatusHealthRegen"			"100"		// Health regeneration rate.
+	"StatusMana"				"5000"			// Base mana.
+	"StatusManaRegen"			"75"			// Mana regeneration rate.
 
 	// Team
 	//----------------------------------------------------------------
@@ -5723,15 +5756,18 @@
 		{
 			"Ability1"
 			{
-				"Name"				"custom_charge_of_darkness"
-			}
-			"Ability2"                
-			{
-				"Name"               "custom_rupture"
+				"Name"				"custom_charge_wrapper"
 			}
 			"Ability4"
 			{
-				"Name"				"custom_nether_strike"
+				"Name"				"custom_nether_strike_wrapper"
+			}
+			"Ability10"
+			{
+				"Name"				"custom_spiritbreaker_inner_fire_wrapper"
+				"AOE"				"1"
+                "Radius"			"300"
+                "MinimumTargets"	"1"
 			}
 		}
 		"EquippedItems"
@@ -5754,75 +5790,35 @@
 		}
 	}
 }
-"npc_boss_hellbear"
+"npc_target"
 {
-    "Model"						"models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl"
-    "SoundSet"					"n_creep_Melee"
-    "BaseClass"					"npc_dota_creature"
-	"vscripts"					"bosses/attack_move.lua"
-
-
-    "ModelScale"				"2.0"
-    "Level"						"36"
-    "ConsideredHero"			"1"
-    "CanBeDominated"			"0"
-    "HasInventory"				"1"
-
-    "Ability1"					"custom_attribute_focus"
-    "Ability2"                  "custom_attribute_teleport"
-    "Ability3"                  "custom_attribute_blow"
-    "Ability4"                  "custom_attribute_burn"
-
-    "ArmorPhysical"				"45"
-    "MagicalResistance"			"45"
-    "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"1250"
-    "AttackDamageMax"			"1700"
-    "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
-    "AttackRate"				"1.2"
-    "AttackAnimationPoint"		"0.39"
-    "AttackAcquisitionRange"	"1600"
-    "AttackRange"				"260"
-    "ProjectileModel"			""
-    "ProjectileSpeed"			""
-    "AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
-    "BountyXP"					"0"
-    "BountyGoldMin"				"1"
-    "BountyGoldMax"				"1"
-    "BoundsHullName"			"DOTA_HULL_SIZE_HERO"
-    "RingRadius"				"160"
-    "HealthBarOffset"			"340"
-    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
-    "MovementSpeed"				"550"
-    "MovementTurnRate"			"0.5"
-    "StatusHealth"				"195000"
-    "StatusHealthRegen"			"50"
-    "StatusMana"				"6200"
-    "StatusManaRegen"			"100"
-    "TeamName"					"DOTA_TEAM_BADGUYS"
-    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
-    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
-    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-    "VisionDaytimeRange"		"1600"
-    "VisionNighttimeRange"		"1600"
-
-    "Creature"
-    {
-		"DisableClumpingBehavior"   "1"
-        "EquippedItems"
-        {
-			"Unstoppable"       	{ "Item"        "item_boss_unstoppable" }
-			"Boss Resistance"       	{ "Item"        "item_boss_resistance_20" }
-        }
-		"OffensiveAbilities"
-        {
-
-            "Ability2"
-            {
-                "Name"                      "custom_attribute_teleport"
-            }
-        }
-    }
+	"UnitLabel" 				"temp_unit"
+	"Model"						"models/development/invisiblebox.vmdl"
+	"BaseClass"					"npc_dota_creature"
+	"Level"						"1"
+	"ModelScale" 				"1.0"
+	"AttackCapabilities"		"DOTA_UNIT_CAP_NO_ATTACK"
+	"ProjectileModel"			"" // Particle system model for projectile.
+	"ProjectileSpeed"			""		// Speed of projectile.		     
+	"RingRadius"				"40"
+	"HealthBarOffset"			"150"
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"1"		// Gold earned min.
+	"BountyGoldMax"				"1"		// Gold earned max.
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_NONE"
+	"MovementSpeed"				"0"		// Speed.			
+	"ArmorPhysical"				"-50"
+	"MagicalResistance"			"-50"
+	"StatusHealth"				"1500"		// Base health.
+	"StatusHealthRegen"			"0"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"0.1"		// Mana regeneration rate.		 
+	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 }
 "npc_boss_mirana"
 {

@@ -36,11 +36,12 @@ end
 
 function modifier_hard_mode_boss:OnCreated() 
 	local parent = self:GetParent()
-	local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_rage_body.vpcf", PATTACH_POINT_FOLLOW, parent)
-	ParticleManager:SetParticleControlEnt(particle, 2, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true)
-	ParticleManager:ReleaseParticleIndex(particle)
+	self.particle = ParticleManager:CreateParticle("particles/units/heroes/hero_life_stealer/life_stealer_rage_body.vpcf", PATTACH_POINT_FOLLOW, parent)
+	ParticleManager:SetParticleControlEnt(self.particle,2,self:GetParent(),PATTACH_CENTER_FOLLOW,"attach_hitloc",self:GetParent():GetAbsOrigin(), true)
+	
 end
 
 function modifier_hard_mode_boss:OnDestroy() 
-
+	ParticleManager:DestroyParticle(self.particle, false)
+	ParticleManager:ReleaseParticleIndex(self.particle)
 end

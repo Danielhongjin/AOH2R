@@ -1,26 +1,20 @@
-Courier replaced with fake couriers, can use items and flies off the bat. Real couriers hidden and cannot act. Can also use neutral items for some reason.
-Hard mode changed, no longer makes the bosses significantly stronger. Nearly removes time between rounds and no longer refreshes your health/mana.
-Intelligence gives spell amp again, 0.12% per point.
-Max attack speed increased again to 900.
+Boss behaviors should be slightly more reliable.
+Missing player gold and exp reduction nerfed to 12% from 8%. One player penalty from 50% to 60%.
 
-Faceless Void boss reality rift cooldown from 8 to 9.
-Various boss magic damage reduced.
+Hellbear boss replaced by spirit breaker boss. Keep in mind that charge does not get blocked by spell immunity.
 
-Various item functionality fixed.
+Devils seal charge time from 1 to 1.35 seconds.
+Item healing amplification nerfed.
+Sanguine now has just one level, grants diminishing returns for multiple sanguines.
+Pocket barracks can now be cast to set the waypoint to where your hero is standing. Will no longer follow your hero around like zombies.
+Ranged pocket barracks added. Upgrades from pocket barracks, does what you expect.
 
-Shadow fiend buffed.
-
+Undying flesh golem strength bonus lowered, dps increased.
 TO-DO
 
 
 Give PL boss vengeful spirit boss swap.
 Remove either CM or terrorblade and replace with spirit breaker boss.
-
-
-
-CURRENTLY MAKING RAX BEHAVIOR MORE SOPHISTICATED.
-
-ADD RELEASE PARTICLE INDEX TO GENERICS.
-
-
-
+	
+CURRENTLY IMPLEMENTING SPIRIT BREAKER BOSS
+CURRENTLY IMPLEMENTING DIFFICULTY PANORAMA SCRIPTS

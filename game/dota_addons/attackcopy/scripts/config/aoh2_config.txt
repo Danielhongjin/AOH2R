@@ -813,7 +813,7 @@
 		"29" // Phantom Lance
 		{
 			"Title"						"Real?"
-			"MaxGold"					"9000"
+			"MaxGold"					"8750"
 			"BagCount"					"5"
 			"BagVariance"				"0"
 			"FixedXP"					"5600"
@@ -830,7 +830,7 @@
 		"30" // Spectre
 		{
 			"Title"						"Lost"
-			"MaxGold"					"9500"
+			"MaxGold"					"9250"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -847,7 +847,7 @@
 		"31" // Anti-Mage
 		{
 			"Title"						"Ban Magic"
-			"MaxGold"					"10000"
+			"MaxGold"					"9750"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -864,7 +864,7 @@
 		"32" // Worldsmith
 		{
 			"Title"						"Worldsmith"
-			"MaxGold"					"10500"
+			"MaxGold"					"10250"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -881,7 +881,7 @@
 		"33" // Lich
 		{
 			"Title"						"Ethreain"
-			"MaxGold"					"11000"
+			"MaxGold"					"10750"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6500"
@@ -897,15 +897,15 @@
 
 		"34" // Hellbear
 		{
-			"Title"						"Claw"
-			"MaxGold"					"11500"
+			"Title"						"Spirits"
+			"MaxGold"					"11250"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6500"
 
 			"a"
 			{
-				"NPCName"				"npc_boss_hellbear"
+				"NPCName"				"npc_boss_spiritbreaker"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"
@@ -914,7 +914,7 @@
 		"35" // Rubick
 		{
 			"Title"						"Spells"
-			"MaxGold"					"12000"
+			"MaxGold"					"11750"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"150000"
@@ -930,7 +930,7 @@
 		"36" // Demon Marauder
 		{
 			"Title"						"Demon"
-			"MaxGold"					"12500"
+			"MaxGold"					"12000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"150000"
@@ -946,7 +946,7 @@
 		"37" // Army of Darkness
 		{
 			"Title"						"Army of Darkness"
-			"MaxGold"					"13000"
+			"MaxGold"					"12000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"150000"

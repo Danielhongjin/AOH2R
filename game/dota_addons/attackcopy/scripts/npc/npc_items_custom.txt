@@ -1091,7 +1091,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"20"
+			"hp_regen_amp"			"16"
 		}		
 	}
 }
@@ -1801,7 +1801,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"14"
+			"hp_regen_amp"			"12"
 		}
 	}
 }
@@ -1817,7 +1817,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"20"
+			"hp_regen_amp"			"15"
 		}	
 	}
 }
@@ -1844,7 +1844,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"20"
+			"hp_regen_amp"			"15"
 		}
 	}
 }
@@ -4299,7 +4299,7 @@
     "ItemShopTags"					"armor"
     "ItemQuality"					"secret_shop"
     "ItemAliases"					"Formidable Chest"
-    "AbilityCooldown"				"40.0"
+    "AbilityCooldown"				"20.0"
     "AbilityCastRange"				"1000"
     "AbilityCastPoint"				"0.0"
     "AbilityManaCost"				"60"
@@ -4322,12 +4322,12 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "damage_reduction"	    "-35"
+            "damage_reduction"	    "-45"
         }
         "04"
         {
             "var_type"				"FIELD_INTEGER"
-            "duration"	            "6"
+            "duration"	            "4"
         }
     }
 }
@@ -6165,7 +6165,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_armor"			"10 18"
+            "bonus_armor"			"9 18"
         }
 		"03"
 		{
@@ -6231,7 +6231,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_armor"			"10 18"
+            "bonus_armor"			"9 18"
         }
 		"03"
 		{
@@ -6895,7 +6895,7 @@
     "ItemResult"					"item_sanguine"
     "ItemRequirements"
     {
-        "01"						"item_quelling_blade;item_vitality_booster"
+        "01"						"item_quelling_blade;item_vitality_booster;item_relic"
     }
 }
 "item_sanguine"
@@ -6903,158 +6903,43 @@
     "ID"							"70184"
     "BaseClass"						"item_lua"
     "ScriptFile"                    "items/item_sanguine.lua"
-    "AbilityTextureName"		    "sanguine_1"
+    "AbilityTextureName"		    "sanguine"
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "ItemShopTags"					"lifesteal"
     "ItemQuality"					"rare"
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
     "ItemAliases"					"sanguine"
-    "MaxUpgradeLevel"               "4"
-    "ItemBaseLevel"                 "1"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"				"FIELD_FLOAT"
-            "health_damage_bonus"			"5 7 9"
+            "health_damage_bonus"			"9"
+			"CalculateSpellDamageTooltip"	"0"
         }
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_health"			        "250 350 450"
+            "bonus_health"			        "500"
         }
 		"03"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_magical_resistance"			        "12"
+            "bonus_magical_resistance"			        "15"
         }
 		"04"
         {
             "var_type"				"FIELD_INTEGER"
-            "damage_ratio"			        "65 70 75"
+            "damage_ratio"			        "65"
+			"CalculateSpellDamageTooltip"	"0"
         }
 		"05"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_attack_speed"			        "10 15 20"
+            "bonus_attack_speed"			        "25"
         }
     }
 }
-"item_recipe_sanguine_2"
-{
-    "ID"							"70185"
-    "BaseClass"						"item_datadriven"
-    "Model"							"models/props_gameplay/recipe.mdl"
-    "AbilityTextureName"			"custom_recipe"
-    "ItemCost"						"0"
-    "ItemShopTags"					""
-    "ItemRecipe"					"1"
-    "ItemResult"					"item_sanguine_2"
-    "ItemRequirements"
-    {
-        "01"						"item_sanguine;item_recipe_sanguine"
-    }
-}
-"item_sanguine_2"
-{
-    "ID"							"70186"
-    "BaseClass"						"item_lua"
-    "ScriptFile"                    "items/item_sanguine.lua"
-    "AbilityTextureName"		    "sanguine_2"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "ItemShopTags"					"lifesteal"
-    "ItemQuality"					"epic"
-    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-    "ItemAliases"					"sanguine"
-    "MaxUpgradeLevel"               "4"
-    "ItemBaseLevel"                 "2"
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "health_damage_bonus"			"5 7 9"
-        }
-        "02"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_health"			        "250 350 450"
-        }
-		"03"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_magical_resistance"			        "12"
-        }
-		"04"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "damage_ratio"			        "65 70 75"
-        }
-		"05"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_attack_speed"			        "10 15 20"
-        }
-    }
-}
-"item_recipe_sanguine_3"
-{
-    "ID"							"70187"
-    "BaseClass"						"item_datadriven"
-    "Model"							"models/props_gameplay/recipe.mdl"
-    "AbilityTextureName"			"custom_recipe"
-    "ItemCost"						"0"
-    "ItemShopTags"					""
-    "ItemRecipe"					"1"
-    "ItemResult"					"item_sanguine_3"
-    "ItemRequirements"
-    {
-        "01"						"item_sanguine_2;item_recipe_sanguine"
-    }
-}
-"item_sanguine_3"
-{
-    "ID"							"70188"
-    "BaseClass"						"item_lua"
-    "ScriptFile"                    "items/item_sanguine.lua"
-    "AbilityTextureName"		    "sanguine_3"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "ItemShopTags"					"lifesteal"
-    "ItemQuality"					"epic"
-    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
-    "ItemAliases"					"sanguine"
-    "MaxUpgradeLevel"               "3"
-    "ItemBaseLevel"                 "3"
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "health_damage_bonus"			"5 7 9"
-        }
-        "02"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_health"			        "250 350 450"
-        }
-		"03"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_magical_resistance"			        "12"
-        }
-		"04"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "damage_ratio"			        "65 70 75"
-        }
-		"05"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_attack_speed"			        "10 15 20"
-        }
-    }
-}
-
 "item_recipe_vladmir_temp"
 {
     "BaseClass"						"item_datadriven"
@@ -8576,7 +8461,7 @@
 	"AbilityTextureName"			"custom_pocket_tower"
 	"AbilityCastRange"				"300"
 	"AbilityCastPoint"				"0.5"
-	"AbilityCooldown"				"3.0"
+	"AbilityCooldown"				"2.0"
 	"AbilityManaCost"				"0"
 	"ItemSellable"					"0"
 	"AbilitySpecial"
@@ -8726,7 +8611,7 @@
 		"06"
         {
             "var_type"					"FIELD_FLOAT"
-            "delay"					"1.0"
+            "delay"					"1.35"
         }
     }
 }	
@@ -9108,10 +8993,10 @@
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
-	"AbilityTextureName"			"pocket_rax"
+	"AbilityTextureName"			"Melee_Creep"
 	"AbilityCastRange"				"300"
 	"AbilityCastPoint"				"0.5"
-	"AbilityCooldown"				"3.0"
+	"AbilityCooldown"				"2.0"
 	"AbilityManaCost"				"0"
 	"ItemSellable"					"0"
 	"ItemPurchasable"				"1"
@@ -9125,12 +9010,61 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"interval"			"10"
+			"interval"			"15"
 		}		
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"			"45"
+			"duration"			"60"
+		}	
+	}
+}
+"item_recipe_pocket_rax_ranged"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_pocket_rax_ranged"
+    "ItemRequirements"
+    {
+        "01"						"item_pocket_rax"	
+    }
+}
+"item_pocket_rax_ranged"
+{
+	"BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_pocket_rax.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilityTextureName"			"Ranged_Creep"
+	"AbilityCastRange"				"300"
+	"AbilityCastPoint"				"0.5"
+	"AbilityCooldown"				"2.0"
+	"AbilityManaCost"				"0"
+	"ItemSellable"					"0"
+	"ItemPurchasable"				"1"
+    "ItemQuality"					"consumable"
+    "ItemStackable"					"1"
+    "ItemPermanent"					"0"
+    "ItemInitialCharges"			"1"
+    "IsTempestDoubleClonable"		"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval"			"15"
+		}		
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"			"60"
 		}	
 	}
 }
@@ -9396,7 +9330,7 @@
 	"BaseClass"						"item_datadriven"
     "Model"							"models/props_gameplay/recipe.vmdl"
     "AbilityTextureName"			"item_recipe"
-	"ItemCost"						"1400"	
+	"ItemCost"						"1200"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_echo_wand"
@@ -9867,7 +9801,7 @@
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"21"
+			"hp_regen_amp"			"18"
 		}
 		"08"
 		{

@@ -290,13 +290,11 @@ function AOHGameMode:InitVariables()
 			self.talonCount[playerID][var] = 0
 		end
 	end
-	self._goldRatio = 1 - 0.08 * (5 - self._playerNumber)
-	self._expRatio = 1 - 0.08 * (5 - self._playerNumber)
+	self._goldRatio = 1 - 0.12 * (5 - self._playerNumber)
+	self._expRatio = 1 - 0.12 * (5 - self._playerNumber)
 	if self._playerNumber < 2 then
-		self._goldRatio = 0.5
-		self._expRatio = 0.5
-	end
-	if self._playerNumber < 2 then
+		self._goldRatio = 0.4
+		self._expRatio = 0.4
 		local playerHero = PlayerResource:GetPlayer(0):GetAssignedHero()
 		self._nPlayerHelp = CreateUnitByName("npc_playerhelp", playerHero:GetAbsOrigin(), true, playerHero, playerHero:GetOwner(), playerHero:GetTeamNumber())
 		self._nPlayerHelp:SetControllableByPlayer(playerHero:GetPlayerID(), true)

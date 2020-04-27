@@ -520,6 +520,15 @@
 	"Ability5"		"spectre_custom_haunt_single"
     "Ability6"		"spectre_custom_haunt"
 }
+"npc_dota_hero_spirit_breaker"
+{
+	"AttackRate"		"2.100000"
+	"AttackDamageMin"		"36"
+	"AttackDamageMax"		"46"
+	"AttributeStrengthGain"		"3.500000"
+	"AttributeBaseAgility"		"20"
+	"AttributeAgilityGain"		"2.100000"
+}
 "npc_dota_hero_storm_spirit"
 {
 	"Ability11"		"special_bonus_mp_regen_6"

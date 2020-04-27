@@ -1089,6 +1089,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_spirit_breaker_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"65"
+			}
+		}
+	}
 	"special_bonus_unique_storm_spirit_4"
 	{
 		"AbilitySpecial"
@@ -3101,12 +3112,13 @@
 	}
 	"enchantress_bunny_hop"
 	{
+		"AbilityCooldown"				"2"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hop_distance"					"600"
+				"hop_distance"					"750"
 				"RequiresScepter"			"1"
 			}
 		}
@@ -6358,7 +6370,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"movement_speed"		"300 350 400 450"
+				"movement_speed"		"325 375 425 475"
 			}
 			"07"
 			{
@@ -6371,18 +6383,19 @@
 	"spirit_breaker_greater_bash"
 	{
 		"AbilityCooldown"				"0.2"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilitySpecial"
 		{
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"40 80 120 160"
+				"damage"				"25 40 55 80"
 				"LinkedSpecialBonus"	"special_bonus_unique_spirit_breaker_3"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"0.2"
+				"duration"				"0.8"
 			}
 			"04"
 			{
@@ -7053,7 +7066,7 @@
 				"var_type"				"FIELD_FLOAT"
 				"duration"				"22.0"
 			}
-			"07"
+			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"zombie_interval"		"4.0 3.7 3.4 3.1"
@@ -7062,13 +7075,18 @@
 	}
 	"undying_flesh_golem"
 	{
-		"AbilityCooldown"				    "95 85 75"
+		"AbilityCooldown"				    "90 80 70"
 		"AbilitySpecial"
 		{
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"35 65 95"
+				"damage"					"45 90 135"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"str_percentage"			"20 25 30"
 			}
 		}
 	}

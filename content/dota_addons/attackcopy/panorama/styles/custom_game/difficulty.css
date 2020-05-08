@@ -1,0 +1,30 @@
+.DifficultyList
+{
+	width: 400px;
+	height: 600px;
+	margin-top:135px;
+	horizontal-align: left;
+	vertical-align: top;
+}
+#Difficulties
+{
+	flow-children:right;
+	margin-top:30px;
+} 
+.Difficulty
+{  
+	background-color: #010000;
+	opacity:0.6;
+	flow-children:right;
+	color:white;
+	margin-bottom:2px;
+}
+#Easy
+{
+	flow-children:down;
+}
+
+#Hard
+{
+	flow-children:down;
+}

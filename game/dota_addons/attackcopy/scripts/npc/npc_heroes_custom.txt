@@ -165,8 +165,8 @@
 }
 "npc_dota_hero_doom_bringer"
 {
-    "Ability6"		"doom_custom_flames"
 	"Ability11"		"special_bonus_movement_speed_30"
+	"Ability12"		"special_bonus_armor_8"
     "Ability14"		"special_bonus_cooldown_reduction_15"
 	"AttackDamageMin"		"40"
 	"AttackDamageMax"		"56"
@@ -197,8 +197,8 @@
 }
 "npc_dota_hero_furion"
 {
-    "Ability2"		"furion_teleportation"
 	"Ability6"      "furion_custom_nature_heal"
+	"Ability11"		"special_bonus_hp_regen_15"
     "Ability15"		"special_bonus_attack_damage_100"
     "Ability16"		"special_bonus_cooldown_reduction_25"
 }
@@ -213,6 +213,7 @@
 {
     "Ability1"		"gyrocopter_custom_rocket_barrage"
     "Ability13"		"special_bonus_attack_speed_40"
+	"Ability15"		"special_bonus_unique_gyrocopter_4"
     "Ability17"		"gyrocopter_custom_bonus_unique_1"
 }
 "npc_dota_hero_huskar"
@@ -389,7 +390,10 @@
 "npc_dota_hero_oracle"
 {
 	"Ability10"		"special_bonus_cast_range_150"
-	"Ability12"		"special_bonus_cooldown_reduction_15"
+	"Ability12"		"special_bonus_unique_oracle"
+	"Ability14"		"special_bonus_cooldown_reduction_15"
+	"Ability15"		"special_bonus_mp_regen_10"
+	"Ability17"		"special_bonus_all_stats_20"
 }
 "npc_dota_hero_pangolier"
 {
@@ -401,8 +405,12 @@
 {
 	"Ability1"		"phantom_assassin_custom_stifling_dagger"
     "Ability17"		"phantom_assassin_custom_bonus_unique_1"
-	"AttackDamageMin"		"32"
-	"AttackDamageMax"		"34"
+	"AttackDamageMin"		"37"
+	"AttackDamageMax"		"39"
+	"AttributeIntelligenceGain"		"2.200000"
+	"MovementTurnRate"		"0.900000"
+	"StatusHealthRegen"		"1.25"
+	"MovementSpeed"		"325"
 }
 "npc_dota_hero_phoenix"
 {
@@ -471,6 +479,11 @@
     "Ability14"		"special_bonus_cast_range_175"
     "Ability16"		"special_bonus_hp_600"
     "Ability17"		"special_bonus_spell_amplify_12"
+}
+"npc_dota_hero_shadow_shaman"
+{
+	"Ability15"		"special_bonus_unique_shadow_shaman_4"
+	"Ability17"		"special_bonus_cooldown_reduction_25"
 }
 "npc_dota_hero_shredder"
 {
@@ -561,7 +574,6 @@
 {
 	"Ability1"		"terrorblade_custom_reflection"
     "Ability6"		"terrorblade_custom_dark_realm"
-    "Ability15"		"special_bonus_cooldown_reduction_15"
 }
 "npc_dota_hero_tidehunter"
 {
@@ -592,7 +604,7 @@
 }
 "npc_dota_hero_tusk"
 {
-	"AttackRate"		"1.850000"
+	"AttackRate"		"1.900000"
 	"AttackDamageMin"		"31"
 	"AttackDamageMax"		"35"
 	"AttributeStrengthGain"		"4.400"

@@ -2489,7 +2489,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"movement_speed"		"1400"
+			"movement_speed"		"1700"
 		}
 		"02"
 		{
@@ -9970,7 +9970,7 @@
         "01"
         {
             "var_type"			"FIELD_FLOAT"
-            "value"				"2.0"
+            "value"				"1.75"
         }
     }
 }
@@ -9985,7 +9985,7 @@
     "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"	
     "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
     "AbilityCastRange"				"1200"
-    "AbilityCastPoint"				"0.3 0.25 0.2 0.15"
+    "AbilityCastPoint"				"0.1"
     "AbilityChannelTime"			"0.70"
     "AbilityDuration"				"1 2 3 4"
     "AbilityCooldown"				"10 9 8 7"
@@ -10004,7 +10004,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "dagger_speed"			"1200"
+            "dagger_speed"			"1800"
         }
         "03"
         {
@@ -10029,7 +10029,7 @@
         "07"
         {
             "var_type"				"FIELD_INTEGER"
-            "dagger_offset"			"160"
+            "dagger_offset"			"130"
         }
         "08"
         {

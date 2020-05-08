@@ -611,6 +611,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_lion_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"40"
+			}
+		}
+	}
 	"special_bonus_unique_luna_1"
 	{
 		"AbilitySpecial"
@@ -825,6 +836,28 @@
 			}
 		}
 	}
+	"special_bonus_unique_oracle_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1"
+			}
+		}
+	}
+	"special_bonus_unique_phantom_assassin_4"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"150"
+			}
+		}
+	}
 	"special_bonus_unique_phantom_lancer_3"
 	{
 		"AbilitySpecial"
@@ -887,7 +920,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"0.65"
+				"value"				"0.45"
 			}
 		}
 	}
@@ -932,6 +965,17 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"80"
+			}
+		}
+	}
+	"special_bonus_unique_sand_king_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"50"
 			}
 		}
 	}
@@ -998,6 +1042,17 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"80"
+			}
+		}
+	}
+	"special_bonus_unique_shadow_shaman_6"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"250"
 			}
 		}
 	}
@@ -2969,7 +3024,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_pct"				"8 10 12"
+				"damage_pct"				"7 9 11"
 			}
 		}
 	}
@@ -3148,6 +3203,7 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"stun_duration"			"0.25 0.35 0.45 0.55"
+				"LinkedSpecialBonus"	"special_bonus_unique_enigma_6"
 			}
 			"03"
 			{
@@ -4195,6 +4251,34 @@
 			}
 		}
 	}
+	"lion_mana_drain"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"5.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"mana_per_second"			"20 40 60 80"
+				"LinkedSpecialBonus"			"special_bonus_unique_lion_5"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"break_distance"			"1200"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"tick_interval"				"0.1"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 	"lone_druid_spirit_bear"
 	{
 		"AbilityCooldown"				"60.0"
@@ -5071,23 +5155,25 @@
 	}
 	"oracle_purifying_flames"
 	{
-		"AbilityCastPoint"				"0.15"
+		"AbilityCastPoint"				"0.1"
+		"AbilityManaCost"				"105 110 115 120"
+		"AbilityCooldown"				"2"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"100 200 400 800"
+				"damage"				"150 300 450 600"
 			}			
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"heal_per_second"		"15.0 30.0 60.0 120.0"
+				"heal_per_second"		"30 60 90 120"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"total_heal_tooltip"	"75 150 300 600"
+				"total_heal_tooltip"	"150 300 450 600"
 			}
 			"04"
 			{
@@ -5199,6 +5285,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"crit_bonus"				"250 400 550"
+				"LinkedSpecialBonus"		"special_bonus_unique_phantom_assassin_4"
 			}
 		}
 	}
@@ -5522,12 +5609,21 @@
 		"AbilityCooldown"				"30"
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"dismember_damage"		"90 135 180"
+				"LinkedSpecialBonus"		"special_bonus_unique_pudge_3"
+				"LinkedSpecialBonusField"		"value"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
+			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"strength_damage"		"1.0 1.6 2.2"
+				"strength_damage"		"0.3 0.6 0.9"
 				"LinkedSpecialBonus"		"special_bonus_unique_pudge_3"
-				"LinkedSpecialBonusField"		"value2"
+				"LinkedSpecialBonusField"		"value"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 				"CalculateSpellDamageTooltip"	"0"
 			}
 			"10"
@@ -5860,7 +5956,8 @@
 			"03"
 			{
 				"var_type"			    "FIELD_INTEGER"
-				"epicenter_damage"	    "160 210 260"
+				"epicenter_damage"	    "130 160 190"
+				"LinkedSpecialBonus"	"special_bonus_unique_sand_king_5"
 			}		
 			
 		}
@@ -5951,7 +6048,8 @@
 			"02"
 			{
 				"var_type"			    "FIELD_FLOAT"
-				"total_damage"		    "110 210 310 410"
+				"total_damage"		    "60 160 260 360"
+				"LinkedSpecialBonus"	"special_bonus_unique_shadow_shaman_6"
 			}
 			"03"
 			{
@@ -6628,6 +6726,7 @@
 			{
 				"var_type"							        "FIELD_FLOAT"
 				"illusion_duration"					        "45.0"
+				"LinkedSpecialBonus"	"special_bonus_unique_terrorblade_5"
 			}
 			"02"
 			{
@@ -7010,7 +7109,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_multiplier"			"450 600 750"
+				"crit_multiplier"			"350 450 550"
 				"LinkedSpecialBonus"		"special_bonus_unique_tusk"
 			}
 			"02"

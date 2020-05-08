@@ -8193,18 +8193,17 @@
 "npc_dota_shadow_shaman_ward_1"
 {
 	"UnitLabel"                    "pharaoh_ok"
+	"AttackRate"				"1.35"
 }
 "npc_dota_shadow_shaman_ward_2"
 {
 	"UnitLabel"                    "pharaoh_ok"
+	"AttackRate"				"1.2"
 }
 "npc_dota_shadow_shaman_ward_3"
 {
 	"UnitLabel"                    "pharaoh_ok"
-}
-"npc_dota_shadow_shaman_ward_4"
-{
-	"UnitLabel"                    "pharaoh_ok"
+	"AttackRate"				"1.05"
 }
 "npc_dota_unit_undying_zombie"
 {

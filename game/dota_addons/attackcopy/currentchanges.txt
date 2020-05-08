@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Boss behaviors should be slightly more reliable.
 Missing player gold and exp reduction nerfed to 12% from 8%. One player penalty from 50% to 60%.
 
@@ -10,11 +11,26 @@ Pocket barracks can now be cast to set the waypoint to where your hero is standi
 Ranged pocket barracks added. Upgrades from pocket barracks, does what you expect.
 
 Undying flesh golem strength bonus lowered, dps increased.
+=======
+Buyback cooldown is now 90 seconds.
+
+Various hero talents fixed.
+Dark seer no longer copies pocket barracks.
+Lion mana drain slightly nerfed.
+Oracle talents changed, purifying flames reworked scaling.
+Phantom assassin movement speed, turn rate, and intelligence gain increased. Coup de grace fixed.
+Terrorblade conjure image fixed.
+>>>>>>> Stashed changes
 TO-DO
 
 
 Give PL boss vengeful spirit boss swap.
+<<<<<<< Updated upstream
 Remove either CM or terrorblade and replace with spirit breaker boss.
 	
 CURRENTLY IMPLEMENTING SPIRIT BREAKER BOSS
+=======
+
+
+>>>>>>> Stashed changes
 CURRENTLY IMPLEMENTING DIFFICULTY PANORAMA SCRIPTS

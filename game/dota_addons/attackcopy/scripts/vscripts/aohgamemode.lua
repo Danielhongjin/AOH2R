@@ -118,6 +118,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride(true)
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible(false)
 	GameRules:GetGameModeEntity():SetCustomBuybackCostEnabled(true)
+	GameRules:GetGameModeEntity():SetCustomBuybackCooldownEnabled(true)
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(900)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,15)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.2)
@@ -282,6 +283,7 @@ function AOHGameMode:InitVariables()
 				self._nPlayerHelp:SetOwner(hero)
 				CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 				self._playerNumber = self._playerNumber + 1
+				PlayerResource:SetCustomBuybackCooldown(playerID, 90)
 			end
 		end
 	end

@@ -508,17 +508,17 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_agility"			"40 75"
+            "bonus_agility"			"40 80"
         }
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_damage"			"40 75"
+            "bonus_damage"			"40 80"
         }
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_evasion"			"20 30"
+            "bonus_evasion"			"35 40"
         }
         "04"
         {
@@ -1538,7 +1538,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"consumed_bonus"	"70"
+			"consumed_bonus"	"80"
 		}
 	}
 }
@@ -2228,7 +2228,7 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_movement_speed"	"45"
+            "bonus_movement_speed"	"130"
         }
     }
 }
@@ -3285,7 +3285,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_int" 	        "35"
+            "bonus_int" 	        "40"
         }
         "03"
         {
@@ -3296,7 +3296,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-            "cost_constant" 	        "170"
+            "cost_constant" 	        "150"
 		}
     }
 }
@@ -6721,17 +6721,17 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_agility"			"40 75"
+            "bonus_agility"			"40 80"
         }
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_damage"			"40 75"
+            "bonus_damage"			"40 80"
         }
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_evasion"			"20 30"
+            "bonus_evasion"			"35 40"
         }
         "04"
         {
@@ -6930,13 +6930,13 @@
 		"04"
         {
             "var_type"				"FIELD_INTEGER"
-            "damage_ratio"			        "65"
+            "damage_ratio"			        "60"
 			"CalculateSpellDamageTooltip"	"0"
         }
 		"05"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_attack_speed"			        "25"
+            "bonus_attack_speed"			        "30"
         }
     }
 }
@@ -9330,7 +9330,7 @@
 	"BaseClass"						"item_datadriven"
     "Model"							"models/props_gameplay/recipe.vmdl"
     "AbilityTextureName"			"item_recipe"
-	"ItemCost"						"1200"	
+	"ItemCost"						"600"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_echo_wand"

@@ -501,7 +501,7 @@
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCooldown"				"17.0"
-	"AbilityDuration"				"14"
+	"AbilityDuration"				"24"
 	// Cost
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityManaCost"				"0"
@@ -2425,7 +2425,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityTextureName" 			"elder_titan_echo_stomp"				
 	"AbilityCooldown"				"9"
-	"AbilityCastRange"				"1300"
+	"AbilityCastRange"				"1350"
 	"AbilityManaCost"				"0"
 	"IsCastableWhileHidden" "1"
 	"AbilitySpecial"
@@ -2453,7 +2453,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"line_length"			"1300"
+			"line_length"			"1350"
 		}
 	}
 	"OnSpellStart"
@@ -2489,7 +2489,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"movement_speed"		"1700"
+			"movement_speed"		"1750"
 		}
 		"02"
 		{
@@ -2536,12 +2536,12 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"creep_damage"				"300"
+			"creep_damage"				"330"
 		}
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"hero_damage"				"500"
+			"hero_damage"				"550"
 		}
 		"04"
 		{

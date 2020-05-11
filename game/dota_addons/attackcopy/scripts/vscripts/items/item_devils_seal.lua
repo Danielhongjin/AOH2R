@@ -95,26 +95,26 @@ if IsServer() then
 			self.parent:SetHealth(666)
 		end
 		if not self.parent:IsIllusion() then
-        local units = FindUnitsInRadius(self.parent:GetTeam(), 
-			self.parent:GetAbsOrigin(), 
-			nil, 
-			self.radius,
-			DOTA_UNIT_TARGET_TEAM_ENEMY, 
-			DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 
-			DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
-			0, 
-			false)
-		if #units == 0 or self.parent:IsOutOfGame() then
-			self.counter = self.counter + 0.25
-			if self.counter >= self.safety then
-				self:Destroy()
+			local units = FindUnitsInRadius(self.parent:GetTeam(), 
+				self.parent:GetAbsOrigin(), 
+				nil, 
+				self.radius,
+				DOTA_UNIT_TARGET_TEAM_ENEMY, 
+				DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 
+				DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+				0, 
+				false)
+			if #units == 0 or self.parent:IsOutOfGame() then
+				self.counter = self.counter + 0.25
+				if self.counter >= self.safety then
+					self:Destroy()
+				end
+			else
+				self.counter = self.counter - 0.25
+				if self.counter < 0 then
+					self.counter = 0
+				end
 			end
-		else
-			self.counter = 0
-		end
-		if not self.parent:IsAlive() then
-			self.parent:ForceKill(true)
-		end
 		end
     end
 

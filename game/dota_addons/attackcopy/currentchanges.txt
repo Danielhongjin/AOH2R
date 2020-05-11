@@ -1,36 +1,27 @@
-<<<<<<< Updated upstream
-Boss behaviors should be slightly more reliable.
-Missing player gold and exp reduction nerfed to 12% from 8%. One player penalty from 50% to 60%.
+Particle effect removed from hard mode enemies to reduce crashes.
+Prevented spell amp per int from dispelling on death.
 
-Hellbear boss replaced by spirit breaker boss. Keep in mind that charge does not get blocked by spell immunity.
+Spirit breaker boss wisps slightly more threatening, longer range on charge of darkness.
 
-Devils seal charge time from 1 to 1.35 seconds.
-Item healing amplification nerfed.
-Sanguine now has just one level, grants diminishing returns for multiple sanguines.
-Pocket barracks can now be cast to set the waypoint to where your hero is standing. Will no longer follow your hero around like zombies.
-Ranged pocket barracks added. Upgrades from pocket barracks, does what you expect.
+Death prophet nerfed.
+Sniper take aim now quintuples the aim bonus, if anyone even uses that ability.
+Wraith king doesn't spawn a ridiculous amount of skeletons anymore.
 
-Undying flesh golem strength bonus lowered, dps increased.
-=======
-Buyback cooldown is now 90 seconds.
-
-Various hero talents fixed.
-Dark seer no longer copies pocket barracks.
-Lion mana drain slightly nerfed.
-Oracle talents changed, purifying flames reworked scaling.
-Phantom assassin movement speed, turn rate, and intelligence gain increased. Coup de grace fixed.
-Terrorblade conjure image fixed.
->>>>>>> Stashed changes
+Variety of items buffed
+Arcane staff manacost ratios improved.
+Battlefury cleave from 100% to 85%.
+Conduit cooldown increased.
+Dagon stats improved.
+Mimic mace can no longer mimic helm of the dominator.
+Shivas guard cooldown from 30 to 14 seconds, intelligence slightly buffed.
+Unhallowed icon will properly dispel on ember spirit, albeit at a slower rate.
+Willbreaker duration increased from 0.5 to 0.55 and cooldown reduced to 5.
 TO-DO
 
 
-Give PL boss vengeful spirit boss swap.
-<<<<<<< Updated upstream
+
 Remove either CM or terrorblade and replace with spirit breaker boss.
-	
-CURRENTLY IMPLEMENTING SPIRIT BREAKER BOSS
-=======
 
 
->>>>>>> Stashed changes
 CURRENTLY IMPLEMENTING DIFFICULTY PANORAMA SCRIPTS
+CURRENTLY REWORKING DEVIL SEAL LOGIC

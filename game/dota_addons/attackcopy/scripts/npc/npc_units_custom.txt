@@ -8277,24 +8277,28 @@
 {
 	"AttackDamageMin"			"25"
 	"AttackDamageMax"			"25"
+	"AttackRate"				"1.55"
 	"UnitLabel"                    "pharaoh_ok"	
 }
 "npc_dota_lone_druid_bear2"
 {
 	"AttackDamageMin"			"45"
 	"AttackDamageMax"			"45"	
+	"AttackRate"				"1.45"
 	"UnitLabel"                    "pharaoh_ok"
 }
 "npc_dota_lone_druid_bear3"
 {
 	"AttackDamageMin"			"65"
-	"AttackDamageMax"			"65"	
+	"AttackDamageMax"			"65"
+	"AttackRate"				"1.35"	
 	"UnitLabel"                    "pharaoh_ok"
 }
 "npc_dota_lone_druid_bear4"
 {
 	"AttackDamageMin"			"85"
 	"AttackDamageMax"			"85"	
+	"AttackRate"				"1.25"
 	"UnitLabel"                    "pharaoh_ok"
 }
 "npc_dota_furion_treant_1"

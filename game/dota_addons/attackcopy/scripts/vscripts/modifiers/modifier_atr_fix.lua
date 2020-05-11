@@ -7,7 +7,9 @@ modifier_atr_fix = class({})
 function modifier_atr_fix:IsHidden()
     return true
 end
-
+function modifier_atr_fix:RemoveOnDeath()
+    return false
+end
 
 function modifier_atr_fix:IsPurgable()
     return false

@@ -1603,7 +1603,7 @@
 "DOTA_Tooltip_modifier_bloodseeker_custom_rampage"                              "Rampage"
 "DOTA_Tooltip_modifier_bloodseeker_custom_rampage_Description"                  "Damage increased, health sealed."
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada"									"<font color='#f2da5b'>Jinada</font>"
-"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Description"						"Bounty Hunter plans his next hit, stealing gold with it. Deals damage based on bounty hunter's current gold."
+"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Description"						"Bounty Hunter plans his next hit, stealing gold with it. Deals damage based on your current gold."
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Lore"								"Whispering an enchantment he learned from Soruq to his faithful blades, Gondar targets vital tendons and joints to disable his opponents."
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Note0"						"Gold gain is half effective on illusions."
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_gold_bonus"						"GOLD:"
@@ -2147,6 +2147,8 @@
 "DOTA_Tooltip_ability_slark_custom_pounce_cast_range_tooltip"				"DISTANCE:"
 "DOTA_Tooltip_ability_slark_custom_pounce_attack_count"						"ATTACK COUNT:"
 
+"DOTA_Tooltip_ability_sniper_take_aim_Description"								"Extends the attack range of Sniper's rifle. Can be activated to quintuple the attack range bonus for 1 attack. Goes on cooldown after the attack is used."
+		
 "DOTA_Tooltip_Ability_sniper_custom_rifle"							"<font color='#f2da5b'>Spray And Pray</font>"
 "DOTA_Tooltip_Ability_sniper_custom_rifle_Description"				"Sniper shoots wildly at enemies, attacking faster but losing range and damage. While active sniper loses %mana_regen_penalty%%% of his mana per second and every attack drains mana."
 "DOTA_Tooltip_Ability_sniper_custom_rifle_base_attack_time"		    "BASE ATTACK TIME:"
@@ -2371,7 +2373,7 @@
 "DOTA_Tooltip_Ability_item_arcane_staff"                            "Arcane Staff"
 "DOTA_Tooltip_Ability_item_arcane_staff_Description"			    "<h1>Passive: Arcane Crit</h1> Every instance of magical or pure damage that you cause deals %crit_damage_mult%%% damage, but spends mana equal to half of the added damage. Intelligence reduces mana cost.\n<font color='#F2A93E'>Arcane Crit does not stack.</font>"
 "DOTA_Tooltip_Ability_item_arcane_staff_Lore"				        "A staff made of permafrost, impossible to hold without gloves."
-"DOTA_Tooltip_Ability_item_arcane_staff_Note0"						"Mana cost is damage * 0.5 * (%cost_constant% / (%cost_constant% + intelligence))."
+"DOTA_Tooltip_Ability_item_arcane_staff_Note0"						"Mana cost is damage * 0.4 * (%cost_constant% / (%cost_constant% + intelligence))."
 "DOTA_Tooltip_Ability_item_arcane_staff_Note1"						"Will not fire if you have less than 150 mana."
 "DOTA_Tooltip_Ability_item_arcane_staff_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_arcane_staff_bonus_int"		            "+$int"

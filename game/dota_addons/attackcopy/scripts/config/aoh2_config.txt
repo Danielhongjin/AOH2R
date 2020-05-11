@@ -895,7 +895,7 @@
 			}
 		}
 
-		"34" // Hellbear
+		"34" // SpiritBreaker
 		{
 			"Title"						"Spirits"
 			"MaxGold"					"11250"

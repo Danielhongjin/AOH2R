@@ -47,7 +47,7 @@ if IsServer() then
         local usedAbilityName = usedAbility:GetName()
         local usedAbilityCaster = usedAbility:GetCaster()
 
-        if usedAbilityCaster:GetTeamNumber() == parent:GetTeamNumber() or usedAbility.isReflection then
+        if usedAbilityCaster:GetTeamNumber() == parent:GetTeamNumber() or usedAbility.isReflection or usedAbility:GetChannelTime() > 0 then
             return
         end
 

@@ -133,6 +133,7 @@ if IsServer() then
 		item_pocket_tower = true,
 		item_pocket_barracks = true,
 		item_echo_wand = true,
+		item_helm_of_the_dominator = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

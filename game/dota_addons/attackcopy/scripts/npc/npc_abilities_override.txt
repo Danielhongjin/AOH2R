@@ -227,7 +227,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"value"				"0.25"
+				"value"				"0.18"
 			}
 		}
 	}
@@ -1540,6 +1540,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_wraith_king_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"1"
+			}
+		}
+	}
 	"abaddon_death_coil"
 	{
 		"AbilitySpecial"
@@ -2613,7 +2624,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_pct"			"0.3 0.36 0.42 0.48"
+				"damage_pct"			"0.22 0.26 0.3 0.34"
 				"LinkedSpecialBonus"	"special_bonus_unique_death_prophet_3"
 			}
 		}
@@ -6231,13 +6242,13 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"vampiric_aura"			"6 8 10 12"
+				"vampiric_aura"			"7 8 9 10"
 				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"			"8 16 24 32"
+				"damage"			"10 20 30 40"
 			}
 		}
 	}
@@ -6409,6 +6420,17 @@
 	"sniper_shrapnel"
 	{
 		"AbilityChargeRestoreTime"		"35"
+	}
+	"sniper_take_aim"
+	{
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"									"FIELD_INTEGER"
+				"active_attack_range_multiplier"			"5"
+			}
+		}
 	}
 	"sniper_headshot"
 	{

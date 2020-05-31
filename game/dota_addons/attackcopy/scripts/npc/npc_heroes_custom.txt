@@ -237,6 +237,7 @@
 "npc_dota_hero_keeper_of_the_light"
 {
     "Ability12"		"special_bonus_hp_regen_20"
+	"Ability16"		"special_bonus_intelligence_30"
 }
 "npc_dota_hero_kunkka"
 {

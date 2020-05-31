@@ -1,27 +1,16 @@
-Particle effect removed from hard mode enemies to reduce crashes.
-Prevented spell amp per int from dispelling on death.
+Hard mode time between rounds increased from 2 to 4 seconds to improve stability.
 
-Spirit breaker boss wisps slightly more threatening, longer range on charge of darkness.
+Spirit breaker boss slightly stronger.
 
-Death prophet nerfed.
-Sniper take aim now quintuples the aim bonus, if anyone even uses that ability.
-Wraith king doesn't spawn a ridiculous amount of skeletons anymore.
+New item Ether Hammer - deals massive delayed damage in an AOE, but deals less damage to enemies who were in the aoe to begin with. Upgrades from meteor hammer.
 
-Variety of items buffed
-Arcane staff manacost ratios improved.
-Battlefury cleave from 100% to 85%.
-Conduit cooldown increased.
-Dagon stats improved.
-Mimic mace can no longer mimic helm of the dominator.
-Shivas guard cooldown from 30 to 14 seconds, intelligence slightly buffed.
-Unhallowed icon will properly dispel on ember spirit, albeit at a slower rate.
-Willbreaker duration increased from 0.5 to 0.55 and cooldown reduced to 5.
+Bounty hunter jinada now half as effective on illusions. Ratio reduced from 13% to 9%.
+Dark seer ult no longer copies pocket tower. 
+Keeper of the Light will-o-wisp now only beneifts 50% from refresher. Cooldown increased from 75 to 80 and on time reduced from 2 to 1.75 seconds. 
+Phoenix sun ray nerfed percent damage and base damage increased, cooldown lowered and can move you very quickly now. Base heal increased. 
+Phoenix supernova now only benefits 50% from refresher.
 TO-DO
 
 
 
-Remove either CM or terrorblade and replace with spirit breaker boss.
-
-
 CURRENTLY IMPLEMENTING DIFFICULTY PANORAMA SCRIPTS
-CURRENTLY REWORKING DEVIL SEAL LOGIC

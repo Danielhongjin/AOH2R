@@ -9,10 +9,9 @@ function item_conduit:OnSpellStart()
 	local conduit = CreateUnitByName("npc_conduit", origin, true, target, nil, target:GetTeamNumber())
 	conduit:SetOwner(target)
 	local newhealth = math.floor(target:GetHealth() / (100 / self:GetSpecialValueFor("shared_life")))
-	
+
     conduit:AddNewModifier(target, self, "modifier_item_conduit", {
         duration = self:GetSpecialValueFor("duration")
-	
     })
 	local particle = ParticleManager:CreateParticle("particles/econ/items/sven/sven_warcry_ti5/sven_warcry_cast_arc_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, conduit) 
 	EmitSoundOn("Hero_Zuus.GodsWrath.Target", conduit)

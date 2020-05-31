@@ -1605,7 +1605,7 @@
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada"									"<font color='#f2da5b'>Jinada</font>"
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Description"						"Bounty Hunter plans his next hit, stealing gold with it. Deals damage based on your current gold."
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Lore"								"Whispering an enchantment he learned from Soruq to his faithful blades, Gondar targets vital tendons and joints to disable his opponents."
-"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Note0"						"Gold gain is half effective on illusions."
+"DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Note0"						"Gold gain and damage is half effective on illusions."
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_gold_bonus"						"GOLD:"
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_gold_damage_pct"						"%GOLD TO DAMAGE:"
 
@@ -1805,6 +1805,7 @@
 "DOTA_Tooltip_modifier_forge_spirit_custom_armorbreak_debuff"                   "Melting Strike"
 "DOTA_Tooltip_modifier_forge_spirit_custom_armorbreak_debuff_Description"       "Melts away the armor of heroes hit by the spirit's attack. Each successive hit increases the amount of armor melted."
 
+"DOTA_Tooltip_ability_keeper_of_the_light_will_o_wisp_Note0"				"Refresher is 50% effective on this ability."
 
 "DOTA_Tooltip_ability_legion_commander_custom_duel"                         "<font color='#f2da5b'>Duel</font>"
 "DOTA_Tooltip_ability_legion_commander_custom_duel_Description"			    "Permanently increases your damage on cast and attacks all surrounding enemies."
@@ -2017,6 +2018,8 @@
 
 "DOTA_Tooltip_ability_phantom_lancer_doppelwalk_Description"					"Phantom Lancer briefly vanishes from the battlefield. After %delay% second, Phantom Lancer and any of his nearby illusions reappear at a random position within the targeted location, along with two additional doppelgangers. Extends duration of all illusions. The two added doppelgangers have different properties: one takes normal damage and deals none, while the other takes 600%% damage and deals 120%% damage.\n\nDISPEL TYPE: Basic Dispel"
 
+"DOTA_Tooltip_ability_phoenix_sun_ray_toggle_move_Description"			"Toggles incredibly fast forward movement during Sun Ray firing."
+"DOTA_Tooltip_ability_phoenix_supernova_Note0"				"Refresher is 50% effective on this ability."
 "DOTA_Tooltip_ability_pudge_custom_reincarnation"								"<font color='#f2da5b'>Bound Flesh</font>"
 "DOTA_Tooltip_ability_pudge_custom_reincarnation_Description"					"Pudge reforms himself upon death after a long delay."
 "DOTA_Tooltip_ability_pudge_custom_reincarnation_Lore"							"The Butcher gives new meaning to the words 'meat shield'."
@@ -2453,6 +2456,19 @@
 "DOTA_Tooltip_Ability_item_demon_talon_bonus_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_demon_talon_bonus_attack_speed"		    "+$attack"
 "DOTA_Tooltip_Ability_item_demon_talon_bonus_regen"					"+$hp_regen"
+
+"DOTA_Tooltip_Ability_item_recipe_diff_doom"               "Recipe: Ether Hammer"
+"DOTA_Tooltip_Ability_item_diff_doom"					    "Ether Hammer"
+"DOTA_Tooltip_ability_item_diff_doom_Description"			"<h1>Active: Differential Doom</h1> Marks all enemies in a radius. After %delay% seconds, deals %damage% pure damage + %damage_int%%% of your hero's intelligence to enemies in %area_of_effect% radius. Enemies who are marked only take %damage_marker%%% damage."
+"DOTA_Tooltip_ability_item_diff_doom_Lore"					"Turns mana inside out."
+"DOTA_Tooltip_ability_item_diff_doom_bonus_strength"				"+$str"
+"DOTA_Tooltip_ability_item_diff_doom_bonus_intellect"				"+$int"
+"DOTA_Tooltip_ability_item_diff_doom_bonus_health_regen"			"+$hp_regen"
+"DOTA_Tooltip_ability_item_diff_doom_bonus_mana_regen"				"+$mana_regen"
+
+"DOTA_Tooltip_modifier_diff_doom_marker"					"Marked"
+"DOTA_Tooltip_modifier_diff_doom_marker_Description"		"This unit will take less damage from Ether Hammer."
+
 "DOTA_Tooltip_Ability_item_broken_bow"                              "Broken Bow"
 "DOTA_Tooltip_Ability_item_force_blade"                            "Spell Blade"
 "DOTA_Tooltip_Ability_item_force_blade_Description"			    "<h1>Passive: Force Multiplier</h1> Every autoattack deals an extra %magic_percent%%  magic damage. "

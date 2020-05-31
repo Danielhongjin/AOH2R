@@ -8212,7 +8212,7 @@
         "02"
         {
             "var_type"				"FIELD_FLOAT"
-            "gold_damage_pct" 			"13"
+            "gold_damage_pct" 			"9"
 			"CalculateSpellDamageTooltip"	"0"
         }
     }

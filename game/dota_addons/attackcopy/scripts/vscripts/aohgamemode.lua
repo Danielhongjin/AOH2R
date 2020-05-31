@@ -525,7 +525,7 @@ function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
 		self._hardMode = true
 		Notifications:TopToAll({text="Hard mode has been activated.", style={color="red"}, duration=5})
-		self._flPrepTimeBetweenRounds = 2
+		self._flPrepTimeBetweenRounds = 4
 	end
 	if keys.text == "-renew" then
 		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(keys.playerid), "delete", {})

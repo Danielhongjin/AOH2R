@@ -30,29 +30,23 @@ function refresh_items(caster, exclude_items)
 end
 function end_ability_cooldown_mult(ability, exclude_table, mult)
     if ability then
-        if not exclude_table[ability:GetAbilityName()] then
-			local cooldown = ability:GetCooldownTimeRemaining()
-            if cooldown > 0 then
-				ability:EndCooldown()
-                ability:StartCooldown(cooldown * mult)
-            end
-        else 
-			local cooldown = ability:GetCooldownTimeRemaining()
-            if cooldown > 0 then
-				ability:EndCooldown()
-                ability:StartCooldown(cooldown * (mult * 1.5))
-            end
-		end
+
     end
 end
-function refresh_abilities_mult(caster, exclude_abilities, mult)
+function refresh_abilities_mult(caster, exclude_table, mult)
     for i = 0, caster:GetAbilityCount() do
         local ability = caster:GetAbilityByIndex(i)
 		if ability then
-			if ability:GetAbilityType() == 1 then
-				end_ability_cooldown_mult(ability, exclude_abilities, mult)
+			local cooldown = ability:GetCooldownTimeRemaining()
+			if not exclude_table[ability:GetAbilityName()] then
+				if cooldown > 0 then
+					ability:EndCooldown()
+				end
 			else 
-				end_ability_cooldown(ability, exclude_abilities)
+				if cooldown > 0 then
+					ability:EndCooldown()
+					ability:StartCooldown(cooldown * (mult))
+				end
 			end
 		end
     end

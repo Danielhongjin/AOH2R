@@ -3656,7 +3656,7 @@
 		"04"
         {
             "var_type"				"FIELD_FLOAT"
-            "ultimate_percentage"	        "0"
+            "ultimate_percentage"	        "50"
         }	
     }
     "Modifiers"
@@ -3882,6 +3882,81 @@
             "corruption_duration"	"5.0"
         }
     }
+}
+"item_recipe_diff_doom"
+{
+    "BaseClass"						"item_datadriven"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_diff_doom"
+    "ItemRequirements"
+    {
+        "01"						"item_meteor_hammer;item_reaver"
+    }
+}
+"item_diff_doom"
+{
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/diff_doom.lua"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "AbilityTextureName"		    "ether_hammer"
+    "ItemQuality"					"epic"
+    "ItemAliases"					"ether hammer"
+    "AbilityCastRange"				"2000"
+	"AbilityCastPoint"				"0.05"
+	"AbilityCooldown"				"6"
+	"AbilityManaCost"				"200"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"delay"					"3.5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"area_of_effect"		"350"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"damage"				"900"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_marker"				"30"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_int"				"500"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"40"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"		"12"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_health_regen"		"8.0"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_mana_regen"		"4.0"
+		}
+	}
 }
 "item_recipe_dragon_head"
 {

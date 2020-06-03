@@ -89,7 +89,7 @@ end
 function modifier_item_plain_ring_perma_invincibility:OnDestroy()
 local parent = self:GetParent()
 	ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
-	parent:Heal((parent:GetMaxHealth() * self.min_health * 0.01), parent)
+	parent:Heal((parent:GetMaxHealth() * self.min_health * 0.01), self:GetAbility())
 end
 end
 function modifier_item_plain_ring_perma_invincibility:GetTexture()

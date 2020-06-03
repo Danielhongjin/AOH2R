@@ -27,6 +27,10 @@ require("lib/notifications")
 LinkLuaModifier("modifier_playerhelp_revive", "modifiers/modifier_playerhelp_revive.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_boss", "modifiers/modifier_boss.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_hard_mode_boss", "modifiers/modifier_hard_mode_boss.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_hard_mode_player", "modifiers/modifier_hard_mode_player.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_easy_mode_boss", "modifiers/modifier_easy_mode_boss.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bonus_primary_controller", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bonus_primary_token", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
 end
@@ -35,6 +39,7 @@ end
 
 function AOHGameMode:InitGameMode()
 	self._nRoundNumber = 1
+	self._negativeRounds = 0
 	self._currentRound = nil
 	self._entAncient = Entities:FindByName(nil, "dota_goodguys_fort")
 	if not self._entAncient then
@@ -47,7 +52,6 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.numPhilo[2] = 0
 	AOHGameMode.numPhilo[3] = 0
 	AOHGameMode.numPhilo[4] = 0
-	self._hardMode = false
 	AOHGameMode.isArcane = {}
 	AOHGameMode.isArcane[0] = false
 	AOHGameMode.isArcane[1] = false
@@ -90,12 +94,19 @@ function AOHGameMode:InitGameMode()
 	self._puredamage[2] = 1
 	self._puredamage[3] = 1
 	self._puredamage[4] = 1
+	AOHGameMode.difficultycount = {}
+	AOHGameMode.difficultycount[0] = 1
+	AOHGameMode.difficultycount[1] = 1
+	AOHGameMode.difficultycount[2] = 1
+	AOHGameMode.difficultycount[3] = 1
+	AOHGameMode.difficultycount[4] = 1
 	self._dpstick = 0
 	self._playerNumber = 0
 	self._goldRatio = 1
 	self._expRatio = 1
 	self._ischeckingdefeat = false
 	self._defeatcounter = 5
+	self._difficulty = 0
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
 	Convars:SetInt("dota_max_physical_items_purchase_limit", 35)
@@ -106,10 +117,10 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetHeroRespawnEnabled(false)
 	GameRules:SetUseUniversalShopMode(true)
 	GameRules:SetHeroSelectionTime(40.0)
-	GameRules:SetPreGameTime(20.0)
+	GameRules:SetPreGameTime(6.0)
 	GameRules:SetStrategyTime(10.0)
 	GameRules:SetPostGameTime(30.0)
-	GameRules:SetTreeRegrowTime(75.0)
+	GameRules:SetTreeRegrowTime(70.0)	
 	GameRules:SetHeroMinimapIconScale(1.2)
 	GameRules:SetCreepMinimapIconScale(1.2)
 	GameRules:SetRuneMinimapIconScale(1.2)
@@ -129,6 +140,7 @@ function AOHGameMode:InitGameMode()
 	ListenToGameEvent("dota_item_picked_up", Dynamic_Wrap(AOHGameMode, 'OnItemPickedUp'), self)
 	ListenToGameEvent("dota_holdout_revive_complete", Dynamic_Wrap(AOHGameMode, 'OnHoldoutReviveComplete'), self)
 	ListenToGameEvent("player_chat", Dynamic_Wrap(AOHGameMode, "OnPlayerChat"), self)
+	CustomGameEventManager:RegisterListener("difficulty_clicked", Dynamic_Wrap(AOHGameMode, "DifficultyClicked"))
 	GameRules:GetGameModeEntity():SetThink("OnThink", self, 0.75)
 	GameRules:GetGameModeEntity():SetDamageFilter(Dynamic_Wrap(AOHGameMode, 'OnDamageDealt'), self)
 end
@@ -236,6 +248,11 @@ function AOHGameMode:OnItemPickedUp(keys)
 	end
 end
 
+function AOHGameMode:DifficultyClicked(keys)
+	AOHGameMode.difficultycount[keys.id] = keys.choice
+	CustomGameEventManager:Send_ServerToAllClients("vote_update", {id = keys.id, difficulty = AOHGameMode.difficultycount[keys.id]})
+end
+
 function AOHGameMode:OnHoldoutReviveComplete(keys)
 	local castingHero = EntIndexToHScript(keys.caster)
 	if castingHero then
@@ -267,6 +284,39 @@ function AOHGameMode:ChooseRandomSpawnInfo()
 	return self._vRandomSpawnsList[RandomInt(1, #self._vRandomSpawnsList)]
 end
 
+function AOHGameMode:EndVote()
+	local difficultyTotal = 0
+	for playerID = 0, 4 do
+		if PlayerResource:IsValidPlayerID(playerID) then
+			if PlayerResource:HasSelectedHero(playerID) then
+				difficultyTotal = difficultyTotal + AOHGameMode.difficultycount[playerID]
+				CustomGameEventManager:Send_ServerToAllClients("vote_end", {id = playerID})
+			end
+		end
+	end
+	self._difficulty = math.floor((difficultyTotal / self._playerNumber) + 0.5)
+	if self._difficulty == 0 then
+		Notifications:TopToAll({text="Easy", style={color="green", ["font-size"]="130px"}, duration=5})
+		self._negativeRounds = 2
+	elseif self._difficulty == 1 then
+		Notifications:TopToAll({text="Normal", style={color="white", ["font-size"]="130px"}, duration=5})
+	elseif self._difficulty == 2 then
+		Notifications:TopToAll({text="Hard", style={color="red", ["font-size"]="130px"}, duration=5})
+		self._flPrepTimeBetweenRounds = 4
+		
+		for playerID = 0, 4 do
+		if PlayerResource:IsValidPlayerID(playerID) then
+			if PlayerResource:HasSelectedHero(playerID) then
+				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
+				hero:AddNewModifier(hero, nil, "modifier_bonus_primary_controller", {})
+				hero:AddNewModifier(hero, nil, "modifier_bonus_primary_token", {
+					bonus = 12})
+				hero:AddNewModifier(hero, nil, "modifier_hard_mode_player", {})
+			end
+		end
+	end
+	end
+end
 -- Initiates variables that need to be set to values
 function AOHGameMode:InitVariables() 
 	for playerID = 0, 4 do
@@ -281,6 +331,7 @@ function AOHGameMode:InitVariables()
 				self._nPlayerHelp:SetControllableByPlayer(hero:GetPlayerID(), true)
 				self._nPlayerHelp:SetTeam(hero:GetTeamNumber())
 				self._nPlayerHelp:SetOwner(hero)
+				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "vote_begin", {id = playerID})
 				CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 				self._playerNumber = self._playerNumber + 1
 				PlayerResource:SetCustomBuybackCooldown(playerID, 90)
@@ -288,6 +339,11 @@ function AOHGameMode:InitVariables()
 		end
 	end
 	for playerID = 0, 4 do
+		if PlayerResource:IsValidPlayerID(playerID) then
+			if PlayerResource:HasSelectedHero(playerID) then
+				CustomGameEventManager:Send_ServerToAllClients("vote_name", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
+			end
+		end
 		for var = 0, 2 do
 			self.talonCount[playerID][var] = 0
 		end
@@ -304,6 +360,12 @@ function AOHGameMode:InitVariables()
 		self._nPlayerHelp:SetOwner(playerHero)
 		Notifications:TopToAll({text="It's dangerous to go alone! Take this.", duration=5})
 	end
+	Timers:CreateTimer(
+		10,
+		function()
+			self:EndVote()
+		end
+	)
 end
 
 -- When game state changes set state in script
@@ -321,7 +383,7 @@ function AOHGameMode:OnGameRulesStateChange()
 		self:_RevealShop()
 	elseif nNewState == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
 		GameRules:GetGameModeEntity():SetThink("OnUpdateThink", self, 2)
-		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
+		self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds + 8
 		self:InitVariables() 
 	elseif nNewState == DOTA_GAMERULES_STATE_POST_GAME then
 		GameRules:SetSafeToLeave(true)
@@ -384,19 +446,19 @@ function AOHGameMode:OnThink()
 			if self._currentRound:IsFinished() then
 				self._currentRound:End()
 				self._currentRound = nil
-				if not self._hardMode then
+				if self._difficulty ~= 2 then
 					refresh_players()
 				end
 				if self._nRoundNumber % 6 == 0 then
 					self:DistributeChests()
 				end
 				self._nRoundNumber = self._nRoundNumber + 1
-				if self._nRoundNumber <= #self._vRounds then
+				if self._nRoundNumber <= #self._vRounds - self._negativeRounds then
 					self._flPrepTimeEnd = GameRules:GetGameTime() + self._flPrepTimeBetweenRounds
 				end
 			end
 		end
-		if self._nRoundNumber > #self._vRounds then
+		if self._nRoundNumber > #self._vRounds - self._negativeRounds then
 			GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 			return false
 		end
@@ -478,8 +540,10 @@ function AOHGameMode:OnEntitySpawned(event)
 
 	if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 		unit:AddNewModifier(unit, nil, "modifier_boss", {})
-		if self._hardMode then
+		if self._difficulty == 2 then
 			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
+		elseif self._difficulty == 0 then
+			unit:AddNewModifier(unit, nil, "modifier_easy_mode_boss", {})
 		end
 	end
 end
@@ -522,11 +586,6 @@ function AOHGameMode:OnPlayerChat(keys)
 		self._magdamage[keys.playerid] = 1
 		self._puredamage[keys.playerid] = 1
 	end
-	if keys.text == "-hard" and not self._hardMode and keys.playerid == 0 and GameRules:State_Get() == DOTA_GAMERULES_STATE_PRE_GAME then
-		self._hardMode = true
-		Notifications:TopToAll({text="Hard mode has been activated.", style={color="red"}, duration=5})
-		self._flPrepTimeBetweenRounds = 4
-	end
 	if keys.text == "-renew" then
 		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(keys.playerid), "delete", {})
 		for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -536,3 +595,4 @@ function AOHGameMode:OnPlayerChat(keys)
 		end
 	end
 end
+

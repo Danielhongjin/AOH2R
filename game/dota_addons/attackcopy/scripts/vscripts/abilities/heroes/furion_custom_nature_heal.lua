@@ -84,7 +84,7 @@ if IsServer() then
             caster:ModifyHealth(caster:GetHealth() - health_loss, self, false, 0)
 
             local heal = self.tick_base_heal + health_loss
-            self.target:Heal(heal, caster)
+            self.target:Heal(heal, self)
         end
 
 

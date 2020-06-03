@@ -1,6 +1,5 @@
-var players = {}; 
 var panel;
-var length = -1;
+var playerID;
 function AddDebugDifficulty(color)
 {
 	panel = $.CreatePanel('Panel', $('#Difficulties'), '');
@@ -8,29 +7,110 @@ function AddDebugDifficulty(color)
 	$.Msg("hello")
 }  
 function InitDifficulty(name)
-{
-	panel = $.CreatePanel('Panel', $('#Difficulties'), '');
-	panel.BLoadLayoutSnippet("Difficulty");
-	players[name.id]= panel;
-	length = length + 1;
+{   
+    $.Msg("hello initDifficulty");
+    playerID = name.id;
+    panel = $.CreatePanel('Panel', $('#Difficulties'), '');
+    panel.BLoadLayoutSnippet("Difficulty");
+    $('#Normal').style.backgroundColor = '#e03e2e';
+    $('#Easy').SetPanelEvent('onactivate', () => {
+        GameEvents.SendCustomGameEventToServer('difficulty_clicked', {
+            id: playerID,
+            choice: 0,
+        });
+        $('#Easy').style.backgroundColor = '#e03e2e';
+        $('#Normal').style.backgroundColor = '#000000';
+        $('#Hard').style.backgroundColor = '#000000';
+    });
+    $('#Normal').SetPanelEvent('onactivate', () => {
+        GameEvents.SendCustomGameEventToServer('difficulty_clicked', {
+            id: playerID,
+            choice: 1,
+        });
+        $('#Easy').style.backgroundColor = '#000000';
+        $('#Normal').style.backgroundColor = '#e03e2e';
+        $('#Hard').style.backgroundColor = '#000000';
+    });
+    $('#Hard').SetPanelEvent('onactivate', () => {
+        GameEvents.SendCustomGameEventToServer('difficulty_clicked', {
+            id: playerID,
+            choice: 2,
+        });
+        $('#Easy').style.backgroundColor = '#000000';
+        $('#Normal').style.backgroundColor = '#000000';
+        $('#Hard').style.backgroundColor = '#e03e2e';
+    });
 }
 function Delete()
 {
-	for (i = 0; i <= length; i++) {
-	  players[i].RemoveAndDeleteChildren();
-	  $.Msg(i)
+    $('#Difficulties').RemoveAndDeleteChildren();
+}
+function AddName(data)
+{
+	switch (data.id) {
+		case 0:
+			$('#playerLabel0').text = $.Localize(data.name);
+			$('#playerLabelChoice0').text = 'Normal';
+		break;
+		case 1:
+			$('#playerLabel1').text = $.Localize(data.name);
+			$('#playerLabelChoice1').text = 'Normal';
+		break;
+		case 2:
+			$('#playerLabel2').text = $.Localize(data.name);
+			$('#playerLabelChoice2').text = 'Normal';
+		break;
+		case 3:
+			$('#playerLabel3').text = $.Localize(data.name);
+			$('#playerLabelChoice3').text = 'Normal';
+		break;
+		case 4:
+			$('#playerLabel4').text = $.Localize(data.name);
+			$('#playerLabelChoice4').text = 'Normal';
+		break;
 	}
-	length = -1;
+}
+function GetDifficulty(id)
+{
+	switch (id) {
+		case 0:
+			return 'Easy';
+		break;
+		case 1:
+			return 'Normal';
+		break;
+		case 2:
+			return 'Hard';
+		break;
+	}
+	return 'N/A';
+}
+function Update(data)
+{
+	switch (data.id) {
+		case 0:
+			$('#playerLabelChoice0').text = GetDifficulty(data.difficulty);
+		break;
+		case 1:
+			$('#playerLabelChoice1').text = GetDifficulty(data.difficulty);
+		break;
+		case 2:
+			$('#playerLabelChoice2').text = GetDifficulty(data.difficulty);
+		break;
+		case 3:
+			$('#playerLabelChoice3').text = GetDifficulty(data.difficulty);
+		break;
+		case 4:
+			$('#playerLabelChoice4').text = GetDifficulty(data.difficulty);
+		break;
+	}
 }
 function debug()
 {
-	GameEvents.Subscribe("game_begin", InitPlayer);
-	GameEvents.Subscribe("damage_update", SetDamageDealt);
-	GameEvents.Subscribe("damage_taken_update", SetDamageTaken);
-	GameEvents.Subscribe("heal_update", SetDamageHealed);
-	GameEvents.Subscribe("dps_update", SetDPS);
-	GameEvents.Subscribe("damage_type_update", SetDamageTypes);
-	GameEvents.Subscribe("delete", Delete);
+    GameEvents.Subscribe("vote_begin", InitDifficulty);
+    GameEvents.Subscribe("vote_end", Delete);
+	GameEvents.Subscribe("vote_name", AddName);
+	GameEvents.Subscribe("vote_update", Update);
 	$.Msg("Debug");
 }
 

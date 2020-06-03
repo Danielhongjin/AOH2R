@@ -91,6 +91,7 @@ end
 
 if IsServer() then
     function modifier_grimstroke_custom_soulstore_buff:OnCreated(table)
+		self.ability = self:GetAbility()
         self.damage = table.damage or 0
         self.heal = table.heal or 0
 
@@ -110,9 +111,8 @@ if IsServer() then
         local caster = self:GetCaster()
 
         if self.tick_damage > 0 then
-            local ability = self:GetAbility()
             ApplyDamage({
-                ability = ability,
+                ability = self.ability,
                 attacker = caster,
                 damage = self.tick_damage,
                 damage_type = ability:GetAbilityDamageType(),
@@ -121,7 +121,7 @@ if IsServer() then
         end
 
         if self.tick_heal > 0 then
-            parent:Heal(self.tick_heal, caster)
+            parent:Heal(self.tick_heal, self.ability)
         end
     end
 end

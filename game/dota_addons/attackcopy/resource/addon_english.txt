@@ -243,8 +243,14 @@
 "DOTA_Tooltip_modifier_boss"				"Rolling Stone"
 "DOTA_Tooltip_modifier_boss_Description"				"This boss gains 1 percent damage every 3 seconds."
 
+"DOTA_Tooltip_modifier_easy_mode_boss"				"EASY MODE"
+"DOTA_Tooltip_modifier_easy_mode_boss_Description"				"This boss casts spells 25%% less frequently and deals 20%% less damage."
+
 "DOTA_Tooltip_modifier_hard_mode_boss"				"HARD MODE"
 "DOTA_Tooltip_modifier_hard_mode_boss_Description"				"This boss casts spells more frequently and regenerates mana quicker."
+
+"DOTA_Tooltip_modifier_hard_mode_player"				"Blessed"
+"DOTA_Tooltip_modifier_hard_mode_player_Description"				"Hard mode gives you 12%% primary attribute bonus."
 
 "npc_legion_summon"                     "Dragon Knight"
 "npc_playerhelp"                     	"Hired Goon"
@@ -2459,7 +2465,7 @@
 
 "DOTA_Tooltip_Ability_item_recipe_diff_doom"               "Recipe: Ether Hammer"
 "DOTA_Tooltip_Ability_item_diff_doom"					    "Ether Hammer"
-"DOTA_Tooltip_ability_item_diff_doom_Description"			"<h1>Active: Differential Doom</h1> Marks all enemies in a radius. After %delay% seconds, deals %damage% pure damage + %damage_int%%% of your hero's intelligence to enemies in %area_of_effect% radius. Enemies who are marked only take %damage_marker%%% damage."
+"DOTA_Tooltip_ability_item_diff_doom_Description"			"<h1>Active: Differential Doom</h1> Marks all enemies in a radius. After %delay% seconds, deals %damage% pure damage + %damage_attribute%%% of your hero's primary attribute to enemies in %area_of_effect% radius. Enemies who are marked only take %damage_marker%%% damage."
 "DOTA_Tooltip_ability_item_diff_doom_Lore"					"Turns mana inside out."
 "DOTA_Tooltip_ability_item_diff_doom_bonus_strength"				"+$str"
 "DOTA_Tooltip_ability_item_diff_doom_bonus_intellect"				"+$int"
@@ -2668,10 +2674,10 @@
 "DOTA_Tooltip_ability_item_great_shivas_guard_bonus_intellect"				"+$int"
 "DOTA_Tooltip_ability_item_great_shivas_guard_bonus_armor"					"+$armor"
 "DOTA_Tooltip_ability_item_health_bag"                          "Health Bag"
-"DOTA_Tooltip_ability_item_health_bag_Description"			    "<h1>Active: Open Bag</h1> Provides a %duration% seconds buff to an ally, healing %base_heal% plus %heal_pct%%  of their max life every %heal_interval% seconds." 
+"DOTA_Tooltip_ability_item_health_bag_Description"			    "<h1>Active: Open Bag</h1> Provides %base_heal% plus %heal_pct%%% max health healing per second. <br><br> Lasts %duration% seconds." 
 "DOTA_Tooltip_ability_item_health_bag_Lore"						"Holds the essence of life, captured by ForaMon."
 "DOTA_Tooltip_ability_item_health_bag_hp_regen"				    "+$hp_regen"
-"DOTA_Tooltip_ability_item_health_bag_mana_regen"				"+$mana_regen"
+"DOTA_Tooltip_ability_item_health_bag_bonus_health"				"+$health"
 "DOTA_Tooltip_ability_item_health_bag_bonus_all_stats"			"+$all"
 
 "DOTA_Tooltip_modifier_item_health_bag_buff"					"Seed of Life"
@@ -2680,10 +2686,10 @@
 
 
 "DOTA_Tooltip_ability_item_health_bag_2"                        "Health Bag LVL 2"
-"DOTA_Tooltip_ability_item_health_bag_2_Description"			"<h1>Active: Open Bag</h1> Provides a %duration% seconds buff to an ally, healing %base_heal% plus %heal_pct%%  of their max life every %heal_interval% seconds." 
+"DOTA_Tooltip_ability_item_health_bag_2_Description"			"<h1>Active: Open Bag</h1> Provides %base_heal% plus %heal_pct%%% max health healing per second. <br><br> Lasts %duration% seconds." 
 "DOTA_Tooltip_ability_item_health_bag_2_Lore"				    "Holds the essence of life, captured by ForaMon."
 "DOTA_Tooltip_ability_item_health_bag_2_hp_regen"				"+$hp_regen"
-"DOTA_Tooltip_ability_item_health_bag_2_mana_regen"				"+$mana_regen"
+"DOTA_Tooltip_ability_item_health_bag_2_bonus_health"			"+$health"
 "DOTA_Tooltip_ability_item_health_bag_2_bonus_all_stats"	    "+$all"
 
 "DOTA_Tooltip_Ability_item_great_heart"				            "Great Heart of Tarrasque"

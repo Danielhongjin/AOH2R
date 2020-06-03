@@ -42,7 +42,7 @@ end
 
 function modifier_item_health_bag:DeclareFunctions()
     return {
-        MODIFIER_PROPERTY_MANA_REGEN_CONSTANT,
+        MODIFIER_PROPERTY_HEALTH_BONUS,
         MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
         MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
@@ -51,8 +51,8 @@ function modifier_item_health_bag:DeclareFunctions()
 end
 
 
-function modifier_item_health_bag:GetModifierConstantManaRegen()
-    return self:GetAbility():GetSpecialValueFor("mana_regen")
+function modifier_item_health_bag:GetModifierHealthBonus()
+    return self:GetAbility():GetSpecialValueFor("bonus_health")
 end
 
 
@@ -94,28 +94,27 @@ end
 
 if IsServer() then
     function modifier_item_health_bag_buff:OnCreated()
-        local ability = self:GetAbility()
-
-        if not ability then
+        self.ability = self:GetAbility()
+		local interval = self.ability:GetSpecialValueFor("interval")
+        if not self.ability then
             self:Destroy()
             return
         end
 
-        self.base_heal = ability:GetSpecialValueFor("base_heal")
-        self.heal_pct = ability:GetSpecialValueFor("heal_pct") * 0.01
+        self.base_heal = self.ability:GetSpecialValueFor("base_heal") * interval
+        self.heal_pct = self.ability:GetSpecialValueFor("heal_pct") * 0.01 * interval
 
-        local think_interval = ability:GetSpecialValueFor("heal_interval")
-        self:StartIntervalThink(think_interval)
+        
+        self:StartIntervalThink(interval)
     end
 
 
     function modifier_item_health_bag_buff:OnIntervalThink()
-        local ability = self:GetAbility()
         local parent = self:GetParent()
 
-        if ability and parent then
+        if self.ability and parent then
             local heal_amount = self.base_heal + (parent:GetMaxHealth() * self.heal_pct)
-            parent:Heal(heal_amount, self:GetCaster())
+            parent:Heal(heal_amount, self.ability)
         end
     end
 end

@@ -129,7 +129,7 @@ function modifier_diff_doom_thinker:OnCreated(kv)
 	if IsServer() then
 		-- references
 		self.damage = self:GetAbility():GetSpecialValueFor("damage")
-		self.damage_int = self:GetAbility():GetSpecialValueFor("damage_int") * 0.01
+		self.damage_attribute = self:GetAbility():GetSpecialValueFor("damage_attribute") * 0.01
 		self.damage_marker = self:GetAbility():GetSpecialValueFor("damage_marker") * 0.01
 		self.radius = self:GetAbility():GetSpecialValueFor("area_of_effect")
 
@@ -140,8 +140,15 @@ end
 
 function modifier_diff_doom_thinker:OnDestroy( kv )
 	if IsServer() then
-		local int = self.caster:GetIntellect()
-		self.damage = self.damage + self.damage_int * int
+		local attribute = 0
+		if self.caster:GetPrimaryAttribute() == 0 then
+			attribute = self.caster:GetStrength()
+		elseif self.caster:GetPrimaryAttribute() == 1 then
+			attribute = self.caster:GetAgility()
+		else
+			attribute = self.caster:GetIntellect()
+		end
+		self.damage = self.damage + self.damage_attribute * attribute
 		-- Damage enemies
 		local damageTable = {
 			attacker = self:GetCaster(),

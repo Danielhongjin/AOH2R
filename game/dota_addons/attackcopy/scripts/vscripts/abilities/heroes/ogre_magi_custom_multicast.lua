@@ -101,7 +101,7 @@ function on_ability_executed(keys)
 				caster:GetTeamNumber(),	-- int, your team number
 				caster:GetAbsOrigin(),	-- point, center point
 				nil,	-- handle, cacheUnit. (not known)
-				800,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+				800 + caster:GetCastRangeBonus(),	-- float, radius. or use FIND_UNITS_EVERYWHERE
 				DOTA_UNIT_TARGET_TEAM_FRIENDLY,	-- int, team filter
 				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
 				DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE,	-- int, flag filter

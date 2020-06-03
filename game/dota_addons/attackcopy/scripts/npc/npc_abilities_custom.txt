@@ -162,6 +162,7 @@
 			"States"
 			{
 				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_NO_TEAM_MOVE_TO"		"MODIFIER_STATE_VALUE_ENABLED"
 			}
 		}	
 	}
@@ -2438,7 +2439,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"			"0.9"
+			"delay"			"0.8"
 		}
 		"03"
 		{
@@ -3140,17 +3141,17 @@
         "02"
         {
             "var_type"					"FIELD_INTEGER"
-            "blade_fury_radius"			"400"
+            "blade_fury_radius"			"375"
         }
         "03"
         {
             "var_type"					"FIELD_INTEGER"
-            "blade_fury_damage"			"150"
+            "blade_fury_damage"			"175"
         }
         "04"
         {
             "var_type"					"FIELD_FLOAT"
-            "duration"					"4.0"
+            "duration"					"3.0"
         }
     }
     "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -11129,7 +11130,7 @@
     "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
     "AbilityCooldown"               "0.0"
     "AbilityDamage"                 "0"
-    "AbilityManaCost"               "10 20 30"
+    "AbilityManaCost"               "10 15 20"
     "AbilitySpecial"
     {
         "01"
@@ -11140,7 +11141,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "damage"				"-30 -35 -40"
+            "damage"				"-30"
         }
         "03"
         {

@@ -1,16 +1,13 @@
-Hard mode time between rounds increased from 2 to 4 seconds to improve stability.
+Fake couriers no longer block right clicking.
+Reduced early game boss armor.
+Various custom abilties now properly update total healing done.
 
-Spirit breaker boss slightly stronger.
+Juggernaut boss health reduced, damage increased.
 
-New item Ether Hammer - deals massive delayed damage in an AOE, but deals less damage to enemies who were in the aoe to begin with. Upgrades from meteor hammer.
+Blast staff active nerfed.
+Health bag stats changed.
+Mimic mace minimum cooldown improved from 2.5 to 2.0.
 
-Bounty hunter jinada now half as effective on illusions. Ratio reduced from 13% to 9%.
-Dark seer ult no longer copies pocket tower. 
-Keeper of the Light will-o-wisp now only beneifts 50% from refresher. Cooldown increased from 75 to 80 and on time reduced from 2 to 1.75 seconds. 
-Phoenix sun ray nerfed percent damage and base damage increased, cooldown lowered and can move you very quickly now. Base heal increased. 
-Phoenix supernova now only benefits 50% from refresher.
+Ancient Apparition adjusted talents and ability values.
 TO-DO
 
-
-
-CURRENTLY IMPLEMENTING DIFFICULTY PANORAMA SCRIPTS

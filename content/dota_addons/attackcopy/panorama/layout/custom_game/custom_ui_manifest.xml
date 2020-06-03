@@ -25,8 +25,6 @@
     //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_ENDGAME, false );      //Endgame scoreboard.    
     //GameUI.SetDefaultUIEnabled( DotaDefaultUIElement_t.DOTA_DEFAULT_UI_TOP_BAR_BACKGROUND, false );     //Top-left menu buttons in the HUD.
 
-
-
   </script> 
 
   <Panel>
@@ -35,6 +33,7 @@
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_notifications.xml" /> 
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
 	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/damage/damage.xml"/>
+	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/difficulty.xml"/>
 	<CustomUIElement type="EndScreen" layoutfile="file://{resources}/layout/custom_game/end_screen.xml" />
 
     <!-- From Overthrow.

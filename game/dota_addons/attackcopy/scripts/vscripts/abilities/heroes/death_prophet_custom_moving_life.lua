@@ -48,7 +48,7 @@ if IsServer() then
         local caster = self:GetCaster()
         local units = FindUnitsInRadius(caster:GetTeam(), point, nil, radius, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 0, 0, false)
         for _, unit in ipairs(units) do
-            unit:Heal(amount, caster)
+            unit:Heal(amount, self)
         end
     end
 

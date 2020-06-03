@@ -29,11 +29,14 @@ end
 function copy_items(target, illusion)
     for itemSlot = 0, 5 do
         local item = target:GetItemInSlot(itemSlot)
-        if item ~= nil and item:GetName() ~= "item_pocket_rax" and item:GetName() ~= "item_pocket_rax_ranged" and item:GetName() ~= "item_pharaoh_crown" and item:GetCastPoint() ~= 1337 then
-            local itemName = item:GetName()
-            local newItem = CreateItem(itemName, illusion, illusion)
-            illusion:AddItem(newItem)
-        end
+		if item then
+			local itemName = item:GetName()
+			if itemName ~= "item_pocket_tower" and itemName ~= "item_pocket_rax" and itemName ~= "item_pocket_rax_ranged" and itemName ~= "item_pharaoh_crown" and item:GetCastPoint() ~= 1337 then
+				local itemName = item:GetName()
+				local newItem = CreateItem(itemName, illusion, illusion)
+				illusion:AddItem(newItem)
+			end
+		end
     end
 end
 

@@ -401,11 +401,11 @@
 	"Ability4"					"custom_omni_slash_wrapper"
 	"Ability5"					"custom_omni_slash_jugg"
 
-    "ArmorPhysical"				"3"
-    "MagicalResistance"			"5"
+    "ArmorPhysical"				"2"
+    "MagicalResistance"			"0"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"50"
-    "AttackDamageMax"			"85"
+    "AttackDamageMin"			"80"
+    "AttackDamageMax"			"90"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"0.8"
     "AttackAnimationPoint"		"0.39"
@@ -422,7 +422,7 @@
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"310"
     "MovementTurnRate"			"0.7"
-    "StatusHealth"				"9500"
+    "StatusHealth"				"7250"
     "StatusHealthRegen"			"1"
     "StatusMana"				"750"
     "StatusManaRegen"			"20"
@@ -1299,7 +1299,7 @@
     "Ability5"					"troll_warlord_fervor"
     "Ability6"                  "tidehunter_kraken_shell"
 
-    "ArmorPhysical"				"18"
+    "ArmorPhysical"				"12"
     "MagicalResistance"			"-30"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"10"
@@ -1616,7 +1616,7 @@
 	"Ability15"					"generic_hidden"
 	"Ability16"					"generic_hidden"
 	"Ability17"					"custom_luna_invis"
-    "ArmorPhysical"				"22"
+    "ArmorPhysical"				"20"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackAcquisitionRange"	"1200"
@@ -1893,7 +1893,7 @@
     "Ability3"					"custom_ravage"
 	"Ability4"					"custom_torrent_tide_wrapper"
 
-    "ArmorPhysical"				"22"
+    "ArmorPhysical"				"21"
     "MagicalResistance"			"-35"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"300"
@@ -1982,7 +1982,7 @@
 	"Ability2"					"weaver_envenomed_attack"			// Ability 2
 	"Ability3"					""			// Ability 3
 	"Ability4"					""			// Ability 4
-	"ArmorPhysical"				"12"			// Physical protection.
+	"ArmorPhysical"				"11"			// Physical protection.
 	"MagicalResistance"			"25"
 	
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -2209,7 +2209,7 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"32"			// Physical protection.
+	"ArmorPhysical"				"30"			// Physical protection.
 	"MagicalResistance"			"10"			// Magical protection.
 
 	// Attack
@@ -5567,10 +5567,10 @@
 	"Ability1"					"courier_invincibility"
 	"ArmorPhysical"				"10"		// Physical protection.
 	"MagicalResistance"				"0"			// Magical protection.
-
+	
 	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"			// Hull type used for navigation/locomotion.
 	"HealthBarOffset"			"140"	
-
+	"RingRadius"				"70"
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"			// Type of locomotion - ground, air
 	"MovementSpeed"				"375"		// Speed
 	"MovementTurnRate"			"0.5"		// Turning rate.
@@ -5668,7 +5668,7 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"41"			// Physical protection.
+	"ArmorPhysical"				"43"			// Physical protection.
 	"MagicalResistance"				"25"			// Magical protection.
 
 	// Attack
@@ -5715,7 +5715,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"188000"		// Base health.
+	"StatusHealth"				"215000"		// Base health.
 	"StatusHealthRegen"			"100"		// Health regeneration rate.
 	"StatusMana"				"5000"			// Base mana.
 	"StatusManaRegen"			"75"			// Mana regeneration rate.
@@ -5773,8 +5773,8 @@
 		"EquippedItems"
 		{
 			"MKB"              		{"Item"         "item_monkey_king_bar"}
-			"Unstoppable"       	{ "Item"        "item_boss_unstoppable" }
-			"Boss Resistance"       { "Item"        "item_boss_resistance_30" }
+			"Unstoppable"       	{"Item"         "item_boss_unstoppable" }
+			"Boss Resistance"       {"Item"         "item_boss_resistance_40" }
 			"Hyperstone"			{"Item"		    "item_hyperstone"}
 			"Black King Bar"		{"item"			"item_black_king_bar_boss"}
 		}

@@ -8,7 +8,7 @@ function AIThink()
     local ancient = Entities:FindByName(nil, "dota_goodguys_fort")
 	
     if ancient:IsAlive() and thisEntity:IsAlive() then
-		if not thisEntity:IsInvisible() and not thisEntity:IsChanneling() and thisEntity:GetCurrentActiveAbility() == nil and not thisEntity:IsCommandRestricted() then
+		if not thisEntity:IsInvisible() and not thisEntity:IsChanneling() and thisEntity:GetCurrentActiveAbility() == nil and not thisEntity:IsCommandRestricted() and not thisEntity:IsAttacking() then
 			if (CalcDistanceBetweenEntityOBB(thisEntity, ancient) > 800) then
 				if not thisEntity:IsDisarmed() then
 					local attackOrder = {

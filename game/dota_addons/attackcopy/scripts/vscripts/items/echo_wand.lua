@@ -134,6 +134,8 @@ if IsServer() then
 		item_pocket_barracks = true,
 		item_echo_wand = true,
 		item_helm_of_the_dominator = true,
+		phoenix_fire_spirits = true,
+		phantom_assassin_custom_stifling_dagger = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,

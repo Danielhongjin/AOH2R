@@ -189,6 +189,7 @@
 		"item"		"item_sanguine"
 		"item"		"item_broken_bow"
 		"item"		"item_suicidal_mask"
+		"item"		"item_diff_doom"
 
 	}
 		

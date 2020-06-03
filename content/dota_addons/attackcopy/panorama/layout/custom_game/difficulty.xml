@@ -1,0 +1,70 @@
+<root>
+
+	<styles>
+		<include src="file://{resources}/styles/custom_game/difficulty.css"/>
+	
+	</styles>
+	
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/difficulty.js"/>
+	</scripts>
+	
+	<snippets>
+	 
+		<snippet name="Difficulty">
+			<Panel class="DifficultyWindow" hittest="false">
+				<Panel id="DifficultyText" hittest="false"> 
+					<Label class="DifficultyTextLabel" text="Difficulty Vote" />
+				</Panel> 
+				<Panel class="DifficultyList" hittest="false"> 
+					<Panel id="Easy" class="DifficultyBox"> 
+						<Label class="DifficultyLabel" text="Easy" />
+						<Label class="Description" text="Enemies 20% Less Damage" />
+						<Label class="Description" text="Enemies 30% Higher Cooldowns" />
+						<Label class="Description" text="Limited Max Round 36" />
+					</Panel>
+					<Panel id="Normal" class="DifficultyBox">
+						<Label class="DifficultyLabel" text="Normal" />
+						<Label class="Description" text="Default Difficulty" />
+					</Panel>
+					<Panel id="Hard" class="DifficultyBox">
+						<Label class="DifficultyLabel" text="Hard" />
+						<Label class="Description" text="Enemies 0.5% Mana Regeneration" />
+						<Label class="Description" text="Enemies 0.85% Health Regeneration" />
+						<Label class="Description" text="Enemies 20% Lower Cooldowns" />
+						<Label class="Description" text="No Round Healing" />
+						<Label class="Description" text="4 Second Round Wait" />
+						<Label class="Description" text="Heroes +12% Primary Attribute" />
+					</Panel>
+				</Panel>
+				<Panel id="DifficultyChoices" hittest="false"> 
+					<Panel class="DifficultyChoiceBox" id="player0" hittest="false"> 
+						<Label class="PlayerLabel" id="playerLabel0" text="N/A" />
+						<Label class="DifficultyChoiceLabel" id="playerLabelChoice0" text="N/A" />
+					</Panel> 
+					<Panel class="DifficultyChoiceBox" id="player1" hittest="false"> 
+						<Label class="PlayerLabel" id="playerLabel1" text="N/A" />
+						<Label class="DifficultyChoiceLabel" id="playerLabelChoice1" text="N/A" />
+					</Panel> 
+					<Panel class="DifficultyChoiceBox" id="player2" hittest="false"> 
+						<Label class="PlayerLabel" id="playerLabel2" text="N/A" />
+						<Label class="DifficultyChoiceLabel" id="playerLabelChoice2" text="N/A" />
+					</Panel> 
+					<Panel class="DifficultyChoiceBox" id="player3" hittest="false"> 
+						<Label class="PlayerLabel" id="playerLabel3" text="N/A" />
+						<Label class="DifficultyChoiceLabel" id="playerLabelChoice3" text="N/A" />
+					</Panel> 
+					<Panel class="DifficultyChoiceBox" id="player4" hittest="false"> 
+						<Label class="PlayerLabel" id="playerLabel4" text="N/A" />
+						<Label class="DifficultyChoiceLabel" id="playerLabelChoice4" text="N/A" />
+					</Panel> 
+				</Panel> 
+			</Panel>
+		</snippet> 
+	</snippets>
+
+	<Panel class ="base" hittest="false">
+		<Panel id ="Difficulties" hittest="false">
+		</Panel>
+	</Panel>
+</root>

@@ -16,6 +16,8 @@ local spells_aoe = {[0] = "custom_crystal_nova",
 "custom_carrion_swarm",
 "custom_nyx_impale",
 "custom_spiritbreaker_inner_fire",
+"custom_deafening_blast",
+"custom_mystic_flare", --index 15
 }
 local spells_target = {[0] = "custom_static_link", 
 "custom_frostbite", 
@@ -29,6 +31,7 @@ local spells_target = {[0] = "custom_static_link",
 "custom_primal_roar",
 "custom_paralyzing_cask", --index 10
 "custom_nether_strike",
+"custom_purifying_flames",
 }
 --Fires a warning aoe to a point and casts the spell immediately
 function generate_warning_aoe(keys)

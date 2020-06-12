@@ -12,6 +12,9 @@
 "DOTA_Tooltip_modifier_target_delay"					"Targeted"
 "DOTA_Tooltip_modifier_target_delay_Description"					"Something bad is about to happen to you."
 
+"DOTA_Tooltip_modifier_summonbuff"					"Summon"
+"DOTA_Tooltip_modifier_summonbuff_Description"					"This unit receives bonus health, damage, and armor based on its base stats and the summoner's stats."
+
 "DOTA_Tooltip_modifier_atr_fix"					"Intellect"
 "DOTA_Tooltip_modifier_atr_fix_Description"					"This hero is receieving %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% spell amp from intelligence."
 
@@ -160,6 +163,7 @@
 "DOTA_Tooltip_ability_item_player_unstoppable_Description"				"<h1>Passive: Unstoppable</h1> Grants bonus spell amp based on your maximum health. Destroys trees you collide with. Lowers your attack speed by %bonus_attack_speed%."
 "DOTA_Tooltip_ability_item_player_unstoppable_tooltip_spell_amp_pct"			"HEALTH PER SPELL AMP%:"
 "DOTA_Tooltip_ability_item_player_unstoppable_bonus_health_pct"			"%BONUS HEALTH:"
+"DOTA_Tooltip_ability_item_player_unstoppable_bonus_health"			"BONUS HEALTH:"
 "DOTA_Tooltip_ability_item_player_unstoppable_Note0"					"Does not work on illusions."
 
 "DOTA_Tooltip_ability_item_pocket_rax"					"Pocket Barracks"
@@ -928,8 +932,51 @@
 "DOTA_Tooltip_ability_custom_nyx_inner_fire_radius"								"RADIUS:"
 "DOTA_Tooltip_ability_custom_nyx_inner_fire_knockback_distance"					"KNOCKBACK TO:"
 
-"npc_boss_phantomlancer"                     "Phantomlancer (Boss)"
+"npc_boss_oracle"                     "Oracle (Boss)"
+"DOTA_Tooltip_ability_custom_purifying_flames"						"Purifying Flames"
+"DOTA_Tooltip_ability_custom_purifying_flames_Description"			"Burns away impurities, dealing heavy magic damage to the target before causing them to regenerate health over time after a 2.5 second delay. The amount of health regenerated over its duration exceeds the amount of initial damage."
+"DOTA_Tooltip_ability_custom_purifying_flames_Lore"					"Like a hall of mirrors might amplify the light of a single candle, the shattered walls of the universe can transform the light of prophecy into a burning torch."
+"DOTA_Tooltip_ability_custom_purifying_flames_damage"				"DAMAGE:"
+"DOTA_Tooltip_ability_custom_purifying_flames_heal_per_second"		"HEAL PER SECOND:"
+"DOTA_Tooltip_ability_custom_purifying_flames_total_heal_tooltip"		"TOTAL HEAL:"
+"DOTA_Tooltip_ability_custom_purifying_flames_duration"				"DURATION:"
 
+"DOTA_Tooltip_ability_custom_fortunes_end"							"Fortune's End"
+"DOTA_Tooltip_ability_custom_fortunes_end_Description"				"CHANNELED - Gathers Oracle's power into a bolt of scouring energy that, when released, damages, roots, and purges enemies of buffs in an area around the target. If target is an ally it will only purge debuffs. Can be channeled for up to %abilitychanneltime% seconds. The root duration is equal to the time spent channeling.\n\nDISPEL TYPE: Basic Dispel"
+"DOTA_Tooltip_ability_custom_fortunes_end_Lore"						"The astral orb crackles with power while raw energy lances out, temporarily disrupting an enemy's connection to their own body."
+"DOTA_Tooltip_ability_custom_fortunes_end_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_custom_fortunes_end_radius"					"RADIUS:"
+"DOTA_Tooltip_ability_custom_fortunes_end_minimum_purge_duration"	"MIN ROOT DURATION:"
+"DOTA_Tooltip_ability_custom_fortunes_end_maximum_purge_duration"	"MAX ROOT DURATION:"
+
+"DOTA_Tooltip_ability_custom_deafening_blast"								"Deafening Blast"
+"DOTA_Tooltip_ability_custom_deafening_blast_Description"					"Unleashes a mighty sonic wave when attacked, dealing damage to any enemy unit it collides with based on the level of <font color='#cabe68'>Exort</font>. The sheer impact from the blast is enough to knock those enemy units back for a duration based on the level of <font color='#7998b5'>Quas</font>, then disarm their attacks for a duration based on the level of <font color='#d671a9'>Wex</font>."
+"DOTA_Tooltip_ability_custom_deafening_blast_Lore"							"Buluphont's Aureal Incapacitator."
+"DOTA_Tooltip_ability_custom_deafening_blast_travel_distance"				"TRAVEL DISTANCE:"
+"DOTA_Tooltip_ability_custom_deafening_blast_damage"						"DAMAGE:"
+"DOTA_Tooltip_ability_custom_deafening_blast_knockback_duration"			"KNOCKBACK DURATION:"
+"DOTA_Tooltip_ability_custom_deafening_blast_disarm_duration"				"DISARM DURATION:"
+
+"DOTA_Tooltip_ability_custom_mystic_flare"					"Mystic Flare"
+"DOTA_Tooltip_ability_custom_mystic_flare_Description"		"Skywrath Mage uses his ultimate magical ability to conjure a precise and violent mystical field that lays waste to his adversaries. Deals massive damage distributed evenly among any Heroes in the area over %duration% seconds."
+"DOTA_Tooltip_ability_custom_mystic_flare_Lore"				"Only the most practiced of Skywrath sorcerers could hope to shape the skies into such a storm."
+"DOTA_Tooltip_ability_custom_mystic_flare_Note0"				"Mystic Flare only affects Heroes; it does not damage illusions or creep heroes."
+"DOTA_Tooltip_ability_custom_mystic_flare_Note1"				"Spell immune enemies do not count toward the damage distribution."
+"DOTA_Tooltip_ability_custom_mystic_flare_Note2"				"Mystic Flare will damage enemy creeps if no enemy heroes are present."
+"DOTA_Tooltip_ability_custom_mystic_flare_radius"			"RADIUS:"
+"DOTA_Tooltip_ability_custom_mystic_flare_duration"			"DURATION:"
+"DOTA_Tooltip_ability_custom_mystic_flare_damage"			"DAMAGE:"
+
+"DOTA_Tooltip_ability_custom_false_promise"							"False Promise"
+"DOTA_Tooltip_ability_custom_false_promise_Description"				"Temporarily alters an all heroes on the map, delaying any healing or damage taken until False Promise ends. Oracle will rapidly cast Purifying Flames on the nearest hero. Any healing that is delayed by False Promise is doubled. Removes most negative status effects and disables on initial cast.\n\nDISPEL TYPE: Strong Dispel"
+"DOTA_Tooltip_ability_custom_false_promise_Lore"					"Foes and false prophets oft make lies of men's fates."
+"DOTA_Tooltip_ability_custom_false_promise_duration"				"DURATION:"
+"DOTA_Tooltip_ability_custom_false_promise_Note0"					"Delayed damage and healing will take armor and magic resistance reductions into account when received."
+"DOTA_Tooltip_ability_custom_false_promise_Note1"					"The delayed damage and healing takes effect as soon as the target becomes vulnerable."
+"DOTA_Tooltip_modifier_false_promise_warning"								"False Promise Warning"
+"DOTA_Tooltip_modifier_false_promise_warning"					"I guess you may as well read this seeing as you're about to die."
+
+"npc_boss_phantomlancer"                     "Phantomlancer (Boss)"
 
 "DOTA_Tooltip_ability_custom_spirit_lance"								"Spirit Lance Clone"
 "DOTA_Tooltip_ability_custom_spirit_lance_Description"					"Sends a magical spirit lance to a target enemy unit, teleporting to it and creating a clone."

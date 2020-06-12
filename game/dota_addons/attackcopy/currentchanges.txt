@@ -1,13 +1,11 @@
-Fake couriers no longer block right clicking.
-Reduced early game boss armor.
-Various custom abilties now properly update total healing done.
+Ancient will now only heal 25% of its health on round start.
 
-Juggernaut boss health reduced, damage increased.
+New final boss Oracle - will wipe you one by one with one hit kill spells. Tanks almost guaranteed to die.
 
-Blast staff active nerfed.
-Health bag stats changed.
-Mimic mace minimum cooldown improved from 2.5 to 2.0.
+Ether hammer buffed ratio.
+Massive now grants 400 bonus health as well, ratio improved.
+Nebu removed, passive effect is now built in to all heroes.
 
-Ancient Apparition adjusted talents and ability values.
+Ogre magi multicast cooldown increased from 6 to 12.
 TO-DO
 

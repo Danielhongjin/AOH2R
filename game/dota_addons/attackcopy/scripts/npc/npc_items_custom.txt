@@ -3895,7 +3895,7 @@
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"damage"				"400"
+			"damage"				"500"
 		}
 		"04"
 		{
@@ -3905,7 +3905,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_attribute"				"700"
+			"damage_attribute"				"1000"
 		}
 		"06"
 		{
@@ -4920,7 +4920,7 @@
             "var_type"				"FIELD_INTEGER"
             "hp_regen"	            "12 18"
         }
-		"02"
+        "02"
         {
             "var_type"				"FIELD_INTEGER"
             "bonus_health"	        "300 450"
@@ -4933,7 +4933,7 @@
         "04"
         {
             "var_type"				"FIELD_FLOAT"
-            "heal_interval"	        "0.25 0.25"
+            "interval"	        "0.25"
         }
         "05"
         {
@@ -4943,7 +4943,7 @@
         "06"
         {
             "var_type"				"FIELD_FLOAT"
-            "heal_pct"			    "0.25 0.35"
+            "heal_pct"			    "4 5"
         }
         "07"
         {
@@ -5362,115 +5362,6 @@
 			"lifesteal"		"10 15"
 		}	
 	}
-}
-"item_recipe_pharaoh_crown"
-{
-    "BaseClass"						"item_datadriven"
-    "Model"							"models/props_gameplay/recipe.mdl"
-    "AbilityTextureName"			"custom_recipe"
-    "ItemCost"						"600"	
-    "ItemShopTags"					""
-    "ItemRecipe"					"1"
-    "ItemResult"					"item_pharaoh_crown"
-    "ItemRequirements"
-    {
-        "01"						"item_vladmir;item_helm_of_the_dominator"
-    }
-}
-"item_pharaoh_crown"
-{
-    "BaseClass"						"item_datadriven"
-    "AbilityTextureName"		    "pharaoh_mask"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "AbilityCastRange"				"1200"
-    "ItemShopTags"					"tank"
-    "ItemQuality"					"epic"
-    "ItemAliases"					"lord;mask;nebuchadnezzar;pharaoh"
-    "MaxUpgradeLevel"               "1"
-    "ItemBaseLevel"                 "1"
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "aura_damage_mult"			"95"
-        }
-        "02"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "aura_radius"			"9999"
-        }
-        "03"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "aura_health_mult"	"2000"
-        }
-        "04"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "aura_magic_resistance"	"25"
-        }		
-        "05"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "aura_armor"			"33"
-        }
-        "06"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "interval"			"1.0"
-        }		
-		"07"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "bonus_all"			"15"
-        }		
-        "08"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "regen_percent"			"1.5"
-			//regen_percent is hardcoded into lua file
-        }			
-    }
-    "Modifiers"
-    {
-		 "modifier_item_pharaoh_crown"
-        {
-            "Passive"			"1"
-            "IsHidden"			"1"
-			"Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_STATS_AGILITY_BONUS"         "%bonus_all"
-                "MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"       "%bonus_all"
-				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"       "%bonus_all"
-            }
-        }
-		"modifier_item_pharaoh_crown_aura"
-        {
-            "Passive"				"1"
-            "IsHidden"				"1"
-            "Aura" 					"modifier_item_pharaoh_crown_initiate"
-            "Aura_Radius" 			"%aura_radius"
-            "Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-            "Aura_Types" 			"DOTA_UNIT_TARGET_ALL"
-            "Aura_ApplyToCaster" 	"0"
-        }
-        "modifier_item_pharaoh_crown_initiate"
-        {
-            "Passive"			"1"
-            "IsHidden"			"1"
-            "Attributes"		"MODIFIER_ATTRIBUTE_MULTIPLE"
-            "OnCreated"
-			{
-				"RunScript"
-				{
-					"ScriptFile"	"items/item_pharaoh_crown.lua"
-					"Function"		"aura_initiate"
-				}
-			}
-        }
-    }
 }
 "item_recipe_plain_ring"
 {
@@ -7715,6 +7606,11 @@
 			"var_type"				"FIELD_INTEGER"
 			"armor_bonus"		"4"
 		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"hp_regen"		"12"
+		}
 	}
 }
 "item_recipe_royal_jelly"
@@ -9000,17 +8896,22 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"spell_amp_pct"			"1.11"
+			"spell_amp_pct"			"1.176"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"tooltip_spell_amp_pct"			"90"
+			"tooltip_spell_amp_pct"			"85"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_attack_speed"			"-30"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"400"
 		}
 	}
 }

@@ -3986,7 +3986,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"torrent_interval"		"0.2"
+				"torrent_interval"		"0.3"
 				"RequiresScepter"			"1"
 			}
 			"02"
@@ -4004,7 +4004,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"torrent_max_distance"		"800"
+				"torrent_max_distance"		"600"
 				"RequiresScepter"			"1"
 			}
 		}

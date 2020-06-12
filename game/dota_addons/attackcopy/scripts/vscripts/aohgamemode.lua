@@ -31,6 +31,7 @@ LinkLuaModifier("modifier_hard_mode_player", "modifiers/modifier_hard_mode_playe
 LinkLuaModifier("modifier_easy_mode_boss", "modifiers/modifier_easy_mode_boss.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bonus_primary_controller", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_bonus_primary_token", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_summonbuff", "modifiers/modifier_summonbuff.lua", LUA_MODIFIER_MOTION_NONE)
 if AOHGameMode == nil then
 	_G.AOHGameMode = class({})
 end
@@ -302,7 +303,7 @@ function AOHGameMode:EndVote()
 		Notifications:TopToAll({text="Normal", style={color="white", ["font-size"]="130px"}, duration=5})
 	elseif self._difficulty == 2 then
 		Notifications:TopToAll({text="Hard", style={color="red", ["font-size"]="130px"}, duration=5})
-		self._flPrepTimeBetweenRounds = 4
+		self._flPrepTimeBetweenRounds = 5
 		
 		for playerID = 0, 4 do
 		if PlayerResource:IsValidPlayerID(playerID) then
@@ -537,15 +538,24 @@ function AOHGameMode:OnEntitySpawned(event)
 	if unit and unit:IsHero() then
 		fix_atr_for_hero(unit)
 	end
-
-	if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-		unit:AddNewModifier(unit, nil, "modifier_boss", {})
-		if self._difficulty == 2 then
-			unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
-		elseif self._difficulty == 0 then
-			unit:AddNewModifier(unit, nil, "modifier_easy_mode_boss", {})
+	Timers:CreateTimer(
+		0.1,
+		function()
+			if not unit:IsHero() then
+				if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+					unit:AddNewModifier(unit, nil, "modifier_boss", {})
+					if self._difficulty == 2 then
+						unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
+					elseif self._difficulty == 0 then
+						unit:AddNewModifier(unit, nil, "modifier_easy_mode_boss", {})
+					end
+				elseif unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+					unit:AddNewModifier(unit, nil, "modifier_summonbuff", {id = unit:GetPlayerOwnerID()})
+				end
+			end
 		end
-	end
+	)
+	
 end
 
 

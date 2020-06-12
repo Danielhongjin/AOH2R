@@ -66,11 +66,16 @@ end
 
 function modifier_item_player_unstoppable:DeclareFunctions()
     return {
-       MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
-       MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
-	   MODIFIER_PROPERTY_MODEL_SCALE,
-	   MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
+		MODIFIER_PROPERTY_HEALTH_BONUS,
+        MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
+        MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+	    MODIFIER_PROPERTY_MODEL_SCALE,
+	    MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
     }
+end
+
+function modifier_item_player_unstoppable:GetModifierHealthBonus()
+    return self:GetAbility():GetSpecialValueFor("bonus_health")
 end
 
 function modifier_item_player_unstoppable:GetModifierExtraHealthPercentage()
@@ -78,7 +83,7 @@ function modifier_item_player_unstoppable:GetModifierExtraHealthPercentage()
 end
 
 function modifier_item_player_unstoppable:GetModifierModelScale()
-    return 15
+    return 20
 end
 
 function modifier_item_player_unstoppable:GetModifierAttackSpeedBonus_Constant()

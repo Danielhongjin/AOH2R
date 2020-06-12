@@ -5400,7 +5400,110 @@
 		}
 	}
 }
+//=================================================================================	
+// Round39
+//=================================================================================
+"npc_boss_oracle"
+{
+    "Model"                                 "models/heroes/oracle/oracle.vmdl"
+    "BaseClass"                             "npc_dota_creature"
+	"vscripts"								"bosses/attack_move.lua"
+    "SoundSet"                              "hero_Crystal"
+    "GameSoundsFile"                        "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+    "Level"                                 "39"
+    "ModelScale"                            "2.0"
+    "ConsideredHero"						"1"
+    "CanBeDominated"						"0"
+    "HasInventory"							"1"
+    "AbilityLayout"							"4"
 
+    "precache"
+    {
+        "particle_folder"				    "particles/units/heroes/hero_crystalmaiden"
+    }
+
+    "Ability1"								"custom_fortunes_end"
+    "Ability2"                              "custom_purifying_flames"
+	"Ability3"								"custom_revenge_behavior"
+	"Ability4"								"custom_deafening_blast"
+	"Ability5"                  			"skeleton_king_boss_effects"
+	"Ability6"								"custom_mystic_flare"
+	"Ability7"								"custom_oracle_reflect"
+	"Ability8"								"custom_deafening_blast_wrapper"
+	"Ability9"								"custom_kinetic_field"
+	"Ability10"								"custom_mystic_flare_wrapper"
+	"Ability11"								"custom_purifying_flames_wrapper"
+	"Ability12"								"custom_false_promise_warning"
+	"Ability13"								"custom_false_promise"
+	"Ability14"								"generic_hidden"
+	"Ability15"								"generic_hidden"
+	"Ability16"								"generic_hidden"
+	"Ability17"                 			"custom_oracle_revenge"
+
+    "ArmorPhysical"                         "52"
+    "MagicalResistance"						"38"
+
+    "AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
+    "AttackDamageMin"                       "1300"
+    "AttackDamageMax"                       "1400"
+    "AttackRate"                            "1.4"
+    "AttackAnimationPoint"          		"0.4"
+    "AttackAcquisitionRange"       		    "1000"
+    "AttackRange"                           "800"
+    "ProjectileModel"		                "particles/units/heroes/hero_oracle/oracle_base_attack.vpcf"
+    "ProjectileSpeed"		                "900"
+    "RingRadius"                            "180"
+    "HealthBarOffset"                       "400"
+    "BountyXP"                              "0"
+    "BountyGoldMin"                         "1"
+    "BountyGoldMax"                         "1"
+    "MovementCapabilities"         		    "DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"                         "320"
+    "StatusHealth"                          "440000" 
+    "StatusHealthRegen"                     "10"
+    "StatusMana"                            "5000"
+    "StatusManaRegen"                       "100"
+    "VisionDaytimeRange"                    "1600"
+    "VisionNighttimeRange"                  "1600"
+    "TeamName"                              "DOTA_TEAM_BADGUYS"
+    "CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+    "CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"                 "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+    "Creature"
+    {
+		"DisableClumpingBehavior"   "1"
+        "OffensiveAbilities"
+        {
+			"Ability1"
+            {
+                "Name"					    "custom_fortunes_end"
+            }
+            "Ability11"
+            {
+                "Name"                      "custom_purifying_flames_wrapper"
+            }
+			"Ability13"
+			{
+				"Name"				"custom_false_promise_warning"
+			}
+        }
+        "EquippedItems"
+        {
+			"Unstoppable"       	{ "Item"        "item_boss_unstoppable" }
+			"Black King Bar"					{"item"		"item_black_king_bar_boss"}
+			"Boss Resistance"       	{ "Item"        "item_boss_resistance_50" }
+        }
+        "AttachWearables"
+        {
+            "1"  { "ItemDef"     "13417"   }
+            "2"	 { "ItemDef"	 "13418"   }
+            "3"  { "ItemDef"	 "13419"   }
+            "4"	 { "ItemDef"	 "13420"  }
+            "5"  { "ItemDef"     "13422"  }
+        }
+    }
+}
 "npc_dota_necronomicon_warrior_1"
 {
 	"MagicalResistance"				"50"		// Magical protection.
@@ -7570,8 +7673,8 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"                       "1800"            // Damage range min.
-	"AttackDamageMax"                       "2200"            // Damage range max.
+	"AttackDamageMin"                       "1600"            // Damage range min.
+	"AttackDamageMax"                       "1900"            // Damage range max.
 	"AttackRate"                            "1.9"           // Speed of attack.
 	"BaseAttackSpeed"						"450"
 	"AttackAnimationPoint"          		"0.15"           // Normalized time in animation cycle to attack.
@@ -8107,7 +8210,7 @@
 	
 	"Creature"
 	{
-		"HPGain"					"150"
+		"HPGain"					"100"
 		"ManaGain"					"25"
 		"ManaRegenGain"				"0.25"
 		"DamageGain"				"15"

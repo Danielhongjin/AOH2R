@@ -961,8 +961,8 @@
 		}
 		"38" // Wisp
 		{
-			"Title"			"False God"
-			"MaxGold"					"40000"
+			"Title"						"False God"
+			"MaxGold"					"12000"
 			"BagCount"					"40"
 			"BagVariance"				"30"
 			"FixedXP"					"150000"
@@ -970,6 +970,22 @@
 			"a"
 			{
 				"NPCName"				"npc_boss_wisp"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"30"
+			}
+		}
+		"39" // Oracle
+		{
+			"Title"						"Twisted Seer"
+			"MaxGold"					"12000"
+			"BagCount"					"1"
+			"BagVariance"				"30"
+			"FixedXP"					"150000"
+
+			"a"
+			{
+				"NPCName"				"npc_boss_oracle"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"

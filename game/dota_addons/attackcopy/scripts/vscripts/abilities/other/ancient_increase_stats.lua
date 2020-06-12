@@ -12,9 +12,7 @@ end
 
 
 LinkLuaModifier("modifier_ancient_increase_stats", "abilities/other/ancient_increase_stats.lua", LUA_MODIFIER_MOTION_NONE)
-
 modifier_ancient_increase_stats = class({})
-
 
 if IsServer() then
     function modifier_ancient_increase_stats:OnCreated()
@@ -31,14 +29,9 @@ if IsServer() then
 		if self.parent and not self.parent:IsNull() and self.parent:IsAlive() then
 			local round = GameRules.GLOBAL_roundNumber
 			if round and round > self.round then
-				
-				-- Health
+				self.parent:AddNewModifier(self.parent, nil, "modifier_ancient_regen", {duration = 5})
 				local maxHealth = self.health_base + (self.health_per_round * round)
-				local health = maxHealth
-			
-				if round == previous_round then   -- heal only when round changes.
-					health = maxHealth * self.parent:GetHealthPercent() * 0.01
-				end
+				health = maxHealth * self.parent:GetHealthPercent() * 0.01
 			
 				self.parent:SetMaxHealth(maxHealth)
 				self.parent:SetBaseMaxHealth(maxHealth)
@@ -51,7 +44,7 @@ if IsServer() then
 				self.parent:SetPhysicalArmorBaseValue(armor)
 				--
 
-				previous_round = round
+				self.round = round
 			end
 		end
 	end
@@ -67,3 +60,23 @@ function modifier_ancient_increase_stats:IsPurgable()
 	return false
 end
 
+LinkLuaModifier("modifier_ancient_regen", "abilities/other/ancient_increase_stats.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_ancient_regen = class({})
+function modifier_ancient_regen:IsBuff()
+    return true
+end
+function modifier_ancient_regen:IsHidden()
+    return true
+end
+function modifier_ancient_regen:IsPurgable()
+    return false
+end
+function modifier_ancient_regen:DeclareFunctions()
+    return {
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+    }
+end
+
+function modifier_ancient_regen:GetModifierHealthRegenPercentage()
+    return 5
+end

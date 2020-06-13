@@ -3354,7 +3354,7 @@
     "MagicalResistance"			"25"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"900"
-    "AttackDamageMax"			"1100"
+    "AttackDamageMax"			"950"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.6"
     "AttackAnimationPoint"		"0.39"
@@ -3396,12 +3396,12 @@
             }
             "Ability7"
             {
-                "Name"				"custom_torrent_warning"
+                "Name"				"custom_torrent_wrapper"
                 "MinimumTargets"	"1"
                 "AOE"				"1"
                 "Radius"			"600"
             }
-            "Ability4"
+            "Ability5"
             {
                 "Name"              "custom_summon_ancient_apparition"
                 "MinimumTargets"	"1"
@@ -7701,7 +7701,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"                          "420000"           // Base health.
+	"StatusHealth"                          "380000"           // Base health.
 	"StatusHealthRegen"                     "450"           // Health regeneration rate.
 	"StatusMana"                            "10000"                     // Base mana.
 	"StatusManaRegen"                       "30"           // Mana regeneration rate.               

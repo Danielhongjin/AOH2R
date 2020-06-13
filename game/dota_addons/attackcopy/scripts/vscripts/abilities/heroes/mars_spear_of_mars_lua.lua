@@ -1,4 +1,4 @@
--- Created by Elfansoer
+	-- Created by Elfansoer
 --[[
 Ability checklist (erase if done/checked):
 - Scepter Upgrade
@@ -14,9 +14,19 @@ LinkLuaModifier( "modifier_mars_spear_of_mars_lua", "abilities/heroes/mars_spear
 LinkLuaModifier( "modifier_mars_spear_of_mars_lua_checker", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_HORIZONTAL )
 LinkLuaModifier( "modifier_mars_spear_of_mars_lua_debuff", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_generic_stunned_lua", "modifiers/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_mars_talent", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_NONE )
 
 --------------------------------------------------------------------------------
 -- Ability Start
+
+ function mars_custom_spear:GetCooldown(iLevel)
+	local caster = self:GetCaster()
+	if caster:HasModifier("modifier_mars_talent") then
+		return self.BaseClass.GetCooldown(self, iLevel) - self:GetSpecialValueFor("talent")
+	end
+	return self.BaseClass.GetCooldown(self, iLevel)
+end
+
 function mars_custom_spear:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()
@@ -66,6 +76,10 @@ function mars_custom_spear:OnSpellStart()
 	EmitSoundOn( sound_cast, caster )
 	local sound_cast = "Hero_Mars.Spear"
 	EmitSoundOn( sound_cast, caster )
+	local talent = caster:FindAbilityByName("special_bonus_unique_mars_spear_cooldown")
+	if talent and talent:GetLevel() > 0 then
+		local modifier = caster:AddNewModifier(caster, self, "modifier_mars_talent", {})
+	end
 end
 
 --------------------------------------------------------------------------------
@@ -314,6 +328,14 @@ function mars_custom_spear:PlayEffects( projID, duration )
 	EmitSoundOn( sound_cast, data.unit )
 end
 
+modifier_mars_talent = class({})
+function modifier_mars_talent:IsHidden()
+	return true
+end
+
+function modifier_mars_talent:IsPurgable()
+	return true
+end
 
 modifier_mars_spear_of_mars_lua = class({})
 

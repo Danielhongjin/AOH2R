@@ -78,5 +78,5 @@ function modifier_ancient_regen:DeclareFunctions()
 end
 
 function modifier_ancient_regen:GetModifierHealthRegenPercentage()
-    return 5
+    return 3
 end

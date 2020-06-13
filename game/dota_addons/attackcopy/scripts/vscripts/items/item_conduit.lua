@@ -9,10 +9,22 @@ function item_conduit:OnSpellStart()
 	local conduit = CreateUnitByName("npc_conduit", origin, true, target, nil, target:GetTeamNumber())
 	conduit:SetOwner(target)
 	local newhealth = math.floor(target:GetHealth() / (100 / self:GetSpecialValueFor("shared_life")))
-
-    conduit:AddNewModifier(target, self, "modifier_item_conduit", {
-        duration = self:GetSpecialValueFor("duration")
-    })
+	if not target:HasModifier("modifier_item_conduit_target") then
+		target:AddNewModifier(conduit, self, "modifier_item_conduit_target", {
+			duration = self:GetSpecialValueFor("duration")
+		})
+		conduit:AddNewModifier(target, self, "modifier_item_conduit", {
+			duration = self:GetSpecialValueFor("duration")
+		})
+	else
+		target:RemoveModifierByName("modifier_item_conduit_target")
+		target:AddNewModifier(conduit, self, "modifier_item_conduit_target", {
+			duration = self:GetSpecialValueFor("duration")
+		})
+		conduit:AddNewModifier(target, self, "modifier_item_conduit", {
+			duration = self:GetSpecialValueFor("duration")
+		})
+	end
 	local particle = ParticleManager:CreateParticle("particles/econ/items/sven/sven_warcry_ti5/sven_warcry_cast_arc_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, conduit) 
 	EmitSoundOn("Hero_Zuus.GodsWrath.Target", conduit)
 	conduit:SetBaseMaxHealth(newhealth)
@@ -21,6 +33,7 @@ function item_conduit:OnSpellStart()
 	conduit:SetPhysicalArmorBaseValue(target:GetPhysicalArmorBaseValue())
 	conduit:SetBaseMagicalResistanceValue(target:GetBaseMagicalResistanceValue())
 end
+
 function item_conduit:GetIntrinsicModifierName()
     return "modifier_item_conduit_buff"
 end
@@ -34,6 +47,7 @@ modifier_item_conduit_buff = class({})
 function modifier_item_conduit_buff:IsHidden()
     return true
 end
+
 
 
 function modifier_item_conduit_buff:GetAttributes()
@@ -77,12 +91,28 @@ function modifier_item_conduit_buff:GetModifierPreAttack_BonusDamage()
     return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 
+LinkLuaModifier("modifier_item_conduit_target", "items/item_conduit.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_item_conduit_target = class({})
 
+function modifier_item_conduit_target:IsHidden()
+	return true
+end
+
+function modifier_item_conduit_target:IsPurgable()
+	return false
+end
+
+if IsServer() then
+
+    function modifier_item_conduit_target:OnDestroy()
+		self:GetCaster():RemoveModifierByName("modifier_item_conduit")
+    end
+end
 LinkLuaModifier("modifier_item_conduit", "items/item_conduit.lua", LUA_MODIFIER_MOTION_NONE)
-
-
 modifier_item_conduit = class({})
-
+function modifier_item_conduit:IsPurgable()
+	return false
+end
 
 if IsServer() then
     function modifier_item_conduit:OnDestroy()
@@ -90,7 +120,6 @@ if IsServer() then
         if parent:IsAlive() then
 			parent:ForceKill(false)
 			parent:RemoveSelf()
-			print("heyo conduit")
 		end
     end
 	
@@ -119,19 +148,13 @@ if IsServer() then
 			ParticleManager:ReleaseParticleIndex(particle)
 
 			ApplyDamage({
-			ability = self.ability,
-			attacker = keys.attacker,
-			damage = keys.original_damage,
-			damage_type = self.ability:GetAbilityDamageType(),
-			damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
-			victim = caster
-		
+				ability = self.ability,
+				attacker = keys.attacker,
+				damage = keys.original_damage,
+				damage_type = self.ability:GetAbilityDamageType(),
+				damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
+				victim = caster
 			})
-			if not parent:IsAlive() or not caster:IsAlive() then
-				parent:ForceKill(false)
-				parent:RemoveSelf()
-				self:Destroy()
-			end
 		end
     end
 

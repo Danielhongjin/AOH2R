@@ -26,20 +26,15 @@ end
 if IsServer() then
 	function modifier_item_philo_stone_temp:OnCreated()
 		local parent = self:GetParent()
-		local PlayerID = parent:GetPlayerID()
+		local PlayerID = parent:GetPlayerOwnerID()
+
 		if _G.AOHGameMode.AllowedPhilo(PlayerID) then
 			Timers:CreateTimer(
 				0.8,
 				function()
 					self:GetAbility():Destroy()
-					
-					if parent:GetNumItemsInInventory() < 9 then
-						local item = parent:AddItemByName("item_philosophers_stone")
-					else
-						local item = CreateItem("item_philosophers_stone", parent, parent)
-						CreateItemOnPositionSync(parent:GetAbsOrigin(), item)
-					end
 					self:Destroy()
+					local item = parent:AddItemByName("item_philosophers_stone")
 				end
 			)
 			_G.AOHGameMode.IncrementPhilo(PlayerID)
@@ -48,16 +43,9 @@ if IsServer() then
 				0.8,
 				function()
 					self:GetAbility():Destroy()
-					
-					if parent:GetNumItemsInInventory() < 9 then
-						local item = parent:AddItemByName("item_philo_stone_failed")
-						item:SetPurchaseTime(GameRules:GetGameTime() - 10)
-					else
-						local item = CreateItem("item_philo_stone_failed", parent, parent)
-						item:SetPurchaseTime(GameRules:GetGameTime() - 10)
-						CreateItemOnPositionSync(parent:GetAbsOrigin(), item)
-					end
 					self:Destroy()
+					local item = parent:AddItemByName("item_philo_stone_failed")
+					item:SetPurchaseTime(GameRules:GetGameTime() - 10)
 				end
 			)
 		end

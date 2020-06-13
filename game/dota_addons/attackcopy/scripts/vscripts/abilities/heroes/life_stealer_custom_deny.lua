@@ -48,7 +48,6 @@ end
 
 
 LinkLuaModifier("modifier_life_stealer_custom_deny_debuff", "abilities/heroes/life_stealer_custom_deny.lua", LUA_MODIFIER_MOTION_NONE)
-
 modifier_life_stealer_custom_deny_debuff = class({})
 
 function modifier_life_stealer_custom_deny_debuff:DeclareFunctions()
@@ -58,6 +57,9 @@ function modifier_life_stealer_custom_deny_debuff:DeclareFunctions()
 end
 function modifier_life_stealer_custom_deny_debuff:IsPurgable()
 	return false
+end
+function modifier_life_stealer_custom_deny_debuff:IsDebuff()
+	return true
 end
 function modifier_life_stealer_custom_deny_debuff:OnCreated(keys)
 	self.regen_decrease = self:GetAbility():GetSpecialValueFor("regen_decrease")

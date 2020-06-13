@@ -538,6 +538,7 @@ function AOHGameMode:OnEntitySpawned(event)
 	if unit and unit:IsHero() then
 		fix_atr_for_hero(unit)
 	end
+
 	Timers:CreateTimer(
 		0.1,
 		function()

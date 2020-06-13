@@ -196,7 +196,7 @@
 	// Level 4 - Orange / Orb / Artifacts				
 	"artifacts"
 	{	
-		"item"    	"item_helm_of_the_dominator"
+		"item"    	"item_custom_helm_of_the_dominator"
  		"item"		"item_dragon_lance"
 		"item"		"item_sange"
  		"item"		"item_yasha"

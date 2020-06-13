@@ -114,8 +114,7 @@
 }
 "npc_dota_hero_chaos_knight"
 {
-	"AttributeStrengthGain"		"5.000000"
-	"AttributeAgilityGain"		"1.00000"
+	"AttributeStrengthGain"		"3.900000"
 	"MovementSpeed"		"340"
 	"Ability10"		"special_bonus_unique_chaos_knight_3"
 	"Ability11"		"special_bonus_hp_regen_12"
@@ -305,6 +304,14 @@
 "npc_dota_hero_mars"
 {	
 	"Ability1"		"mars_custom_spear"
+	"Ability10"		"special_bonus_attack_damage_25"
+	"Ability11"		"special_bonus_unique_mars_spear_cooldown"
+	"Ability12"		"special_bonus_unique_mars_spear_bonus_damage"
+	"Ability13"		"special_bonus_armor_6"
+	"Ability14"		"special_bonus_unique_mars_arena_of_blood_hp_regen"
+	"Ability15"		"special_bonus_unique_mars_spear_stun_duration"
+	"Ability16"		"special_bonus_unique_mars_gods_rebuke_extra_crit"
+	"Ability17"		"special_bonus_attack_base_damage_100"
 }
 "npc_dota_hero_medusa"
 {
@@ -604,11 +611,11 @@
 }
 "npc_dota_hero_treant"
 {
-    "Ability4"		"generic_hidden"
-    "Ability6"		"treant_custom_ultimate_sacrifice"
-    "Ability12"		"special_bonus_attack_damage_120"
-	"Ability14"		"special_bonus_hp_regen_20"
-    "Ability16"		"special_bonus_movement_speed_75"
+	"MovementSpeed"		"280"
+	"AttributeBaseStrength"		"33"
+	"AttributeStrengthGain"		"4.400000"
+	"AttributeBaseAgility"		"10"
+	"AttributeAgilityGain"		"1.400000"
 }
 "npc_dota_hero_tusk"
 {

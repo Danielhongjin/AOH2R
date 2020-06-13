@@ -1,11 +1,12 @@
-Ancient will now only heal 25% of its health on round start.
+IO boss nerfed, elder titans cooldown and stats weaker.
+Kunkka torrent and ancient apparition summon fixed.
 
-New final boss Oracle - will wipe you one by one with one hit kill spells. Tanks almost guaranteed to die.
+Charged Conduit limited to 1 conduit at a time per enemy.
+Helm of the Dominator reimplemented, now applies summon buff.
+Philosopher stone, assault cuirass upgrade, and vladmirs upgrade now properly upgrade themselves on couriers/bear as well.
 
-Ether hammer buffed ratio.
-Massive now grants 400 bonus health as well, ratio improved.
-Nebu removed, passive effect is now built in to all heroes.
-
-Ogre magi multicast cooldown increased from 6 to 12.
+Chen holy persuasion now applies summon buff.
+Mars talent now works.
+Treant protector abilities reverted. Some stats changed around.
 TO-DO
 

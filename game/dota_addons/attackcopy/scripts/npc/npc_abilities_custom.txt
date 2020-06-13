@@ -9259,6 +9259,11 @@
 			"var_type"				"FIELD_FLOAT"
 			"knockback_distance"	"75"
 		}
+		"10"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"talent"				"4"
+		}
 	}
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
 }
@@ -11568,40 +11573,6 @@
             "Function"			"cast_tiny_custom_toss"
             "Target"			"TARGET"
         } 
-    }
-}
-"treant_custom_ultimate_sacrifice"
-{
-    "BaseClass"					    "ability_lua"
-    "ScriptFile"		            "abilities/heroes/treant_custom_ultimate_sacrifice.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-    "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-    "AbilityTextureName"			"treant_overgrowth"
-    "AbilityCastPoint"				"0.3"
-    "AbilityChannelTime"			"4.0 3.0 2.0"
-    "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_4"
-    "AbilityManaCost"				"350 250 150"
-    "precache"
-    {
-        "particle"                  "particles/units/heroes/hero_chen/chen_holy_persuasion.vpcf"
-    }
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "base_cooldown"		    "30.0"
-        }
-        "02"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "extra_cooldown"		"30.0"
-        }
-        "03"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "channel_tooltip"		"2.0 1.5 1.0"
-        }
     }
 }
 "undying_custom_decay"
@@ -16209,8 +16180,18 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"20"
-		}			
+			"bonus_damage"			"-10"
+		}	
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_cooldown"			"-20"
+		}	
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"-10"
+		}	
 	}
 	"OnOwnerDied"
 	{
@@ -16265,6 +16246,8 @@
 			"Properties"
 			{
 				"MODIFIER_PROPERTY_BASEDAMAGEOUTGOING_PERCENTAGE"			"%bonus_damage"
+				"MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE"			"%bonus_cooldown"
+				"MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS"			"%bonus_armor"
 			}
 		}
 	}
@@ -17526,7 +17509,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"4500"
+				"damage"				"5000"
 			}			
 			"02"
 			{

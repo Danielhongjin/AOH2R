@@ -677,6 +677,18 @@
 			}
 		}
 	}
+	
+	"special_bonus_unique_mars_spear_cooldown"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"value"					"4"
+			}
+		}
+	}
 	"special_bonus_unique_mars_spear_bonus_damage"
 	{
 		"AbilitySpecial"
@@ -1298,17 +1310,6 @@
 			}
 		}
 	}
-	"special_bonus_unique_treant"
-	{
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"				"3"
-			}
-		}
-	}
 	"special_bonus_unique_treant_2"
 	{
 		"AbilitySpecial"
@@ -1320,6 +1321,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_treant_8"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"288"
+			}
+		}
+	}
 	"special_bonus_unique_treant_9"
 	{
 		"AbilitySpecial"
@@ -1327,7 +1339,18 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"120"
+				"value"				"96"
+			}
+		}
+	}
+	"special_bonus_unique_treant_11"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"200"
 			}
 		}
 	}
@@ -7076,6 +7099,11 @@
 				"total_heal"		"75 150 225 300"
 				"LinkedSpecialBonus"			"special_bonus_unique_treant_8"
 			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_armor"		"6 7 8 9"
+			}
 		}
 	}
 	"treant_leech_seed"
@@ -7092,18 +7120,31 @@
 	}
 	"treant_overgrowth"
 	{
-		"AbilityCooldown"				"80 75 70"
+		"AbilityCooldown"				"100 85 60"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"duration"						"5.0 7.0 9.0"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"			"150"
+				"LinkedSpecialBonus"		"special_bonus_unique_treant_11"
+			}
+		}
 	}
 	"treant_natures_grasp"
 	{
-		"AbilityCooldown"				"18"
-		"AbilityManaCost"				"60 70 80 90"
+		"AbilityCooldown"				"16 15 14 13"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_second"				"90 120 150 180"
+				"damage_per_second"				"45 60 75 90"
 				"LinkedSpecialBonus"			"special_bonus_unique_treant_9"
 			}
 			"02"

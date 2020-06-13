@@ -1074,6 +1074,10 @@
 		}		
 	}
 }
+"item_helm_of_the_dominator"
+{
+	"ItemPurchasable"				"0"
+}
 "item_holy_locket"
 {
     "MaxUpgradeLevel"               "2"
@@ -1704,7 +1708,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_stat"			"20"
+			"bonus_stat"			"16"
 		}			
 	}
 }
@@ -2880,7 +2884,7 @@
         "01"
         {
             "var_type"			    "FIELD_INTEGER"
-            "duration"			    "15"
+            "duration"			    "13"
         }
         "02"
         {
@@ -2920,13 +2924,13 @@
     "Model"							"models/props_gameplay/recipe.vmdl"
     "AbilityTextureName"			"item_recipe"
 	"Model"							"force_blade"
-	"ItemCost"						"1600"	
+	"ItemCost"						"600"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"ItemResult"					"item_force_blade"
 	"ItemRequirements"
 	{
-		"01"						"item_blades_of_attack;item_javelin;item_crown;item_ultimate_orb"
+		"01"						"item_claymore;item_javelin;item_crown;item_ultimate_orb"
 	}
 }
 "item_force_blade"
@@ -2945,7 +2949,7 @@
 		"01"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"magic_percent"            	"35"
+			"magic_percent"            	"30"
 		}
 		"02"
 		{
@@ -2955,7 +2959,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"			"20"
+			"bonus_damage"			"45"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 	}
@@ -5123,6 +5127,141 @@
 			"var_type"				"FIELD_INTEGER"
 			"fixed_health_regen"		"12 19 26"
 		}
+	}
+}
+"item_recipe_custom_helm_of_the_dominator"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"300"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_custom_helm_of_the_dominator"
+    "ItemRequirements"
+    {
+        "01"						"item_broadsword;item_headdress;item_crown"
+    }
+}
+"item_custom_helm_of_the_dominator"
+{
+	"BaseClass"				"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CREEP"
+	"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_ANCIENTS | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	"AbilityTextureName"			"item_helm_of_the_dominator"
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"30.0"
+	"AbilityManaCost"				"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_stats"			"7"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_damage_aura"		"20"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hp_regen_aura"			"10.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"creep_bonus"			"50"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"			"1200"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"health_min"			"1500"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"speed_base"			"425"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"max_units"				"1"
+		}
+	}
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"	"items/custom_helm_of_the_dominator.lua"
+			"Function"		"Dominate"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_custom_helm_of_the_dominator_buff"
+		{
+			"IsBuff"		"1"
+			"IsHidden"				"1"
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"	"items/custom_helm_of_the_dominator.lua"
+					"Function"		"DominateRemove"
+				}
+			}
+			"States"
+			{
+				"MODIFIER_STATE_DOMINATED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+		}
+		"modifier_helm_aura"
+        {
+            "Passive"				"1"
+            "IsHidden"				"1"
+            "Aura" 					"modifier_helm_buff"
+            "Aura_Radius" 			"1200"
+            "Aura_Teams" 			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Types" 			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_STATS_AGILITY_BONUS"			"%bonus_stats"
+				"MODIFIER_PROPERTY_STATS_INTELLECT_BONUS"			"%bonus_stats"
+				"MODIFIER_PROPERTY_STATS_STRENGTH_BONUS"			"%bonus_stats"
+			}
+        }
+        "modifier_helm_buff"
+        {
+            "IsHidden"  		"1"
+			"OnCreated"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		    "items/custom_helm_of_the_dominator.lua"
+					"Function"			    "AddBuff"
+					"Target"			    "TARGET"
+				} 
+			}
+			"OnDestroy"
+            {
+				"RunScript"
+				{
+					"ScriptFile"		    "items/custom_helm_of_the_dominator.lua"
+					"Function"			    "RemoveBuff"
+					"Target"			    "TARGET"
+				} 
+            }
+        }
 	}
 }
 "item_recipe_high_tech_boots"

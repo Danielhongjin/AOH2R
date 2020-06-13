@@ -35,6 +35,7 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts",
 	}
 
 	local units = { 

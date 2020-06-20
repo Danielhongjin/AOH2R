@@ -937,7 +937,7 @@
 				
 			"a"
 			{
-				"NPCName"				"npc_boss_demon_marauder"
+				"NPCName"				"npc_boss_terrorblade"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"

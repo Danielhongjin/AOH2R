@@ -21,7 +21,7 @@ function HolyPersuasion( keys )
 		local has_talent = false;
 		-- Ability variables
 		local max_units = ability:GetLevelSpecialValueFor("max_units", ability_level)
-		local max_ancients = caster:FindAbilityByName("chen_custom_avatar"):GetLevel() + 1
+		local max_ancients = caster:FindAbilityByName("chen_hand_of_god"):GetLevel()
 		local units = FindUnitsInRadius(
 					DOTA_TEAM_GOODGUYS,
 					target:GetAbsOrigin(),
@@ -40,7 +40,7 @@ function HolyPersuasion( keys )
 		end
 
 		-- Change the ownership of the unit and restore its mana to full
-		if not target:IsAncient() and not has_talent or caster:HasScepter() and caster:FindAbilityByName("chen_custom_avatar"):GetLevel() > 0 and target:IsAncient() then
+		if not target:IsAncient() and not has_talent or caster:HasScepter() and caster:FindAbilityByName("chen_hand_of_god"):GetLevel() > 0 and target:IsAncient() then
 			target:SetTeam(caster_team)
 			target:SetOwner(caster)
 			target:SetControllableByPlayer(player, true)

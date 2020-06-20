@@ -124,11 +124,10 @@
 "npc_dota_hero_chen"
 {
     "Ability2"		"chen_custom_holy_persuasion"
-	"Ability6"		"chen_custom_avatar"
 	"Ability13"		"special_bonus_movement_speed_40"
+	"Ability12"		"special_bonus_hp_regen_12"
 	"Ability15"		"special_bonus_all_stats_10"
-	"Ability16"		"special_bonus_unique_chen_custom_1"
-	"Ability17"		"special_bonus_unique_chen_custom_2"
+	"Ability16"		"special_bonus_unique_chen_custom_2"
 }
 "npc_dota_hero_clinkz_frostivus2018"
 {
@@ -227,8 +226,19 @@
 }
 "npc_dota_hero_invoker"
 {
-	"Ability21"				"special_bonus_spell_amplify_15"
-    "AttributeIntelligenceGain"		"4.500000"
+	"Ability17"		"special_bonus_unique_invoker_9"
+	"Ability20"		"special_bonus_unique_invoker_11"
+	"Ability21"		"special_bonus_spell_amplify_20"
+	"Ability23"		"special_bonus_cooldown_reduction_20"
+	"Ability24"		"special_bonus_all_stats_20"
+	"AttackDamageMin"		"33"
+	"AttackDamageMax"		"38"
+	"AttackRate"		"1.600000"
+	"AttackAnimationPoint"		"0.370000"
+	"AttributeStrengthGain"		"2.900000"
+	"AttributeAgilityGain"		"2.400000"
+	"MovementTurnRate"		"0.900000"
+	"MovementSpeed"		"305"
 }
 "npc_dota_hero_jakiro"
 {
@@ -315,9 +325,11 @@
 }
 "npc_dota_hero_medusa"
 {
-    "Ability6"		"medusa_custom_stone_arrows"
-    "Ability15"		"special_bonus_attack_range_100"
-    "Ability16"		"special_bonus_hp_700"
+	"Ability10"		"special_bonus_attack_damage_25"
+	"Ability13"		"special_bonus_mp_regen_8"
+	"Ability14"		"special_bonus_unique_medusa_4"
+	"Ability16"		"special_bonus_30_crit_2"
+	"Ability17"		"special_bonus_intelligence_35"
 }
 "npc_dota_hero_meepo"
 {
@@ -524,8 +536,8 @@
 "npc_dota_hero_slark"
 {
 	"ArmorPhysical"		"-2"
-	"AttackRate"		"1.250000"
-	"AttributeBaseAgility"		"20"
+	"AttackRate"		"1.450000"
+	"AttributeBaseAgility"		"22"
 	"BaseAttackSpeed"		"90"
     "Ability2"      "slark_custom_pounce"
     "Ability3"		"slark_custom_essence_shift"
@@ -534,7 +546,7 @@
 }
 "npc_dota_hero_sniper"
 {
-    "Ability6"		"sniper_custom_rifle"
+    "Ability3"		"sniper_custom_rifle"
 	"Ability11"		"special_bonus_mp_regen_4"
 	"Ability13"		"special_bonus_magic_resistance_15"
     "Ability14"		"special_bonus_hp_400"
@@ -571,6 +583,7 @@
 	"Ability15"		"special_bonus_cooldown_reduction_15"
 	"ArmorPhysical"		"-1"
 	"AttackRate"		"1.750000"
+	"AttributeStrengthGain"		"4.200000"
 }
 "npc_dota_hero_techies"
 {

@@ -45,7 +45,7 @@ end
 
 function modifier_atr_fix:GetModifierConstantManaRegen()
     local parent_int = self.parent:GetIntellect()
-    local m_regen = parent_int * 0.0375
+    local m_regen = parent_int * 0.05
     return m_regen
 end
 

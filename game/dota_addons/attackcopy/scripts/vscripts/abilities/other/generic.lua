@@ -18,6 +18,7 @@ local spells_aoe = {[0] = "custom_crystal_nova",
 "custom_spiritbreaker_inner_fire",
 "custom_deafening_blast",
 "custom_mystic_flare", --index 15
+"custom_shockwave",
 }
 local spells_target = {[0] = "custom_static_link", 
 "custom_frostbite", 
@@ -32,6 +33,8 @@ local spells_target = {[0] = "custom_static_link",
 "custom_paralyzing_cask", --index 10
 "custom_nether_strike",
 "custom_purifying_flames",
+"custom_life_drain",
+"custom_sunder",
 }
 --Fires a warning aoe to a point and casts the spell immediately
 function generate_warning_aoe(keys)
@@ -257,6 +260,39 @@ function generic_target(keys)
 end
 
 function generic_target_random(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local target = ai_random_alive_hero()
+	local delay = keys.delay
+	local spell = caster:FindAbilityByName(spells_target[keys.ability_index])
+	Timers:CreateTimer(
+		0, 
+		function()
+			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() then
+				return 0.5
+			end
+			target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
+			if caster:IsMoving() then
+				caster:Stop()
+				caster:FaceTowards(point)
+			end
+			StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
+			caster:AddNewModifier(caster, ability, "modifier_anim", {duration = keys.anim_duration})
+			Timers:CreateTimer(
+				delay - spell:GetCastPoint(), 
+				function()
+					if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
+						return 0.5
+					end
+					spell:EndCooldown()
+					caster:CastAbilityOnTarget(target, spell, -1)
+				end
+			)
+		end
+	)
+end
+
+function generic_target_random_noanim(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local target = ai_random_alive_hero()

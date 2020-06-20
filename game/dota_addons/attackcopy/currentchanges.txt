@@ -1,12 +1,15 @@
-IO boss nerfed, elder titans cooldown and stats weaker.
-Kunkka torrent and ancient apparition summon fixed.
+Mana regen per int increased from 0.0875 to 0.1.
 
-Charged Conduit limited to 1 conduit at a time per enemy.
-Helm of the Dominator reimplemented, now applies summon buff.
-Philosopher stone, assault cuirass upgrade, and vladmirs upgrade now properly upgrade themselves on couriers/bear as well.
+Boss revenge behaviors will now wait to fire if command restricted.
+Oracle boss deals more damage, channels much quicker.
+Terrorblade boss reworked.
 
-Chen holy persuasion now applies summon buff.
-Mars talent now works.
-Treant protector abilities reverted. Some stats changed around.
+Mimic Mace now copies any ability with a cooldown lower than 20. Now takes cooldown reduction into account.
+
+Chen ult reverted, talents refactored.
+Invoker given general buffs and talent improvements.
+Medusa ult reverted.
+Sniper ult reverted, custom ultimate shifted over to take aim.
 TO-DO
 
+CURRENTLY IMPLEMENTING TERRORBLADE BOSS REWORK

@@ -148,10 +148,12 @@ if IsServer() then
 		self.targetType = nil
 		self.cooldown_reduction = self.ability:GetSpecialValueFor("cooldown_reduction")
 		self.minimum_cooldown = self.ability:GetSpecialValueFor("minimum_cooldown")
+		self.cooldown_threshold = self.ability:GetSpecialValueFor("cooldown_threshold")
 	end
 	
 	function modifier_item_echo_wand_thinker:OnAbilityExecuted(keys)
-		if keys.unit == self.parent and not self.parent:HasModifier("modifier_item_echo_wand_lock") and keys.ability:GetAbilityType() ~= 1 and not keys.ability:IsToggle() then
+	print((keys.ability:GetCooldown(keys.ability:GetLevel()) * self.parent:GetCooldownReduction()))
+		if keys.unit == self.parent and not self.parent:HasModifier("modifier_item_echo_wand_lock") and (keys.ability:GetCooldown(keys.ability:GetLevel()) * self.parent:GetCooldownReduction()) <= self.cooldown_threshold and not keys.ability:IsToggle() then
 			if not exclude_table[keys.ability:GetAbilityName()] then
 				if (ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)) or include_table[keys.ability:GetAbilityName()] then
 					self.targetType = 0
@@ -179,7 +181,7 @@ if IsServer() then
 					else
 						self.parent:SetCursorTargetingNothing(true)
 					end
-					local cooldown = self.echo:GetCooldown(self.echo:GetLevel())
+					local cooldown = self.echo:GetCooldown(self.echo:GetLevel()) * self.parent:GetCooldownReduction()
 					if cooldown < self.minimum_cooldown then
 						cooldown = self.minimum_cooldown
 					end

@@ -198,6 +198,18 @@
 			}
 		}
 	}
+	"special_bonus_unique_chen_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"600"
+				"ad_linked_ability"			"chen_hand_of_god"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
 	"special_bonus_unique_clinkz_1"
 	{
 		"AbilitySpecial"
@@ -473,6 +485,18 @@
 			}
 		}
 	}
+	"special_bonus_unique_invoker_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"60"
+				"ad_linked_ability"			"invoker_alacrity"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+		}
+	}
 	"special_bonus_unique_invoker_6"
 	{
 		"AbilitySpecial"
@@ -708,6 +732,18 @@
 			{
 				"var_type"						"FIELD_FLOAT"
 				"value"				"1"
+			}
+		}
+	}
+	"special_bonus_unique_medusa"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"3"
+				"ad_linked_ability"			"medusa_stone_gaze"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
@@ -2679,6 +2715,7 @@
 	}
 	"chen_divine_favor"
 	{
+		"AbilityCooldown"				"10"
 		"AbilitySpecial"
 			{
 				"01"
@@ -2699,10 +2736,29 @@
 				"04"
 				{
 					"var_type"				"FIELD_FLOAT"
-					"teleport_delay"	"6.0"
+					"teleport_delay"	"1.0"
 				}
 			}
 	}	
+	"chen_hand_of_god"
+	{
+		"AbilityCooldown"				"80 70 60"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal_amount"			"400 650 900"
+				"LinkedSpecialBonus"	"special_bonus_unique_chen_2"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ancient_creeps_scepter"		"1 2 3"
+				"RequiresScepter"			"1"
+			}
+		}
+	}
 	"disruptor_static_storm"
 	{
 		"AbilityCooldown"			"90.0 70.0 50.0"
@@ -2807,6 +2863,24 @@
 				"var_type"				"FIELD_INTEGER"
 				"reduction"				"-15"
 				"LinkedSpecialBonus"		"special_bonus_unique_dragon_knight_3"
+			}
+		}
+	}
+	"dragon_knight_elder_dragon_form"
+	{
+		"AbilityCooldown"				"80"
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"corrosive_breath_damage"	"30 30 30 45"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"splash_damage_percent"		"95 95 95 145"
+				"LinkedSpecialBonus"			"special_bonus_unique_dragon_knight_6"
 			}
 		}
 	}
@@ -3592,7 +3666,7 @@
 	}
 	"invoker_chaos_meteor"
 	{
-		"AbilityCooldown"				"31"
+		"AbilityCooldown"				"21"
 		"AbilitySpecial"
 		{
 			"03"
@@ -3619,7 +3693,7 @@
 	}
 	"invoker_cold_snap"
 	{
-		"AbilityCooldown"				"25"
+		"AbilityCooldown"				"18"
 		"AbilitySpecial"
 		{
 			"02"
@@ -3643,7 +3717,7 @@
 	}
 	"invoker_deafening_blast"
 	{
-		"AbilityCooldown"				"35"
+		"AbilityCooldown"				"25"
 		"AbilitySpecial"
 		{
 			"06"
@@ -3656,7 +3730,7 @@
 	}
 	"invoker_emp"
 	{
-		"AbilityCooldown"				"24"
+		"AbilityCooldown"				"20"
 		"AbilitySpecial"
 		{
 			"03"
@@ -3697,7 +3771,7 @@
 	}
 	"invoker_ghost_walk"
 	{
-		"AbilityCooldown"				"33"
+		"AbilityCooldown"				"25"
 	}
 	"invoker_ice_wall"
 	{
@@ -3725,7 +3799,7 @@
 	}
 	"invoker_sun_strike"
 	{
-		"AbilityCooldown"				"18"
+		"AbilityCooldown"				"10"
 		"AbilitySpecial"
 		{
 			"03"
@@ -3738,7 +3812,7 @@
 	}
 	"invoker_tornado"
 	{
-		"AbilityCooldown"				"32"
+		"AbilityCooldown"				"22"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4630,14 +4704,75 @@
 			}
 		}
 	}
+	"medusa_split_shot"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_modifier"		"-50 -35 -20 -5"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_modifier_tooltip"		"50 65 80 95"
+			}
+		}
+	}
 	"medusa_mana_shield"
 	{
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_per_mana"		"2.0 2.5 3.0 3.5"
+			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"absorption_pct"		"50"
+				"absorption_pct"		"90"
+			}
+		}
+	}
+	"medusa_mystic_snake"
+	{
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"snake_damage"			"120 180 240 300"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stone_form_scepter_base"		"1.5"
+				"RequiresScepter"	"1"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stone_form_scepter_increment"		"0.45"
+				"RequiresScepter"	"1"
+			}
+		}
+	}
+	"medusa_stone_gaze"
+	{
+		"AbilityCooldown"				"90 80 70"
+		"AbilitySpecial"
+		{
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stone_duration"			"4.0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_physical_damage"		"80 90 100"
 			}
 		}
 	}
@@ -5781,7 +5916,7 @@
 	}
 	"queenofpain_sonic_wave"
 	{
-		"AbilityCooldown"				"100 80 60"
+		"AbilityCooldown"				"80 70 60"
 		"AbilitySpecial"
 		{
 			"05"
@@ -5798,7 +5933,7 @@
 			"07"
 			{
 				"var_type"			    "FIELD_INTEGER"
-				"damage_scepter"	    "800 1300 1900"
+				"damage_scepter"	    "900 1350 1950"
 				"RequiresScepter"		"1"
 			}
 			"08"
@@ -6471,17 +6606,6 @@
 	{
 		"AbilityChargeRestoreTime"		"35"
 	}
-	"sniper_take_aim"
-	{
-		"AbilitySpecial"
-		{
-			"02"
-			{
-				"var_type"									"FIELD_INTEGER"
-				"active_attack_range_multiplier"			"5"
-			}
-		}
-	}
 	"sniper_headshot"
 	{
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
@@ -6510,6 +6634,10 @@
 				"slow"			                "-20"
 			}
 		}
+	}
+	"sniper_assassinate"
+	{
+		"AbilityDamage"					"600 900 1200"
 	}
 	"spectre_desolate"
 	{
@@ -6654,7 +6782,7 @@
 	}
 	"sven_gods_strength"
 	{
-		"AbilityCooldown"				"70"
+		"AbilityCooldown"				"60"
 		"AbilitySpecial"
 		{
 			"01"

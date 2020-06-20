@@ -34,13 +34,13 @@ if IsServer() then
         local target = keys.target
     
         if attacker == self:GetParent() and attacker:IsOpposingTeam(target:GetTeam()) then
-            local modifier_name = "modifier_life_stealer_custom_deny_debuff"
 
-            if not target:HasModifier(modifier_name) and not self:GetParent():IsIllusion() then
-                target:AddNewModifier(attacker, ability, modifier_name, {})
+
+            if not target:HasModifier("modifier_life_stealer_custom_deny_debuff") and not self:GetParent():IsIllusion() then
+                target:AddNewModifier(attacker, ability, "modifier_life_stealer_custom_deny_debuff", {})
             end
 
-            target:FindModifierByName(modifier_name):IncrementStackCount()
+            target:FindModifierByName("modifier_life_stealer_custom_deny_debuff"):IncrementStackCount()
         end
     end
 end

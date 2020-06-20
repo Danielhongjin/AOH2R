@@ -10,7 +10,7 @@ function modifier_hard_mode_boss:IsHidden()
 end
 
 function modifier_hard_mode_boss:GetTexture()
-    return "custom_avatar_debuff"
+    return "hard_mode"
 end
 
 function modifier_hard_mode_boss:IsPurgable()

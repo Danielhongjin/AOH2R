@@ -60,6 +60,11 @@ function generate_warning_aoe(keys)
 		ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
 		ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 		ParticleManager:ReleaseParticleIndex(fx)
+		local fx2 = ParticleManager:CreateParticle("particles/custom/link_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+		ParticleManager:SetParticleControlEnt(fx2, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControl(fx2, 1, point)
+		ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
+		ParticleManager:ReleaseParticleIndex(fx2)
 	end
 	
 	caster:CastAbilityOnPosition(point, spell, -1)
@@ -88,6 +93,11 @@ function generic_aoe_noanim(keys)
 		ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
 		ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 		ParticleManager:ReleaseParticleIndex(fx)
+		local fx2 = ParticleManager:CreateParticle("particles/custom/link_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+		ParticleManager:SetParticleControlEnt(fx2, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControl(fx2, 1, point)
+		ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
+		ParticleManager:ReleaseParticleIndex(fx2)
 	end
 	
 	Timers:CreateTimer(
@@ -131,6 +141,11 @@ function generic_aoe(keys)
 				ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
 				ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 				ParticleManager:ReleaseParticleIndex(fx)
+				local fx2 = ParticleManager:CreateParticle("particles/custom/link_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+				ParticleManager:SetParticleControlEnt(fx2, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControl(fx2, 1, point)
+				ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
+				ParticleManager:ReleaseParticleIndex(fx2)
 			end
 			if caster:IsMoving() then
 				caster:Stop()
@@ -169,7 +184,11 @@ function generic_aoe_notarget(keys)
 			ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
 			ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 			ParticleManager:ReleaseParticleIndex(fx)
-			
+			local fx2 = ParticleManager:CreateParticle("particles/custom/link_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+			ParticleManager:SetParticleControlEnt(fx2, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControl(fx2, 1, point)
+			ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
+			ParticleManager:ReleaseParticleIndex(fx2)
 			if caster:IsMoving() then
 				caster:Stop()
 			end
@@ -218,6 +237,11 @@ function generic_aoe_farpoint(keys)
 				ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
 				ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 				ParticleManager:ReleaseParticleIndex(fx)
+				local fx2 = ParticleManager:CreateParticle("particles/custom/link_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+				ParticleManager:SetParticleControlEnt(fx2, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControl(fx2, 1, point)
+				ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
+				ParticleManager:ReleaseParticleIndex(fx2)
 			end
 			
 			if caster:IsMoving() then
@@ -340,15 +364,23 @@ end
 
 function modifier_target_delay:OnCreated(keys)
 	self.parent = self:GetParent()
+	local caster = self:GetCaster()
 	self.fx = ParticleManager:CreateParticle("particles/custom/target_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, self.parent)
 	ParticleManager:SetParticleControlEnt(self.fx, 0, self.parent, PATTACH_OVERHEAD_FOLLOW, "follow_overhead", self.parent:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControl(self.fx, 1, Vector(keys.duration, 1, 0))
+	self.fx2 = ParticleManager:CreateParticle("particles/custom/link_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, self.parent)
+	ParticleManager:SetParticleControlEnt(self.fx2, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(self.fx2, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControl(self.fx2, 2, Vector(keys.duration, 1, 0))
+
 end
 
 function modifier_target_delay:OnDestroy()
 	self.parent = self:GetParent()
 	ParticleManager:DestroyParticle(self.fx, false)
+	ParticleManager:DestroyParticle(self.fx2, false)
 	ParticleManager:ReleaseParticleIndex(self.fx)
+	ParticleManager:ReleaseParticleIndex(self.fx2)
 end
 
 LinkLuaModifier("modifier_anim", "abilities/other/generic.lua", LUA_MODIFIER_MOTION_NONE)

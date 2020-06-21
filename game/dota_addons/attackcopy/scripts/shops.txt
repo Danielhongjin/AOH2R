@@ -102,7 +102,6 @@
 		"item"		"item_plain_ring"
 		"item"		"item_conduit"
 		"item"		"item_pharaoh_crown"
-		"item"		"item_echo_wand"
 	}
 
 	// Level 2 - Blue Recipes
@@ -240,6 +239,7 @@
 		"item"		"item_pirate_hat"				  
 		"item"		"item_custom_ex_machina"		  
 		"item"		"item_desolator_2"	
+		"item"		"item_echo_wand"
 	}
 
 	"pregame"

@@ -5602,37 +5602,37 @@
 "npc_dota_creep_goodguys_melee"
 {
 	"IsSummoned"				"1"
-	"ModelScale" 					"0.93"
+	"ModelScale" 				"0.93"
 	"Level"						"3"
 	"ArmorPhysical"				"6"			// Physical protection.
-	"MagicalResistance"				"40"			// Magical protection.
+	"MagicalResistance"			"40"			// Magical protection.
 	"AttackAcquisitionRange"	"900"
-	"AttackDamageMin"			"49"		// Damage range min.
-	"AttackDamageMax"			"52"		// Damage range max.
+	"AttackDamageMin"			"54"		// Damage range min.
+	"AttackDamageMax"			"57"		// Damage range max.
 	"BountyXP"					"0"		// Experience earn.
 	"BountyGoldMin"				"1"		// Gold earned min.
 	"BountyGoldMax"				"1"		// Gold earned max.
-	"StatusHealth"				"700"		// Base health.
+	"StatusHealth"				"750"		// Base health.
 	"StatusHealthRegen"			"7.5"		// Health regeneration rate.
 	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
 }	
 "npc_dota_creep_goodguys_ranged"
 {
 	"IsSummoned"				"1"
-	"ModelScale" 					"0.82"
+	"ModelScale" 				"0.82"
 	"Level"						"3"
 	"ArmorPhysical"				"2"			// Physical protection.
-	"MagicalResistance"				"40"			// Magical protection.
+	"MagicalResistance"			"40"			// Magical protection.
 	"AttackAcquisitionRange"	"900"
-	"AttackRange"				"700"
-	"AttackDamageMin"			"69"		// Damage range min.
-	"AttackDamageMax"			"72"		// Damage range max.
+	"AttackRange"				"750"
+	"AttackDamageMin"			"72"		// Damage range min.
+	"AttackDamageMax"			"75"		// Damage range max.
 	"AttackRate"				"0.9"	
 	"AttackAnimationPoint"		"0.45"
 	"BountyXP"					"0"		// Experience earn.
 	"BountyGoldMin"				"1"		// Gold earned min.
 	"BountyGoldMax"				"1"		// Gold earned max.
-	"StatusHealth"				"475"		// Base health.
+	"StatusHealth"				"500"		// Base health.
 	"StatusHealthRegen"			"5"		// Health regeneration rate.
 	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
 }
@@ -5876,7 +5876,7 @@
 			"Boss Resistance"       {"Item"         "item_boss_resistance_40" }
 			"Hyperstone"			{"Item"		    "item_hyperstone"}
 			"Black King Bar"		{"item"			"item_black_king_bar_boss"}
-			"Kaya"			            { "Item"	    "item_kaya"  }
+			"Trade Kaya"		 	{ "Item"	    "item_trade_kaya_2"  }
 		}
 		"AttachWearables"
 		{

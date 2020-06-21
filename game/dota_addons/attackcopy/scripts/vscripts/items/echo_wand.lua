@@ -133,9 +133,13 @@ if IsServer() then
 		item_pocket_tower = true,
 		item_pocket_barracks = true,
 		item_echo_wand = true,
-		item_helm_of_the_dominator = true,
 		phoenix_fire_spirits = true,
 		phantom_assassin_custom_stifling_dagger = true,
+		ursa_enrage = true,
+		weaver_time_lapse = true,
+		faceless_void_time_walk = true,
+		riki_smoke_screen = true,
+		viper_nethertoxin = true,
 	}
 	local include_table = {
 		riki_blink_strike = true,
@@ -152,7 +156,6 @@ if IsServer() then
 	end
 	
 	function modifier_item_echo_wand_thinker:OnAbilityExecuted(keys)
-	print((keys.ability:GetCooldown(keys.ability:GetLevel()) * self.parent:GetCooldownReduction()))
 		if keys.unit == self.parent and not self.parent:HasModifier("modifier_item_echo_wand_lock") and (keys.ability:GetCooldown(keys.ability:GetLevel()) * self.parent:GetCooldownReduction()) <= self.cooldown_threshold and not keys.ability:IsToggle() then
 			if not exclude_table[keys.ability:GetAbilityName()] then
 				if (ability_behavior_includes(keys.ability, DOTA_ABILITY_BEHAVIOR_UNIT_TARGET) and (keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_ENEMY or keys.ability:GetAbilityTargetTeam() == DOTA_UNIT_TARGET_TEAM_BOTH)) or include_table[keys.ability:GetAbilityName()] then

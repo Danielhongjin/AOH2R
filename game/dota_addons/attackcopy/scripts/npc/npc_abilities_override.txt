@@ -243,6 +243,28 @@
 			}
 		}
 	}
+	"special_bonus_unique_dazzle_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"48"
+			}
+		}
+	}
+	"special_bonus_unique_dazzle_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"72"
+			}
+		}
+	}
 	"special_bonus_unique_dazzle_4"
 	{
 		"AbilitySpecial"
@@ -449,6 +471,17 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"3"
+			}
+		}
+	}
+	"special_bonus_unique_grimstroke_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"value"					"100"
 			}
 		}
 	}
@@ -1269,6 +1302,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_templar_assassin_3"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"480"
+			}
+		}
+	}
 	"special_bonus_unique_terrorblade"
 	{
 		"AbilitySpecial"
@@ -1485,7 +1529,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"12"
+				"value"				"18"
 			}
 		}
 	}
@@ -1617,7 +1661,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"1"
+				"value"				"2"
 			}
 		}
 	}
@@ -2625,6 +2669,38 @@
 	{
 		"AbilityCooldown"				"70 60 50"
 	}
+	"dazzle_poison_touch"
+	{
+		"AbilitySpecial"
+		{
+			"05"
+			{	
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"24 42 60 78"
+				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_3"
+			}
+			"08"
+			{	
+				"var_type"			"FIELD_FLOAT"
+				"duration"		"5 6 7 8"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"dazzle_shadow_wave"
+	{
+		"AbilitySpecial"
+		{
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"90 120 150 180"
+				"LinkedSpecialBonus"	"special_bonus_unique_dazzle_2"
+
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 	"dazzle_bad_juju"
 	{
 		"AbilitySpecial"
@@ -2866,15 +2942,19 @@
 			}
 		}
 	}
+	"dragon_knight_dragon_tail"
+	{
+		"AbilityDamage"					"50 100 150 200"
+	}
 	"dragon_knight_elder_dragon_form"
 	{
-		"AbilityCooldown"				"80"
+		"AbilityCooldown"				"100"
 		"AbilitySpecial"
 		{
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"corrosive_breath_damage"	"30 30 30 45"
+				"corrosive_breath_damage"	"60 60 60 90"
 			}
 			"08"
 			{
@@ -4727,12 +4807,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana"		"2.0 2.5 3.0 3.5"
+				"damage_per_mana"		"2.0 2.75 3.5 4.25"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"absorption_pct"		"90"
+				"absorption_pct"		"95"
 			}
 		}
 	}
@@ -5275,7 +5355,7 @@
 			"03"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"scepter_mana"		"20"
+				"scepter_mana"		"10"
 				"RequiresScepter"	"1"
 			}
 			"04"
@@ -6051,20 +6131,15 @@
 		"AbilityCastPoint"				"0.2"
 		"AbilitySpecial"
 		{
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"attack_count"	"6"
-			}
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
 				"damage_pct"	"100 115 130 145" 
 			}
-			"05"
+			"04"
 			{
-				"var_type"					"FIELD_INTEGER"
-				"scepter_attacks"				"12"
+				"var_type"					"FIELD_FLOAT"
+				"scepter_duration"				"2.5"
 				"RequiresScepter"		"1"
 			}
 		}
@@ -6427,19 +6502,19 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"vampiric_aura"			"7 8 9 10"
+				"vampiric_aura"			"6 7 8 9"
 				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_2"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"			"10 20 30 40"
+				"damage"			"12 24 36 48"
 			}
 		}
 	}
 	"skeleton_king_mortal_strike"
 	{
-		"AbilityCooldown"				"5"
+		"AbilityCooldown"				"8"
 		"AbilitySpecial"
 		{
 			"02"
@@ -7436,7 +7511,14 @@
 	}
 	"ursa_overpower"
 	{
-		"AbilityCooldown"				"13 11 9 7"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_speed_bonus_pct"	"600 600 600 600"
+			}
+		}
 	}
 	"ursa_fury_swipes"
 	{
@@ -7465,11 +7547,6 @@
 	{
 		"AbilitySpecial"
 		{			
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_reduction"			"90"
-			}
 			"02"
 			{
 				"var_type"						"FIELD_INTEGER"

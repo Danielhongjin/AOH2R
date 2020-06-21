@@ -7021,7 +7021,7 @@
 		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_mana_loss.vpcf"
 		"particle"		"particles/units/heroes/hero_obsidian_destroyer/obsidian_destroyer_sanity_eclipse_smoke_main.vpcf"	
 	}
-	"AbilityCooldown"				"60.0 50.0 40.0"
+	"AbilityCooldown"				"80.0 70.0 60.0"
 	"AbilityManaCost"				"350 700 1050"
 	"AbilitySpecial"
 	{
@@ -8958,7 +8958,7 @@
     "AbilityCastRange"				    "900"
     "AbilityCastPoint"				    "0.3 0.3 0.3"
     "AbilityCastAnimation"		        "ACT_DOTA_CAST_ABILITY_4"
-    "AbilityCooldown"				    "55.0 45.0 35.0"
+    "AbilityCooldown"				    "60.0 50.0 40.0"
     "AbilityManaCost"				    "200 325 450"
     "precache"
     {
@@ -8993,7 +8993,7 @@
         "05"
         {
             "var_type"					"FIELD_FLOAT"
-            "cooldown_scepter"			"27.5 22.5 17.5"
+            "cooldown_scepter"			"30 25 20"
         }
         "06"
         {
@@ -9665,7 +9665,7 @@
         "01"
         {
             "var_type"				    "FIELD_INTEGER"
-            "crit_increase"	            "70"
+            "crit_increase"	            "75"
         }
         "02"
         {
@@ -9685,7 +9685,7 @@
         "05"
         {
             "var_type"				    "FIELD_INTEGER"
-            "spell_amp"	                "20 30 45"
+            "spell_amp"	                "30 45 60"
         }
         "06"
         {
@@ -9703,7 +9703,7 @@
     "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
     "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_4"
     "SpellDispellableType"			"SPELL_DISPELLABLE_NO"
-    "AbilityCooldown"				"20.0"
+    "AbilityCooldown"				"60.0"
     "AbilityManaCost"				"150"
     "AbilitySpecial"
     {
@@ -9715,12 +9715,12 @@
         "02"
         {	
             "var_type"			    "FIELD_INTEGER"
-            "mana_amp"	    "3 4 5 6"
+            "mana_amp"	    "5"
         }
         "03"
         {	
             "var_type"			    "FIELD_FLOAT"
-            "mana_regen_pct"		        "0.85"
+            "mana_regen_pct"		        "0.75 0.85 0.95 1.05"
         }
     }
 }
@@ -10582,18 +10582,6 @@
             "EffectName"		    "Hero_ShadowDemon.Soul_Catcher.Cast"
         }
     }
-}
-"skeleton_king_reincarnation"
-{
-	"AbilityCooldown"				"160 80 40"
-	"AbilitySpecial"
-	{
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"slow_duration"			"7.0"
-		}
-	}
 }
 "skywrath_mage_custom_ancient_seal"
 	{
@@ -17044,15 +17032,15 @@
 		"AbilitySound"					"Hero_Oracle.FortunesEnd.Target"
 		"AbilityCastRange"				"1600"
 		"AbilityCastPoint"				"0"
-		"AbilityChannelTime"			"2.0"
-		"AbilityCooldown"				"22"
+		"AbilityChannelTime"			"1.5"
+		"AbilityCooldown"				"25"
 		"AbilityManaCost"				"100"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage"					"4000"
+				"damage"					"6000"
 			}
 			"02"
 			{
@@ -17067,7 +17055,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"maximum_purge_duration"	"2.0"
+				"maximum_purge_duration"	"1.5"
 			}
 			"05"
 			{
@@ -17088,7 +17076,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"700"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"14"
+		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" "1"
 		"AbilitySpecial"
@@ -17130,24 +17118,24 @@
 		"AbilitySound"					"Hero_Oracle.PurifyingFlames.Damage"
 		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.3"
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"5500"
+				"damage"				"7000"
 			}			
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"heal_per_second"		"150.0"
+				"heal_per_second"		"100.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"total_heal_tooltip"	"750"
+				"total_heal_tooltip"	"500"
 			}
 			"04"
 			{
@@ -17285,7 +17273,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"19000"
+				"damage"				"22000"
 			}
 			"04"
 			{
@@ -17363,7 +17351,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"600"
+				"damage"				"1600"
 			}
 			"07"
 			{
@@ -17489,7 +17477,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"10"
+				"duration"				"8"
 			}
 			"02"
 			{

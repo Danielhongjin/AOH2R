@@ -1,15 +1,16 @@
-Mana regen per int increased from 0.0875 to 0.1.
+Some warning signals now have a particle effect that shows you which enemy is casting an ability.
 
-Boss revenge behaviors will now wait to fire if command restricted.
-Oracle boss deals more damage, channels much quicker.
-Terrorblade boss reworked.
+Arcane staff recipe changed, stats improved.
+Mimic Mace will now refuse to copy hp reverting abilities (weaver ult and faceless void Q) as well as ursa enrage. Also will not fire on riki smoke and viper nethertoxin.
+Mimic Mace is now a tier 5 neutral item.
+Mimic Mace cooldown per percentage reduced to account for Octarine Core usage.
+Helm of the dominator can now dominate up to two units. Can be upgraded to dominate ancient creeps.
+Unhallowed Icon now only fully activates if you are in range of enemies.
 
-Mimic Mace now copies any ability with a cooldown lower than 20. Now takes cooldown reduction into account.
-
-Chen ult reverted, talents refactored.
-Invoker given general buffs and talent improvements.
-Medusa ult reverted.
-Sniper ult reverted, custom ultimate shifted over to take aim.
+Dazzle, Dragon Knight, Leshrac, Luna, Leshrac, Medusa, Templar Assassin, and Ursa given buffs.
+Outworld Devourer nerfed cooldowns. Mana amp scaling factor moved from mana per int to regen.
+Riki number of hits on tricks of trade reverted to vanilla, damage ratio still higher. Agility gain increased.
+Skeleton king talents reworked.
 TO-DO
 
 CURRENTLY IMPLEMENTING TERRORBLADE BOSS REWORK

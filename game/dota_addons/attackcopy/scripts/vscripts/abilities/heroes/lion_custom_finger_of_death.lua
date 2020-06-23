@@ -69,13 +69,13 @@ if IsServer() then
 
     function lion_custom_finger_of_death:FingerTarget(target)
         local caster = self:GetCaster()
-
+		local damageType = self:GetAbilityDamageType()
         local particle = ParticleManager:CreateParticle("particles/units/heroes/hero_lion/lion_spell_finger_of_death.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
         ParticleManager:SetParticleControlEnt(particle, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack2", caster:GetAbsOrigin(), true)
         ParticleManager:SetParticleControl(particle, 1, target:GetAbsOrigin())
         ParticleManager:SetParticleControl(particle, 2, target:GetAbsOrigin())
         ParticleManager:ReleaseParticleIndex(particle)
-
+	
         Timers:CreateTimer(
             self.damage_delay,
             function()
@@ -86,7 +86,7 @@ if IsServer() then
                         ability = self,
                         attacker = caster,
                         damage = self.damage,
-                        damage_type = self:GetAbilityDamageType(),
+                        damage_type = damageType,
                         victim = target
                     })
                 end

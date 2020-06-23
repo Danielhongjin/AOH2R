@@ -11,7 +11,7 @@ function courier_moveto(keys)
 	Timers:CreateTimer(
 		0.5, 
 		function()
-			caster:SetAbsOrigin(Vector(-60000,-6000,0))
+			caster:SetAbsOrigin(Vector(-6000,-6000,0))
 		end
 	)
 	

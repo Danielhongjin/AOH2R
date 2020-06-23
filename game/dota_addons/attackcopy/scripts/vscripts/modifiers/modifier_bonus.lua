@@ -96,6 +96,103 @@ if IsServer() then
 		self.modifier:SetStackCount(self.modifier:GetStackCount() - self.bonus)
 	end
 end
+
+
+modifier_bonus_secondary_controller = class({})
+
+
+function modifier_bonus_secondary_controller:IsHidden()
+    return true
+end
+
+
+function modifier_bonus_secondary_controller:IsPurgable()
+    return false
+end
+
+function modifier_bonus_secondary_controller:RemoveOnDeath()
+	return false
+end
+
+function modifier_bonus_secondary_controller:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
+		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
+		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS
+	}
+	return funcs
+end
+
+function modifier_bonus_secondary_controller:GetModifierBonusStats_Agility()
+	return self.agi
+end
+function modifier_bonus_secondary_controller:GetModifierBonusStats_Strength()
+	return self.str
+end
+function modifier_bonus_secondary_controller:GetModifierBonusStats_Intellect()
+	return self.int
+end
+function modifier_bonus_secondary_controller:OnCreated(keys)
+	self.parent = self:GetParent()
+	self.agi = 0
+	self.int = 0
+	self.str = 0
+	self:StartIntervalThink(0.25)
+end
+
+if IsServer() then
+	function modifier_bonus_secondary_controller:OnIntervalThink()
+		if self:GetStackCount() <= 0 then
+			self:Destroy()
+		end
+		attribute = self.parent:GetPrimaryAttribute()
+		if attribute == 0 then
+			self.str = 0
+			self.agi = (self.parent:GetAgility() - self.agi) * self:GetStackCount() * 0.01
+			self.int = (self.parent:GetIntellect() - self.int) * self:GetStackCount() * 0.01
+		elseif attribute == 1 then
+			self.agi = 0
+			self.str = (self.parent:GetStrength() - self.str) * self:GetStackCount() * 0.01
+			self.int = (self.parent:GetIntellect() - self.int) * self:GetStackCount() * 0.01
+		else
+			self.int = 0
+			self.agi = (self.parent:GetAgility() - self.agi) * self:GetStackCount() * 0.01
+			self.str = (self.parent:GetStrength() - self.str) * self:GetStackCount() * 0.01
+		end
+		self.parent:CalculateStatBonus()
+	end
+end
+
+modifier_bonus_secondary_token = class({})
+
+
+function modifier_bonus_secondary_token:IsHidden()
+    return true
+end
+
+function modifier_bonus_secondary_token:IsPurgable()
+    return false
+end
+
+function modifier_bonus_secondary_token:RemoveOnDeath()
+	return false
+end
+
+function modifier_bonus_secondary_token:GetAttributes()
+    return MODIFIER_ATTRIBUTE_MULTIPLE
+end
+
+if IsServer() then
+	function modifier_bonus_secondary_token:OnCreated(keys)
+		self.parent = self:GetParent()
+		self.modifier = self.parent:FindModifierByName("modifier_bonus_secondary_controller")
+		self.bonus = keys.bonus
+		self.modifier:SetStackCount(self.modifier:GetStackCount() + self.bonus)
+	end
+	function modifier_bonus_secondary_token:OnDestroy()
+		self.modifier:SetStackCount(self.modifier:GetStackCount() - self.bonus)
+	end
+end
 --[[
 modifier_bonus_agility_controller = class({})
 

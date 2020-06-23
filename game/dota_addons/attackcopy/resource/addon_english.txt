@@ -233,6 +233,10 @@
 "DOTA_Tooltip_modifier_item_echo_wand_lock"								"Mimic Mace Lock"
 "DOTA_Tooltip_modifier_item_echo_wand_lock_Description"					"Mimic Mace will not learn new abilities."	
 
+"DOTA_Tooltip_ability_item_dredged_trident"						"Dredged Trident"
+"DOTA_Tooltip_ability_item_dredged_trident_Description"					"<h1>Passive: Critical Strike</h1> Empowers your next attack, causing it to be a critical strike dealing %crit_multiplier%%% damage."
+"DOTA_Tooltip_ability_item_dredged_trident_bonus_damage"       "+$damage"	
+
 "DOTA_Tooltip_ability_item_meteor_hammer_Description"                   "<h1>Active: Meteor Hammer</h1> CHANNELED - After a successful channel, summons a meteor that strikes a %impact_radius% AoE, stunning enemies for %stun_duration% seconds and dealing impact damage. Continues to deal damage over time to enemies indefinitely.<BR><BR>Impact Damage: %impact_damage_units% <BR>Over Time Damage: %burn_dps_units% <BR><BR>Channel Duration: %max_duration% seconds.<BR>Landing Time: %land_time% seconds."	
 "DOTA_Tooltip_Ability_item_pirate_hat_Description"						"<h1>Passive: Nothing</h1> Only increases your attack speed."
 "DOTA_Tooltip_Ability_item_pirate_hat_Lore"								"Sorry to disappoint you."
@@ -1594,7 +1598,7 @@
 "DOTA_Tooltip_ability_abyssal_underlord_pit_of_malice_replace_ensnare_duration"	"DISABLE DURATION:"
 
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift"						    "<font color='#f2da5b'>Unstable Rift</font>"
-"DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_Description"			    "Opens an unstable rift at a target hero's location, increasing its primary attribute by %primary_stat_percent%%% and storing the stats of all nearby heroes. After a delay, explodes spreading damage evenly over all enemies hit. Cooldown is %cooldown_reduce% seconds lower when cast on allies.\n Passively increases Underlord's primary attribute by %primary_stat_percent%%%"
+"DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_Description"			    "Opens an unstable rift at a target hero's location, increasing its primary attribute by %primary_stat_percent_active%%% and storing the stats of all nearby heroes. After a delay, explodes spreading damage evenly over all enemies hit. Cooldown is %cooldown_reduce% seconds lower when cast on allies.\n Passively increases Underlord's primary attribute by %primary_stat_percent_passive%%%"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_duration"					"DURATION:"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_stat_damage_pct_tooltip"			"DAMAGE PER STAT:"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_radius"					"RADIUS:"
@@ -2241,7 +2245,7 @@
 "DOTA_Tooltip_ability_terrorblade_custom_dark_realm_Description"					"Friendly illusions spawn an identical illusion with 30% of their duration. Every illusion affected is invulnerable for %duration_extend% seconds and has its duration extended by the same amount."
 "DOTA_Tooltip_ability_terrorblade_custom_dark_realm_Lore"							"Any reflection is a weapon to terrorblade."
 "DOTA_Tooltip_ability_terrorblade_custom_dark_realm_Note0"							"Can only affect %max_illusions% illusions at once."
-"DOTA_Tooltip_ability_terrorblade_custom_dark_realm_Note1"							"Refresher only reduces 25% of this ability's cooldown."
+"DOTA_Tooltip_ability_terrorblade_custom_dark_realm_Note1"							"Refresher only reduces 50% of this ability's cooldown."
 "DOTA_Tooltip_ability_terrorblade_custom_dark_realm_outgoing_damage_tooltip"					"%ILLUSION DAMAGE DEALT"
 "DOTA_Tooltip_ability_terrorblade_custom_dark_realm_incoming_damage_tooltip"					"%ILLUSION DAMAGE TAKEN"
 "DOTA_Tooltip_ability_terrorblade_custom_dark_realm_duration_extend"					"DURATION EXTENSION:"
@@ -2308,8 +2312,6 @@
 
 "DOTA_Tooltip_modifier_visage_custom_str_to_int"				        "Attribute Shift (Intelligence)"
 "DOTA_Tooltip_modifier_visage_custom_str_to_int_Description"	        "Gaining Intelligence at the cost of Strength"
-
-"DOTA_Tooltip_ability_warlock_rain_of_chaos_Description"						"Summons a Golem from the depths, stunning enemies for one second. The Golem lives 40 seconds, takes reduced damage from spells, has Permanent Immolation and Flaming Fists on attack.\n\nUpgradable by Aghanim's Scepter."
 
 "DOTA_Tooltip_ability_winter_wyvern_winters_curse_Description"		"Winter Wyvern freezes an enemy in place while striking those nearby with a maddening curse which causes them to attack their frozen ally with increased attack speed. The frozen ally and those cursed to attack their ally take less damage from their enemies."
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull"							"<font color='#f2da5b'>Death Skull</font>"
@@ -2536,41 +2538,14 @@
 
 "DOTA_Tooltip_Ability_item_echo_sabre_Description"			        "<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on each strike. Each strike deals %proc_damage% bonus physical damage."
 
-"DOTA_Tooltip_Ability_item_echo_sabre_2"								"Echo Sabre LVL 2"
-"DOTA_Tooltip_Ability_item_echo_sabre_2_Description"			        "<h1>Passive: Echo Strike LVL 2</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on each strike. Each strike deals %proc_damage% bonus physical damage."
+"DOTA_Tooltip_Ability_item_echo_sabre_2"								"Echo Sabre 2"
+"DOTA_Tooltip_Ability_item_echo_sabre_2_Description"			        "<h1>Passive: Echo Strike</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on each strike. Each strike deals %proc_damage% bonus physical damage."
 "DOTA_Tooltip_Ability_item_echo_sabre_2_Lore"			                "A deceptively swift blade imbued with resonant magic."
 "DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_intellect"               "+$int"
 "DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_strength"                "+$str"
 "DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_attack_speed"            "+$attack"
 "DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_damage"                  "+$damage"
 "DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_mana_regen"              "+$mana_regen"
-
-"DOTA_Tooltip_Ability_item_echo_sabre_3"								"Echo Sabre LVL 3"
-"DOTA_Tooltip_Ability_item_echo_sabre_3_Description"			        "<h1>Passive: Echo Strike LVL 3</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on each strike. Each strike deals %proc_damage% bonus physical damage."
-"DOTA_Tooltip_Ability_item_echo_sabre_3_Lore"			                "A deceptively swift blade imbued with resonant magic."
-"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_intellect"               "+$int"
-"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_strength"                "+$str"
-"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_attack_speed"            "+$attack"
-"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_damage"                  "+$damage"
-"DOTA_Tooltip_Ability_item_echo_sabre_3_bonus_mana_regen"              "+$mana_regen"
-
-"DOTA_Tooltip_Ability_item_echo_sabre_4"								"Echo Sabre LVL 4"
-"DOTA_Tooltip_Ability_item_echo_sabre_4_Description"			        "<h1>Passive: Echo Strike LVL 4</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on each strike. Each strike deals %proc_damage% bonus physical damage."
-"DOTA_Tooltip_Ability_item_echo_sabre_4_Lore"			                "A deceptively swift blade imbued with resonant magic."
-"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_intellect"               "+$int"
-"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_strength"                "+$str"
-"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_attack_speed"            "+$attack"
-"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_damage"                  "+$damage"
-"DOTA_Tooltip_Ability_item_echo_sabre_4_bonus_mana_regen"              "+$mana_regen"
-
-"DOTA_Tooltip_Ability_item_echo_sabre_5"								"Echo Sabre LVL 5"
-"DOTA_Tooltip_Ability_item_echo_sabre_5_Description"			        "<h1>Passive: Echo Strike LVL 5</h1> Causes melee attacks to attack twice in quick succession. The double attacks apply a %movement_slow%%% movement slow for %slow_duration% seconds on each strike. Each strike deals %proc_damage% bonus physical damage."
-"DOTA_Tooltip_Ability_item_echo_sabre_5_Lore"			                "A deceptively swift blade imbued with resonant magic."
-"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_intellect"               "+$int"
-"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_strength"                "+$str"
-"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_attack_speed"            "+$attack"
-"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_damage"                  "+$damage"
-"DOTA_Tooltip_Ability_item_echo_sabre_5_bonus_mana_regen"              "+$mana_regen"
 
 "DOTA_Tooltip_ability_item_conduit"                                    "Charged Conduit"
 "DOTA_Tooltip_ability_item_conduit_Description"						"<h1>Active: Lethal Arc</h1>Creates a charged lodestone that redirects damage taken by it to the target as physical damage. The lodestone has %shared_life%%% of the target's current health. Lasts %duration% seconds."
@@ -2604,11 +2579,11 @@
 
 
 "DOTA_Tooltip_Ability_item_custom_rapier"									"Divine Rapier"
-"DOTA_Tooltip_Ability_item_custom_rapier_Description"						"<h1>Passive: Consecrated</h1> %base_damage_ratio%%% of this item's damage is base damage."
+"DOTA_Tooltip_Ability_item_custom_rapier_Description"						"<h1>Passive: Flawless</h1> Increases your secondary attributes by %secondary_stat_percent%%%. \n<h1>Passive: Peerless</h1>%base_damage_ratio%%% of this item's bonus damage is base damage."
 "DOTA_Tooltip_Ability_item_custom_rapier_Lore"								"So powerful that the wielder is often driven mad."
 "DOTA_Tooltip_Ability_item_custom_rapier_bonus_damage_tooltip"						"+$damage"
 "DOTA_Tooltip_ability_item_custom_refresher"                                "Refresher Orb"
-"DOTA_Tooltip_ability_item_custom_refresher_Description"					"<h1>Active: Reset Cooldowns</h1>Resets the cooldowns of all your items and abilities. Ultimate abilities have their current cooldown reduced to %ultimate_percentage%%%\n\nRefresher Orb is not affected by cooldown reduction."
+"DOTA_Tooltip_ability_item_custom_refresher_Description"					"<h1>Active: Reset Cooldowns</h1>Resets the cooldowns of all your items and abilities.\n\nRefresher Orb is not affected by cooldown reduction."
 "DOTA_Tooltip_ability_item_custom_refresher_Note0"							"Certain abilities only receive half of Refresher's effect."
 "DOTA_Tooltip_ability_item_custom_refresher_Lore"							"A powerful artifact created for wizards."
 "DOTA_Tooltip_ability_item_custom_refresher_cooldown"				"COOLDOWN:"
@@ -2751,7 +2726,7 @@
 "DOTA_Tooltip_ability_item_ultimate_heart_fixed_health_regen"					"+$hp_regen"
 
 "DOTA_Tooltip_Ability_item_infinite_rapier"									"Infinite Rapier"
-"DOTA_Tooltip_Ability_item_infinite_rapier_Description"						"<h1>Passive: Consecrated</h1> %base_damage_ratio%%% of this item's damage is base damage."
+"DOTA_Tooltip_Ability_item_infinite_rapier_Description"						"<h1>Passive: Flawless</h1> Increases your secondary attributes by %secondary_stat_percent%%%. \n<h1>Passive: Peerless</h1>%base_damage_ratio%%% of this item's bonus damage is base damage."
 "DOTA_Tooltip_Ability_item_infinite_rapier_Lore"							"The gods question your financial decisions."
 "DOTA_Tooltip_Ability_item_infinite_rapier_bonus_damage_tooltip"					"+$damage"
 
@@ -2809,21 +2784,6 @@
 "DOTA_Tooltip_modifier_item_plain_ring_perma_Description"		"Upon taking fatal damage you become temporarily invincible. Affected by cooldown reduction."
 "DOTA_Tooltip_modifier_item_plain_ring_perma_invincibility"					"Blessing In Disguise"
 "DOTA_Tooltip_modifier_item_plain_ring_perma_invincibility_Description"		"Temporarily protected from death."
-
-"DOTA_Tooltip_Ability_item_pharaoh_crown"                             "Nebu"
-"DOTA_Tooltip_Ability_item_pharaoh_crown_Description"					"<h1>Passive: Will To Power</h1> Summoned unit health, and damage are multiplied by a division of your stats. Additionally grants armor and magic resistance. <br><br>Affected units regenerate %regen_percent%%% percent of their health per second."
-"DOTA_Tooltip_Ability_item_pharaoh_crown_Note0"						"Multiple instances of Will To Power do not stack."
-"DOTA_Tooltip_Ability_item_pharaoh_crown_Note1"						"Bonus damage is only 40% effective in calculation."
-"DOTA_Tooltip_Ability_item_pharaoh_crown_Note2"						"Does not work on illusions."
-"DOTA_Tooltip_Ability_item_pharaoh_crown_Lore"						"A guise once worn by a legendary warlord."
-"DOTA_Tooltip_Ability_item_pharaoh_crown_aura_damage_mult"			"DAMAGE DIVISOR:"
-"DOTA_Tooltip_Ability_item_pharaoh_crown_aura_health_mult"					"HEALTH DIVISOR:"
-"DOTA_Tooltip_Ability_item_pharaoh_crown_aura_magic_resistance"					"%BONUS MAGIC RESISTANCE:"
-"DOTA_Tooltip_Ability_item_pharaoh_crown_aura_armor"					"%ARMOR RATIO:"
-"DOTA_Tooltip_Ability_item_pharaoh_crown_bonus_all"					"+$all"
-
-"DOTA_Tooltip_modifier_pharaoh_crown_buff"					"Will To Power"
-"DOTA_Tooltip_modifier_pharaoh_crown_buff_Description"		"This unit has increased stats from Nebu."
 
 "DOTA_Tooltip_Ability_item_polarized_plate"                         "Polarized Plate"
 "DOTA_Tooltip_Ability_item_polarized_plate_Description"			    "<h1>Passive: Light Absorption</h1> Regenerates mana whenever damage is taken.\n<font color='#F2A93E'>Does not trigger for self dealt damage.</font>"
@@ -2997,7 +2957,7 @@
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_mana"				"+$mana"
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
 "DOTA_Tooltip_Ability_item_ultimate_rapier"									"Ultimate Rapier"
-"DOTA_Tooltip_Ability_item_ultimate_rapier_Description"						"<h1>Passive: Consecrated</h1> %base_damage_ratio%%% of this item's damage is base damage."
+"DOTA_Tooltip_Ability_item_ultimate_rapier_Description"						"<h1>Passive: Flawless</h1> Increases your secondary attributes by %secondary_stat_percent%%%. \n<h1>Passive: Peerless</h1>%base_damage_ratio%%% of this item's bonus damage is base damage."
 "DOTA_Tooltip_Ability_item_ultimate_rapier_Lore"							"So powerful that the wielder is often driven mad."
 "DOTA_Tooltip_Ability_item_ultimate_rapier_bonus_damage_tooltip"					"+$damage"
 

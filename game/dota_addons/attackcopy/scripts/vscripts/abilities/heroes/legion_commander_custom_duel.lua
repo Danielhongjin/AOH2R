@@ -1,4 +1,4 @@
-LinkLuaModifier("modifier_generic_summon_timer", "lib/modifiers/modifier_generic_summon_timer.lua", LUA_MODIFIER_MOTION_NONE)
+
 function last_stand(event)
 	local caster = event.caster
 	local caster_pos = caster:GetAbsOrigin()

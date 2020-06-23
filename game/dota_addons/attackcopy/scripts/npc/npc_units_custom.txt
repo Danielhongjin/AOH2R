@@ -8518,11 +8518,12 @@
 }	
 "npc_dota_wraith_king_skeleton_warrior"
 {
-	"AttackDamageMin"			"45"			// Damage range min.
-	"AttackDamageMax"			"50"			// Damage range max.
+	"AttackDamageMin"			"40"			// Damage range min.
+	"AttackDamageMax"			"45"			// Damage range max.
 	"AttackRate"				"0.9"
-	"StatusHealth"				"350"	
-	"StatusHealthRegen"			"5.0"
+	"StatusHealth"				"300"	
+	"AttackAcquisitionRange"	"600"
+	"StatusHealthRegen"			"3.25"
 	"MovementSpeed"				"400"
 }
 "npc_dota_invoker_forged_spirit"

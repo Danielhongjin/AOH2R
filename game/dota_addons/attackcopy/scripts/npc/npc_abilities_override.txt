@@ -928,6 +928,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_omniknight_6"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"3"
+			}
+		}
+	}
 	"special_bonus_unique_oracle_5"
 	{
 		"AbilitySpecial"
@@ -1299,6 +1310,17 @@
 			{
 				"var_type"		    "FIELD_INTEGER"
 				"value"				"300"
+			}
+		}
+	}
+	"special_bonus_unique_templar_assassin_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"-20"
 			}
 		}
 	}
@@ -4027,20 +4049,14 @@
 	}
 	"juggernaut_omni_slash"
 	{
-		"AbilityCooldown"				    "50.0 40.0 30.0"
-		"AbilityManaCost"				"250"
+		"AbilityCooldown"				"60.0 50.0 40.0"
+		"AbilityManaCost"				"200 250 300"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"attack_rate_multiplier"	"2.0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"10 20 30"
-				"CalculateSpellDamageTooltip"	"0"
 			}
 		}
 	}
@@ -5368,6 +5384,7 @@
 	}
 	"omniknight_repel"
 	{
+		"AbilityManaCost"				"60 70 80 90"
 		"AbilitySpecial"
 		{
 			"03"
@@ -5383,10 +5400,22 @@
 			}
 		}
 	}
+	"omniknight_purification"
+	{
+		"AbilityCooldown"				"12 10 8 6"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"120 200 280 360"
+				"LinkedSpecialBonus"	"special_bonus_unique_omniknight_1"
+			}
+		}
+	}
 	"omniknight_guardian_angel"
 	{
 		"AbilityCooldown"				    "80.0 70.0 60.0"
-		"AbilityCastRange"				"600"
 		"AbilitySpecial"
 		{
 			"03"
@@ -5398,21 +5427,8 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"scepter_regen"					"70 80 90"
+				"scepter_regen"					"70 90 110"
 				"RequiresScepter"		"1"
-			}
-		}
-	}
-	"omniknight_purification"
-	{
-		"AbilityCooldown"				"15 13 11 9"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"heal"					"120 200 280 360"
-				"LinkedSpecialBonus"	"special_bonus_unique_omniknight_1"
 			}
 		}
 	}
@@ -6144,14 +6160,15 @@
 			}
 		}
 	}
-	"rubick_arcane_supremacy"
+	"rubick_null_field"
 	{
+		"AbilityCooldown"				"0"
 		"AbilitySpecial"
 		{
 			"01"
 			{
-				"var_type"				"FIELD_INTEGER"
-				"spell_amp"				"12 18 24 30"
+				"var_type"						"FIELD_INTEGER"
+				"magic_damage_reduction_pct"	"10 14 18 22"
 			}
 		}
 	}
@@ -6494,6 +6511,10 @@
 	{
 		"AbilityCooldown"				"70.0 60.0 50.0"
 		"AbilityDuration"				"5.5 6.75 8.0"
+	}
+	"skeleton_king_hellfire_blast"
+	{
+		"AbilityCooldown"				"13 11 9 7"
 	}
 	"skeleton_king_vampiric_aura"
 	{
@@ -6934,7 +6955,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_damage"				"50 75 100 125"
+				"bonus_damage"				"40 80 120 160"
 			}
 		}
 	}
@@ -6951,6 +6972,24 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"attack_spill_range"		"600 650 700 750"
+			}
+		}
+	}
+	"templar_assassin_meld"
+	{
+		"AbilityDuration"				"3"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"50 100 150 200"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"-9 -15 -21 -27"
+				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_2"
 			}
 		}
 	}

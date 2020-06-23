@@ -8959,7 +8959,7 @@
     "AbilityCastPoint"				    "0.3 0.3 0.3"
     "AbilityCastAnimation"		        "ACT_DOTA_CAST_ABILITY_4"
     "AbilityCooldown"				    "60.0 50.0 40.0"
-    "AbilityManaCost"				    "200 325 450"
+    "AbilityManaCost"				    "200 420 625"
     "precache"
     {
         "particle"                      "particles/units/heroes/hero_lion/lion_spell_finger_of_death.vpcf"
@@ -8970,13 +8970,13 @@
         "01"
         {
             "var_type"					"FIELD_INTEGER"
-            "damage"					"725 850 1000"
+            "damage"					"700 925 1150"
 			"CalculateSpellDamageTooltip"	"1"
         }
         "02"
         {
             "var_type"					"FIELD_INTEGER"
-            "damage_scepter"			"925 1150 1400"				
+            "damage_scepter"			"800 1125 1450"				
 			"CalculateSpellDamageTooltip"	"1"
         }
         "03"
@@ -11488,7 +11488,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"primary_stat_percent"			"20"
+			"primary_stat_percent_passive"			"10"
 		}
         "06"
         {
@@ -11499,6 +11499,11 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"cooldown_reduce"			"7.0"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"primary_stat_percent_active"			"35"
 		}
     }
 }

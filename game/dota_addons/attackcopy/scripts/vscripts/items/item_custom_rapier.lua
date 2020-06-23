@@ -1,4 +1,5 @@
-
+LinkLuaModifier("modifier_bonus_secondary_controller", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_bonus_secondary_token", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
 
 
 item_custom_rapier = class({})
@@ -59,19 +60,24 @@ end
 
 
 function modifier_item_custom_rapier:OnCreated()
+	local ability = self:GetAbility()
 	self.parent = self:GetParent()
 	if IsServer() then
+		self.parent:AddNewModifier(self.parent, ability, "modifier_bonus_secondary_controller", {})
+		self.statModifier = self.parent:AddNewModifier(self.parent, ability, "modifier_bonus_secondary_token", {
+			bonus = ability:GetSpecialValueFor("secondary_stat_percent")})
 		if self.parent:IsHero() then
-			self.modifier = self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_custom_rapier_base", {})
+			self.modifier = self.parent:AddNewModifier(self.parent, ability, "modifier_item_custom_rapier_base", {})
 		end
-		if self:GetAbility():GetAbilityName() == "item_infinite_rapier" then
-			self.modifierEffect = self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_infinite_rapier_effect", {})
+		if ability:GetAbilityName() == "item_infinite_rapier" then
+			self.modifierEffect = self.parent:AddNewModifier(self.parent, ability, "modifier_item_infinite_rapier_effect", {})
 		end
 	end
 end
 
 function modifier_item_custom_rapier:OnDestroy()
 	if IsServer() then
+		self.statModifier:Destroy()
 		if self.parent:IsHero() then
 			self.modifier:Destroy()
 		end

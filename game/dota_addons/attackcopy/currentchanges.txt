@@ -1,16 +1,16 @@
-Some warning signals now have a particle effect that shows you which enemy is casting an ability.
+Game map look changed back to default dota tilesets.
 
-Arcane staff recipe changed, stats improved.
-Mimic Mace will now refuse to copy hp reverting abilities (weaver ult and faceless void Q) as well as ursa enrage. Also will not fire on riki smoke and viper nethertoxin.
-Mimic Mace is now a tier 5 neutral item.
-Mimic Mace cooldown per percentage reduced to account for Octarine Core usage.
-Helm of the dominator can now dominate up to two units. Can be upgraded to dominate ancient creeps.
-Unhallowed Icon now only fully activates if you are in range of enemies.
+New item Dredged Trident - Tier 5 neutral Imp Claw upgrade, if you want that for some reason.
+Echo sabre upgrades condensed to one upgrade, focus taken away from cooldown and put on bonus proc damage.
+Imp Claw cooldown matched up with Willbreaker.
+Massive now grants even more spell amp per health, attack speed debuff increased.
+Rapier and upgrades now grant bonus secondary attributes, damage increased.
 
-Dazzle, Dragon Knight, Leshrac, Luna, Leshrac, Medusa, Templar Assassin, and Ursa given buffs.
-Outworld Devourer nerfed cooldowns. Mana amp scaling factor moved from mana per int to regen.
-Riki number of hits on tricks of trade reverted to vanilla, damage ratio still higher. Agility gain increased.
-Skeleton king talents reworked.
+Abyssal Underlord ultimate grants less passive stats, more active stats.
+Juggernaut Omnislash cooldown increased from 50/40/30 to 60/50/40, bonus damage increased back to vanilla.
+Legion Commander Duel no longer has a busted interaction with Mimic Mace.
+Omniknight now dumb as a sack of bricks, various buffs.
+Rubick Arcane Supremacy reverted to Null Field, talents reworked. Slightly more reactive movement.
+Templar Assassin meld now takes away more armor up front, duration lowered from 12 to 3 seconds.
+
 TO-DO
-
-CURRENTLY IMPLEMENTING TERRORBLADE BOSS REWORK

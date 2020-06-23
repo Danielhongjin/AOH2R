@@ -34,10 +34,14 @@
 }
 "npc_dota_hero_rubick"
 {
-	"Ability11"		 "special_bonus_mp_regen_8"
-	"Ability12"		 "special_bonus_spell_amplify_12"
-    "Ability13"      "special_bonus_cooldown_reduction_20"
-	"Ability14"		 "special_bonus_gold_income_180"
+	"Ability3"		 "rubick_null_field"
+	"Ability11"		 "special_bonus_cast_range_100"
+    "Ability13"      "special_bonus_mp_regen_8"
+	"Ability14"		 "special_bonus_unique_rubick_4"
+	"Ability16"		 "special_bonus_agility_100"
+	"Ability17"		 "special_bonus_cooldown_reduction_25"
+	"MovementTurnRate"		"0.800000"
+	"MovementSpeed"		"300"
 }
 "npc_dota_hero_antimage"
 {
@@ -432,6 +436,14 @@
 	"Ability16"		"ogre_magi_custom_bonus_unique_1"
 	"Ability17"		"ogre_magi_custom_bonus_unique_2"
 }
+"npc_dota_hero_omniknight"
+{
+	"Ability11"		"special_bonus_mp_regen_4"
+	"Ability15"		"special_bonus_movement_speed_40"
+	"AttributeStrengthGain"		"4.40000"
+	"AttributeAgilityGain"		"2.30000"
+	"AttributeIntelligenceGain"		"0.800000"
+}
 "npc_dota_hero_oracle"
 {
 	"Ability10"		"special_bonus_cast_range_150"
@@ -541,6 +553,8 @@
 }
 "npc_dota_hero_skeleton_king"
 {
+	"Ability10"		"special_bonus_armor_6"
+	"Ability11"		"special_bonus_attack_speed_25"
 	"Ability14"		"special_bonus_attack_damage_70"
     "Ability17"		"special_bonus_cleave_100"
 	"AttributeIntelligenceGain"		"2.600000"
@@ -621,6 +635,8 @@
 }
 "npc_dota_hero_templar_assassin"
 {
+	"Ability10"		"special_bonus_attack_speed_25"
+	"Ability11"		"special_bonus_movement_speed_25"
 	"Ability16"		"special_bonus_movement_speed_90"
 }
 "npc_dota_hero_terrorblade"

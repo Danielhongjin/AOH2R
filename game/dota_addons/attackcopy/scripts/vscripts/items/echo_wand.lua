@@ -191,6 +191,7 @@ if IsServer() then
 					local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_offensive.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 					ParticleManager:SetParticleControlEnt(fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
 					ParticleManager:ReleaseParticleIndex(fx)
+					self.ability:StartCooldown(cooldown)
 					Timers:CreateTimer(
 						0.05,
 						function()

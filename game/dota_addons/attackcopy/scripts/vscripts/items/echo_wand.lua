@@ -14,20 +14,22 @@ end
 
 function item_echo_wand:OnSpellStart()
     local caster = self:GetCaster()
-	
-    if not caster:HasModifier("modifier_item_echo_wand_lock") then
-        caster:AddNewModifier(caster, self, "modifier_item_echo_wand_lock", {})
-		local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_defensive.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-		ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
-		ParticleManager:ReleaseParticleIndex(fx)
-		EmitSoundOn("Hero_Antimage.ManaVoidCast", caster)
-    else
-		caster:RemoveModifierByName("modifier_item_echo_wand_lock")
-		local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_defensive_splash.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
-		ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
-		ParticleManager:ReleaseParticleIndex(fx)
+	if not caster:HasModifier("modifier_item_echo_wand_block") then
+		if not caster:HasModifier("modifier_item_echo_wand_lock") then
+			caster:AddNewModifier(caster, self, "modifier_item_echo_wand_lock", {})
+			local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_defensive.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+			ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+			ParticleManager:ReleaseParticleIndex(fx)
+			EmitSoundOn("Hero_Antimage.ManaVoidCast", caster)
+		else
+			caster:RemoveModifierByName("modifier_item_echo_wand_lock")
+			local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_defensive_splash.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+			ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+			ParticleManager:ReleaseParticleIndex(fx)
+		end
+	else
+		print("Caughtcha")
 	end
-	
 end
 LinkLuaModifier("modifier_item_echo_wand_lock", "items/echo_wand.lua", LUA_MODIFIER_MOTION_NONE)
 
@@ -184,6 +186,7 @@ if IsServer() then
 					else
 						self.parent:SetCursorTargetingNothing(true)
 					end
+					self.parent:AddNewModifier(self.parent, self.ability, "modifier_item_echo_wand_block", {duration = 1})
 					local cooldown = self.echo:GetCooldown(self.echo:GetLevel()) * self.parent:GetCooldownReduction()
 					if cooldown < self.minimum_cooldown then
 						cooldown = self.minimum_cooldown
@@ -191,6 +194,7 @@ if IsServer() then
 					local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_rubick/rubick_nullfield_offensive.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 					ParticleManager:SetParticleControlEnt(fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
 					ParticleManager:ReleaseParticleIndex(fx)
+					self.parent:CastAbilityImmediately(self.ability, -1)
 					self.ability:StartCooldown(cooldown)
 					Timers:CreateTimer(
 						0.05,
@@ -213,5 +217,16 @@ if IsServer() then
 			end
 		end
 	end
+end
+
+LinkLuaModifier("modifier_item_echo_wand_block", "items/echo_wand.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_item_echo_wand_block = class({})
+
+function modifier_item_echo_wand_block:IsHidden()
+    return true
+end
+
+function modifier_item_echo_wand_block:IsPurgable()
+	return false
 end
 

@@ -1,16 +1,15 @@
-Game map look changed back to default dota tilesets.
+Terrorblade bosses now cast sunder slightly faster.
 
-New item Dredged Trident - Tier 5 neutral Imp Claw upgrade, if you want that for some reason.
-Echo sabre upgrades condensed to one upgrade, focus taken away from cooldown and put on bonus proc damage.
-Imp Claw cooldown matched up with Willbreaker.
-Massive now grants even more spell amp per health, attack speed debuff increased.
-Rapier and upgrades now grant bonus secondary attributes, damage increased.
+New item Merchant Tome - Tier 1 neutral item that fully refunds all sellable items in your inventory and backpack.
+Butterfly nerfed into the molten core of the earth.
+Charged Conduit now only deals 70% of taken damage to the enemy, damage now converted to magical damage.
+Fusion Rune recipe cost reduced from 6000 to 4000.
+Kaya 3 spell amp given massive buff from 60% to 60%.
+Mimic Mace non neutral again.
+Mimic Mace now procs blast staff on casts.
+Tome of Knowledge fully shareable now.
 
-Abyssal Underlord ultimate grants less passive stats, more active stats.
-Juggernaut Omnislash cooldown increased from 50/40/30 to 60/50/40, bonus damage increased back to vanilla.
-Legion Commander Duel no longer has a busted interaction with Mimic Mace.
-Omniknight now dumb as a sack of bricks, various buffs.
-Rubick Arcane Supremacy reverted to Null Field, talents reworked. Slightly more reactive movement.
-Templar Assassin meld now takes away more armor up front, duration lowered from 12 to 3 seconds.
-
+Goblin Techies land mines cooldown fixed.
+Sniper take aim active range reduction now static 200.
+Templar Assassin max potential armor reduction from 47 to 40.
 TO-DO

@@ -125,7 +125,10 @@ if IsServer() then
 	
 	function modifier_item_conduit:OnCreated()
 		self.ability = self:GetAbility()
-
+		self.damage_type = self.ability:GetAbilityDamageType()
+		self.damage_ratio = self:GetAbility():GetSpecialValueFor("damage_ratio") * 0.01
+        self.caster = self:GetCaster()
+        self.parent = self:GetParent()
     end
 
     function modifier_item_conduit:DeclareFunctions()
@@ -138,22 +141,20 @@ if IsServer() then
 	end
     
     function modifier_item_conduit:OnTakeDamage(keys)
-        local caster = self:GetCaster()
-        local parent = self:GetParent()
 		local unit = keys.unit
-		if unit == parent then
+		if unit == self.parent then
 			local particle = ParticleManager:CreateParticle("particles/neutral_fx/harpy_chain_lightning.vpcf", PATTACH_POINT_FOLLOW, unit) 
-			ParticleManager:SetParticleControlEnt(particle, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true) 
-			ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControlEnt(particle, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true) 
+			ParticleManager:SetParticleControlEnt(particle, 1, self.caster, PATTACH_POINT_FOLLOW, "attach_hitloc", self.caster:GetAbsOrigin(), true)
 			ParticleManager:ReleaseParticleIndex(particle)
 
 			ApplyDamage({
 				ability = self.ability,
 				attacker = keys.attacker,
-				damage = keys.original_damage,
-				damage_type = self.ability:GetAbilityDamageType(),
+				damage = keys.damage * self.damage_ratio,
+				damage_type = self.damage_type,
 				damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
-				victim = caster
+				victim = self.caster,
 			})
 		end
     end

@@ -410,6 +410,7 @@
 "npc_dota_hero_night_stalker"
 {
 	"Ability11"			"special_bonus_magic_resistance_12"
+	"Ability14"			"special_bonus_intelligence_100"
 	"AttackRate"		"1.450000"
 	"AttributeStrengthGain"		"3.700000"
 	"AttributeAgilityGain"		"2.30000"
@@ -581,11 +582,11 @@
 "npc_dota_hero_sniper"
 {
     "Ability3"		"sniper_custom_rifle"
-	"Ability11"		"special_bonus_mp_regen_4"
+	"Ability11"		"special_bonus_attack_damage_30"
 	"Ability13"		"special_bonus_magic_resistance_15"
-    "Ability14"		"special_bonus_hp_400"
+    "Ability14"		"special_bonus_mp_regen_10"
 	"Ability16"		"special_bonus_attack_range_150"
-	"Ability17"		"special_bonus_mp_regen_14"
+	"Ability17"		"special_bonus_cooldown_reduction_25"
 }
 "npc_dota_hero_spectre"
 {

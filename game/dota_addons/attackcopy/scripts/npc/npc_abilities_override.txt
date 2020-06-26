@@ -884,6 +884,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_night_stalker_2"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"100"
+			}
+		}
+	}
 	"special_bonus_unique_nyx_2"
 	{
 		"AbilitySpecial"
@@ -6733,7 +6744,8 @@
 	}
 	"sniper_assassinate"
 	{
-		"AbilityDamage"					"600 900 1200"
+		"AbilityDamage"					"900 1200 1500"
+		"AbilityManaCost"				"200 250 300"
 	}
 	"spectre_desolate"
 	{
@@ -6896,7 +6908,7 @@
 	}
 	"techies_land_mines"
 	{
-		"AbilityCooldown"				"11"
+		"AbilityChargeRestoreTime"		"13"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6977,7 +6989,7 @@
 	}
 	"templar_assassin_meld"
 	{
-		"AbilityDuration"				"3"
+		"AbilityDuration"				"2.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6988,7 +7000,7 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"bonus_armor"				"-9 -15 -21 -27"
+				"bonus_armor"				"-8 -12 -16 -20"
 				"LinkedSpecialBonus"		"special_bonus_unique_templar_assassin_2"
 			}
 		}

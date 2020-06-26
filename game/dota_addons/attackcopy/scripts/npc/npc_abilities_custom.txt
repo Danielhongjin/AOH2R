@@ -66,6 +66,20 @@
 		}
 	}
 }
+"special_bonus_intelligence_100"
+{
+	"BaseClass"						"special_bonus_intelligence_35"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"100"
+		}
+	}
+}
 "special_bonus_mp_regen_30"
 {
 	"BaseClass"				"special_bonus_mp_regen_14"
@@ -10897,12 +10911,17 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "rangered"				"-100 -200 -300 -400"
+            "rangered"				"-200"
         }
 		"04"
         {
             "var_type"				"FIELD_INTEGER"
             "range_bonus"				"100 200 300 400"
+        }
+		"05"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "manacost"				"14 18 22 26"
         }
     }
 	"OnCreated"
@@ -10967,6 +10986,7 @@
                 {
                     "ScriptFile" "abilities/heroes/sniper_custom_rifle.lua"
                     "Function"   "on_attack"
+					"Manacost"		"%manacost"
                 }
             }
         }
@@ -14277,7 +14297,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"			"3.0"
+				"delay"			"2.5"
 			}
 			"02"
 			{
@@ -14287,7 +14307,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"anim_duration"			"3.5"
+				"anim_duration"			"3.0"
 			}
 		}
 		"OnSpellStart"

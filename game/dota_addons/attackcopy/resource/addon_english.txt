@@ -41,6 +41,7 @@
 "DOTA_Tooltip_Ability_ogre_magi_custom_bonus_unique_1"          					"+10% all Cast Chances"
 "DOTA_Tooltip_Ability_special_custom_bonus_unique_sniper_1"					"+10% Custom Rifle Damage"
 "DOTA_Tooltip_ability_special_bonus_50_crit_175"			"+{s:crit_chance}% Critical Strike ({s:crit_multiplier}%)"
+"DOTA_Tooltip_ability_special_bonus_intelligence_100"	"+{s:value} Intelligence"
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_100"	"+100 Base Damage"
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_200"	"+200 Base Damage"
 "DOTA_Tooltip_ability_special_bonus_mp_regen_30"		"+{s:value} Mana Regen"
@@ -96,6 +97,9 @@
 "DOTA_Tooltip_ability_item_recipe_spider_legs"	"Recipe: Spider Legs"
 "DOTA_Tooltip_ability_item_recipe_trusty_shovel"	"Recipe: Trusty Shovel"
 "DOTA_Tooltip_ability_item_flicker_Description"					"<h1>Active: Flicker</h1> Dispells debuffs and blinks you to a random spot within 1500 range. Does not get disabled on incoming damage."
+"DOTA_Tooltip_Ability_item_tome_selling"					"Merchant Tome"
+"DOTA_Tooltip_Ability_item_tome_selling_Description"		"<h1>Active: RMA</h1> Immediately refunds all sellable items in your inventory and backpack."
+
 //Level 2 Chest
 "DOTA_Tooltip_ability_item_recipe_dragon_scale"	"Recipe: Dragon Scale"
 "DOTA_Tooltip_ability_item_recipe_essence_ring"	"Recipe: Essence Ring"
@@ -2194,7 +2198,8 @@
 "DOTA_Tooltip_Ability_sniper_custom_rifle_Description"				"Passively increases range. <br><br>While active Sniper shoots wildly at enemies, attacking faster but losing range and damage."
 "DOTA_Tooltip_Ability_sniper_custom_rifle_base_attack_time"		    "BASE ATTACK TIME:"
 "DOTA_Tooltip_Ability_sniper_custom_rifle_damage"					"%DAMAGE REDUCTION:"
-"DOTA_Tooltip_Ability_sniper_custom_rifle_range_bonus"				"BONUS/NEGATIVE RANGE:"
+"DOTA_Tooltip_Ability_sniper_custom_rifle_range_bonus"				"PASSIVE BONUS RANGE:"
+"DOTA_Tooltip_Ability_sniper_custom_rifle_rangered"					"ACTIVE NEGATIVE RANGE:"
 "DOTA_Tooltip_ability_sniper_custom_rifle_Lore"										"Kardel always takes it upon himself to stay as far from harm as he can while still performing his role - taking perfect aim. This ability isn't very lore friendly anymore."
 	
 "DOTA_Tooltip_ability_spectre_custom_dispersion"							"Dispersion"
@@ -2409,7 +2414,7 @@
 "DOTA_Tooltip_Ability_item_arcane_staff"                            "Arcane Staff"
 "DOTA_Tooltip_Ability_item_arcane_staff_Description"			    "<h1>Passive: Arcane Crit</h1> Every instance of magical or pure damage that you cause deals %crit_damage_mult%%% damage, but spends mana equal to half of the added damage. Intelligence reduces mana cost.\n<font color='#F2A93E'>Arcane Crit does not stack.</font>"
 "DOTA_Tooltip_Ability_item_arcane_staff_Lore"				        "A staff made of permafrost, impossible to hold without gloves."
-"DOTA_Tooltip_Ability_item_arcane_staff_Note0"						"Mana cost is damage * 0.4 * (%cost_constant% / (%cost_constant% + intelligence))."
+"DOTA_Tooltip_Ability_item_arcane_staff_Note0"						"Mana cost is damage * 0.35 * (%cost_constant% / (%cost_constant% + intelligence))."
 "DOTA_Tooltip_Ability_item_arcane_staff_Note1"						"Will not fire if you have less than 150 mana."
 "DOTA_Tooltip_Ability_item_arcane_staff_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_arcane_staff_bonus_int"		            "+$int"
@@ -2548,7 +2553,7 @@
 "DOTA_Tooltip_Ability_item_echo_sabre_2_bonus_mana_regen"              "+$mana_regen"
 
 "DOTA_Tooltip_ability_item_conduit"                                    "Charged Conduit"
-"DOTA_Tooltip_ability_item_conduit_Description"						"<h1>Active: Lethal Arc</h1>Creates a charged lodestone that redirects damage taken by it to the target as physical damage. The lodestone has %shared_life%%% of the target's current health. Lasts %duration% seconds."
+"DOTA_Tooltip_ability_item_conduit_Description"						"<h1>Active: Lethal Arc</h1>Creates a charged lodestone that redirects %damage_ratio%%% damage taken by it to the target as magical damage. The lodestone has %shared_life%%% of the target's current health. Lasts %duration% seconds."
 "DOTA_Tooltip_ability_item_conduit_Lore"								"Too dangerous to be used as a battery. When thrown, creates an everlasting workplace hazard."
 "DOTA_Tooltip_ability_item_conduit_Note0"								"Cannot be refreshed."
 "DOTA_Tooltip_ability_item_conduit_bonus_damage"						"+$damage"
@@ -2601,9 +2606,9 @@
 "DOTA_Tooltip_modifier_item_bloodstone_active"				        "Bloodpact"
 "DOTA_Tooltip_modifier_item_bloodstone_active_Description"	        "This unit is regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second."
 
-"DOTA_Tooltip_ability_item_skadi_Description"							"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement and attack speed for %cold_duration% seconds. Slows enemy units by %cold_slow_ranged%%% movement speed and by %cold_slow_ranged% attack speed."
+"DOTA_Tooltip_ability_item_skadi_Description"							"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement and attack speed and reduces heals, health regeneration and lifesteal by %heal_reduction%%%. Slows enemy units by %cold_slow_ranged%%% movement speed and by %cold_slow_ranged% attack speed."
 "DOTA_Tooltip_ability_item_dark_skadi"                                      "Dark Skadi"
-"DOTA_Tooltip_ability_item_dark_skadi_Description"							"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement and attack speed for %cold_duration% seconds. Slows enemy units by %cold_slow_ranged%%% movement speed and by %cold_slow_ranged% attack speed."
+"DOTA_Tooltip_ability_item_dark_skadi_Description"							"<h1>Passive: Cold Attack</h1> Attacks lower enemy movement and attack speed and reduces heals, health regeneration and lifesteal by %heal_reduction%%%. Slows enemy units by %cold_slow_ranged%%% movement speed and by %cold_slow_ranged% attack speed."
 "DOTA_Tooltip_ability_item_dark_skadi_Lore"									"Extremely rare artifact, guarded by the azure dragons."
 "DOTA_Tooltip_ability_item_dark_skadi_bonus_all_stats"						"+$all"
 "DOTA_Tooltip_ability_item_dark_skadi_bonus_health"							"+$health"

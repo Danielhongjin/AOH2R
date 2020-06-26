@@ -3901,7 +3901,7 @@
     "MovementSpeed"                         "320"
     "StatusHealth"                          "100000"
     "StatusHealthRegen"                     "90"
-    "StatusMana"                            "2700"
+    "StatusMana"                            "3400"
     "StatusManaRegen"                       "50"
     "VisionDaytimeRange"                    "1600"
     "VisionNighttimeRange"                  "1600"
@@ -5873,7 +5873,7 @@
 		{
 			"MKB"              		{"Item"         "item_monkey_king_bar"}
 			"Unstoppable"       	{"Item"         "item_boss_unstoppable" }
-			"Boss Resistance"       {"Item"         "item_boss_resistance_40" }
+			"Boss Resistance"       {"Item"         "item_boss_resistance_50" }
 			"Hyperstone"			{"Item"		    "item_hyperstone"}
 			"Black King Bar"		{"item"			"item_black_king_bar_boss"}
 			"Trade Kaya"		 	{ "Item"	    "item_trade_kaya_2"  }

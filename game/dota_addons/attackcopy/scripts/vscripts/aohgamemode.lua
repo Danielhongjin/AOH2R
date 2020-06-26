@@ -188,12 +188,12 @@ function AOHGameMode:OnDamageDealt(damageTable)
 				if AOHGameMode.isTalon[attackerPlayerId] then
 					demon_talon_proc(AOHGameMode.isTalon[attackerPlayerId], attacker, victim, damageTable, AOHGameMode.talonCount[attackerPlayerId][0], AOHGameMode.talonCount[attackerPlayerId][1])
 				end
-				if AOHGameMode.isArcane[attackerPlayerId] then
-					if damageTable.damagetype_const ~= 1 then
-						arcane_staff_calculate_crit(attacker, victim, damageTable)
-					end
-				end
 				if victim and victim:GetDayTimeVisionRange() ~= 1337 then
+					if AOHGameMode.isArcane[attackerPlayerId] then
+						if damageTable.damagetype_const ~= 1 then
+							arcane_staff_calculate_crit(attacker, victim, damageTable)
+						end
+					end
 					if attackerPlayerId and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
 						player_data_modify_value(attackerPlayerId, "bossDamage", damageTable.damage)
 						if damageTable.damagetype_const == 2 then

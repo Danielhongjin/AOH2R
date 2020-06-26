@@ -31,7 +31,7 @@
 	{
 		"item"		"item_chest_1"
 		"item"		"item_elixer"
-		"item"		"item_keen_optic"
+		"item"		"item_tome_selling"
 		"item"		"item_ironwood_tree"
 		"item"		"item_repair_kit"
 		"item"		"item_royal_jelly"
@@ -144,6 +144,7 @@
 		"item"		"item_arcane_staff"
 		"item"		"item_blast_staff_1"
 		"item"		"item_nullifier"
+		"item"		"item_echo_wand"
 	}
 		
 	// Level 3 - Purple Recipes	
@@ -240,7 +241,6 @@
 		"item"		"item_custom_ex_machina"		  
 		"item"		"item_desolator_2"	
 		"item"		"item_dredged_trident"
-		"item"		"item_echo_wand"
 		
 	}
 

@@ -1,15 +1,2 @@
-Terrorblade bosses now cast sunder slightly faster.
-
-New item Merchant Tome - Tier 1 neutral item that fully refunds all sellable items in your inventory and backpack.
-Butterfly nerfed into the molten core of the earth.
-Charged Conduit now only deals 70% of taken damage to the enemy, damage now converted to magical damage.
-Fusion Rune recipe cost reduced from 6000 to 4000.
-Kaya 3 spell amp given massive buff from 60% to 60%.
-Mimic Mace non neutral again.
-Mimic Mace now procs blast staff on casts.
-Tome of Knowledge fully shareable now.
-
-Goblin Techies land mines cooldown fixed.
-Sniper take aim active range reduction now static 200.
-Templar Assassin max potential armor reduction from 47 to 40.
+Fixed items for 7.27 update.
 TO-DO

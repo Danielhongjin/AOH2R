@@ -30,6 +30,7 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts",

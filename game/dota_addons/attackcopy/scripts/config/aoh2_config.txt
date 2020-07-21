@@ -88,87 +88,32 @@
 		{
 			"Title"						"Devils"
 			"MaxGold"					"3700"
-			"BagCount"					"30"
+			"BagCount"					"45"
 			"BagVariance"				"0"
 			"FixedXP"					"3400"
 
 			"a" 
 			{
 				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"8"
-				"UnitsPerSpawn"			"4"
-				"SpawnInterval"			"6"
-			}
-			
-			"b" 
-			{
-				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"10"
-				"UnitsPerSpawn"			"5"
-				"SpawnInterval"			"5"
-			}
-			
-			"c" 
-			{
-				"WaitForTime"			"20"
-				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"9"
-				"UnitsPerSpawn"			"3"
+				"TotalUnitsToSpawn"		"40"
+				"UnitsPerSpawn"			"10"
 				"SpawnInterval"			"9"
 			}
-			
-			"d" 
+			"b" 
 			{
-				"WaitForTime"			"20"
+				"WaitForTime"			"9"
 				"NPCName"				"npc_boss_kobold_soldier"
 				"TotalUnitsToSpawn"		"3"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"10"
+				"SpawnInterval"			"9"
 			}
-			
-			"e" 
+			"c" 
 			{
-				"WaitForTime"			"30"
+				"WaitForTime"			"15"
 				"NPCName"				"npc_boss_kobold_minion"
 				"TotalUnitsToSpawn"		"3"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"12"
-			}
-
-			"f"
-			{
-				"WaitForUnit"			"c"
-				"WaitForTime"			"10"
-				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"8"
-				"UnitsPerSpawn"			"4"
-				"SpawnInterval"			"8"
-			}
-			
-			"g" 
-			{
-				"WaitForUnit"			"c"
-				"WaitForTime"			"12"
-				"NPCName"				"npc_boss_kobold_foreman"
-				"TotalUnitsToSpawn"		"10"
-				"UnitsPerSpawn"			"5"
-				"SpawnInterval"			"8"
-			}
-			
-			"h"
-			{
-				"GroupWithUnit"			"f"
-				"NPCName"				"npc_boss_kobold_soldier"
-				"TotalUnitsToSpawn"		"1"
-				"UnitsPerSpawn"			"1"
-			}
-			
-			"i"
-			{
-				"GroupWithUnit"			"g"
-				"NPCName"				"npc_boss_kobold_minion"
-				"TotalUnitsToSpawn"		"1"
-				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"7"
 			}
 		}
 		
@@ -201,14 +146,14 @@
 			{
 				"NPCName"				"npc_boss_zombie"
 				"TotalUnitsToSpawn"		"50"
-				"UnitsPerSpawn"			"10"
-				"SpawnInterval"			"8"
+				"UnitsPerSpawn"			"5"
+				"SpawnInterval"			"4"
 			}
 			
 			"b"
 			{
 				"NPCName"				"npc_boss_undying"
-				"TotalUnitsToSpawn"		"4"
+				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"5"
 			}
@@ -708,9 +653,9 @@
 			}
 		}	
 		
-		"25" // Medusa
+		"25" // Lone Druid
 		{
-			"Title"						"Snakes"
+			"Title"						"Lone Druid"
 			"MaxGold"					"7000"
 			"BagCount"					"1"
 			"BagVariance"				"0"
@@ -718,7 +663,7 @@
 
 			"Unit1"
 			{
-				"NPCName"				"npc_boss_medusa"
+				"NPCName"				"npc_boss_lone_druid"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"25"
@@ -911,9 +856,9 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"35" // Rubick
+		"35" // Invoker
 		{
-			"Title"						"Spells"
+			"Title"						"Armageddon"
 			"MaxGold"					"11750"
 			"BagCount"					"1"
 			"BagVariance"				"30"
@@ -921,7 +866,7 @@
 				
 			"a"
 			{
-				"NPCName"				"npc_boss_rubick"
+				"NPCName"				"npc_boss_invoker"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"

@@ -1,2 +1,10 @@
-Fixed items for 7.27 update.
+Round end is now indicated by a healing buff on heroes, no longer insta heals.
+Outposts now properly animate and are coloured, particle effects improved.
+Outposts added near the ancient.
+Outposts now heal mana a small amount as well.
+
+Healing salve no longer disables on damage.
+Vladmir upgrade no longer uses bonus stats in its recipe.
+
+Omniknight no longer has degen aura, replaced with Divine Sanction.
 TO-DO

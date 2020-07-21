@@ -171,8 +171,7 @@ function refresh_players()
 			if not hero:IsAlive() then
 				hero:RespawnUnit()
 			end
-			hero:SetHealth(hero:GetMaxHealth())
-			hero:SetMana(hero:GetMaxMana())
+			hero:AddNewModifier(hero, nil, "modifier_roundend_effect", {duration = 6})
 		end
 	end
 end
@@ -301,4 +300,61 @@ function get_item_true_cost(name)
 		end
 	end
 	return cost
+end
+
+LinkLuaModifier("modifier_roundend_effect", "lib/my.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_roundend_effect = class({})
+
+function modifier_roundend_effect:IsBuff()
+    return true
+end
+
+function modifier_roundend_effect:IsPurgable()
+	return false
+end
+
+function modifier_roundend_effect:GetTexture()
+    return "io_blessing"
+end
+
+function modifier_roundend_effect:RemoveOnDeath()
+	return true
+end
+
+function modifier_roundend_effect:IsHidden()
+	return false
+end
+
+function modifier_roundend_effect:DeclareFunctions()
+    return {
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+		MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
+    }
+end
+
+function modifier_roundend_effect:GetModifierHealthRegenPercentage()
+    return 18.0	
+end
+
+function modifier_roundend_effect:GetModifierTotalPercentageManaRegen()
+    return 18.0
+end
+
+function modifier_roundend_effect:OnCreated()
+	local parent = self:GetParent()
+	self.fx = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+	ParticleManager:SetParticleControlEnt(
+		self.fx,
+		0,
+		parent,
+		PATTACH_ABSORIGIN_FOLLOW,
+		"attach_hitloc",
+		parent:GetAbsOrigin(), -- unknown
+		true -- unknown, true
+	)
+end
+
+function modifier_roundend_effect:OnDestroy()
+	ParticleManager:DestroyParticle(self.fx, false)
+	ParticleManager:ReleaseParticleIndex(self.fx)
 end

@@ -7,34 +7,42 @@ local spells_aoe = {[0] = "custom_crystal_nova",
 "custom_torrent",
 "custom_torrent_tide",
 "custom_maledict",
-"custom_ice_path", --index 5
+"custom_ice_path", -- index 5
 "custom_desolation",
 "custom_banish",
 "custom_dark_artistry",
 "custom_spectral_dagger",
-"custom_fissure", --index 10
+"custom_fissure", -- index 10
 "custom_carrion_swarm",
 "custom_nyx_impale",
 "custom_spiritbreaker_inner_fire",
 "custom_deafening_blast",
-"custom_mystic_flare", --index 15
+"custom_mystic_flare", -- index 15
 "custom_shockwave",
+"boss_spiritbear_inner_fire",
+"boss_lone_druid_split_earth",
+"boss_invoker_arcane_whirl",
+"boss_undying_tombstone", -- index 20
 }
 local spells_target = {[0] = "custom_static_link", 
 "custom_frostbite", 
 "custom_mana_void", 
 "custom_omni_slash_jugg", 
 "custom_doom", 
-"custom_lightning_bolt", --index 5
+"custom_lightning_bolt", -- index 5
 "custom_chaos_bolt", 
 "custom_sunray", 
 "custom_reality_rift",
 "custom_primal_roar",
-"custom_paralyzing_cask", --index 10
+"custom_paralyzing_cask", -- index 10
 "custom_nether_strike",
 "custom_purifying_flames",
 "custom_life_drain",
 "custom_sunder",
+"boss_lone_druid_maul", -- index 15
+"boss_invoker_telekinesis",
+"boss_kobold_command",
+"boss_undying_soul_rip",
 }
 --Fires a warning aoe to a point and casts the spell immediately
 function generate_warning_aoe(keys)
@@ -184,11 +192,6 @@ function generic_aoe_notarget(keys)
 			ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
 			ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 			ParticleManager:ReleaseParticleIndex(fx)
-			local fx2 = ParticleManager:CreateParticle("particles/custom/link_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
-			ParticleManager:SetParticleControlEnt(fx2, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
-			ParticleManager:SetParticleControl(fx2, 1, point)
-			ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
-			ParticleManager:ReleaseParticleIndex(fx2)
 			if caster:IsMoving() then
 				caster:Stop()
 			end
@@ -200,6 +203,7 @@ function generic_aoe_notarget(keys)
 					if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
 						return 0.5
 					end
+					print("yes")
 					spell:EndCooldown()
 					caster:CastAbilityNoTarget(spell, -1)
 				end
@@ -270,15 +274,29 @@ function generic_target(keys)
 	local target = keys.target
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_target[keys.ability_index])
-	target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
 	Timers:CreateTimer(
-		delay - spell:GetCastPoint(), 
+		0, 
 		function()
-			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
+			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() then
 				return 0.5
 			end
-			spell:EndCooldown()
-			caster:CastAbilityOnTarget(target, spell, -1)
+		if caster:IsMoving() then
+			caster:Stop()
+			caster:FaceTowards(keys.target:GetAbsOrigin())
+		end
+		target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
+		StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / delay})
+		caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
+		Timers:CreateTimer(
+			delay - spell:GetCastPoint(), 
+			function()
+				if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
+					return 0.5
+				end
+				spell:EndCooldown()
+				caster:CastAbilityOnTarget(target, spell, -1)
+			end
+		)
 		end
 	)
 end
@@ -387,10 +405,6 @@ LinkLuaModifier("modifier_anim", "abilities/other/generic.lua", LUA_MODIFIER_MOT
 modifier_anim = class({})
 
 function modifier_anim:IsPurgable()
-	return false
-end
-
-function modifier_anim:RemoveOnDeath()
 	return false
 end
 

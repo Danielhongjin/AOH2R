@@ -891,7 +891,19 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"100"
+				"value"				"120"
+			}
+		}
+	}
+	"special_bonus_unique_night_stalker_5"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"20"
+				"ad_linked_ability"			"night_stalker_hunter_in_the_night"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
@@ -947,6 +959,18 @@
 			{
 				"var_type"					"FIELD_FLOAT"
 				"value"				"3"
+			}
+		}
+	}
+	"special_bonus_unique_omniknight_7"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"20"
+				"ad_linked_ability"			"omniknight_guardian_angel"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
@@ -1577,6 +1601,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_vengeful_spirit_8"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"150"
+			}
+		}
+	}
 	"special_bonus_unique_venomancer"
 	{
 		"AbilitySpecial"
@@ -1695,6 +1730,17 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"2"
+			}
+		}
+	}
+	"special_bonus_unique_witch_doctor_7"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"5"
 			}
 		}
 	}
@@ -2562,26 +2608,20 @@
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_max"				"275 325 375 425"
+				"crit_max"				"160 210 260 310"
 			}	
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"lifesteal"					"33"
+				"lifesteal"					"20 30 40 50"
 			}	
 		}
 	}
 	"chaos_knight_phantasm"
 	{
-		"AbilityCooldown"				"90 90 90"
+		"AbilityCooldown"				"60"
 		"AbilitySpecial"
 		{
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"illusion_duration"			"30"
-				"LinkedSpecialBonus"		"special_bonus_unique_chaos_knight_4"
-			}	
 			"05"
 			{
 				"var_type"					"FIELD_INTEGER"
@@ -5099,6 +5139,23 @@
 	{
 		"AbilityCooldown"				"160.0 130.0 100.0"
 	}
+	"necrolyte_heartstopper_aura"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"aura_radius"			"500"		
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"aura_damage"		"3.6" 
+				"LinkedSpecialBonus"		"special_bonus_unique_necrophos_2"
+			} 	
+		}
+	}
 	"necronomicon_warrior_mana_burn"
 	{
 		"AbilitySpecial"
@@ -5408,6 +5465,23 @@
 				"var_type"				"FIELD_INTEGER"
 				"hp_regen"		"10 16 22 28"
 				"LinkedSpecialBonus"	"special_bonus_unique_omniknight_5"
+			}
+		}
+	}
+	"omniknight_pacify"
+	{
+		"AbilityTextureName"		    "omniknight_degen_aura"
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spell_resistance_reduction"	"40 45 50 55"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"6.0"
 			}
 		}
 	}
@@ -6096,11 +6170,25 @@
 			}
 		}
 	}
+	"razor_unstable_current"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"self_movement_speed_pct"	"12 18 24 30"
+				"LinkedSpecialBonus"	"special_bonus_unique_razor_5"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
 	"razor_eye_of_the_storm"
 	{
 		"AbilityCooldown"				    "75 65 55"
 		"AbilitySpecial"
 		{
+
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
@@ -6108,35 +6196,24 @@
 			}
 			"02"
 			{
-				"var_type"			"FIELD_INTEGER"
-				"passive_area_damage"		"60 90 120"		
-				"LinkedSpecialBonus"	"special_bonus_unique_razor_4"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"passive_area_interval"	"1.5"		
-			}
-			"04"
-			{
 				"var_type"			"FIELD_FLOAT"
 				"duration"			"18.0 20.0 22.0"		
 			}
-			"05"
+			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"strike_interval"		"1.1 1.0 0.9"	
 				"LinkedSpecialBonus"	"special_bonus_unique_razor_2"
 			}
-			"06"
+			"04"
 			{
 				"var_type"			"FIELD_INTEGER"
 				"armor_reduction"	"1 1 1"		
 			}
-			"07"
+			"05"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"75 125 175"		
+				"damage"			"125 200 275"		
 			}
 		}
 	}
@@ -6259,6 +6336,10 @@
 				"caustic_finale_slow_duration"		"1"
 			}	
 		}
+	}
+	"sandking_burrowstrike"
+	{
+		"AbilityCooldown"				"12 11 10 9"
 	}
 	"sandking_epicenter"
 	{
@@ -7560,6 +7641,11 @@
 			}
 		}
 	}
+	"ursa_earthshock"
+	{
+		"AbilityCooldown"				"10 9 8 7"
+		"AbilityDamage"					"100 175 250 325"
+	}	
 	"ursa_overpower"
 	{
 		"AbilitySpecial"
@@ -8175,7 +8261,7 @@
 	}
 	"witch_doctor_maledict"
 	{
-		"AbilityCooldown"				"30.0 29.0 28.0 27.0"
+		"AbilityCooldown"				"30.0 28.0 26.0 24.0"
 		"AbilityDuration"				"12.0"
 		"AbilityDamage"					"28 56 84 112"
 		"AbilitySpecial"
@@ -8197,6 +8283,7 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"bonus_damage"				"9 11 13 15"
+				"LinkedSpecialBonus"	"special_bonus_unique_witch_doctor_7"
 			}
 			"04"
 			{

@@ -321,8 +321,36 @@
 }
 "item_blade_mail"
 {
-    "ItemCost"						"99999"
-    "ItemPurchasable"				"0"
+	"AbilityCooldown"				"15.0"
+	"AbilityManaCost"				"31"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"40"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_armor"			"9"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"passive_reflection_constant"			"50"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"passive_reflection_pct"			"100"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"active_reflection_pct"			"200"
+		}
+	}
 }
 "item_blink"
 {
@@ -901,6 +929,14 @@
 {
     "ItemCost"						"60"
     "ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	"AbilitySpecial"
+	{
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"break_on_hero_damage"	"0"
+		}
+	}
 }
 "item_glimmer_cape"
 {
@@ -1899,6 +1935,11 @@
             "var_type"				"FIELD_INTEGER"
             "blast_speed"			"350"
         }
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"hp_regen_degen_aura"	"25 40"
+		}
     }
 }
 "item_silver_edge"
@@ -2113,11 +2154,6 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"enemy_hp_drain"		"0.5"
-		}
-		"13"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"hp_regen_degen_aura"	"30"
 		}
 	}
 }
@@ -3977,7 +4013,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"15 55"
+			"bonus_damage"			"20 60"
 		}
 		"02"
 		{
@@ -4053,7 +4089,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"15 55"
+			"bonus_damage"			"20 60"
 		}
 		"02"
 		{
@@ -4640,6 +4676,11 @@
             "var_type"				"FIELD_INTEGER"
             "blast_speed"			"350"
         }
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"hp_regen_degen_aura"	"25 40"
+		}
     }
 }
 "item_recipe_health_bag"
@@ -4796,6 +4837,7 @@
 {
     "MaxUpgradeLevel"               "3"
     "ItemBaseLevel"                 "1"
+	"AbilityCooldown"				"4.0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -4811,22 +4853,22 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"0"
+			"hp_regen_amp"			"50 75 100"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.4 1.7 2.0"
+			"health_regen_pct"		"1.5 1.75 2.0"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"2"
+			"cooldown_melee"		"4"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"2"
+			"cooldown_ranged_tooltip"		"4"
 		}
 	}
 }
@@ -4856,6 +4898,7 @@
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
     "MaxUpgradeLevel"               "3"
     "ItemBaseLevel"                 "2"
+	"AbilityCooldown"				"4.0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -4871,22 +4914,22 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"0"
+			"hp_regen_amp"			"50 75 100"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.4 1.7 2.0"
+			"health_regen_pct"		"1.5 1.75 2.0"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"2"
+			"cooldown_melee"		"4"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"2"
+			"cooldown_ranged_tooltip"		"4"
 		}
 	}
 }
@@ -4916,6 +4959,7 @@
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
     "MaxUpgradeLevel"               "3"
     "ItemBaseLevel"                 "3"
+	"AbilityCooldown"				"4.0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -4931,22 +4975,22 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"0"
+			"hp_regen_amp"			"50 75 100"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.4 1.7 2.0"
+			"health_regen_pct"		"1.5 1.75 2.0"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"2"
+			"cooldown_melee"		"4"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"2"
+			"cooldown_ranged_tooltip"		"4"
 		}
 	}
 }
@@ -6219,27 +6263,22 @@
             "var_type"				"FIELD_INTEGER"
             "bonus_armor"			"9 18"
         }
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"	"5"
-		}
-        "04"
+        "03"
         {
             "var_type"				"FIELD_INTEGER"
             "aura_radius"			"1200"
         }
-        "05"
+        "04"
         {
             "var_type"				"FIELD_INTEGER"
             "aura_attack_speed"		"20 40"
         }
-        "06"
+        "05"
         {
             "var_type"				"FIELD_INTEGER"
             "aura_positive_armor"	"5 7"
         }
-        "07"
+        "06"
         {
             "var_type"				"FIELD_INTEGER"
             "aura_negative_armor"	"-5 -7"
@@ -6997,13 +7036,13 @@
     "BaseClass"						"item_datadriven"
     "Model"							"models/props_gameplay/recipe.vmdl"
     "AbilityTextureName"			"item_recipe"
-    "ItemCost"						"1000"	
+    "ItemCost"						"1500"	
     "ItemShopTags"					""
     "ItemRecipe"					"1"
     "ItemResult"					"item_vladmir_temp"
     "ItemRequirements"
     {
-        "01"						"item_vladmir;item_ultimate_orb"
+        "01"						"item_vladmir"
     }
 }
 "item_vladmir_temp"
@@ -7026,22 +7065,17 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"armor_aura"			"4 6"
+			"lifesteal_aura"		"7 10"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"vampiric_aura"			"7 10"
+			"damage_aura"			"18 26"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"aura_radius"	"1200"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"20"
 		}
 	}
 }
@@ -7049,14 +7083,14 @@
 {
 	"Model"							"vladimirs"
 	"BaseClass"						"item_datadriven"
-	"ItemCost"						"1000"	
+	"ItemCost"						"1500"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
 	"AbilityTextureName"			"custom_recipe"
 	"ItemResult"					"item_vladmir's_soul"
 	"ItemRequirements"
 	{
-		"01"						"item_vladmir;item_ultimate_orb"
+		"01"						"item_vladmir"
 	}
 }
 "item_vladmir's_soul"
@@ -7175,11 +7209,15 @@
 {
     "ID"							"70192"
     "BaseClass"                     "item_holy_locket"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityCastRange"				"500"
+	"AbilityCastPoint"				"0.0"	
+	"AbilitySharedCooldown"			"magicwand"
     "AbilityTextureName"		    "wicked_locket"
     "ItemQuality"					"rare"
     "ActiveDescriptionLine"			"2"
-	"AbilityCastRange"				"1200"
     "MaxUpgradeLevel"               "2"
     "ItemBaseLevel"                 "2"
 	"AbilityCooldown"				"13.0"
@@ -7334,7 +7372,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"10000"
+			"bonus_health"			"100000"
 		}
 		"03"
 		{

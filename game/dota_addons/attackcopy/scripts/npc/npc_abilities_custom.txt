@@ -4,6 +4,32 @@
 	// Balance Changes.
 	// Bosses abilities.
 	// New.
+"outpost_idle"
+{
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastPoint"				"1"
+	"AbilityCooldown"				"0.0"
+	"AbilityDuration"				"0.0"
+	"IsCastableWhileHidden" 		"1"
+	"AbilityCastAnimation"		"ACT_DOTA_IDLE + captured"
+	"AbilityManaCost"				"0"
+}
+"outpost_channel"
+{
+	"BaseClass"				"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastPoint"				"10"
+	"AbilityCooldown"				"0.0"
+	"AbilityDuration"				"0.0"
+	"IsCastableWhileHidden" 		"1"
+	"AbilityCastAnimation"		"ACT_DOTA_CHANNEL_ABILITY_1"
+	"AbilityManaCost"				"0"
+}
 "bane_custom_bonus_unique_1"
 {
     "ID"					"70061"
@@ -159,7 +185,6 @@
 {
 	"BaseClass"				"ability_datadriven"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
 	"OnCreated"
 	{
 		"RunScript"
@@ -173,6 +198,7 @@
 		"modifier_courier_invincibility"
 		{
 			"IsHidden"				"1"
+			"Passive"				"1"
 			"States"
 			{
 				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_ENABLED"
@@ -651,12 +677,12 @@
         "03"
         {
             "var_type"				"FIELD_FLOAT"
-            "stack_damage"      	"50.0"
+            "stack_damage"      	"40.0"
         }
         "04"
         {
             "var_type"				"FIELD_FLOAT"
-            "stack_duration"    	"10"
+            "stack_duration"    	"9"
         }
     }
     "OnOwnerDied"
@@ -1033,12 +1059,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"			"1.2"
+			"delay"			"1.5"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"anim_duration"			"2.4"
+			"anim_duration"			"3.0"
 		}
 		"04"
 		{
@@ -1360,7 +1386,7 @@
         "01"
         {
             "var_type"			    "FIELD_INTEGER"
-            "total_damage"			"650"
+            "total_damage"			"300"
         }
         "02"
         {
@@ -1370,7 +1396,7 @@
         "03"
         {
             "var_type"				"FIELD_FLOAT"
-            "duration"				"3.5"
+            "duration"				"5.5"
         }
         "04"
         {
@@ -4281,7 +4307,7 @@
         "03"
         {	
             "var_type"					"FIELD_INTEGER"
-            "arrow_count"				"10"
+            "arrow_count"				"2"
             "LinkedSpecialBonus"		"special_bonus_unique_medusa_2"
         }
     }
@@ -5051,77 +5077,6 @@
         {
             "var_type"					"FIELD_INTEGER"
             "omni_slash_radius"			"425"
-        }
-    }
-}
-"custom_solar_strike"
-{
-    "BaseClass"						"ability_datadriven"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-    "AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-    "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-    "AbilityCastPoint"				"0.2"
-    "AbilityTextureName"			"invoker_sun_strike"
-    "precache"
-    {
-        "particle"					"particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf"
-        "particle"					"particles/econ/items/invoker/invoker_apex/invoker_sun_strike_immortal1.vpcf"
-        "soundfile"					"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
-    }
-    "AbilityCooldown"				"10.0"
-    "AbilityManaCost"				"0"
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"						"FIELD_INTEGER"
-            "damage"						"9999"
-        }
-        "02"
-        {
-            "var_type"						"FIELD_INTEGER"
-            "delay"							"2.4"
-        }
-        "03"
-        {
-            "var_type"						"FIELD_INTEGER"
-            "radius"    					"175"
-        }
-    }
-    "OnSpellStart"
-    {
-        "RunScript"
-        {
-            "ScriptFile"			"abilities/bosses/custom_solar_strike.lua"
-            "Function"				"solar_strike_start"
-        }
-    }
-    "Modifiers"
-    {
-        "modifier_dummy"
-        {
-            "ThinkInterval"		"0.01"
-            "OnIntervalThink"	
-            {
-                "Damage"
-                {
-                    "Damage"		"9999"
-                    "Type"			"DAMAGE_TYPE_PURE"
-                    "Target"		"TARGET"
-                }
-            }
-            "States"
-            {
-                "MODIFIER_STATE_ATTACK_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_INVISIBLE"				"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_NOT_ON_MINIMAP"			"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-            }
         }
     }
 }
@@ -7615,6 +7570,119 @@
         }
     }
 }
+"watch_tower_increase_stats"
+{
+    "BaseClass"					    "ability_lua"
+	"ScriptFile"					"abilities/other/watch_tower_increase_stats.lua"
+    "AbilityBehavior"			    "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"		    "detonation"
+    "MaxLevel"					    "1"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"			    "FIELD_FLOAT"
+            "health_base"	        "300"			
+        }
+        "02"
+        {
+            "var_type"			    "FIELD_FLOAT"
+            "health_per_round"	    "125"
+        }
+        "03"
+        {
+            "var_type"			    "FIELD_FLOAT"
+            "armor_base"	        "0"			
+        }
+        "04"
+        {
+            "var_type"			    "FIELD_FLOAT"
+            "armor_per_round"	    "0.75"
+        }
+		"05"
+        {
+            "var_type"			    "FIELD_INTEGER"
+            "damage"	    "50"
+        }
+		"06"
+        {
+            "var_type"			    "FIELD_FLOAT"
+            "duration"	    "5"
+        }
+		"07"
+        {
+            "var_type"			    "FIELD_INTEGER"
+            "radius"	    "750"
+        }
+		"06"
+        {
+            "var_type"			    "FIELD_FLOAT"
+            "delay"	    "6"
+        }
+    }
+}
+"watch_tower_heal_aura"
+{
+    "BaseClass"						"ability_datadriven"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"			"fountain"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"					"FIELD_INTEGER"
+            "radius"					"220"
+        }
+		"02"
+        {
+            "var_type"					"FIELD_FLOAT"
+            "healing"					"2.2"
+        }
+		"03"
+        {
+            "var_type"					"FIELD_FLOAT"
+            "mp_healing"					"0.5"
+        }
+		"04"
+        {
+            "var_type"					"FIELD_INTEGER"
+            "damage_taken"					"50"
+        }
+    }
+    "Modifiers"
+    {
+        "modifier_watch_tower_heal_aura"
+        {
+            "Passive"			"1"
+            "IsHidden"			"1"
+            "Aura" 				"modifier_watch_tower_heal"
+            "Aura_Radius" 		"%radius"
+            "Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+            "Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+			"States"
+			{
+				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_DISABLED"
+			}
+			
+        }
+        "modifier_watch_tower_heal"
+        {
+            "TextureName"       "fountain"
+			"EffectName"		"particles/econ/events/fall_major_2016/radiant_fountain_regen_fm06_lvl2.vpcf"
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE"			"%healing"
+				"MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE"		"%mp_healing"
+				"MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%damage_taken"
+            }
+			"States"
+			{
+				"MODIFIER_STATE_SILENCED"		"MODIFIER_STATE_VALUE_ENABLED"
+				"MODIFIER_STATE_DISARMED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+        }
+    }
+}
 "ancient_increase_stats"
 {
     "BaseClass"					    "ability_lua"
@@ -8180,24 +8248,29 @@
     "AbilityCastRange"			"1300"
     "AbilityCastPoint"			"0.2"
     "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
-    "AbilityCooldown"			"110.0 90.0 70.0"
+    "AbilityCooldown"			"70.0 55.0 40.0"
     "AbilityManaCost"			"150 175 200"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"			    "FIELD_INTEGER"
-            "illusion_taken"	    "250 200 150"			
+            "illusion_incoming"	    "225"			
         }
-        "02"
+		"02"
         {
             "var_type"			    "FIELD_INTEGER"
-            "duration"	            "35"
+            "illusion_outgoing"	    "120"			
         }
         "03"
         {
             "var_type"			    "FIELD_INTEGER"
-            "n_clones"	            "1"
+            "duration"	            "20"
+        }
+        "04"
+        {
+            "var_type"			    "FIELD_INTEGER"
+            "n_clones"	            "2"
             "LinkedSpecialBonus"    "dark_seer_custom_bonus_unique_1"
         }
     }
@@ -8208,26 +8281,10 @@
             "ScriptFile"		"abilities/heroes/dark_seer_custom_dark_clone.lua"
             "Function"			"cast_dark_clone"
             "Target"			"TARGET"
+			"incoming"		"%illusion_incoming"
+			"outgoing"		"%illusion_outgoing"
+			"duration"		"%duration"
         } 
-    }
-    "Modifiers"
-    {
-        "modifier_dark_clone_damage"
-        {
-            "Duration"	    "%duration"
-            "Properties"
-            {
-                "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE"		"%illusion_taken"
-            }
-            "OnDestroy"
-            {
-                "RunScript"
-                {
-                    "ScriptFile"	"abilities/heroes/dark_seer_custom_dark_clone.lua"
-                    "Function"		"on_dark_clone_expire"
-                }
-            }
-        }
     }
 }
 "death_prophet_custom_moving_life"
@@ -11655,31 +11712,6 @@
         }
     }
 }
-"custom_incapacitating_bite"
-	{
-		"BaseClass"						"broodmother_incapacitating_bite"													// unique ID number for this ability.  Do not change this once established or it will invalidate collected stats.
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"miss_chance"			"30"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"		"-18"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"			"2.0"
-			}
-		}
-		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
-	}
 "custom_zombie_deathstrike"
 	{
 		"BaseClass"			"undying_tombstone_zombie_deathstrike"
@@ -11707,7 +11739,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"duration"				"2.5"
+				"duration"				"2.0"
 			}
 			"05"
 			{
@@ -13138,7 +13170,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pct"			"37"
+				"damage_pct"			"33"
 			}
 			"04"
 			{
@@ -14698,413 +14730,7 @@
 			}
 		}
 	}
-"custom_laser_arrow"
-{
-    "BaseClass"						"ability_datadriven"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-    "AbilityTextureName"            "windrunner_powershot"
-    "AbilityCastRange"				"5000"
-    "AbilityCastPoint"				"0.5"
-    "AbilityCooldown"				"8.0"
-    "AbilityDamage"					"850"
-    "AbilityManaCost"				"0"
-    "AbilitySpecial"
-    {
-        "02"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "arrow_width"			"200"
-        }
-        "03"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "arrow_range"			"5000"
-        }
-        "04"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "arrow_speed"			"5000"
-        }
-    }
-    "OnSpellStart"
-    {
-        "ActOnTargets"
-        {
-            "Target"
-            {
-                "Center"			"CASTER"
-                "Teams"				"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                "Types"				"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-                "Flags"             "DOTA_UNIT_TARGET_FLAG_NOT_ILLUSIONS"
-                "Radius"			"1000"
-				"MaxTargets"	"6"
-				"Random"		"1"
-            }
-            "Action"
-            {
-                "FireSound"
-                {
-                    "EffectName"	    "Ability.AssassinateLoad"
-                    "Target"		    "CASTER"
-                }
-                "LinearProjectile"
-                {
-                    "Target"      		"TARGET"
-                    "EffectName"  		"particles/units/heroes/hero_windrunner/windrunner_spell_powershot_rubick.vpcf"
-                    "MoveSpeed"   		"%arrow_speed"
-                    "StartRadius"   	"%arrow_width"
-                    "StartPosition" 	"attach_origin"
-                    "EndRadius"     	"%arrow_width"
-                    "FixedDistance" 	"%arrow_range"
-                    "TargetTeams"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-                    "TargetTypes"   	"DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_HERO"
-                    "TargetFlags"   	"DOTA_UNIT_TARGET_FLAG_NONE"
-                    "HasFrontalCone"    "1"
-                    "ProvidesVision" 	"1"
-                }
-            }
-        }
-    }
-    "OnProjectileHitUnit"
-    {
-        "DeleteOnHit"	"0"
-        "Damage"
-        {
-            "Target"			    "TARGET"
-            "Type"				    "DAMAGE_TYPE_MAGICAL"
-            "Damage"			    "%AbilityDamage"
-        }
-        "FireSound"
-        {
-            "Target"				"TARGET"
-            "EffectName"			"Hero_Tinker.LaserAnim"
-        }
-    }
-}
-"custom_pain_burst"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityCastPoint"				"0.0"
-	"AbilityTextureName"			"rubick_telekinesis"
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16"
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"50"
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_pct"					"30"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"damage_max"					"70"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"damage_add"					"40"
-		}	
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"range"							"400"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"range_max"						"900"
-		}
-		"06"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"range_add"						"500"
-		}
-		"07"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay"							"2.0"
-		}
-		"08"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"delay_add"						"2.5"
-		}
-	}
-	// Datadriven
-	//--------------------------------------------------------------------------------
-	"OnSpellStart"
-	{
-		"RunScript"
-		{
-			"ScriptFile"		"abilities/bosses/custom_pain_burst.lua"
-			"Function"			"pain_burst_start"
-		}
-		"FireSound"
-		{
-			"EffectName"		"rubick_rubick_attack_13"
-			"Target"			"CASTER"
-		}
-	}
-	// Modifiers
-	//-------------------------------------------------------------------------------------------------------------	
-	"Modifiers"
-	{
-		"modifier_pain_burst"
-		{
-			"IsHidden"				"1"
-			"ThinkInterval"			"0.5"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"abilities/bosses/custom_pain_burst.lua"
-					"Function"				"pain_burst_interval"
-				}
-			}
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-			}
-			"OnCreated"
-			{
-				"FireSound"
-				{
-					"EffectName"			"Hero_Nevermore.RequiemOfSoulsCast"
-					"Target"				"TARGET"
-				}
-			}
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"abilities/bosses/custom_pain_burst.lua"
-					"Function"				"pain_burst_activate"
-				}
-			}
-		}
-	}
-}
-"custom_ground_slam"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName" 			"ursa_earthshock"
-	"AOERadius"						"%radius"
-	"AbilityCooldown"				"6.0"
-	"precache"
-	{
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_centaur.vsndevts"
-	}
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"interval"				"6.0"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"325"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_pct"			"12"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun_duration"			"0.5"
-		}
-	}
-	"Modifiers"
-	{
-		"modifier_ground_slam"
-		{
-			"IsHidden"  		"1"
-			"Passive"			"1"
-			"ThinkInterval"		"%interval"
-			"OnIntervalThink"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"abilities/bosses/custom_ground_slam.lua"
-					"Function"				"ground_slam_interval"
-				}
-			}
-		}
-		"modifier_ground_slam_caster"
-		{
-			"IsHidden"			"1"
-			"IsPurgable"		"0"
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED"		"MODIFIER_STATE_VALUE_ENABLED"
-			}
-		}
-	}
-}
-"custom_arcane_whirl"
-{
-	// General
-	//------------------------------------------------------------------------------------------
-	"BaseClass"					"ability_datadriven"
-	"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"		"invoker_deafening_blast"
-	"precache"
-	{
-		"particle"				"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
-		"particle"				"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
-		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
-		"soundfile"				"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
-	}
-	// Casting
-	//-----------------------------------------------------------------------------------------------
-	"AbilityCastPoint"			"0.0"
-	// Time
-	"AbilityCooldown"			"24.0"
-	// Cost
-	//---------------------------------------------------------------------------------------
-	"AbilityManaCost"			"50"
-	// Special
-	//---------------------------------------------------------------------------------------
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"radius"			"1500"
-		}
-		"02"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"damage"			"700"			
-		}
-		"03"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"duration"			"10.0"
-		}
-		"04"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"think_interval"	"0.3"
-		}
-		"05"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"delay"				"1.3"
-		}
-		"06"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"threshold"			"35"
-		}
-		"07"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"blink_range"		"600"
-		}
-		"08"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"blink_interval"	"3.0"
-		}
-	}
-	"OnSpellStart"
-	{
-		"ApplyModifier"
-		{
-			"ModifierName"			"modifier_arcane_whirl_pre"
-			"Target"				"CASTER"
-		}
-	}
-	"OnProjectileHitUnit"
-	{
-		"DeleteOnHit"			"0"
-		"Damage"
-		{
-			"Target"			"TARGET"
-			"Type"				"DAMAGE_TYPE_MAGICAL"
-			"Damage"			"%damage"
-		}
-		"FireSound"
-		{
-			"EffectName"		"Hero_Rubick.FadeBolt.Target"
-			"Target"			"TARGET"
-		}
-	}
-	"Modifiers"
-	{
-		"modifier_arcane_whirl_passive"
-		{
-			"Passive"				"1"
-			"IsHidden"				"1"
-			"OnTakeDamage"
-			{
-				"RunScript"
-				{
-					"ScriptFile"			"abilities/bosses/custom_arcane_whirl.lua"
-					"Function"				"arcane_whirl_activate"
-				}
-			}
-		}
-		"modifier_arcane_whirl_pre"
-		{
-			"IsHidden"			"1"
-			"IsPurgable"		"0"
-			"Duration"			"%delay"
-			"OnDestroy"
-			{
-				"ApplyModifier"
-				{
-					"ModifierName"			"modifier_arcane_whirl"
-					"Target"				"CASTER"
-				}
-				"RunScript"
-				{
-					"ScriptFile"			"abilities/bosses/custom_arcane_whirl.lua"
-					"Function"				"arcane_whirl_start"
-				}
-			}
-		}
-		"modifier_arcane_whirl"
-		{
-			"IsHidden"			"0"
-			"Duration"			"%duration"
-			"States"
-			{
-				"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
-			}
-		}
-	}
-}
-"custom_wraith_summon"
+	"custom_wraith_summon"
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -16028,7 +15654,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_INTEGER"
-			"damage"						"2300"
+			"damage"						"2000"
 		}
 		"02"
 		{
@@ -17508,6 +17134,1186 @@
 			{
 				"var_type"				"FIELD_FLOAT"
 				"radius"				"400"
+			}
+		}
+	}
+	// Rewrite of Lone Druid Spirit Bear
+	// Author: Noya
+	// Date: 14.01.2015.
+	// Notes: The unit spawned are taken directly from npc_units txt files, if you wish another unit change the unit_name value without the level number.
+	//		  Bear doesn't show in the hero UI
+	"boss_lone_druid_spirit_bear"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"DisplayAdditionalHeroes"	"1"
+		"AbilityTextureName"		"lone_druid_spirit_bear"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCooldown"				"100"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bear_hp"					"10000"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"bear_degen"					"5.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bear_distance"				"700"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"lifesteal"			"75.0"
+			}
+		}
+
+		"precache"
+		{
+			"particle"	"particles/units/heroes/hero_lone_druid/lone_druid_spirit_bear_death.vpcf"
+			"particle"	"particles/units/heroes/hero_lone_druid/lone_druid_bear_spawn.vpcf"
+			"particle"	"particles/status_fx/status_effect_spirit_bear.vpcf"
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts"
+			"model"		"models/heroes/lone_druid/spirit_bear.vmdl"
+		}
+
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"    "abilities/bosses/boss_lone_druid_spirit_bear.lua"
+				"Function"      "SpiritBearSpawn"
+				"unit_name"		"npc_boss_spiritbear"
+			}
+
+			"FireSound"
+			{
+				"EffectName"	"Hero_LoneDruid.SpiritBear.Cast" 
+				"Target"		"CASTER"
+			}
+		}
+	}
+	"boss_spiritbear_inner_fire_wrapper"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityTextureName" 			"elder_titan_echo_stomp"
+		"AbilityCastRange"				"0"					
+		"AbilityCooldown"				"10.0"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"17"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"anim_duration"			"2.5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_aoe_notarget"
+				"radius"	"%radius"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+				"anim_duration"		"%anim_duration"
+			}
+		}
+	}
+	"boss_spiritbear_inner_fire"
+	{
+		"BaseClass"						"huskar_inner_fire"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"					
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"   
+		"AbilitySound"					"Hero_Huskar.Inner_Vitality"
+		"AbilityCastRange"				"400"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"8"
+		"AbilityManaCost"				"5"		
+		"AbilityModifierSupportValue"	"0.0"	// already gets credit for the healing
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"750"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"disarm_duration"		"2.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"knockback_distance"	"1000"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.6"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"boss_lone_druid_maul_wrapper"
+	{
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"15"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_target"
+				"Target"				"TARGET"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+			}
+		}
+	}
+	"boss_lone_druid_maul"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"lone_druid_spirit_link"
+		"AbilityCastRange"				"800"					
+		"AbilityCooldown"				"10.0"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"			"8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"			"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attackspeed"			"200"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\bosses\boss_lone_druid_spirit_bear.lua"
+				"Function"		"Maul"
+				"Target"				"TARGET"
+			}
+		}
+	}
+	"boss_lone_druid_true_form"
+	{
+		"BaseClass"						"lone_druid_true_form"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilitySound"					"Hero_LoneDruid.TrueForm.Cast"
+		"AbilityCooldown"				"0"
+		"AbilityCastAnimation"			"ACT_DOTA_OVERRIDE_ABILITY_3"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0 0 0"
+		"AbilityManaCost"				"0"	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_armor"				"12"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_hp"					"0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"base_attack_time"			"0.5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"8"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"transformation_time"		"1.933"
+			}
+		}
+	}
+	"boss_lone_druid_revenge"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"		            "abilities/bosses/boss_lone_druid_revenge.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"            "antimage_blink"
+		"AbilityCooldown"				"6.0"
+		"IsCastableWhileHidden"			"1"
+		"precache"
+		{
+			"particle"                  "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"		        "2.0"
+			}
+		}
+	}
+	"boss_lone_druid_split_earth_wrapper"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityTextureName" 			"elder_titan_echo_stomp"
+		"AbilityCastRange"				"650"					
+		"AbilityCooldown"				"9.0"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"anim_duration"			"2.6"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"18"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_aoe"
+				"Target"				"POINT"
+				"radius"	"%radius"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+				"anim_duration"	"%anim_duration"
+			}
+		}
+	}
+	"boss_lone_druid_split_earth"
+	{
+		"BaseClass"						"leshrac_split_earth"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Leshrac.Split_Earth"
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.7"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"0"
+		"AbilityDamage"					"600"
+		"AbilityDuration"				"2"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"delay"				"0"
+			}
+			
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"duration"			"2"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"boss_invoker_solar_strike"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCastPoint"				"0.2"
+		"AbilityTextureName"			"invoker_sun_strike"
+		"precache"
+		{
+			"particle"					"particles/econ/items/invoker/invoker_apex/invoker_sun_strike_team_immortal1.vpcf"
+			"particle"					"particles/econ/items/invoker/invoker_apex/invoker_sun_strike_immortal1.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
+		}
+		"AbilityCooldown"				"18.0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"1000"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"							"0.8"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"radius"    					"150"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"interval"    					"0.2"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"count"    						"17"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"			"abilities/bosses/boss_invoker_solar_strike.lua"
+				"Function"				"solar_strike_start"
+			}
+		}
+	}
+	"boss_invoker_telekinesis_wrapper"
+	{
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"16"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_target"
+				"Target"				"TARGET"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+			}
+		}
+	}
+	"boss_invoker_telekinesis"
+	{
+		"BaseClass"						"rubick_telekinesis"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"16"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"1600"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"lift_duration"				"4.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"2.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"325"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_land_distance"			"375"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"fall_duration"				"0.3"  // the portion of the lift that is falling
+			}
+
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"boss_invoker_degen_ward"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"								"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"			"necrolyte_heartstopper_aura"
+		"AbilityCastPoint"				"0.2"
+		"AbilityCooldown"				"18.0"
+		"AbilityCastRange"				"800"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"30"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"spawn_distance"			"500"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\bosses\boss_invoker_degen_ward.lua"
+				"Function"		"degen_ward"
+				"Target"				"TARGET"
+			}
+		}
+	}
+	"boss_invoker_arcane_whirl_wrapper"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityTextureName" 			"elder_titan_echo_stomp"
+		"AbilityCastRange"				"800"					
+		"AbilityCooldown"				"20.0"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"anim_duration"			"3.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"19"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_aoe"
+				"Target"				"POINT"
+				"radius"	"%radius"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+				"anim_duration"	"%anim_duration"
+			}
+		}
+	}
+	"boss_invoker_arcane_whirl"
+	{
+		"BaseClass"					"ability_datadriven"
+		"AbilityBehavior"			"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitDamageType"		"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"			"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"		"invoker_deafening_blast"
+		"precache"
+		{
+			"particle"				"particles/units/heroes/hero_antimage/antimage_blink_end.vpcf"
+			"particle"				"particles/units/heroes/hero_antimage/antimage_blink_start.vpcf"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts"
+			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
+		}
+		"AbilityCastPoint"			"0.0"
+		"AbilityCooldown"			"20.0"
+		"AbilityCastRange"			"900"
+		"AbilityManaCost"			"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"radius"			"700"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage"			"700"			
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"2.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"think_interval"	"0.09"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"points"				"4"
+			}
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"			"modifier_arcane_whirl"
+				"Target"				"CASTER"
+			}
+			"RunScript"
+			{
+				"ScriptFile"			"abilities/bosses/boss_invoker_arcane_whirl.lua"
+				"Function"				"arcane_whirl_start"
+				"Target"				"POINT"
+			}
+		}
+		"OnProjectileHitUnit"
+		{
+			"DeleteOnHit"			"0"
+			"Damage"
+			{
+				"Target"			"TARGET"
+				"Type"				"DAMAGE_TYPE_MAGICAL"
+				"Damage"			"%damage"
+			}
+			"FireSound"
+			{
+				"EffectName"		"Hero_Rubick.FadeBolt.Target"
+				"Target"			"TARGET"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_arcane_whirl"
+			{
+				"IsHidden"			"0"
+				"Duration"			"%duration"
+				"States"
+				{
+					"MODIFIER_STATE_STUNNED"			"MODIFIER_STATE_VALUE_ENABLED"
+				}
+			}
+		}
+	}
+	"boss_invoker_chaos_meteor"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/bosses/boss_invoker_chaos_meteor.lua"
+		"AbilityTextureName"			"invoker_chaos_meteor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastRange"				"9999"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"land_time"				"1.8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"area_of_effect"		"150"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_distance"		"1575"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_speed"			"300"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_interval"		"0.5"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vision_distance"		"500"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"end_vision_duration"	"3.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"main_damage"			"1000"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_duration"			"1.0"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"burn_dps"				"75"
+			}
+		}
+	}
+	"boss_invoker_meteor_storm"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"		            "abilities/bosses/boss_invoker_meteor_storm.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"IsCastableWhileHidden"			"1"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName"            "antimage_blink"
+		"AbilityCooldown"				"15.0"
+		"AbilityCastRange"				"900"
+		"precache"
+		{
+			"particle"                  "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"count"		        "5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"		        "1.8"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spread"		        "250"
+			}
+		}
+	}
+	"boss_invoker_revenge"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"		            "abilities/bosses/boss_invoker_revenge.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityTextureName"            "antimage_blink"
+		"AbilityCooldown"				"6.0"
+		"IsCastableWhileHidden"			"1"
+		"precache"
+		{
+			"particle"                  "particles/econ/generic/generic_aoe_shockwave_1/generic_aoe_shockwave_1.vpcf"
+		}
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"		        "2.0"
+			}
+		}
+	}
+	"boss_invoker_init"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"	 				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"initial_mana"		"0"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"whirl_cooldown"		"9"
+			}
+			"3"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"meteor_cooldown"		"3"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"degen_ward_cooldown"		"7"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_invoker_init"
+			{
+				"Passive"						"1"
+				"IsHidden"						"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities\bosses\boss_invoker_init.lua"
+						"Function"		"init"
+					}
+				}
+			}
+		}
+	}
+	"boss_kobold_command_wrapper"
+	{
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"400"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" 		"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"17"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_target"
+				"Target"				"TARGET"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+			}
+		}
+	}
+	"boss_kobold_command"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"		            "abilities/bosses/boss_kobold_command.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"waypoint"
+		"AbilityCastRange"				"500"					
+		"AbilityCooldown"				"10.0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"			"2.5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"			"100"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attackspeed"			"50"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"400"
+			}
+		}
+	}
+	"boss_undying_soul_rip_wrapper"
+	{
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"400"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"10"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" 		"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.8"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"18"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_target"
+				"Target"				"TARGET"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+			}
+		}
+	}
+	"boss_undying_soul_rip"
+	{
+		"BaseClass"						"undying_soul_rip"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_CUSTOM"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_CUSTOM"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Undying.SoulRip.Cast"
+		"AbilityCastAnimation"			"ACT_DOTA_UNDYING_SOUL_RIP"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastPoint"				"0.35"
+		"AbilityCastRange"				"750"
+		"AbilityCooldown"				"12.0"
+		"AbilityManaCost"				"0"		
+		"AbilityModifierSupportValue"	"0.0"	// Modifier just does damage/healing
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_per_unit"			"15"
+			}			
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_units"					"20"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"1300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tombstone_heal"			"16"
+			}
+		}
+	}	
+	"boss_undying_tombstone_wrapper"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityTextureName" 			"elder_titan_echo_stomp"
+		"AbilityCastRange"				"800"					
+		"AbilityCooldown"				"14.0"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"anim_duration"			"3.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"20"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_aoe"
+				"Target"				"POINT"
+				"radius"	"%radius"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+				"anim_duration"	"%anim_duration"
+			}
+		}
+	}
+	"boss_undying_tombstone"
+	{
+		"BaseClass"						"undying_tombstone"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"FightRecapLevel"				"1"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilitySound"					"Hero_Undying.Tombstone"
+		"AbilityCastAnimation"			"ACT_DOTA_UNDYING_TOMBSTONE"
+		"AbilityCastGestureSlot"		"DEFAULT"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCooldown"				"14"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"tombstone_health"				"14"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hits_to_destroy_tooltip"				"7"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"30.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"health_threshold_pct_tooltip"		"40"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"zombie_interval"		"4.0"
+			}
+		}
+	}
+	"boss_undying_flesh_golem"
+	{
+		"BaseClass"						"undying_flesh_golem"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"FightRecapLevel"				"2"
+		"AbilitySound"					"Hero_Undying.FleshGolem"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"1000"		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"50"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_amp"				"35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"					"6"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"str_percentage"			"60"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"40"
+			}	
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_bonus"			"30"
+			}
+		}
+	}
+	"boss_undying_init"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"	 				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"initial_mana"		"0"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"tombstone_cooldown"		"6"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_undying_init"
+			{
+				"Passive"						"1"
+				"IsHidden"						"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities\bosses\boss_undying_init.lua"
+						"Function"		"init"
+					}
+				}
 			}
 		}
 	}

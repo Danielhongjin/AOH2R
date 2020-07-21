@@ -143,7 +143,6 @@
 		"item"		"item_custom_octarine_core_1"
 		"item"		"item_arcane_staff"
 		"item"		"item_blast_staff_1"
-		"item"		"item_nullifier"
 		"item"		"item_echo_wand"
 	}
 		
@@ -152,7 +151,7 @@
 	{
 		"item"		"item_hood_of_defiance"
 		"item"		"item_vanguard"
-		//"item"		"item_blade_mail"
+		"item"		"item_blade_mail"
 		//"item"		"item_soul_booster"
 		"item"		"item_crimson_guard"	
 		"item"		"item_black_king_bar"

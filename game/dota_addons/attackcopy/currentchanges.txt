@@ -1,10 +1,6 @@
-Round end is now indicated by a healing buff on heroes, no longer insta heals.
-Outposts now properly animate and are coloured, particle effects improved.
-Outposts added near the ancient.
-Outposts now heal mana a small amount as well.
+All bosses have had their damage reduced again.
+New bosses have had their sounds revamped.
+Elder Titan boss earth splitter width decreased, makes more sense now.
+Legion Commander boss given massive rehaul, annoying cleave mechanic replaced with an even more annoying mechanic. Don't attack her when she's channeling.
 
-Healing salve no longer disables on damage.
-Vladmir upgrade no longer uses bonus stats in its recipe.
-
-Omniknight no longer has degen aura, replaced with Divine Sanction.
 TO-DO

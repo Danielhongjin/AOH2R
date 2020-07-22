@@ -62,24 +62,24 @@ if IsServer() then
 		if self.isDisabled == true or self.parent:IsSilenced() then
 			self.mana_regen_percent = self.mana_regen_percent + self.disable_regen
 		end 	
-		if self.parent:GetManaPercent() > 95 and self.revengeAbility:IsCooldownReady() then
+		if self.parent:GetManaPercent() > 95 then
 			self.parent:Purge(false, true, false, true, false)
 			self:getPissed()
 			self.parent:SetMana(0)
 		end
 		self.parent_previous_health = self.parent:GetHealth()
-		self.isDisabled = true;
+		self.isDisabled = true
 	end
 
 	function modifier_custom_revenge_behavior:OnAbilityExecuted(keys)
 		if keys.unit == self.parent then
-			self.isDisabled = false;
+			self.isDisabled = false
 		end
 
 	end
 	function modifier_custom_revenge_behavior:OnAttackLanded(keys)
 		if keys.attacker == self.parent then
-			self.isDisabled = false;
+			self.isDisabled = false
 		end
 	end
 	function modifier_custom_revenge_behavior:GetModifierTotalPercentageManaRegen()
@@ -92,7 +92,7 @@ if IsServer() then
 			Timers:CreateTimer(
 			0, 
 			function()
-				if self.parent:IsChanneling() or self.parent:GetCurrentActiveAbility() ~= nil or self.parent:IsCommandRestricted() then
+				if self.parent:IsChanneling() or self.parent:GetCurrentActiveAbility() ~= nil or self.parent:IsCommandRestricted() or self.parent:IsSilenced() then
 					return 0.5
 				end
 				self.parent:Heal(self.parent:GetMaxHealth() * 0.04, nil)

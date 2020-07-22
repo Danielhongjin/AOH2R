@@ -48,7 +48,7 @@ function arcane_whirl_start(event)
 			}
 			projID = ProjectileManager:CreateLinearProjectile( projectileTable )
 			StartAnimation(caster, {duration = 1.0, activity = ACT_DOTA_OVERRIDE_ABILITY_1, translate = "spin"})
-			EmitSoundOn("Hero_Rubick.Telekinesis.Target", caster)
+			caster:EmitSoundParams("Hero_Invoker.DeafeningBlast", 0, 0.5, 0)
 			i = i + 1
 			count = count + 1
 			duration = duration - think_interval

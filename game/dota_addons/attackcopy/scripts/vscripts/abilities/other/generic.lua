@@ -23,6 +23,8 @@ local spells_aoe = {[0] = "custom_crystal_nova",
 "boss_lone_druid_split_earth",
 "boss_invoker_arcane_whirl",
 "boss_undying_tombstone", -- index 20
+"boss_legion_commander_overwhelming_odds",
+"boss_legion_commander_gods_rebuke",
 }
 local spells_target = {[0] = "custom_static_link", 
 "custom_frostbite", 
@@ -74,7 +76,7 @@ function generate_warning_aoe(keys)
 		ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
 		ParticleManager:ReleaseParticleIndex(fx2)
 	end
-	
+	EmitSoundOn("Hero_Mars.Spear.Cast", caster)
 	caster:CastAbilityOnPosition(point, spell, -1)
 end
 
@@ -107,7 +109,7 @@ function generic_aoe_noanim(keys)
 		ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
 		ParticleManager:ReleaseParticleIndex(fx2)
 	end
-	
+	EmitSoundOn("Hero_Mars.Spear.Cast", caster)
 	Timers:CreateTimer(
 		delay - spell:GetCastPoint(), 
 		function()
@@ -159,6 +161,7 @@ function generic_aoe(keys)
 				caster:Stop()
 				caster:FaceTowards(point)
 			end
+			EmitSoundOn("Hero_Mars.Spear.Cast", caster)
 			StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
 			caster:AddNewModifier(caster, ability, "modifier_anim", {duration = keys.anim_duration})
 			Timers:CreateTimer(
@@ -195,6 +198,7 @@ function generic_aoe_notarget(keys)
 			if caster:IsMoving() then
 				caster:Stop()
 			end
+			EmitSoundOn("Hero_Mars.Spear.Cast", caster)
 			StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
 			caster:AddNewModifier(caster, ability, "modifier_anim", {duration = keys.anim_duration})
 			Timers:CreateTimer(
@@ -225,13 +229,14 @@ function generic_aoe_farpoint(keys)
 				return 0.5
 			end
 			if keys.is_line and keys.is_line == 1 then
+				local start_radius = keys.initial_radius or keys.radius
 				local norm = (point - caster:GetAbsOrigin()):Normalized()
 				point = caster:GetAbsOrigin() + norm * keys.line_length
 				local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 				ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 				ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
 				ParticleManager:SetParticleControl(fx, 2, point)
-				ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, keys.radius, 1))
+				ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, start_radius, 1))
 				ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
 				ParticleManager:ReleaseParticleIndex(fx)
 			else 
@@ -252,6 +257,7 @@ function generic_aoe_farpoint(keys)
 				caster:Stop()
 				caster:FaceTowards(point)
 			end
+			EmitSoundOn("Hero_Mars.Spear.Cast", caster)
 			StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
 			caster:AddNewModifier(caster, ability, "modifier_anim", {duration = keys.anim_duration})
 			Timers:CreateTimer(
@@ -284,6 +290,7 @@ function generic_target(keys)
 			caster:Stop()
 			caster:FaceTowards(keys.target:GetAbsOrigin())
 		end
+		EmitSoundOn("Hero_Mars.Spear.Cast", caster)
 		target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
 		StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / delay})
 		caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
@@ -297,6 +304,65 @@ function generic_target(keys)
 				caster:CastAbilityOnTarget(target, spell, -1)
 			end
 		)
+		end
+	)
+end
+
+function generic_target_aoe(keys)
+	local caster = keys.caster
+	local ability = keys.ability
+	local point = keys.target:GetAbsOrigin()
+	local delay = keys.delay
+	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	Timers:CreateTimer(
+		0, 
+		function()
+			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() then
+				return 0.5
+			end
+			
+			if keys.is_line and keys.is_line == 1 then
+				local start_radius = keys.initial_radius or keys.radius
+				local norm = (point - caster:GetAbsOrigin()):Normalized()
+				norm = caster:GetAbsOrigin() + norm * keys.line_length
+				local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
+				ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
+				ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
+				ParticleManager:SetParticleControl(fx, 2, norm)
+				ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, start_radius, 1))
+				ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
+				ParticleManager:ReleaseParticleIndex(fx)
+			else 
+				local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
+				ParticleManager:SetParticleControl(fx, 0, point)
+				ParticleManager:SetParticleControl(fx, 1, Vector(keys.radius, 1, 1))
+				ParticleManager:SetParticleControl(fx, 2, Vector(keys.delay, 1, 1))
+				ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
+				ParticleManager:ReleaseParticleIndex(fx)
+				local fx2 = ParticleManager:CreateParticle("particles/custom/link_warning.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
+				ParticleManager:SetParticleControlEnt(fx2, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControl(fx2, 1, point)
+				ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
+				ParticleManager:ReleaseParticleIndex(fx2)
+			end
+			if caster:IsMoving() then
+				caster:Stop()
+				caster:FaceTowards(point)
+			end
+			caster:EmitSound("Hero_Mars.Spear.Cast")
+			StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
+			Timers:CreateTimer(
+				delay - spell:GetCastPoint(), 
+				function()
+					if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
+						return 0.5
+					end
+					caster:SetForwardVector((point - caster:GetAbsOrigin()):Normalized())
+					caster:SetCursorPosition(point)
+					spell:OnSpellStart()
+					caster:SetForwardVector((point - caster:GetAbsOrigin()):Normalized())
+				end
+			)
 		end
 	)
 end
@@ -415,6 +481,7 @@ end
 function modifier_anim:CheckState()
 	local state = {
 		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
+		[MODIFIER_STATE_DISARMED] = true,
 	}
 	return state
 end

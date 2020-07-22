@@ -314,7 +314,7 @@ function modifier_roundend_effect:IsPurgable()
 end
 
 function modifier_roundend_effect:GetTexture()
-    return "io_blessing"
+    return "omniknight_guardian_angel"
 end
 
 function modifier_roundend_effect:RemoveOnDeath()

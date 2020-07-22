@@ -10,9 +10,9 @@
 		"DOTA_Tooltip_Ability_item_tombstone"			"Ressurect Teammate"
 		
 	
-"DOTA_Tooltip_modifier_roundend_effect"					"Round End Heal"
-"DOTA_Tooltip_modifier_roundend_effect_Description"					"Wow you did it good job dude stop reading these modifiers."
-	
+"DOTA_Tooltip_modifier_roundend_effect"					"Divine Grace"
+"DOTA_Tooltip_modifier_roundend_effect_Description"					"Heals %fMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% HP and %fMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% mana per second."
+
 
 "DOTA_Tooltip_modifier_watch_tower_meltdown"					"Meltdown"
 "DOTA_Tooltip_modifier_watch_tower_meltdown_Description"					"Dude start moving."
@@ -37,6 +37,7 @@
 
 "DOTA_Tooltip_modifier_summonbuff"					"Summon"
 "DOTA_Tooltip_modifier_summonbuff_Description"					"This unit receives bonus health, damage, and armor based on its base stats and the summoner's stats."
+
 
 "DOTA_Tooltip_modifier_atr_fix"					"Intellect"
 "DOTA_Tooltip_modifier_atr_fix_Description"					"This hero is receieving %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE%%% spell amp from intelligence."
@@ -547,12 +548,8 @@
 "DOTA_Tooltip_ability_custom_arena_formation_time"			"FORMATION DELAY:"
 "DOTA_Tooltip_ability_custom_arena_duration"					"DURATION:"
 "DOTA_Tooltip_ability_custom_arena_radius"					"RADIUS:"	
-"npc_boss_dragon_guard"                     "Dragon Guard (Boss)"
-"DOTA_Tooltip_ability_custom_last_stand"							"Last Stand"
-"DOTA_Tooltip_ability_custom_last_stand_Description"				"The soldier's last stand near death is to rally her forces to fight to the death."
-"DOTA_Tooltip_modifier_last_stand"									"Last Stand"
-"DOTA_Tooltip_modifier_last_stand_Description"						"Rallying troops"
-"npc_dragon_knight"                     "Dragon Knight (Boss)"
+
+
 "npc_boss_ember_spirit"                     "Ember Spirit (Boss)"
 "npc_boss_enigma"                     "Enigma (Boss)"
 
@@ -791,6 +788,56 @@
 
 "DOTA_Tooltip_ability_custom_summon_ancient_apparition"							"Ancient Apparition"
 "DOTA_Tooltip_ability_custom_summon_ancient_apparition_Description"				"Summons an Ancient Apparition to help."
+
+"npc_boss_legion_commander"                     "Legion Commander (Boss)"
+"npc_dragon_knight"                     "Dragon Knight (Boss)"
+
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds"				"Overwhelming Odds"
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_Description"	"Turns the enemies' numbers against them, dealing damage and granting you bonus movement speed per unit or per hero.  Deals bonus damage to illusions and summoned units as a percent of their current health."
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_Lore"			"The archers of Stonehall are ready at Tresdin's command."
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_radius"		"RADIUS:"
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_damage"		"BASE DAMAGE:"
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_damage_per_unit" "DAMAGE PER CREEP:"
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_damage_per_hero" "DAMAGE PER HERO:"		
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_illusion_dmg_pct"	"%ILLUSION DAMAGE:"
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_bonus_speed_creeps"	"%BONUS SPEED (CREEPS):"
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_bonus_speed_heroes"	"%BONUS SPEED (HEROES):"
+"DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_duration"		"SPEED DURATION:"
+
+"DOTA_Tooltip_ability_boss_legion_commander_gods_rebuke"							"God's Rebuke"
+"DOTA_Tooltip_ability_boss_legion_commander_gods_rebuke_Description"				"Legion Commander smashes enemies in front of him with his shield, knocking them back and damaging them with a critical hit based on his attack. Bonus damage is added when hitting heroes. Has True Strike."
+"DOTA_Tooltip_ability_boss_legion_commander_gods_rebuke_radius"					"DISTANCE:"
+"DOTA_Tooltip_ability_boss_legion_commander_gods_rebuke_knockback_slow"			"%KNOCKBACK SLOW:"
+"DOTA_Tooltip_ability_boss_legion_commander_gods_rebuke_knockback_slow_duration"		"KNOCKBACK SLOW DURATION:"
+"DOTA_Tooltip_ability_boss_legion_commander_gods_rebuke_crit_mult"				"%CRITICAL DAMAGE:"
+"DOTA_Tooltip_ability_boss_legion_commander_gods_rebuke_bonus_damage_vs_heroes"	"BONUS DAMAGE VS HEROES:"
+
+"DOTA_Tooltip_ability_boss_legion_commander_press_the_attack"				"Press The Attack"
+"DOTA_Tooltip_ability_boss_legion_commander_press_the_attack_Description"	"Removes debuffs and disables from the target friendly unit, and grants bonus attack speed and health regen for a short time.\n\nDISPEL TYPE: Strong Dispel"
+"DOTA_Tooltip_ability_boss_legion_commander_press_the_attack_Lore"			"The rallying horn of the Bronze Legion is able to inspire any heart."
+"DOTA_Tooltip_ability_boss_legion_commander_press_the_attack_duration"		"DURATION:"
+"DOTA_Tooltip_ability_boss_legion_commander_press_the_attack_attack_speed"	"BONUS ATTACK SPEED:"
+"DOTA_Tooltip_ability_boss_legion_commander_press_the_attack_hp_regen"		"HP REGEN:"
+
+"DOTA_Tooltip_ability_boss_legion_commander_bunker"							"Hunker Down"
+"DOTA_Tooltip_ability_boss_legion_commander_bunker_Description"				"Legion Commander takes a defensive stance and calls three Dragon Knights to her support. Attacking Legion Commander while this ability is active will cause her to retaliate with an arrow volley.<br><br>Legion commander regenerates %hp_regen% health per second while active and takes %damage_reduction_percent%%% less damage. The ability can be ended early by killing the Dragon Knights."
+"DOTA_Tooltip_ability_boss_legion_commander_bunker_duration"				"DURATION:"
+"DOTA_Tooltip_ability_boss_legion_commander_bunker_arrow_damage"			"ARROW DAMAGE:"
+"DOTA_Tooltip_ability_boss_legion_commander_bunker_arrow_delay"				"ARROW DELAY:"
+"DOTA_Tooltip_ability_boss_legion_commander_bunker_arrow_count"				"ARROW COUNT:"
+
+"DOTA_Tooltip_modifier_boss_legion_commander_bunker"						"Hunker Down"
+"DOTA_Tooltip_modifier_boss_legion_commander_bunker_Description"			"So probably don't hit this guy."
+
+
+"DOTA_Tooltip_ability_boss_legion_commander_warpath"							"Warpath"
+"DOTA_Tooltip_ability_boss_legion_commander_warpath_Description"				"Eliminates God's Rebuke cooldown and periodically summons fire pillars on Legion Commander. <br><br>Legion Commander cannot move slower than %minimum_movespeed% movespeed while active."
+"DOTA_Tooltip_ability_boss_legion_commander_warpath_duration"					"DURATION:"
+"DOTA_Tooltip_ability_boss_legion_commander_warpath_explosion_damage"			"EXPLOSION DAMAGE:"
+"DOTA_Tooltip_ability_boss_legion_commander_warpath_explosion_interval"			"EXPLOSION DELAY:"
+"DOTA_Tooltip_ability_boss_legion_commander_warpath_explosion_radius"			"EXPLOSION RADIUS:"
+
+
 "npc_boss_lich_king"                     "Lich (Boss)"
 
 
@@ -894,7 +941,6 @@
 "DOTA_Tooltip_ability_custom_summon_wolves_Description"				"Summons multiple wolves to help."
 "DOTA_Tooltip_ability_custom_summon_wolves_wolf_count"              "COUNT:"
 
-"npc_boss_medusa"                     "Medusa (Boss)"
 
 "DOTA_Tooltip_ability_custom_wave_of_silence"								"Gust"
 "DOTA_Tooltip_ability_custom_wave_of_silence_Description"					"Releases a wave that silences and knocks back enemy units. Knockback distance is relative to how close they are to you."
@@ -1320,29 +1366,7 @@
 "DOTA_Tooltip_ability_custom_spirits_explode_radius"						"EXPLOSION RADIUS:"
 "DOTA_Tooltip_ability_custom_spirits_spirit_duration"						"DURATION:"
 
-"npc_boss_sven"                     "Sven (Boss)"
 
-
-"DOTA_Tooltip_ability_custom_overwhelming_odds"				            "Overwhelming Odds"
-"DOTA_Tooltip_ability_custom_overwhelming_odds_Description"	            "Turns the enemies' numbers against them, dealing damage and granting you bonus movement speed per unit or per hero.  Deals bonus damage to illusions and summoned units as a percent of their current health."
-"DOTA_Tooltip_ability_custom_overwhelming_odds_Lore"			        "The archers of Stonehall are ready at Tresdin's command."
-"DOTA_Tooltip_ability_custom_overwhelming_odds_radius"		            "RADIUS:"
-"DOTA_Tooltip_ability_custom_overwhelming_odds_damage"		            "BASE DAMAGE:"
-"DOTA_Tooltip_ability_custom_overwhelming_odds_damage_per_unit"         "DAMAGE PER CREEP:"
-"DOTA_Tooltip_ability_custom_overwhelming_odds_damage_per_hero"         "DAMAGE PER HERO:"		
-"DOTA_Tooltip_ability_custom_overwhelming_odds_illusion_dmg_pct"	    "%ILLUSION DAMAGE:"
-"DOTA_Tooltip_ability_custom_overwhelming_odds_bonus_speed_creeps"	    "%BONUS SPEED (CREEPS):"
-"DOTA_Tooltip_ability_custom_overwhelming_odds_bonus_speed_heroes"	    "%BONUS SPEED (HEROES):"
-"DOTA_Tooltip_ability_custom_overwhelming_odds_duration"		        "SPEED DURATION:"
-
-
-"DOTA_Tooltip_ability_custom_great_cleave"								"Great Cleave"
-"DOTA_Tooltip_ability_custom_great_cleave_Description"					"Sven strikes with great force, cleaving all nearby enemy units with his attack."
-"DOTA_Tooltip_ability_custom_great_cleave_Lore"							"The Vigil Knights still seek to reclaim the stolen Outcast Blade from Sven, a weapon capable of cutting wide swaths through lesser warriors."
-"DOTA_Tooltip_ability_custom_great_cleave_Note0"						"Cleave damage is reduced by armor type but not by armor value."
-"DOTA_Tooltip_ability_custom_great_cleave_Note1"						"Cleave damage goes through spell immunity."
-"DOTA_Tooltip_ability_custom_great_cleave_Note2"						"The cleave damages a circular area in front of Sven."
-"DOTA_Tooltip_ability_custom_great_cleave_great_cleave_damage"			"%CLEAVE DAMAGE:"
 "npc_boss_tidehunter"                     "Tidehunter (Boss)"
 
 

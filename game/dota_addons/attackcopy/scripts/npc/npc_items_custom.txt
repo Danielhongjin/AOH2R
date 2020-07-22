@@ -3095,7 +3095,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"proc_damage"				"90 210"
+			"proc_damage"				"85 200"
 		}
 		"02"
 		{
@@ -3139,7 +3139,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"proc_damage"				"90"
+			"proc_damage"				"85"
 		}
 		"02"
 		{
@@ -3692,7 +3692,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"proc_damage"				"90 210"
+			"proc_damage"				"85 200"
 		}
 		"02"
 		{

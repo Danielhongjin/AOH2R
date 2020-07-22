@@ -469,7 +469,7 @@
 		
 			"a"
 			{
-				"NPCName"				"npc_boss_dragon_guard"
+				"NPCName"				"npc_boss_legion_commander"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"25"

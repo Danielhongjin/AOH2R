@@ -12,7 +12,7 @@ local function create_strike(caster, ability, target, delay, radius, damage)
 	ParticleManager:SetParticleControl(fx, 2, Vector(delay, 1, 1))
 	ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
 	ParticleManager:ReleaseParticleIndex(fx)
-	EmitSoundOn("Hero_Invoker.SunStrike.Charge", target)
+	target:EmitSoundParams("Hero_Invoker.SunStrike.Charge", 0, 0.5, 0)
 	Timers:CreateTimer(
 		delay, 
 		function()
@@ -20,7 +20,7 @@ local function create_strike(caster, ability, target, delay, radius, damage)
 			ParticleManager:SetParticleControl(fx, 0, pos)
 			ParticleManager:SetParticleControl(fx, 1, Vector(radius, 0, 0))
 			ParticleManager:ReleaseParticleIndex(fx)
-			EmitSoundOn("Hero_Invoker.SunStrike.Ignite", target)
+			target:EmitSoundParams("Hero_Invoker.SunStrike.Ignite", 0, 0.7, 0)
 			local units = FindUnitsInRadius(caster:GetTeam(), pos, nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 0, 0, false)
 			for _, unit in ipairs(units) do
 				ApplyDamage({

@@ -33,6 +33,7 @@ if IsServer() then
 		self.health_per_round = ability:GetSpecialValueFor("health_per_round")
 		self.armor_base = ability:GetSpecialValueFor("armor_base")
 		self.armor_per_round = ability:GetSpecialValueFor("armor_per_round")
+		AddAnimationTranslate(self.parent, "captured")
 		self.round = 0
 		self:StartIntervalThink(3)
     end
@@ -106,6 +107,7 @@ function modifier_watch_tower_meltdown:OnCreated()
 end
 
 function modifier_watch_tower_meltdown:OnIntervalThink()
+	self.parent:EmitSoundParams("Hero_Invoker.Invoke", 0, 2.5, 0)
 	local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, self.parent)
 	ParticleManager:SetParticleControl(fx, 0, self.parent:GetAbsOrigin())
 	ParticleManager:SetParticleControl(fx, 1, Vector(self.radius, 1, 1))
@@ -121,7 +123,7 @@ function modifier_watch_tower_meltdown:OnDestroy()
 	local radius = ability:GetSpecialValueFor("radius")
 	local duration = ability:GetSpecialValueFor("duration")
 	local pos = self.parent:GetAbsOrigin()
-	
+	EmitSoundOn("Hero_Invoker.SunStrike.Ignite.Apex", self.dummy)
 	EmitSoundOn("Hero_Invoker.EMP.Discharge", self.dummy)
 	EmitSoundOn("Hero_AbyssalUnderlord.DarkRift.Complete", self.dummy)
 	local fx = ParticleManager:CreateParticle("particles/custom/abbysal_underlord_custom_darkrift_end.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.dummy)

@@ -93,6 +93,7 @@ local _ANIMATION_TRANSLATE_TO_CODE = {
   burning_fiend= 148,
   burrow= 229,
   burrowed= 51,
+  captured = 372,
   cat_dancer_gesture= 285,
   cauldron= 29,
   charge= 97,

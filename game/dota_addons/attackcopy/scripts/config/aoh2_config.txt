@@ -551,9 +551,9 @@
 			}
 		}		
 		
-		"20" // Lycan
+		"20" // Lone Druid
 		{
-			"Title"						"Wolf"
+			"Title"						"Wayward Druid"
 			"MaxGold"					"5700"
 			"BagCount"					"1"
 			"BagVariance"				"20"
@@ -561,7 +561,7 @@
 
 			"a"
 			{
-				"NPCName"				"npc_boss_lycan"
+				"NPCName"				"npc_boss_lone_druid"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"20"
@@ -655,7 +655,7 @@
 		
 		"25" // Lone Druid
 		{
-			"Title"						"Lone Druid"
+			"Title"						"Homewrecker"
 			"MaxGold"					"7000"
 			"BagCount"					"1"
 			"BagVariance"				"0"
@@ -663,7 +663,7 @@
 
 			"Unit1"
 			{
-				"NPCName"				"npc_boss_lone_druid"
+				"NPCName"				"npc_boss_abyssal_underlord"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"25"

@@ -374,6 +374,7 @@ local _CODE_TO_ANIMATION_TRANSLATE = {
   [370]="windwalk",
   [371]="infernal_blade",
   [372]="captured",
+  [373]="walk",
 }
 
 function modifier_animation_translate_permanent:OnCreated(keys) 

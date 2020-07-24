@@ -25,6 +25,7 @@ local spells_aoe = {[0] = "custom_crystal_nova",
 "boss_undying_tombstone", -- index 20
 "boss_legion_commander_overwhelming_odds",
 "boss_legion_commander_gods_rebuke",
+"boss_abyssal_underlord_shockwave",
 }
 local spells_target = {[0] = "custom_static_link", 
 "custom_frostbite", 
@@ -45,6 +46,7 @@ local spells_target = {[0] = "custom_static_link",
 "boss_invoker_telekinesis",
 "boss_kobold_command",
 "boss_undying_soul_rip",
+"boss_abyssal_underlord_firestorm",
 }
 --Fires a warning aoe to a point and casts the spell immediately
 function generate_warning_aoe(keys)
@@ -76,7 +78,7 @@ function generate_warning_aoe(keys)
 		ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
 		ParticleManager:ReleaseParticleIndex(fx2)
 	end
-	EmitSoundOn("Hero_Mars.Spear.Cast", caster)
+		
 	caster:CastAbilityOnPosition(point, spell, -1)
 end
 
@@ -345,11 +347,13 @@ function generic_target_aoe(keys)
 				ParticleManager:SetParticleControl(fx2, 2, Vector(keys.delay, 1, 1))
 				ParticleManager:ReleaseParticleIndex(fx2)
 			end
+			local forward_vector = (point - caster:GetAbsOrigin()):Normalized()
 			if caster:IsMoving() then
 				caster:Stop()
-				caster:FaceTowards(point)
+				caster:SetForwardVector(forward_vector)
 			end
 			caster:EmitSound("Hero_Mars.Spear.Cast")
+			caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay - spell:GetCastPoint() - 0.04})
 			StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
 			Timers:CreateTimer(
 				delay - spell:GetCastPoint(), 
@@ -357,10 +361,10 @@ function generic_target_aoe(keys)
 					if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
 						return 0.5
 					end
-					caster:SetForwardVector((point - caster:GetAbsOrigin()):Normalized())
+					caster:SetForwardVector(forward_vector)
 					caster:SetCursorPosition(point)
 					spell:OnSpellStart()
-					caster:SetForwardVector((point - caster:GetAbsOrigin()):Normalized())
+					caster:SetForwardVector(forward_vector)
 				end
 			)
 		end
@@ -482,7 +486,61 @@ function modifier_anim:CheckState()
 	local state = {
 		[MODIFIER_STATE_COMMAND_RESTRICTED] = true,
 		[MODIFIER_STATE_DISARMED] = true,
+		[MODIFIER_STATE_ROOTED] = true,
+	}
+	return state
+end
+function modifier_anim:GetStatusEffectName()
+    return "particles/custom/warning_colorwarp.vpcf"
+end
+
+
+function modifier_anim:StatusEffectPriority()
+    return 20
+end
+if IsServer() then
+function modifier_anim:OnCreated()
+	local unit = self:GetParent()
+    for slot = 0, 16 do
+		local ability = unit:GetAbilityByIndex(slot)
+		if ability ~= nil then
+			ability:SetFrozenCooldown(true)
+		end
+	end
+end
+
+function modifier_anim:OnDestroy()
+	local unit = self:GetParent()
+    for slot = 0, 16 do
+		local ability = unit:GetAbilityByIndex(slot)
+		if ability ~= nil then
+			ability:SetFrozenCooldown(false)
+		end
+	end
+end
+end
+
+
+LinkLuaModifier("modifier_hidden", "abilities/other/generic.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_hidden = class({})
+
+function modifier_hidden:IsPurgable()
+	return false
+end
+
+function modifier_hidden:IsHidden()
+	return true
+end
+
+function modifier_hidden:CheckState()
+	local state = {
+		[MODIFIER_STATE_UNSELECTABLE] = true,
+		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
+		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
 	}
 	return state
 end
 
+function modifier_hidden:OnDestroy()
+	self:GetParent():ForceKill(false)
+end

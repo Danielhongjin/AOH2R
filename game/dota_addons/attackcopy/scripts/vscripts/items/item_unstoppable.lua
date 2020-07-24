@@ -26,10 +26,12 @@ if IsServer() then
         self.radius = ability:GetSpecialValueFor("radius")
 		self.tick_interval = ability:GetSpecialValueFor("interval")
 		self.parent = self:GetParent()
-		if ability:GetAbilityName() == "item_player_unstoppable" then
-			self.parent:AddNewModifier(self.parent, ability, "modifier_item_player_unstoppable", {})
+		self.tree_walking = self.parent:AddNewModifier(self.parent, ability, "modifier_treant_natures_guise_tree_walking", {})
+		self.is_player = ability:GetAbilityName() == "item_player_unstoppable"
+		if self.is_player then
+			self.modifier = self.parent:AddNewModifier(self.parent, ability, "modifier_item_player_unstoppable", {})
 		end
-		if not self.parent:IsIllusion() then
+		if not self.parent:IsIllusion() and self.parent:GetName() ~= "npc_dota_hero_treant" then
 			self:StartIntervalThink(self.tick_interval)
 		end
 	end
@@ -40,9 +42,10 @@ if IsServer() then
 		end
     end
 	function modifier_item_unstoppable:OnDestroy()
-		if self.parent then
+		if self.is_player then
 			self.parent:RemoveModifierByName("modifier_item_player_unstoppable")
 		end
+		self.parent:RemoveModifierByName("modifier_treant_natures_guise_tree_walking")
 	end
 
 
@@ -94,7 +97,7 @@ function modifier_item_player_unstoppable:GetModifierSpellAmplify_Percentage()
     return self:GetStackCount()
 end
 function modifier_item_player_unstoppable:OnCreated()
-	self.spell_amp_pct = self:GetAbility():GetSpecialValueFor("spell_amp_pct") * 0.01
+	self.spell_amp_pct = self:GetAbility():GetSpecialValueFor("spell_amp_pct")
 	self.parent = self:GetParent()
 	if not self.parent:IsIllusion() then
 		self:StartIntervalThink(0.5)
@@ -103,6 +106,6 @@ end
 
 if IsServer() then
 	function modifier_item_player_unstoppable:OnIntervalThink()
-		self:SetStackCount(self.parent:GetMaxHealth() * self.spell_amp_pct)
+		self:SetStackCount(self.parent:GetMaxHealth() / self.spell_amp_pct)
 	end
 end

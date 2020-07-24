@@ -170,7 +170,9 @@ function modifier_watch_tower_meltdown:OnDestroy()
 			damage_type = DAMAGE_TYPE_PURE,
 		})
 		target:SetMana(0)
-		target:AddNewModifier(target, nil, "modifier_watch_tower_stun", {duration = duration})
+		if target ~= self.parent then
+			target:AddNewModifier(target, nil, "modifier_watch_tower_stun", {duration = duration})
+		end
 	end
 	Timers:CreateTimer(
 		4, 

@@ -405,7 +405,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"silence_damage_percent"	"20"
+			"silence_damage_percent"	"15"
 		}	
 		"06"
 		{
@@ -978,12 +978,12 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "crit_multiplier"		"235 290"
+            "crit_multiplier"		"225 265"
         }
         "04"
         {
             "var_type"				"FIELD_INTEGER"
-			"tooltip_crit_damage"	"135 190"
+			"tooltip_crit_damage"	"125 165"
         }
     }
 }
@@ -2956,7 +2956,8 @@
 		"01"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"magic_percent"            	"30"
+			"magic_percent"            	"25"
+			"CalculateSpellDamageTooltip"	"0"
 		}
 		"02"
 		{
@@ -3573,7 +3574,7 @@
 		"05"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"silence_damage_percent"	"20"
+			"silence_damage_percent"	"15"
 		}	
 		"06"
 		{
@@ -4843,7 +4844,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"45 65 85"
+			"bonus_strength"		"40 60 80"
 		}
 		"02"
 		{
@@ -4853,12 +4854,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"50 75 100"
+			"hp_regen_amp"			"60 90 120"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.5 1.75 2.0"
+			"health_regen_pct"		"1.4 1.6 1.8"
 		}
 		"05"
 		{
@@ -4904,7 +4905,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"45 65 85"
+			"bonus_strength"		"40 60 80"
 		}
 		"02"
 		{
@@ -4914,12 +4915,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"50 75 100"
+			"hp_regen_amp"			"60 90 120"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.5 1.75 2.0"
+			"health_regen_pct"		"1.4 1.6 1.8"
 		}
 		"05"
 		{
@@ -4965,7 +4966,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"45 65 85"
+			"bonus_strength"		"40 60 80"
 		}
 		"02"
 		{
@@ -4975,12 +4976,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"50 75 100"
+			"hp_regen_amp"			"60 90 120"
 		}
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.5 1.75 2.0"
+			"health_regen_pct"		"1.4 1.6 1.8"
 		}
 		"05"
 		{
@@ -6486,7 +6487,7 @@
     }
     "AbilityCastRange"				"100"
     "AbilityCastPoint"				"0.0"
-    "AbilityChannelTime"			"6.0"
+    "AbilityChannelTime"			"7.0"
     "ItemCost"						"99999"
     "ItemPurchasable"				"0"
     "ItemShopTags"					"consumable"
@@ -6634,7 +6635,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "spell_amp"			    "30 45 60"
+            "spell_amp"			    "20 30 40"
         }
 		"03"
         {
@@ -6695,7 +6696,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "spell_amp"			    "30 45 60"
+            "spell_amp"			    "20 30 40"
         }
 		"03"
         {
@@ -6756,7 +6757,7 @@
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "spell_amp"			    "30 45 60"
+            "spell_amp"			    "20 30 40"
         }
 		"03"
         {
@@ -6867,15 +6868,15 @@
             "var_type"				"FIELD_INTEGER"
             "crit_chance"			"30 35"
         }
-        "03"
+                "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "crit_multiplier"		"235 290"
+            "crit_multiplier"		"225 265"
         }
         "04"
         {
             "var_type"				"FIELD_INTEGER"
-            "tooltip_crit_damage"	"135 190"
+			"tooltip_crit_damage"	"125 165"
         }
     }
 }
@@ -7005,7 +7006,7 @@
         "01"
         {
             "var_type"				"FIELD_FLOAT"
-            "health_damage_bonus"			"9"
+            "health_damage_bonus"			"8"
 			"CalculateSpellDamageTooltip"	"0"
         }
         "02"
@@ -9056,7 +9057,7 @@
 {
 	"BaseClass"						    "item_lua"
     "ScriptFile"                        "items/item_unstoppable.lua"
-    "AbilityTextureName"		    "unstoppable"
+    "AbilityTextureName"		    "player_unstoppable"
 	"Model"							"models/props_gameplay/neutral_box.vmdl"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"ItemCost"						"0"
@@ -9071,7 +9072,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"	"255"
+			"radius"	"265"
 		}
 		"02"
 		{
@@ -9085,20 +9086,15 @@
 		}
 		"04"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"spell_amp_pct"			"1.25"
+			"var_type"				"FIELD_INTEGER"
+			"spell_amp_pct"			"90"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"tooltip_spell_amp_pct"			"80"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
 			"bonus_attack_speed"			"-40"
 		}
-		"07"
+		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_health"			"400"
@@ -9380,7 +9376,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"primary_stat_percent"		"50"
+			"primary_stat_percent"		"45"
 		}
 	}
 }

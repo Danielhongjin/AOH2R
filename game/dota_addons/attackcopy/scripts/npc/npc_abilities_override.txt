@@ -536,8 +536,15 @@
 		{
 			"01"
 			{
+				"var_type"					"FIELD_FLOAT"
+				"value"				"1.8"
+				"ad_linked_ability"			"invoker_chaos_meteor"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
+			}
+			"02"
+			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"240"
+				"value_tooltip"				"80"
+				"ad_linked_ability"			"invoker_chaos_meteor"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
 	}
@@ -1881,7 +1888,22 @@
 			}
 		}
 	}
+	"abyssal_underlord_dark_rift"
+	{
+
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
 	
+		
+		"AbilitySpecial"
+		{
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"teleport_delay"				"5.0"
+			}
+		}
+	}
 	"alchemist_acid_spray"
 	{
 		"AbilityCooldown"				"20.0"
@@ -3822,23 +3844,20 @@
 		"AbilityCooldown"				"21"
 		"AbilitySpecial"
 		{
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"travel_distance"		"780 930 1095 1245 1410 1575 1800 2000"
-				"levelkey"				"wexlevel"
-			}
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"main_damage"			"70 95 120 145 170 195 220 245"
-				"LinkedSpecialBonus"	"special_bonus_unique_invoker_6"
+				"LinkedSpecialBonus"		"special_bonus_unique_invoker_6"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 				"levelkey"				"exortlevel"
 			}
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
 				"burn_dps"				"18.5 22 25.5 29 32.5 36 40.0 45.0"
+				"LinkedSpecialBonus"		"special_bonus_unique_invoker_6"
+				"LinkedSpecialBonusOperation"	"SPECIAL_BONUS_MULTIPLY"
 				"levelkey"				"exortlevel"
 				"CalculateSpellDamageTooltip"	"1"
 			}

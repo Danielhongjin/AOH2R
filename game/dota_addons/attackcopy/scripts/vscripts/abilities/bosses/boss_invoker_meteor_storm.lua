@@ -18,6 +18,8 @@ function boss_invoker_meteor_storm:OnSpellStart()
 	local radius = meteor:GetSpecialValueFor("area_of_effect")
 	local distance = meteor:GetSpecialValueFor("travel_distance")
 	local land_time = meteor:GetSpecialValueFor("land_time")
+	local exort = ParticleManager:CreateParticle("particles/econ/items/invoker/invoker_apex/invoker_apex_exort_orb.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControl(exort, 1, caster:GetAbsOrigin() + Vector(0, 0, 400))
 	caster:AddNewModifier(caster, ability, "modifier_anim", {duration = total * 0.2})
 	Timers:CreateTimer(
 		0, 
@@ -52,6 +54,13 @@ function boss_invoker_meteor_storm:OnSpellStart()
 				count = count + 1
 				return 0.2
 			end
+		end
+	)
+	Timers:CreateTimer(
+		2, 
+		function()
+			ParticleManager:DestroyParticle(exort, true)
+			ParticleManager:ReleaseParticleIndex(exort)
 		end
 	)
 end

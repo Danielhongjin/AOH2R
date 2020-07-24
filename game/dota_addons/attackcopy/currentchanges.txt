@@ -1,6 +1,12 @@
-All bosses have had their damage reduced again.
-New bosses have had their sounds revamped.
-Elder Titan boss earth splitter width decreased, makes more sense now.
-Legion Commander boss given massive rehaul, annoying cleave mechanic replaced with an even more annoying mechanic. Don't attack her when she's channeling.
+Even more boss damage reductions.
+Dead players will respawn now after a fixed 75 second timespan, you can still revive via tombstone.
+Map dead zone fixed. Map may have some bugs due to migration of map files.
+
+New boss Abyssal Underlord - Most of his abilities become one hit kills if left unchecked. Has custom behaviors that make him target your towers and ancient with long ranged charge abilities.
+
+Heart of Tarrasque stats nerfed.
+
 
 TO-DO
+
+CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT

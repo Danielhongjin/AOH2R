@@ -6,6 +6,7 @@ function boss_kobold_command:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	local radius = self:GetSpecialValueFor("radius")
+	EmitSoundOn("Hero_LegionCommander.PressTheAttack", caster)
 	local allies = FindUnitsInRadius(
 		caster:GetTeamNumber(),	-- int, your team number
 		caster:GetOrigin(),	-- point, center point

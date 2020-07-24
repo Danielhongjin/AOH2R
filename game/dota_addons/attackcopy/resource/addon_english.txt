@@ -187,12 +187,14 @@
 "DOTA_Tooltip_ability_item_princes_knife_Description"				"<h1>Passive: Nothing</h1> It doesn't do anything. Why do you think it was so cheap? Sell it."
 "DOTA_Tooltip_ability_item_recipe_witless_shako"	"Recipe: Witless Shako"
 
-"DOTA_Tooltip_ability_item_player_unstoppable"							"Massive"
-"DOTA_Tooltip_ability_item_player_unstoppable_Description"				"<h1>Passive: Unstoppable</h1> Grants bonus spell amp based on your maximum health. Destroys trees you collide with. Lowers your attack speed by %bonus_attack_speed%."
-"DOTA_Tooltip_ability_item_player_unstoppable_tooltip_spell_amp_pct"			"HEALTH PER SPELL AMP%:"
-"DOTA_Tooltip_ability_item_player_unstoppable_bonus_health_pct"			"%BONUS HEALTH:"
-"DOTA_Tooltip_ability_item_player_unstoppable_bonus_health"			"BONUS HEALTH:"
+"DOTA_Tooltip_ability_item_player_unstoppable"							"Giant Disguise Belt"
+"DOTA_Tooltip_ability_item_player_unstoppable_Description"				"<h1>Passive: Unstoppable</h1> Grants bonus spell amp based on your maximum health but reduces attack speed by %bonus_attack_speed%. <br><br>Allows you to walk through trees."
+"DOTA_Tooltip_ability_item_player_unstoppable_Lore"						"Used unsuccessfully by an unfortunate researcher of giants."
+"DOTA_Tooltip_ability_item_player_unstoppable_spell_amp_pct"			"HEALTH PER SPELL AMP PERCENT:"
+"DOTA_Tooltip_ability_item_player_unstoppable_bonus_health_pct"			"%BONUS HP PERCENTAGE:"
+"DOTA_Tooltip_ability_item_player_unstoppable_bonus_health"				"BONUS HEALTH:"
 "DOTA_Tooltip_ability_item_player_unstoppable_Note0"					"Does not work on illusions."
+"DOTA_Tooltip_ability_item_player_unstoppable_Note1"					"Treant Protector will not destroy trees with this item."
 
 "DOTA_Tooltip_ability_item_pocket_rax"					"Pocket Barracks"
 "DOTA_Tooltip_ability_item_pocket_rax_Description"		"<h1>Use: Free Militia</h1> Deploys a permanent barracks that periodically spawns melee creep to a set location. Benefits from Nebu."
@@ -302,12 +304,48 @@
 "DOTA_Tooltip_ability_custom_thundercall_damage"					"INITIAL DAMAGE:"
 "DOTA_Tooltip_ability_custom_thundercall_radius"					"MAX RADIUS:"
 "npc_conduit"                     "Conduit"
+
+
+"npc_boss_abyssal_underlord"                     "Abyssal Underlord (Boss)"
+
+"DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm"					"Firestorm"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm_Description"      "Channels while pummeling a target with firey shrapnel from the sky. The longer this ability channels, the more accurate and frequent the shrapnel becomes."
+"DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm_spread"           "INITIAL SPREAD:"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm_minimum_spread"    "MINIMUM SPREAD:"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm_damage"    			"DAMAGE:"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm_interval"    "INTERVAL:"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm_interval_reduction"    "INTERVAL PER SECOND:"
+
+"DOTA_Tooltip_ability_boss_abyssal_underlord_shockwave"								"Shockwave"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_shockwave_Description"					"Abyssal Underloird sends out a wave of force, damaging enemy units in a line, pulling them towards him and slowing them for %basic_slow_duration% seconds."
+"DOTA_Tooltip_ability_boss_abyssal_underlord_shockwave_shock_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_shockwave_movement_slow"				"%MOVEMENT SLOW:"
+
+"DOTA_Tooltip_ability_boss_abyssal_underlord_cleave"								"Charged Cleave"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_cleave_Description"					"Enemies surrounding the attack target are shocked by dark energy. Dark energy will bounce to the nearest target once more."
+"DOTA_Tooltip_ability_boss_abyssal_underlord_cleave_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_cleave_arc_radius"					"RADIUS:"
+
+"DOTA_Tooltip_ability_boss_abyssal_underlord_undead_cannon"								"Apocalypse Beam"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_undead_cannon_Description"					"Abyssal Underlord teleports far away and charges for %duration% seconds, spawning zombies periodically nearby. Zombies that reach the Underlord increase the beam's damage. Underlord will only target base structures. <br><br> While active the underlord takes %damage_reduction_percent%%% less damage."
+"DOTA_Tooltip_ability_boss_abyssal_underlord_undead_cannon_damage_base"					"BASE DAMAGE:"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_undead_cannon_damage_per_zombie"				"DAMAGE PER ZOMBIE:"
+
+"DOTA_Tooltip_modifier_boss_abyssal_underlord_undead_cannon"				"Apocalypse Beam"
+"DOTA_Tooltip_modifier_boss_abyssal_underlord_undead_cannon_Description"	"Better hurry up and kill the zombies."
+
+
+"DOTA_Tooltip_ability_boss_abyssal_underlord_certain_death"								"Cursed Shroud"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_certain_death_Description"					"Summons a cursed shroud for every player that follow them for %duration% seconds. If a unit touches the shroud they take massive damage. <br><br> Shrouds can be killed with area magic damage."
+"DOTA_Tooltip_ability_boss_abyssal_underlord_certain_death_damage"						"DAMAGE PER SECOND:"
+"DOTA_Tooltip_ability_boss_abyssal_underlord_certain_death_health"						"SHROUD HEALTH:"
+
 "npc_boss_ancient_apparition"                     "Ancient Apparition (Boss)"
 
 
 "DOTA_Tooltip_ability_custom_no_heal_aura"					"No Heal Aura"
 "DOTA_Tooltip_ability_custom_no_heal_aura_Description"      "Ancient Apparition has an aura that blocks all health regeneration."
-"DOTA_Tooltip_ability_custom_no_heal_aura_radius"           "Radius:"
+"DOTA_Tooltip_ability_custom_no_heal_aura_radius"           "RADIUS:"
 
 
 "DOTA_Tooltip_modifier_custom_no_heal_effect"					"No Heal"
@@ -318,7 +356,7 @@
 
 "DOTA_Tooltip_ability_custom_aura_mana_drain"				    "Mana Drain Aura"
 "DOTA_Tooltip_ability_custom_aura_mana_drain_Description"       "Every enemy around Antimage looses %drain_pct%%  of its current mana every second."
-"DOTA_Tooltip_ability_custom_aura_mana_drain_radius"            "Radius:"
+"DOTA_Tooltip_ability_custom_aura_mana_drain_radius"            "RADIUS:"
 
 
 "DOTA_Tooltip_modifier_mana_drain"					            "Mana Drain"
@@ -1224,6 +1262,15 @@
 "DOTA_Tooltip_ability_boss_invoker_solar_strike_radius"						"RADIUS:"
 "DOTA_Tooltip_ability_boss_invoker_solar_strike_interval"					"INTERVAL:"
 "DOTA_Tooltip_ability_boss_invoker_solar_strike_count"						"TOTAL BOLTS:"
+
+"DOTA_Tooltip_ability_boss_invoker_trance"								"Trance"
+"DOTA_Tooltip_ability_boss_invoker_trance_Description"					"Invoker enters a trance state, reflecting all incoming spells back to the source. <br><br>While active Invoker releases massive amounts of lightning into the air."
+"DOTA_Tooltip_ability_boss_invoker_trance_damage"						"DAMAGE:"
+"DOTA_Tooltip_ability_boss_invoker_trance_interval"						"INTERVAL:"
+"DOTA_Tooltip_ability_boss_invoker_trance_duration"						"DURATION:"
+
+"DOTA_Tooltip_modifier_boss_invoker_trance"								"Trance"
+"DOTA_Tooltip_modifier_boss_invoker_trance_Description"					"If you're reading this modifier, who's stopping your hero from walking into this guy?"
 
 "npc_shadow_demon"                     "Shadow Demon"
 "npc_boss_shredder"                     "Timbersaw (Boss)"
@@ -3008,25 +3055,29 @@
 
 "DOTA_Tooltip_modifier_tome_int_bonus"					        "Intelligence Bonus"
 "DOTA_Tooltip_modifier_tome_int_bonus_Description"		        "Intelligence increased by %dMODIFIER_PROPERTY_TOOLTIP%."
-"DOTA_Tooltip_Ability_item_trade_kaya"					    "Trade Kaya"
-"DOTA_Tooltip_Ability_item_trade_kaya_Description"			"<h1>Passive: Stats Bargain</h1> Trade Kaya reduces your strength and agility by %stats_reduction%, at the same time that amplifies your magic damage by %spell_amp%%."
+
+"DOTA_Tooltip_Ability_item_trade_kaya"					"Trade Kaya"
+"DOTA_Tooltip_Ability_item_trade_kaya_Description"	    "<h1>Passive: Overtuned Runes</h1> Massively increases your magic damage at the cost of %stats_reduction% reduced strength and agility."
+"DOTA_Tooltip_ability_item_trade_kaya_spell_amp"						"%+Spell Amplification"
 "DOTA_Tooltip_Ability_item_trade_kaya_bonus_intelligence"	"+$int"
 "DOTA_Tooltip_Ability_item_trade_kaya_Note0"				"Multiple instances of Stats Bargain do not stack."
-"DOTA_Tooltip_Ability_item_trade_kaya_Lore"					"A powerful staff with no power source. Drains the power of the wielder."
+"DOTA_Tooltip_Ability_item_trade_kaya_Lore"				"A powerful staff that drains the vitality of the wielder."
 
 
-"DOTA_Tooltip_Ability_item_trade_kaya_2"					"Trade Kaya LVL 2"
-"DOTA_Tooltip_Ability_item_trade_kaya_2_Description"	    "<h1>Passive: Stats Bargain</h1> Trade Kaya reduces your strength and agility by %stats_reduction%, at the same time that amplifies your magic damage by %spell_amp%%."
+"DOTA_Tooltip_Ability_item_trade_kaya_2"					"Trade Kaya 2"
+"DOTA_Tooltip_Ability_item_trade_kaya_2_Description"	    "<h1>Passive: Overtuned Runes</h1> Massively increases your magic damage at the cost of %stats_reduction% reduced strength and agility."
+"DOTA_Tooltip_ability_item_trade_kaya_2_spell_amp"						"%+Spell Amplification"
 "DOTA_Tooltip_Ability_item_trade_kaya_2_bonus_intelligence"	"+$int"
 "DOTA_Tooltip_Ability_item_trade_kaya_2_Note0"				"Multiple instances of Stats Bargain do not stack."
-"DOTA_Tooltip_Ability_item_trade_kaya_2_Lore"				"A powerful staff with no power source. Drains the power of the wielder."
+"DOTA_Tooltip_Ability_item_trade_kaya_2_Lore"				"A powerful staff that drains the vitality of the wielder."
 
 
-"DOTA_Tooltip_Ability_item_trade_kaya_3"					"Trade Kaya LVL 3"
-"DOTA_Tooltip_Ability_item_trade_kaya_3_Description"	    "<h1>Passive: Stats Bargain</h1> Trade Kaya reduces your strength and agility by %stats_reduction%, at the same time that amplifies your magic damage by %spell_amp%%."
+"DOTA_Tooltip_Ability_item_trade_kaya_3"					"Trade Kaya 3"
+"DOTA_Tooltip_Ability_item_trade_kaya_3_Description"	    "<h1>Passive: Overtuned Runes</h1> Massively increases your magic damage at the cost of %stats_reduction% reduced strength and agility."
+"DOTA_Tooltip_ability_item_trade_kaya_3_spell_amp"						"%+Spell Amplification"
 "DOTA_Tooltip_Ability_item_trade_kaya_3_bonus_intelligence"	"+$int"
 "DOTA_Tooltip_Ability_item_trade_kaya_3_Note0"				"Multiple instances of Stats Bargain do not stack."
-"DOTA_Tooltip_Ability_item_trade_kaya_3_Lore"				"A powerful staff with no power source. Drains the power of the wielder."
+"DOTA_Tooltip_Ability_item_trade_kaya_3_Lore"				"A powerful staff that drains the vitality of the wielder."
 
 "DOTA_Tooltip_Ability_item_ultimate_blink"                  "Ultimate Blink"
 "DOTA_Tooltip_Ability_item_ultimate_blink_Description"		"<h1>Active: Blink</h1> Teleport to a target point up to %blink_range% units away. <br><br>Blink Dagger cannot be used for %blink_damage_cooldown% seconds after taking damage from an enemy hero or Roshan."
@@ -3039,10 +3090,8 @@
 "DOTA_Tooltip_ability_item_ultimate_butterfly_bonus_attack_speed"				"+$attack"		
 "DOTA_Tooltip_ability_item_ultimate_butterfly_bonus_damage"				"+$damage"		
 "DOTA_Tooltip_Ability_item_ultimate_crit"						"Ultimate Daedalus"
-"DOTA_Tooltip_Ability_item_ultimate_crit_Description"			"Passive: Critical Strike - Grants each attack a chance to deal additional damage."
+"DOTA_Tooltip_Ability_item_ultimate_crit_Description"			"<h1>Passive: Critical Strike</h1>Grants each attack a %crit_chance%%% chance to deal %crit_multiplier%%% damage."
 "DOTA_Tooltip_Ability_item_ultimate_crit_Lore"					"A weapon of incredible power that is difficult for even the strongest of warriors to control."
-"DOTA_Tooltip_Ability_item_ultimate_crit_crit_chance"			"%Critical Chance:"
-"DOTA_Tooltip_Ability_item_ultimate_crit_crit_multiplier"		"%Critical Damage:"
 "DOTA_Tooltip_Ability_item_ultimate_crit_bonus_damage"			"+$damage"
 "DOTA_Tooltip_Ability_item_recipe_ultimate_dagon"               "Recipe: Ultimate Dagon"
 "DOTA_Tooltip_Ability_item_ultimate_dagon"					    "Ultimate Dagon"

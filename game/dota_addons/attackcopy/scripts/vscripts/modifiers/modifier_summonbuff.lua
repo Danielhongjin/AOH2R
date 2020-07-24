@@ -18,48 +18,55 @@ end
 if IsServer() then
 
 function modifier_summonbuff:OnDestroy(keys)
-	self.parent:ForceKill(false)
+	if self.parent then
+		self.parent:ForceKill(false)
+	end
 end
 
 
 function modifier_summonbuff:OnCreated(keys)
 	self.caster = PlayerResource:GetSelectedHeroEntity(keys.id)
-	self.parent = self:GetParent()
-	self.health = 2000
-	self.armor = 0.33
-	self.damage = 95
-	self.parent_health = self.parent:GetMaxHealth()
-	self.parent_damage = (self.parent:GetBaseDamageMax() + self.parent:GetBaseDamageMin()) / 2
-	self.parent_regen = self.parent:GetBaseHealthRegen()
-	self.parent_armor = self.parent:GetPhysicalArmorBaseValue()
-	self.caster_base_damage = (self.caster:GetBaseDamageMax() + self.caster:GetBaseDamageMin()) / 2
-	self.parentishero = false
-	if self.parent:IsConsideredHero() then
-		self.parentishero = true
+	if self.caster then
+		self.parent = self:GetParent()
+		self.health = 2000
+		self.armor = 0.33
+		self.damage = 95
+		self.parent_health = self.parent:GetMaxHealth()
+		self.parent_damage = (self.parent:GetBaseDamageMax() + self.parent:GetBaseDamageMin()) / 2
+		self.parent_regen = self.parent:GetBaseHealthRegen()
+		self.parent_armor = self.parent:GetPhysicalArmorBaseValue()
+		self.caster_base_damage = (self.caster:GetBaseDamageMax() + self.caster:GetBaseDamageMin()) / 2
+		self.parentishero = false
+		if self.parent:IsConsideredHero() then
+			self.parentishero = true
+		end
+		if self.parent:GetUnitLabel() == "pharaoh_ok" then
+			self.health = 400000
+		end
+		if self.parent:GetUnitLabel() == "temp_unit" then
+			self.health = 10000000
+		end
+		if self.parentishero then
+			self.tempHealth = self.parent:GetHealthPercent()
+			self.parent:SetMaxHealth(self.parent_health + (self.parent_health * (self.caster:GetMaxHealth() / self.health)))
+			self.parent:SetHealth(self.parent:GetMaxHealth() * self.tempHealth * 0.01)
+		else
+			self.healthmodifier = self.parent:AddNewModifier(self.parent, ability, "modifier_summonbuff_health", {})
+			self.healthmodifier:SetStackCount(self.parent_health * (self.caster:GetMaxHealth() / self.health))
+		end
+		self.armormodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_armor", {})
+		self.armormodifier:SetStackCount(self.caster:GetPhysicalArmorValue(false) * self.armor)
+		self.damagemodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_damage", {})
+		self.damagemodifier:SetStackCount((self.parent_damage * ((self.caster:GetAverageTrueAttackDamage(self.caster) - self.caster_base_damage) / 2.5 + self.caster_base_damage)) / self.damage)
+		self.regenmodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_regen", {})
+		self.regenmodifier:SetStackCount(self.parent_regen * (self.caster:GetMaxHealth() / self.health))
+		self.magicarmormodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_magic_armor", {})
+		self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_super_armor", {duration = 3.0})
+		self:StartIntervalThink(0.66)
+	else 
+		self:Destroy()
+		
 	end
-	if self.parent:GetUnitLabel() == "pharaoh_ok" then
-		self.health = 400000
-	end
-	if self.parent:GetUnitLabel() == "temp_unit" then
-		self.health = 10000000
-	end
-	if self.parentishero then
-		self.tempHealth = self.parent:GetHealthPercent()
-		self.parent:SetMaxHealth(self.parent_health + (self.parent_health * (self.caster:GetMaxHealth() / self.health)))
-		self.parent:SetHealth(self.parent:GetMaxHealth() * self.tempHealth * 0.01)
-	else
-		self.healthmodifier = self.parent:AddNewModifier(self.parent, ability, "modifier_summonbuff_health", {})
-		self.healthmodifier:SetStackCount(self.parent_health * (self.caster:GetMaxHealth() / self.health))
-	end
-	self.armormodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_armor", {})
-	self.armormodifier:SetStackCount(self.caster:GetPhysicalArmorValue(false) * self.armor)
-	self.damagemodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_damage", {})
-	self.damagemodifier:SetStackCount((self.parent_damage * ((self.caster:GetAverageTrueAttackDamage(self.caster) - self.caster_base_damage) / 2.5 + self.caster_base_damage)) / self.damage)
-	self.regenmodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_regen", {})
-	self.regenmodifier:SetStackCount(self.parent_regen * (self.caster:GetMaxHealth() / self.health))
-	self.magicarmormodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_magic_armor", {})
-	self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_super_armor", {duration = 3.0})
-	self:StartIntervalThink(0.66)
 end
 function modifier_summonbuff:OnIntervalThink()
 	if self.parent:IsNull() or self.caster:IsNull() then

@@ -8,6 +8,7 @@ boss_legion_commander_bunker = class({})
 function boss_legion_commander_bunker:OnSpellStart()
 	local caster = self:GetCaster()
 	local delay = self:GetSpecialValueFor("delay")
+	caster:Stop()
 	Timers:CreateTimer(
 		0, 
 		function()
@@ -100,6 +101,8 @@ if IsServer() then
 		
 		self.fx2 = ParticleManager:CreateParticle("particles/items3_fx/lotus_orb_shield.vpcf", PATTACH_POINT, self.parent)
 		ParticleManager:SetParticleControlEnt(self.fx2, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+		
+		self.parent:Stop()
 		
 		self:StartIntervalThink(0.5)
 	end

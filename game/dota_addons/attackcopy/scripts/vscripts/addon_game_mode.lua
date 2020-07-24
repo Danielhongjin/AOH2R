@@ -26,7 +26,9 @@ function Precache(context)
 
 	local soundevents = {
 		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_elder_titan.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_alchemist.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_earthshaker.vsndevts",
@@ -34,11 +36,12 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_huskar.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_leshrac.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts",
 	}

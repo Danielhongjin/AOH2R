@@ -1,0 +1,8 @@
+attackonhero
+{
+	material materials/overviews/attackonhero.vmat
+	pos_x -5120
+	pos_y 5599
+	scale 10.875
+}
+

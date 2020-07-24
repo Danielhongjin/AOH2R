@@ -39,7 +39,7 @@ end
 
 
 function AOHGameMode:InitGameMode()
-	self._nRoundNumber = 1
+	self._nRoundNumber = 25
 	self._negativeRounds = 0
 	self._currentRound = nil
 	self._entAncient = Entities:FindByName(nil, "dota_goodguys_fort")
@@ -91,7 +91,7 @@ function AOHGameMode:InitGameMode()
 	
 	GameRules:SetCustomGameSetupAutoLaunchDelay(3.0)
 	GameRules:SetTimeOfDay(0.75)
-	GameRules:SetHeroRespawnEnabled(false)
+	GameRules:SetHeroRespawnEnabled(true)
 	GameRules:SetUseUniversalShopMode(true)
 	GameRules:SetHeroSelectionTime(40.0)
 	GameRules:SetPreGameTime(6.0)
@@ -107,6 +107,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible(false)
 	GameRules:GetGameModeEntity():SetCustomBuybackCostEnabled(true)
 	GameRules:GetGameModeEntity():SetCustomBuybackCooldownEnabled(true)
+	GameRules:GetGameModeEntity():SetFixedRespawnTime(75.0)
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(900)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,15)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.2)
@@ -328,7 +329,8 @@ function AOHGameMode:InitVariables()
 			if PlayerResource:HasSelectedHero(playerID) then
 				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 				hero:AddItemByName("item_black_king_bar_free")
-				self._nPlayerHelp = CreateUnitByName("npc_courier_replacement", Vector(-2958, 2031, -969), true, hero, hero:GetOwner(), hero:GetTeamNumber())
+				local courier_position = Entities:FindByName(nil, "dota_courier_spawn"):GetAbsOrigin()
+				self._nPlayerHelp = CreateUnitByName("npc_courier_replacement", courier_position, true, hero, hero:GetOwner(), hero:GetTeamNumber())
 				self._nPlayerHelp:SetControllableByPlayer(hero:GetPlayerID(), true)
 				self._nPlayerHelp:SetTeam(hero:GetTeamNumber())
 				self._nPlayerHelp:SetOwner(hero)

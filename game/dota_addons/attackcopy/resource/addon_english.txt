@@ -4,7 +4,10 @@
 
 	"Tokens"
 	{
-		"addon_game_name"								"Attack On Hero 2"
+		"addon_game_name"								"Attack On Hero 2 Rebalanced"
+		"easy_description"								"Enemies 20% Less Damage\nEnemies 30% Higher Cooldowns\nLimited Max Round 37"
+		"medium_description"								"Default Difficulty"
+		"hard_description"								"Enemies 0.5% Mana Regeneration\nEnemies 0.85% Health Regeneration\nEnemies 20% Lower Cooldowns\nNo Round Healing\n5 Second Round Wait\nHeroes +12% Primary Attribute"
 
 		"DOTA_Tooltip_Ability_item_bag_of_gold"			"Bag Of Gold"
 		"DOTA_Tooltip_Ability_item_tombstone"			"Ressurect Teammate"
@@ -156,7 +159,7 @@
 "DOTA_Tooltip_ability_item_recipe_quickening_charm"	"Recipe: Quickening Charm"
 "DOTA_Tooltip_ability_item_recipe_titan_sliver"	"Recipe: Titan Sliver"
 "DOTA_Tooltip_ability_item_pocket_tower"	"Pocket Tower"
-"DOTA_Tooltip_ability_item_pocket_tower_Description"		"<h1>Use: Tower Defense</h1> Deploys a permanent tower with tremendous range but low survivability. Benefits from Nebu."
+"DOTA_Tooltip_ability_item_pocket_tower_Description"		"<h1>Use: Tower Defense</h1> Deploys a permanent tower with tremendous range but low survivability."
 "DOTA_Tooltip_ability_item_pocket_tower_tower_damage"		"TOWER DAMAGE:"
 "DOTA_Tooltip_ability_item_pocket_tower_tower_attack_time"		"TOWER ATTACK SPEED:"
 "DOTA_Tooltip_ability_item_pocket_tower_tower_health"		"TOWER HEALTH:"
@@ -197,11 +200,11 @@
 "DOTA_Tooltip_ability_item_player_unstoppable_Note1"					"Treant Protector will not destroy trees with this item."
 
 "DOTA_Tooltip_ability_item_pocket_rax"					"Pocket Barracks"
-"DOTA_Tooltip_ability_item_pocket_rax_Description"		"<h1>Use: Free Militia</h1> Deploys a permanent barracks that periodically spawns melee creep to a set location. Benefits from Nebu."
+"DOTA_Tooltip_ability_item_pocket_rax_Description"		"<h1>Use: Free Militia</h1> Deploys a permanent barracks that periodically spawns melee creep to a set location."
 "DOTA_Tooltip_ability_item_pocket_rax_interval"		"INTERVAL:"
 "DOTA_Tooltip_ability_item_pocket_rax_duration"		"CREEP DURATION:"
 "DOTA_Tooltip_ability_item_pocket_rax_ranged"					"Pocket Barracks"
-"DOTA_Tooltip_ability_item_pocket_rax_ranged_Description"		"<h1>Use: Free Militia</h1> Deploys a permanent barracks that periodically spawns ranged creep a set location. Benefits from Nebu."
+"DOTA_Tooltip_ability_item_pocket_rax_ranged_Description"		"<h1>Use: Free Militia</h1> Deploys a permanent barracks that periodically spawns ranged creep a set location."
 "DOTA_Tooltip_ability_item_pocket_rax_ranged_interval"		"INTERVAL:"
 "DOTA_Tooltip_ability_item_pocket_rax_ranged_duration"		"CREEP DURATION:"
 "DOTA_Tooltip_ability_custom_rax_behavior"				"Reinforcements"
@@ -778,7 +781,7 @@
 "DOTA_Tooltip_modifier_kobold_command"							"Charge!"
 "DOTA_Tooltip_modifier_kobold_command_Description"				"This unit is rushing you. Use spell immunity you dumbass."
 "DOTA_Tooltip_ability_boss_kobold_command"											"Charge!"
-"DOTA_Tooltip_ability_boss_kobold_command_Description"								"All units around the Kobold Soldier rush the target after a short delay.."
+"DOTA_Tooltip_ability_boss_kobold_command_Description"								"All units around the Kobold Soldier rush the target after a short delay."
 "DOTA_Tooltip_ability_boss_kobold_command_bonus_movespeed"							"BONUS MOVESPEED:"
 "DOTA_Tooltip_ability_boss_kobold_command_bonus_attackspeed"						"BONUS ATTACK SPEED:"
 "DOTA_Tooltip_ability_boss_kobold_command_radius"									"RADIUS:"
@@ -1413,6 +1416,50 @@
 "DOTA_Tooltip_ability_custom_spirits_explode_radius"						"EXPLOSION RADIUS:"
 "DOTA_Tooltip_ability_custom_spirits_spirit_duration"						"DURATION:"
 
+"npc_boss_storm_spirit"                     "Storm Spirit (Boss)"
+
+"DOTA_Tooltip_ability_boss_storm_spirit_thundercall"							"Thundercall"
+"DOTA_Tooltip_ability_boss_storm_spirit_thundercall_Description"				"Calls lightning to outward in a spiral, returning to the caster at the end. <br><br>Each series of bolts deals %damage_increase% increased damage than the last and slows the target for a short duration."
+"DOTA_Tooltip_ability_boss_storm_spirit_thundercall_damage"					"INITIAL DAMAGE:"
+"DOTA_Tooltip_ability_boss_storm_spirit_thundercall_radius"					"MAX RADIUS:"
+
+"DOTA_Tooltip_ability_boss_storm_spirit_static_remnant"								"Static Remnant"
+"DOTA_Tooltip_ability_boss_storm_spirit_static_remnant_Description"					"Creates an explosively charged image of Storm Spirit that lasts %abilityduration% seconds and will detonate and deal damage if an enemy unit comes near it."
+"DOTA_Tooltip_ability_boss_storm_spirit_static_remnant_Lore"							"Raijin Thunderkeg's duality allows him to admire himself in shocking fashion."
+"DOTA_Tooltip_ability_boss_storm_spirit_static_remnant_static_remnant_damage_radius"	"RADIUS:"
+"DOTA_Tooltip_ability_boss_storm_spirit_static_remnant_static_remnant_damage"		"DAMAGE:"
+
+"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex"								"Electric Vortex"
+"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex_Description"					"A vortex that pulls an enemy unit to Storm Spirit's location."
+"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex_Lore"						"Raijin's thunderous, boisterous energy often draws others into an electrifying situation."
+"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex_electric_vortex_pull_distance"				"PULL DISTANCE:"
+"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex_abilityduration"			"DURATION:"
+
+"DOTA_Tooltip_ability_boss_storm_spirit_sigil"							"Storm Sigil"
+"DOTA_Tooltip_ability_boss_storm_spirit_sigil_Description"				"Summons a storm sigil that chases an enemy. Sigils rapidly call down lightning around them, and are fragile."
+"DOTA_Tooltip_ability_boss_storm_spirit_sigil_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_boss_storm_spirit_sigil_lightning_radius"			"RADIUS:"
+
+"DOTA_Tooltip_ability_boss_storm_spirit_overload"									"Overload"
+"DOTA_Tooltip_ability_boss_storm_spirit_overload_Description"						"Casting a spell creates an electrical charge, which is released in a burst on Storm's next attack, dealing damage and slowing nearby enemies."
+"DOTA_Tooltip_ability_boss_storm_spirit_overload_Lore"								"Pow!  Zip!  Zap!"
+"DOTA_Tooltip_ability_boss_storm_spirit_overload_overload_move_slow"					"%MOVEMENT SLOW:"
+"DOTA_Tooltip_ability_boss_storm_spirit_overload_overload_attack_slow"				"ATTACK SLOW:"
+"DOTA_Tooltip_ability_boss_storm_spirit_overload_overload_aoe"						"RADIUS:"
+"DOTA_Tooltip_ability_boss_storm_spirit_overload_abilityduration"					"DURATION:"
+"DOTA_Tooltip_ability_boss_storm_spirit_overload_overload_damage"					"DAMAGE:"
+
+"DOTA_Tooltip_ability_boss_storm_spirit_sigil"							"Storm Sigil"
+"DOTA_Tooltip_ability_boss_storm_spirit_sigil_Description"				"Summons a storm sigil that chases an enemy. Sigils rapidly call down lightning around them, and are fragile."
+"DOTA_Tooltip_ability_boss_storm_spirit_sigil_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_boss_storm_spirit_sigil_lightning_radius"			"RADIUS:"
+
+"DOTA_Tooltip_ability_boss_storm_spirit_teleport"							"Greased Lightning"
+"DOTA_Tooltip_ability_boss_storm_spirit_teleport_Description"				"Storm Spirit channels for %delay% seconds then rapidly moves to the target location, creating an explosion at the target point. <br><br>Enemies can be damaged by both Storm Spirit's movement and the explosion. Will not be cast until the storm spirit's health drops to 50%."
+"DOTA_Tooltip_ability_boss_storm_spirit_teleport_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_boss_storm_spirit_teleport_radius"			"RADIUS:"
+"DOTA_Tooltip_ability_boss_storm_spirit_teleport_path_radius"			"PATH RADIUS:"
+
 
 "npc_boss_tidehunter"                     "Tidehunter (Boss)"
 
@@ -1686,7 +1733,7 @@
 "DOTA_Tooltip_modifier_custom_zeus_revenge_buff"                   "Charged"
 "DOTA_Tooltip_modifier_custom_zeus_revenge_buff_Description"       "Lightning courses through your veins."
 
-"DOTA_Tooltip_Ability_custom_greased_lightning"				    "Greased Lightning"
+"DOTA_Tooltip_Ability_custom_greased_lightning"				    "Laguna Blade"
 "DOTA_Tooltip_Ability_custom_greased_lightning_Description"       "Damage taken that exceeds 1.9% of Zeus's health charges his mana bar by 4x his lost health percentage. Upon fully charging zeus will retaliate with a massive lightning strike on one hero."
 "DOTA_Tooltip_Ability_custom_greased_lightning_Note0"            "If the target survives it will gain a temporary massive stat boost."
 "DOTA_Tooltip_Ability_custom_greased_lightning_damage"            "Damage:"
@@ -2659,7 +2706,8 @@
 
 "DOTA_Tooltip_Ability_item_broken_bow"                              "Broken Bow"
 "DOTA_Tooltip_Ability_item_force_blade"                            "Spell Blade"
-"DOTA_Tooltip_Ability_item_force_blade_Description"			    "<h1>Passive: Force Multiplier</h1> Every autoattack deals an extra %magic_percent%%  magic damage. "
+"DOTA_Tooltip_Ability_item_force_blade_Description"			    "<h1>Passive: Force Multiplier</h1> Every autoattack deals an extra %magic_percent%%%  magic damage."
+"DOTA_Tooltip_Ability_item_force_blade_Note0"                            "Spell Blade damage is affected by spell amplification."
 "DOTA_Tooltip_Ability_item_force_blade_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_force_blade_bonus_all"		            "+$all"
 "DOTA_Tooltip_Ability_item_force_blade_bonus_damage"		            "+$damage"

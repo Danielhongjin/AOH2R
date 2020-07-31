@@ -343,12 +343,12 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"passive_reflection_pct"			"100"
+			"passive_reflection_pct"			"75"
 		}
 		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"active_reflection_pct"			"200"
+			"active_reflection_pct"			"150"
 		}
 	}
 }

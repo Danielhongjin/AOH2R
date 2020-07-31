@@ -39,7 +39,7 @@ end
 
 
 function AOHGameMode:InitGameMode()
-	self._nRoundNumber = 25
+	self._nRoundNumber = 1
 	self._negativeRounds = 0
 	self._currentRound = nil
 	self._entAncient = Entities:FindByName(nil, "dota_goodguys_fort")

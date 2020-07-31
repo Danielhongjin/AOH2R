@@ -40,6 +40,9 @@ function InitDifficulty(name)
         $('#Normal').style.backgroundColor = '#000000';
         $('#Hard').style.backgroundColor = '#e03e2e';
     });
+    $('#EasyDescription').text = $.Localize("easy_description");
+    $('#MediumDescription').text = $.Localize("medium_description");
+    $('#HardDescription').text = $.Localize("hard_description");
 }
 function Delete()
 {

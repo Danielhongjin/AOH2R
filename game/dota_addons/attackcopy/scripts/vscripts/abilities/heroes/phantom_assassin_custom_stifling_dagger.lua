@@ -10,6 +10,7 @@ function phantom_assassin_custom_stifling_dagger:GetCooldown(iLevel)
 	end
 	return self.BaseClass.GetCooldown(self, iLevel)
 end
+
 function phantom_assassin_custom_stifling_dagger:GetManaCost(iLevel)
 	local caster = self:GetCaster()
 	if caster:HasModifier("modifier_phantom_assassin_talent") then
@@ -17,9 +18,9 @@ function phantom_assassin_custom_stifling_dagger:GetManaCost(iLevel)
 	end
 	return self.BaseClass.GetManaCost(self, iLevel)
 end
+
 if IsServer() then
    
-
     function phantom_assassin_custom_stifling_dagger:OnSpellStart()	
 		self.caster = self:GetCaster()
         self.duration = self:GetSpecialValueFor("duration")
@@ -36,12 +37,10 @@ if IsServer() then
         direction = direction:Normalized()
         local talent = self.caster:FindAbilityByName("phantom_assassin_custom_bonus_unique_1")
 		if talent and talent:GetLevel() > 0 then
-			print("heyo")
 			self.caster:AddNewModifier(self.caster, self, "modifier_phantom_assassin_talent", {})
 		end
         self:ThrowDagger(direction)
     end
-
 
     function phantom_assassin_custom_stifling_dagger:OnChannelThink(flInterval)
         self.accumulated_time = self.accumulated_time + flInterval 

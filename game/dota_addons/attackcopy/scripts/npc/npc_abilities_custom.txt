@@ -1209,7 +1209,7 @@
 		"RunScript"
 		{
 			"ScriptFile"	"abilities\other\generic.lua"
-			"Function"		"generate_warning_aoe"
+			"Function"		"generate_warning_aoe_noanim"
 			"Target"				"POINT"
 			"radius"	"%radius"
 			"delay"			"%delay"
@@ -2495,6 +2495,131 @@
 		{
 			"var_type"				"FIELD_FLOAT"
 			"vision_duration"		"0.94"
+		}
+	}
+}
+"custom_thundercall"
+{
+	"BaseClass"						"ability_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastPoint"				"0.0"
+	"AbilityTextureName"			"leshrac_lightning_storm"
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"13"
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50"
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage"						"60"
+		}
+		"02"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"interval"						"0.3"
+		}	
+		"03"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"distance"						"1000"
+		}
+		"04"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"range_variance"				"175"
+		}
+		"05"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"points"						"6"
+		}
+		"06"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_radius"					"100"
+		}
+		"07"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"slow_duration"					"1.0"
+		}
+		"08"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"slow_pct"						"-50"
+		}
+		"09"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"damage_increase"				"10"
+		}
+		"10"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"init_delay"					"0.75"
+		}
+		"11"
+		{
+			"var_type"						"FIELD_FLOAT"
+			"delay"					"0.75"
+		}
+		"12"
+		{
+			"var_type"						"FIELD_INTEGER"
+			"angle_per_iteration"					"0"
+		}
+	}
+	// Datadriven
+	//--------------------------------------------------------------------------------
+	"OnSpellStart"
+	{
+		"ApplyModifier"
+		{
+			"ModifierName"			"modifier_thundercall_init"
+			"Target"				"CASTER"
+		}
+	}
+	"Modifiers"
+	{
+		"modifier_thundercall_init"
+		{
+		"IsBuff"					"1"
+		"IsHidden"					"0"
+		"Duration"					"%init_delay"
+		"StatusEffectName"         "particles/status_fx/status_effect_life_stealer_rage.vpcf"   
+		"StatusEffectPriority"		"100"	
+		"OnDestroy"
+		{
+			"RunScript"
+			{
+			"ScriptFile"		"abilities/bosses/boss_storm_spirit_thundercall.lua"
+			"Function"			"thundercall"
+			}
+		}	
+		}	
+		"modifier_thundercall"
+		{
+			"Passive"			"0"
+			"IsHidden"			"0"
+			"IsDebuff"			"1"
+			"Duration"			"%slow_duration"
+			"EffectName"        "particles/units/heroes/hero_leshrac/leshrac_lightning_slow.vpcf"
+			"EffectAttachType"  "follow_origin"
+			"Target"            "TARGET"
+			"Properties"
+			{
+				"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow_pct" 
+			}
 		}
 	}
 }
@@ -14005,148 +14130,6 @@
 			}
 		}
 	}
-	"custom_thundercall"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_datadriven"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastPoint"				"0.0"
-		"AbilityTextureName"			"leshrac_lightning_storm"
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"13"
-		// Cost
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityManaCost"				"50"
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage"						"60"
-			}
-			"02"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"interval"						"0.3"
-			}	
-			"03"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"distance"						"1000"
-			}
-			"04"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"range_variance"				"160"
-			}
-			"05"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"points"						"6"
-			}
-			"06"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_radius"					"130"
-			}
-			"07"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"slow_duration"					"1.0"
-			}
-			"08"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"slow_pct"						"-50"
-			}
-			"09"
-			{
-				"var_type"						"FIELD_INTEGER"
-				"damage_multiplier"				"13"
-			}
-			"10"
-			{
-				"var_type"						"FIELD_FLOAT"
-				"init_delay"					"0.75"
-			}
-		}
-		// Datadriven
-		//--------------------------------------------------------------------------------
-		"OnSpellStart"
-		{
-			"ApplyModifier"
-			{
-				"ModifierName"			"modifier_thundercall_init"
-				"Target"				"CASTER"
-			}
-		}
-		// Modifiers
-		//-------------------------------------------------------------------------------------------------------------	
-		"Modifiers"
-		{
-			"modifier_thundercall_init"
-			{
-			"IsBuff"					"1"
-			"IsHidden"					"0"
-			"Duration"					"%init_delay"
-			"StatusEffectName"         "particles/status_fx/status_effect_life_stealer_rage.vpcf"   
-			"StatusEffectPriority"		"100"	
-			"OnDestroy"
-			{
-				"RunScript"
-				{
-				"ScriptFile"		"abilities/bosses/custom_thundercall.lua"
-				"Function"			"thundercall"
-				}
-			}	
-			}	
-			"modifier_thundercall"
-			{
-				"Passive"			"0"
-				"IsHidden"			"0"
-				"IsDebuff"			"1"
-				"Duration"			"%slow_duration"
-				"EffectName"        "particles/units/heroes/hero_leshrac/leshrac_lightning_slow.vpcf"
-				"EffectAttachType"  "follow_origin"
-				"Target"            "TARGET"
-				"Properties"
-				{
-					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow_pct" 
-				}
-			}
-			"modifier_dummy"
-			{
-				"ThinkInterval"		"0.01"
-				"OnIntervalThink"	
-				{
-					"Damage"
-					{
-						"Damage"		"9999"
-						"Type"			"DAMAGE_TYPE_PURE"
-						"Target"		"TARGET"
-					}
-				}
-				"States"
-				{
-					//"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_NOT_ON_MINIMAP"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
-					"MODIFIER_STATE_ATTACK_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
-				}
-			}
-		}
-	}
 	"custom_wraith_summon"
 	{
 		// General
@@ -17456,7 +17439,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"11"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" 		"1"
 		"AbilitySpecial"
@@ -17493,7 +17476,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName" 			"waypoint"
 		"AbilityCastRange"				"500"					
-		"AbilityCooldown"				"10.0"
+		"AbilityCooldown"				"11.0"
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
 		{
@@ -18644,5 +18627,553 @@
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"boss_phantom_lancer_spirit_lance"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"phantom_lancer_spirit_lance"
+		"AbilityCastRange"				"750"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCooldown"				"7.0"
+		"AbilityManaCost"				"0"
+		"AbilityDamage"					"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"damage_tooltip"					"250"
+			}
+			"02"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"slow"								"-40"
+			}
+			"03"
+			{
+				"var_type"							"FIELD_INTEGER"
+				"slow_duration"							"3.25"
+			}
+			"04"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"illusion_duration"					"8"
+			}
+			"05"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"projectile_speed"					"1000.0"
+			}		
+		}
+
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_phantom_lancer.vsndevts"
+			"particle"	"particles/units/heroes/hero_phantom_lancer/phantomlancer_spiritlance_projectile.vpcf"
+		}
+
+		"OnSpellStart"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_PhantomLancer.SpiritLance.Throw"
+				"Target"			"CASTER"
+			}
+			
+			"TrackingProjectile"
+			{
+				"Target"           	"TARGET"
+				"EffectName"       	"particles/units/heroes/hero_phantom_lancer/phantomlancer_spiritlance_projectile.vpcf"
+				"Dodgeable"        	"1"
+				"ProvidesVision"   	"0"
+				"MoveSpeed"        	"%projectile_speed"
+				"SourceAttachment"  "DOTA_PROJECTILE_ATTACHMENT_ATTACK_1"
+			}
+		}
+		
+		"OnProjectileHitUnit"
+		{
+			"FireSound"
+			{
+				"EffectName"		"Hero_PhantomLancer.SpiritLance.Impact"
+				"Target"			"TARGET"
+			}
+			
+			"RunScript"
+			{
+				"ScriptFile"		"heroes/hero_phantom_lancer/spirit_lance.lua"
+				"Function"			"ConjureImage"
+			}
+			
+			"Damage"
+			{
+				"Target"	"TARGET"
+				"Type"		"DAMAGE_TYPE_MAGICAL"
+				"Damage"	"%AbilityDamage"
+			}
+
+			"ApplyModifier"
+			{
+				"ModifierName"	"modifier_spirit_lance_datadriven"
+				"Target"		"TARGET"
+				"Duration"		"%slow_duration"
+			}	
+		}
+		
+		"Modifiers"
+		{
+			"modifier_spirit_lance_datadriven"
+			{		
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"	"%slow"
+				}			
+			}	
+		}
+	}
+	"boss_storm_spirit_static_remnant"
+	{
+		"BaseClass"						"storm_spirit_static_remnant"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_StormSpirit.StaticRemnantPlant"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"3.5"
+		"AbilityDuration"				"19.0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"static_remnant_radius"		"300"		
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"static_remnant_damage_radius"	"300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"static_remnant_delay"		"1.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"static_remnant_damage"			"750"
+			}
+		}
+	}
+	"boss_storm_spirit_thundercall"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastPoint"				"0.0"
+		"AbilityTextureName"			"leshrac_lightning_storm"
+		"AbilityCooldown"				"18"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage"						"60"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"interval"						"0.2"
+			}	
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"distance"						"1000"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"range_variance"				"150"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"points"						"6"
+			}
+			"06"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_radius"					"100"
+			}
+			"07"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"slow_duration"					"1.0"
+			}
+			"08"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"slow_pct"						"-50"
+			}
+			"09"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"damage_increase"				"20"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"init_delay"					"0.75"
+			}
+			"11"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"delay"					"0.75"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"angle_per_iteration"					"5"
+			}
+		}
+		"OnSpellStart"
+		{
+			"ApplyModifier"
+			{
+				"ModifierName"			"modifier_thundercall_init"
+				"Target"				"CASTER"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_thundercall_init"
+			{
+			"IsBuff"					"1"
+			"IsHidden"					"0"
+			"Duration"					"%init_delay"
+			"StatusEffectName"         "particles/custom/warning_colorwarp.vpcf"
+			"StatusEffectPriority"		"100"	
+			"States"
+			{
+                "MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
+			}
+			"OnDestroy"
+			{
+				"RunScript"
+				{
+					"ScriptFile"		"abilities/bosses/boss_storm_spirit_thundercall.lua"
+					"Function"			"thundercall"
+				}
+			}	
+			}	
+			"modifier_thundercall"
+			{
+				"Passive"			"0"
+				"IsHidden"			"0"
+				"IsDebuff"			"1"
+				"Duration"			"%slow_duration"
+				"EffectName"        "particles/units/heroes/hero_leshrac/leshrac_lightning_slow.vpcf"
+				"EffectAttachType"  "follow_origin"
+				"Target"            "TARGET"
+				"Properties"
+				{
+					"MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE"		"%slow_pct" 
+				}
+			}
+		}
+	}
+	"boss_storm_spirit_sigil_wrapper"
+	{
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"9999"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"21"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_target"
+				"Target"				"TARGET"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+			}
+		}
+	}
+	"boss_storm_spirit_sigil"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"		            "abilities/bosses/boss_storm_spirit_sigil.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName" 			"zuus_cloud"
+		"AbilityCastRange"				"500"					
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"interval"	        	"0.1"			
+			}
+			"02"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"radius"	        	"120"			
+			}
+			"03"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"damage"	        	"100"			
+			}
+			"04"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"delay"	       			"0.4"			
+			}
+			"05"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"lightning_radius"	       "300"			
+			}
+			"06"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"duration"	       		"6"			
+			}
+		}
+	}
+	"boss_storm_spirit_overload"
+	{
+		"BaseClass"						"storm_spirit_overload"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_StormSpirit.Overload"
+		"AbilityDuration"				"0.6"
+		"AbilityModifierSupportBonus"	"40"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"overload_aoe"					"300"
+			}			
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"overload_move_slow"			"-80"
+			}			
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"overload_attack_slow"			"-80"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"overload_damage"				"120"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_3"
+	}
+	"boss_storm_spirit_electric_vortex_wrapper"
+	{
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"9999"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"20"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_target"
+				"Target"				"TARGET"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+			}
+		}
+	}
+	"boss_storm_spirit_electric_vortex"
+	{
+		"BaseClass"						"storm_spirit_electric_vortex"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilitySound"					"Hero_StormSpirit.ElectricVortex"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"9999"
+		"AbilityCooldown"				"15"
+		"AbilityDuration"				"2.6"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"electric_vortex_pull_distance"		"9999"		
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"electric_vortex_pull_tether_range"			"9999.0"		
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow"	"-50"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow_duration"	"3.0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"abilityduration"	""
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"boss_storm_spirit_teleport"
+	{
+		"AbilityTextureName"			"storm_spirit_ball_lightning"
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"abilities/bosses/boss_storm_spirit_teleport.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityCastRange"				"1200"
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"180"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"600"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"					"2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"path_radius"				"175"
+			}
+		}
+	}
+	"boss_storm_spirit_init"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"	 				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"initial_mana"		"0"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"teleport_threshold"		"50"
+			}
+			"3"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"thundercall_cooldown"		"5"
+			}
+			"4"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"sigil_cooldown"		"16"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_storm_spirit_init"
+			{
+				"Passive"						"1"
+				"IsHidden"						"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities\bosses\boss_storm_spirit_init.lua"
+						"Function"		"init"
+					}
+				}
+			}
+		}
 	}
 }

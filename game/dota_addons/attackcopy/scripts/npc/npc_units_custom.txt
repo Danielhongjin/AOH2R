@@ -1385,8 +1385,180 @@
 //=================================================================================	
 // Round10
 //=================================================================================
+"npc_boss_storm_spirit"
+{
+	// General
+	//
+	"BaseClass"					"npc_dota_creature"
+	"vscripts"					"bosses/attack_move.lua"	// Class of entity of link to.
+	"Model"						"models/heroes/storm_spirit/storm_spirit.vmdl"	// Model.
+	"ModelScale"				"1.7"
+	"Level"						"7"
+	"ConsideredHero"			"1"
+	"Ability1"					"boss_storm_spirit_thundercall"
+	"Ability2"					"boss_storm_spirit_electric_vortex"
+	"Ability3"					"boss_storm_spirit_electric_vortex_wrapper"			// Ability 3.
+	"Ability4"					"boss_storm_spirit_overload"			// Ability 4.
+	"Ability5"					"boss_storm_spirit_sigil"			// Ability 5.
+	"Ability6"					"boss_storm_spirit_sigil_wrapper"
+	"Ability7"					"boss_storm_spirit_static_remnant"			// Ability 6 - Extra.
+	"Ability8"					"boss_storm_spirit_teleport"			// Ability 7 - Extra.
+	"Ability9"					"boss_storm_spirit_init"			// Ability 8 - Extra.
+	"ArmorPhysical"				"16"			// Physical protection.
+	"MagicalResistance"			"33"		// Magical protection.
 
+	// Attack
+	//----------------------------------------------------------------
+	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"275"		// Damage range min.
+	"AttackDamageMax"			"300"		// Damage range max.
+	"AttackRate"				"1.5"		// Speed of attack.
+	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
+	"AttackRange"				"500"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_stormspirit/stormspirit_base_attack.vpcf"
+	"ProjectileSpeed"			"800"			// Speed of projectile.
 
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"0"		// Gold earned min.
+	"BountyGoldMax"				"0"		// Gold earned max.
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"				"70"
+	"HealthBarOffset"			"160"
+	"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"	
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
+	"MovementSpeed"				"295"		// Speed
+	"MovementTurnRate"			"0.5"		// Turning rate.
+
+	"SoundSet"		"Hero_StormSpirit"
+	"GameSoundsFile"		"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts"
+	"VoiceFile"		"soundevents/voscripts/game_sounds_vo_stormspirit.vsndevts"
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"				"25000"		// Base health.
+	"StatusHealthRegen"			"0.0"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"20"			// Mana regeneration rate.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"					"DOTA_TEAM_BADGUYS"			// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"		"1400"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1400"		// Range of vision at night time.
+
+	// Creature Data
+	//----------------------------------------------------------------------------------------------------------------------
+	"Creature"
+	{
+		"DisableClumpingBehavior"   "1"
+		"CanRespawn"				"0"
+		"States"
+		{
+			"Invade"
+			{
+				"Name"				"Invade"
+				"Aggression"		"100.0"
+				"Avoidance"			"0.0"
+				"Support"			"0.0"
+				//"RoamDistance"		"700.0"
+			}
+		}
+
+		"DefaultState"				"Invade"
+		
+		"OffensiveAbilities"
+		{
+			"Ability1"				
+			{
+				"Name"				"boss_storm_spirit_thundercall"
+				"Radius"			"500"
+			}
+			"Ability3"				
+			{
+				"Name"				"boss_storm_spirit_electric_vortex_wrapper"
+			}
+			"Ability6"				
+			{
+				"Name"				"boss_storm_spirit_sigil_wrapper"
+			}
+			"Ability7"				
+			{
+				"Name"				"boss_storm_spirit_static_remnant"
+				"AOE"                	"1"
+                "Radius"             	"300"
+			}
+			"Ability8"				
+			{
+				"Name"				"boss_storm_spirit_teleport"
+				"AOE"                	"1"
+                "Radius"             	"400"
+			}
+		}
+		"AttachWearables"
+		{
+			"armor"	{ "ItemDef"	"8166" }
+			"hat" { "ItemDef" "8167" }
+			"pauldron" { "ItemDef" "12415" }
+		}
+	}
+}
+
+"npc_storm_sigil"
+{
+	"UnitLabel" 				"temp_unit"
+	"Model"						"models/heroes/zeus/zeus_sigil.vmdl"
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Creep_Good_Range"	
+	"vscripts"					"bosses/attack_move.lua"
+	"Level"						"1"
+	"ModelScale" 				"1.0"
+	"Ability1"					"custom_freezing_field"			// Ability 1
+	"Ability2"					""			// Ability 2
+	"Ability3"					""			// Ability 3
+	"Ability4"					""			// Ability 4
+	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"1"		// Damage range min.
+	"AttackDamageMax"			"1"		// Damage range max.
+	"AttackRate"				"0.7"		// Speed of attack.
+	"AttackAnimationPoint"		"0.0"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			"" // Particle system model for projectile.
+	"ProjectileSpeed"			""		// Speed of projectile.		     
+	"RingRadius"				"40"
+	"HealthBarOffset"			"150"
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"1"		// Gold earned min.
+	"BountyGoldMax"				"1"		// Gold earned max.
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+	"MovementSpeed"				"310"		// Speed.			
+	"ArmorPhysical"				"16"
+	"MagicalResistance"			"-10"
+	"StatusHealth"				"1000"		// Base health.
+	"StatusHealthRegen"			"0"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"0.1"		// Mana regeneration rate.		 
+	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}
 "npc_bristle_large"
 {
     "BaseClass"					"npc_dota_creature"
@@ -2156,7 +2328,6 @@
 				"Support"                       "40.0"
 			}
 		}
-		
 		"DefaultState"                          "Invade"
 	   
 		"OffensiveAbilities"
@@ -7257,6 +7428,10 @@
 }
 "npc_dota_thinker"
 {
+	"UnitLabel" "temp_unit"
+}
+"npc_dota_stormspirit_remnant"
+{	
 	"UnitLabel" "temp_unit"
 }
 "npc_dummy_unit"

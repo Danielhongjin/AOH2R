@@ -1,0 +1,8 @@
+attackonherobig
+{
+	material materials/overviews/attackonherobig.vmat
+	pos_x -8865
+	pos_y 9190
+	scale 17.812
+}
+

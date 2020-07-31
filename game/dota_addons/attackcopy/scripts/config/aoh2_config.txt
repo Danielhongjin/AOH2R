@@ -326,7 +326,7 @@
 		
 		"10" // Bristle
 		{
-			"Title"						"Die Trying"
+			"Title"						"Maelstrom"
 			"MaxGold"					"4600"
 			"BagCount"					"10"
 			"BagVariance"				"40"
@@ -334,36 +334,12 @@
 
 			"a"
 			{
-				"NPCName"				"npc_bristle_medium"
-				"TotalUnitsToSpawn"		"2"
-				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"13"
-			}
-			
-			"b"
-			{
-				"WaitForUnit"			"a"
-				"WaitForTime"			"13"
-				
-				"NPCName"				"npc_bristle_medium"
-				"TotalUnitsToSpawn"		"4"
-				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"18"
-			}
-			
-			"c"
-			{
-				"WaitForUnit"			"b"
-				"WaitForTime"			"18"
-				
-				"NPCName"				"npc_bristle_large"
+				"NPCName"				"npc_boss_storm_spirit"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"18"
+				"SpawnInterval"			"25"
 			}
-			
 		}
-		
 		"11" // Luna
 		{
 			"Title"						"Nightfall"
@@ -653,7 +629,7 @@
 			}
 		}	
 		
-		"25" // Lone Druid
+		"25" // Abyssal Underlord
 		{
 			"Title"						"Homewrecker"
 			"MaxGold"					"7000"

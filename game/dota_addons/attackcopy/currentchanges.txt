@@ -1,12 +1,11 @@
-Even more boss damage reductions.
-Dead players will respawn now after a fixed 75 second timespan, you can still revive via tombstone.
-Map dead zone fixed. Map may have some bugs due to migration of map files.
+Flying units cannot traverse over very high terrain anymore. No more Winter Wyvern cheese.
+Map right side area expanded, now has a side path with water as well as high ground.
 
-New boss Abyssal Underlord - Most of his abilities become one hit kills if left unchecked. Has custom behaviors that make him target your towers and ancient with long ranged charge abilities.
-
-Heart of Tarrasque stats nerfed.
-
+New boss Storm Spirit replaced old round 10 boss Bristleback - Will try to get up and close with magic. Kill his sigils if they spawn.
 
 TO-DO
 
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
+
+
+Implementing larger map and curse system - longer you're away from friendly structures the more debuffed you are and the more you get randomly attacked by phenomena.

@@ -42,6 +42,7 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts",
 	}

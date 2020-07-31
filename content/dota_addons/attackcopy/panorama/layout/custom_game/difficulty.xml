@@ -19,22 +19,15 @@
 				<Panel class="DifficultyList" hittest="false"> 
 					<Panel id="Easy" class="DifficultyBox"> 
 						<Label class="DifficultyLabel" text="Easy" />
-						<Label class="Description" text="Enemies 20% Less Damage" />
-						<Label class="Description" text="Enemies 30% Higher Cooldowns" />
-						<Label class="Description" text="Limited Max Round 37" />
+						<Label class="Description" id="EasyDescription" text="Enemies 20% Less Damage" />
 					</Panel>
 					<Panel id="Normal" class="DifficultyBox">
 						<Label class="DifficultyLabel" text="Normal" />
-						<Label class="Description" text="Default Difficulty" />
+						<Label class="Description" id="MediumDescription" text="Default Difficulty" />
 					</Panel>
 					<Panel id="Hard" class="DifficultyBox">
 						<Label class="DifficultyLabel" text="Hard" />
-						<Label class="Description" text="Enemies 0.5% Mana Regeneration" />
-						<Label class="Description" text="Enemies 0.85% Health Regeneration" />
-						<Label class="Description" text="Enemies 20% Lower Cooldowns" />
-						<Label class="Description" text="No Round Healing" />
-						<Label class="Description" text="5 Second Round Wait" />
-						<Label class="Description" text="Heroes +12% Primary Attribute" />
+						<Label class="Description" id="HardDescription" text="Enemies 0.5% Mana Regeneration" />
 					</Panel>
 				</Panel>
 				<Panel id="DifficultyChoices" hittest="false"> 

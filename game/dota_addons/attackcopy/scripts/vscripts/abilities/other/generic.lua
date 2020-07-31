@@ -47,9 +47,11 @@ local spells_target = {[0] = "custom_static_link",
 "boss_kobold_command",
 "boss_undying_soul_rip",
 "boss_abyssal_underlord_firestorm",
+"boss_storm_spirit_electric_vortex", -- index 20
+"boss_storm_spirit_sigil",
 }
 --Fires a warning aoe to a point and casts the spell immediately
-function generate_warning_aoe(keys)
+function generate_warning_aoe_noanim(keys)
 	local caster = keys.caster
 	local ability = keys.ability
 	local point = keys.target_points[1]
@@ -499,25 +501,25 @@ function modifier_anim:StatusEffectPriority()
     return 20
 end
 if IsServer() then
-function modifier_anim:OnCreated()
-	local unit = self:GetParent()
-    for slot = 0, 16 do
-		local ability = unit:GetAbilityByIndex(slot)
-		if ability ~= nil then
-			ability:SetFrozenCooldown(true)
+	function modifier_anim:OnCreated()
+		local unit = self:GetParent()
+		for slot = 0, 16 do
+			local ability = unit:GetAbilityByIndex(slot)
+			if ability ~= nil then
+				ability:SetFrozenCooldown(true)
+			end
 		end
 	end
-end
 
-function modifier_anim:OnDestroy()
-	local unit = self:GetParent()
-    for slot = 0, 16 do
-		local ability = unit:GetAbilityByIndex(slot)
-		if ability ~= nil then
-			ability:SetFrozenCooldown(false)
+	function modifier_anim:OnDestroy()
+		local unit = self:GetParent()
+		for slot = 0, 16 do
+			local ability = unit:GetAbilityByIndex(slot)
+			if ability ~= nil then
+				ability:SetFrozenCooldown(false)
+			end
 		end
 	end
-end
 end
 
 

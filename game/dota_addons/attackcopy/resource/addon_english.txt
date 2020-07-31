@@ -1625,6 +1625,25 @@
 "DOTA_Tooltip_ability_custom_wisp_reincarnation"								"Worldshapers"
 "DOTA_Tooltip_ability_custom_wisp_reincarnation_Description"					"Wisp releases three Worldsmiths on death."
 
+"npc_boss_wisp_friendly"                     "The Box (Boss)" 
+
+"DOTA_Tooltip_ability_boss_wisp_friendly_counter"								"Don't Hit The Box"
+"DOTA_Tooltip_ability_boss_wisp_friendly_counter_Description"					"This is a fairly friendly box. It won't attack if you don't attack it, but you're probably not going to read this. Wisp dies if it is ignored. I wonder what's inside?"
+
+"DOTA_Tooltip_ability_boss_wisp_friendly_deafening_blast"								"Deafening Blast"
+"DOTA_Tooltip_ability_boss_wisp_friendly_deafening_blast_Description"					"The Box unleashes mighty sonic waves on his attackers, dealing damage to any enemy unit they collides with. The sheer impact from the blasts are enough to knock enemy units back and disarm attacks."
+"DOTA_Tooltip_ability_boss_wisp_friendly_deafening_blast_travel_distance"						"TRAVEL DISTANCE:"
+"DOTA_Tooltip_ability_boss_wisp_friendly_deafening_blast_damage"						"DAMAGE:"
+"DOTA_Tooltip_ability_boss_wisp_friendly_deafening_blast_knockback_duration"			"KNOCKBACK DURATION:"
+"DOTA_Tooltip_ability_boss_wisp_friendly_deafening_blast_disarm_duration"				"DISARM DURATION:"
+
+"DOTA_Tooltip_ability_boss_wisp_friendly_electric_vortex"								"Electric Vortex"
+"DOTA_Tooltip_ability_boss_wisp_friendly_electric_vortex_Description"					"A vortex that pulls an enemy unit to The Box's location."
+"DOTA_Tooltip_ability_boss_wisp_friendly_electric_vortex_Lore"						"The Box really wants you around. I wonder why?"
+"DOTA_Tooltip_ability_boss_wisp_friendly_electric_vortex_electric_vortex_pull_distance"				"PULL DISTANCE:"
+"DOTA_Tooltip_ability_boss_wisp_friendly_electric_vortex_abilityduration"			"DURATION:"
+
+
 "npc_boss_witch_doctor"                     "Witch Doctor (Boss)"
 
 

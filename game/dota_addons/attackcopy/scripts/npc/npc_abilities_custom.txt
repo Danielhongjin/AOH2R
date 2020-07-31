@@ -19176,4 +19176,158 @@
 			}
 		}
 	}
+	"boss_wisp_friendly_deafening_blast"
+	{
+		"BaseClass"						"invoker_deafening_blast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_SHOW_IN_GUIDES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"MaxLevel"						"1"
+		"HotKeyOverride"				"B"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"FightRecapLevel"				"1"
+		"AbilitySound"					"Hero_Invoker.DeafeningBlast"
+		"AbilityCastRange"				"2000"
+		"AbilityCastPoint"				"0.05"
+		"AbilityCastAnimation"			"ACT_INVALID"
+		"AbilityCooldown"				"0"
+		"AbilityManaCost"				"0"
+		"AbilityModifierSupportValue"	"0.5"	// Applies 2 modifiers
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_distance"		"2000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"travel_speed"			"1500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_start"			"175"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius_end"			"225"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"end_vision_duration"	"1.75"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage"				"700"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"knockback_duration"	"0.5"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"disarm_duration"		"0.5"
+			}
+		}
+	}
+	"boss_wisp_friendly_electric_vortex"
+	{
+		"BaseClass"						"storm_spirit_electric_vortex"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilitySound"					"Hero_StormSpirit.ElectricVortex"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastRange"				"9999"
+		"AbilityCooldown"				"10"
+		"AbilityDuration"				"4.0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"electric_vortex_pull_distance"		"9999"		
+			}
+			"02"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"electric_vortex_pull_tether_range"			"9999.0"		
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow"	"-50"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"electric_vortex_self_slow_duration"	"4.0"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"abilityduration"	""
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_2"
+	}
+	"boss_wisp_friendly_counter"
+	{
+		"BaseClass"						"ability_lua"
+		"AbilityTextureName"			"wisp_overcharge"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"ScriptFile"					"abilities\bosses\boss_wisp_friendly_counter.lua"
+		"AbilityCooldown"				"0.6"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"degen_time"			"2.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"degen_rate"			"7.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"interval"				"0.2"
+			}
+			"04"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"damage"	    "100"
+			}
+			"05"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"duration"	    "5"
+			}
+			"06"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"radius"	    "1050"
+			}
+			"07"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"cooldown"	    "0.6"
+			}
+		}
+	}
 }

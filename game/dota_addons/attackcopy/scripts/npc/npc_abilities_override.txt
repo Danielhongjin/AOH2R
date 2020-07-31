@@ -8214,9 +8214,6 @@
 			}
 		}
 	}
-	"wisp_overcharge"
-	{
-	}	
 	"wisp_tether"
 	{
 		"AbilitySpecial"

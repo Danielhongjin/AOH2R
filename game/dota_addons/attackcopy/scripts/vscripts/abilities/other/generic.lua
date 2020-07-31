@@ -34,7 +34,7 @@ local spells_target = {[0] = "custom_static_link",
 "custom_doom", 
 "custom_lightning_bolt", -- index 5
 "custom_chaos_bolt", 
-"custom_sunray", 
+"custom_sunray", -- DEPRECATED
 "custom_reality_rift",
 "custom_primal_roar",
 "custom_paralyzing_cask", -- index 10

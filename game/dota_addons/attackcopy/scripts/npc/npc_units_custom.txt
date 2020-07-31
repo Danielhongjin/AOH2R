@@ -2382,7 +2382,7 @@
 	"Model"						"models/heroes/legion_commander/legion_commander.vmdl"		// Model.					// Small image for hero selection
 	"SoundSet"					"Hero_LegionCommander"
 	"ModelScale"				"2"
-	"Level"						"20"
+	"Level"						"15"
 	"CanBeDominated"			"0"
 	"ConsideredHero"			"1"
 	"HasInventory"				"1"
@@ -2612,6 +2612,89 @@
 //=================================================================================	
 // Round16
 //=================================================================================
+"npc_boss_wisp_friendly"    
+{
+	// General
+	//----------------------------------------------------------------
+	"Model"                                 "models/heroes/wisp/wisp.vmdl"   // Model.
+	"BaseClass"                             "npc_dota_creature"
+	"SoundSet"                              "Hero_Wisp"
+	"GameSoundsFile"                        "soundevents/game_sounds_heroes/game_sounds_wisp.vsndevts"
+	"Level"                                 "16"
+	"ModelScale"                            "1.5"
+	"ConsideredHero"						"1"
+	"HasInventory"							"1"
+	"AbilityLayout"							"7"
+	"precache"
+	{
+		"particle_folder"					"particles/units/heroes/hero_wisp"
+	}
+
+	// Abilities
+	//----------------------------------------------------------------
+	"Ability1"                                      "boss_wisp_friendly_counter"
+	"Ability2"										"boss_wisp_friendly_deafening_blast"
+	"Ability3"										"boss_wisp_friendly_electric_vortex"
+
+	// Armor
+	//----------------------------------------------------------------
+	"ArmorPhysical"                         "30"                     // Physical protection.
+	"MagicalResistance"						"15"
+
+	// Bounds
+	//----------------------------------------------------------------
+	"RingRadius"                            "100"
+	"HealthBarOffset"                       "230"
+
+	// Bounty
+	//----------------------------------------------------------------
+	"BountyXP"                              "0"            // Experience earn.
+	"BountyGoldMin"                         "530"            // Gold earned min.
+	"BountyGoldMax"                         "590"            // Gold earned max.
+
+	// Movement
+	//----------------------------------------------------------------
+	"MovementCapabilities"					"DOTA_UNIT_CAP_MOVE_FLY"
+	"MovementSpeed"                         "350"           // Speed.                      
+
+	// Status
+	//----------------------------------------------------------------
+	"StatusHealth"                          "36500"           // Base health.
+	"StatusHealthRegen"                     "150"           // Health regeneration rate.
+	"StatusMana"                            "1000"                     // Base mana.
+	"StatusManaRegen"                       "20"           // Mana regeneration rate.               
+   
+	// Vision
+	//----------------------------------------------------------------
+	"VisionDaytimeRange"            "2100"           // Range of vision during day light.
+	"VisionNighttimeRange"          "2100"           // Range of vision at night time.
+
+	// Team
+	//----------------------------------------------------------------
+	"TeamName"                                      "DOTA_TEAM_BADGUYS"                                            // Team name.
+	"CombatClassAttack"                     "DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"                     "DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"         "DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+
+	// Creature Data
+	//----------------------------------------------------------------
+	"Creature"
+	{
+		"OffensiveAbilities"
+		{
+		}
+		"EquippedItems"
+		{
+			"Unstoppable"       	{ "Item"        "item_boss_unstoppable" }	
+			"Radiance"       	{ "Item"        "item_burning_radiance" }
+		}
+		"AttachWearables"
+		{
+			"Wearable1"	{ "ItemDef" "9235" }
+			"ambient"	{ "ItemDef"	"536" }
+		}
+	}
+}
 "npc_boss_phoenix"
 {
 	// General

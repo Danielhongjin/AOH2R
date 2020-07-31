@@ -1,7 +1,4 @@
-Flying units cannot traverse over very high terrain anymore. No more Winter Wyvern cheese.
-Map right side area expanded, now has a side path with water as well as high ground.
-
-New boss Storm Spirit replaced old round 10 boss Bristleback - Will try to get up and close with magic. Kill his sigils if they spawn.
+New boss The Box replaced old round 16 Phoenix and Winter Wyvern bosses - relief boss after Legion Commander. Try hitting the box.
 
 TO-DO
 

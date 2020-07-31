@@ -454,7 +454,7 @@
 		
 		"16" // Dragons
 		{
-			"Title"						"Twin Dragons"
+			"Title"						"What's In The Box?"
 			"MaxGold"					"4700"
 			"BagCount"					"2"
 			"BagVariance"				"00"
@@ -462,18 +462,12 @@
 
 			"a"
 			{
-				"NPCName"				"npc_boss_winter_wyvern"
+				"NPCName"				"npc_boss_wisp_friendly"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"25"
 			}
-			"b"
-			{
-				"NPCName"				"npc_boss_phoenix"
-				"TotalUnitsToSpawn"		"1"
-				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"25"
-			}
+
 		}
 		
 		"17" // Enigma 

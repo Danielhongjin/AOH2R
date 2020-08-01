@@ -5,6 +5,10 @@
 	"Tokens"
 	{
 		"addon_game_name"								"Attack On Hero 2 Rebalanced"
+		"difficulty_text_label"							"Difficulty Vote"
+		"easy_label"									"Easy"
+		"normal_label"									"Normal"
+		"hard_label"									"Hard"
 		"easy_description"								"Enemies 20% Less Damage\nEnemies 30% Higher Cooldowns\nLimited Max Round 37"
 		"medium_description"								"Default Difficulty"
 		"hard_description"								"Enemies 0.5% Mana Regeneration\nEnemies 0.85% Health Regeneration\nEnemies 20% Lower Cooldowns\nNo Round Healing\n5 Second Round Wait\nHeroes +12% Primary Attribute"
@@ -2753,7 +2757,7 @@
 
 "DOTA_Tooltip_Ability_item_broken_bow"                              "Broken Bow"
 "DOTA_Tooltip_Ability_item_force_blade"                            "Glare Edge"
-"DOTA_Tooltip_Ability_item_force_blade_Description"			    "<h1>Passive: Refractive Blade</h1> Reduces attack damage by %reduced_damage%%%, but causes autoattacks to deal %magic_percent%%% magic damage."
+"DOTA_Tooltip_Ability_item_force_blade_Description"			    "<h1>Passive: Sear</h1> Reduces attack damage by %reduced_damage%%%, but causes autoattacks to deal %magic_percent%%% magic damage."
 "DOTA_Tooltip_Ability_item_force_blade_Note0"                            "Spell Blade damage is affected by spell amplification."
 "DOTA_Tooltip_Ability_item_force_blade_bonus_all"		            "+$all"
 "DOTA_Tooltip_Ability_item_force_blade_bonus_attackspeed"		            "+$attack"

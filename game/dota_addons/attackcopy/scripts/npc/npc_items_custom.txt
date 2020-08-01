@@ -2991,7 +2991,7 @@
 {
     "BaseClass"						"item_lua"
     "ScriptFile"                    "items/force_blade.lua"
-    "AbilityTextureName"		    "item_princes_knife"
+    "AbilityTextureName"		    "glare_edge"
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "ItemShopTags"					"damage;attack speed"
     "ItemQuality"					"common"
@@ -4892,13 +4892,13 @@
 {
     "MaxUpgradeLevel"               "3"
     "ItemBaseLevel"                 "1"
-	"AbilityCooldown"				"4.0"
+	"AbilityCooldown"				"2.0"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"40 60 80"
+			"bonus_strength"		"40 65 90"
 		}
 		"02"
 		{
@@ -4913,17 +4913,17 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.4 1.6 1.8"
+			"health_regen_pct"		"1.2 1.4 1.6"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"4"
+			"cooldown_melee"		"2"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"4"
+			"cooldown_ranged_tooltip"		"2"
 		}
 	}
 }
@@ -4932,7 +4932,7 @@
     "ID"							"70123"
     "Model"							"models/props_gameplay/recipe.vmdl"
     "BaseClass"						"item_recipe_heart"
-    "ItemCost"						"1300"	
+    "ItemCost"						"600"	
     "ItemShopTags"					""
     "ItemRecipe"					"1"
     "ItemResult"					"item_great_heart"
@@ -4953,13 +4953,13 @@
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
     "MaxUpgradeLevel"               "3"
     "ItemBaseLevel"                 "2"
-	"AbilityCooldown"				"4.0"
+	"AbilityCooldown"				"2.0"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"40 60 80"
+			"bonus_strength"		"40 65 90"
 		}
 		"02"
 		{
@@ -4974,17 +4974,17 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.4 1.6 1.8"
+			"health_regen_pct"		"1.2 1.4 1.6"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"4"
+			"cooldown_melee"		"2"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"4"
+			"cooldown_ranged_tooltip"		"2"
 		}
 	}
 }
@@ -4993,7 +4993,7 @@
     "ID"							"70177"
     "Model"							"models/props_gameplay/recipe.vmdl"
     "BaseClass"						"item_recipe_heart"
-    "ItemCost"						"1700"	
+    "ItemCost"						"900"	
     "ItemShopTags"					""
     "ItemRecipe"					"1"
     "ItemResult"					"item_ultimate_heart"
@@ -5014,13 +5014,13 @@
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
     "MaxUpgradeLevel"               "3"
     "ItemBaseLevel"                 "3"
-	"AbilityCooldown"				"4.0"
+	"AbilityCooldown"				"2.0"
 	"AbilitySpecial"
 	{
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"40 60 80"
+			"bonus_strength"		"40 65 90"
 		}
 		"02"
 		{
@@ -5035,17 +5035,17 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.4 1.6 1.8"
+			"health_regen_pct"		"1.2 1.4 1.6"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"4"
+			"cooldown_melee"		"2"
 		}
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"4"
+			"cooldown_ranged_tooltip"		"2"
 		}
 	}
 }
@@ -6275,6 +6275,44 @@
             "var_type"			    "FIELD_FLOAT"
             "pct_damage"	        "1.25"
         }
+	}
+}
+"item_assault"
+{
+	"MaxUpgradeLevel"               "2"
+    "ItemBaseLevel"                 "1"
+	"AbilitySpecial"
+	{
+		"01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_attack_speed"	"35 60"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_armor"			"9 18"
+        }
+        "03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "aura_radius"			"1200"
+        }
+        "04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "aura_attack_speed"		"20 40"
+        }
+        "05"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "aura_positive_armor"	"5 7"
+        }
+        "06"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "aura_negative_armor"	"-5 -7"
+        }			
 	}
 }
 "item_recipe_assault_temp"

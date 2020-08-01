@@ -121,7 +121,16 @@ if IsServer() then
 				damage_flags = 16,
 				victim = target,
 			})
-			ParticleManager:CreateParticle("particles/custom/force_blade_child.vpcf", PATTACH_ABSORIGIN_FOLLOW, target)
+			local fx = ParticleManager:CreateParticle("particles/custom/glare_edge.vpcf", PATTACH_POINT_FOLLOW, target)
+			ParticleManager:SetParticleControlEnt(
+				fx,
+				0,
+				target,
+				PATTACH_POINT,
+				"attach_hitloc",
+				target:GetAbsOrigin(), -- unknown
+				true -- unknown, true
+			)
 			create_popup({
 				target = target,
 				value = finaldamage,

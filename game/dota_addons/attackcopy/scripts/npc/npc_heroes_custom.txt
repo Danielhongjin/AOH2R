@@ -373,7 +373,6 @@
 {
 	"AttackRange"		"320"
     "Ability4"		"monkey_king_custom_jingu_mastery"
-    "Ability5"		"generic_hidden"
     "Ability13"		"special_bonus_cooldown_reduction_12"
 }
 "npc_dota_hero_morphling"

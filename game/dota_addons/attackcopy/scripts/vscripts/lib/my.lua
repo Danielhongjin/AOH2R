@@ -171,7 +171,7 @@ function refresh_players()
 			if not hero:IsAlive() then
 				hero:RespawnUnit()
 			end
-			hero:AddNewModifier(hero, nil, "modifier_roundend_effect", {duration = 6})
+			hero:AddNewModifier(hero, nil, "modifier_roundend_effect", {duration = 5})
 		end
 	end
 end
@@ -333,11 +333,11 @@ function modifier_roundend_effect:DeclareFunctions()
 end
 
 function modifier_roundend_effect:GetModifierHealthRegenPercentage()
-    return 18.0	
+    return 10.0	
 end
 
 function modifier_roundend_effect:GetModifierTotalPercentageManaRegen()
-    return 18.0
+    return 10.0
 end
 
 function modifier_roundend_effect:OnCreated()
@@ -348,7 +348,7 @@ function modifier_roundend_effect:OnCreated()
 		0,
 		parent,
 		PATTACH_ABSORIGIN_FOLLOW,
-		"attach_hitloc",
+		"attach_origin",
 		parent:GetAbsOrigin(), -- unknown
 		true -- unknown, true
 	)

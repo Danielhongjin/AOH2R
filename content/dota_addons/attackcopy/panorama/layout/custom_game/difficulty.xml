@@ -14,19 +14,19 @@
 		<snippet name="Difficulty">
 			<Panel class="DifficultyWindow" hittest="false">
 				<Panel id="DifficultyText" hittest="false"> 
-					<Label class="DifficultyTextLabel" text="Difficulty Vote" />
+					<Label class="DifficultyTextLabel" id="DifficultyTextLabel"  text="" />
 				</Panel> 
 				<Panel class="DifficultyList" hittest="false"> 
 					<Panel id="Easy" class="DifficultyBox"> 
-						<Label class="DifficultyLabel" text="Easy" />
+						<Label class="DifficultyLabel" id="EasyLabel" text="" />
 						<Label class="Description" id="EasyDescription" text="Enemies 20% Less Damage" />
 					</Panel>
 					<Panel id="Normal" class="DifficultyBox">
-						<Label class="DifficultyLabel" text="Normal" />
+						<Label class="DifficultyLabel" id="NormalLabel" text="" />
 						<Label class="Description" id="MediumDescription" text="Default Difficulty" />
 					</Panel>
 					<Panel id="Hard" class="DifficultyBox">
-						<Label class="DifficultyLabel" text="Hard" />
+						<Label class="DifficultyLabel" id="HardLabel" text="" />
 						<Label class="Description" id="HardDescription" text="Enemies 0.5% Mana Regeneration" />
 					</Panel>
 				</Panel>

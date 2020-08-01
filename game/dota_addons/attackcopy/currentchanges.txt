@@ -1,17 +1,29 @@
-General boss armor and damage reductions.
-New swarm round with Beastmaster replaced old round 18 Razor - typical swarm round with three beastmasters.
+Finally changed the loading and preview images.
+More items translated to russian localization, difficulty vote translated thanks to ★[NightForest]★.
 
-Butterfly agility reduced, bonus damage and attack speed increased.
-Rapier and upgrades bonus damage reduced by 10%.
-Spell Blade renamed to Glare Edge, icon changed. Now reduces your damage by 40% overall, magic damage massively increased. Now gives attack speed instead of damage.
-Vanguard upgrades damage block increased, chances decreased from 75% to 60%.
+Map look changed to ti10 radiant.
+Outpost hp and mana heal rate increased.
+Players can no longer get stuck behind the enemy spawn.
+Round end will no longer fully heal you, will heal you by 50%.
 
-Phantom Assassin damage scaling reduced.
-Treant Protector intelligence gain from 1.8 to 4.5.
+Beastmaster round overall damage increased, slightly tankier spawns.
+Kunkka boss health and damage reduced.
+Legion Commander boss damage and health increased.
+Lone Druid boss spirit bear damage and health increased.
+Storm Spirit boss will now target the farthest hero when using ball lightning.
+Techies bosses damage decreased.
+Tiny bosses spawn more frequently now.
+Zeus boss nerfed damage.
+
+Assault Cuirass level 1 now has proper stats.
+Glare Edge icon and particle changed.
+Heart upgrades passive healing reduced by 0.2%, healing amp cooldown reduced from 4 to 2 seconds. Strength gain back in line with reaver upgrades, recipe costs greatly reduced.
 TO-DO
 
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
 
 
+
 Implementing larger map and curse system - longer you're away from friendly structures the more debuffed you are and the more you get randomly attacked by phenomena.
 
+add sounds to difficulty vote and selection.

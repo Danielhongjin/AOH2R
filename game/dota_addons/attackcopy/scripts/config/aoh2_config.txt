@@ -378,7 +378,7 @@
 				"NPCName"				"npc_boss_tiny"
 				"TotalUnitsToSpawn"		"4"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"23"
+				"SpawnInterval"			"20"
 			}
 		}
 		

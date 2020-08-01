@@ -1,4 +1,4 @@
-@define TotalLength: 40s;
+@define TotalLength: 30s;
 @define TimingFunc: linear;
 @define IterationCount: 1;
 @define AnimationDelay: 0s;
@@ -33,21 +33,20 @@
 .SeqImg
 {
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 0% 0%;
   background-size: 100% 100%;
 }
 
 #CustomBg
 {
-
-
-    overflow: clip;
+   overflow: clip;
   pre-transform-scale2d: 1.0;
   animation-name: gamemode_anim;
   animation-delay: AnimationDelay;
   animation-duration: TotalLength;
   animation-timing-function: TimingFunc;
   animation-iteration-count: IterationCount;
+
 }
 
 #gamemode
@@ -61,12 +60,11 @@
 {
   0%
   {
-    transform: translateX( -400px ) translateY( -200px );
-    pre-transform-scale2d: .8;
+    
   }
 
   100%
   {
-    transform: translateX( -400px ) translateY( -400px );
+		pre-transform-scale2d: 1.3;
   }
 }

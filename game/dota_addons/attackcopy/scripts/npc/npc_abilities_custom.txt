@@ -3938,7 +3938,7 @@
     "AbilityCastRange"				"1000"
     "AbilityCastPoint"				"0.0"
     "AbilityCooldown"				"0.0"
-    "AbilityDamage"					"1000"
+    "AbilityDamage"					"900"
     "AbilityManaCost"				"0"
     "AbilitySpecial"
     {
@@ -4147,7 +4147,7 @@
         "06"
         {
             "var_type"					"FIELD_INTEGER"
-            "torrent_damage"			"1000"
+            "torrent_damage"			"800"
         }
     }		
     "AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -4280,7 +4280,7 @@
         "02"
         {
             "var_type"					"FIELD_INTEGER"
-            "bounces"					"5"
+            "bounces"					"4"
         }
         "03"
         {
@@ -5947,7 +5947,7 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "arc_damage"			"225"
+            "arc_damage"			"210"
         }
         "02"
         {
@@ -5986,7 +5986,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"			"1.25"
+			"delay"			"1.5"
 		}
 		"02"
 		{
@@ -6069,7 +6069,7 @@
         "01"
         {
             "var_type"				"FIELD_FLOAT"
-            "damage_health_pct"		"7"
+            "damage_health_pct"		"6"
         }
         "02"
         {
@@ -7416,17 +7416,17 @@
         "01"
         {
             "var_type"					"FIELD_INTEGER"
-            "radius"					"220"
+            "radius"					"230"
         }
 		"02"
         {
             "var_type"					"FIELD_FLOAT"
-            "healing"					"2.2"
+            "healing"					"2.5"
         }
 		"03"
         {
             "var_type"					"FIELD_FLOAT"
-            "mp_healing"					"0.6"
+            "mp_healing"					"1.5"
         }
 		"04"
         {
@@ -15757,7 +15757,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"600"
+			"damage"					"500"
 		}
 		"04"
 		{
@@ -15805,7 +15805,7 @@
 		"02"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"damage"					"1050"
+			"damage"					"850"
 			"LinkedSpecialBonus"		"special_bonus_unique_techies"
 		}
 		"03"
@@ -17638,7 +17638,7 @@
 		"AbilitySound"					"Hero_Undying.Tombstone"
 		"AbilityCastAnimation"			"ACT_DOTA_UNDYING_TOMBSTONE"
 		"AbilityCastGestureSlot"		"DEFAULT"
-		"AbilityCastRange"				"600"
+		"AbilityCastRange"				"900"
 		"AbilityCastPoint"				"0.45"
 		"AbilityCooldown"				"14"
 		"AbilityManaCost"				"0"
@@ -18789,7 +18789,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage"						"60"
+				"damage"						"100"
 			}
 			"02"
 			{
@@ -18829,7 +18829,7 @@
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_increase"				"20"
+				"damage_increase"				"30"
 			}
 			"10"
 			{
@@ -19100,10 +19100,9 @@
 		"AbilityTextureName"			"storm_spirit_ball_lightning"
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"abilities/bosses/boss_storm_spirit_teleport.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityCastRange"				"1200"
 		"AbilityCastPoint"				"0.1"
 		"AbilityCooldown"				"0"
 		"AbilityManaCost"				"180"
@@ -19411,7 +19410,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"axe_damage"				"120"
+				"axe_damage"				"180"
 			}
 			"05"
 			{
@@ -19501,7 +19500,7 @@
 			"03"
 			{
 				"var_type"			    "FIELD_INTEGER"
-				"damage"	        	"150"			
+				"damage"	        	"175"			
 			}
 			"04"
 			{

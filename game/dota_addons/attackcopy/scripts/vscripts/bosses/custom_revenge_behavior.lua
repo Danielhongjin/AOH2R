@@ -95,7 +95,7 @@ if IsServer() then
 				if self.parent:IsChanneling() or self.parent:GetCurrentActiveAbility() ~= nil or self.parent:IsCommandRestricted() or self.parent:IsSilenced() then
 					return 0.5
 				end
-				self.parent:Heal(self.parent:GetMaxHealth() * 0.04, nil)
+				self.parent:Heal(self.parent:GetMaxHealth() * 0.03, nil)
 				self.parent:CastAbilityNoTarget(self.revengeAbility, -1)
 				self.currentlyRevenge = false
 			end

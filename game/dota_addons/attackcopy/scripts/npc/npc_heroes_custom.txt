@@ -602,6 +602,12 @@
     "Ability4"		"spectre_custom_reality"
 	"Ability5"		"spectre_custom_haunt_single"
     "Ability6"		"spectre_custom_haunt"
+	"Ability10"		"special_bonus_hp_regen_8"
+	"Ability14"		"special_bonus_strength_20"
+	"Ability15"		"special_bonus_magic_resistance_20"
+	"AttributeStrengthGain"		"3.000000"
+	"AttributeAgilityGain"		"2.600000"
+
 }
 "npc_dota_hero_spirit_breaker"
 {
@@ -679,6 +685,7 @@
 	"AttributeStrengthGain"		"4.400000"
 	"AttributeBaseAgility"		"10"
 	"AttributeAgilityGain"		"1.400000"
+	"AttributeIntelligenceGain"		"4.500000"
 }
 "npc_dota_hero_tusk"
 {

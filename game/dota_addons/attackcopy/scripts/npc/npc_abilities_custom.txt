@@ -418,7 +418,7 @@
         "01"
         {
             "var_type"						"FIELD_FLOAT"
-            "mana_void_damage_per_mana"		"3.25"
+            "mana_void_damage_per_mana"		"2.75"
         }
         "02"
         {
@@ -1054,7 +1054,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"			"300"
+			"radius"			"275"
 		}
 		"02"
 		{
@@ -1105,7 +1105,7 @@
         "01"
         {
             "var_type"			    "FIELD_INTEGER"
-            "radius"			    "300"
+            "radius"			    "275"
         }
         "02"
         {
@@ -1130,7 +1130,7 @@
         "06"
         {
             "var_type"				"FIELD_INTEGER"
-            "nova_damage"			"850"
+            "nova_damage"			"750"
         }
     }
 }	
@@ -1323,7 +1323,7 @@
 		"10"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"160"
+			"damage"			"150"
 		}
     }
 }
@@ -6782,7 +6782,7 @@
 		"01"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"damage_multiplier"				"1.1"
+			"damage_multiplier"				"1.0"
 		}
 		"02"
 		{
@@ -6802,7 +6802,7 @@
 		"05"
 		{
 			"var_type"						"FIELD_FLOAT"
-			"damage_multiplier_scepter"		"1.5"
+			"damage_multiplier_scepter"		"1.35"
 		}						
 	}
 	"OnSpellStart"
@@ -9571,7 +9571,7 @@
         "02"
         {	
             "var_type"			    "FIELD_INTEGER"
-            "mana_amp"	    "5"
+            "mana_amp"	    "4"
         }
         "03"
         {	
@@ -9635,17 +9635,17 @@
         "04"
         {
             "var_type"				"FIELD_INTEGER"
-            "base_damage"			"80"
+            "base_damage"			"60"
         }
         "05"
         {
             "var_type"				"FIELD_INTEGER"
-            "attack_factor"			"-55"
+            "attack_factor"			"-70"
         }
         "06"
         {
             "var_type"				"FIELD_INTEGER"
-            "attack_factor_tooltip"	"45"
+            "attack_factor_tooltip"	"30"
         }
         "07"
         {
@@ -19327,6 +19327,370 @@
 			{
 				"var_type"			    "FIELD_FLOAT"
 				"cooldown"	    "0.6"
+			}
+		}
+	}
+	"boss_beastmaster_wild_axes_wrapper"
+	{
+		"BaseClass"						"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityTextureName" 			"elder_titan_echo_stomp"
+		"AbilityCastRange"				"800"					
+		"AbilityCooldown"				"15.0"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"175"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"anim_duration"			"2.0"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"24"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_aoe"
+				"Target"				"POINT"
+				"radius"	"%radius"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+				"anim_duration"	"%anim_duration"
+			}
+		}
+	}
+	"boss_beastmaster_wild_axes"
+	{
+		"BaseClass"						"beastmaster_wild_axes"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+		"AbilitySound"					"Hero_Beastmaster.Wild_Axes"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"0"		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"radius"					"175"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"spread"					"450"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range"						"1500"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"axe_damage"				"120"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"						"0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_amp"				"0"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"min_throw_duration"						"0.4"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"max_throw_duration"						"1.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
+	}
+	"boss_beastmaster_hawk_wrapper"
+	{
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"9999"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"21"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" 		"1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"7"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_target"
+				"Target"				"TARGET"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+			}
+		}
+	}
+	"boss_beastmaster_hawk"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"		            "abilities/bosses/boss_beastmaster_hawk.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityTextureName" 			"beastmaster_call_of_the_wild_hawk"
+		"AbilityCastRange"				"9999"					
+		"AbilityCooldown"				"21.0"
+		"AbilityManaCost"				"0"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"interval"	        	"0.3"			
+			}
+			"02"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"radius"	        	"200"			
+			}
+			"03"
+			{
+				"var_type"			    "FIELD_INTEGER"
+				"damage"	        	"150"			
+			}
+			"04"
+			{
+				"var_type"			    "FIELD_FLOAT"
+				"duration"	       		"14"			
+			}
+		}
+	}
+	"boss_beastmaster_inner_beast"
+	{
+		"BaseClass"						"beastmaster_inner_beast"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+
+
+		// Casting
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"	"40"
+			}
+		}
+	}
+	"boss_beastmaster_primal_roar_wrapper"
+	{
+		"BaseClass"                     "ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"				"0.0"
+		"AbilityCooldown"				"15"
+		"AbilityManaCost"				"0"
+		"IsCastableWhileHidden" "1"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"delay"			"1.4"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ability_index"			"22"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"			"175"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"is_line"			"1"
+			}
+		}
+		"OnSpellStart"
+		{
+			"RunScript"
+			{
+				"ScriptFile"	"abilities\other\generic.lua"
+				"Function"		"generic_target"
+				"Target"				"TARGET"
+				"delay"			"%delay"
+				"ability_index"	"%ability_index"
+				"is_line"	"%is_line"
+				"radius"	"%radius"
+			}
+		}
+	}
+	"boss_beastmaster_primal_roar"
+	{
+		"BaseClass"						"beastmaster_primal_roar"
+		"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"		
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+		"AbilitySound"					"Hero_Beastmaster.Primal_Roar"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCooldown"				"27.0"
+		"AbilityManaCost"				"0"
+		"AbilityCastRange"				"9000"
+		"AbilityModifierSupportValue"	"0.6"	// Applies multiple modifiers
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"0.75"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"300"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"side_damage"				"300"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage_radius"				"175"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_movement_speed_pct"	"-60"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow_attack_speed_pct"		"-60"
+			}
+			"07"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"push_distance"				"450"
+			}
+			"08"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"push_duration"				"1.0"
+			}
+			"09"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"3 3.5 4"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"movement_speed"			"40"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"movement_speed_duration"			"3.0"
+			}
+		}
+	}
+	"boss_beastmaster_init"
+	{
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"	 				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilitySpecial"
+		{
+			"1"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"roar_cooldown"		"16"
+			}
+			"2"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"hawk_cooldown"		"8"
+			}
+		}
+		"Modifiers"
+		{
+			"modifier_beastmaster_init"
+			{
+				"Passive"						"1"
+				"IsHidden"						"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities\bosses\boss_beastmaster_init.lua"
+						"Function"		"init"
+					}
+				}
 			}
 		}
 	}

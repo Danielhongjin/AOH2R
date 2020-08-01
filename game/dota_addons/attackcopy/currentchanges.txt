@@ -1,8 +1,17 @@
-New boss The Box replaced old round 16 Phoenix and Winter Wyvern bosses - relief boss after Legion Commander. Try hitting the box.
+General boss armor and damage reductions.
+New swarm round with Beastmaster replaced old round 18 Razor - typical swarm round with three beastmasters.
 
+Butterfly agility reduced, bonus damage and attack speed increased.
+Rapier and upgrades bonus damage reduced by 10%.
+Spell Blade renamed to Glare Edge, icon changed. Now reduces your damage by 40% overall, magic damage massively increased. Now gives attack speed instead of damage.
+Vanguard upgrades damage block increased, chances decreased from 75% to 60%.
+
+Phantom Assassin damage scaling reduced.
+Treant Protector intelligence gain from 1.8 to 4.5.
 TO-DO
 
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
 
 
 Implementing larger map and curse system - longer you're away from friendly structures the more debuffed you are and the more you get randomly attacked by phenomena.
+

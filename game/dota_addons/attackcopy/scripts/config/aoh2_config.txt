@@ -324,7 +324,7 @@
 			}	
 		}
 		
-		"10" // Bristle
+		"10" // Storm Spirit
 		{
 			"Title"						"Maelstrom"
 			"MaxGold"					"4600"
@@ -452,7 +452,7 @@
 			}
 		}
 		
-		"16" // Dragons
+		"16" // Box
 		{
 			"Title"						"What's In The Box?"
 			"MaxGold"					"4700"
@@ -487,20 +487,35 @@
 			}
 		}
 		
-		"18" // Razor
+		"18" // Beastmaster
 		{
-			"Title"						"Narrow Maze"
+			"Title"						"Day At The Zoo"
 			"MaxGold"					"4700"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"4000"
 			
-			"a"
+			"a" 
 			{
-				"NPCName"				"npc_boss_razor"
-				"TotalUnitsToSpawn"		"1"
+				"NPCName"				"npc_boss_alpha_wolf"
+				"TotalUnitsToSpawn"		"40"
+				"UnitsPerSpawn"			"5"
+				"SpawnInterval"			"5"
+			}
+			"b" 
+			{
+				"WaitForTime"			"6"
+				"NPCName"				"npc_boss_boar"
+				"TotalUnitsToSpawn"		"15"
+				"UnitsPerSpawn"			"3"
+				"SpawnInterval"			"7"
+			}
+			"c" 
+			{
+				"NPCName"				"npc_boss_beastmaster"
+				"TotalUnitsToSpawn"		"2"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"25"
+				"SpawnInterval"			"22"
 			}
 		}
 			

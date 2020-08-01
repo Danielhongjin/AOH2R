@@ -26,6 +26,7 @@ local spells_aoe = {[0] = "custom_crystal_nova",
 "boss_legion_commander_overwhelming_odds",
 "boss_legion_commander_gods_rebuke",
 "boss_abyssal_underlord_shockwave",
+"boss_beastmaster_wild_axes",
 }
 local spells_target = {[0] = "custom_static_link", 
 "custom_frostbite", 
@@ -34,7 +35,7 @@ local spells_target = {[0] = "custom_static_link",
 "custom_doom", 
 "custom_lightning_bolt", -- index 5
 "custom_chaos_bolt", 
-"custom_sunray", -- DEPRECATED
+"boss_beastmaster_hawk",
 "custom_reality_rift",
 "custom_primal_roar",
 "custom_paralyzing_cask", -- index 10
@@ -49,6 +50,7 @@ local spells_target = {[0] = "custom_static_link",
 "boss_abyssal_underlord_firestorm",
 "boss_storm_spirit_electric_vortex", -- index 20
 "boss_storm_spirit_sigil",
+"boss_beastmaster_primal_roar",
 }
 --Fires a warning aoe to a point and casts the spell immediately
 function generate_warning_aoe_noanim(keys)
@@ -139,8 +141,13 @@ function generic_aoe(keys)
 				return 0.5
 			end
 			if keys.is_line and keys.is_line == 1 then
-				local norm = (point - caster:GetAbsOrigin()):Normalized()
-				norm = caster:GetAbsOrigin() + norm * keys.line_length
+				local norm = 0
+				if keys.line_length then
+					norm = (point - caster:GetAbsOrigin()):Normalized()
+					norm = caster:GetAbsOrigin() + norm * keys.line_length
+				else
+					norm = point
+				end
 				local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 				ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 				ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
@@ -290,24 +297,34 @@ function generic_target(keys)
 			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() then
 				return 0.5
 			end
-		if caster:IsMoving() then
-			caster:Stop()
-			caster:FaceTowards(keys.target:GetAbsOrigin())
-		end
-		EmitSoundOn("Hero_Mars.Spear.Cast", caster)
-		target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
-		StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / delay})
-		caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
-		Timers:CreateTimer(
-			delay - spell:GetCastPoint(), 
-			function()
-				if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
-					return 0.5
-				end
-				spell:EndCooldown()
-				caster:CastAbilityOnTarget(target, spell, -1)
+			if keys.is_line and keys.is_line == 1 then
+				local start_radius = keys.initial_radius or keys.radius
+				local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+				ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
+				ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())
+				ParticleManager:SetParticleControlEnt(fx, 2, target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControl(fx, 3, Vector(keys.radius, start_radius, 1))
+				ParticleManager:SetParticleControl(fx, 4, Vector(keys.delay, 1, 1))
+				ParticleManager:ReleaseParticleIndex(fx)
 			end
-		)
+			if caster:IsMoving() then
+				caster:Stop()
+				caster:FaceTowards(keys.target:GetAbsOrigin())
+			end
+			EmitSoundOn("Hero_Mars.Spear.Cast", caster)
+			target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
+			StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / delay})
+			caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
+			Timers:CreateTimer(
+				delay - spell:GetCastPoint(), 
+				function()
+					if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil then
+						return 0.5
+					end
+					spell:EndCooldown()
+					caster:CastAbilityOnTarget(target, spell, -1)
+				end
+			)
 		end
 	)
 end
@@ -327,8 +344,13 @@ function generic_target_aoe(keys)
 			
 			if keys.is_line and keys.is_line == 1 then
 				local start_radius = keys.initial_radius or keys.radius
-				local norm = (point - caster:GetAbsOrigin()):Normalized()
-				norm = caster:GetAbsOrigin() + norm * keys.line_length
+				local norm = 0
+				if keys.line_length then
+					norm = (point - caster:GetAbsOrigin()):Normalized()
+					norm = caster:GetAbsOrigin() + norm * keys.line_length
+				else
+					norm = point
+				end
 				local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
 				ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
 				ParticleManager:SetParticleControl(fx, 1, caster:GetAbsOrigin())

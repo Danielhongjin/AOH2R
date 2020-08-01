@@ -24,17 +24,17 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_damage_melee"	"100"
+			"block_damage_melee"	"150"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_damage_ranged"	"45"
+			"block_damage_ranged"	"90"
 		}			
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_chance"			"75"
+			"block_chance"			"60"
 		}
 		"07"
 		{
@@ -54,17 +54,17 @@
 		"10"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bash_duration"			"0.8"
+			"bash_duration"			"0.5"
 		}
 		"11"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"bash_cooldown"			"1.5"
+			"bash_cooldown"			"1.0"
 		}
 		"12"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_chance_damage"	"275"
+			"bonus_chance_damage"	"300"
 		}
 		"13"
 		{
@@ -249,12 +249,12 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cleave_damage_percent"	"85"
+			"cleave_damage_percent"	"70"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"cleave_damage_percent_creep"	"85"
+			"cleave_damage_percent_creep"	"70"
 		}
 		"06"
 		{
@@ -520,7 +520,7 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_agility"			"45 90"
+            "bonus_agility"			"35 70"
         }
         "02"
         {
@@ -530,12 +530,12 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_attack_speed"	"30 60"
+            "bonus_attack_speed"	"45 90"
         }
         "04"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_damage"			"45 90"
+            "bonus_damage"			"65 130"
         }
     }
 }
@@ -565,27 +565,27 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_damage_melee"	"105"
+			"block_damage_melee"	"210"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_damage_ranged"	"52"
+			"block_damage_ranged"	"105"
 		}			
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_chance"			"75"
+			"block_chance"			"60"
 		}	
 		"09"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_damage_melee_active"	"100"
+			"block_damage_melee_active"	"210"
 		}
 		"10"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_damage_ranged_active"	"100"
+			"block_damage_ranged_active"	"105"
 		}		
 	}
 }
@@ -1012,6 +1012,17 @@
             "replenish_mana"		"125"
         }
     }
+}
+"item_recipe_ultimate_scepter_2"
+{
+	"ItemRequirements"
+	{
+		"01"						""
+	}
+}
+"item_ultimate_scepter_2"
+{
+	"ItemPurchasable"				"0"
 }
 "item_recipe_hand_of_midas"
 {
@@ -1713,12 +1724,12 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_damage"			"65 100"
+            "bonus_damage"			"60 120"
         }
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-			"aura_damage"			"90 180"
+            "aura_damage"			"90 180"
         }
         "04"
         {
@@ -1944,6 +1955,7 @@
 }
 "item_silver_edge"
 {
+	"AbilityCooldown"				"16.0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -1969,7 +1981,7 @@
 		"09"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"windwalk_bonus_damage"	"500"
+			"windwalk_bonus_damage"	"750"
 		}
 		"11"
 		{
@@ -2279,7 +2291,12 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"block_damage_melee"	"80"
+			"block_damage_melee"	"90"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"block_damage_ranged"	"50"
 		}
 	}
 }
@@ -2718,6 +2735,36 @@
 		}
 	}
 }
+
+"item_recipe_aghanim_consumable"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1600"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_aghanim_consumable"
+    "ItemRequirements"
+    {
+        "01"						"item_ultimate_scepter"
+    }
+}
+"item_aghanim_consumable"
+{
+    "BaseClass"                     "item_lua"
+	"ScriptFile"                    "items/item_aghanim_consumable.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityTextureName"            "item_ultimate_scepter"
+	"ItemPurchasable"				"1"
+	"AbilityCastRange"				"1200"
+	"ItemShopTags"					"int;str;agi;mana_pool;health_pool;hard_to_tag"
+	"ItemQuality"					"rare"
+	"ItemAliases"					"ags;ultimate;aghanim's scepter;ags"
+	"AbilitySpecial"
+    {			
+    }
+}
 "item_recipe_blast_staff_1"
 {
     "BaseClass"						"item_datadriven"
@@ -2937,18 +2984,18 @@
 	"ItemResult"					"item_force_blade"
 	"ItemRequirements"
 	{
-		"01"						"item_claymore;item_javelin;item_crown;item_ultimate_orb"
+		"01"						"item_blitz_knuckles;item_javelin;item_crown;item_ultimate_orb"
 	}
 }
 "item_force_blade"
 {
     "BaseClass"						"item_lua"
     "ScriptFile"                    "items/force_blade.lua"
-    "AbilityTextureName"		    "force_blade"
+    "AbilityTextureName"		    "item_princes_knife"
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "ItemShopTags"					"damage;attack speed"
     "ItemQuality"					"common"
-    "ItemAliases"					"magic blade"
+    "ItemAliases"					"Glare Edge"
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilitySpecial"
@@ -2956,7 +3003,7 @@
 		"01"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"magic_percent"            	"25"
+			"magic_percent"            	"90"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 		"02"
@@ -2967,7 +3014,13 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"			"40"
+			"bonus_attackspeed"			"45"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"reduced_damage"			"40"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 	}
@@ -3159,6 +3212,7 @@
 		}
 	}
 }
+
 "item_recipe_ancient_janggo_2"
 {
     "BaseClass"						"item_datadriven"
@@ -3403,7 +3457,7 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_damage"			"65 100"
+            "bonus_damage"			"60 120"
         }
         "03"
         {
@@ -5708,17 +5762,17 @@
         "01"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage"		"200 400 800"
+            "bonus_damage"		"180 360 720"
         }
         "02"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_base_damage"		"50 100 200"
+            "bonus_base_damage"		"45 90 180"
         }
         "03"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage_tooltip"		"250 500 1000"
+            "bonus_damage_tooltip"		"225 450 900"
         }
 		"04"
         {
@@ -5772,17 +5826,17 @@
         "01"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage"		"200 400 800"
+            "bonus_damage"		"180 360 720"
         }
         "02"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_base_damage"		"50 100 200"
+            "bonus_base_damage"		"45 90 180"
         }
         "03"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage_tooltip"		"250 500 1000"
+            "bonus_damage_tooltip"		"225 450 900"
         }
 		"04"
         {
@@ -5836,17 +5890,17 @@
         "01"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage"		"200 400 800"
+            "bonus_damage"		"180 360 720"
         }
         "02"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_base_damage"		"50 100 200"
+            "bonus_base_damage"		"45 90 180"
         }
         "03"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage_tooltip"		"250 500 1000"
+            "bonus_damage_tooltip"		"225 450 900"
         }
 		"04"
         {
@@ -6813,7 +6867,7 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_agility"			"45 90"
+            "bonus_agility"			"35 70"
         }
         "02"
         {
@@ -6823,12 +6877,12 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_attack_speed"	"30 60"
+            "bonus_attack_speed"	"45 90"
         }
         "04"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_damage"			"45 90"
+            "bonus_damage"			"65 130"
         }
     }
 }

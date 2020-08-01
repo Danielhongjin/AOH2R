@@ -391,23 +391,42 @@
 "DOTA_Tooltip_Ability_custom_antimage_revenge_radius"            "Radius:"
 "DOTA_Tooltip_Ability_custom_antimage_revenge_explosion_radius"            "Explosion Radius:"
 "DOTA_Tooltip_Ability_custom_antimage_revenge_damage"            "Explosion Damage:"
-"npc_boss_axe"                     "Axe (Boss)"
 
-"DOTA_Tooltip_ability_custom_berserkers_call"										"Berserker's Call"
-"DOTA_Tooltip_ability_custom_berserkers_call_Description"							"Axe taunts nearby enemy units, forcing them to attack him, while he gains bonus armor during the duration."
-"DOTA_Tooltip_ability_custom_berserkers_call_Note0"								    "Affects units with spell immunity."
-"DOTA_Tooltip_ability_custom_berserkers_call_Lore"									"Mogul Khan's warcry taunts opponents into engaging in an unconquerable battle with the Axe." 
-"DOTA_Tooltip_ability_custom_berserkers_call_radius"								"RADIUS:"
-"DOTA_Tooltip_ability_custom_berserkers_call_bonus_armor"							"BONUS ARMOR:"
-"DOTA_Tooltip_ability_custom_berserkers_call_duration"								"DURATION:"
+"npc_boss_beastmaster"                     "Beastmaster (Boss)"
+"npc_boss_boar"                     		"Boar (Boss)"
+"npc_boss_alpha_wolf"                     "Wolf (Boss)"
+"npc_boss_hawk"                     "Hawk (Boss)"
 
+"DOTA_Tooltip_ability_boss_beastmaster_wild_axes"									"Wild Axes"
+"DOTA_Tooltip_ability_boss_beastmaster_wild_axes_Description"						"Beastmaster sends his axes flying and calls them home again, slicing through enemy units and trees along their path."
+"DOTA_Tooltip_ability_boss_beastmaster_wild_axes_Lore"								"While learning to maneuver in nature alone, the Beastmaster also mastered the use of a pair of tomahawks, adept at cutting down trees as well as adversaries."
+"DOTA_Tooltip_ability_boss_beastmaster_wild_axes_Note0"								"This ability destroys trees."
+"DOTA_Tooltip_ability_boss_beastmaster_wild_axes_range"								"CAST RANGE:"
+"DOTA_Tooltip_ability_boss_beastmaster_wild_axes_axe_damage"							"DAMAGE PER AXE:"
 
-"DOTA_Tooltip_ability_custom_counter_helix"										    "Counter Helix"
-"DOTA_Tooltip_ability_custom_counter_helix_Description"							    "When attacked, Axe performs a helix counter attack, dealing pure damage to all nearby enemies."
-"DOTA_Tooltip_ability_custom_counter_helix_Note0"									"Counter Helix triggers when the attack hits."
-"DOTA_Tooltip_ability_custom_counter_helix_Lore"									"Axe is the only reinforcement this army needs."
-"DOTA_Tooltip_ability_custom_counter_helix_radius"									"RADIUS:"
-"DOTA_Tooltip_ability_custom_counter_helix_trigger_chance"							"%CHANCE TO HELIX:"
+"DOTA_Tooltip_ability_boss_beastmaster_hawk"						"Call of the Wild Hawk"
+"DOTA_Tooltip_ability_boss_beastmaster_hawk_Description"				"Beastmaster sends a hawk onto an enemy. Enemies near the hawk are shocked by powerful lightning magic every %interval% seconds."
+"DOTA_Tooltip_ability_boss_beastmaster_hawk_Lore"						"After befriending the strange beast of his childhood, Beastmaster has learned to call to animals in times of need."
+"DOTA_Tooltip_ability_boss_beastmaster_hawk_duration"				"SUMMON DURATION:"
+"DOTA_Tooltip_ability_boss_beastmaster_hawk_damage"				"HAWK DAMAGE:"
+"DOTA_Tooltip_ability_boss_beastmaster_hawk_radius"				"HAWK RADIUS:"
+
+"DOTA_Tooltip_ability_boss_beastmaster_inner_beast"									"Inner Beast"
+"DOTA_Tooltip_ability_boss_beastmaster_inner_beast_Description"						"Untaps the inner fury of nearby allies, passively increasing their attack speed."
+"DOTA_Tooltip_ability_boss_beastmaster_inner_beast_Lore"								"Beastmaster's ability to incite the innate strength of animals was seen in the mauling of the king of Slom."
+"DOTA_Tooltip_ability_boss_beastmaster_inner_beast_radius"							"RADIUS:"
+"DOTA_Tooltip_ability_boss_beastmaster_inner_beast_bonus_attack_speed"				"BONUS ATTACK SPEED:"
+
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar"									"Primal Roar"
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar_Description"						"Beastmaster lets loose a deafening roar that stuns, and shoves open a path to its target. All units in the path of the roar are damaged, while units shoved aside by the roar have their movement and attack speed slowed. Additionally, Beastmaster and his units gain %movement_speed%%% movement speed for 3 seconds."
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar_Lore"								"The Beastmaster has learned to channel his primal instincts into an animalistic roar, causing devastation in the ranks of enemies."
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar_duration"							"STUN DURATION:"
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar_damage"							"DAMAGE:"
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar_slow_duration"					"SLOW DURATION:"
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar_damage_radius"					"SHOUT WIDTH:"
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar_slow_movement_speed_pct"			"%MOVEMENT SLOW:"
+"DOTA_Tooltip_ability_boss_beastmaster_primal_roar_slow_attack_speed_pct"			"ATTACK SLOW:"
+
 "npc_boss_bloodseeker"                     "Bloodseeker (Boss)"
 
 
@@ -2627,6 +2646,15 @@
 
 "end_screen_victory"                            "VICTORY"
 "end_screen_defeat"                             "DEFEAT"
+
+
+"DOTA_Tooltip_Ability_item_aghanim_consumable"						"Aghanim's Blessing"
+"DOTA_Tooltip_ability_item_aghanim_consumable_Description"				"<h1>Passive: Ability Upgrade</h1>Permanently upgrades the ultimate, and some abilities, of all heroes. Retains stat bonuses from Aghanim Scepter."
+"DOTA_Tooltip_ability_item_aghanim_consumable_Lore"						"The scepter of a wizard with demigod-like powers."
+"DOTA_Tooltip_modifier_item_aghanim_permanent"					"Aghanim's Blessing"
+"DOTA_Tooltip_modifier_item_aghanim_permanent_Description"		"Permanently granted Aghanim's Scepter hero upgrade."
+
+
 "DOTA_Tooltip_Ability_item_arcane_staff"                            "Arcane Staff"
 "DOTA_Tooltip_Ability_item_arcane_staff_Description"			    "<h1>Passive: Arcane Crit</h1> Every instance of magical or pure damage that you cause deals %crit_damage_mult%%% damage, but spends mana equal to half of the added damage. Intelligence reduces mana cost.\n<font color='#F2A93E'>Arcane Crit does not stack.</font>"
 "DOTA_Tooltip_Ability_item_arcane_staff_Lore"				        "A staff made of permafrost, impossible to hold without gloves."
@@ -2724,13 +2752,13 @@
 "DOTA_Tooltip_modifier_diff_doom_marker_Description"		"This unit will take less damage from Ether Hammer."
 
 "DOTA_Tooltip_Ability_item_broken_bow"                              "Broken Bow"
-"DOTA_Tooltip_Ability_item_force_blade"                            "Spell Blade"
-"DOTA_Tooltip_Ability_item_force_blade_Description"			    "<h1>Passive: Force Multiplier</h1> Every autoattack deals an extra %magic_percent%%%  magic damage."
+"DOTA_Tooltip_Ability_item_force_blade"                            "Glare Edge"
+"DOTA_Tooltip_Ability_item_force_blade_Description"			    "<h1>Passive: Refractive Blade</h1> Reduces attack damage by %reduced_damage%%%, but causes autoattacks to deal %magic_percent%%% magic damage."
 "DOTA_Tooltip_Ability_item_force_blade_Note0"                            "Spell Blade damage is affected by spell amplification."
-"DOTA_Tooltip_Ability_item_force_blade_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_force_blade_bonus_all"		            "+$all"
-"DOTA_Tooltip_Ability_item_force_blade_bonus_damage"		            "+$damage"
-"DOTA_Tooltip_Ability_item_force_blade_Lore"		            "A weightless blade that smells of soap."
+"DOTA_Tooltip_Ability_item_force_blade_bonus_attackspeed"		            "+$attack"
+"DOTA_Tooltip_Ability_item_force_blade_Lore"		            	"A weightless, dull blade that burns away the flesh of its victims. Constantly smells of soap."
+
 "DOTA_Tooltip_Ability_item_greater_demon_talon"                            "Greater Demon Talon"
 "DOTA_Tooltip_Ability_item_greater_demon_talon_Description"			    "<h1>Active: Sleight of Hand</h1>Switches this item's damage type to magical, but lowers damage. \n<h1>Passive: Second Hand </h1> Every instance of damage deals %proc_damage% extra physical damage. Illusions deal half damage."
 "DOTA_Tooltip_ability_item_greater_demon_talon_Lore"                          "Seems to have a mind of its own."

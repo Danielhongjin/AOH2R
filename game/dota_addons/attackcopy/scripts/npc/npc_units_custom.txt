@@ -397,7 +397,7 @@
     "MagicalResistance"			"0"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"80"
-    "AttackDamageMax"			"90"
+    "AttackDamageMax"			"85"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"0.8"
     "AttackAnimationPoint"		"0.39"
@@ -481,7 +481,7 @@
     "ArmorPhysical"                         "-2"
     "AttackCapabilities"            		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"                       "15"
-    "AttackDamageMax"                       "16"
+    "AttackDamageMax"                       "15"
     "AttackRate"                            "1.0"
     "AttackAnimationPoint"         		    "0.4"
     "AttackAcquisitionRange"       		    "1600"
@@ -553,7 +553,7 @@
     "BountyGoldMin"                         "1"
     "BountyGoldMax"                         "1"
     "MovementCapabilities"          		"DOTA_UNIT_CAP_MOVE_GROUND"
-    "MovementSpeed"                         "320"
+    "MovementSpeed"                         "220"
     "StatusHealth"                          "4800"
     "StatusHealthRegen"                     "6"
     "StatusMana"                            "1000"
@@ -586,11 +586,11 @@
                 "Name"				"boss_undying_flesh_golem"
             }
         }
-        "EquippedItems"
+		"AttachWearables"
         {
-			"helm" { "ItemDef"     "392" }
-            "armor" { "ItemDef"     "393" }
-            "arms" { "ItemDef"     "616" }
+			"helm" { "ItemDef"     "9031" }
+            "armor" { "ItemDef"     "9032" }
+            "arms" { "ItemDef"     "9033" }
         }
     }
 }
@@ -620,11 +620,11 @@
     "Ability2"					"chaos_knight_chaos_strike"
 	"Ability3"					"custom_chaos_bolt_wrapper"
 
-    "ArmorPhysical"				"7"
+    "ArmorPhysical"				"6"
     "MagicalResistance"			"5"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"40"
-    "AttackDamageMax"			"200"
+    "AttackDamageMin"			"50"
+    "AttackDamageMax"			"160"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.1"
     "AttackAnimationPoint"		"0.39"
@@ -701,12 +701,12 @@
     "Ability3"                  "custom_caustic_finale"
 	"Ability4"                  "custom_reality_rift_wrapper"
 
-    "ArmorPhysical"				"4"
+    "ArmorPhysical"				"3"
     "MagicalResistance"			"4"
 
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"145"
-    "AttackDamageMax"			"165"
+    "AttackDamageMin"			"150"
+    "AttackDamageMax"			"150"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.3"
     "AttackAnimationPoint"		"0.39"
@@ -796,7 +796,7 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"4"			// Physical protection.
+	"ArmorPhysical"				"3"			// Physical protection.
 	"MagicalResistance"			"30"		// Magical protection.
 
 	// Attack
@@ -898,14 +898,14 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"4"			// Physical protection.
+	"ArmorPhysical"				"3"			// Physical protection.
 	"MagicalResistance"			"35"		// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageMin"			"75"			// Damage range min.
-	"AttackDamageMax"			"80"			// Damage range max.
+	"AttackDamageMax"			"75"			// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"1.5"		// Speed of attack.
 	"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
@@ -996,14 +996,14 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"6"			// Physical protection.
+	"ArmorPhysical"				"4"			// Physical protection.
 	"MagicalResistance"			"33"		// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"			"130"		// Damage range min.
-	"AttackDamageMax"			"160"		// Damage range max.
+	"AttackDamageMin"			"125"		// Damage range min.
+	"AttackDamageMax"			"125"		// Damage range max.
 	"AttackRate"				"1.5"		// Speed of attack.
 	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
@@ -1118,10 +1118,10 @@
 	"Ability4"					            "custom_paralyzing_cask_wrapper"
 	"Ability5"					            "custom_maledict_wrapper"
 
-    "ArmorPhysical"                         "7"
+    "ArmorPhysical"                         "6"
     "AttackCapabilities"            		"DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"                       "260"
-    "AttackDamageMax"                       "275"
+    "AttackDamageMin"                       "225"
+    "AttackDamageMax"                       "225"
     "AttackRate"                            "1.0"
     "AttackAnimationPoint"         		    "0.4"
     "AttackAcquisitionRange"       		    "1600"
@@ -1223,7 +1223,7 @@
 	"Ability15"					"generic_hidden"
 	"Ability16"					"generic_hidden"
 	"Ability17"					"custom_spirit_walk_warning"
-    "ArmorPhysical"				"15"
+    "ArmorPhysical"				"12"
     "MagicalResistance"			"10"
 
     "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
@@ -1316,7 +1316,7 @@
     "Ability5"					"troll_warlord_fervor"
     "Ability6"                  "tidehunter_kraken_shell"
 
-    "ArmorPhysical"				"10"
+    "ArmorPhysical"				"9"
     "MagicalResistance"			"-30"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"10"
@@ -1404,16 +1404,16 @@
 	"Ability7"					"boss_storm_spirit_static_remnant"			// Ability 6 - Extra.
 	"Ability8"					"boss_storm_spirit_teleport"			// Ability 7 - Extra.
 	"Ability9"					"boss_storm_spirit_init"			// Ability 8 - Extra.
-	"ArmorPhysical"				"16"			// Physical protection.
+	"ArmorPhysical"				"15"			// Physical protection.
 	"MagicalResistance"			"33"		// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageMin"			"275"		// Damage range min.
-	"AttackDamageMax"			"300"		// Damage range max.
-	"AttackRate"				"1.5"		// Speed of attack.
-	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
+	"AttackDamageMax"			"275"		// Damage range max.
+	"AttackRate"				"1.6"		// Speed of attack.
+	"AttackAnimationPoint"		"0.45"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"1000"		// Range within a target can be acquired.
 	"AttackRange"				"500"		// Range within a target can be attacked.
 	"ProjectileModel"			"particles/units/heroes/hero_stormspirit/stormspirit_base_attack.vpcf"
@@ -1807,7 +1807,7 @@
 	"Ability15"					"generic_hidden"
 	"Ability16"					"generic_hidden"
 	"Ability17"					"custom_luna_invis"
-    "ArmorPhysical"				"18"
+    "ArmorPhysical"				"16"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackAcquisitionRange"	"1200"
@@ -1815,7 +1815,7 @@
     "ProjectileModel"		    "particles/units/heroes/hero_luna/luna_base_attack.vpcf"
     "ProjectileSpeed"		    "900"
     "AttackDamageMin"			"275"
-    "AttackDamageMax"			"300"
+    "AttackDamageMax"			"275"
     "RingRadius"				"160"
     "HealthBarOffset"			"380"
     "BountyXP"					"0"
@@ -1942,7 +1942,7 @@
     "ArmorPhysical"				"22"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"275"
-    "AttackDamageMax"			"325"
+    "AttackDamageMax"			"300"
     "AttackRate"				"1.0"
     "AttackAnimationPoint"		"0.33"
     "AttackAcquisitionRange"	"2000"
@@ -2015,7 +2015,7 @@
     "MagicalResistance"			"33"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"200"
-    "AttackDamageMax"			"225"
+    "AttackDamageMax"			"200"
     "AttackRate"				"1.5"
     "AttackAnimationPoint"		"0.3"
     "AttackAcquisitionRange"	"800"
@@ -2088,7 +2088,7 @@
     "MagicalResistance"			"-35"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"250"
-    "AttackDamageMax"			"275"
+    "AttackDamageMax"			"250"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"0.9"
     "AttackAnimationPoint"		"0.39"
@@ -2177,8 +2177,8 @@
 	"MagicalResistance"			"25"
 	
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"			"175"		// Damage range min.
-	"AttackDamageMax"			"180"		// Damage range max.
+	"AttackDamageMin"			"160"		// Damage range min.
+	"AttackDamageMax"			"160"		// Damage range max.
 	"AttackRate"				"1.7"		// Speed of attack.
 	"BaseAttackSpeed"			"120"
 	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -2256,7 +2256,7 @@
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"475"		// Damage range min.
-	"AttackDamageMax"			"500"		// Damage range max.
+	"AttackDamageMax"			"475"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"0.9"			// Speed of attack.
 	"AttackAnimationPoint"		"0.39"		// Normalized time in animation cycle to attack.
@@ -2417,7 +2417,7 @@
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"350"		// Damage range min.
-	"AttackDamageMax"			"375"		// Damage range max.
+	"AttackDamageMax"			"350"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"2.5"			// Speed of attack.
 	"BaseAttackSpeed"			"250"
@@ -2552,7 +2552,7 @@
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"300"		// Damage range min.
-	"AttackDamageMax"			"350"		// Damage range max.
+	"AttackDamageMax"			"325"		// Damage range max.
 	"AttackRate"				"0.7"		// Speed of attack.
 	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"2000"		// Range within a target can be acquired.
@@ -3036,8 +3036,8 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"                       "380"            // Damage range min.
-	"AttackDamageMax"                       "400"            // Damage range max.
+	"AttackDamageMin"                       "375"            // Damage range min.
+	"AttackDamageMax"                       "375"            // Damage range max.
 	"AttackRate"                            "1.2"           // Speed of attack.
 	"AttackAnimationPoint"          		"0.4"           // Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"       		    "2000"           // Range within a target can be acquired.
@@ -3150,6 +3150,261 @@
 //=================================================================================	
 // Round18
 //=================================================================================
+"npc_boss_beastmaster"
+{
+    "Model"						"models/heroes/beastmaster/beastmaster.vmdl"
+    "BaseClass"					"npc_dota_creature"
+	"vscripts"					"bosses/attack_move.lua"
+    "SoundSet"					"Hero_WarlockGolem"
+    "ModelScale"				"1.3"
+    "Level"						"22"
+    "CanBeDominated"			"0"
+    "ConsideredHero"			"1"
+    "HasInventory"				"1"
+    "AbilityLayout"				"5"
+
+	"Ability1"					"boss_beastmaster_wild_axes"
+    "Ability2"					"boss_beastmaster_wild_axes_wrapper"
+    "Ability3"					"boss_beastmaster_hawk"
+	"Ability4"					"boss_beastmaster_hawk_wrapper"
+	"Ability5"					"boss_beastmaster_inner_beast"
+	"Ability6"					"boss_beastmaster_primal_roar"
+	"Ability7"					"boss_beastmaster_primal_roar_wrapper"
+	"Ability8"					"boss_beastmaster_init"
+
+
+    "ArmorPhysical"				"24"
+    "MagicalResistance"			"25"
+    "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"			"200"
+    "AttackDamageMax"			"200"
+    "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
+    "AttackRate"				"1.7"
+    "AttackAnimationPoint"		"0.39"
+    "AttackAcquisitionRange"	"1800"
+    "AttackRange"				"170"
+    "ProjectileModel"			""
+    "ProjectileSpeed"			""
+    "AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+    "BountyXP"					"0"
+    "BountyGoldMin"				"1"
+    "BountyGoldMax"				"1"
+    "BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+    "RingRadius"				"220"
+    "HealthBarOffset"			"400"
+    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"				"220"
+    "MovementTurnRate"			"0.1"
+    "StatusHealth"				"15000"
+    "StatusHealthRegen"			"25"
+    "StatusMana"				"3500"
+    "StatusManaRegen"			"25"
+    "TeamName"					"DOTA_TEAM_BADGUYS"
+    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "VisionDaytimeRange"		"800"
+    "VisionNighttimeRange"		"800"
+
+    "Creature"
+    {
+		"DisableClumpingBehavior"   "1"
+		"DefaultState"                  "Invade"
+		"States"
+		{
+			"Invade"
+			{
+					"Name"                          "Invade"
+					"Aggression"            		"100.0"
+					"Avoidance"                     "0.0"
+					"Support"                       "0.0"
+			}
+		}
+        "OffensiveAbilities"
+        {
+			"Ability2"	
+            {
+                "Name"				"boss_beastmaster_wild_axes_wrapper"
+                "AOE"				"1"
+                "Radius"            "175"
+                "MinimumTargets"    "1"
+            }
+			"Ability4"
+            {
+                "Name"				"boss_beastmaster_hawk_wrapper"
+            }
+			"Ability7"
+            {
+                "Name"				"boss_beastmaster_primal_roar_wrapper"
+            }
+
+        }
+		"DefensiveAbilities"
+		{
+
+		}
+        "EquippedItems"
+        {
+			"Unstoppable"       	{ "Item"        "item_boss_unstoppable" }
+            "Ultimate Scepter"              { "Item"        "item_ultimate_scepter" }
+            "Hyperstone"           	{ "Item"        "item_hyperstone"          }
+            "Radiance"			            { "Item"	    "item_radiance_boss"         }
+			"Black King Bar"				{"item"		"item_black_king_bar_boss"}
+			"Boss Resistance"       	{ "Item"        "item_boss_resistance_20" }
+        }
+        "AttachWearables"
+        {
+            "axes" { "ItemDef"     "8509" }
+            "belt" { "ItemDef"     "8510" }
+            "vambrace" { "ItemDef"     "8511" }
+            "helm" { "ItemDef"     "8512" }
+            "shoulder" { "ItemDef"     "8513" }
+            "6" { "ItemDef"     "8507" }
+            "7" { "ItemDef"     "8508" }
+        }
+    }
+}
+"npc_dota_beastmaster_axe"
+{
+	"UnitLabel" 				"temp_unit"
+}
+"npc_boss_hawk"
+{
+	"UnitLabel" 				"temp_unit"
+	"Model"						"models/items/beastmaster/hawk/beast_heart_marauder_beast_heart_marauder_raven/beast_heart_marauder_beast_heart_marauder_raven.vmdl"
+	"BaseClass"					"npc_dota_creature"
+	"SoundSet"					"Creep_Good_Range"	
+	"vscripts"					"bosses/attack_move.lua"
+	"Level"						"1"
+	"ModelScale" 				"1.0"
+	
+
+	"RingRadius"				"40"
+	"HealthBarOffset"			"150"
+	"BountyXP"					"0"		// Experience earn.
+	"BountyGoldMin"				"1"		// Gold earned min.
+	"BountyGoldMax"				"1"		// Gold earned max.
+	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+	"MovementSpeed"				"150"		// Speed.			
+	"ArmorPhysical"				"20"
+	"MagicalResistance"			"-10"
+	"StatusHealth"				"1750"		// Base health.
+	"StatusHealthRegen"			"0"		// Health regeneration rate.
+	"StatusMana"				"500"			// Base mana.
+	"StatusManaRegen"			"0.1"		// Mana regeneration rate.		 
+	"VisionDaytimeRange"		"1600"		// Range of vision during day light.
+	"VisionNighttimeRange"		"1600"		// Range of vision at night time.
+	"TeamName"					"DOTA_TEAM_NEUTRALS"							// Team name.
+	"CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_PIERCE"
+	"CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+	"UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+}
+"npc_boss_boar"
+{
+    "BaseClass"					"npc_dota_creature"
+	"vscripts"					"bosses/attack_move.lua"
+    "Model"						"models/items/beastmaster/boar/beast_heart_marauder_beast_heart_marauder_warhound/beast_heart_marauder_beast_heart_marauder_warhound.vmdl"
+    "ModelScale"				"0.9"
+    "SoundSet"					"Beastmaster_Boar"
+    "VoiceFile"					"soundevents/voscripts/game_sounds_vo_bristleback.vsndevts"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
+    "Level"						"11"
+    "ConsideredHero"			"1"
+    "CanBeDominated"			"0"
+
+	"Ability1"					"beastmaster_boar_poison"
+
+    "ArmorPhysical"				"7"
+    "MagicalResistance"			"25"
+    "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+	"AttackDamageMin"			"200"		// Damage range min.
+	"AttackDamageMax"			"200"		// Damage range max.	
+	"AttackRate"				"2.1"		// Speed of attack.
+	"AttackAnimationPoint"		"0.6"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"600"		// Range within a target can be acquired.
+	"AttackRange"				"750"		// Range within a target can be attacked.
+	"ProjectileModel"			"particles/units/heroes/hero_beastmaster/beastmaster_boar_attack.vpcf"	// Particle system model for projectile.
+	"ProjectileSpeed"			"1500"		// Speed of projectile.		
+    "BountyXP"					"0"
+    "BountyGoldMin"				"1"
+    "BountyGoldMax"				"1"
+    "RingRadius"				"70"
+    "HealthBarOffset"			"160"
+    "BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"				"240"
+    "MovementTurnRate"			"0.2"
+    "StatusHealth"				"2800"
+    "StatusHealthRegen"			"1.0"
+    "StatusMana"				"100"
+    "StatusManaRegen"			"10"
+    "TeamName"					"DOTA_TEAM_BADGUYS"
+    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "VisionDaytimeRange"		"1400"
+    "VisionNighttimeRange"		"1400"
+
+    "Creature"
+    {
+		"DisableClumpingBehavior"   "1"
+        "EquippedItems"
+        {
+        }
+    }
+}
+"npc_boss_alpha_wolf"
+{
+    "BaseClass"					"npc_dota_creature"
+	"vscripts"					"bosses/attack_move.lua"
+    "Model"						"models/creeps/neutral_creeps/n_creep_worg_large/n_creep_worg_large.vmdl"
+    "ModelScale"				"0.8"
+    "SoundSet"					"n_creep_Melee"
+    "VoiceFile"					"soundevents/voscripts/game_sounds_vo_bristleback.vsndevts"
+    "GameSoundsFile"            "soundevents/game_sounds_heroes/game_sounds_bristleback.vsndevts"
+    "Level"						"11"
+    "ConsideredHero"			"1"
+    "CanBeDominated"			"0"
+
+    "ArmorPhysical"				"14"
+    "MagicalResistance"			"25"
+    "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+	"AttackDamageMin"			"125"		// Damage range min.
+	"AttackDamageMax"			"125"		// Damage range max.	
+	"AttackRate"				"1.6"		// Speed of attack.
+	"AttackAnimationPoint"		"0.45"		// Normalized time in animation cycle to attack.
+	"AttackAcquisitionRange"	"500"		// Range within a target can be acquired.
+	"AttackRange"				"100"		// Range within a target can be attacked.
+	"ProjectileModel"			""			// Particle system model for projectile.
+	"ProjectileSpeed"			"0"			// Speed of projectile.	
+    "BountyXP"					"0"
+    "BountyGoldMin"				"1"
+    "BountyGoldMax"				"1"
+    "RingRadius"				"90"
+    "HealthBarOffset"			"160"
+    "BoundsHullName"			"DOTA_HULL_SIZE_REGULAR"
+    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
+    "MovementSpeed"				"290"
+    "MovementTurnRate"			"0.2"
+    "StatusHealth"				"3600"
+    "StatusHealthRegen"			"4.0"
+    "StatusMana"				"100"
+    "StatusManaRegen"			"10"
+    "TeamName"					"DOTA_TEAM_BADGUYS"
+    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+    "VisionDaytimeRange"		"1400"
+    "VisionNighttimeRange"		"1400"
+
+    "Creature"
+    {
+		"DisableClumpingBehavior"   "1"
+        "EquippedItems"
+        {
+        }
+    }
+}
 "npc_boss_razor"
 {
     "Model"                                 "models/heroes/razor/razor.vmdl"
@@ -3287,11 +3542,11 @@
 	"Ability16"					"generic_hidden"
 	"Ability17"					"custom_zeus_revenge"
 
-    "ArmorPhysical"				"28"
+    "ArmorPhysical"				"26"
     "MagicalResistance"			"10"
     "AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageMin"			"500"
-    "AttackDamageMax"			"680"
+    "AttackDamageMax"			"600"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"0.7"
     "AttackAnimationPoint"		"0.1"
@@ -3461,7 +3716,7 @@
     "MagicalResistance"			"-10"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"350"
-    "AttackDamageMax"			"450"
+    "AttackDamageMax"			"400"
     "AttackRate"				"1.3"
     "AttackAnimationPoint"		"0.43"
     "AttackAcquisitionRange"	"1000"
@@ -3649,11 +3904,11 @@
 	"Ability7"					"custom_fissure_wrapper"
 
 
-    "ArmorPhysical"				"30"
+    "ArmorPhysical"				"28"
     "MagicalResistance"			"30"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"680"
-    "AttackDamageMax"			"775"
+    "AttackDamageMin"			"600"
+    "AttackDamageMax"			"650"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.3"
     "AttackAnimationPoint"		"0.39"
@@ -3778,8 +4033,8 @@
     "ArmorPhysical"				"16"
     "MagicalResistance"			"25"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"850"
-    "AttackDamageMax"			"900"
+    "AttackDamageMin"			"800"
+    "AttackDamageMax"			"850"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.6"
     "AttackAnimationPoint"		"0.39"
@@ -3879,7 +4134,7 @@
     }
     "Ability1"                              "custom_land_mines"
     "Ability2"                              "custom_suicide"
-    "ArmorPhysical"                         "21"
+    "ArmorPhysical"                         "19"
     "MagicalResistance"						"20"
     "AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageMin"                       "190"
@@ -3974,7 +4229,7 @@
     }
     "Ability1"                              "custom_land_mines"
 	"Ability2"                              "custom_techies_behavior"
-    "ArmorPhysical"                         "20"
+    "ArmorPhysical"                         "18"
     "MagicalResistance"						"20"
     "AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageMin"                       "95"
@@ -4064,7 +4319,7 @@
         "particle_folder"		"particles/units/heroes/hero_rattletrap"
     }
 
-    "ArmorPhysical"				"24"
+    "ArmorPhysical"				"22"
     "MagicalResistance"			"15"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"600"
@@ -4158,12 +4413,12 @@
 	"Ability16"								"generic_hidden"
 	"Ability17"                 			"custom_crystal_maiden_revenge"
 
-    "ArmorPhysical"                         "34"
+    "ArmorPhysical"                         "30"
     "MagicalResistance"						"30"
 
     "AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"                       "775"
-    "AttackDamageMax"                       "825"
+    "AttackDamageMin"                       "700"
+    "AttackDamageMax"                       "800"
     "AttackRate"                            "1.0"
     "AttackAnimationPoint"          		"0.4"
     "AttackAcquisitionRange"       		    "1000"
@@ -4465,7 +4720,7 @@
     "Ability1"                              "custom_heat_seeking_missile"
     "Ability2"                              "custom_march_of_the_machines_op"
 
-    "ArmorPhysical"                         "38"
+    "ArmorPhysical"                         "34"
     "MagicalResistance"						"25"
     "AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageMin"                       "450"
@@ -4546,7 +4801,7 @@
 
     "Ability1"					"custom_march_of_the_machines"
 
-    "ArmorPhysical"				"22"
+    "ArmorPhysical"				"20"
     "MagicalResistance"			"15"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"300"
@@ -4700,7 +4955,7 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"                         "40"                     // Physical protection.
+	"ArmorPhysical"                         "37"                     // Physical protection.
 	"MagicalResistance"						"30"
 
 	// Attack
@@ -5014,14 +5269,14 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"35"			// Physical protection.
+	"ArmorPhysical"				"30"			// Physical protection.
 	"MagicalResistance"				"30"			// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"425"		// Damage range min.
-	"AttackDamageMax"			"450"		// Damage range max.
+	"AttackDamageMin"			"400"		// Damage range min.
+	"AttackDamageMax"			"425"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"2.5"			// Speed of attack.
 	"BaseAttackSpeed"			"250"
@@ -5139,7 +5394,7 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"28"			// Physical protection.
+	"ArmorPhysical"				"24"			// Physical protection.
 	"MagicalResistance"				"25"		// Magical protection.
 
 	// Attack
@@ -5258,11 +5513,11 @@
     "Ability1"					"custom_spirit_lance"
     "Ability2"                  "custom_mana_break"
 
-    "ArmorPhysical"				"39"
+    "ArmorPhysical"				"37"
     "MagicalResistance"			"15"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"475"
-    "AttackDamageMax"			"475"
+    "AttackDamageMin"			"450"
+    "AttackDamageMax"			"450"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.1"
 	"BaseAttackSpeed"			"200"
@@ -5335,11 +5590,11 @@
     "Ability1"					"custom_decay_spirit_lance"
     "Ability2"                  "custom_mana_break"
 
-    "ArmorPhysical"				"32"
+    "ArmorPhysical"				"30"
     "MagicalResistance"			"0"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"550"
-    "AttackDamageMax"			"600"
+    "AttackDamageMin"			"500"
+    "AttackDamageMax"			"575"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"0.8"
     "AttackAnimationPoint"		"0.39"
@@ -5416,11 +5671,11 @@
     "Ability2"                  "custom_dispersion"
     "Ability3"                  "custom_aphotic_shield"
 	"Ability4"					"custom_spectral_dagger_wrapper"
-    "ArmorPhysical"				"41"
+    "ArmorPhysical"				"39"
     "MagicalResistance"			"20"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"550"
-    "AttackDamageMax"			"550"
+    "AttackDamageMin"			"500"
+    "AttackDamageMax"			"500"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.35"
 	"BaseAttackSpeed"			"200"
@@ -5524,11 +5779,11 @@
 	"Ability16"					"generic_hidden"
 	"Ability17"                 "custom_antimage_revenge"
 
-    "ArmorPhysical"				"41"
+    "ArmorPhysical"				"39"
     "MagicalResistance"			"55"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"950"
-    "AttackDamageMax"			"950"
+    "AttackDamageMin"			"925"
+    "AttackDamageMax"			"925"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.35"
     "AttackAnimationPoint"		"0.3"
@@ -5621,14 +5876,14 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"42"			// Physical protection.
+	"ArmorPhysical"				"40"			// Physical protection.
 	"MagicalResistance"			"30"			// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"1000"		// Damage range min.
-	"AttackDamageMax"			"1000"		// Damage range max.
+	"AttackDamageMin"			"950"		// Damage range min.
+	"AttackDamageMax"			"950"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"1.0"			// Speed of attack.
 	"AttackAnimationPoint"		"0.15"		// Normalized time in animation cycle to attack.
@@ -5778,14 +6033,14 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"                         "42"                     // Physical protection.
+	"ArmorPhysical"                         "41"                     // Physical protection.
 	"MagicalResistance"						"35"
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"                       "1100"            // Damage range min.
-	"AttackDamageMax"                       "1150"            // Damage range max.
+	"AttackDamageMin"                       "1050"            // Damage range min.
+	"AttackDamageMax"                       "1050"            // Damage range max.
 	"AttackRate"                            "2.5"           // Speed of attack.
 	"BaseAttackSpeed"						"300"
 	"AttackAnimationPoint"          		"0.19"           // Normalized time in animation cycle to attack.
@@ -5933,14 +6188,14 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"41"			// Physical protection.
+	"ArmorPhysical"				"40"			// Physical protection.
 	"MagicalResistance"				"25"			// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"1100"		// Damage range min.
-	"AttackDamageMax"			"1200"		// Damage range max.
+	"AttackDamageMax"			"1100"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"3.3"			// Speed of attack.
 	"BaseAttackSpeed"			"250"
@@ -6125,11 +6380,11 @@
 	"Ability15"								"generic_hidden"
 	"Ability16"								"generic_hidden"
 	"Ability17"								"boss_invoker_revenge"
-    "ArmorPhysical"                         "42"
+    "ArmorPhysical"                         "41"
     "MagicalResistance"						"30"
     "AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"                       "1200"
-    "AttackDamageMax"                       "1200"
+    "AttackDamageMin"                       "1100"
+    "AttackDamageMax"                       "1100"
     "AttackRate"                            "2.5"
 	"BaseAttackSpeed"					"300"
     "AttackAnimationPoint"          		"0.6"
@@ -6322,14 +6577,14 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"				"44"			// Physical protection.
+	"ArmorPhysical"				"42"			// Physical protection.
 	"MagicalResistance"			"33"			// Magical protection.
 
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"1300"		// Damage range min.
-	"AttackDamageMax"			"1300"		// Damage range max.
+	"AttackDamageMin"			"1200"		// Damage range min.
+	"AttackDamageMax"			"1200"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"1.55"			// Speed of attack.
 	"BaseAttackSpeed"			"220"
@@ -6458,11 +6713,11 @@
 	"Ability2"					"custom_sunder_wrapper"
 	"Ability3"					"custom_shockwave"
 	"Ability4"					"custom_shockwave_wrapper"
-	"ArmorPhysical"				"38"			// Physical protection.
+	"ArmorPhysical"				"36"			// Physical protection.
 	"MagicalResistance"			"25"			// Magical protection.
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 	"AttackDamageMin"			"775"		// Damage range min.
-	"AttackDamageMax"			"825"		// Damage range max.
+	"AttackDamageMax"			"775"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"1.5"			// Speed of attack.
 	"BaseAttackSpeed"			"200"
@@ -6578,11 +6833,11 @@
         "particle_folder"		"particles/units/heroes/hero_skeletonking"
     }
 
-    "ArmorPhysical"				"46"
+    "ArmorPhysical"				"43"
     "MagicalResistance"			"33"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"1400"
-    "AttackDamageMax"			"1500"
+    "AttackDamageMin"			"1300"
+    "AttackDamageMax"			"1400"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"3.65"
 	"BaseAttackSpeed"			"325"
@@ -6701,8 +6956,8 @@
     "ArmorPhysical"				"43"
     "MagicalResistance"			"40"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"1500"
-    "AttackDamageMax"			"1600"
+    "AttackDamageMin"			"1400"
+    "AttackDamageMax"			"1500"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"3.3"
 	"BaseAttackSpeed"			"340"
@@ -6942,7 +7197,7 @@
 
 	// Armor
 	//----------------------------------------------------------------
-	"ArmorPhysical"                         "47"                     // Physical protection.
+	"ArmorPhysical"                         "44"                     // Physical protection.
 	"MagicalResistance"						"35"
 
 	// Attack
@@ -7099,12 +7354,12 @@
 	"Ability16"								"generic_hidden"
 	"Ability17"                 			"custom_oracle_revenge"
 
-    "ArmorPhysical"                         "48"
+    "ArmorPhysical"                         "45"
     "MagicalResistance"						"35"
 
     "AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"                       "1700"
-    "AttackDamageMax"                       "1800"
+    "AttackDamageMin"                       "1600"
+    "AttackDamageMax"                       "1700"
     "AttackRate"                            "1.2"
     "AttackAnimationPoint"          		"0.4"
     "AttackAcquisitionRange"       		    "1000"

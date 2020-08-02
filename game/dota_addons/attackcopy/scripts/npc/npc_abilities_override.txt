@@ -1153,7 +1153,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"5"
+				"value"				"8"
 			}
 		}
 	}
@@ -6620,16 +6620,16 @@
 	{
 		"AbilitySpecial"
 		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vampiric_aura_radius"	"100"
+			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"vampiric_aura"			"6 7 8 9"
+				"vampiric_aura"			"8 16 24 32"
 				"LinkedSpecialBonus"	"special_bonus_unique_wraith_king_2"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"damage"			"12 24 36 48"
 			}
 		}
 	}

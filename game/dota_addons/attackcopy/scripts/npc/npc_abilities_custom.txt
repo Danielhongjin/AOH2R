@@ -1880,7 +1880,7 @@
     "AbilityCastPoint"				"0.7"
     "AbilityCooldown"				"10.0"
     "AbilityDuration"				"1.0"
-    "AbilityDamage"					"500"
+    "AbilityDamage"					"700"
     "AbilityManaCost"				"0"
     "AbilitySpecial"
     {
@@ -2474,7 +2474,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"movement_speed"		"1800"
+			"movement_speed"		"2200"
 		}
 		"02"
 		{
@@ -2651,7 +2651,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"hero_damage"				"550"
+			"hero_damage"				"600"
 		}
 		"04"
 		{
@@ -5188,7 +5188,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"delay"			"1.25"
+			"delay"			"1.4"
 		}
 		"03"
 		{
@@ -5267,10 +5267,10 @@
     "AbilitySound"					"Ability.Ravage"
     "BaseClass"                     "tidehunter_ravage"
     "AbilityCastRange"				"0"
-    "AbilityCastPoint"				"0.3"
+    "AbilityCastPoint"				"0.75"
     "AbilityCastAnimation"		    "ACT_DOTA_CAST_ABILITY_4"
     "AbilityCooldown"				"18.0"
-    "AbilityDamage"					"350"
+    "AbilityDamage"					"325"
     "AbilityManaCost"				"0"
     "AbilitySpecial"
     {
@@ -8654,7 +8654,7 @@
     "AbilityTextureName" 			"legion_commander_duel"
     "AbilityCastPoint"				"0.2"
     "AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-    "AbilityCooldown"				"60.0 50.0 40.0"
+    "AbilityCooldown"				"50.0 40.0 30.0"
     "AbilityManaCost"				"100 80 60"
 	"HasScepterUpgrade"			        "1"
     "precache"
@@ -12712,7 +12712,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_pct"			"33"
+				"damage_pct"			"38"
 			}
 			"04"
 			{
@@ -13871,7 +13871,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"			"2.5"
+				"delay"			"2.3"
 			}
 			"02"
 			{
@@ -13917,7 +13917,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"hit_point_minimum_pct"		"25"
+				"hit_point_minimum_pct"		"10"
 			}
 		}
 	}
@@ -16324,7 +16324,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"22000"
+				"damage"				"26000"
 			}
 			"04"
 			{
@@ -16941,7 +16941,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"			"250"
+				"radius"			"300"
 			}
 			"04"
 			{
@@ -16983,7 +16983,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"delay"							"0.8"
+				"delay"							"0.75"
 			}
 			"03"
 			{
@@ -17201,7 +17201,7 @@
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"700"			
+				"damage"			"750"			
 			}
 			"03"
 			{
@@ -17314,7 +17314,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"main_damage"			"1000"
+				"main_damage"			"1800"
 			}
 			"09"
 			{
@@ -17324,7 +17324,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_dps"				"75"
+				"burn_dps"				"150"
 			}
 		}
 	}
@@ -17563,7 +17563,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_per_unit"			"15"
+				"damage_per_unit"			"12"
 			}			
 			"02"
 			{
@@ -18302,7 +18302,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"400"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"12"	
+		"AbilityCooldown"				"10"	
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" 		"1"
 		"AbilitySpecial"
@@ -18310,7 +18310,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"			"1.0"
+				"delay"			"0.5"
 			}
 			"02"
 			{
@@ -18341,7 +18341,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"AbilityTextureName" 			"abyssal_underlord_firestorm"
 		"AbilityCastRange"				"60000"					
-		"AbilityCooldown"				"12.0"
+		"AbilityCooldown"				"10.0"
 		"AbilityManaCost"				"0"
 		"AbilityChannelTime"			"6.0"
 		"AbilitySpecial"
@@ -18598,7 +18598,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"shock_damage"				"600"
+				"shock_damage"				"1200"
 			}
 			"04"
 			{
@@ -18829,7 +18829,7 @@
 			"09"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage_increase"				"30"
+				"damage_increase"				"40"
 			}
 			"10"
 			{
@@ -18958,7 +18958,7 @@
 			"03"
 			{
 				"var_type"			    "FIELD_INTEGER"
-				"damage"	        	"100"			
+				"damage"	        	"110"			
 			}
 			"04"
 			{

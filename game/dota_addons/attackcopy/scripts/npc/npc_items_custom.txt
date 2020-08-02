@@ -3325,13 +3325,13 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "crit_damage_mult" 	    "230"
+            "crit_damage_mult" 	    "290"
 			"CalculateSpellDamageTooltip"	"0"
         }
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-            "cost_constant" 	        "135"
+            "cost_constant" 	        "65"
 		}
     }
 }
@@ -5762,17 +5762,17 @@
         "01"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage"		"180 360 720"
+            "bonus_damage"		"160 320 640"
         }
         "02"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_base_damage"		"45 90 180"
+            "bonus_base_damage"		"40 80 160"
         }
         "03"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage_tooltip"		"225 450 900"
+            "bonus_damage_tooltip"		"200 400 800"
         }
 		"04"
         {
@@ -5826,17 +5826,17 @@
         "01"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage"		"180 360 720"
+            "bonus_damage"		"160 320 640"
         }
         "02"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_base_damage"		"45 90 180"
+            "bonus_base_damage"		"40 80 160"
         }
         "03"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage_tooltip"		"225 450 900"
+            "bonus_damage_tooltip"		"200 400 800"
         }
 		"04"
         {
@@ -5890,17 +5890,17 @@
         "01"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage"		"180 360 720"
+            "bonus_damage"		"160 320 640"
         }
         "02"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_base_damage"		"45 90 180"
+            "bonus_base_damage"		"40 80 160"
         }
         "03"
         {
             "var_type"			"FIELD_INTEGER"
-            "bonus_damage_tooltip"		"225 450 900"
+            "bonus_damage_tooltip"		"200 400 800"
         }
 		"04"
         {
@@ -7098,7 +7098,7 @@
         "01"
         {
             "var_type"				"FIELD_FLOAT"
-            "health_damage_bonus"			"8"
+            "health_damage_bonus"			"9"
 			"CalculateSpellDamageTooltip"	"0"
         }
         "02"
@@ -7114,7 +7114,7 @@
 		"04"
         {
             "var_type"				"FIELD_INTEGER"
-            "damage_ratio"			        "60"
+            "damage_ratio"			        "50"
 			"CalculateSpellDamageTooltip"	"0"
         }
 		"05"
@@ -9179,12 +9179,12 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"spell_amp_pct"			"90"
+			"spell_amp_pct"			"75"
 		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_attack_speed"			"-40"
+			"bonus_attack_speed"			"-60"
 		}
 		"06"
 		{

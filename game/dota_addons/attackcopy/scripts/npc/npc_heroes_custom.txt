@@ -466,12 +466,10 @@
 	"Ability1"		"phantom_assassin_custom_stifling_dagger"
 	"Ability10"		"special_bonus_agility_7"
     "Ability17"		"phantom_assassin_custom_bonus_unique_1"
-	"AttackDamageMin"		"37"
-	"AttackDamageMax"		"39"
 	"AttributeIntelligenceGain"		"2.200000"
 	"MovementTurnRate"		"0.900000"
 	"StatusHealthRegen"		"1.25"
-	"MovementSpeed"		"325"
+	"MovementSpeed"		"315"
 }
 "npc_dota_hero_phoenix"
 {

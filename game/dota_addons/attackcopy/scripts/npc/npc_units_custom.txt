@@ -126,7 +126,7 @@
 		"run"		"290"
 	}
     "MovementTurnRate"			"0.7"
-    "StatusHealth"				"3500"
+    "StatusHealth"				"3200"
     "StatusHealthRegen"			"1"
     "StatusMana"				"550"
     "StatusManaRegen"			"10"
@@ -414,7 +414,7 @@
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"310"
     "MovementTurnRate"			"0.7"
-    "StatusHealth"				"7250"
+    "StatusHealth"				"5250"
     "StatusHealthRegen"			"1"
     "StatusMana"				"750"
     "StatusManaRegen"			"20"
@@ -480,8 +480,8 @@
     "Ability1"								"custom_zombie_deathstrike"
     "ArmorPhysical"                         "-2"
     "AttackCapabilities"            		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"                       "15"
-    "AttackDamageMax"                       "15"
+    "AttackDamageMin"                       "14"
+    "AttackDamageMax"                       "14"
     "AttackRate"                            "1.0"
     "AttackAnimationPoint"         		    "0.4"
     "AttackAcquisitionRange"       		    "1600"
@@ -495,7 +495,7 @@
     "BountyGoldMax"                         "1"
     "MovementCapabilities"          		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"                         "340"
-    "StatusHealth"                          "1400"
+    "StatusHealth"                          "1300"
     "StatusHealthRegen"                     "6"
     "StatusMana"                            "100"
     "StatusManaRegen"                       "10"
@@ -623,8 +623,8 @@
     "ArmorPhysical"				"6"
     "MagicalResistance"			"5"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"50"
-    "AttackDamageMax"			"160"
+    "AttackDamageMin"			"30"
+    "AttackDamageMax"			"120"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.1"
     "AttackAnimationPoint"		"0.39"
@@ -705,8 +705,8 @@
     "MagicalResistance"			"4"
 
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"150"
-    "AttackDamageMax"			"150"
+    "AttackDamageMin"			"125"
+    "AttackDamageMax"			"125"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.3"
     "AttackAnimationPoint"		"0.39"
@@ -767,10 +767,10 @@
         }
     }
 }
+
 //=================================================================================	
 // Round6
 //=================================================================================
-
 "npc_wandering_soul"
 {
 	// General
@@ -802,8 +802,8 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"65"		// Damage range min.
-	"AttackDamageMax"			"75"		// Damage range max.
+	"AttackDamageMin"			"60"		// Damage range min.
+	"AttackDamageMax"			"60"		// Damage range max.
 	"AttackRate"				"1.5"		// Speed of attack.
 	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
 	"AttackAcquisitionRange"	"1600"		// Range within a target can be acquired.
@@ -904,8 +904,8 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"			"75"			// Damage range min.
-	"AttackDamageMax"			"75"			// Damage range max.
+	"AttackDamageMin"			"70"			// Damage range min.
+	"AttackDamageMax"			"70"			// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"1.5"		// Speed of attack.
 	"AttackAnimationPoint"		"0.2"		// Normalized time in animation cycle to attack.
@@ -1120,8 +1120,8 @@
 
     "ArmorPhysical"                         "6"
     "AttackCapabilities"            		"DOTA_UNIT_CAP_RANGED_ATTACK"
-    "AttackDamageMin"                       "225"
-    "AttackDamageMax"                       "225"
+    "AttackDamageMin"                       "200"
+    "AttackDamageMax"                       "200"
     "AttackRate"                            "1.0"
     "AttackAnimationPoint"         		    "0.4"
     "AttackAcquisitionRange"       		    "1600"
@@ -1335,7 +1335,7 @@
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"400"
     "MovementTurnRate"			"0.00115"
-    "StatusHealth"				"23000"
+    "StatusHealth"				"21000"
     "StatusHealthRegen"			"2"
     "StatusMana"				"2000"
     "StatusManaRegen"			"20"
@@ -1404,7 +1404,7 @@
 	"Ability7"					"boss_storm_spirit_static_remnant"			// Ability 6 - Extra.
 	"Ability8"					"boss_storm_spirit_teleport"			// Ability 7 - Extra.
 	"Ability9"					"boss_storm_spirit_init"			// Ability 8 - Extra.
-	"ArmorPhysical"				"15"			// Physical protection.
+	"ArmorPhysical"				"16"			// Physical protection.
 	"MagicalResistance"			"33"		// Magical protection.
 
 	// Attack
@@ -1443,7 +1443,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"25000"		// Base health.
+	"StatusHealth"				"28000"		// Base health.
 	"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 	"StatusMana"				"500"			// Base mana.
 	"StatusManaRegen"			"20"			// Mana regeneration rate.
@@ -1823,7 +1823,7 @@
     "BountyGoldMax"				"1"
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"300"
-    "StatusHealth"				"30000"
+    "StatusHealth"				"27000"
     "StatusHealthRegen"			"12"
     "StatusMana"				"2500"
     "StatusManaRegen"			"40"
@@ -1893,7 +1893,7 @@
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"280"
     "MovementTurnRate"			"0.6"
-    "StatusHealth"				"27500"
+    "StatusHealth"				"26000"
     "StatusHealthRegen"			"2"
     "StatusMana"				"3000"
     "StatusManaRegen"			"5.0"
@@ -1942,7 +1942,7 @@
     "ArmorPhysical"				"22"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
     "AttackDamageMin"			"275"
-    "AttackDamageMax"			"300"
+    "AttackDamageMax"			"275"
     "AttackRate"				"1.0"
     "AttackAnimationPoint"		"0.33"
     "AttackAcquisitionRange"	"2000"
@@ -2106,7 +2106,7 @@
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"450"
     "MovementTurnRate"			"0.5"
-    "StatusHealth"				"32500"
+    "StatusHealth"				"32000"
     "StatusHealthRegen"			"-5"
     "StatusMana"				"1500"
     "StatusManaRegen"			"50"
@@ -2177,8 +2177,8 @@
 	"MagicalResistance"			"25"
 	
 	"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-	"AttackDamageMin"			"160"		// Damage range min.
-	"AttackDamageMax"			"160"		// Damage range max.
+	"AttackDamageMin"			"150"		// Damage range min.
+	"AttackDamageMax"			"150"		// Damage range max.
 	"AttackRate"				"1.7"		// Speed of attack.
 	"BaseAttackSpeed"			"120"
 	"AttackAnimationPoint"		"0.3"		// Normalized time in animation cycle to attack.
@@ -2578,7 +2578,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"4000"		// Base health.
+	"StatusHealth"				"3600"		// Base health.
 	"StatusHealthRegen"			"0"		// Health regeneration rate.
 	"StatusMana"				"500"			// Base mana.
 	"StatusManaRegen"			"0.1"		// Mana regeneration rate.		 
@@ -3334,7 +3334,7 @@
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"240"
     "MovementTurnRate"			"0.2"
-    "StatusHealth"				"2800"
+    "StatusHealth"				"3400"
     "StatusHealthRegen"			"1.0"
     "StatusMana"				"100"
     "StatusManaRegen"			"10"
@@ -3386,7 +3386,7 @@
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"290"
     "MovementTurnRate"			"0.2"
-    "StatusHealth"				"3800"
+    "StatusHealth"				"4000"
     "StatusHealthRegen"			"4.0"
     "StatusMana"				"100"
     "StatusManaRegen"			"10"
@@ -3731,7 +3731,7 @@
     "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"				"250"
     "MovementTurnRate"			"0.00125"
-    "StatusHealth"				"17000"
+    "StatusHealth"				"20000"
     "StatusHealthRegen"			"2"
     "StatusMana"				"2000"
     "StatusManaRegen"			"20"
@@ -4559,7 +4559,7 @@
     "ArmorPhysical"				"30"
     "MagicalResistance"			"-10"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"550"
+    "AttackDamageMin"			"600"
     "AttackDamageMax"			"600"
     "AttackRate"				"1.3"
     "AttackAnimationPoint"		"0.43"
@@ -4580,7 +4580,7 @@
 		"walk"		"0"
 		"run"		"395"
 	}
-    "StatusHealth"				"130000"
+    "StatusHealth"				"135000"
     "StatusHealthRegen"			"2"
     "StatusMana"				"2000"
     "StatusManaRegen"			"20"
@@ -4962,7 +4962,7 @@
 	//----------------------------------------------------------------
 	"AttackCapabilities"          		    "DOTA_UNIT_CAP_RANGED_ATTACK"
 	"AttackDamageMin"                       "575"           // Damage range min.
-	"AttackDamageMax"                       "625"            // Damage range max.
+	"AttackDamageMax"                       "600"            // Damage range max.
 	"AttackRate"                            "1.5"           // Speed of attack.
 	"BaseAttackSpeed"			"250"
 	"AttackAnimationPoint"          		"0.4"           // Normalized time in animation cycle to attack.
@@ -5275,8 +5275,8 @@
 	// Attack
 	//----------------------------------------------------------------
 	"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-	"AttackDamageMin"			"400"		// Damage range min.
-	"AttackDamageMax"			"425"		// Damage range max.
+	"AttackDamageMin"			"375"		// Damage range min.
+	"AttackDamageMax"			"400"		// Damage range max.
 	"AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
 	"AttackRate"				"2.5"			// Speed of attack.
 	"BaseAttackSpeed"			"250"
@@ -5782,8 +5782,8 @@
     "ArmorPhysical"				"39"
     "MagicalResistance"			"55"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"925"
-    "AttackDamageMax"			"925"
+    "AttackDamageMin"			"900"
+    "AttackDamageMax"			"900"
     "AttackDamageType"			"DAMAGE_TYPE_ArmorPhysical"
     "AttackRate"				"1.35"
     "AttackAnimationPoint"		"0.3"
@@ -6399,7 +6399,7 @@
     "BountyGoldMax"                         "1"
     "MovementCapabilities"         		    "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"                         "400"
-    "StatusHealth"                          "255000"
+    "StatusHealth"                          "280000"
     "StatusHealthRegen"                     "80"
     "StatusMana"                            "6000"
     "StatusManaRegen"                       "150"

@@ -1,23 +1,13 @@
-Finally changed the loading and preview images.
-More items translated to russian localization, difficulty vote translated thanks to ★[NightForest]★.
+All rounds have been rebalanced - early game waves are less powerful now while late game bosses have been made slightly powerful. 
+Tidehunter boss ravage cast time doubled.
 
-Map look changed to ti10 radiant.
-Outpost hp and mana heal rate increased.
-Players can no longer get stuck behind the enemy spawn.
-Round end will no longer fully heal you, will heal you by 50%.
+Arcane Staff constant improved from 135 all the way down to 65 and manacost multiplier from 0.35 to 0.3. Damage multiplier from 2.3 to 2.9x, should scale far better with higher intelligence now.
+Giant Disguise Belt health per spell amp improved from 90 to 75, negative attack speed from 30 to 60. Grants more spell amp per health.
+Rapier and upgrades damage nerfed by another 10%.
+Sanguine bonus damage percentage from 8% to 9%. Feedback damage from 60% to 50%.
 
-Beastmaster round overall damage increased, slightly tankier spawns.
-Kunkka boss health and damage reduced.
-Legion Commander boss damage and health increased.
-Lone Druid boss spirit bear damage and health increased.
-Storm Spirit boss will now target the farthest hero when using ball lightning.
-Techies bosses damage decreased.
-Tiny bosses spawn more frequently now.
-Zeus boss nerfed damage.
-
-Assault Cuirass level 1 now has proper stats.
-Glare Edge icon and particle changed.
-Heart upgrades passive healing reduced by 0.2%, healing amp cooldown reduced from 4 to 2 seconds. Strength gain back in line with reaver upgrades, recipe costs greatly reduced.
+Legion Commander duel improved cooldown from 40s to 30s.
+Wraith King vampiric aura is still technically an aura, but with 100 range. Gives massively more lifesteal now.
 TO-DO
 
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
@@ -27,3 +17,5 @@ CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
 Implementing larger map and curse system - longer you're away from friendly structures the more debuffed you are and the more you get randomly attacked by phenomena.
 
 add sounds to difficulty vote and selection.
+
+Make glare edge also reduce base damage.

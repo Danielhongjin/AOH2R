@@ -27,8 +27,6 @@ function item_echo_wand:OnSpellStart()
 			ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 			ParticleManager:ReleaseParticleIndex(fx)
 		end
-	else
-		print("Caughtcha")
 	end
 end
 LinkLuaModifier("modifier_item_echo_wand_lock", "items/echo_wand.lua", LUA_MODIFIER_MOTION_NONE)

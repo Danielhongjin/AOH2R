@@ -38,7 +38,6 @@ function modifier_item_force_blade:DeclareFunctions()
     }
 end
 
-
 function modifier_item_force_blade:GetModifierBonusStats_Agility()
     return self:GetAbility():GetSpecialValueFor("bonus_all")
 end
@@ -50,7 +49,6 @@ end
 function modifier_item_force_blade:GetModifierBonusStats_Strength()
     return self:GetAbility():GetSpecialValueFor("bonus_all")
 end
-
 
 function modifier_item_force_blade:GetModifierPreAttack_BonusDamage()
     return -self:GetStackCount()

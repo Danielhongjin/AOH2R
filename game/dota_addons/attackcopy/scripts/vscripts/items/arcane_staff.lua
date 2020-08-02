@@ -65,10 +65,10 @@ end
 function arcane_staff_calculate_crit(attacker, victim, damageTable)
 	if attacker and attacker:IsHero() then
 		local mana = attacker:GetMana()
-		local mana_cost =  damageTable.damage * 0.35 * (135 / (135 + attacker:GetIntellect()))	
+		local mana_cost =  damageTable.damage * 0.3 * (65 / (65 + attacker:GetIntellect()))	
 		if mana >= mana_cost and mana >= 150 then
 			if victim and victim ~= attacker and victim:GetTeamNumber() ~= attacker:GetTeamNumber() then
-				damageTable.damage = damageTable.damage * 2.3
+				damageTable.damage = damageTable.damage * 2.9
 				create_popup({
 					target = victim,
 					value = damageTable.damage,

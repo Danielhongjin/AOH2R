@@ -2619,7 +2619,7 @@
 "game_info_discord"                 "You can join us on Discord by clicking on the image."
 "game_info_footer"                  "Good Luck, Have Fun!"
 "end_screen_legend_boss_damage"                 "DD"
-"end_screen_legend_boss_damage_tooltip"         "Damge done"
+"end_screen_legend_boss_damage_tooltip"         "Damage done"
 
 "end_screen_legend_damage_taken"                "DT"
 "end_screen_legend_damage_taken_tooltip"        "Damage taken"
@@ -2737,13 +2737,17 @@
 "DOTA_Tooltip_modifier_diff_doom_marker"					"Marked"
 "DOTA_Tooltip_modifier_diff_doom_marker_Description"		"This unit will take less damage from Ether Hammer."
 
-"DOTA_Tooltip_Ability_item_broken_bow"                              "Broken Bow"
-"DOTA_Tooltip_Ability_item_force_blade"                            "Glare Edge"
-"DOTA_Tooltip_Ability_item_force_blade_Description"			    "<h1>Passive: Sear</h1> Reduces attack damage by %reduced_damage%%%, but causes autoattacks to deal %magic_percent%%% magic damage."
-"DOTA_Tooltip_Ability_item_force_blade_Note0"                            "Spell Blade damage is affected by spell amplification."
-"DOTA_Tooltip_Ability_item_force_blade_bonus_all"		            "+$all"
-"DOTA_Tooltip_Ability_item_force_blade_bonus_attackspeed"		            "+$attack"
-"DOTA_Tooltip_Ability_item_force_blade_Lore"		            	"A weightless, dull blade that burns away the flesh of its victims. Constantly smells of soap."
+"DOTA_Tooltip_Ability_item_dynamo_core"                            "Dynamo-Core"
+"DOTA_Tooltip_Ability_item_dynamo_core_Description"			    "<h1>Passive: Energizer </h1> Restores mana for %mana_steal%%% of attack damage dealt. Reduces total attack speed by %reduced_attack_speed%%% and mana by %reduced_mana%%%."
+"DOTA_Tooltip_Ability_item_dynamo_core_bonus_all"		            "+$all"
+"DOTA_Tooltip_Ability_item_dynamo_core_Lore"		            	"A cumbersome trinket that somehow made its way into the fields of war. Attaching it to a weapon generates a meager amount of mana."
+
+"DOTA_Tooltip_Ability_item_glare_edge"                            "Glare Edge"
+"DOTA_Tooltip_Ability_item_glare_edge_Description"			    "<h1>Passive: Sear</h1> Reduces attack damage by %reduced_damage%%%, but causes autoattacks to deal %magic_percent%%% magic damage."
+"DOTA_Tooltip_Ability_item_glare_edge_Note0"                            "Spell Blade damage is affected by spell amplification."
+"DOTA_Tooltip_Ability_item_glare_edge_bonus_all"		            "+$all"
+"DOTA_Tooltip_Ability_item_glare_edge_bonus_attackspeed"		            "+$attack"
+"DOTA_Tooltip_Ability_item_glare_edge_Lore"		            	"A weightless, dull blade that burns away the flesh of its victims. Constantly smells of soap."
 
 "DOTA_Tooltip_Ability_item_greater_demon_talon"                            "Greater Demon Talon"
 "DOTA_Tooltip_Ability_item_greater_demon_talon_Description"			    "<h1>Active: Sleight of Hand</h1>Switches this item's damage type to magical, but lowers damage. \n<h1>Passive: Second Hand </h1> Every instance of damage deals %proc_damage% extra physical damage. Illusions deal half damage."
@@ -2803,7 +2807,7 @@
 "DOTA_Tooltip_ability_item_custom_helm_of_the_dominator_2"						"Helm of the Dominator 2"
 "DOTA_Tooltip_ability_item_custom_helm_of_the_dominator_2_Description"			"<h1>Active: Dominate</h1>Takes control of a neutral, non-ancient target unit and sets its movement speed to %speed_base% and max health to a minimum of %health_min%.<br><br>Up to two units can be dominated. <br><br>Range: %abilitycastrange%\n<h1>Passive: Dominator Aura</h1> Increases nearby allied hero and player units base damage by %attack_damage_aura%%%  and health regen by %hp_regen_aura%. Has a %creep_bonus%%%  bigger effect on player units.<br><br>Radius: %aura_radius%"
 "DOTA_Tooltip_ability_item_custom_helm_of_the_dominator_2_Lore"					"The powerful headpiece of a dead necromancer."
-"DOTA_Tooltip_ability_item_custom_helm_of_the_dominator_2_Note0"					"Cannot dominate more than one unit at a time.  If a new unit is dominated, the old one will die."
+"DOTA_Tooltip_ability_item_custom_helm_of_the_dominator_2_Note0"					"Cannot dominate more than two units at a time.  If a new unit is dominated, the oldest one will die."
 "DOTA_Tooltip_ability_item_custom_helm_of_the_dominator_2_bonus_stats"			"+$all"
 
 "DOTA_Tooltip_modifier_helm_creep_bonus"					"Helm of the Dominator Aura"
@@ -2994,7 +2998,7 @@
 
 "DOTA_Tooltip_Ability_item_recipe_maiar_pendant"               "Recipe: Maiar Pendant"
 "DOTA_Tooltip_ability_item_maiar_pendant"						"Maiar Pendant"
-"DOTA_Tooltip_ability_item_maiar_pendant_Description"						"<h1>Active: Mana Tap</h1>Immediately restores all your mana at the cost of all your health.\n<h1>Passive: Mana Panic</h1>Upon dropping below %proc_mana%%% mana your hero regenerates %proc_mana_regen%%% mana per second but disables all healing. <br><br>Dispels upon reaching %min_mana%%% mana."
+"DOTA_Tooltip_ability_item_maiar_pendant_Description"						"<h1>Active: Mana Tap</h1>Immediately restores all your mana at the cost of all your health.\n<h1>Passive: Mana Panic</h1>Upon dropping below %proc_mana%%% mana your hero regenerates %proc_mana_regen%%% mana per second but reduces regen by %hp_regen_reduction%%%. <br><br>Dispels upon reaching %min_mana%%% mana."
 "DOTA_Tooltip_ability_item_maiar_pendant_Note0"					"Not refreshable."
 "DOTA_Tooltip_ability_item_maiar_pendant_lore"					"A pendant from before the age of man. Too powerful for mortal men."
 "DOTA_Tooltip_ability_item_maiar_pendant_bonus_intellect"					"+$int"
@@ -3003,7 +3007,7 @@
 "DOTA_Tooltip_ability_item_maiar_pendant_bonus_mana_regen"                "+$mana_regen"
 
 "DOTA_Tooltip_modifier_item_maiar_pendant_thinker"					"Mana Panic"
-"DOTA_Tooltip_modifier_item_maiar_pendant_thinker_Description"		"Regenerating mana at an increased rate at the cost of no health regeneration."
+"DOTA_Tooltip_modifier_item_maiar_pendant_thinker_Description"		"Regenerating mana at an increased rate at the cost of reduced health regeneration."
 
 "DOTA_Tooltip_ability_item_plain_ring"                            "Gold Ring"
 "DOTA_Tooltip_ability_item_plain_ring_Description"				"<h1>Passive: Hidden Power</h1>Upon taking fatal damage you become invincible for %duration% seconds, after which you are healed for %min_health%%% of your health.\n<h1>Passive: Guard Aura</h1>Grants %aura_armor% armor and %aura_mana_regen% mana regeneration to nearby allied units.  <br><br>Radius:%aura_radius%"
@@ -3177,7 +3181,7 @@
 "DOTA_Tooltip_Ability_item_recipe_ultimate_dagon"               "Recipe: Ultimate Dagon"
 "DOTA_Tooltip_Ability_item_ultimate_dagon"					    "Ultimate Dagon"
 "DOTA_Tooltip_ability_item_ultimate_dagon_Description"			"<h1>Active: Energy Burst</h1> Emits a powerful burst of magical damage upon a targeted enemy unit.<br><br>Damage: %damage%<br>Range: %range_tooltip%<br>Mana Cost: %mana_cost_tooltip%"
-"DOTA_Tooltip_ability_item_ultimate_dagon_Lore"					"A lesser wand that grows in power the longer it is used, it brings magic to the fingertips of the user."
+"DOTA_Tooltip_ability_item_ultimate_dagon_Lore"					"A great wand that brings magic to the fingertips of the user."
 "DOTA_Tooltip_ability_item_ultimate_dagon_Note0"				"Instantly kills illusions."
 "DOTA_Tooltip_ability_item_ultimate_dagon_bonus_intellect"		"+$int"
 "DOTA_Tooltip_ability_item_ultimate_dagon_bonus_all_stats"		"+$all"

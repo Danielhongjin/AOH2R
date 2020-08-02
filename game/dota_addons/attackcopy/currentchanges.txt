@@ -1,13 +1,10 @@
-All rounds have been rebalanced - early game waves are less powerful now while late game bosses have been made slightly powerful. 
-Tidehunter boss ravage cast time doubled.
+More abilities and items have been translated to russian thanks to Edalya.
 
-Arcane Staff constant improved from 135 all the way down to 65 and manacost multiplier from 0.35 to 0.3. Damage multiplier from 2.3 to 2.9x, should scale far better with higher intelligence now.
-Giant Disguise Belt health per spell amp improved from 90 to 75, negative attack speed from 30 to 60. Grants more spell amp per health.
-Rapier and upgrades damage nerfed by another 10%.
-Sanguine bonus damage percentage from 8% to 9%. Feedback damage from 60% to 50%.
+New item Dynamo Core - Finally relented and made a mana staff substitute. Generates mana per attack at the cost of max mana and a percentage of your attack speed. You can find it under Accessories.
+Glare Edge now reduces as base and bonus damage instead of just bonus, less ridiculous on illusions.
+Helm of the undying cooldown from 20 to 40 seconds.
+Maiar Pendant no longer fully disables healing, just reduces regen by 3/4.
 
-Legion Commander duel improved cooldown from 40s to 30s.
-Wraith King vampiric aura is still technically an aura, but with 100 range. Gives massively more lifesteal now.
 TO-DO
 
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT

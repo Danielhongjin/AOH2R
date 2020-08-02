@@ -1443,7 +1443,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"28000"		// Base health.
+	"StatusHealth"				"29000"		// Base health.
 	"StatusHealthRegen"			"0.0"		// Health regeneration rate.
 	"StatusMana"				"500"			// Base mana.
 	"StatusManaRegen"			"20"			// Mana regeneration rate.
@@ -6399,7 +6399,7 @@
     "BountyGoldMax"                         "1"
     "MovementCapabilities"         		    "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"                         "400"
-    "StatusHealth"                          "280000"
+    "StatusHealth"                          "300000"
     "StatusHealthRegen"                     "80"
     "StatusMana"                            "6000"
     "StatusManaRegen"                       "150"
@@ -6624,7 +6624,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"335000"		// Base health.
+	"StatusHealth"				"350000"		// Base health.
 	"StatusHealthRegen"			"200"		// Health regeneration rate.
 	"StatusMana"				"5000"			// Base mana.
 	"StatusManaRegen"			"80"			// Mana regeneration rate.
@@ -7373,10 +7373,10 @@
     "BountyGoldMax"                         "1"
     "MovementCapabilities"         		    "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"                         "320"
-    "StatusHealth"                          "460000" 
-    "StatusHealthRegen"                     "10"
+    "StatusHealth"                          "480000" 
+    "StatusHealthRegen"                     "100"
     "StatusMana"                            "5000"
-    "StatusManaRegen"                       "100"
+    "StatusManaRegen"                       "200"
     "VisionDaytimeRange"                    "1600"
     "VisionNighttimeRange"                  "1600"
     "TeamName"                              "DOTA_TEAM_BADGUYS"

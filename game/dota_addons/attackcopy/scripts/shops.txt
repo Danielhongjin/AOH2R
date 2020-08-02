@@ -101,7 +101,7 @@
 		"item"		"item_high_tech_boots"
 		"item"		"item_plain_ring"
 		"item"		"item_conduit"
-		"item"		"item_pharaoh_crown"
+		"item"		"item_dynamo_core"
 	}
 
 	// Level 2 - Blue Recipes

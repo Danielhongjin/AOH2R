@@ -2972,7 +2972,59 @@
         }
     }
 }
-"item_recipe_force_blade"
+
+"item_recipe_dynamo_core"
+{
+	"BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+	"ItemCost"						"0"	
+	"ItemShopTags"					""
+	"ItemRecipe"					"1"
+	"ItemResult"					"item_dynamo_core"
+	"ItemRequirements"
+	{
+		"01"						"item_energy_booster;item_staff_of_wizardry;item_ogre_axe;item_blade_of_alacrity"
+	}
+}
+"item_dynamo_core"
+{
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/dynamo_core.lua"
+    "AbilityTextureName"		    "dynamo_core"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "ItemShopTags"					"int;str;agi;hard_to_tag"
+    "ItemQuality"					"common"
+    "ItemAliases"					"Dynamo Core"
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_all"				"15"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"mana_steal"			"10"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"reduced_mana"			"30"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"reduced_attack_speed"			"20"
+			"CalculateSpellDamageTooltip"	"0"
+		}
+	}
+}
+"item_recipe_glare_edge"
 {
 	"BaseClass"						"item_datadriven"
     "Model"							"models/props_gameplay/recipe.vmdl"
@@ -2981,16 +3033,16 @@
 	"ItemCost"						"600"	
 	"ItemShopTags"					""
 	"ItemRecipe"					"1"
-	"ItemResult"					"item_force_blade"
+	"ItemResult"					"item_glare_edge"
 	"ItemRequirements"
 	{
 		"01"						"item_blitz_knuckles;item_javelin;item_crown;item_ultimate_orb"
 	}
 }
-"item_force_blade"
+"item_glare_edge"
 {
     "BaseClass"						"item_lua"
-    "ScriptFile"                    "items/force_blade.lua"
+    "ScriptFile"                    "items/glare_edge.lua"
     "AbilityTextureName"		    "glare_edge"
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "ItemShopTags"					"damage;attack speed"
@@ -5410,42 +5462,46 @@
         {
             "var_type"				    "FIELD_INTEGER"
             "proc_mana"	            "20"	
-			//number hardcoded into lua file
         }
-        "01"
+        "02"
         {
             "var_type"				    "FIELD_INTEGER"
             "min_mana"	            "45"
         }
-        "02"
+        "03"
         {
             "var_type"				    "FIELD_FLOAT"
             "manacost_reduction"	                "12"
         }
-        "03"
+        "04"
         {
             "var_type"				    "FIELD_INTEGER"
             "bonus_intellect"	        "20"
         }
-        "04"
+        "05"
         {
             "var_type"				    "FIELD_INTEGER"
             "spell_amp"	                "15"
         }
-        "05"
+        "06"
         {
             "var_type"				    "FIELD_FLOAT"
             "proc_mana_regen"	                "2.1"
         }
-		"06"
-        {
-            "var_type"				    "FIELD_FLOAT"
-            "interval"	                "1"
-        }
 		"07"
         {
             "var_type"				    "FIELD_FLOAT"
+            "interval"	                "0.25"
+        }
+		"08"
+        {
+            "var_type"				    "FIELD_FLOAT"
             "bonus_mana_regen"	                "3.5"
+        }
+		 "09"
+        {
+            "var_type"				    "FIELD_INTEGER"
+            "hp_regen_reduction"	            "75"
         }
 	}
 }
@@ -8587,7 +8643,7 @@
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
-	"AbilityCooldown"				"20.0"
+	"AbilityCooldown"				"40.0"
 }
 "item_recipe_orb_of_destruction"
 {
@@ -8828,7 +8884,7 @@
 		"06"
         {
             "var_type"					"FIELD_FLOAT"
-            "delay"					"1.75"
+            "delay"					"2.25"
         }
     }
 }	

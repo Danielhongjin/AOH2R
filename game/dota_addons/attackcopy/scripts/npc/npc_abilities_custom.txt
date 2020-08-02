@@ -16267,12 +16267,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"			"2.5"
+				"delay"			"2.0"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"anim_duration"			"4.0"
+				"anim_duration"			"2.5"
 			}
 			"04"
 			{
@@ -17146,12 +17146,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"			"2.0"
+				"delay"			"1.75"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"anim_duration"			"3.0"
+				"anim_duration"			"2.5"
 			}
 			"04"
 			{

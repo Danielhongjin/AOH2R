@@ -238,7 +238,7 @@
 }
 "npc_dota_hero_huskar"
 {
-	"Ability6"		"huskar_custom_life_break"
+	"Ability6"		"huskar_sacred_flame"
 }
 "npc_dota_hero_invoker"
 {
@@ -278,12 +278,11 @@
 }
 "npc_dota_hero_legion_commander"
 {
-    "Ability6"          "legion_commander_custom_duel"
+    "Ability6"          "legion_commander_warpath"
     "Ability12"			"special_bonus_attack_speed_60"
     "Ability13"			"special_bonus_cooldown_reduction_15"
 	"Ability14"			"special_bonus_unique_legion_commander_5"
-    "Ability16"			"special_bonus_magic_resistance_40"
-	"Ability17"			"special_bonus_30_crit_2"
+	"Ability17"			"special_bonus_magic_resistance_40"
 }
 "npc_dota_hero_leshrac"
 {
@@ -526,7 +525,7 @@
 }
 "npc_dota_hero_riki"
 {
-    "Ability17"		    "special_bonus_agility_40"
+    "Ability17"		    "special_bonus_agility_30"
 	"AttributeAgilityGain"		"2.90000"
 }
 "npc_dota_hero_sand_king"
@@ -649,7 +648,9 @@
 {
 	"Ability10"		"special_bonus_attack_speed_25"
 	"Ability11"		"special_bonus_movement_speed_25"
-	"Ability16"		"special_bonus_movement_speed_90"
+	"Ability12"		"special_bonus_movement_speed_40"
+	"Ability14"		"special_bonus_intelligence_100"
+	"Ability16"		    "special_bonus_agility_30"
 }
 "npc_dota_hero_terrorblade"
 {

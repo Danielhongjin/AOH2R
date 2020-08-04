@@ -2997,6 +2997,7 @@
     "ItemQuality"					"common"
     "ItemAliases"					"Dynamo Core"
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ItemDisassembleRule"			"DOTA_ITEM_DISASSEMBLE_ALWAYS"
 	"AbilitySpecial"
 	{
 		"01"
@@ -3055,7 +3056,7 @@
 		"01"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"magic_percent"            	"90"
+			"magic_percent"            	"80"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 		"02"
@@ -3072,7 +3073,7 @@
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"reduced_damage"			"40"
+			"reduced_damage"			"35"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 	}
@@ -3383,7 +3384,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-            "cost_constant" 	        "65"
+            "cost_constant" 	        "70"
 		}
     }
 }

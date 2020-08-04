@@ -1,9 +1,10 @@
-More abilities and items have been translated to russian thanks to Edalya.
+Even more russian localization.
 
-New item Dynamo Core - Finally relented and made a mana staff substitute. Generates mana per attack at the cost of max mana and a percentage of your attack speed. You can find it under Accessories.
-Glare Edge now reduces as base and bonus damage instead of just bonus, less ridiculous on illusions.
-Helm of the undying cooldown from 20 to 40 seconds.
-Maiar Pendant no longer fully disables healing, just reduces regen by 3/4.
+Glare Edge damage reduction from 40% to 35%, but magic damage from 90% to 80%. Should be slightly easier to run lifesteal.
+
+Huskar new ultimate Sacred Flame - Passive critical strike-type ability that deals damage based on how many burning spear stacks the enemy has.
+Legion Commander new ultimate Warpath - Temporarily gives Legion Commander bonus damage and causes each attack to launch a second attack at the target. Bonus damage is tied to the active now. Can grant much more bonus damage than duel.
+Templar assassin talents changed.
 
 TO-DO
 

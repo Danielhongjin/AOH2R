@@ -6595,6 +6595,30 @@
 		}
 	}
 }
+"huskar_sacred_flame"
+{
+    "BaseClass"						"ability_lua"
+    "ScriptFile"					"abilities/heroes/huskar_sacred_flame.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityTextureName"		    "huskar_sacred_flame"
+	"HasScepterUpgrade"				"1"
+	"AbilityManaCost"				"30"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"chance"				"20 25 30"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"				"16 20 24"
+		}
+	}
+}
 "huskar_custom_life_break"
 {
 	"BaseClass"						"ability_lua"
@@ -8645,6 +8669,67 @@
 			
         }
     }
+}
+"legion_commander_warpath"
+{
+	"BaseClass"                     "ability_lua"
+	"AbilityTextureName"			"legion_commander_duel"
+	"ScriptFile"					"abilities/heroes/legion_commander_warpath.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_UNRESTRICTED"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"50.0"
+	"AbilityManaCost"				"100 150 200"
+	"HasScepterUpgrade"			"1"
+	"IsCastableWhileHidden" "1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"6.0 7.0 8.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"delay"					"0.15"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"reward_damage"		"15 20 25"
+			"LinkedSpecialBonus"	"special_bonus_unique_legion_commander"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"turn_rate"		"350"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"cast_time_percentage"	"50"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"minimum_movespeed"			"450"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration_scepter"		"11.0 12.0 13.0"
+			"RequiresScepter"	"1"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"scepter_ratio"				"33"
+		}
+	}
 }
 "legion_commander_custom_duel"
 {

@@ -63,7 +63,7 @@ function modifier_spectre_custom_dispersion:OnTakeDamage (event)
 				--Between 301 and 475 radius
 				else
 					local ratio = self.damage_reflect_pct * (1 - (distance - self.min_radius) * 0.142857 * 0.01)
-					reflect_damage = original_damage *  ratio
+					reflect_damage = original_damage * ratio
 					particle_name = "particles/units/heroes/hero_spectre/spectre_dispersion_b_fallback_mid.vpcf"
 					if self.parent:IsAlive() then
 						self.parent:SetHealth(self.parent:GetHealth() + (post_damage * ratio) )

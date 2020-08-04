@@ -626,6 +626,17 @@
 			}
 		}
 	}
+	"special_bonus_unique_legion_commander"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"				"15"
+			}
+		}
+	}
 	"special_bonus_unique_leshrac_1"
 	{
 		"AbilitySpecial"
@@ -3790,7 +3801,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"health_cost"					"4"
+				"health_cost"					"5"
 			}
 			"02"
 			{
@@ -4882,7 +4893,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage_per_mana"		"2.0 2.75 3.5 4.25"
+				"damage_per_mana"		"1.5 2.0 2.5 3.0"
 			}
 			"02"
 			{
@@ -7792,7 +7803,7 @@
 	}
 	"venomancer_poison_nova"
 	{
-		"AbilityCooldown"				"110.0 100.0 90.0"
+		"AbilityCooldown"				"70.0 60.0 40.0"
 		"AbilitySpecial"
 		{
 			"04"
@@ -7803,7 +7814,7 @@
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"cooldown_scepter"			"70.0 60.0 50.0"
+				"cooldown_scepter"			"50.0 40.0 30.0"
 				"RequiresScepter"		"1"
 			}
 			"07"

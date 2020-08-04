@@ -82,7 +82,7 @@ if IsServer() then
 		}
 		self.parent:EmitSound("Hero_LegionCommander.PressTheAttack")
 		self.anim = self.parent:AddNewModifier(self.parent, ability, "modifier_anim", {duration = -1})
-		StartAnimation(self.parent, {duration=5000, activity=ACT_DOTA_DISABLED, rate=1})
+		StartAnimation(self.parent, {duration=500, activity=ACT_DOTA_DISABLED, rate=1})
 		self.knight1 = CreateUnitByName("npc_dragon_knight", self.parent:GetAbsOrigin(), true, self.parent, self.parent, self.parent:GetTeamNumber())
 		FindClearSpaceForUnit(self.knight1, self.parent:GetAbsOrigin() + Vector(200, 0, 0), true)
 		self.knight1:AddNewModifier(self.parent, ability, "modifier_boss_legion_commander_summon", {duration = -1})
@@ -128,6 +128,7 @@ if IsServer() then
 					local fx = ParticleManager:CreateParticle("particles/custom/custom_odds_arrow_start_pos.vpcf", PATTACH_WORLDORIGIN, self.parent)
 					ParticleManager:SetParticleControl(fx, 0, pos)
 					ParticleManager:SetParticleControl(fx, 1, caster_pos)
+					ParticleManager:SetParticleControl(fx, 9, Vector(self.arrow_delay, 0, 0))
 					ParticleManager:ReleaseParticleIndex(fx)
 					self.parent:EmitSound("Hero_Mars.Shield.Block")
 					
@@ -135,7 +136,7 @@ if IsServer() then
 						self.arrow_delay, 
 						function()
 							
-							EmitSoundOnLocationForAllies(pos, "Hero_LegionCommander.Overwhelming.Creep", attacker)
+							EmitSoundOnLocationWithCaster(pos, "Hero_LegionCommander.Overwhelming.Creep", attacker)
 							local enemies = FindUnitsInRadius(
 								self.parent:GetTeamNumber(),	-- int, your team number
 								pos,	-- point, center point

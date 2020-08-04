@@ -29,6 +29,16 @@
 			m_nNumControlPoints = 3
 			m_bSetOrientation = true
 		},
+		{
+			_class = "C_OP_RemapCPtoScalar"
+			m_nCPInput = 9
+			m_nFieldOutput = "1"
+			m_flInputMax = 100.0
+			m_flOutputMax = 100.0
+			m_flStartTime = 0.0
+			m_flEndTime = 100.0
+			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
+		},
 	]
 	m_Initializers = 
 	[
@@ -37,11 +47,6 @@
 			m_fRadiusMax = 500.0
 			m_fRadiusMin = 500.0
 			m_nControlPointNumber = 6
-		},
-		{
-			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.5
-			m_fLifetimeMin = 0.5
 		},
 		{
 			_class = "C_INIT_RandomColor"
@@ -64,12 +69,13 @@
 	[
 		{
 			_class = "C_OP_ConstrainDistanceToPath"
-			m_flTravelTime = 0.5
+			m_flTravelTime = 1.0
 			m_flMaxDistance0 = 0.0
 			m_PathParameters = 
 			{
 				m_nStartControlPointNumber = 6
 			}
+			m_nFieldScale = "1"
 		},
 	]
 	m_Children = 
@@ -78,10 +84,10 @@
 			m_ChildRef = resource:"particles/units/heroes/hero_legion_commander/legion_commander_odds_arrow_hit.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_legion_commander/legion_commander_odds_arrow_trail_plain.vpcf"
+			m_ChildRef = resource:"particles/units/heroes/hero_legion_commander/legion_commander_odds_arrow_plain.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_legion_commander/legion_commander_odds_arrow_plain.vpcf"
+			m_ChildRef = resource:"particles/custom/custom_odds_arrow_trail_plain.vpcf"
 		},
 	]
 	m_nBehaviorVersion = 5

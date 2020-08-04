@@ -2052,14 +2052,13 @@
 "DOTA_Tooltip_modifier_gyrocopter_custom_rocket_barrage_Description"                "Launching rockets at nearby enemies."
 "DOTA_Tooltip_ability_gyrocopter_call_down_aghanim_description"				"Adds a Side Gunner that at random attacks enemy units within a 600 radius every 0.9 seconds."
 
-"DOTA_Tooltip_ability_huskar_custom_life_break"										"<font color='#f2da5b'>Life Break</font>"
-"DOTA_Tooltip_ability_huskar_custom_life_break_Description"							"Huskar channels his vitality into a single massive explosion, increasing damage by %multiplier_tooltip%%% every second. Damage dealt is split among enemies."
-"DOTA_Tooltip_ability_huskar_custom_life_break_radius"										"RADIUS:"
-"DOTA_Tooltip_ability_huskar_custom_life_break_damage"										"DAMAGE:"
-"DOTA_Tooltip_ability_huskar_custom_life_break_duration"									"DURATION:"
+"DOTA_Tooltip_ability_huskar_sacred_flame"										"<font color='#f2da5b'>Sacred Flame</font>"
+"DOTA_Tooltip_ability_huskar_sacred_flame_Description"							"Every attack has a chance to be imbued with white flames, dealing pure damage based on how many stacks of Burning Spear the victim holds. <br><br> Will only be used if huskar has enough mana."
+"DOTA_Tooltip_ability_huskar_sacred_flame_Note0"								"Damage is halved for illusions."
+"DOTA_Tooltip_ability_huskar_sacred_flame_damage"										"DAMAGE PER STACK:"
+"DOTA_Tooltip_ability_huskar_sacred_flame_chance"										"%CHANCE:"
+"DOTA_Tooltip_ability_huskar_sacred_flame_aghanim_description"										"Sacred Flame increases the stack count of burning spear by one."
 
-"DOTA_Tooltip_modifier_huskar_custom_life_break"                            "Life Break"
-"DOTA_Tooltip_modifier_huskar_custom_life_break_Description"                "Channeling a massive strike."
 
 "DOTA_Tooltip_ability_invoker_custom_forged_spirit_melting_strike"							"<font color='#f2da5b'>Melting Strike</font>"
 "DOTA_Tooltip_ability_invoker_custom_forged_spirit_melting_strike_Description"				"Melts away the armor of heroes hit by the spirit's attack. Each successive hit increases the amount of armor melted."
@@ -2072,18 +2071,18 @@
 
 "DOTA_Tooltip_ability_keeper_of_the_light_will_o_wisp_Note0"				"Refresher is 50% effective on this ability."
 
-"DOTA_Tooltip_ability_legion_commander_custom_duel"                         "<font color='#f2da5b'>Duel</font>"
-"DOTA_Tooltip_ability_legion_commander_custom_duel_Description"			    "Permanently increases your damage on cast and attacks all surrounding enemies."
-"DOTA_Tooltip_ability_legion_commander_custom_duel_damage"					"BONUS DAMAGE:"
-"DOTA_Tooltip_ability_legion_commander_custom_duel_attack_count"		"ATTACK COUNT:"
-"DOTA_Tooltip_ability_legion_commander_custom_duel_duration"				"DURATION:"
-"DOTA_Tooltip_ability_legion_commander_custom_duel_Radius"				"RADIUS:"
-"DOTA_Tooltip_ability_legion_commander_custom_duel_Note0"					"Can attack up to %max_attack_count% times."
-"DOTA_Tooltip_ability_legion_commander_custom_duel_attack_count_scepter"					"SCEPTER ATTACK COUNT:"
-"DOTA_Tooltip_ability_legion_commander_custom_duel_aghanim_description"					"Increases amount of attacks on cast."
+"DOTA_Tooltip_ability_legion_commander_warpath"                         "<font color='#f2da5b'>Warpath</font>"
+"DOTA_Tooltip_ability_legion_commander_warpath_Description"			    "Temporarily increases your damage on cast and causes autoattacks to launch a second attack. Every cast increases how much damage this ability grants."
+"DOTA_Tooltip_ability_legion_commander_warpath_duration"					"DURATION:"
+"DOTA_Tooltip_ability_legion_commander_warpath_reward_damage"				"BONUS DAMAGE:"
+"DOTA_Tooltip_ability_legion_commander_warpath_duration_scepter"			"SCEPTER DURATION:"
+"DOTA_Tooltip_ability_legion_commander_warpath_aghanim_description"		"Increases Warpath duration, and grants you %scepter_ratio%%% of your warpath stacks as permanent damage."
 
-"DOTA_Tooltip_modifier_legion_commander_custom_duel_buff"                   "Duel Buff"
-"DOTA_Tooltip_modifier_legion_commander_custom_duel_buff_Description"       "Increasing your damage by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%."
+"DOTA_Tooltip_modifier_legion_commander_damage"                   "Warpath"
+"DOTA_Tooltip_modifier_legion_commander_damage_Description"       "Damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%. Attacks launch an arrow at the victim."
+
+"DOTA_Tooltip_modifier_legion_commander_damage_hidden"                   "Warpath Stacks"
+"DOTA_Tooltip_modifier_legion_commander_damage_hidden_Description"       "Current Warpath stacks."
 
 "DOTA_Tooltip_ability_lich_custom_cold_soul"                        "<font color='#f2da5b'>Cold Soul</font>"
 "DOTA_Tooltip_ability_lich_custom_cold_soul_Description"		    "Passively increases your spell amp."

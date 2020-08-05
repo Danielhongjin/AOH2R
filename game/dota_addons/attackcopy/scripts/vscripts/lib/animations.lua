@@ -228,6 +228,7 @@ local _ANIMATION_TRANSLATE_TO_CODE = {
   iron= 255,
   iron_surge= 99,
   item_style_2= 133,
+  jog= 374,
   jump_gesture= 294,
   laguna= 202,
   leap= 206,

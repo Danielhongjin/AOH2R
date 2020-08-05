@@ -162,7 +162,11 @@ function has_item(caster, item_name)
     end
     return nil
 end
-
+local round_end_sounds = {[0] = "MegaCreeps.Radiant", 
+"MegaCreeps.Dire.Ancient", 
+"MegaCreeps.Dire", 
+"MegaCreeps.Radiant.Ancient",
+}
 
 function refresh_players()
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -174,6 +178,7 @@ function refresh_players()
 			hero:AddNewModifier(hero, nil, "modifier_roundend_effect", {duration = 5})
 		end
 	end
+	EmitGlobalSound(round_end_sounds[RandomInt(0, 3)])
 end
 
 

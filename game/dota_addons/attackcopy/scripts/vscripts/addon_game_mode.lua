@@ -24,8 +24,8 @@ function Precache(context)
 
 	}
 
-	local soundevents = {
-		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts",
+	local soundevents = {	
+		"soundevents/game_sounds.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_abyssal_underlord.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_antimage.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_bane.vsndevts",
@@ -39,12 +39,14 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_lone_druid.vsndevts",
-		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_mars.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_silencer.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_stormspirit.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_techies.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts",
+		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
 	}
 
 	local units = { 

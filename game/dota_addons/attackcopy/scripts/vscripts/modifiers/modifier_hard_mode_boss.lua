@@ -35,5 +35,5 @@ function modifier_hard_mode_boss:GetModifierTotalPercentageManaRegen()
 end
 
 function modifier_hard_mode_boss:GetModifierHealthRegenPercentage()
-	return 0.85
+	return 0.65
 end

@@ -1,19 +1,33 @@
-Even more russian localization.
+Simplified Chinese localization of items has begun thanks to CandiFantasia. Most item names and item descriptions have not been translated yet, save for certain descriptions. If you'd like to contribute, swing by our discord.
 
-Glare Edge damage reduction from 40% to 35%, but magic damage from 90% to 80%. Should be slightly easier to run lifesteal.
+Hard mode regen from 0.85% to 0.65%.
+Outpost heal aura from 2.5% hp and 1.5% mp to 3.25% hp and 2.0% mp.
+Round end is now signified by a random horn sound for your listening pleasure.
 
-Huskar new ultimate Sacred Flame - Passive critical strike-type ability that deals damage based on how many burning spear stacks the enemy has.
-Legion Commander new ultimate Warpath - Temporarily gives Legion Commander bonus damage and causes each attack to launch a second attack at the target. Bonus damage is tied to the active now. Can grant much more bonus damage than duel.
-Templar assassin talents changed.
+Experimental change made to boss behaviors: Boss animation periods will prevent boss cooldowns from progressing. May or may not break some behaviors. Should stop bosses from dumping abilities right away after a lengthy ability.
+New boss round 39, boss rush.
+New boss Void Spirit replaced old boss Antimage - Watch out for his counter. Don't run up or right when he uses his revenge.
+Tinker boss round removed, all higher round bosses shifted down one level.
+Abyssal Underlord slightly chunkier, shockwave is also a chunker.
+Tidehunter boss no longer has a heart of tarrasque.
+
+Undying boss zombie hp from 1300 to 800. Spawns more zombies now.
+
+Dynamo-Core mana reduction from 30% to 20%.
+Warrior's Seal magic resistance nerfed from 25% to 20%.
+
+Wisp tether nerfed healing ratio. Tether cooldown now 0.
+Wisp relocate cooldown from 30/25/20 to 30/20/10.
+Wisp agility and intelligence stat gain increased by 1.
 
 TO-DO
 
+CURRENTLY ADDING VOID SPIRIT BOSS
+
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
 
-
+replace IO ult.
 
 Implementing larger map and curse system - longer you're away from friendly structures the more debuffed you are and the more you get randomly attacked by phenomena.
 
 add sounds to difficulty vote and selection.
-
-Make glare edge also reduce base damage.

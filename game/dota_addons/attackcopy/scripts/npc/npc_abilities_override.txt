@@ -205,7 +205,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"600"
+				"value"				"750"
 				"ad_linked_ability"			"chen_hand_of_god"				// this is the ability this bonus affects.  This line is required for Ability Draft to correctly choose talents.
 			}
 		}
@@ -2919,7 +2919,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"heal_amount"			"400 650 900"
+				"heal_amount"			"500 750 1050"
 				"LinkedSpecialBonus"	"special_bonus_unique_chen_2"
 			}
 			"02"
@@ -8211,12 +8211,13 @@
 	}
 	"wisp_tether"
 	{
+		"AbilityCooldown"				"0"
 		"AbilitySpecial"
 		{
 			"05"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"tether_heal_amp"			"0.8 0.9 1.0 1.1"
+				"tether_heal_amp"			"0.4 0.5 0.6 0.7"
 			}
 		}
 	}
@@ -8261,18 +8262,13 @@
 	"wisp_relocate"
 	{
 
-		"AbilityCooldown"				"30 25 20"
+		"AbilityCooldown"				"30 20 10"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"cast_delay"				"0"
-			}
-			"02"
-			{
-				"var_type"					"FIELD_FLOAT"
-				"return_time"				"12.0 12.0 12.0"
 			}
 		}
 	}

@@ -3003,7 +3003,7 @@
 		"01"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_all"				"15"
+			"bonus_all"				"20"
 		}
 		"02"
 		{
@@ -3014,7 +3014,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"reduced_mana"			"30"
+			"reduced_mana"			"20"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 		"04"
@@ -7323,7 +7323,7 @@
         "04"
         {
             "var_type"				    "FIELD_INTEGER"
-            "magic_resist"	        "25"
+            "magic_resist"	        "20"
         }
         "05"
         {
@@ -9372,7 +9372,7 @@
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
-	"AbilityCooldown"				"20.0"
+	"AbilityCooldown"				"16.0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -9383,7 +9383,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"duration"			"4.5"
+			"duration"			"4"
 		}
 	}
 }

@@ -375,6 +375,7 @@ local _CODE_TO_ANIMATION_TRANSLATE = {
   [371]="infernal_blade",
   [372]="captured",
   [373]="walk",
+  [374]="jog",
 }
 
 function modifier_animation_translate_permanent:OnCreated(keys) 

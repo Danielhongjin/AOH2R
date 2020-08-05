@@ -27,10 +27,11 @@ local spells_aoe = {[0] = "custom_crystal_nova",
 "boss_legion_commander_gods_rebuke",
 "boss_abyssal_underlord_shockwave",
 "boss_beastmaster_wild_axes",
+"boss_void_spirit_resonant_pulse", -- index 25
 }
 local spells_target = {[0] = "custom_static_link", 
 "custom_frostbite", 
-"custom_mana_void", 
+"custom_mana_void", -- DEPRECATED
 "custom_omni_slash_jugg", 
 "custom_doom", 
 "custom_lightning_bolt", -- index 5
@@ -414,6 +415,7 @@ function generic_target_random(keys)
 			end
 			StartAnimation(caster, {duration = keys.anim_duration, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / keys.anim_duration})
 			caster:AddNewModifier(caster, ability, "modifier_anim", {duration = keys.anim_duration})
+			caster:EmitSoundParams("Hero_VoidSpirit.Pulse.Cast", 0, 0.5, 0)
 			Timers:CreateTimer(
 				delay - spell:GetCastPoint(), 
 				function()
@@ -520,25 +522,19 @@ end
 
 
 function modifier_anim:StatusEffectPriority()
-    return 20
+    return 90
 end
 if IsServer() then
-	function modifier_anim:OnCreated()
+	function modifier_anim:OnCreated(keys)
 		local unit = self:GetParent()
 		for slot = 0, 16 do
 			local ability = unit:GetAbilityByIndex(slot)
 			if ability ~= nil then
-				ability:SetFrozenCooldown(true)
-			end
-		end
-	end
-
-	function modifier_anim:OnDestroy()
-		local unit = self:GetParent()
-		for slot = 0, 16 do
-			local ability = unit:GetAbilityByIndex(slot)
-			if ability ~= nil then
-				ability:SetFrozenCooldown(false)
+				if not ability:IsCooldownReady() then
+					local cooldown = ability:GetCooldownTimeRemaining() + keys.duration
+					ability:EndCooldown()
+					ability:StartCooldown(cooldown)
+				end
 			end
 		end
 	end

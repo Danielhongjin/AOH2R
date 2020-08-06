@@ -1,18 +1,29 @@
-Backend code changes, may result in some breakage.
-Difficulty menu sounds have been added for my hearing pleasure.
-Gold income now happens once every 7 seconds, grants 10 gold.
-More items have been localized to chinese by CandiFantasia. Chinese localization fixed.
+More items and the difficuly menu have been translated to Chinese thanks to CandiFantasia.
 
-Enchantress enchant will now properly apply summon buff.
+Beginning gold is now distributed based on a 3000 gold pool, the gold pool gets reduced according to players missing.
+The Ancient gains 10% less health per round.
+Outposts now have a AOE circle that shows you the healing radius now. Healing rate increased to 4.0% hp and 3.0% mp.
+Outposts no longer damage by max health, now damage based on current health.
 
+Boss rush round spawns only one invoker and abyssal underlord now.
+Friendly Wisp now has a larger explosion radius.
+Lich effigy health reduced.
+Lone Druid boss spirit bear and fissure deal more damage.
+Shadow Fiend now has warning effects.
+Spirit Breaker boss behavior fixed.
+Techies boss less tanky.
+Void Spirit boss dissimilate damage increased.
+
+Dynamo Core attack speed malus from 20% to 15%.
+
+Bristleback damage reduction reduced from 40% to 25%, strength and agility gain increased.
+Huskar regen reduced. 
+Troll Warlord buffed, talents slightly altered.
 TO-DO
 
-CURRENTLY ADDING VOID SPIRIT BOSS
-
+CHANGED OUTPOSTS TO NOT REQUIRE THE NON INVULNERABLE EFFECT
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
 
 replace IO ult.
 
 Implementing larger map and curse system - longer you're away from friendly structures the more debuffed you are and the more you get randomly attacked by phenomena.
-
-add sounds to difficulty vote and selection.

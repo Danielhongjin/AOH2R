@@ -11,6 +11,7 @@ function boss_void_spirit_counter:OnSpellStart()
 	caster:AddNewModifier(caster, self, "modifier_anim", {duration = delay + self:GetSpecialValueFor("duration")})
 	StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_4, rate = 1 / delay})
 	caster:EmitSoundParams("Hero_VoidSpirit.Pulse.Cast", 0, 0.5, 0)
+	ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 	Timers:CreateTimer(
 		delay, 
 		function()

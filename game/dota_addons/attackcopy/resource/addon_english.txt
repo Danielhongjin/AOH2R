@@ -846,6 +846,7 @@
 "DOTA_Tooltip_ability_boss_legion_commander_warpath_explosion_radius"			"EXPLOSION RADIUS:"
 
 "npc_boss_lich_king"                     "Lich (Boss)"
+"npc_boss_frosty_effigy"                     "Frost Effigy (Boss)"
 
 "DOTA_Tooltip_ability_custom_frost_blast"							"Frost Blast"
 "DOTA_Tooltip_ability_custom_frost_blast_Description"				"Damages the main target and deals damage to nearby allies of the target as well. Slows the attack and movement speed of all enemies hit."

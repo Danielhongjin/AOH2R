@@ -27,7 +27,8 @@ if IsServer() then
     function modifier_watch_tower_increase_stats:OnCreated()
         self.parent = self:GetParent()
 		self.parent:CastAbilityNoTarget(self.parent:FindAbilityByName("outpost_idle"), -1)
-		self.parent:SetInvulnCount(0)
+		
+		
 		local ability = self:GetAbility()
 		self.health_base = ability:GetSpecialValueFor("health_base")
 		self.health_per_round = ability:GetSpecialValueFor("health_per_round")
@@ -35,6 +36,18 @@ if IsServer() then
 		self.armor_per_round = ability:GetSpecialValueFor("armor_per_round")
 		AddAnimationTranslate(self.parent, "captured")
 		self.round = 0
+		
+		Timers:CreateTimer(
+			10,
+			function()
+				self.parent:SetInvulnCount(0)
+				self.fx = ParticleManager:CreateParticle("particles/custom/watch_tower_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+				ParticleManager:SetParticleControl(self.fx, 0, self.parent:GetAbsOrigin() + Vector(0, 0, 100))
+				ParticleManager:SetParticleControl(self.fx, 1, Vector(250, 1, 1))
+				self.fx2 = ParticleManager:CreateParticle("particles/custom/watch_tower_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+				ParticleManager:SetParticleControl(self.fx, 0, self.parent:GetAbsOrigin() + Vector(0, 0, 100))
+			end
+		)
 		self:StartIntervalThink(3)
     end
 	function modifier_watch_tower_increase_stats:OnIntervalThink()
@@ -67,6 +80,14 @@ if IsServer() then
 			self:Destroy()
 		end
 	end
+	
+	function modifier_watch_tower_increase_stats:OnDestroy()
+		ParticleManager:DestroyParticle(self.fx, true)
+		ParticleManager:ReleaseParticleIndex(self.fx)
+		ParticleManager:DestroyParticle(self.fx2, true)
+		ParticleManager:ReleaseParticleIndex(self.fx2)
+	end
+	
 	
 end
 
@@ -166,7 +187,7 @@ function modifier_watch_tower_meltdown:OnDestroy()
 		ApplyDamage({
 			victim = target, 
 			attacker = target, 
-			damage = target:GetMaxHealth() * damage, 
+			damage = target:GetHealth() * damage, 
 			damage_type = DAMAGE_TYPE_PURE,
 		})
 		target:SetMana(0)
@@ -218,7 +239,11 @@ function modifier_watch_tower_stun:OnCreated()
 end
 
 function modifier_watch_tower_stun:OnIntervalThink()
-	self.parent:SetMana(0)
+	if self.parent then
+		self.parent:SetMana(0)
+	else
+		self:Destroy()
+	end
 end
 function modifier_watch_tower_stun:CheckState()
 	local state = {

@@ -81,6 +81,8 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetHeroMinimapIconScale(1.2)
 	GameRules:SetCreepMinimapIconScale(1.2)
 	GameRules:SetRuneMinimapIconScale(1.2)
+	GameRules:SetStartingGold(0)
+	GameRules:SetStartingGold(0)
 	
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride(true)
@@ -343,6 +345,11 @@ function AOHGameMode:InitVariables()
 			self:EndVote()
 		end
 	)
+	local totalGold = 3000 * self._goldRatio
+	for _, v in pairs(AOHGameMode.Players) do
+		v:ModifyGold(totalGold / self._playerNumber, true, DOTA_ModifyGold_GameTick)
+	end
+	
 end
 
 -- When game state changes set state in script

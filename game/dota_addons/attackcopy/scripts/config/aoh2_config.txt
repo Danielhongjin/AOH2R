@@ -901,7 +901,7 @@
 			"b"
 			{
 				"NPCName"				"npc_boss_invoker"
-				"TotalUnitsToSpawn"		"2"
+				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"40"
 				"WaitForTime"			"15"
@@ -909,7 +909,7 @@
 			"c"
 			{
 				"NPCName"				"npc_boss_abyssal_underlord"
-				"TotalUnitsToSpawn"		"2"
+				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"20"
 				"WaitForTime"			"30"

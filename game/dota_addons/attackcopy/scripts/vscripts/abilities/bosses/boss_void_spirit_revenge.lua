@@ -20,6 +20,7 @@ function boss_void_spirit_revenge:OnSpellStart()
 	Timers:CreateTimer(
 		delay, 
 		function()
+			spell:EndCooldown()
 			spell:OnSpellStart()
 		end
 	)

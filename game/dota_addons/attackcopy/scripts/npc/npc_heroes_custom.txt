@@ -106,8 +106,9 @@
 }
 "npc_dota_hero_bristleback"
 {
-    "Ability13"		"special_bonus_cleave_100"
-    "Ability17"		"special_bonus_cooldown_reduction_40"
+	"AttributeAgilityGain"		"2.800000"
+	"AttributeStrengthGain"		"3.900000"
+    "Ability16"		"special_bonus_cooldown_reduction_40"
 }
 "npc_dota_hero_broodmother"
 {
@@ -689,6 +690,12 @@
 	"AttributeBaseAgility"		"10"
 	"AttributeAgilityGain"		"1.400000"
 	"AttributeIntelligenceGain"		"4.500000"
+}
+"npc_dota_hero_troll_warlord"
+{
+	"Ability15"		"special_bonus_unique_troll_warlord_4"
+	"Ability17"		"special_bonus_attack_base_damage_100"
+	"AttributeBaseAgility"		"26"
 }
 "npc_dota_hero_tusk"
 {

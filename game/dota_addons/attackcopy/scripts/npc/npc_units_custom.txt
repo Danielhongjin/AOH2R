@@ -3507,8 +3507,8 @@
     "ArmorPhysical"				"30"
     "MagicalResistance"			"-10"
     "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
-    "AttackDamageMin"			"400"
-    "AttackDamageMax"			"425"
+    "AttackDamageMin"			"500"
+    "AttackDamageMax"			"525"
     "AttackRate"				"1.3"
     "AttackAnimationPoint"		"0.43"
     "AttackAcquisitionRange"	"1000"
@@ -3944,7 +3944,7 @@
     "BountyGoldMax"                         "1"
     "MovementCapabilities"         		    "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"                         "350"
-    "StatusHealth"                          "30500"
+    "StatusHealth"                          "26000"
     "StatusHealthRegen"                     "30"
     "StatusMana"                            "4500"
     "StatusManaRegen"                       "44"
@@ -4039,7 +4039,7 @@
     "BountyGoldMax"                         "1"
     "MovementCapabilities"         		    "DOTA_UNIT_CAP_MOVE_GROUND"
     "MovementSpeed"                         "380"
-    "StatusHealth"                          "25500"
+    "StatusHealth"                          "22500"
     "StatusHealthRegen"                     "30"
     "StatusMana"                            "4500"
     "StatusManaRegen"                       "44"
@@ -4307,7 +4307,7 @@
 	"MovementSpeed"				"310"		// Speed.			
 	"ArmorPhysical"				"32"
 	"MagicalResistance"			"-10"
-	"StatusHealth"				"3500"		// Base health.
+	"StatusHealth"				"2500"		// Base health.
 	"StatusHealthRegen"			"0"		// Health regeneration rate.
 	"StatusMana"				"500"			// Base mana.
 	"StatusManaRegen"			"0.1"		// Mana regeneration rate.		 
@@ -5820,6 +5820,55 @@
 //=================================================================================	
 // Round32
 //=================================================================================
+"npc_boss_meteor"
+{
+    "BaseClass"					"npc_dota_creature"
+    "Model"						"models/particle/meteor.vmdl"
+    "SoundSet"					"Hero_Tiny"
+    "ConsideredHero"			"1"
+    "ModelScale" 				"1.5"
+    "Level"						"12"
+    "CanBeDominated"			"0"
+    "ArmorPhysical"				"40"
+	"MagicalResistance"						"35"
+    "AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+    "AttackDamageMin"			"10000"
+    "AttackDamageMax"			"10000"
+    "AttackRate"				"3"
+    "AttackAnimationPoint"		"0.1"
+    "AttackAcquisitionRange"	"0"
+    "AttackRange"				"128"
+    "RingRadius"				"120"
+    "HealthBarOffset"			"235"
+    "BountyXP"					"0"
+    "BountyGoldMin"				"1"
+    "BountyGoldMax"				"1"
+    "MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_FLY"
+    "MovementSpeed"				"200"
+    "MovementTurnRate"			"0.6"
+    "StatusHealth"				"320000"
+    "StatusHealthRegen"			"2"
+    "StatusMana"				"3000"
+    "StatusManaRegen"			"5.0"
+    "VisionDaytimeRange"		"1400"
+    "VisionNighttimeRange"		"800"
+    "TeamName"					"DOTA_TEAM_BADGUYS"
+    "CombatClassAttack"			"DOTA_COMBAT_CLASS_ATTACK_BASIC"
+    "CombatClassDefend"			"DOTA_COMBAT_CLASS_DEFEND_BASIC"
+    "UnitRelationshipClass"		"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+	"HasInventory"				"1"
+
+    "Creature"
+    {
+		"DisableClumpingBehavior"   "1"
+        "EquippedItems"
+        {
+			"Boss Resistance"       	{ "Item"        "item_boss_resistance_25" }
+			"Unstoppable"       	{ "Item"        "item_boss_unstoppable" }
+			"Burning Radiance"       		{ "Item"        "item_burning_radiance" }
+        }
+    }
+}
 "npc_boss_lich_king"    
 {
 	// General
@@ -6047,7 +6096,7 @@
 	// Movement
 	//----------------------------------------------------------------
 	"MovementCapabilities"		"DOTA_UNIT_CAP_MOVE_GROUND"			// Type of locomotion - ground, air
-	"MovementSpeed"				"270"		// Speed
+	"MovementSpeed"				"330"		// Speed
 	"MovementTurnRate"			"0.5"		// Turning rate.
 
 	// Status
@@ -7388,8 +7437,8 @@
 	
 	"StatusHealth"				"400"
 	"StatusHealthRegen"			"0"			// Health regeneration rate.
-	"StatusMana"				"0"			// Base mana.
-	"StatusManaRegen"			"0"			// Mana regeneration rate.
+	"StatusMana"				"200"			// Base mana.
+	"StatusManaRegen"			"2"			// Mana regeneration rate.
 	"BoundsHullName"			"DOTA_HULL_SIZE_TOWER"			// Hull type used for navigation/locomotion.
 	"ProjectileCollisionSize"	"50"
 	"RingRadius"				"130"
@@ -7931,7 +7980,7 @@
 
 	// Status
 	//----------------------------------------------------------------
-	"StatusHealth"				"12000"		// Base health.
+	"StatusHealth"				"10000"		// Base health.
 	"StatusHealthRegen"			"0"		// Health regeneration rate.
 	"StatusMana"				"500"			// Base mana.
 	"StatusManaRegen"			"30"		// Mana regeneration rate.		 
@@ -8597,22 +8646,30 @@
 {
 	"UnitLabel"                    "pharaoh_ok"
 	"StatusHealth"				"28"
+	"BountyGoldMin"				"1"
+	"BountyGoldMax"				"1"
 }
 "npc_dota_unit_tombstone2"
 {
 	"UnitLabel"                    "pharaoh_ok"
 	"StatusHealth"				"28"
+	"BountyGoldMin"				"1"
+	"BountyGoldMax"				"1"
 }
 
 "npc_dota_unit_tombstone3"
 {
 	"UnitLabel"                    "pharaoh_ok"
 	"StatusHealth"				"28"
+	"BountyGoldMin"				"1"
+	"BountyGoldMax"				"1"
 }
 "npc_dota_unit_tombstone4"
 {
 	"UnitLabel"                    "pharaoh_ok"
 	"StatusHealth"				"28"
+	"BountyGoldMin"				"1"
+	"BountyGoldMax"				"1"
 }
 "npc_dota_shadow_shaman_ward_1"
 {

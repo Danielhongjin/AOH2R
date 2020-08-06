@@ -6908,6 +6908,7 @@
         }
     }
 }
+//MOVE PARTICLE TO HEAL AURA
 "watch_tower_increase_stats"
 {
     "BaseClass"					    "ability_lua"
@@ -6974,17 +6975,17 @@
 		"02"
         {
             "var_type"					"FIELD_FLOAT"
-            "healing"					"3.0"
+            "healing"					"4.0"
         }
 		"03"
         {
             "var_type"					"FIELD_FLOAT"
-            "mp_healing"					"2.0"
+            "mp_healing"					"3.0"
         }
 		"04"
         {
             "var_type"					"FIELD_INTEGER"
-            "damage_taken"					"70"
+            "damage_taken"					"80"
         }
     }
     "Modifiers"
@@ -6997,11 +6998,6 @@
             "Aura_Radius" 		"%radius"
             "Aura_Teams" 		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
             "Aura_Types" 		"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-			"States"
-			{
-				"MODIFIER_STATE_INVULNERABLE"		"MODIFIER_STATE_VALUE_DISABLED"
-			}
-			
         }
         "modifier_watch_tower_heal"
         {
@@ -7038,7 +7034,7 @@
         "02"
         {
             "var_type"			    "FIELD_FLOAT"
-            "health_per_round"	    "500"
+            "health_per_round"	    "450"
         }
         "03"
         {
@@ -12039,9 +12035,6 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Custom: Soul Release
-	//=================================================================================================================
 	"custom_soul_release"
 	{
 		// General
@@ -12077,7 +12070,7 @@
 			"02"
 			{
 				"var_type"						"FIELD_FLOAT"
-				"delay"							"1.97"
+				"delay"							"1.07"
 			}	
 			"03"
 			{
@@ -12113,6 +12106,11 @@
 			{
 				"var_type"						"FIELD_INTEGER"
 				"damage_radius"					"250"
+			}
+			"10"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"explosion_delay"							"0.9"
 			}
 		}
 		// Datadriven
@@ -16505,7 +16503,7 @@
 		"AbilityCastPoint"				"0.7"
 		"AbilityCooldown"				"9"
 		"AbilityManaCost"				"0"
-		"AbilityDamage"					"600"
+		"AbilityDamage"					"1000"
 		"AbilityDuration"				"2"
 		"AbilitySpecial"
 		{
@@ -18933,7 +18931,7 @@
 			"06"
 			{
 				"var_type"			    "FIELD_INTEGER"
-				"radius"	    "1050"
+				"radius"	    "1250"
 			}
 			"07"
 			{
@@ -19417,7 +19415,7 @@
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"0"
-		"AbilityDamage"					"380"
+		"AbilityDamage"					"1200"
 		"AbilityCastRange"				"900"
 		"AbilitySpecial"
 		{
@@ -19753,4 +19751,28 @@
 			}
 		}
 	}
+	"boss_meteor_behavior"
+	{
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"abilities/heroes/huskar_sacred_flame.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+    "AbilityTextureName"		    "huskar_sacred_flame"
+	"HasScepterUpgrade"				"1"
+	"AbilityManaCost"				"30"
+    "AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"chance"				"30"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"damage"				"24"
+		}
+	}
+}
 }

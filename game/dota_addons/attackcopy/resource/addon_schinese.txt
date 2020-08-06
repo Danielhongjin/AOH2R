@@ -5,13 +5,13 @@
 	"Tokens"
 	{
 		"addon_game_name"								"Attack On Hero 2 Rebalanced"
-		"difficulty_text_label"							"Difficulty Vote"
-		"easy_label"									"Easy"
-		"normal_label"									"Normal"
-		"hard_label"									"Hard"
-		"easy_description"								"Enemies 20% Less Damage\nEnemies 30% Higher Cooldowns\nLimited Max Round 37"
-		"medium_description"								"Default Difficulty"
-		"hard_description"								"Enemies 0.5% Mana Regeneration\nEnemies 0.65% Health Regeneration\nEnemies 20% Lower Cooldowns\nNo Round Healing\n5 Second Round Wait\nHeroes +12% Primary Attribute"
+		"difficulty_text_label"							"难度投票"
+		"easy_label"									"简单"
+		"normal_label"									"普通"
+		"hard_label"									"困难"
+		"easy_description"								"BOSS的伤害减少20％\n技能冷却时间增加30％\n最后一关为第37关"
+		"medium_description"							"默认难度"
+		"hard_description"								"BOSS的魔法回复速度提高最大魔法值的0.5％\n生命恢复速度提高最大生命值的0.65％\n技能冷却时间减少20％\n每个关卡结束时没有生命和魔法回复\n关卡之间的等待时间缩短至5秒\n每位英雄的主属性提升12％"
 
 		"DOTA_Tooltip_Ability_item_bag_of_gold"			"Bag Of Gold"
 		"DOTA_Tooltip_Ability_item_tombstone"			"Ressurect Teammate"
@@ -129,7 +129,7 @@
 "DOTA_Tooltip_ability_item_recipe_trusty_shovel"        "可靠铁铲卷轴"
 "DOTA_Tooltip_ability_item_flicker_Description"                                        "<h1>主动使用: 灵动闪烁</h1> 驱散负面效果（弱驱散），并且自身闪烁至1500码范围内的随机地点。受到伤害不会被禁用。"
 "DOTA_Tooltip_Ability_item_tome_selling"                                        "售罄之书"
-"DOTA_Tooltip_Ability_item_tome_selling_Description"                "<h1>主动使用: 清空库存</h1> 立即出售库存和背包中的所有可售物品，售出获得的金钱为物品的原价格。"
+"DOTA_Tooltip_Ability_item_tome_selling_Description"               "<h1>主动使用：清空库存</h1> 立即出售库存和背包中的所有可售物品，售出获得的金钱为物品的原价格。"
 
 
 //Level 2 Chest
@@ -201,13 +201,13 @@
 "DOTA_Tooltip_ability_item_recipe_witless_shako"        "Recipe: Witless Shako"
 
 
-"DOTA_Tooltip_ability_item_player_unstoppable"                                                        "巨型掩饰腰带"
+"DOTA_Tooltip_ability_item_player_unstoppable"                                                        "巨人前行腰带"
 "DOTA_Tooltip_ability_item_player_unstoppable_Description"                                "<h1>被动效果: 不可阻挡</h1> 根据你的最大生命值来提供法术增强，但是减少%bonus_attack_speed%的攻击速度。 <br><br>使你可以穿行于树木之间。"
 "DOTA_Tooltip_ability_item_player_unstoppable_Lore"                                                "由不幸的巨人研究者使用，但并未成功。"
 "DOTA_Tooltip_ability_item_player_unstoppable_spell_amp_pct"                        "每点生命值增强法术效果："
 "DOTA_Tooltip_ability_item_player_unstoppable_bonus_health_pct"                        "额外生命值加成百分比："
 "DOTA_Tooltip_ability_item_player_unstoppable_bonus_health"                                "增加生命值："
-"DOTA_Tooltip_ability_item_player_unstoppable_Note0"                                        "对幻想不生效。"
+"DOTA_Tooltip_ability_item_player_unstoppable_Note0"                                        "对幻象不生效。"
 "DOTA_Tooltip_ability_item_player_unstoppable_Note1"                                        "树精卫士使用此物品时不会破坏树木。"
 
 "DOTA_Tooltip_ability_item_pocket_rax"					"口袋兵营（近战）"
@@ -242,7 +242,7 @@
 "DOTA_Tooltip_ability_item_recipe_desolator_2"	"卷轴：寂灭"
 "DOTA_Tooltip_ability_item_recipe_ex_machina"	"卷轴：机械之心"
 "DOTA_Tooltip_Ability_item_custom_ex_machina"					"机械之心"
-"DOTA_Tooltip_Ability_item_custom_ex_machina_Description"		"<h1>主动使用：刷新</h1> 重置所有物品的冷却时间"
+"DOTA_Tooltip_Ability_item_custom_ex_machina_Description"		 "<h1>主动使用：刷新</h1> 重置所有物品的冷却时间。"
 "DOTA_Tooltip_Ability_item_custom_ex_machina_bonus_armor"		"+$armor"
 "DOTA_Tooltip_Ability_item_ex_machina_Description"		"<h1>主动使用：刷新</h1> 以高昂的花费来重置所有物品的冷却时间"
 "DOTA_Tooltip_ability_item_recipe_fallen_sky"	"卷轴：天崩"
@@ -259,7 +259,7 @@
 "DOTA_Tooltip_ability_item_recipe_trident_2"	"卷轴：三元叉戟"
 
 "DOTA_Tooltip_ability_item_custom_seer_stone"							"先哲之石"
-"DOTA_Tooltip_ability_item_custom_seer_stone_Description"               "增加施法距离的同时增加了视野范围"
+"DOTA_Tooltip_ability_item_custom_seer_stone_Description"                "增加施法距离的同时增加了视野范围。"
 "DOTA_Tooltip_ability_item_custom_seer_stone_cast_range_bonus"               "+$cast_range"
 "DOTA_Tooltip_ability_item_custom_seer_stone_vision_bonus"                "+$视野范围"
 "DOTA_Tooltip_ability_item_custom_seer_stone_bonus_mana"                "+$mana"
@@ -282,7 +282,7 @@
 
 
 "DOTA_Tooltip_ability_item_dredged_trident"                                                "疏浚三叉戟"
-"DOTA_Tooltip_ability_item_dredged_trident_Description"                                        "<h1>被动： 致命一击</h1> 是你的下次攻击造成 %crit_multiplier%%% 的伤害。"
+"DOTA_Tooltip_ability_item_dredged_trident_Description"                                        "<h1>被动： 致命一击</h1> 使你的下次攻击造成 %crit_multiplier%%% 的伤害。"
 "DOTA_Tooltip_ability_item_dredged_trident_bonus_damage"       "+$damage"	
 
 "DOTA_Tooltip_ability_item_meteor_hammer_Description"                   "<h1>主动使用： 陨星锤</h1> 持续施法 - 持续施法成功后，召唤一颗陨石打击 %impact_radius% 范围内的敌方单位，造成 %stun_duration% 秒的眩晕和冲击伤害。会对敌方单位造成后续灼烧伤害。<BR><BR>冲击伤害： %impact_damage_units% <BR>后续灼烧伤害： %burn_dps_units% <BR><BR>施法时间： %max_duration% 秒<BR>陨石着陆时间： %land_time% 秒"        
@@ -2526,11 +2526,11 @@
 "DOTA_Tooltip_ability_item_blast_staff_2_bonus_strength"                "+力量"
 "DOTA_Tooltip_ability_item_blast_staff_2_bonus_agility"                        "+敏捷"
 
-"DOTA_Tooltip_ability_item_bloodstone_Description"						"<h1>Active: Bloodpact</h1> Converts %mana_cost_percentage%%% of your max mana to health regeneration over %restore_duration% seconds.\n <h1>Passive: Mana Battery</h1> Provides +%mana_regen_multiplier%%% Mana Regen Amplification."
+"DOTA_Tooltip_ability_item_bloodstone_Description"						"<h1>主动：血之契约</h1>%restore_duration%秒内将最大魔法值的%mana_cost_percentage%%%转化为生命恢复。\n<h1>被动：魔力源泉</h1> 提供 +%mana_regen_multiplier%%% 的魔法回复增强。"
 
-"DOTA_Tooltip_Ability_item_broken_bow"                              "Broken Bow"
-"DOTA_Tooltip_Ability_item_broken_bow_Description"			        "<h1>Passive: Ghost Attack</h1> Launches an additional attack every %attacks_needed% attacks."
-"DOTA_Tooltip_Ability_item_broken_bow_Lore"				            "A derelict bow that whispers in the wind."
+"DOTA_Tooltip_Ability_item_broken_bow"                               "风陨长弓"
+"DOTA_Tooltip_Ability_item_broken_bow_Description"			         "<h1>被动：风魂之击</h1> 每攻击 %attacks_needed% 次时，将会附带额外的攻击。"
+"DOTA_Tooltip_Ability_item_broken_bow_Lore"				            "废弃的弓正在风中低语。"
 "DOTA_Tooltip_Ability_item_broken_bow_bonus_agility"		        "+$agi"
 "DOTA_Tooltip_Ability_item_broken_bow_bonus_int"		            "+$int"
 "DOTA_Tooltip_Ability_item_broken_bow_bonus_attack_speed"		    "+$attack"
@@ -2538,20 +2538,22 @@
 "DOTA_Tooltip_ability_item_broken_bow_bonus_damage"					"+$damage"
 "DOTA_Tooltip_Ability_item_broken_bow_bonus_mana_regen"             "+$mana_regen"
 
-"DOTA_Tooltip_modifier_item_broken_bow_count"                       "Broken Bow Count"
-"DOTA_Tooltip_modifier_item_broken_bow_count_Description"           "Amount of attacks dealt."
-"DOTA_Tooltip_ability_item_burning_radiance"                            "Burning Radiance"
-"DOTA_Tooltip_ability_item_burning_radiance_Description"				"<h1>Toggle: Burn</h1> When active, scorches enemies for %aura_damage% magical damage per second, and causes them to miss %blind_pct%%% of their attacks. Illusions deal %aura_damage_illusions% magical damage per second.<br><br>Radius: %aura_radius%"	
-"DOTA_Tooltip_ability_item_burning_radiance_Lore"						"A divine weapon that causes damage and a bright burning effect that lays waste to nearby enemies."
+"DOTA_Tooltip_modifier_item_broken_bow_count"                        "风陨之击"
+"DOTA_Tooltip_modifier_item_broken_bow_count_Description"            "已攻击次数。"
+
+"DOTA_Tooltip_ability_item_burning_radiance"                             "灼烧之耀"
+"DOTA_Tooltip_ability_item_burning_radiance_Description"				"<h1>开关：辉耀灼烧</h1>开启后，辉耀灼烧每秒对敌军造成%aura_damage%点魔法伤害，并且物理攻击有%blind_pct%%%的几率不会命中。幻象每秒造成%aura_damage_illusions%点魔法伤害。<br><br>作用范围：%aura_radius%"	
+"DOTA_Tooltip_ability_item_burning_radiance_Lore"						"一把神圣的武器，剑身的耀眼光芒能将敌人化为灰烬。"
 "DOTA_Tooltip_ability_item_burning_radiance_bonus_damage"				"+$damage"
 
-"DOTA_Tooltip_ability_item_corrupted_diffusal_blade"                        "Corrupted Diffusal Blade"
+"DOTA_Tooltip_ability_item_corrupted_diffusal_blade"                         "腐化之刃"
 "DOTA_Tooltip_ability_item_corrupted_diffusal_blade_Description"				"<h1>主动：阻止</h1> 以敌方单位为目标，减缓其移动速度，持续%purge_slow_duration%秒。<br><br>施法距离：%abilitycastrange%\n<h1>被动：破法</h1>每次攻击将燃烧目标%feedback_mana_burn%点魔法，而且每燃烧一点魔法都会造成%damage_per_burn%点物理伤害。<br><br>近战英雄的幻象每次攻击将燃烧%feedback_mana_burn_illusion_melee%点魔法。远程英雄的幻象每次攻击将燃烧%feedback_mana_burn_illusion_ranged%点魔法。"
 "DOTA_Tooltip_ability_item_corrupted_diffusal_blade_Note0"					"不会与其他法力损毁技能叠加。"
 "DOTA_Tooltip_ability_item_corrupted_diffusal_blade_Lore"							"一把直接切入敌人灵魂的魔力之刃。"
 "DOTA_Tooltip_ability_item_corrupted_diffusal_blade_bonus_agility"			"+$agi"
 "DOTA_Tooltip_ability_item_corrupted_diffusal_blade_bonus_intellect"		"+$int"
 
+"DOTA_Tooltip_ability_item_cursed_bloodthorn"								 "诅咒血棘"
 "DOTA_Tooltip_ability_item_cursed_bloodthorn_Description"                      "<h1>主动：灵魂撕裂</h1>使目标沉默%silence_duration%秒，沉默结束后其间所受伤害的%silence_damage_percent%%%将以额外魔法伤害的形式结算。<br><br>所有对目标造成的攻击均不会落空，并且拥有%tooltip_crit_chance%%%概率造成%target_crit_multiplier%%%致命一击伤害。<br><br>施法距离：%abilitycastrange%"
 "DOTA_Tooltip_ability_item_cursed_bloodthorn_Note0"							"致命一击对建筑无效。"
 "DOTA_Tooltip_ability_item_cursed_bloodthorn_Lore"                             "一把亵渎之刃，受害者临死前的每次挣扎都会使其砍得更深。"
@@ -2559,24 +2561,25 @@
 "DOTA_Tooltip_ability_item_cursed_bloodthorn_bonus_attack_speed"            "+$attack"
 "DOTA_Tooltip_ability_item_cursed_bloodthorn_bonus_damage"                  "+$damage"
 "DOTA_Tooltip_ability_item_cursed_bloodthorn_bonus_mana_regen"              "+$mana_regen"
-"DOTA_Tooltip_Ability_item_demon_talon"                            "Demon Talon"
-"DOTA_Tooltip_Ability_item_demon_talon_Description"			    "<h1>Passive: Second Hand </h1> Every instance of damage dealt by your units deals %proc_damage% extra physical damage. Illusions and units deal half damage."
-"DOTA_Tooltip_ability_item_demon_talon_Lore"                          "Seems to have a mind of its own."
+
+"DOTA_Tooltip_Ability_item_demon_talon"                             "恶魔利爪"
+"DOTA_Tooltip_Ability_item_demon_talon_Description"			     "<h1>被动：第二只手 </h1> 英雄及其控制的所有单位造成伤害的同时会造成 deals %proc_damage% 的额外物理伤害。幻象和其他单位造成半额伤害。"
+"DOTA_Tooltip_ability_item_demon_talon_Lore"                           "恶魔的利爪，只遵从自己的意志。"
 "DOTA_Tooltip_Ability_item_demon_talon_bonus_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_demon_talon_bonus_attack_speed"		    "+$attack"
 "DOTA_Tooltip_Ability_item_demon_talon_bonus_regen"					"+$hp_regen"
 
-"DOTA_Tooltip_Ability_item_recipe_diff_doom"               "Recipe: Ether Hammer"
-"DOTA_Tooltip_Ability_item_diff_doom"					    "Ether Hammer"
-"DOTA_Tooltip_ability_item_diff_doom_Description"			"<h1>Active: Differential Doom</h1> Marks all enemies in a radius. After %delay% seconds, deals %damage% pure damage + %damage_attribute%%% of your hero's primary attribute to enemies in %area_of_effect% radius. Enemies who are marked only take %damage_marker%%% damage."
-"DOTA_Tooltip_ability_item_diff_doom_Lore"					"Turns mana inside out."
+"DOTA_Tooltip_Ability_item_recipe_diff_doom"                "卷轴：以太之锤"
+"DOTA_Tooltip_Ability_item_diff_doom"					    "以太之锤"
+"DOTA_Tooltip_ability_item_diff_doom_Description"			"<h1>主动：差异厄运</h1> 标记一定范围内所有的敌方单位。经过 %delay% 秒的延迟后，对 %area_of_effect% 范围内的敌方单位造成 %damage% 的纯粹伤害和英雄主属性 %damage_attribute%%% 的伤害。被标记到的敌方单位只承受 %damage_marker%%% 伤害。"
+"DOTA_Tooltip_ability_item_diff_doom_Lore"					"法力将会从内到外翻转。"
 "DOTA_Tooltip_ability_item_diff_doom_bonus_strength"				"+$str"
 "DOTA_Tooltip_ability_item_diff_doom_bonus_intellect"				"+$int"
 "DOTA_Tooltip_ability_item_diff_doom_bonus_health_regen"			"+$hp_regen"
 "DOTA_Tooltip_ability_item_diff_doom_bonus_mana_regen"				"+$mana_regen"
 
-"DOTA_Tooltip_modifier_diff_doom_marker"					"Marked"
-"DOTA_Tooltip_modifier_diff_doom_marker_Description"		"This unit will take less damage from Ether Hammer."
+"DOTA_Tooltip_modifier_diff_doom_marker"					"被标记"
+"DOTA_Tooltip_modifier_diff_doom_marker_Description"		 "此单位将承受更少来自以太之锤的伤害。"
 
 "DOTA_Tooltip_Ability_item_dynamo_core"                            "Dynamo-Core"
 "DOTA_Tooltip_Ability_item_dynamo_core_Description"			    "<h1>Passive: Energizer </h1> Restores mana for %mana_steal%%% of attack damage dealt. Reduces total attack speed by %reduced_attack_speed%%% and mana by %reduced_mana%%%."
@@ -2591,7 +2594,7 @@
 "DOTA_Tooltip_Ability_item_glare_edge_Lore"		            	"A weightless, dull blade that burns away the flesh of its victims. Constantly smells of soap."
 
 "DOTA_Tooltip_Ability_item_greater_demon_talon"                            "Greater Demon Talon"
-"DOTA_Tooltip_Ability_item_greater_demon_talon_Description"			    "<h1>Active: Sleight of Hand</h1>Switches this item's damage type to magical, but lowers damage. \n<h1>Passive: Second Hand </h1> Every instance of damage deals %proc_damage% extra physical damage. Illusions deal half damage."
+"DOTA_Tooltip_Ability_item_greater_demon_talon_Description"			    "<h1>被动：第二只手 </h1> 英雄及其控制的所有单位造成伤害的同时会造成 deals %proc_damage% 的额外物理伤害。幻象和其他单位造成半额伤害。"
 "DOTA_Tooltip_ability_item_greater_demon_talon_Lore"                          "Seems to have a mind of its own."
 "DOTA_Tooltip_Ability_item_greater_demon_talon_bonus_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_greater_demon_talon_bonus_attack_speed"		    "+$attack"
@@ -2670,7 +2673,7 @@
 "DOTA_Tooltip_ability_item_custom_refresher_bonus_health_regen"				"+$hp_regen"
 "DOTA_Tooltip_ability_item_custom_refresher_bonus_mana_regen"				"+$mana_regen"
 "DOTA_Tooltip_ability_item_dark_bloodstone"									"Dark Bloodstone"
-"DOTA_Tooltip_ability_item_dark_bloodstone_Description"						"<h1>主动：血之契约</h1>%restore_duration%秒内将最大魔法值的%mana_cost_percentage%%%转化为生命恢复。\n<h1>被动：魔力源泉</h1>每点能量提供%regen_per_charge%点/秒的魔法回复和%amp_per_charge%%%技能增强。附近有敌方英雄阵亡时获得%kill_charges%点能量。持有者死亡时血精石失去%death_charges%点能量。具有%initial_charges_tooltip%点初始能量。"
+"DOTA_Tooltip_ability_item_dark_bloodstone_Description"						"<h1>主动：血之契约</h1>%restore_duration%秒内将最大魔法值的%mana_cost_percentage%%%转化为生命恢复。\n<h1>被动：魔力源泉</h1> 提供 +%mana_regen_multiplier%%% 的魔法回复增强。"
 "DOTA_Tooltip_ability_item_dark_bloodstone_Lore"								"血精石鲜红的色彩在战场上绝对不会被看错，拥有者似乎有无限的生命力和精力。"
 "DOTA_Tooltip_ability_item_dark_bloodstone_bonus_health"						"+$health"
 "DOTA_Tooltip_ability_item_dark_bloodstone_bonus_mana"						"+$mana"

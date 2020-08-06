@@ -99,6 +99,10 @@
 }
 "npc_dota_hero_brewmaster"
 {
+	"AttributeAgilityGain"		"3.0000"
+	"ArmorPhysical"		"1.000000"
+	"AttackRate"		"1.600000"
+	"AttackAnimationPoint"		"0.330000"
 }
 "npc_dota_hero_bristleback"
 {
@@ -204,6 +208,7 @@
 }
 "npc_dota_hero_enchantress"
 {
+	"Ability2"		"enchantress_custom_enchant"
 	"Ability11"		"special_bonus_exp_boost_25"
 }
 "npc_dota_hero_enigma"

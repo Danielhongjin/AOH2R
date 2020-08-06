@@ -162,11 +162,7 @@ function has_item(caster, item_name)
     end
     return nil
 end
-local round_end_sounds = {[0] = "MegaCreeps.Radiant", 
-"MegaCreeps.Dire.Ancient", 
-"MegaCreeps.Dire", 
-"MegaCreeps.Radiant.Ancient",
-}
+
 
 function refresh_players()
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
@@ -178,7 +174,6 @@ function refresh_players()
 			hero:AddNewModifier(hero, nil, "modifier_roundend_effect", {duration = 5})
 		end
 	end
-	EmitGlobalSound(round_end_sounds[RandomInt(0, 3)])
 end
 
 
@@ -347,7 +342,7 @@ end
 
 function modifier_roundend_effect:OnCreated()
 	local parent = self:GetParent()
-	self.fx = ParticleManager:CreateParticle("particles/units/heroes/hero_omniknight/omniknight_guardian_angel_ally.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+	self.fx = ParticleManager:CreateParticle("particles/econ/events/ti10/fountain_regen_ti10_lvl3.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
 	ParticleManager:SetParticleControlEnt(
 		self.fx,
 		0,

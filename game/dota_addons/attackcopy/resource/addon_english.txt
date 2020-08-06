@@ -1829,9 +1829,22 @@
 "DOTA_Tooltip_Ability_doom_custom_flames_Lore"				        "Hell always has fire."
 "DOTA_Tooltip_Ability_doom_custom_flames_duration"				    "DURATION:"
 
-
 "DOTA_Tooltip_modifier_doom_custom_flames_emitter"                  "Hell Flames"
 "DOTA_Tooltip_modifier_doom_custom_flames_emitter_Description"      "Spitting fire."
+
+"DOTA_Tooltip_ability_enchantress_custom_enchant"										"Enchant"
+"DOTA_Tooltip_ability_enchantress_custom_enchant_Description"							"Enchantress charms an enemy. If the enemy is a hero, they are slowed. If the enemy is a creep, she brings it under her control, increasing its attack damage and max health.\n\nDISPEL TYPE: Basic Dispel"
+"DOTA_Tooltip_ability_enchantress_custom_enchant_Lore"									"A true steward of the forest, Aiushtha befriends all within it - from lowly trolls to powerful centaurs."
+"DOTA_Tooltip_ability_enchantress_custom_enchant_Note0"								"Illusions can be converted."
+"DOTA_Tooltip_ability_enchantress_custom_enchant_slow_movement_speed"					"%HERO MOVE SLOW:"
+"DOTA_Tooltip_ability_enchantress_custom_enchant_abilityduration"						"HERO SLOW DURATION:"
+"DOTA_Tooltip_ability_enchantress_custom_enchant_enchant_health"						"CREEP MAX HEALTH BONUS:"
+"DOTA_Tooltip_ability_enchantress_custom_enchant_enchant_damage"						"CREEP ATTACK DAMAGE BONUS:"
+
+"DOTA_Tooltip_modifier_enchantress_enchant_lua"						"Enchant"
+"DOTA_Tooltip_modifier_enchantress_enchant_lua_Description"			"Under control of Enchantress"
+"DOTA_Tooltip_modifier_enchantress_enchant_slow_lua"				"Enchant"
+"DOTA_Tooltip_modifier_enchantress_enchant_slow_lua_Description"	"Movement slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 
 "DOTA_Tooltip_ability_ember_spirit_sleight_of_fist_Description"			"Ember Spirit dashes around with blazing speed, attacking all enemies in the targeted area of effect, then returning to his start location.  Deals bonus damage."
 "DOTA_Tooltip_ability_ember_spirit_sleight_of_fist_creep_damage_penalty" "%BONUS DAMAGE:"
@@ -2468,7 +2481,7 @@
 "DOTA_Tooltip_Ability_item_arcane_staff"                            "Arcane Staff"
 "DOTA_Tooltip_Ability_item_arcane_staff_Description"			    "<h1>Passive: Arcane Crit</h1> Every instance of magical or pure damage that you cause deals %crit_damage_mult%%% damage, but spends mana equal to half of the added damage. Intelligence reduces mana cost.\n<font color='#F2A93E'>Arcane Crit does not stack.</font>"
 "DOTA_Tooltip_Ability_item_arcane_staff_Lore"				        "A staff made of permafrost, impossible to hold without gloves."
-"DOTA_Tooltip_Ability_item_arcane_staff_Note0"						"Mana cost is damage * 0.30 * (%cost_constant% / (%cost_constant% + intelligence))."
+"DOTA_Tooltip_Ability_item_arcane_staff_Note0"						"Mana cost is damage * 0.35 * (%cost_constant% / (%cost_constant% + intelligence))."
 "DOTA_Tooltip_Ability_item_arcane_staff_Note1"						"Will not fire if you have less than 150 mana."
 "DOTA_Tooltip_Ability_item_arcane_staff_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_arcane_staff_bonus_int"		            "+$int"

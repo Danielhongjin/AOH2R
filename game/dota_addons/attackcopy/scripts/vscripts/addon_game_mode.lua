@@ -47,12 +47,11 @@ function Precache(context)
 		"soundevents/game_sounds_heroes/game_sounds_void_spirit.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_oracle.vsndevts",
 		"soundevents/game_sounds_heroes/game_sounds_zuus.vsndevts",
+		"soundevents/game_sounds_custom.vsndevts"
 	}
 
 	local units = { 
-		"npc_dota_brewmaster_earth_3",
-		"npc_dota_brewmaster_storm_3",
-		"npc_dota_brewmaster_fire_3",
+
 	}
 
 

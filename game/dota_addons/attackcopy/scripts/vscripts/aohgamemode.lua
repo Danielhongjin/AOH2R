@@ -48,36 +48,16 @@ function AOHGameMode:InitGameMode()
 	end
 	self._hasVoted = {}
 	AOHGameMode.numPhilo = {}
-	AOHGameMode.numPhilo[0] = 0
-	AOHGameMode.numPhilo[1] = 0
-	AOHGameMode.numPhilo[2] = 0
-	AOHGameMode.numPhilo[3] = 0
-	AOHGameMode.numPhilo[4] = 0
 	AOHGameMode.isArcane = {}
-	AOHGameMode.isArcane[0] = false
-	AOHGameMode.isArcane[1] = false
-	AOHGameMode.isArcane[2] = false
-	AOHGameMode.isArcane[3] = false
-	AOHGameMode.isArcane[4] = false
 	AOHGameMode.isTalon = {}
-	AOHGameMode.isTalon[0] = nil
-	AOHGameMode.isTalon[1] = nil
-	AOHGameMode.isTalon[2] = nil
-	AOHGameMode.isTalon[3] = nil
-	AOHGameMode.isTalon[4] = nil
 	AOHGameMode.talonCount = {}
-	AOHGameMode.talonCount[0] = {}
-	AOHGameMode.talonCount[1] = {}
-	AOHGameMode.talonCount[2] = {}
-	AOHGameMode.talonCount[3] = {}
-	AOHGameMode.talonCount[4] = {}
 	AOHGameMode.difficultycount = {}
-	AOHGameMode.difficultycount[0] = 1
-	AOHGameMode.difficultycount[1] = 1
-	AOHGameMode.difficultycount[2] = 1
-	AOHGameMode.difficultycount[3] = 1
-	AOHGameMode.difficultycount[4] = 1
-	self._dpstick = 0
+	AOHGameMode.Players = {}
+	AOHGameMode.damage_count = {}
+	AOHGameMode.mag_damage = {}
+	AOHGameMode.phys_damage = {}
+	AOHGameMode.pure_damage = {}
+	AOHGameMode.dps_tick = 0
 	self._playerNumber = 0
 	self._goldRatio = 1
 	self._expRatio = 1
@@ -101,7 +81,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetHeroMinimapIconScale(1.2)
 	GameRules:SetCreepMinimapIconScale(1.2)
 	GameRules:SetRuneMinimapIconScale(1.2)
-	GameRules:GetGameModeEntity():SetFreeCourierModeEnabled(true)
+	
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesOverride(true)
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible(false)
@@ -198,11 +178,11 @@ function AOHGameMode:OnDamageDealt(damageTable)
 					if attackerPlayerId and attackerPlayerId >= 0 and attacker:IsOpposingTeam(victim:GetTeam()) then
 						player_data_modify_value(attackerPlayerId, "bossDamage", damageTable.damage)
 						if damageTable.damagetype_const == 2 then
-							self._magdamage[attackerPlayerId] = self._magdamage[attackerPlayerId] + damageTable.damage
+							AOHGameMode.mag_damage[attackerPlayerId] = AOHGameMode.mag_damage[attackerPlayerId] + damageTable.damage
 						elseif damageTable.damagetype_const == 1 then
-							self._physdamage[attackerPlayerId] = self._physdamage[attackerPlayerId] + damageTable.damage
+							AOHGameMode.phys_damage[attackerPlayerId] = AOHGameMode.phys_damage[attackerPlayerId] + damageTable.damage
 						else
-							self._puredamage[attackerPlayerId] = self._puredamage[attackerPlayerId] + damageTable.damage
+							AOHGameMode.pure_damage[attackerPlayerId] = AOHGameMode.pure_damage[attackerPlayerId] + damageTable.damage
 						end
 					end
 				end
@@ -227,6 +207,7 @@ function AOHGameMode:OnItemPickedUp(keys)
 end
 
 function AOHGameMode:DifficultyClicked(keys)
+	EmitSoundOnClient("AOH.MenuSelection", PlayerResource:GetPlayer(keys.id))
 	AOHGameMode.difficultycount[keys.id] = keys.choice
 	CustomGameEventManager:Send_ServerToAllClients("vote_update", {id = keys.id, difficulty = AOHGameMode.difficultycount[keys.id]})
 end
@@ -263,6 +244,7 @@ function AOHGameMode:ChooseRandomSpawnInfo()
 end
 
 function AOHGameMode:EndVote()
+	EmitGlobalSound("AOH.MenuClose")
 	local difficultyTotal = 0
 	for playerID = 0, 4 do
 		if PlayerResource:IsValidPlayerID(playerID) then
@@ -274,12 +256,12 @@ function AOHGameMode:EndVote()
 	end
 	self._difficulty = math.floor((difficultyTotal / self._playerNumber) + 0.5)
 	if self._difficulty == 0 then
-		Notifications:TopToAll({text="Easy", style={color="green", ["font-size"]="130px"}, duration=5})
+		Notifications:TopToAll({text="#easy_label", style={color="green", ["font-size"]="130px"}, duration=5})
 		self._negativeRounds = 2
 	elseif self._difficulty == 1 then
-		Notifications:TopToAll({text="Normal", style={color="white", ["font-size"]="130px"}, duration=5})
+		Notifications:TopToAll({text="#normal_label", style={color="white", ["font-size"]="130px"}, duration=5})
 	elseif self._difficulty == 2 then
-		Notifications:TopToAll({text="Hard", style={color="red", ["font-size"]="130px"}, duration=5})
+		Notifications:TopToAll({text="#hard_label", style={color="red", ["font-size"]="130px"}, duration=5})
 		self._flPrepTimeBetweenRounds = 5
 		
 		for playerID = 0, 4 do
@@ -294,61 +276,44 @@ function AOHGameMode:EndVote()
 		end
 	end
 	end
+	
 end
 -- Initiates variables that need to be set to values
 function AOHGameMode:InitVariables() 
-	self._damagecount = {}
-	self._damagecount[0] = {}
-	self._damagecount[1] = {}
-	self._damagecount[2] = {}
-	self._damagecount[3] = {}
-	self._damagecount[4] = {}
-	self._physdamage = {}
-	self._physdamage[0] = 1
-	self._physdamage[1] = 1
-	self._physdamage[2] = 1
-	self._physdamage[3] = 1
-	self._physdamage[4] = 1
-	self._magdamage = {}
-	self._magdamage[0] = 1
-	self._magdamage[1] = 1
-	self._magdamage[2] = 1
-	self._magdamage[3] = 1
-	self._magdamage[4] = 1
-	self._puredamage = {}
-	self._puredamage[0] = 1
-	self._puredamage[1] = 1
-	self._puredamage[2] = 1
-	self._puredamage[3] = 1
-	self._puredamage[4] = 1
 	for playerID = 0, 4 do
+		AOHGameMode.difficultycount[playerID] = 1
+		AOHGameMode.talonCount[playerID] = {}
+		AOHGameMode.isTalon[playerID] = nil
+		AOHGameMode.isArcane[playerID] = false
+		AOHGameMode.numPhilo[playerID] = 0
+		AOHGameMode.damage_count[playerID] = {}
+		AOHGameMode.mag_damage[playerID] = 1
+		AOHGameMode.phys_damage[playerID] = 1
+		AOHGameMode.pure_damage[playerID] = 1
+		for var = 0, 2 do
+			self.talonCount[playerID][var] = 0
+		end
 		for var = 0, 9 do
-			self._damagecount[playerID][var] = 0
+			AOHGameMode.damage_count[playerID][var] = 0
 		end
 		if PlayerResource:IsValidPlayerID(playerID) then
 			if PlayerResource:HasSelectedHero(playerID) then
 				local hero = PlayerResource:GetSelectedHeroEntity(playerID)
 				hero:AddItemByName("item_black_king_bar_free")
-				local courier_position = Entities:FindByName(nil, "dota_courier_spawn"):GetAbsOrigin()
-				self._nPlayerHelp = CreateUnitByName("npc_courier_replacement", courier_position, true, hero, hero:GetOwner(), hero:GetTeamNumber())
-				self._nPlayerHelp:SetControllableByPlayer(hero:GetPlayerID(), true)
-				self._nPlayerHelp:SetTeam(hero:GetTeamNumber())
-				self._nPlayerHelp:SetOwner(hero)
+				local courier_position = Entities:FindByName(nil, "dota_courier_spawn"):GetAbsOrigin() + Vector(RandomInt(-200, 200), RandomInt(-200, 200), 0)
+				local callback = function(courier)
+					courier:SetControllableByPlayer(hero:GetPlayerID(), true)
+					courier:SetTeam(hero:GetTeamNumber())
+					courier:SetOwner(hero)
+				end
+				local courier = CreateUnitByNameAsync("npc_courier_replacement", courier_position, true, hero, hero:GetOwner(), hero:GetTeamNumber(), callback)
 				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "vote_begin", {id = playerID})
 				CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 				self._playerNumber = self._playerNumber + 1
 				PlayerResource:SetCustomBuybackCooldown(playerID, 90)
-			end
-		end
-	end
-	for playerID = 0, 4 do
-		if PlayerResource:IsValidPlayerID(playerID) then
-			if PlayerResource:HasSelectedHero(playerID) then
+				AOHGameMode.Players[playerID] = hero
 				CustomGameEventManager:Send_ServerToAllClients("vote_name", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 			end
-		end
-		for var = 0, 2 do
-			self.talonCount[playerID][var] = 0
 		end
 	end
 	self._goldRatio = 1 - 0.12 * (5 - self._playerNumber)
@@ -363,6 +328,15 @@ function AOHGameMode:InitVariables()
 		self._nPlayerHelp:SetOwner(playerHero)
 		Notifications:TopToAll({text="It's dangerous to go alone! Take this.", duration=5})
 	end
+	EmitGlobalSound("AOH.MenuOpen")
+	Timers:CreateTimer(
+		function()
+			for _, v in pairs(AOHGameMode.Players) do
+				v:ModifyGold(10, true, DOTA_ModifyGold_GameTick)
+			end
+			return 7
+		end
+	)
 	Timers:CreateTimer(
 		10,
 		function()
@@ -398,17 +372,17 @@ function AOHGameMode:OnUpdateThink()
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
 		if PlayerResource:IsValidPlayerID(playerID) then
 			local bossDamage = player_data_get_value(playerID, "bossDamage")
-			CustomGameEventManager:Send_ServerToAllClients("dps_update", {damage = formated_number((bossDamage - self._damagecount[playerID][self._dpstick]) / 6), id = playerID})
+			CustomGameEventManager:Send_ServerToAllClients("dps_update", {damage = formated_number((bossDamage - AOHGameMode.damage_count[playerID][AOHGameMode.dps_tick]) / 6), id = playerID})
 			CustomGameEventManager:Send_ServerToAllClients("heal_update", {damage = formated_number(PlayerResource:GetHealing(playerID)), id = playerID})
-			CustomGameEventManager:Send_ServerToAllClients("damage_type_update", {physical = self._physdamage[playerID],magical = self._magdamage[playerID],pure = self._puredamage[playerID],id = playerID})
+			CustomGameEventManager:Send_ServerToAllClients("damage_type_update", {physical = AOHGameMode.phys_damage[playerID],magical = AOHGameMode.mag_damage[playerID],pure = AOHGameMode.pure_damage[playerID],id = playerID})
 			CustomGameEventManager:Send_ServerToAllClients("damage_update", {damage = formated_number(bossDamage), id = playerID})
 			CustomGameEventManager:Send_ServerToAllClients("damage_taken_update", {damage = formated_number(player_data_get_value(playerID, "damageTaken")), id = playerID})
-			self._damagecount[playerID][self._dpstick] = bossDamage
+			AOHGameMode.damage_count[playerID][AOHGameMode.dps_tick] = bossDamage
 		end
 	end
-	self._dpstick = self._dpstick + 1
-	if self._dpstick > 9 then
-		self._dpstick = 0
+	AOHGameMode.dps_tick = AOHGameMode.dps_tick + 1
+	if AOHGameMode.dps_tick > 9 then
+		AOHGameMode.dps_tick = 0
 	end
 	return 0.66
 end
@@ -437,6 +411,11 @@ function AOHGameMode:DistributeChests()
 	end
 end
 
+local round_end_sounds = {[0] = "AOH.Horn1", 
+"AOH.Horn2", 
+"AOH.Horn3", 
+"AOH.Horn4",
+}
 -- Evaluate the state of the game
 function AOHGameMode:OnThink()
 	if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
@@ -449,6 +428,7 @@ function AOHGameMode:OnThink()
 			if self._currentRound:IsFinished() then
 				self._currentRound:End()
 				self._currentRound = nil
+				EmitGlobalSound(round_end_sounds[RandomInt(0, 3)])
 				if self._difficulty ~= 2 then
 					refresh_players()
 				end
@@ -595,9 +575,9 @@ end
 
 function AOHGameMode:OnPlayerChat(keys)
 	if keys.text == "-refresh" then
-		self._physdamage[keys.playerid] = 1
-		self._magdamage[keys.playerid] = 1
-		self._puredamage[keys.playerid] = 1
+		AOHGameMode.phys_damage[keys.playerid] = 1
+		AOHGameMode.mag_damage[keys.playerid] = 1
+		AOHGameMode.pure_damage[keys.playerid] = 1
 	end
 	if keys.text == "-renew" then
 		CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(keys.playerid), "delete", {})

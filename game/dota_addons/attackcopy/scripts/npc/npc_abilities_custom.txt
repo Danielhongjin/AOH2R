@@ -148,39 +148,6 @@
 		}
 	}
 }
-"courier_invisibility"
-{
-	"BaseClass"				"ability_datadriven"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-	"AbilityType"	 				"DOTA_ABILITY_TYPE_BASIC"
-	"OnCreated"
-	{
-		"RunScript"
-		{
-			"ScriptFile"	"abilities\other\courier.lua"
-			"Function"		"courier_moveto"
-		}
-	}
-	"Modifiers"
-	{
-		"modifier_courier_invisibility"
-		{
-			"Passive"				"1"
-			"IsHidden"				"1"
-			"States"
-			{
-				"MODIFIER_STATE_ATTACK_IMMUNE"			"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_COMMAND_RESTRICTED"		"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_INVISIBLE"				"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_NOT_ON_MINIMAP"			"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_NO_HEALTH_BAR"			"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_NO_UNIT_COLLISION"		"MODIFIER_STATE_VALUE_ENABLED"
-                "MODIFIER_STATE_UNSELECTABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-				"MODIFIER_STATE_INVULNERABLE"			"MODIFIER_STATE_VALUE_ENABLED"
-			}
-		}	
-	}
-}
 "courier_invincibility"
 {
 	"BaseClass"				"ability_datadriven"
@@ -6122,6 +6089,39 @@
 			"var_type"					"FIELD_INTEGER"
 			"value"				"5"
 		}
+	}
+}
+"enchantress_custom_enchant"
+{
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"abilities/heroes/enchantress_custom_enchant.lua"
+	"AbilityTextureName"			"enchantress_enchant"
+	"AbilityType"					"DOTA_ABILITY_TYPE_BASIC"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_CREEP"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+	"AbilityCastRange"				"9999"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCooldown"				"20"
+	"AbilityDuration"				"3.75 4.5 5.25 6"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"enchant_health"	"200 400 600 800"
+		}	
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"enchant_damage"	"10 25 40 55"
+		}			
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow_movement_speed"	"-55"
+		}	
 	}
 }
 "huskar_sacred_flame"

@@ -3056,7 +3056,7 @@
 		"01"
 		{
 			"var_type"              "FIELD_INTEGER"
-			"magic_percent"            	"80"
+			"magic_percent"            	"70"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 		"02"
@@ -3384,7 +3384,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-            "cost_constant" 	        "70"
+            "cost_constant" 	        "80"
 		}
     }
 }
@@ -7002,6 +7002,7 @@
     "BaseClass"						"item_greater_crit"
     "AbilityTextureName"		    "ForaMon/ultimate_crit"
     "ItemShopTags"					"damage;crit"
+	"ItemAliases"					"ultimate daedalus"
     "ItemQuality"					"epic"
     "MaxUpgradeLevel"               "2"
     "ItemBaseLevel"                 "2"

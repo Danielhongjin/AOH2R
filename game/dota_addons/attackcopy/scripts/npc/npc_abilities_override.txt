@@ -3428,23 +3428,6 @@
 			}
 		}
 	}
-	"enchantress_enchant"
-	{
-		"AbilityCastRange"				"9999"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"dominate_duration"		"9999"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"enchant_health"	"200 400 600 800"
-			}				
-		}
-	}
 	"enchantress_natures_attendants"
 	{
 		"AbilityCooldown"				"30"

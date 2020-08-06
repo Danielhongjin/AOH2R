@@ -1,24 +1,9 @@
-Simplified Chinese localization of items has begun thanks to CandiFantasia. Most item names and item descriptions have not been translated yet, save for certain descriptions. If you'd like to contribute, swing by our discord.
+Backend code changes, may result in some breakage.
+Difficulty menu sounds have been added for my hearing pleasure.
+Gold income now happens once every 7 seconds, grants 10 gold.
+More items have been localized to chinese by CandiFantasia. Chinese localization fixed.
 
-Hard mode regen from 0.85% to 0.65%.
-Outpost heal aura from 2.5% hp and 1.5% mp to 3.25% hp and 2.0% mp.
-Round end is now signified by a random horn sound for your listening pleasure.
-
-Experimental change made to boss behaviors: Boss animation periods will prevent boss cooldowns from progressing. May or may not break some behaviors. Should stop bosses from dumping abilities right away after a lengthy ability.
-New boss round 39, boss rush.
-New boss Void Spirit replaced old boss Antimage - Watch out for his counter. Don't run up or right when he uses his revenge.
-Tinker boss round removed, all higher round bosses shifted down one level.
-Abyssal Underlord slightly chunkier, shockwave is also a chunker.
-Tidehunter boss no longer has a heart of tarrasque.
-
-Undying boss zombie hp from 1300 to 800. Spawns more zombies now.
-
-Dynamo-Core mana reduction from 30% to 20%.
-Warrior's Seal magic resistance nerfed from 25% to 20%.
-
-Wisp tether nerfed healing ratio. Tether cooldown now 0.
-Wisp relocate cooldown from 30/25/20 to 30/20/10.
-Wisp agility and intelligence stat gain increased by 1.
+Enchantress enchant will now properly apply summon buff.
 
 TO-DO
 

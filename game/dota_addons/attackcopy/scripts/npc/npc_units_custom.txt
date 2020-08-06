@@ -7404,10 +7404,6 @@
 	"VisionDaytimeRange"		"1900"		// Range of vision during day light.
 	"VisionNighttimeRange"		"800"		// Range of vision at night time.
 }	
-"npc_dota_courier"
-{
-	"Ability2"					"courier_invisibility"
-}
 "npc_courier_replacement"
 {
 	"BaseClass"					"npc_dota_lone_druid_bear"
@@ -8819,45 +8815,65 @@
 "npc_dota_brewmaster_earth_1"
 {	
 	"StatusHealth"				"1300"
+	"AttackDamageMin"			"65"		// Damage range min.
+	"AttackDamageMax"			"75"
 }
 "npc_dota_brewmaster_earth_2"
 {	
 	"StatusHealth"				"1600"
+	"AttackDamageMin"			"85"		// Damage range min.
+	"AttackDamageMax"			"95"
 }
 "npc_dota_brewmaster_earth_3"
 {	
 	"StatusHealth"				"2000"
+	"AttackDamageMin"			"105"		// Damage range min.
+	"AttackDamageMax"			"115"
 }
 "npc_dota_brewmaster_fire_1"
 {	
-	"AttackRate"				"1.15"
 	"MagicalResistance"				"25"
+	"AttackDamageMin"			"125"		// Damage range min.
+	"AttackDamageMax"			"135"
 }
 "npc_dota_brewmaster_fire_2"
 {	
-	"AttackRate"				"1.15"
 	"MagicalResistance"				"25"
+	"AttackDamageMin"			"175"		// Damage range min.
+	"AttackDamageMax"			"185"
 }
 "npc_dota_brewmaster_fire_3"
 {	
-	"AttackRate"				"1.15"
 	"MagicalResistance"				"25"
+	"AttackDamageMin"			"225"		// Damage range min.
+	"AttackDamageMax"			"235"
 }
 "npc_dota_brewmaster_storm_1"
 {								
 	"StatusHealth"				"1600"		
 	"MagicalResistance"				"25"
+	"AttackDamageMin"			"45"		// Damage range min.
+	"AttackDamageMax"			"55"
+	"AttackRate"				"1.35"
+	"AttackAnimationPoint"		"0.46"
 }	
 
 "npc_dota_brewmaster_storm_2"
 {										
 	"MagicalResistance"				"25"
+	"AttackDamageMin"			"65"		// Damage range min.
+	"AttackDamageMax"			"75"
+	"AttackRate"				"1.35"
+	"AttackAnimationPoint"		"0.46"
 }	
 
 "npc_dota_brewmaster_storm_3"
 {										
 	"MagicalResistance"				"25"
-	
+	"AttackDamageMin"			"85"		// Damage range min.
+	"AttackDamageMax"			"95"
+	"AttackRate"				"1.35"
+	"AttackAnimationPoint"		"0.46"
 }	
 "npc_dota_plasma_field"
 {

@@ -12,9 +12,16 @@
 		"easy_description"								"Enemies 20% Less Damage\nEnemies 30% Higher Cooldowns\nLimited Max Round 37"
 		"medium_description"								"Default Difficulty"
 		"hard_description"								"Enemies 0.5% Mana Regeneration\nEnemies 0.65% Health Regeneration\nEnemies 20% Lower Cooldowns\nNo Round Healing\n5 Second Round Wait\nHeroes +12% Primary Attribute"
-
+		"seconds"									"Seconds"
+		
+		"damage_dealt_award"									"Highest Damage Dealt"
+		"damage_taken_award"									"Highest Damage Taken"
+		"healing_award"											"Highest Healing"
+		"dps_award"												"Highest DPS"
+		
 		"DOTA_Tooltip_Ability_item_bag_of_gold"			"Bag Of Gold"
 		"DOTA_Tooltip_Ability_item_tombstone"			"Ressurect Teammate"
+		
 		
 	
 "DOTA_Tooltip_modifier_roundend_effect"					"Divine Grace"

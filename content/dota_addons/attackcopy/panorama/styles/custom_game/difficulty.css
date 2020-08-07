@@ -1,3 +1,7 @@
+@define TotalLength: 0.15s;
+@define TimingFunc: linear;
+@define AnimationDelay: 0s;
+@define IterationCount: 1;
 .base
 {
 
@@ -6,20 +10,25 @@
 }
 #Difficulties
 {
+	
 	width: 100%;
 	height: 100%;
+	
 }
 #DifficultyText
 {
 	margin-top: 4%;
 	height: 15%;
+	width: 100%;
 	horizontal-align: center;
 	vertical-align: bottom;
 	text-align: center;
 	text-shadow: 2px 2px 8px 3.0 #333333b0;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#202020));
 }
 .DifficultyTextLabel
 {
+	width: 100%;
 	text-align: center;
 	color: white;
 	font-size: 40px;
@@ -33,9 +42,26 @@
 	vertical-align: center;
 	width: 60%;
 	height: 40%;
-	background-color: #333333;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#202020));
 	opacity: 0.98;
 	flow-children: down;
+	animation-name: difficulty_popin;
+	animation-delay: AnimationDelay;
+	animation-duration: TotalLength;
+	animation-timing-function: TimingFunc;
+	animation-iteration-count: IterationCount;
+}
+@keyframes 'difficulty_popin'
+{
+  0%
+  {
+	pre-transform-scale2d: 0.0;
+  }
+
+  100%
+  {
+		pre-transform-scale2d: 1.0;
+  }
 }
 .DifficultyList
 {
@@ -89,6 +115,7 @@
 .DifficultyChoiceBox
 {
 	border:  2px solid #111111FF;
+	background-color: gradient(linear, 0% 0%, 0% 100%, from(#333333), to(#111111));
 	height: 100%;
 	width: 20%;
 	flow-children: down;

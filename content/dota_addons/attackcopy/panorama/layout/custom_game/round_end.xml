@@ -1,0 +1,33 @@
+<root>
+
+	<styles>
+		<include src="file://{resources}/styles/custom_game/damage.css"/>
+	
+	</styles>
+	
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/damage.js"/>
+	</scripts>
+	
+	<snippets>
+		<snippet name="RoundEnd">
+			<Panel class="RoundEndWindow" hittest="false">
+			</Panel>
+		</snippet> 
+	</snippets>
+		
+			
+		
+		
+	
+	
+	<Panel class ="DamageList">
+
+		<Panel id="Players">
+		
+		</Panel>
+
+	</Panel>
+
+
+</root>

@@ -35,20 +35,10 @@ function Delete()
 
 function SetDamageDealt(damage)
 {
-	players[damage.id].FindChildTraverse('PlayerDamageDealt').text = damage.damage;
-}	
-function SetDamageTaken(damage)
-{
-	players[damage.id].FindChildTraverse('PlayerDamageTaken').text = damage.damage;
-}	
-
-function SetDamageHealed(damage)
-{
-	players[damage.id].FindChildTraverse('PlayerDamageHealed').text = damage.damage;
-}	
-function SetDPS(damage)
-{
-	players[damage.id].FindChildTraverse('PlayerDPS').text = damage.damage;
+    players[damage.id].FindChildTraverse('PlayerDamageDealt').text = damage.damage;
+    players[damage.id].FindChildTraverse('PlayerDPS').text = damage.dps;
+    players[damage.id].FindChildTraverse('PlayerDamageHealed').text = damage.healing;
+    players[damage.id].FindChildTraverse('PlayerDamageTaken').text = damage.damage_taken;
 }	
 function SetDamageTypes(damage)
 {
@@ -77,9 +67,6 @@ function debug()
 {
 	GameEvents.Subscribe("game_begin", InitPlayer);
 	GameEvents.Subscribe("damage_update", SetDamageDealt);
-	GameEvents.Subscribe("damage_taken_update", SetDamageTaken);
-	GameEvents.Subscribe("heal_update", SetDamageHealed);
-	GameEvents.Subscribe("dps_update", SetDPS);
 	GameEvents.Subscribe("damage_type_update", SetDamageTypes);
 	GameEvents.Subscribe("delete", Delete);
 	$.Msg("Debug");

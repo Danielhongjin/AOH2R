@@ -39,7 +39,7 @@ end
 
 
 function AOHGameMode:InitGameMode()
-	self._nRoundNumber = 1
+	self._nRoundNumber = 37
 	self._negativeRounds = 0
 	self._currentRound = nil
 	self._entAncient = Entities:FindByName(nil, "dota_goodguys_fort")
@@ -58,6 +58,7 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.phys_damage = {}
 	AOHGameMode.pure_damage = {}
 	AOHGameMode.dps_tick = 0
+	AOHGameMode.highest_dps = {}
 	self._playerNumber = 0
 	self._goldRatio = 1
 	self._expRatio = 1
@@ -76,7 +77,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetHeroSelectionTime(40.0)
 	GameRules:SetPreGameTime(6.0)
 	GameRules:SetStrategyTime(10.0)
-	GameRules:SetPostGameTime(30.0)
+	GameRules:SetPostGameTime(4000.0)
 	GameRules:SetTreeRegrowTime(70.0)	
 	GameRules:SetHeroMinimapIconScale(1.2)
 	GameRules:SetCreepMinimapIconScale(1.2)
@@ -288,6 +289,7 @@ function AOHGameMode:InitVariables()
 		AOHGameMode.isTalon[playerID] = nil
 		AOHGameMode.isArcane[playerID] = false
 		AOHGameMode.numPhilo[playerID] = 0
+		AOHGameMode.highest_dps[playerID] = 0
 		AOHGameMode.damage_count[playerID] = {}
 		AOHGameMode.mag_damage[playerID] = 1
 		AOHGameMode.phys_damage[playerID] = 1
@@ -379,11 +381,12 @@ function AOHGameMode:OnUpdateThink()
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
 		if PlayerResource:IsValidPlayerID(playerID) then
 			local bossDamage = player_data_get_value(playerID, "bossDamage")
-			CustomGameEventManager:Send_ServerToAllClients("dps_update", {damage = formated_number((bossDamage - AOHGameMode.damage_count[playerID][AOHGameMode.dps_tick]) / 6), id = playerID})
-			CustomGameEventManager:Send_ServerToAllClients("heal_update", {damage = formated_number(PlayerResource:GetHealing(playerID)), id = playerID})
 			CustomGameEventManager:Send_ServerToAllClients("damage_type_update", {physical = AOHGameMode.phys_damage[playerID],magical = AOHGameMode.mag_damage[playerID],pure = AOHGameMode.pure_damage[playerID],id = playerID})
-			CustomGameEventManager:Send_ServerToAllClients("damage_update", {damage = formated_number(bossDamage), id = playerID})
-			CustomGameEventManager:Send_ServerToAllClients("damage_taken_update", {damage = formated_number(player_data_get_value(playerID, "damageTaken")), id = playerID})
+			local dps = (bossDamage - AOHGameMode.damage_count[playerID][AOHGameMode.dps_tick]) / 6
+			CustomGameEventManager:Send_ServerToAllClients("damage_update", {damage = formated_number(bossDamage), dps = formated_number(dps),damage_taken = formated_number(player_data_get_value(playerID, "damageTaken")), healing = formated_number(PlayerResource:GetHealing(playerID)), id = playerID})
+			if dps > AOHGameMode.highest_dps[playerID] then
+				AOHGameMode.highest_dps[playerID] = dps
+			end
 			AOHGameMode.damage_count[playerID][AOHGameMode.dps_tick] = bossDamage
 		end
 	end
@@ -448,6 +451,7 @@ function AOHGameMode:OnThink()
 				end
 			end
 		end
+		
 		if self._nRoundNumber > #self._vRounds - self._negativeRounds then
 			GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 			return false

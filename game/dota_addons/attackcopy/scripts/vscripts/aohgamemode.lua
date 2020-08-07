@@ -39,7 +39,7 @@ end
 
 
 function AOHGameMode:InitGameMode()
-	self._nRoundNumber = 37
+	self._nRoundNumber = 1
 	self._negativeRounds = 0
 	self._currentRound = nil
 	self._entAncient = Entities:FindByName(nil, "dota_goodguys_fort")
@@ -82,7 +82,6 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetHeroMinimapIconScale(1.2)
 	GameRules:SetCreepMinimapIconScale(1.2)
 	GameRules:SetRuneMinimapIconScale(1.2)
-	GameRules:SetStartingGold(0)
 	GameRules:SetStartingGold(0)
 	
 	GameRules:GetGameModeEntity():SetLoseGoldOnDeath(false)
@@ -451,7 +450,6 @@ function AOHGameMode:OnThink()
 				end
 			end
 		end
-		
 		if self._nRoundNumber > #self._vRounds - self._negativeRounds then
 			GameRules:SetGameWinner(DOTA_TEAM_GOODGUYS)
 			return false

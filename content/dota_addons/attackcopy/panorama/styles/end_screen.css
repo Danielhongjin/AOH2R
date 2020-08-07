@@ -102,19 +102,10 @@
   horizontal-align: right;
 }
 
-#EndScreenWindow #MatchResultBlock #EndScreenDurationBox {
+#EndScreenDurationBox {
 	margin-left: 5%;
-	margin-top: 20%;
+	margin-top: 25%;
 	horizontal-align: left;
-}
-
-#EndScreenWindow #MatchResultBlock #EndScreenDurationBox #EndScreenDurationLabel {
-  margin-right: 12px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 5px 5px 5px #000;
-  horizontal-align: right;
 }
 
 #EndScreenWindow #MatchResultBlock #CloseButton {
@@ -182,6 +173,31 @@
   overflow: squish scroll;
   flow-children: down;
 }
+
+#EndScreenDurationBox {
+	flow-children: right;
+	height: 60px;
+}
+
+#EndScreenSecondsStatLabel, 
+#EndScreenMinutesStatLabel {
+	font-size: 45px;
+	margin-left: 15px;
+	letter-spacing: 2px;
+	
+	height: 100%;
+	vertical-align: center;
+}
+
+#EndScreenSecondsLabel, 
+#EndScreenMinutesLabel {
+	font-size: 35px;
+	height: 100%;
+	margin-left: 5px;
+	vertical-align: center;
+	color: gray;
+}
+
 #TeamsContainer #AwardContainer {
 	width: 50%;
 	height: 100%;
@@ -252,7 +268,7 @@
 
 .AwardStatLabel {
 	font-size: 50px;
-	color: red;
+	color: green;
 	width: 100%;
 	text-align: center;
 	padding-bottom: 20px;
@@ -322,7 +338,7 @@
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   border-right: 1px solid #000;
-  opacity: .0001;
+  opacity: .0001;  
   animation-duration: .7s;
   animation-name: EndPlayerFadeLeft;
   animation-timing-function: ease-in-out;
@@ -330,7 +346,7 @@
   horizontal-align: center;
 }
 
-.Player.IsLocalPlayer {
+.IsLocalPlayer {
   background-color: rgba(75, 75, 75, 0.7);
 }
 
@@ -339,7 +355,7 @@
 }
 
 .Player.AnimationEnd {
-  opacity: 1;
+  opacity: 1;     
 }
 
 .Player > .HeaderColumn {

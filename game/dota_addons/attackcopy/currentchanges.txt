@@ -1,4 +1,7 @@
+More item translations to Simplified Chinese by CandiFantasia.
+
 Backend code cleanup.
+Endgame Scoreboard reworked, now shows who achieved the highest in any category. You can now chat in the endgame.
 Neutral items now show up in the end screen, now shows a time.
 TO-DO
 

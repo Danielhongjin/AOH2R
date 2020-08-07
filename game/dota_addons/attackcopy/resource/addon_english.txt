@@ -13,6 +13,7 @@
 		"medium_description"								"Default Difficulty"
 		"hard_description"								"Enemies 0.5% Mana Regeneration\nEnemies 0.65% Health Regeneration\nEnemies 20% Lower Cooldowns\nNo Round Healing\n5 Second Round Wait\nHeroes +12% Primary Attribute"
 		"seconds"									"Seconds"
+		"minutes"									"Minutes"
 		
 		"damage_dealt_award"									"Highest Damage Dealt"
 		"damage_taken_award"									"Highest Damage Taken"

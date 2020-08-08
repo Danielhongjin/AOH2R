@@ -3,7 +3,7 @@
 	// Balance changes.
 "npc_dota_hero_base"
 {
-	"StatusHealth"		"336"
+	"StatusHealth"		"421"
 }
 "npc_dota_hero_abyssal_underlord"
 {

@@ -4,6 +4,19 @@
 	// Balance Changes.
 	// Bosses abilities.
 	// New.
+	
+"hero_attribute_fix"
+{
+    "BaseClass"						"ability_lua"
+    "ScriptFile"					"abilities/other/hero_attribute_fix.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+	"OnLearnbar"					"0"
+	"IsCastableWhileHidden" 		"1"
+    "AbilitySpecial"
+	{
+
+	}
+}
 "outpost_idle"
 {
 	"BaseClass"				"ability_datadriven"
@@ -1428,7 +1441,7 @@
     "AbilityCastPoint"				"0.7"
     "AbilityCooldown"				"10.0"
     "AbilityDuration"				"1.0"
-    "AbilityDamage"					"700"
+    "AbilityDamage"					"1000"
     "AbilityManaCost"				"0"
     "AbilitySpecial"
     {
@@ -7220,12 +7233,12 @@
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "mana_burn_as_damage"   "300"
+            "mana_burn_as_damage"   "500"
         }
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "mana_per_hit"			"5 10 15 20"
+            "mana_per_hit"			"3 6 9 12"
         }
     }
 }
@@ -13463,7 +13476,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1250"
+				"damage"				"1500"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -16014,7 +16027,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"damage"				"1600"
+				"damage"				"2000"
 			}
 			"07"
 			{
@@ -16553,7 +16566,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"			"300"
+				"radius"			"450"
 			}
 			"04"
 			{
@@ -16891,7 +16904,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"land_time"				"1.8"
+				"land_time"				"1.6"
 			}
 			"02"
 			{
@@ -16926,7 +16939,7 @@
 			"08"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"main_damage"			"2200"
+				"main_damage"			"2300"
 			}
 			"09"
 			{
@@ -16936,7 +16949,7 @@
 			"10"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"burn_dps"				"150"
+				"burn_dps"				"200"
 			}
 		}
 	}
@@ -16970,7 +16983,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"spread"		        "250"
+				"spread"		        "275"
 			}
 		}
 	}

@@ -67,9 +67,17 @@ if IsServer() then
 			local counter = self.parent:FindAbilityByName("boss_void_spirit_astral_step")
 			local forward_vector = (attacker:GetAbsOrigin() - self.parent:GetAbsOrigin()):Normalized()
 			local point = forward_vector * self.range + self.parent:GetAbsOrigin()
+			local origin = self.parent:GetAbsOrigin()
 			self.parent:SetCursorPosition(point)
 			counter:OnSpellStart()
-			self:Destroy()
+			Timers:CreateTimer(
+				0.25, 
+				function()
+					self.parent:SetCursorPosition(origin)
+					counter:OnSpellStart()
+					self:Destroy()
+				end
+			)
 		end
 	end
 	

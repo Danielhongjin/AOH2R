@@ -23,7 +23,7 @@ function custom_spiritbreaker_revenge:OnSpellStart()
 				return 0.5
 			end
 			caster:CastAbilityNoTarget(spirits, -1)
-			caster:CastAbilityNoTarget(pull, -1)
+			pull:OnSpellStart()
 
 		end
 	)

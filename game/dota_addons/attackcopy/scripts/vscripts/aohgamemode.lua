@@ -59,6 +59,7 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.pure_damage = {}
 	AOHGameMode.dps_tick = 0
 	AOHGameMode.highest_dps = {}
+	AOHGameMode.score = 10000
 	self._playerNumber = 0
 	self._goldRatio = 1
 	self._expRatio = 1
@@ -91,7 +92,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomBuybackCooldownEnabled(true)
 	GameRules:GetGameModeEntity():SetFixedRespawnTime(75.0)
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(900)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,15)
+	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,10)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.2)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.1)
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
@@ -107,7 +108,7 @@ end
 
 
 function AOHGameMode:AtRoundStart()
-	local cost = 250 + 50 * self._nRoundNumber
+	local cost = 150 + 25 * self._nRoundNumber
     for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
         if PlayerResource:HasSelectedHero(playerID) then
             local hero = PlayerResource:GetSelectedHeroEntity(playerID)
@@ -313,7 +314,7 @@ function AOHGameMode:InitVariables()
 				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "vote_begin", {id = playerID})
 				CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 				self._playerNumber = self._playerNumber + 1
-				PlayerResource:SetCustomBuybackCooldown(playerID, 90)
+				PlayerResource:SetCustomBuybackCooldown(playerID, 30)
 				AOHGameMode.Players[playerID] = hero
 				CustomGameEventManager:Send_ServerToAllClients("vote_name", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 			end

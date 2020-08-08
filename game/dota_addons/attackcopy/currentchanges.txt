@@ -1,8 +1,21 @@
-More item translations to Simplified Chinese by CandiFantasia.
+Strength now only grant 10 health per point. Heroes now gain an innate 25 health per level for free.
+Base health for all heroes has been increased to bring Chaos Knight back up to his cool 666 starting health.
 
-Backend code cleanup.
-Endgame Scoreboard reworked, now shows who achieved the highest in any category. You can now chat in the endgame.
-Neutral items now show up in the end screen, now shows a time.
+Gold intake late game past round 25 has been reduced, buybacks are now far cheaper. Buyback cooldown from 90 to 30 seconds.
+Late game boss health and damage has been reduced to compensate.
+
+Boss party now only spawns 8 legion commanders, large boss spawns more spread out.
+Invoker boss meteors will now land slightly sooner, deal more damage overall.
+Invoker trance lightning range increased from 300 to 450.
+Void Spirit boss counter will make void spirit cast two astral steps - one forward and one back.
+Spirit Breaker boss will now cast his revenge no matter what.
+
+Ballista bonus range is now half as effective on melee heroes.
+Dimensional cooldown from 25 second cooldown to 35 seconds.
+
+Antimage mana burn takes away less mana from bosses, illusion damage reduced.
+Drow Ranger ult damage increased back to vanilla.
+Dragon Knight dragon blood health regen increased.
 TO-DO
 
 CURRENTLY IMPLEMENTING EXPANDED END SCREEN - DPS NEEDS TO BE HOOKED UP TO END_SCREEN.LUA
@@ -10,4 +23,6 @@ CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
 
 replace IO ult.
 
-Implementing larger map and curse system - longer you're away from friendly structures the more debuffed you are and the more you get randomly attacked by phenomena.
+Implement score system.
+
+Fix playerhelp, make him not killable and move him out of game when he "dies".

@@ -624,7 +624,7 @@
 		"24" // Crystal Maiden
 		{
 			"Title"						"Freeze"
-			"MaxGold"					"6500"
+			"MaxGold"					"6300"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"5000"
@@ -641,7 +641,7 @@
 		"25" // Abyssal Underlord
 		{
 			"Title"						"Homewrecker"
-			"MaxGold"					"7000"
+			"MaxGold"					"6800"
 			"BagCount"					"1"
 			"BagVariance"				"0"
 			"FixedXP"					"5100"
@@ -657,7 +657,7 @@
 		"26" // Shadow Friends
 		{
 			"Title"						"Shadow Friends"
-			"MaxGold"					"8000"
+			"MaxGold"					"7300"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"5500"
@@ -674,7 +674,7 @@
 		"27" // Tree Haters Guild
 		{
 			"Title"						"Tree Haters Guild"
-			"MaxGold"					"8500"
+			"MaxGold"					"7800"
 			"BagCount"					"19"
 			"BagVariance"				"0"
 			"FixedXP"					"5100"
@@ -707,7 +707,7 @@
 		"28" // Phantom Lance
 		{
 			"Title"						"Real?"
-			"MaxGold"					"8750"
+			"MaxGold"					"8300"
 			"BagCount"					"5"
 			"BagVariance"				"0"
 			"FixedXP"					"5600"
@@ -724,7 +724,7 @@
 		"29" // Spectre
 		{
 			"Title"						"Lost"
-			"MaxGold"					"9000"
+			"MaxGold"					"8800"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -741,7 +741,7 @@
 		"30" // Void Spirit
 		{
 			"Title"						"Enter the Void"
-			"MaxGold"					"9250"
+			"MaxGold"					"9000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -757,7 +757,7 @@
 		"31" // Worldsmith
 		{
 			"Title"						"Worldsmith"
-			"MaxGold"					"9500"
+			"MaxGold"					"9000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -773,7 +773,7 @@
 		"32" // Lich
 		{
 			"Title"						"Ethreain"
-			"MaxGold"					"9750"
+			"MaxGold"					"9250"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6500"
@@ -790,7 +790,7 @@
 		"33" // SpiritBreaker
 		{
 			"Title"						"Spirits"
-			"MaxGold"					"10000"
+			"MaxGold"					"9750"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6500"
@@ -806,7 +806,7 @@
 		"34" // Invoker
 		{
 			"Title"						"Armageddon"
-			"MaxGold"					"10250"
+			"MaxGold"					"10000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"150000"
@@ -822,7 +822,7 @@
 		"35" // Demon Marauder
 		{
 			"Title"						"Demon"
-			"MaxGold"					"10500"
+			"MaxGold"					"10000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"150000"
@@ -838,7 +838,7 @@
 		"36" // Army of Darkness
 		{
 			"Title"						"Army of Darkness"
-			"MaxGold"					"10750"
+			"MaxGold"					"10000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"150000"
@@ -854,7 +854,7 @@
 		"37" // Wisp
 		{
 			"Title"						"False God"
-			"MaxGold"					"10800"
+			"MaxGold"					"10000"
 			"BagCount"					"40"
 			"BagVariance"				"30"
 			"FixedXP"					"150000"
@@ -894,7 +894,7 @@
 			"a"
 			{
 				"NPCName"				"npc_boss_legion_commander"
-				"TotalUnitsToSpawn"		"14"
+				"TotalUnitsToSpawn"		"8"
 				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"16"
 			}
@@ -904,7 +904,7 @@
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"40"
-				"WaitForTime"			"15"
+				"WaitForTime"			"10"
 			}
 			"c"
 			{
@@ -919,14 +919,14 @@
 				"NPCName"				"npc_boss_terrorblade"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
-				"WaitForTime"			"50"
+				"WaitForTime"			"60"
 			}
 			"e"
 			{
 				"NPCName"				"npc_boss_oracle"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
-				"WaitForTime"			"90"
+				"WaitForTime"			"100"
 			}
 		}
 	}

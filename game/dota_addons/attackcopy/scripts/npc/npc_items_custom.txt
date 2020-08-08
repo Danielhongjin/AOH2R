@@ -367,7 +367,7 @@
         "02"
         {
             "var_type"				"FIELD_FLOAT"
-            "blink_damage_cooldown"	"3.0"
+            "blink_damage_cooldown"	"0.0"
         }
         "03"
         {
@@ -797,15 +797,15 @@
             "var_type"				                "FIELD_INTEGER"
             "bonus_intellect"		                "10 20"
         }
-        "03"
+                "03"
         {
             "var_type"				                "FIELD_INTEGER"
-            "feedback_mana_burn"	                "5"
+            "feedback_mana_burn"	                "4"
         }
         "04"
         {
             "var_type"				                "FIELD_INTEGER"
-            "feedback_mana_burn_illusion_melee"	    "4"
+            "feedback_mana_burn_illusion_melee"	    "5"
         }
         "05"
         {
@@ -830,7 +830,7 @@
         "09"
         {
             "var_type"				                "FIELD_FLOAT"
-            "damage_per_burn"		                "12.0 24.0"
+            "damage_per_burn"		                "14.0 28.0"
         }
         "10"
         {
@@ -3583,12 +3583,12 @@
         "03"
         {
             "var_type"				                "FIELD_INTEGER"
-            "feedback_mana_burn"	                "5"
+            "feedback_mana_burn"	                "4"
         }
         "04"
         {
             "var_type"				                "FIELD_INTEGER"
-            "feedback_mana_burn_illusion_melee"	    "4"
+            "feedback_mana_burn_illusion_melee"	    "5"
         }
         "05"
         {
@@ -3613,7 +3613,7 @@
         "09"
         {
             "var_type"				                "FIELD_FLOAT"
-            "damage_per_burn"		                "12.0 24.0"
+            "damage_per_burn"		                "14.0 28.0"
         }
         "10"
         {
@@ -8549,7 +8549,7 @@
 	"ItemDisplayCharges"			"0"
 	"ItemHideCharges"				"1"
 	"ItemInitialCharges"			"9999"
-	"AbilityCooldown"				"25.0"
+	"AbilityCooldown"				"35.0"
 }
 "item_recipe_enchanted_quiver"
 {

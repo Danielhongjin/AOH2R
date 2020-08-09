@@ -59,9 +59,14 @@ function AOHGameMode:InitGameMode()
 	AOHGameMode.pure_damage = {}
 	AOHGameMode.dps_tick = 0
 	AOHGameMode.highest_dps = {}
-	AOHGameMode.score = 10000
+	AOHGameMode.difficultycount[0] = 1
+	AOHGameMode.difficultycount[1] = 1
+	AOHGameMode.difficultycount[2] = 1
+	AOHGameMode.difficultycount[3] = 1
+	AOHGameMode.difficultycount[4] = 1
+	
 	self._playerNumber = 0
-	self._goldRatio = 1
+	self._goldRatio = 1	
 	self._expRatio = 1
 	self._ischeckingdefeat = false
 	self._defeatcounter = 5
@@ -73,7 +78,7 @@ function AOHGameMode:InitGameMode()
 	
 	GameRules:SetCustomGameSetupAutoLaunchDelay(3.0)
 	GameRules:SetTimeOfDay(0.75)
-	GameRules:SetHeroRespawnEnabled(true)
+	GameRules:SetHeroRespawnEnabled(false)
 	GameRules:SetUseUniversalShopMode(true)
 	GameRules:SetHeroSelectionTime(40.0)
 	GameRules:SetPreGameTime(6.0)
@@ -90,7 +95,6 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetTopBarTeamValuesVisible(false)
 	GameRules:GetGameModeEntity():SetCustomBuybackCostEnabled(true)
 	GameRules:GetGameModeEntity():SetCustomBuybackCooldownEnabled(true)
-	GameRules:GetGameModeEntity():SetFixedRespawnTime(75.0)
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(900)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,10)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.2)
@@ -266,7 +270,6 @@ function AOHGameMode:EndVote()
 	elseif self._difficulty == 2 then
 		Notifications:TopToAll({text="#hard_label", style={color="red", ["font-size"]="130px"}, duration=5})
 		self._flPrepTimeBetweenRounds = 5
-		
 		for playerID = 0, 4 do
 		if PlayerResource:IsValidPlayerID(playerID) then
 			if PlayerResource:HasSelectedHero(playerID) then
@@ -284,7 +287,7 @@ end
 -- Initiates variables that need to be set to values
 function AOHGameMode:InitVariables() 
 	for playerID = 0, 4 do
-		AOHGameMode.difficultycount[playerID] = 1
+		
 		AOHGameMode.talonCount[playerID] = {}
 		AOHGameMode.isTalon[playerID] = nil
 		AOHGameMode.isArcane[playerID] = false
@@ -314,7 +317,7 @@ function AOHGameMode:InitVariables()
 				CustomGameEventManager:Send_ServerToPlayer(PlayerResource:GetPlayer(playerID), "vote_begin", {id = playerID})
 				CustomGameEventManager:Send_ServerToAllClients("game_begin", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 				self._playerNumber = self._playerNumber + 1
-				PlayerResource:SetCustomBuybackCooldown(playerID, 30)
+				PlayerResource:SetCustomBuybackCooldown(playerID, 25)
 				AOHGameMode.Players[playerID] = hero
 				CustomGameEventManager:Send_ServerToAllClients("vote_name", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
 			end
@@ -532,9 +535,10 @@ function AOHGameMode:OnEntitySpawned(event)
 	end
 
 	Timers:CreateTimer(
-		0.1,
+		0.13,
 		function()
-			if not unit:IsHero() then
+
+			if unit and not unit:IsHero() then
 				if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 					unit:AddNewModifier(unit, nil, "modifier_boss", {})
 					if self._difficulty == 2 then

@@ -1,57 +1,13 @@
+
 .DamageList
 {
 	width: 400px;
 	height: 600px;
-	margin-top:135px;
+	margin-top:125px;
 	horizontal-align: left;
 	vertical-align: top;
 }
-#PlayerDamageTypes
-{
-	flow-children:right;
-	width: 120px;
-	height: 18px;
-	background-color: #010000;
-}
-#PlayerPhysical
-{
-	width: 40px;
-	margin-top:3px;
-	margin-bottom:3px;
-	height: 18px;
-	background-color: #B9500B;
-}
-#Playerphysdamagepercent
-{
-	color:white;
-	font-size:13px;
-}
-#PlayerMagical
-{
-	width: 40px;
-	margin-top:3px;
-	margin-bottom:3px;
-	height: 18px;
-	background-color: #257DAE;
-}
-#Playermagdamagepercent
-{
-	color:white;
-	font-size:13px;
-}
-#PlayerPure
-{
-	width: 40px;
-	margin-top:3px;
-	margin-bottom:3px;
-	height: 18px;
-	background-color: #B2B2B2;
-}
-#Playerpuredamagepercent
-{
-	color:white;
-	font-size:13px;
-}
+
 #PlayerColor 
 {
 	horizontal-align: left;
@@ -65,69 +21,97 @@
 } 
 .Player
 {  
-	background-color: #010000;
-	opacity:0.6;
-	flow-children:right;
+	background-color: rgba(20, 20, 20, 0.4);
+	border-bottom-right-radius: 4px;
+	border-top-right-radius: 4px;
 	color:white;
-	margin-bottom:2px;
+	margin-bottom:3px;
+	width: 140px;
+	height: 100px;
+	flow-children: down;
 
+}
+.Toggled {
+	width: 14px;
+	background-image: url("file://{images}/right_arrow.png");
+	background-color: rgba(80, 80, 80, 0.7);
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	margin-bottom:0px;
+}
+.Toggled > Panel {
+	opacity: 0;
+}
+.Toggled > Label {
+	opacity: 0;
+}
+
+#PlayerDamageTypes
+{
+	flow-children:right;
+	margin-top: -20px;
+	width: 120px;
+	margin-left: 5px;
+	height: 13px;
+	background-color: #010000;
+}
+
+#PlayerDamageTypes > Panel 
+{
+	height: 13px;
+	width: 33%;
+}
+.PercentPanel > Label 
+{
+	color:white;
+	font-size:13px;
+}
+#PlayerPhysical
+{
+	background-color: #B9500B;
+}
+#PlayerMagical
+{
+	background-color: #257DAE;
+}
+#PlayerPure
+{
+	background-color: #B2B2B2;
+}
+
+#PlayerHeroSignal {
+	margin-left: 5px;
+	margin-top: 2px;
+	color: yellow;
+	font-size: 15px;
+	height: 18px;
+}
+#Stats {
+	height: 82px;
+	flow-children: right;
 }
 #LeftSide
 {
+	width: 95px;
+	margin-left: 5px;
 	flow-children:down;
 }
-
 #RightSide
 {
 	flow-children:down;
+	width: 50px;
 }
-#EmptySpace
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerHeroSignal
-{
-	color:Yellow;
-	font-size:14px;
+#LeftSide > Label {
+	font-size: 13px;
+	width: 90px;
 }
 
-#PlayerDamageDealtSignal
-{
-	color:white;
-	font-size:14px;
+#RightSide > Label {
+	font-size: 13px;
+	width: 40px;
+	text-overflow: shrink;
 }
-#PlayerDamageTakenSignal
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDamageHealedSignal
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDPSSignal
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDamageDealt
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDamageTaken
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDamageHealed
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDPS
+#EmptySpace
 {
 	color:white;
 	font-size:14px;

@@ -6742,6 +6742,65 @@
 		}
 	}
 }
+"templar_assassin_slipstrike"
+{
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"abilities/heroes/templar_assassin_slipstrike.lua"
+	"AbilityTextureName"			"templar_assassin_trap"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.2"
+	"AbilityCooldown"				"20 15 10"
+	"AbilityManaCost"				"100 125 150"
+	"HasScepterUpgrade"			"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"			"FIELD_FLOAT"
+			"speed"		"3000.0"
+		}
+		"02"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"width"		"115"
+		}
+		"03"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"range"		"1000"
+		}
+		"04"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"base_damage"		"200 300 400"
+		}
+		"05"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_agi"			"2"
+		}
+		"06"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"attack_damage"		"200"
+		}
+		"07"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"vision"		"115"
+		}
+		"08"
+		{
+			"var_type"			"FIELD_INTEGER"
+			"bonus_damage"		"250"
+		}
+	}
+	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_5"
+}
 "vengefulspirit_custom_nether_swap"
 {
 	// General
@@ -19698,7 +19757,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay_per_ring"		        "0.5"
+				"delay_per_ring"		        "0.75"
 			}
 		}
 	}

@@ -2305,6 +2305,15 @@
 "DOTA_Tooltip_ability_techies_time_is_boom_base_cooldown_red"			    "%BASE REDUCTION:"
 "DOTA_Tooltip_ability_techies_time_is_boom_level_cooldown_red"				"%REDUCTION PER HERO LEVEL:"
 
+"DOTA_Tooltip_ability_templar_assassin_slipstrike"									"<font color='#f2da5b'>Slipstrike</font>"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_Description"						"Throws a charged psi dagger at an enemy, dealing additional magic damage based on your attack damage. Deals %bonus_damage%%% damage if the enemy is currently casting an ability."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_Note0"						"Enemies casting are usually colored blue."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_base_damage"			    	"BASE DAMAGE:"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_attack_damage"			    "%ATTACK DAMAGE:"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_range"			    		"RANGE:"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_aghanim_description"				"Successfully hitting an animating enemy grants %bonus_agi% permanent agility."
+
+
 "DOTA_Tooltip_ability_terrorblade_custom_reflection"						"<font color='#f2da5b'>Reflection</font>"
 "DOTA_Tooltip_ability_terrorblade_custom_reflection_Description"			"Terrorblade brings forth an invulnerable dark reflection of a target unit. Affected units are slowed."
 "DOTA_Tooltip_ability_terrorblade_custom_reflection_illusion_outgoing_tooltip"	"%ILLUSION DAMAGE DEALT:"

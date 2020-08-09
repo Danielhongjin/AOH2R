@@ -171,7 +171,7 @@
 "DOTA_Tooltip_ability_item_recipe_quickening_charm"        "加速护符卷轴"
 "DOTA_Tooltip_ability_item_recipe_titan_sliver"        "巨神残铁卷轴"
 "DOTA_Tooltip_ability_item_pocket_tower"        "口袋防御塔"
-"DOTA_Tooltip_ability_item_pocket_tower_Description"                "<h1>主动使用: 塔防</h1> 部署一座攻击范围广但生存能力低的永久存在的防御塔。"
+"DOTA_Tooltip_ability_item_pocket_tower_Description"                 "<h1>主动使用：塔防</h1> 部署一座攻击范围广但生存能力低的永久存在的防御塔。"
 "DOTA_Tooltip_ability_item_pocket_tower_tower_damage"                "防御塔攻击力："
 "DOTA_Tooltip_ability_item_pocket_tower_tower_attack_time"                "防御塔攻击速度："
 "DOTA_Tooltip_ability_item_pocket_tower_tower_health"                "防御塔生命值："
@@ -2307,6 +2307,14 @@
 "DOTA_Tooltip_ability_techies_time_is_boom_Lore"							"Where we going?"
 "DOTA_Tooltip_ability_techies_time_is_boom_base_cooldown_red"			    "%BASE REDUCTION:"
 "DOTA_Tooltip_ability_techies_time_is_boom_level_cooldown_red"				"%REDUCTION PER HERO LEVEL:"
+
+"DOTA_Tooltip_ability_templar_assassin_slipstrike"									"<font color='#f2da5b'>Slipstrike</font>"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_Description"						"Throws a charged psi dagger at an enemy, dealing additional magic damage based on your attack damage. Deals %bonus_damage%%% damage if the enemy is currently casting an ability."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_Note0"						"Enemies casting are usually colored blue."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_base_damage"			    	"BASE DAMAGE:"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_attack_damage"			    "%ATTACK DAMAGE:"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_range"			    		"RANGE:"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_aghanim_description"				"Successfully hitting an animating enemy grants %bonus_agi% permanent agility."
 
 "DOTA_Tooltip_ability_terrorblade_custom_reflection"						"<font color='#f2da5b'>Reflection</font>"
 "DOTA_Tooltip_ability_terrorblade_custom_reflection_Description"			"Terrorblade brings forth an invulnerable dark reflection of a target unit. Affected units are slowed."

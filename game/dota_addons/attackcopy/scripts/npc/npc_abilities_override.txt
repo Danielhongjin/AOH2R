@@ -1384,7 +1384,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"480"
+				"value"				"75"
 			}
 		}
 	}
@@ -1758,7 +1758,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"2"
+				"value"				"1"
 			}
 		}
 	}
@@ -6704,13 +6704,13 @@
 	}
 	"skeleton_king_mortal_strike"
 	{
-		"AbilityCooldown"				"8"
+		"AbilityCooldown"				"18"
 		"AbilitySpecial"
 		{
 			"02"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_chance"				"11 13 15 17"
+				"crit_chance"				"9 12 15 18"
 			}
 			"04"
 			{

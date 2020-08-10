@@ -18,7 +18,7 @@ function HolyPersuasion( keys )
 		ability.holy_persuasion_table = ability.holy_persuasion_table or {}
 		ability.holy_persuasion_ancient_unit_count = ability.holy_persuasion_ancient_unit_count or 0
 		ability.holy_persuasion_ancient_table = ability.holy_persuasion_ancient_table or {}
-		local has_talent = false;
+		local has_talent = false
 		-- Ability variables
 		local max_units = ability:GetLevelSpecialValueFor("max_units", ability_level)
 		local max_ancients = caster:FindAbilityByName("chen_hand_of_god"):GetLevel()
@@ -35,8 +35,7 @@ function HolyPersuasion( keys )
 				)
 		if talent and talent:GetLevel() > 0 then
 			max_units = max_units + talent:GetSpecialValueFor("value")
-			has_talent = true
-				
+			has_talent = true	
 		end
 
 		-- Change the ownership of the unit and restore its mana to full

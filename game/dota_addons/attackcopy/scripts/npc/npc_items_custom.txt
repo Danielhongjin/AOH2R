@@ -352,17 +352,30 @@
 		}
 	}
 }
+"item_recipe_blink"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"600"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_blink"
+    "ItemRequirements"
+    {
+        "01"						"item_black_king_bar_free"
+    }
+}
 "item_blink"
 {
-    "ItemCost"						"1600"
-    "MaxUpgradeLevel"               "2"
-    "ItemBaseLevel"                 "1"
+    "ItemCost"						"0"
+	"AbilityCooldown"				"12.0"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "blink_range"			"1200"
+            "blink_range"			"900"
         }
         "02"
         {
@@ -372,7 +385,7 @@
         "03"
         {
             "var_type"				"FIELD_INTEGER"
-            "blink_range_clamp"		"960"
+            "blink_range_clamp"		"720"
         }
     }
 }	
@@ -7156,7 +7169,7 @@
         "01"
         {
             "var_type"				"FIELD_FLOAT"
-            "health_damage_bonus"			"9"
+            "health_damage_bonus"			"11.0"
 			"CalculateSpellDamageTooltip"	"0"
         }
         "02"
@@ -9237,7 +9250,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"spell_amp_pct"			"75"
+			"spell_amp_pct"			"70"
 		}
 		"05"
 		{

@@ -75,6 +75,7 @@
 "DOTA_Tooltip_Ability_special_bonus_unique_pugna_3_Description"					"Damage done ignores the penalty reduction."
 "DOTA_Tooltip_Ability_special_bonus_unique_pugna_6"									"+{s:value}% Nether Ward damage"
 "DOTA_Tooltip_Ability_special_bonus_unique_terrorblade"							"-{s:value}s Mirror Mastery Cooldown"
+"DOTA_Tooltip_Ability_special_bonus_unique_templar_assassin_3"						"+{s:value}% Slipstrike Attack Damage"
 "DOTA_Tooltip_Ability_ogre_magi_custom_bonus_unique_2"          					"Risky Gambit"
 "DOTA_Tooltip_Ability_ogre_magi_custom_bonus_unique_2_Description"					"Multiplies number of casts by 2, but removes 30% of your total health on failure. Can only occur once every 6 seconds."
 "DOTA_Tooltip_Ability_ogre_magi_custom_bonus_unique_1"          					"+10% all Cast Chances"
@@ -2306,12 +2307,16 @@
 "DOTA_Tooltip_ability_techies_time_is_boom_level_cooldown_red"				"%REDUCTION PER HERO LEVEL:"
 
 "DOTA_Tooltip_ability_templar_assassin_slipstrike"									"<font color='#f2da5b'>Slipstrike</font>"
-"DOTA_Tooltip_ability_templar_assassin_slipstrike_Description"						"Throws a charged psi dagger at an enemy, dealing additional magic damage based on your attack damage. Deals %bonus_damage%%% damage if the enemy is currently casting an ability."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_Description"						"Templar Assassin throws a charged psi dagger in a direction, dealing additional magic damage based on your attack damage. Deals %bonus_damage%%% damage the enemy is currently casting an ability."
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_Note0"						"Enemies casting are usually colored blue."
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_base_damage"			    	"BASE DAMAGE:"
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_attack_damage"			    "%ATTACK DAMAGE:"
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_range"			    		"RANGE:"
-"DOTA_Tooltip_ability_templar_assassin_slipstrike_aghanim_description"				"Successfully hitting an animating enemy grants %bonus_agi% permanent agility."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_bonus_agi"			    "BONUS AGILITY ON ANIMATION HIT:"
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_aghanim_description"				"Successfully hitting an animating enemy grants %bonus_agi% permanent agility. Missing an enemy will teleport you to the dagger's location."
+
+"DOTA_Tooltip_modifier_templar_assassin_slipstrike"				"Slipstrike"
+"DOTA_Tooltip_modifier_templar_assassin_slipstrike_description"	"Agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%."
 
 
 "DOTA_Tooltip_ability_terrorblade_custom_reflection"						"<font color='#f2da5b'>Reflection</font>"

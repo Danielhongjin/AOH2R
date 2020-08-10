@@ -69,7 +69,7 @@ function AOHGameMode:InitGameMode()
 	self._goldRatio = 1	
 	self._expRatio = 1
 	self._ischeckingdefeat = false
-	self._defeatcounter = 5
+	self._defeatcounter = 6
 	self._difficulty = 0
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_GOODGUYS, 5)
 	GameRules:SetCustomGameTeamMaxPlayers(DOTA_TEAM_BADGUYS, 0)
@@ -97,7 +97,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomBuybackCooldownEnabled(true)
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(900)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,10)
-	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.2)
+	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.3)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.1)
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AOHGameMode, 'OnEntityKilled'), self)
@@ -287,7 +287,6 @@ end
 -- Initiates variables that need to be set to values
 function AOHGameMode:InitVariables() 
 	for playerID = 0, 4 do
-		
 		AOHGameMode.talonCount[playerID] = {}
 		AOHGameMode.isTalon[playerID] = nil
 		AOHGameMode.isArcane[playerID] = false
@@ -495,7 +494,7 @@ function AOHGameMode:CheckForDefeatDelay()
 				self._entAncient:ForceKill(false)
 			else
 				Notifications:TopToAll({text="CLEAR", duration=1})
-				self._defeatcounter = 4
+				self._defeatcounter = 6
 				self._ischeckingdefeat = false
 				return nil
 			end
@@ -532,13 +531,15 @@ function AOHGameMode:OnEntitySpawned(event)
 	local unit = EntIndexToHScript(event.entindex)
 	if unit and unit:IsHero() then
 		fix_atr_for_hero(unit)
-	end
-
-	Timers:CreateTimer(
+		if unit:GetUnitName() == "npc_dota_hero_skeleton_king" then
+			unit:FindAbilityByName("skeleton_king_hidden_skeleton"):SetLevel(1)
+		end
+	else
+		Timers:CreateTimer(
 		0.13,
 		function()
 
-			if unit and not unit:IsHero() then
+			if unit then
 				if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
 					unit:AddNewModifier(unit, nil, "modifier_boss", {})
 					if self._difficulty == 2 then
@@ -552,6 +553,9 @@ function AOHGameMode:OnEntitySpawned(event)
 			end
 		end
 	)
+	end
+
+	
 	
 end
 

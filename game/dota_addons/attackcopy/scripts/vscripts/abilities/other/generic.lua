@@ -60,6 +60,8 @@ function generate_warning_aoe_noanim(keys)
 	local point = keys.target_points[1]
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	if keys.is_line and keys.is_line == 1 then
 		local norm = (point - caster:GetAbsOrigin()):Normalized()
 		point = caster:GetAbsOrigin() + norm * keys.line_length
@@ -93,6 +95,8 @@ function generic_aoe_noanim(keys)
 	local point = keys.target_points[1]
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	if keys.is_line and keys.is_line == 1 then
 		local norm = (point - caster:GetAbsOrigin()):Normalized()
 		norm = caster:GetAbsOrigin() + norm * keys.line_length
@@ -135,6 +139,8 @@ function generic_aoe(keys)
 	local point = keys.target_points[1]
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	Timers:CreateTimer(
 		0, 
 		function()
@@ -195,6 +201,8 @@ function generic_aoe_notarget(keys)
 	local ability = keys.ability
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	Timers:CreateTimer(
 		0, 
 		function()
@@ -234,6 +242,8 @@ function generic_aoe_farpoint(keys)
 	local point = keys.target_points[1]
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	Timers:CreateTimer(
 		0, 
 		function()
@@ -292,6 +302,8 @@ function generic_target(keys)
 	local target = keys.target
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_target[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	Timers:CreateTimer(
 		0, 
 		function()
@@ -336,6 +348,8 @@ function generic_target_aoe(keys)
 	local point = keys.target:GetAbsOrigin()
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_aoe[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	Timers:CreateTimer(
 		0, 
 		function()
@@ -402,6 +416,8 @@ function generic_target_random(keys)
 	local target = ai_random_alive_hero()
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_target[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	Timers:CreateTimer(
 		0, 
 		function()
@@ -436,6 +452,8 @@ function generic_target_random_noanim(keys)
 	local target = ai_random_alive_hero()
 	local delay = keys.delay
 	local spell = caster:FindAbilityByName(spells_target[keys.ability_index])
+	local signifier = ParticleManager:CreateParticle("particles/econ/items/medusa/medusa_daughters/medusa_daughters_mana_shield_shell_impact_b.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
+	ParticleManager:ReleaseParticleIndex(signifier)
 	target:AddNewModifier(caster, ability, "modifier_target_delay", {duration = delay})
 	Timers:CreateTimer(
 		delay - spell:GetCastPoint(), 

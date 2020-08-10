@@ -15,6 +15,10 @@ function enchantress_custom_enchant:OnSpellStart()
 	local target = self:GetCursorTarget()
 	local bonus_health = self:GetSpecialValueFor("enchant_health")
 	local bonus_damage = self:GetSpecialValueFor("enchant_damage")
+	local talent = caster:FindAbilityByName("special_bonus_unique_enchantress_1")
+	if talent and talent:GetLevel() > 0 then
+		has_talent = true	
+	end
 	-- add modifier based on target
 	if target:IsConsideredHero() then
 		local duration = self:GetDuration()
@@ -31,7 +35,7 @@ function enchantress_custom_enchant:OnSpellStart()
 		-- play effects
 		local sound_cast = "Hero_Enchantress.EnchantHero"
 		EmitSoundOn( sound_cast, target )
-	else
+	elseif not target:IsAncient() or has_talent then
 		table.insert(self.dominate_table, target)
 		if #self.dominate_table > 1 then
 			self.dominate_table[1]:ForceKill(true) 

@@ -1,3 +1,5 @@
+require("lib/popup")
+
 templar_assassin_slipstrike = class({})
 
 function templar_assassin_slipstrike:OnSpellStart()
@@ -7,14 +9,19 @@ function templar_assassin_slipstrike:OnSpellStart()
 	local point = self:GetCursorPosition()
 
 	local projectile_name = "particles/custom/templar_assassin_slipstrike.vpcf"
+	
+	local projectile_distance = self:GetSpecialValueFor("range")
 	local projectile_speed = self:GetSpecialValueFor("speed")
-	local projectile_distance = self:GetSpecialValueFor("range") + caster:GetCastRangeBonus()
+	local delay = projectile_distance / projectile_speed
+	projectile_speed = projectile_speed * ((projectile_distance + caster:GetCastRangeBonus())/ projectile_distance)
+	projectile_distance = projectile_distance + caster:GetCastRangeBonus()
 	local projectile_start_radius = self:GetSpecialValueFor("width")
 	local projectile_vision = self:GetSpecialValueFor("vision")
 	local damage = self:GetSpecialValueFor("base_damage")
-
+	
+	
 	local projectile_direction = (Vector(point.x-origin.x, point.y-origin.y,0)):Normalized()
-
+	self.has_hit = false
 	-- logic
 	local info = {
 		Source = caster,
@@ -53,9 +60,20 @@ function templar_assassin_slipstrike:OnSpellStart()
 			damage = damage,
 		}
 	}
-	ProjectileManager:CreateLinearProjectile(info)
-
-	-- Effects
+	local projectile = ProjectileManager:CreateLinearProjectile(info)
+	if caster:HasScepter() then
+		Timers:CreateTimer(
+			delay - 0.05,
+			function()
+				if not self.has_hit then
+					FindClearSpaceForUnit(caster, ProjectileManager:GetLinearProjectileLocation(projectile), true)
+					local fx = ParticleManager:CreateParticle("particles/econ/items/lanaya/lanaya_epit_trap/templar_assassin_epit_trap_explode.vpcf", PATTACH_WORLDORIGIN, caster)
+					ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
+				end
+			end
+		)
+	
+	end
 	local sound_cast = "Hero_TemplarAssassin.Trap"
 	EmitSoundOn( sound_cast, caster )
 end
@@ -65,7 +83,7 @@ end
 function templar_assassin_slipstrike:OnProjectileHit_ExtraData(hTarget, vLocation, extraData)
 	if hTarget==nil then return end
 	local caster = self:GetCaster()
-	
+	self.has_hit = true
 	local damageTable = {
 		victim = hTarget,
 		attacker = caster,
@@ -73,7 +91,13 @@ function templar_assassin_slipstrike:OnProjectileHit_ExtraData(hTarget, vLocatio
 		damage_type = DAMAGE_TYPE_MAGICAL,
 		ability = self, --Optional.
 	}
-	damageTable.damage = damageTable.damage + (caster:GetAverageTrueAttackDamage(caster) * self:GetSpecialValueFor("attack_damage") * 0.01)
+	local attack_damage = self:GetSpecialValueFor("attack_damage")
+	local talent = caster:FindAbilityByName("special_bonus_unique_templar_assassin_3")
+	if talent and talent:GetLevel() > 0 then
+		attack_damage = attack_damage + talent:GetSpecialValueFor("value")
+	end
+	
+	damageTable.damage = damageTable.damage + (caster:GetAverageTrueAttackDamage(caster) * attack_damage * 0.01)
 	if hTarget:HasModifier("modifier_anim") then
 		local bonus_damage = self:GetSpecialValueFor("bonus_damage") * 0.01
 		damageTable.damage = damageTable.damage * bonus_damage
@@ -93,7 +117,13 @@ function templar_assassin_slipstrike:OnProjectileHit_ExtraData(hTarget, vLocatio
 		local fx = ParticleManager:CreateParticle("particles/econ/items/lanaya/lanaya_epit_trap/templar_assassin_epit_trap_explode.vpcf", PATTACH_WORLDORIGIN, caster)
 		ParticleManager:SetParticleControl(fx, 0, hTarget:GetAbsOrigin())
 	end
-	
+	create_popup({
+		target = hTarget,
+		value = damageTable.damage * (1 + caster:GetSpellAmplification(false)),
+		color = Vector(153, 51, 255),
+		type = "spell",
+		pos = 6
+	})
 	ApplyDamage(damageTable)
 
 	AddFOWViewer(self:GetCaster():GetTeamNumber(), vLocation, 500, 3, false)
@@ -108,7 +138,7 @@ LinkLuaModifier("modifier_templar_assassin_slipstrike", "abilities/heroes/templa
 modifier_templar_assassin_slipstrike = class({})
 
 function modifier_templar_assassin_slipstrike:IsHidden()
-    return true
+    return false
 end
 
 function modifier_templar_assassin_slipstrike:IsPurgable()

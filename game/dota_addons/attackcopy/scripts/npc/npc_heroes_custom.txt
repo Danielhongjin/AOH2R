@@ -568,6 +568,7 @@
 	"Ability11"		"special_bonus_attack_speed_25"
 	"Ability14"		"special_bonus_attack_damage_70"
     "Ability17"		"special_bonus_cleave_100"
+	"Ability18"		"skeleton_king_hidden_skeleton"
 	"AttributeIntelligenceGain"		"2.600000"
 }
 "npc_dota_hero_skywrath_mage"

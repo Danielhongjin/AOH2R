@@ -45,7 +45,7 @@ end
 
 function modifier_atr_fix:GetModifierConstantHealthRegen()
 	local parent_str = self.parent:GetStrength()
-    local h_regen = parent_str * 0.1
+    local h_regen = parent_str * 0.2
     return h_regen
 end
 

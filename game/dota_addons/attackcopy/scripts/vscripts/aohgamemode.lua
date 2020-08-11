@@ -81,8 +81,8 @@ function AOHGameMode:InitGameMode()
 	GameRules:SetHeroRespawnEnabled(false)
 	GameRules:SetUseUniversalShopMode(true)
 	GameRules:SetHeroSelectionTime(40.0)
-	GameRules:SetPreGameTime(6.0)
-	GameRules:SetStrategyTime(10.0)
+	GameRules:SetPreGameTime(7.0)
+	GameRules:SetStrategyTime(7.0)
 	GameRules:SetPostGameTime(4000.0)
 	GameRules:SetTreeRegrowTime(70.0)	
 	GameRules:SetHeroMinimapIconScale(1.2)
@@ -99,6 +99,7 @@ function AOHGameMode:InitGameMode()
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP,10)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_STRENGTH_HP_REGEN,0.3)
 	GameRules:GetGameModeEntity():SetCustomAttributeDerivedStatValue(DOTA_ATTRIBUTE_INTELLIGENCE_MANA_REGEN,0.1)
+	
 	ListenToGameEvent("npc_spawned", Dynamic_Wrap(AOHGameMode, 'OnEntitySpawned'), self)
 	ListenToGameEvent("entity_killed", Dynamic_Wrap(AOHGameMode, 'OnEntityKilled'), self)
 	ListenToGameEvent("game_rules_state_change", Dynamic_Wrap(AOHGameMode, "OnGameRulesStateChange"), self)
@@ -267,7 +268,7 @@ function AOHGameMode:EndVote()
 		self._negativeRounds = 2
 	elseif self._difficulty == 1 then
 		Notifications:TopToAll({text="#normal_label", style={color="white", ["font-size"]="130px"}, duration=5})
-	elseif self._difficulty == 2 then
+	else
 		Notifications:TopToAll({text="#hard_label", style={color="red", ["font-size"]="130px"}, duration=5})
 		self._flPrepTimeBetweenRounds = 5
 		for playerID = 0, 4 do
@@ -297,7 +298,7 @@ function AOHGameMode:InitVariables()
 		AOHGameMode.phys_damage[playerID] = 1
 		AOHGameMode.pure_damage[playerID] = 1
 		for var = 0, 2 do
-			self.talonCount[playerID][var] = 0
+			AOHGameMode.talonCount[playerID][var] = 0
 		end
 		for var = 0, 9 do
 			AOHGameMode.damage_count[playerID][var] = 0
@@ -318,7 +319,7 @@ function AOHGameMode:InitVariables()
 				self._playerNumber = self._playerNumber + 1
 				PlayerResource:SetCustomBuybackCooldown(playerID, 25)
 				AOHGameMode.Players[playerID] = hero
-				CustomGameEventManager:Send_ServerToAllClients("vote_name", {name = PlayerResource:GetSelectedHeroName(playerID), id = playerID})
+				
 			end
 		end
 	end
@@ -334,6 +335,14 @@ function AOHGameMode:InitVariables()
 		self._nPlayerHelp:SetOwner(playerHero)
 		Notifications:TopToAll({text="It's dangerous to go alone! Take this.", duration=5})
 	end
+	Timers:CreateTimer(
+		0.1,
+		function()
+			for _, v in pairs(AOHGameMode.Players) do
+				CustomGameEventManager:Send_ServerToAllClients("vote_name", {name = v:GetUnitName(), id = v:GetPlayerID()})
+			end
+		end
+	)
 	EmitGlobalSound("AOH.MenuOpen")
 	Timers:CreateTimer(
 		function()
@@ -535,24 +544,18 @@ function AOHGameMode:OnEntitySpawned(event)
 			unit:FindAbilityByName("skeleton_king_hidden_skeleton"):SetLevel(1)
 		end
 	else
-		Timers:CreateTimer(
-		0.13,
-		function()
-
-			if unit then
-				if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-					unit:AddNewModifier(unit, nil, "modifier_boss", {})
-					if self._difficulty == 2 then
-						unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
-					elseif self._difficulty == 0 then
-						unit:AddNewModifier(unit, nil, "modifier_easy_mode_boss", {})
-					end
-				elseif unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
-					unit:AddNewModifier(unit, nil, "modifier_summonbuff", {id = unit:GetPlayerOwnerID()})
+		if unit then
+			if unit:GetTeamNumber() == DOTA_TEAM_BADGUYS then
+				unit:AddNewModifier(unit, nil, "modifier_boss", {})
+				if self._difficulty == 2 then
+					unit:AddNewModifier(unit, nil, "modifier_hard_mode_boss", {})
+				elseif self._difficulty == 0 then
+					unit:AddNewModifier(unit, nil, "modifier_easy_mode_boss", {})
 				end
+			elseif unit:GetTeamNumber() == DOTA_TEAM_GOODGUYS then
+				unit:AddNewModifier(unit, nil, "modifier_summonbuff", {id = unit:GetPlayerOwnerID()})
 			end
 		end
-	)
 	end
 
 	

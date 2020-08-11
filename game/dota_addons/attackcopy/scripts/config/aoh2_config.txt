@@ -408,7 +408,6 @@
 				"SpawnInterval"			"13"
 			}
 		}
-		
 		"14" // Swarm
 		{
 			"Title"						"Insect Swarm"

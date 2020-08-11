@@ -4979,7 +4979,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.2 1.4 1.6"
+			"health_regen_pct"		"1.1 1.25 1.4"
 		}
 		"05"
 		{
@@ -5040,7 +5040,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.2 1.4 1.6"
+			"health_regen_pct"		"1.1 1.25 1.4"
 		}
 		"05"
 		{
@@ -5101,7 +5101,7 @@
 		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.2 1.4 1.6"
+			"health_regen_pct"		"1.1 1.25 1.4"
 		}
 		"05"
 		{
@@ -7332,7 +7332,7 @@
         "03"
         {
             "var_type"				    "FIELD_INTEGER"
-            "max_stacks"	        "13"
+            "max_stacks"	        "9"
         }
         "04"
         {

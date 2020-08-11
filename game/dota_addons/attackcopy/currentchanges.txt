@@ -1,24 +1,9 @@
-Holy cow, even more translations for items to chinese by Candifantasia.
-Defeat counter increased to 6 seconds, fixed a glitch where after the first defeat timer your next timer was lower.
+Various system stability improvements.
 
-Fixed some small abusable terrain pockets.
-More damage list css cleanup, highlist to let you know you're hovering over it.
-Small pockets of happy little trees added closer to the midsection and ancient.
+Various bosses buffed.
+Storm Spirit boss reliability slightly improved.
 
-All boss warning behaviors now also fire a particle to let you know they're casting.
-Storm Spirit boss ball lightning will now fire slightly faster.
-
-Blink Dagger range nerfed, cooldown buffed.
-Free Bar can now be upgraded into a blink dagger for 600 gold. 
-Giant Disguise Belt and Sanguine improved to account for lower late game healths.
-Glare Edge now visible in shop.
-Sanguine damage ratio improved.
-
-Strength now grants 0.3 regen per point, up from 0.2.
-Enchantress charm talent now works on ancients as expected.
-Wraith King will now always have at least two stacks of mortal strike, cooldown increased from 8 to 18. Talent nerfed.
-Templar Assassin Slipstrike aghanim upgrade now also teleports you to the location of the projectile if it misses. Increasing cast range increases the speed of the projectile.
-Templar Assassin Slipstrike talent added.
+Legion Commander ult Warpath no longer dispellable.
 CURRENTLY IMPLEMENTING EXPANDED END SCREEN - DPS NEEDS TO BE HOOKED UP TO END_SCREEN.LUA
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
 

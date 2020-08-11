@@ -1920,7 +1920,7 @@
 "DOTA_Tooltip_ability_keeper_of_the_light_will_o_wisp_Note0"				"Refresher is 50% effective on this ability."
 
 "DOTA_Tooltip_ability_legion_commander_warpath"                         "<font color='#f2da5b'>Warpath</font>"
-"DOTA_Tooltip_ability_legion_commander_warpath_Description"			    "Temporarily increases your damage on cast and causes autoattacks to launch a second attack. Every cast increases how much damage this ability grants."
+"DOTA_Tooltip_ability_legion_commander_warpath_Description"			    "Temporarily increases your damage on cast and causes autoattacks to launch a second attack. Every cast increases how much damage this ability grants. <br><br> While active, Legion Commander cannot die."
 "DOTA_Tooltip_ability_legion_commander_warpath_duration"					"DURATION:"
 "DOTA_Tooltip_ability_legion_commander_warpath_reward_damage"				"BONUS DAMAGE:"
 "DOTA_Tooltip_ability_legion_commander_warpath_duration_scepter"			"SCEPTER DURATION:"
@@ -2307,13 +2307,13 @@
 "DOTA_Tooltip_ability_techies_time_is_boom_level_cooldown_red"				"%REDUCTION PER HERO LEVEL:"
 
 "DOTA_Tooltip_ability_templar_assassin_slipstrike"									"<font color='#f2da5b'>Slipstrike</font>"
-"DOTA_Tooltip_ability_templar_assassin_slipstrike_Description"						"Templar Assassin throws a charged psi dagger in a direction, dealing additional magic damage based on your attack damage. Deals %bonus_damage%%% damage the enemy is currently casting an ability."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_Description"						"Templar Assassin throws a charged psi dagger in a direction, dealing additional magic damage based on your attack damage. Deals %bonus_damage%%% damage if the enemy is currently casting an ability."
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_Note0"						"Enemies casting are usually colored blue."
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_base_damage"			    	"BASE DAMAGE:"
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_attack_damage"			    "%ATTACK DAMAGE:"
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_range"			    		"RANGE:"
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_bonus_agi"			    "BONUS AGILITY ON ANIMATION HIT:"
-"DOTA_Tooltip_ability_templar_assassin_slipstrike_aghanim_description"				"Successfully hitting an animating enemy grants %bonus_agi% permanent agility. Missing an enemy will teleport you to the dagger's location."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_aghanim_description"				"Successfully hitting an animating enemy grants %bonus_agi% permanent agility. Missing an enemy will teleport you to the dagger's location and refund 1/2 the cooldown."
 
 "DOTA_Tooltip_modifier_templar_assassin_slipstrike"				"Slipstrike"
 "DOTA_Tooltip_modifier_templar_assassin_slipstrike_description"	"Agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%."

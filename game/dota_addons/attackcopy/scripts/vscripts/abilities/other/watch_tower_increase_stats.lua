@@ -28,7 +28,6 @@ if IsServer() then
         self.parent = self:GetParent()
 		self.parent:CastAbilityNoTarget(self.parent:FindAbilityByName("outpost_idle"), -1)
 		
-		
 		local ability = self:GetAbility()
 		self.health_base = ability:GetSpecialValueFor("health_base")
 		self.health_per_round = ability:GetSpecialValueFor("health_per_round")
@@ -38,14 +37,14 @@ if IsServer() then
 		self.round = 0
 		
 		Timers:CreateTimer(
-			10,
+			15,
 			function()
 				self.parent:SetInvulnCount(0)
 				self.fx = ParticleManager:CreateParticle("particles/custom/watch_tower_aura.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
 				ParticleManager:SetParticleControl(self.fx, 0, self.parent:GetAbsOrigin() + Vector(0, 0, 100))
 				ParticleManager:SetParticleControl(self.fx, 1, Vector(250, 1, 1))
 				self.fx2 = ParticleManager:CreateParticle("particles/custom/watch_tower_ambient.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
-				ParticleManager:SetParticleControl(self.fx, 0, self.parent:GetAbsOrigin() + Vector(0, 0, 100))
+				ParticleManager:SetParticleControl(self.fx2, 0, self.parent:GetAbsOrigin() + Vector(0, 0, 100))
 			end
 		)
 		self:StartIntervalThink(3)

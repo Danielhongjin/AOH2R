@@ -9,16 +9,21 @@ function templar_assassin_slipstrike:OnSpellStart()
 	local point = self:GetCursorPosition()
 
 	local projectile_name = "particles/custom/templar_assassin_slipstrike.vpcf"
-	
-	local projectile_distance = self:GetSpecialValueFor("range")
 	local projectile_speed = self:GetSpecialValueFor("speed")
+	local projectile_distance = self:GetSpecialValueFor("range")
+	if caster:HasScepter() then
+		projectile_distance = math.sqrt(((point.x-origin.x) ^ 2) + ((point.y-origin.y) ^ 2))
+		projectile_speed = projectile_speed * ((projectile_distance + caster:GetCastRangeBonus())/ projectile_distance)
+		local delay = projectile_distance / projectile_speed
+	else
+		projectile_speed = projectile_speed * ((projectile_distance + caster:GetCastRangeBonus())/ projectile_distance)
+		projectile_distance = projectile_distance + caster:GetCastRangeBonus()
+	end
 	local delay = projectile_distance / projectile_speed
-	projectile_speed = projectile_speed * ((projectile_distance + caster:GetCastRangeBonus())/ projectile_distance)
-	projectile_distance = projectile_distance + caster:GetCastRangeBonus()
+	
 	local projectile_start_radius = self:GetSpecialValueFor("width")
 	local projectile_vision = self:GetSpecialValueFor("vision")
 	local damage = self:GetSpecialValueFor("base_damage")
-	
 	
 	local projectile_direction = (Vector(point.x-origin.x, point.y-origin.y,0)):Normalized()
 	self.has_hit = false
@@ -37,7 +42,7 @@ function templar_assassin_slipstrike:OnSpellStart()
 	    EffectName = projectile_name,
 	    fDistance = projectile_distance,
 	    fStartRadius = projectile_start_radius,
-	    fEndRadius =projectile_end_radius,
+	    fEndRadius = projectile_start_radius,
 		vVelocity = projectile_direction * projectile_speed,
 	
 		bHasFrontalCone = false,
@@ -63,12 +68,15 @@ function templar_assassin_slipstrike:OnSpellStart()
 	local projectile = ProjectileManager:CreateLinearProjectile(info)
 	if caster:HasScepter() then
 		Timers:CreateTimer(
-			delay - 0.05,
+			delay,
 			function()
 				if not self.has_hit then
-					FindClearSpaceForUnit(caster, ProjectileManager:GetLinearProjectileLocation(projectile), true)
+					FindClearSpaceForUnit(caster, point, true)
 					local fx = ParticleManager:CreateParticle("particles/econ/items/lanaya/lanaya_epit_trap/templar_assassin_epit_trap_explode.vpcf", PATTACH_WORLDORIGIN, caster)
 					ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
+					local cooldown = self:GetCooldownTimeRemaining()
+					self:EndCooldown()
+					self:StartCooldown(cooldown / 2)
 				end
 			end
 		)

@@ -293,8 +293,6 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.2
-			m_fLifetimeMin = 0.2
 		},
 		{
 			_class = "C_INIT_RandomColor"

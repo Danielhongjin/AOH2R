@@ -47,20 +47,20 @@ function modifier_summonbuff:OnCreated(keys)
 			self.health = 10000000
 		end
 		if self.parentishero then
-			self.tempHealth = self.parent:GetHealthPercent()
+			local tempHealth = self.parent:GetHealthPercent()
 			self.parent:SetMaxHealth(self.parent_health + (self.parent_health * (self.caster:GetMaxHealth() / self.health)))
-			self.parent:SetHealth(self.parent:GetMaxHealth() * self.tempHealth * 0.01)
+			self.parent:SetHealth(self.parent:GetMaxHealth() * tempHealth * 0.01)
 		else
-			self.healthmodifier = self.parent:AddNewModifier(self.parent, ability, "modifier_summonbuff_health", {})
+			self.healthmodifier = self.parent:AddNewModifier(self.parent, nil, "modifier_summonbuff_health", {})
 			self.healthmodifier:SetStackCount(self.parent_health * (self.caster:GetMaxHealth() / self.health))
 		end
-		self.armormodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_armor", {})
+		self.armormodifier = self.parent:AddNewModifier(self.caster, nil, "modifier_summonbuff_armor", {})
 		self.armormodifier:SetStackCount(self.caster:GetPhysicalArmorValue(false) * self.armor)
-		self.damagemodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_damage", {})
+		self.damagemodifier = self.parent:AddNewModifier(self.caster, nil, "modifier_summonbuff_damage", {})
 		self.damagemodifier:SetStackCount((self.parent_damage * ((self.caster:GetAverageTrueAttackDamage(self.caster) - self.caster_base_damage) / 2.5 + self.caster_base_damage)) / self.damage)
-		self.regenmodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_regen", {})
+		self.regenmodifier = self.parent:AddNewModifier(self.caster, nil, "modifier_summonbuff_regen", {})
 		self.regenmodifier:SetStackCount(self.parent_regen * (self.caster:GetMaxHealth() / self.health))
-		self.magicarmormodifier = self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_magic_armor", {})
+		self.magicarmormodifier = self.parent:AddNewModifier(self.caster, nil, "modifier_summonbuff_magic_armor", {})
 		self.parent:AddNewModifier(self.caster, self.ability, "modifier_summonbuff_super_armor", {duration = 3.0})
 		self:StartIntervalThink(0.66)
 	else 
@@ -75,20 +75,13 @@ function modifier_summonbuff:OnIntervalThink()
 	end
 	local caster_max_health = self.caster:GetMaxHealth()
 	if self.parentishero then
-		self.tempHealth = self.parent:GetHealth() / self.parent:GetMaxHealth() * 1.00000
+		local tempHealth = self.parent:GetHealth() / self.parent:GetMaxHealth() * 1.00000
 		self.parent:SetMaxHealth(self.parent_health + (self.parent_health * (caster_max_health / self.health)))
-		self.tempHealth = self.parent:GetMaxHealth() * self.tempHealth
-		if self.tempHealth > 0 then
-			self.parent:SetHealth(self.tempHealth)
+		tempHealth = self.parent:GetMaxHealth() * tempHealth
+		if tempHealth > 0 then
+			self.parent:SetHealth(tempHealth)
 		else
-			self.parent:ApplyDamage({
-				ability = ability,
-				attacker = self.parent,
-				damage = 9999,
-				damage_type = DAMAGE_TYPE_PURE,
-				damage_flags = DOTA_DAMAGE_FLAG_NO_DAMAGE_MULTIPLIERS,
-				victim = self.parent,
-			})
+			self:Destroy()
 		end
 	else
 		self.healthmodifier = self.parent:AddNewModifier(self.parent, ability, "modifier_summonbuff_health", {})
@@ -97,9 +90,6 @@ function modifier_summonbuff:OnIntervalThink()
 	self.armormodifier:SetStackCount(self.caster:GetPhysicalArmorValue(false) * self.armor)
 	self.damagemodifier:SetStackCount((self.parent_damage * ((self.caster:GetAverageTrueAttackDamage(self.caster) - self.caster_base_damage) / 2.5 + self.caster_base_damage)) / self.damage)
 	self.regenmodifier:SetStackCount(self.parent_regen * (caster_max_health / self.health))
-	if self.parent:GetHealth() < 1 then
-		self.parent:ForceKill(true)
-	end
 end
 end
 LinkLuaModifier("modifier_summonbuff_health", "modifiers/modifier_summonbuff.lua", LUA_MODIFIER_MOTION_NONE)

@@ -2,7 +2,6 @@ LinkLuaModifier("modifier_legion_commander_warpath", "abilities/heroes/legion_co
 LinkLuaModifier("modifier_legion_commander_damage_hidden", "abilities/heroes/legion_commander_warpath.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_legion_commander_damage", "abilities/heroes/legion_commander_warpath.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_legion_commander_damage_permanent", "abilities/heroes/legion_commander_warpath.lua", LUA_MODIFIER_MOTION_NONE)
-require("lib/timers")
 legion_commander_warpath = class({})
 
 function legion_commander_warpath:OnInventoryContentsChanged()
@@ -32,10 +31,13 @@ function legion_commander_warpath:OnSpellStart()
 		end
 	end
 	if not caster:HasModifier("modifier_legion_commander_damage_hidden") then
-		local hidden = caster:AddNewModifier(caster, self, "modifier_legion_commander_damage_hidden", {duration = -1})
+		local counter = caster:AddNewModifier(caster, self, "modifier_legion_commander_damage_hidden", {duration = -1})
+		counter:SetStackCount(increment)
+	else
+		local counter = caster:FindModifierByName("modifier_legion_commander_damage_hidden")
+		counter:SetStackCount(counter:GetStackCount() + increment)
 	end
-	local counter = caster:FindModifierByName("modifier_legion_commander_damage_hidden")
-	counter:SetStackCount(counter:GetStackCount() + increment)
+	
 	local modifier = caster:AddNewModifier(caster, self, "modifier_legion_commander_damage", {duration = duration})
 	modifier:SetStackCount(counter:GetStackCount())
 	if caster:HasScepter() then
@@ -51,7 +53,7 @@ end
 modifier_legion_commander_warpath = class({})
 
 function modifier_legion_commander_warpath:IsPurgable()
-	return true
+	return false
 end
 
 function modifier_legion_commander_warpath:IsHidden()
@@ -62,6 +64,10 @@ function modifier_legion_commander_warpath:GetStatusEffectName()
 	return "particles/status_fx/status_effect_grimstroke_ink_swell.vpcf"
 end
 
+function modifier_legion_commander_warpath:StatusEffectPriority()
+    return 90
+end
+
 function modifier_legion_commander_warpath:DeclareFunctions()
     return {
 		MODIFIER_EVENT_ON_ATTACKED,
@@ -69,6 +75,7 @@ function modifier_legion_commander_warpath:DeclareFunctions()
 		MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE,
 		MODIFIER_PROPERTY_CASTTIME_PERCENTAGE,
 		MODIFIER_PROPERTY_MODEL_SCALE,
+		MODIFIER_PROPERTY_MIN_HEALTH,
     }
 end
 
@@ -87,6 +94,10 @@ end
 
 function modifier_legion_commander_warpath:GetModifierModelScale()
     return 15
+end
+
+function modifier_legion_commander_warpath:GetMinHealth()
+    return 1
 end
 
 if IsServer() then
@@ -163,7 +174,7 @@ end
 modifier_legion_commander_damage_hidden = class({})
 
 function modifier_legion_commander_damage_hidden:IsPurgable()
-	return true
+	return false
 end
 
 function modifier_legion_commander_damage_hidden:RemoveOnDeath()
@@ -177,7 +188,7 @@ end
 modifier_legion_commander_damage_permanent = class({})
 
 function modifier_legion_commander_damage_permanent:IsPurgable()
-	return true
+	return false
 end
 
 function modifier_legion_commander_damage_permanent:IsHidden()

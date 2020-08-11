@@ -1440,7 +1440,7 @@
     "AbilityCastPoint"				"0.7"
     "AbilityCooldown"				"10.0"
     "AbilityDuration"				"1.0"
-    "AbilityDamage"					"1000"
+    "AbilityDamage"					"1500"
     "AbilityManaCost"				"0"
     "AbilitySpecial"
     {
@@ -6760,12 +6760,12 @@
 		"01"
 		{
 			"var_type"			"FIELD_FLOAT"
-			"speed"		"3000.0"
+			"speed"		"2700.0"
 		}
 		"02"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"width"		"115"
+			"width"		"135"
 		}
 		"03"
 		{
@@ -7058,7 +7058,7 @@
 		"04"
         {
             "var_type"					"FIELD_INTEGER"
-            "damage_taken"					"80"
+            "damage_taken"					"100"
         }
     }
     "Modifiers"
@@ -11914,7 +11914,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage"						"850"
+				"damage"						"1100"
 			}
 			"02"
 			{
@@ -16401,7 +16401,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"800"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"10"
+		"AbilityCooldown"				"9"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" "1"
 		"AbilitySpecial"
@@ -16409,7 +16409,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"			"1.4"
+				"delay"			"1.1"
 			}
 			"02"
 			{
@@ -16437,7 +16437,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityTextureName" 			"lone_druid_spirit_link"
 		"AbilityCastRange"				"800"					
-		"AbilityCooldown"				"10.0"
+		"AbilityCooldown"				"9.0"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" "1"
 		"AbilitySpecial"
@@ -17524,7 +17524,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"400"
+				"damage"				"650"
 			}
 			"02"
 			{
@@ -18116,12 +18116,12 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_base"				"200"
+				"damage_base"				"400"
 			}
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage_per_zombie"				"500"
+				"damage_per_zombie"				"800"
 			}
 			"05"
 			{
@@ -18171,7 +18171,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"					"5000"
+				"damage"					"4000"
 			}
 			"03"
 			{
@@ -18804,14 +18804,14 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"	
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"0"
+		"AbilityCooldown"				"2"
 		"AbilityManaCost"				"180"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"600"
+				"damage"				"900"
 			}
 			"02"
 			{

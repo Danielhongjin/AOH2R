@@ -23,7 +23,8 @@
 		"DOTA_Tooltip_Ability_item_bag_of_gold"			"Bag Of Gold"
 		"DOTA_Tooltip_Ability_item_tombstone"			"Ressurect Teammate"
 		
-		
+"DOTA_Tooltip_modifier_builtin_blink_cooldown"                     "Blink Cooldown"
+"DOTA_Tooltip_modifier_builtin_blink_cooldown_Description"         "Your built in blink is on cooldown."
 	
 "DOTA_Tooltip_modifier_roundend_effect"					"Divine Grace"
 "DOTA_Tooltip_modifier_roundend_effect_Description"					"Heals %fMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% HP and %fMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% mana per second."
@@ -615,6 +616,35 @@
 "DOTA_Tooltip_ability_custom_arena_duration"					"DURATION:"
 "DOTA_Tooltip_ability_custom_arena_radius"					"RADIUS:"	
 
+
+"npc_boss_elder_titan"                     "Elder Titan (Boss)"
+"npc_stone_spire"                     "Stone Spire (Boss)"
+"DOTA_Tooltip_ability_custom_ground_smash"							"Ground Smash"
+"DOTA_Tooltip_ability_custom_ground_smash_Description"				"Slams the ground with immense force, dealing damage to enemies based on their max health."
+"DOTA_Tooltip_ability_custom_ground_smash_damage_pct"				"%DAMAGE PERCENT:"
+"DOTA_Tooltip_ability_custom_ground_smash_stun_duration"			"STUN DURATION:"
+"DOTA_Tooltip_ability_custom_shifting_quake"						"Shifting Quake"
+"DOTA_Tooltip_ability_custom_shifting_quake_Description"			"Creates a quake that expands outward in a line, dealing damage over time and stunning enemies. Damage is based on target's current health."
+"DOTA_Tooltip_ability_custom_shifting_quake_damage_pct"				"%DAMAGE PERCENT:"
+"DOTA_Tooltip_ability_custom_shifting_quake_stun_duration"			"STUN DURATION:"
+"DOTA_Tooltip_ability_custom_rock_hard"								"Rock Hard"
+"DOTA_Tooltip_ability_custom_rock_hard_Description"					"The Worldsmith turns his body rock hard, reflecting damage dealt to him back to the attacker."
+"DOTA_Tooltip_ability_custom_rock_hard_reflect"						"%REFLECT:"
+"DOTA_Tooltip_ability_custom_rock_hard_duration"					"DURATION:"
+"DOTA_Tooltip_modifier_rock_hard"									"Rock Hard"
+"DOTA_Tooltip_modifier_rock_hard_Description"						"Reflecting damage back to the attacker."
+"DOTA_Tooltip_modifier_rock_hard_initial"									"Watch the fuck out"
+"DOTA_Tooltip_modifier_rock_hard_initial_Description"						"Why are you reading this"
+"DOTA_Tooltip_ability_custom_earth_splitter"						"Earth Splitter"
+"DOTA_Tooltip_ability_custom_earth_splitter_damage_pct"				"%DAMAGE PERCENT:"
+"DOTA_Tooltip_ability_custom_stone_spire"							"Stone Spire"
+"DOTA_Tooltip_ability_custom_stone_spire_Description"				"Plants a Stone Spire near the caster. The Stone Spire hurls boulders at enemies and surrounds itself with trembling shockwaves."
+"DOTA_Tooltip_ability_custom_stone_spire_duration"					"DURATION"
+"DOTA_Tooltip_ability_custom_trembling_waves"						"Trembling Shockwave"
+"DOTA_Tooltip_ability_custom_trembling_waves_Description"			"The caster releases constant shockwaves that deals damage and knocks back enemies."
+"DOTA_Tooltip_ability_custom_trembling_waves_damage"				"DAMAGE:"
+"DOTA_Tooltip_ability_custom_trembling_waves_interval"				"INTERVAL:"
+"DOTA_Tooltip_ability_custom_trembling_waves_radius"				"RADIUS:"
 
 "npc_boss_ember_spirit"                     "Ember Spirit (Boss)"
 "npc_boss_enigma"                     "Enigma (Boss)"
@@ -1521,8 +1551,6 @@
 "DOTA_Tooltip_ability_custom_soul_releaser_duration"					"SLOW DURATION:"
 "DOTA_Tooltip_ability_custom_soul_releaser_slow_tooltip"				"%SLOW:"
 
-"DOTA_Tooltip_ability_custom_wisp_reincarnation"								"Worldshapers"
-"DOTA_Tooltip_ability_custom_wisp_reincarnation_Description"					"Wisp releases three Worldsmiths on death."
 
 "npc_boss_wisp_friendly"                     "The Box (Boss)" 
 
@@ -1589,34 +1617,6 @@
 "DOTA_Tooltip_ability_custom_splinter_blast_movespeed_slow_tooltip"		"%MOVEMENT SLOW:"
 "DOTA_Tooltip_ability_custom_splinter_blast_duration"			"SLOW DURATION:"	
 
-"npc_boss_worldsmith"                     "Worldsmith (Boss)"
-"npc_stone_spire"                     "Stone Spire (Boss)"
-"DOTA_Tooltip_ability_custom_ground_smash"							"Ground Smash"
-"DOTA_Tooltip_ability_custom_ground_smash_Description"				"Slams the ground with immense force, dealing damage to enemies based on their max health."
-"DOTA_Tooltip_ability_custom_ground_smash_damage_pct"				"%DAMAGE PERCENT:"
-"DOTA_Tooltip_ability_custom_ground_smash_stun_duration"			"STUN DURATION:"
-"DOTA_Tooltip_ability_custom_shifting_quake"						"Shifting Quake"
-"DOTA_Tooltip_ability_custom_shifting_quake_Description"			"Creates a quake that expands outward in a line, dealing damage over time and stunning enemies. Damage is based on target's current health."
-"DOTA_Tooltip_ability_custom_shifting_quake_damage_pct"				"%DAMAGE PERCENT:"
-"DOTA_Tooltip_ability_custom_shifting_quake_stun_duration"			"STUN DURATION:"
-"DOTA_Tooltip_ability_custom_rock_hard"								"Rock Hard"
-"DOTA_Tooltip_ability_custom_rock_hard_Description"					"The Worldsmith turns his body rock hard, reflecting damage dealt to him back to the attacker."
-"DOTA_Tooltip_ability_custom_rock_hard_reflect"						"%REFLECT:"
-"DOTA_Tooltip_ability_custom_rock_hard_duration"					"DURATION:"
-"DOTA_Tooltip_modifier_rock_hard"									"Rock Hard"
-"DOTA_Tooltip_modifier_rock_hard_Description"						"Reflecting damage back to the attacker."
-"DOTA_Tooltip_modifier_rock_hard_initial"									"Watch the fuck out"
-"DOTA_Tooltip_modifier_rock_hard_initial_Description"						"Why are you reading this"
-"DOTA_Tooltip_ability_custom_earth_splitter"						"Earth Splitter"
-"DOTA_Tooltip_ability_custom_earth_splitter_damage_pct"				"%DAMAGE PERCENT:"
-"DOTA_Tooltip_ability_custom_stone_spire"							"Stone Spire"
-"DOTA_Tooltip_ability_custom_stone_spire_Description"				"Plants a Stone Spire near the caster. The Stone Spire hurls boulders at enemies and surrounds itself with trembling shockwaves."
-"DOTA_Tooltip_ability_custom_stone_spire_duration"					"DURATION"
-"DOTA_Tooltip_ability_custom_trembling_waves"						"Trembling Shockwave"
-"DOTA_Tooltip_ability_custom_trembling_waves_Description"			"The caster releases constant shockwaves that deals damage and knocks back enemies."
-"DOTA_Tooltip_ability_custom_trembling_waves_damage"				"DAMAGE:"
-"DOTA_Tooltip_ability_custom_trembling_waves_interval"				"INTERVAL:"
-"DOTA_Tooltip_ability_custom_trembling_waves_radius"				"RADIUS:"
 "npc_boss_zeus"                     "Zeus (Boss)"
 
 
@@ -1888,6 +1888,13 @@
 
 "DOTA_Tooltip_modifier_grimstroke_custom_soulstore_buff"                     "Soulstore"
 "DOTA_Tooltip_modifier_grimstroke_custom_soulstore_buff_Description"         "Being affected by Grimstroke Soulstore."
+
+"DOTA_Tooltip_ability_grimstroke_custom_phantoms_embrace"                                    "Phantom's Embrace"
+"DOTA_Tooltip_ability_grimstroke_custom_phantoms_embrace_Description"						"Summons a phantom that moves quickly towards. The phantom redirects damage taken by it to the target. The lodestone has %shared_life%%% of the target's current health."
+"DOTA_Tooltip_ability_grimstroke_custom_phantoms_embrace_Lore"								"Grimstroke holds no sorrow for the downfall of his people. Only for Yaovhi, she who was most dear to him, does he feel even a semblance of longing."
+"DOTA_Tooltip_ability_grimstroke_custom_phantoms_embrace_damage_ratio"				"%DAMAGE:"
+"DOTA_Tooltip_ability_grimstroke_custom_phantoms_embrace_duration"					"DURATION:"
+
 "DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage"							    "<font color='#f2da5b'>Rocket Barrage</font>"
 "DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage_Description"				    "Launches a rocket at a random target at %attack_mult%x gyrocopter's attack speed. If Flak Cannon is active, affects one additional enemy."
 "DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage_Lore"						"Aurel's new craft has an increased payload for rockets, enhancing their rapid-fire capabilities."
@@ -2658,6 +2665,10 @@
 "DOTA_Tooltip_modifier_item_conduit"								"Charged Conduit"
 "DOTA_Tooltip_modifier_item_conduit_Description"					"Currently sharing Damage."
 
+"DOTA_Tooltip_ability_item_custom_blink"							"Blink Dagger"
+"DOTA_Tooltip_ability_item_custom_blink_Description"				"<h1>Active: Blink</h1> Teleport to a target point up to %blink_range% units away.\n<h1>Active: Avatar</h1> Grants Spell Immunity.  <br><br>Duration: %duration%"
+"DOTA_Tooltip_ability_item_custom_blink_Note1"										"If you used Blink to teleport to a distance over the maximum range, you'll be teleported 4/5 of the maximum range instead."
+
 "DOTA_Tooltip_ability_item_custom_helm_of_the_dominator"						"Helm of the Dominator"
 "DOTA_Tooltip_ability_item_custom_helm_of_the_dominator_Description"			"<h1>Active: Dominate</h1>Takes control of a neutral, non-ancient target unit and sets its movement speed to %speed_base% and max health to a minimum of %health_min%.<br><br>Up to two units can be dominated. <br><br>Range: %abilitycastrange%\n<h1>Passive: Dominator Aura</h1> Increases nearby allied hero and player units base damage by %attack_damage_aura%%%  and health regen by %hp_regen_aura%. Has a %creep_bonus%%%  bigger effect on player units.<br><br>Radius: %aura_radius%"
 "DOTA_Tooltip_ability_item_custom_helm_of_the_dominator_Lore"					"The powerful headpiece of a dead necromancer."
@@ -3024,9 +3035,6 @@
 "DOTA_Tooltip_Ability_item_trade_kaya_3_Note0"				"Multiple instances of Stats Bargain do not stack."
 "DOTA_Tooltip_Ability_item_trade_kaya_3_Lore"				"A powerful staff that drains the vitality of the wielder."
 
-"DOTA_Tooltip_Ability_item_ultimate_blink"                  "Ultimate Blink"
-"DOTA_Tooltip_Ability_item_ultimate_blink_Description"		"<h1>Active: Blink</h1> Teleport to a target point up to %blink_range% units away. <br><br>Blink Dagger cannot be used for %blink_damage_cooldown% seconds after taking damage from an enemy hero or Roshan."
-"DOTA_Tooltip_Ability_item_ultimate_blink_Lore"				"The fabled dagger used by the fastest assassin ever to walk the lands."
 "DOTA_Tooltip_Ability_item_ultimate_butterfly"                              "Ultimate Butterfly"
 "DOTA_Tooltip_ability_item_ultimate_butterfly_Note0"								"Stacks diminishingly with other sources of Evasion."
 "DOTA_Tooltip_ability_item_ultimate_butterfly_Lore"								"Only the mightiest and most experienced of warriors can wield the Butterfly, but it provides incredible dexterity in combat."

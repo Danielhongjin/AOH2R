@@ -30,11 +30,12 @@ function legion_commander_warpath:OnSpellStart()
 			increment = increment + talent:GetSpecialValueFor("value")
 		end
 	end
+	local counter = nil
 	if not caster:HasModifier("modifier_legion_commander_damage_hidden") then
-		local counter = caster:AddNewModifier(caster, self, "modifier_legion_commander_damage_hidden", {duration = -1})
+		counter = caster:AddNewModifier(caster, self, "modifier_legion_commander_damage_hidden", {duration = -1})
 		counter:SetStackCount(increment)
 	else
-		local counter = caster:FindModifierByName("modifier_legion_commander_damage_hidden")
+		counter = caster:FindModifierByName("modifier_legion_commander_damage_hidden")
 		counter:SetStackCount(counter:GetStackCount() + increment)
 	end
 	

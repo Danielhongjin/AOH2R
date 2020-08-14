@@ -15,11 +15,13 @@
 }
 "npc_dota_hero_alchemist"
 {
+	"Ability12"		"special_bonus_strength_15"
 	"Ability13"		"special_bonus_attack_damage_40"
 	"Ability14"		"special_bonus_cleave_60"
+	"Ability15"		"special_bonus_intelligence_50"
 	"Ability16"		"special_bonus_unique_alchemist_3"
-	"AttributeStrengthGain"		"2.900000"
-	"AttributeAgilityGain"		"1.700000"
+	"AttributeStrengthGain"		"3.200000"
+	"AttributeAgilityGain"		"2.500000"
 }
 "npc_dota_hero_ancient_apparition"
 {
@@ -230,8 +232,8 @@
 }
 "npc_dota_hero_grimstroke"
 {
-    "Ability2"      "grimstroke_custom_ink_creature"
-    "Ability6"      "grimstroke_custom_soulstore"
+    "Ability2"      "grimstroke_custom_phantoms_embrace"
+	"Ability11"		"special_bonus_magic_resistance_10"
     "Ability15"		"special_bonus_strength_15"
     "Ability16"		"special_bonus_cooldown_reduction_20"
 }
@@ -569,7 +571,11 @@
 	"Ability14"		"special_bonus_attack_damage_70"
     "Ability17"		"special_bonus_cleave_100"
 	"Ability18"		"skeleton_king_hidden_skeleton"
+	"AttackRate"		"1.600000"
+	"AttributeBaseStrength"		"25"
+	"AttributeStrengthGain"		"3.5"
 	"AttributeIntelligenceGain"		"2.600000"
+	"AttributeAgilityGain"		"2.700000"
 }
 "npc_dota_hero_skywrath_mage"
 {
@@ -659,7 +665,7 @@
 	"Ability10"		"special_bonus_attack_speed_25"
 	"Ability11"		"special_bonus_movement_speed_25"
 	"Ability12"		"special_bonus_movement_speed_40"
-	"Ability14"		"special_bonus_intelligence_100"
+	"Ability14"		"special_bonus_intelligence_50"
 	"Ability16"		    "special_bonus_agility_30"
 }
 "npc_dota_hero_terrorblade"
@@ -775,8 +781,9 @@
 	"Ability12"		"special_bonus_unique_wisp_4"
     "Ability16"		"special_bonus_movement_speed_100"
 	"Ability17"		"special_bonus_gold_income_420"
-	"AttributeAgilityGain"		"2.600000"
-	"AttributeIntelligenceGain"		"2.700000"
+	"AttributeStrengthGain"		"2.000000"
+	"AttributeAgilityGain"		"1.600000"
+	"AttributeIntelligenceGain"		"1.700000"
 }
 "npc_dota_hero_witch_doctor"
 {

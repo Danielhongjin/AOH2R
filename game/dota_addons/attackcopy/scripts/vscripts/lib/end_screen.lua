@@ -9,16 +9,20 @@ require("lib/my")
 ]]
 
 
-function formated_number(number)
+function formatted_number(number)
     local as_string = tostring(math.floor(number))
     if number < 1000 then
         return as_string
     end
-
+	
     local len = as_string:len()
-    local split_point = len - 3
-
-    return as_string:sub(1, split_point) .. "." .. as_string:sub(split_point + 1, len - 2) .. "K"
+	if number < 1000000 then
+		local split_point = len - 3
+		return as_string:sub(1, split_point) .. "." .. as_string:sub(split_point + 1, len - 2) .. "K"
+	else
+		local split_point = len - 6
+		return as_string:sub(1, split_point) .. "." .. as_string:sub(split_point + 1, len - 4) .. "M"
+	end
 end
 
 
@@ -67,10 +71,10 @@ function end_screen_get_data(isWinner)
                 local playerInfo = {
                     steamid = tostring(PlayerResource:GetSteamID(playerID)),
 
-                    damageTaken = formated_number(player_data_get_value(playerID, "damageTaken")),
-                    bossDamage = formated_number(player_data_get_value(playerID, "bossDamage")),
-                    heroHealing = formated_number(PlayerResource:GetHealing(playerID)),
-					highestDPS = formated_number(game_mode.highest_dps[playerID]),
+                    damageTaken = formatted_number(player_data_get_value(playerID, "damageTaken")),
+                    bossDamage = formatted_number(player_data_get_value(playerID, "bossDamage")),
+                    heroHealing = formatted_number(PlayerResource:GetHealing(playerID)),
+					highestDPS = formatted_number(game_mode.highest_dps[playerID]),
 
                     deaths = PlayerResource:GetDeaths(playerID),
                     goldBags = player_data_get_value(playerID, "goldBagsCollected"),

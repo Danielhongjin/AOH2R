@@ -97,7 +97,7 @@
 #Stats {
 	height: 82px;
 	flow-children: right;
-}
+} 
 #LeftSide
 {
 	width: 95px;
@@ -112,6 +112,7 @@
 #LeftSide > Label {
 	font-size: 13px;
 	width: 90px;
+	text-overflow: shrink;
 }
 
 #RightSide > Label {

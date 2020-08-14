@@ -104,6 +104,20 @@
 		}
 	}
 }
+"special_bonus_intelligence_50"
+{
+	"BaseClass"						"special_bonus_intelligence_35"
+	"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"value"				"50"
+		}
+	}
+}
 "special_bonus_intelligence_100"
 {
 	"BaseClass"						"special_bonus_intelligence_35"
@@ -883,7 +897,7 @@
 		"10"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"damage"			"150"
+			"damage"			"200"
 		}
     }
 }
@@ -1061,7 +1075,7 @@
     "AbilityCastRange"				"700"
     "AbilityCastPoint"				"0.2"
     "AbilityCooldown"				"7"
-    "AbilityDamage"					"210"
+    "AbilityDamage"					"350"
     "AbilityManaCost"				"0"		
     "AbilitySpecial"
     {
@@ -1440,7 +1454,7 @@
     "AbilityCastPoint"				"0.7"
     "AbilityCooldown"				"10.0"
     "AbilityDuration"				"1.0"
-    "AbilityDamage"					"1500"
+    "AbilityDamage"					"2000"
     "AbilityManaCost"				"0"
     "AbilitySpecial"
     {
@@ -1845,7 +1859,7 @@
         "04"
         {
             "var_type"					"FIELD_INTEGER"
-            "damage"					"425"
+            "damage"					"650"
         }
         "05"
         {
@@ -5422,7 +5436,7 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"20"
+			"bonus_damage"				"24"
 		}
 		"04"
 		{
@@ -8188,6 +8202,40 @@
         "modifier_grimstroke_custom_soulstore_hud"
         {
             "IsBuff"                        "1"
+        }
+    }
+}
+
+"grimstroke_custom_phantoms_embrace"
+{
+    "BaseClass"						    "ability_lua"
+    "ScriptFile"                        "abilities/heroes/grimstroke_custom_phantoms_embrace.lua"
+    "AbilityBehavior"			    "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"		    "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityCastAnimation"			"ACT_DOTA_GS_INK_CREATURE"
+    "AbilityTextureName"		    "grimstroke_ink_creature"
+    "AbilityCastRange"			    "700"
+    "AbilityCastPoint"			    "0.4"
+    "AbilityCooldown"			    "20.0"
+    "AbilityManaCost"			    "101"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"			    "FIELD_INTEGER"
+            "duration"			    "10 12 14 16"
+        }
+		"02"
+        {
+            "var_type"			    "FIELD_FLOAT"
+            "shared_life"			"20.0 22.5 25"
+        }
+		"03"
+        {
+            "var_type"			    "FIELD_INTEGER"
+            "damage_ratio"			"60 70 80 90"
         }
     }
 }
@@ -11914,7 +11962,7 @@
 			"01"
 			{
 				"var_type"						"FIELD_INTEGER"
-				"damage"						"1100"
+				"damage"						"1600"
 			}
 			"02"
 			{
@@ -12591,7 +12639,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"damage_pct"				"45"
+				"damage_pct"				"50"
 			}
 			"08"
 			{
@@ -13552,7 +13600,7 @@
 			"05"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1500"
+				"damage"				"2000"
 			}
 		}
 		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -14061,7 +14109,7 @@
 		"07"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"base_damage"			"2000"
+			"base_damage"			"2500"
 		}
 	}
 }
@@ -15145,7 +15193,7 @@
 		"01"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"width"				"100"
+			"width"				"125"
 		}
 		"02"
 		{	
@@ -15160,7 +15208,7 @@
 		"04"
 		{
 			"var_type"			"FIELD_INTEGER"
-			"speed"				"400"
+			"speed"				"4000"
 		}
 		"05"
 		{
@@ -15170,8 +15218,7 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"impale_damage"			"350"
-			"LinkedSpecialBonus"	"special_bonus_unique_nyx_2"
+			"impale_damage"			"1000"
 		}
 	}
 	"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_1"
@@ -16025,7 +16072,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"26000"
+				"damage"				"27500"
 			}
 			"04"
 			{
@@ -16450,12 +16497,12 @@
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_movespeed"			"150"
+				"bonus_movespeed"			"250"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_attackspeed"			"200"
+				"bonus_attackspeed"			"300"
 			}
 		}
 		"OnSpellStart"
@@ -16495,7 +16542,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_FLOAT"
-				"base_attack_time"			"0.5"
+				"base_attack_time"			"0.35"
 			}
 			"05"
 			{
@@ -16592,7 +16639,7 @@
 		"AbilityCastPoint"				"0.7"
 		"AbilityCooldown"				"9"
 		"AbilityManaCost"				"0"
-		"AbilityDamage"					"1000"
+		"AbilityDamage"					"2200"
 		"AbilityDuration"				"2"
 		"AbilitySpecial"
 		{
@@ -16624,7 +16671,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"32"
+		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" "1"
 		"AbilitySpecial"
@@ -16672,7 +16719,7 @@
 			"particle"					"particles/econ/items/invoker/invoker_apex/invoker_sun_strike_immortal1.vpcf"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_invoker.vsndevts"
 		}
-		"AbilityCooldown"				"18.0"
+		"AbilityCooldown"				"17.0"
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
 		{
@@ -16722,7 +16769,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"1500"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" "1"
 		"AbilitySpecial"
@@ -16759,7 +16806,7 @@
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"SpellDispellableType"			"SPELL_DISPELLABLE_YES_STRONG"
 		"AbilityCastPoint"				"0.1"
-		"AbilityCooldown"				"16"
+		"AbilityCooldown"				"15"
 		"AbilityManaCost"				"0"
 		"AbilityCastRange"				"1600"
 		"AbilitySpecial"
@@ -16834,7 +16881,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityTextureName" 			"elder_titan_echo_stomp"
 		"AbilityCastRange"				"800"					
-		"AbilityCooldown"				"20.0"
+		"AbilityCooldown"				"19.0"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" "1"
 		"AbilitySpecial"
@@ -16842,7 +16889,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"			"600"
+				"radius"			"700"
 			}
 			"02"
 			{
@@ -16889,7 +16936,7 @@
 			"soundfile"				"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
 		}
 		"AbilityCastPoint"			"0.0"
-		"AbilityCooldown"			"20.0"
+		"AbilityCooldown"			"19.0"
 		"AbilityCastRange"			"900"
 		"AbilityManaCost"			"0"
 		"AbilitySpecial"
@@ -16897,12 +16944,12 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"radius"			"700"
+				"radius"			"750"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"			"750"			
+				"damage"			"800"			
 			}
 			"03"
 			{
@@ -16980,12 +17027,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"land_time"				"1.6"
+				"land_time"				"1.35"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"area_of_effect"		"150"
+				"area_of_effect"		"175"
 			}
 			"03"
 			{
@@ -16995,7 +17042,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"travel_speed"			"300"
+				"travel_speed"			"400"
 			}			
 			"05"
 			{
@@ -17054,7 +17101,7 @@
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"		        "1.8"
+				"delay"		        "1.5"
 			}
 			"03"
 			{
@@ -17524,7 +17571,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"650"
+				"damage"				"800"
 			}
 			"02"
 			{
@@ -17722,7 +17769,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"crit_mult"					"170"
+				"crit_mult"					"210"
 			}
 			"02"
 			{
@@ -17988,7 +18035,7 @@
 			"04"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"	"300.0"
+				"damage"	"600.0"
 			}
 		}
 	}
@@ -18298,7 +18345,7 @@
 			"03"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"shock_damage"				"1200"
+				"shock_damage"				"1900"
 			}
 			"04"
 			{
@@ -18445,7 +18492,7 @@
 		"FightRecapLevel"				"1"
 		"AbilitySound"					"Hero_StormSpirit.StaticRemnantPlant"
 		"AbilityCastPoint"				"0"
-		"AbilityCooldown"				"3.5"
+		"AbilityCooldown"				"12"
 		"AbilityDuration"				"19.0"
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
@@ -18723,7 +18770,7 @@
 		"SpellDispellableType"			"SPELL_DISPELLABLE_NO"
 		"AbilityCastRange"				"9999"
 		"AbilityCastPoint"				"0.0"
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"17"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" "1"
 		"AbilitySpecial"
@@ -18762,7 +18809,7 @@
 		"AbilitySound"					"Hero_StormSpirit.ElectricVortex"
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"9999"
-		"AbilityCooldown"				"15"
+		"AbilityCooldown"				"17"
 		"AbilityDuration"				"2.6"
 		"AbilityManaCost"				"0"
 		"AbilitySpecial"
@@ -18811,7 +18858,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"900"
+				"damage"				"1100"
 			}
 			"02"
 			{
@@ -19110,7 +19157,7 @@
 			"04"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"axe_damage"				"180"
+				"axe_damage"				"600"
 			}
 			"05"
 			{
@@ -19504,7 +19551,7 @@
 		"AbilityCastPoint"				"0.2"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"0"
-		"AbilityDamage"					"1200"
+		"AbilityDamage"					"1700"
 		"AbilityCastRange"				"900"
 		"AbilitySpecial"
 		{
@@ -19616,7 +19663,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"1400"
+				"damage"				"2000"
 			}
 			"04"
 			{
@@ -19718,7 +19765,7 @@
 			"07"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pop_damage"			"700"
+				"pop_damage"			"1200"
 			}
 			"08"
 			{
@@ -19840,28 +19887,34 @@
 			}
 		}
 	}
-	"boss_meteor_behavior"
+	"boss_meteor_init"
 	{
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"abilities/heroes/huskar_sacred_flame.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-    "AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-    "AbilityTextureName"		    "huskar_sacred_flame"
-	"HasScepterUpgrade"				"1"
-	"AbilityManaCost"				"30"
-    "AbilitySpecial"
-	{
-		"01"
+		"BaseClass"				"ability_datadriven"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+		"AbilityType"	 				"DOTA_ABILITY_TYPE_BASIC"
+		"AbilitySpecial"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"chance"				"30"
+			"1"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"minimum_movespeed"			"125"
+			}
 		}
-		"02"
+		"Modifiers"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"				"24"
+			"modifier_meteor_init"
+			{
+				"Passive"						"1"
+				"IsHidden"						"1"
+				"OnCreated"
+				{
+					"RunScript"
+					{
+						"ScriptFile"	"abilities\bosses\boss_meteor_init.lua"
+						"Function"		"init"
+					}
+				}
+			}
 		}
 	}
-}
 }

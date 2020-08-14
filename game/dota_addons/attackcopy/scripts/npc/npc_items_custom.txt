@@ -352,42 +352,10 @@
 		}
 	}
 }
-"item_recipe_blink"
-{
-    "BaseClass"						"item_datadriven"
-    "Model"							"models/props_gameplay/recipe.vmdl"
-    "AbilityTextureName"			"item_recipe"
-    "ItemCost"						"600"	
-    "ItemShopTags"					""
-    "ItemRecipe"					"1"
-    "ItemResult"					"item_blink"
-    "ItemRequirements"
-    {
-        "01"						"item_black_king_bar_free"
-    }
-}
+
 "item_blink"
 {
-    "ItemCost"						"0"
-	"AbilityCooldown"				"12.0"
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "blink_range"			"900"
-        }
-        "02"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "blink_damage_cooldown"	"0.0"
-        }
-        "03"
-        {
-            "var_type"				"FIELD_INTEGER"
-            "blink_range_clamp"		"720"
-        }
-    }
+    "ItemPurchasable"			"0"
 }	
 "item_bloodthorn"
 {
@@ -1831,6 +1799,11 @@
 		}
 	}
 }
+"item_refresher_shard"
+{
+	"ItemStackable"					"1"
+	"AbilityCooldown"				"0.0"
+}
 "item_sange_and_yasha"
 {
 	"AbilitySpecial"
@@ -3188,7 +3161,6 @@
     "ItemRequirements"
     {
         "01"						"item_demon_edge;item_demon_talon;item_hyperstone"
-		"02"						"item_magi_demon_talon"
     }
 }	
 "item_greater_demon_talon"
@@ -3244,13 +3216,14 @@
 	"FightRecapLevel"				        "1"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityCooldown"				"4"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"ItemShopTags"					"attack_speed;damage;regen_health;hard_to_tag"
 	"ItemQuality"					"artifact"
 	"ItemAliases"					"magi demon talon"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	"AbilitySharedCooldown"			"demon_talon"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+
 	"MaxUpgradeLevel"           "2"
 	"ItemBaseLevel"             "2"
 	"AbilityCastPoint"				"1337"
@@ -3634,6 +3607,51 @@
             "cast_range_tooltip"		            "600"
         }
     }
+}
+
+"item_recipe_custom_blink"
+{
+    "BaseClass"						"item_datadriven"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"600"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_custom_blink"
+    "ItemRequirements"
+    {
+        "01"						"item_black_king_bar_free"
+    }
+}
+"item_custom_blink"
+{
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/custom_blink.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+    "AbilityTextureName"		    "blink"
+    "ItemQuality"					"epic"
+    "ItemAliases"					"blink dagger"
+    "AbilityCastRange"				"9999"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"13"
+	"AbilityManaCost"				"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"2.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blink_range"			"1400"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"blink_range_clamp"		"1160"
+		}
+	}
 }
 "item_recipe_cursed_bloodthorn"
 {
@@ -9773,7 +9791,7 @@
 	"ItemIsNeutralDrop"				"1"
 	"ItemRequirements"
 	{
-		"01"						"item_blink;item_meteor_hammer;item_chest_5"
+		"01"						"item_custom_blink;item_meteor_hammer;item_chest_5"
 	}
 }
 "item_fallen_sky"
@@ -9901,37 +9919,12 @@
 		}
 	}
 }
-"item_recipe_phoenix_ash"
-{
-    "BaseClass"						"item_datadriven"
-    "Model"							"models/props_gameplay/recipe.vmdl"
-    "AbilityTextureName"			"item_recipe"
-    "ItemCost"						"500"	
-    "ItemShopTags"					""
-    "ItemRecipe"					"1"
-    "ItemResult"					"item_phoenix_ash"
-    "ItemRequirements"
-    {
-        "01"						"item_chest_5"
-    }
-}
 "item_phoenix_ash"
 {
-	"ItemCost"						"0"
-	"ItemGloballyCombinable"		"0"
-	"ItemPurchasable"				"1"
-	"ItemInitialCharges"			"5"
-	"AbilityCooldown"				"15"
 	"ItemIsNeutralDrop"				"0"
 	"ItemSellable"					"0"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"health_pct"			"50"
-		}
-	}
+	"ItemStackable"					"1"
+	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 }
 "item_recipe_pirate_hat"
 {

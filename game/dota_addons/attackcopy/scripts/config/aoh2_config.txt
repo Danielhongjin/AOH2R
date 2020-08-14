@@ -21,6 +21,20 @@
 			"Chance"				"3"
 		}
 	}
+	
+	"BossItemDrops"
+	{
+		"RefresherShard"
+		{
+			"Item"					"item_refresher_shard"
+			"Chance"				"5"
+		}
+		"PhoenixAsh"
+		{
+			"Item"					"item_phoenix_ash"
+			"Chance"				"6"
+		}
+	}
 		"LinkedXPEnemies"
 	{
 		// Key enemy spawns sub-value count of subkey enemies
@@ -753,9 +767,9 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"31" // Worldsmith
+		"31" // Meteor
 		{
-			"Title"						"Worldsmith"
+			"Title"						"Big Angry Ball"
 			"MaxGold"					"9000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
@@ -763,7 +777,7 @@
 
 			"a"
 			{
-				"NPCName"				"npc_boss_worldsmith"
+				"NPCName"				"npc_boss_meteor"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"
@@ -850,9 +864,9 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"37" // Wisp
+		"37" // Elder Titan
 		{
-			"Title"						"False God"
+			"Title"						"Worldsmiths"
 			"MaxGold"					"10000"
 			"BagCount"					"40"
 			"BagVariance"				"30"
@@ -860,9 +874,9 @@
 
 			"a"
 			{
-				"NPCName"				"npc_boss_wisp"
-				"TotalUnitsToSpawn"		"1"
-				"UnitsPerSpawn"			"1"
+				"NPCName"				"npc_boss_elder_titan"
+				"TotalUnitsToSpawn"		"3"
+				"UnitsPerSpawn"			"3"
 				"SpawnInterval"			"30"
 			}
 		}
@@ -895,7 +909,7 @@
 				"NPCName"				"npc_boss_legion_commander"
 				"TotalUnitsToSpawn"		"8"
 				"UnitsPerSpawn"			"2"
-				"SpawnInterval"			"16"
+				"SpawnInterval"			"20"
 			}
 			"b"
 			{

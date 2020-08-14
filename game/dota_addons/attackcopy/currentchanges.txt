@@ -1,14 +1,19 @@
-Various system stability improvements.
+More translations to chinese by CandiFantasia hooray.
 
-Various bosses buffed.
-Storm Spirit boss reliability slightly improved.
+Built in blink cooldown reduced from 14 to 4.5 seconds, range from 600 to 325. Easier to trigger than before, double entry window from 0.1 to 0.14 seconds.
+Built in blink now has a particle that shows the cooldown somewhat.
+Performance increased by changing blink code.
 
-Legion Commander ult Warpath no longer dispellable.
-CURRENTLY IMPLEMENTING EXPANDED END SCREEN - DPS NEEDS TO BE HOOKED UP TO END_SCREEN.LUA
+Nearly all boss AOE damage has been increased to account for increased ability to dodge.
+
+Blink dagger range increased from 1200 to 1400. Duration from 1.5 seconds to 2.0.
+
+IO stat gain reduced across the board.
 CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
-
+CHANGED FORMATED_NUMBER TO FORMATTED NUMBER: CHECK LIBRARIES
 replace IO ult.
 
 Implement score system.
 
 Fix playerhelp, make him not killable and move him out of game when he "dies".
+increase power of legion commander

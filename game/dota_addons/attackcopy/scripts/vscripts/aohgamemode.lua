@@ -238,6 +238,7 @@ function AOHGameMode:_ReadGameConfiguration()
 
 	self._vRandomSpawnsList = spawns_from_kv(kv["RandomSpawns"])
 	self._vLootItemDropsList = items_from_kv(kv["ItemDrops"])
+	self._vBossLootItemDropsList = items_from_kv(kv["BossItemDrops"])
 	self._vRounds = rounds_from_kv(kv["Rounds"], self)
 end
 
@@ -300,7 +301,7 @@ function AOHGameMode:InitVariables()
 		for var = 0, 2 do
 			AOHGameMode.talonCount[playerID][var] = 0
 		end
-		for var = 0, 9 do
+		for var = 0, 10 do
 			AOHGameMode.damage_count[playerID][var] = 0
 		end
 		if PlayerResource:IsValidPlayerID(playerID) then
@@ -393,8 +394,8 @@ function AOHGameMode:OnUpdateThink()
 		if PlayerResource:IsValidPlayerID(playerID) then
 			local bossDamage = player_data_get_value(playerID, "bossDamage")
 			CustomGameEventManager:Send_ServerToAllClients("damage_type_update", {physical = AOHGameMode.phys_damage[playerID],magical = AOHGameMode.mag_damage[playerID],pure = AOHGameMode.pure_damage[playerID],id = playerID})
-			local dps = (bossDamage - AOHGameMode.damage_count[playerID][AOHGameMode.dps_tick]) / 6
-			CustomGameEventManager:Send_ServerToAllClients("damage_update", {damage = formated_number(bossDamage), dps = formated_number(dps),damage_taken = formated_number(player_data_get_value(playerID, "damageTaken")), healing = formated_number(PlayerResource:GetHealing(playerID)), id = playerID})
+			local dps = (bossDamage - AOHGameMode.damage_count[playerID][AOHGameMode.dps_tick]) / 5
+			CustomGameEventManager:Send_ServerToAllClients("damage_update", {damage = formatted_number(bossDamage), dps = formatted_number(dps),damage_taken = formatted_number(player_data_get_value(playerID, "damageTaken")), healing = formatted_number(PlayerResource:GetHealing(playerID)), id = playerID})
 			if dps > AOHGameMode.highest_dps[playerID] then
 				AOHGameMode.highest_dps[playerID] = dps
 			end
@@ -402,10 +403,10 @@ function AOHGameMode:OnUpdateThink()
 		end
 	end
 	AOHGameMode.dps_tick = AOHGameMode.dps_tick + 1
-	if AOHGameMode.dps_tick > 9 then
+	if AOHGameMode.dps_tick > 10 then
 		AOHGameMode.dps_tick = 0
 	end
-	return 0.66
+	return 0.5
 end
 
 local chests = {[0] = "item_chest_1", 
@@ -591,6 +592,13 @@ function AOHGameMode:CheckForLootItemDrop(killedUnit)
 		if RollPercentage(itemDropInfo.nChance) then
 			create_item_drop(itemDropInfo.szItemName, killedUnit:GetAbsOrigin())
 		end
+	end
+	if killedUnit:GetUnitLabel() == "main_boss" then
+		for _, itemDropInfo in pairs(self._vBossLootItemDropsList) do
+		if RollPercentage(itemDropInfo.nChance) then
+			create_item_drop(itemDropInfo.szItemName, killedUnit:GetAbsOrigin())
+		end
+	end
 	end
 end
 

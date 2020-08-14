@@ -1175,7 +1175,7 @@
 			"01"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"value"				"8"
+				"value"				"12"
 			}
 		}
 	}
@@ -3758,6 +3758,23 @@
 			}
 		}
 	}
+	"grimstroke_soul_chain"
+	{
+		"AbilityCooldown"				"60 50 40"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"chain_duration"		"7.0 8.5 10.0"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"creep_duration_pct"		"100.0"
+			}
+		}
+	}
 	"gyrocopter_rocket_barrage"
 	{
 		"AbilitySpecial"
@@ -5083,6 +5100,18 @@
 			{
 				"var_type"							"FIELD_INTEGER"
 				"num_second_soldiers"				"9"
+			}
+			"14"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"scepter_spawn_interval"			"4.0"
+				"RequiresScepter"	"1"
+			}
+			"15"
+			{
+				"var_type"							"FIELD_FLOAT"
+				"scepter_spawn_duration"			"10"
+				"RequiresScepter"	"1"
 			}
 		}
 	}

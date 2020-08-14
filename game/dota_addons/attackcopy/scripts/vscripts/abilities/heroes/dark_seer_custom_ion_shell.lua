@@ -45,6 +45,7 @@ if IsServer() then
 		self.damage_table.attacker = self.caster
 		self.damage_table.damage = self.damage
 		self.damage_table.damage_type = self.ability:GetAbilityDamageType() 
+		self.damage_table.damage_flags = 0,
 		self.damage_table.ability = self.ability
 		-- init
 		self:StartIntervalThink(self.interval)

@@ -1,8 +1,8 @@
 attackonherocopy
 {
 	material materials/overviews/attackonherocopy.vmat
-	pos_x -4146
+	pos_x -4288
 	pos_y 5120
-	scale 9.284
+	scale 9.563
 }
 

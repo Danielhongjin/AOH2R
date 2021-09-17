@@ -1,3 +1,4 @@
+--[ I don't recall why neutral items needed this bizarre method of handing things, they just did. ]--
 require("lib/popup")
 item_custom_ballista = class({})
 
@@ -64,7 +65,7 @@ end
 
 
 function modifier_item_custom_ballista_buff:GetModifierAttackRangeBonus()
-    return self:GetAbility():GetSpecialValueFor("attack_range_bonus")
+    return self:GetStackCount()
 end
 
 function modifier_item_custom_ballista_buff:GetModifierBonusStats_Strength()
@@ -88,6 +89,11 @@ if IsServer() then
 		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
 		self.bonus_damage = self:GetAbility():GetSpecialValueFor("bonus_damage")
+		local range = self.ability:GetSpecialValueFor("attack_range_bonus")
+		if not self.parent:IsRangedAttacker() then
+			range = range / 2
+		end
+		self:SetStackCount(range)
 	end
 	function modifier_item_custom_ballista_buff:OnAttackLanded(keys)
         local attacker = keys.attacker

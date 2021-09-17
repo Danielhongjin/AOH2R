@@ -43,7 +43,7 @@ function ThinkSpirits( event )
 	if ability.spirits_numSpirits < idealNumSpiritsSpawned then
 
 		-- Spawn a new spirit
-		local newSpirit = CreateUnitByName( "npc_dota_wisp_spirit", casterOrigin, false, caster, caster, caster:GetTeam() )
+		local newSpirit = CreateUnitByName( "npc_dota_wisp_spirit", casterOrigin + Vector(300, 0, 0), false, caster, caster, caster:GetTeam() )
 
 		-- Create particle FX
 		local pfx = ParticleManager:CreateParticle( event.spirit_particle_name, PATTACH_ABSORIGIN_FOLLOW, newSpirit )

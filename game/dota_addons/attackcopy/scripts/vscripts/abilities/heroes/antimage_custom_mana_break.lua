@@ -25,16 +25,21 @@ if IsServer() then
             MODIFIER_EVENT_ON_ATTACK_LANDED,
         }
     end
-
+	function modifier_antimage_custom_mana_break:OnCreated() 
+		self.ability = self:GetAbility()
+		self.parent = self:GetParent()
+		self.mana_per_hit = self.ability:GetSpecialValueFor("mana_per_hit")
+		self.damage = self.ability:GetSpecialValueFor("mana_burn_as_damage") * 0.01
+		if self.parent:IsIllusion() then
+			self.mana_per_hit = self.mana_per_hit / 2
+		end
+	end
 
     function modifier_antimage_custom_mana_break:OnAttackLanded(keys)
-        local ability = self:GetAbility()
         local attacker = keys.attacker
-
-        if attacker == self:GetParent() then
+        if attacker == self.parent then
             local target = keys.target
-
-            if attacker:PassivesDisabled() or target:IsAttackImmune() or target:GetMaxMana() == 0 then
+            if attacker:PassivesDisabled() or target:GetMaxMana() == 0 then
                 return nil
             end
 
@@ -44,18 +49,14 @@ if IsServer() then
             ParticleManager:SetParticleControl(particle, 0, target:GetAbsOrigin())
             ParticleManager:ReleaseParticleIndex(particle)
 
-            local mana_per_hit = ability:GetSpecialValueFor("mana_per_hit")
-
-            local target_mana = target:GetMana()
-
-            target:ReduceMana(mana_per_hit)
-            SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_LOSS, target, mana_per_hit, nil)
+            target:ReduceMana(self.mana_per_hit)
+            SendOverheadEventMessage(nil, OVERHEAD_ALERT_MANA_LOSS, target, self.mana_per_hit, nil)
 
 			ApplyDamage({
-				ability = ability,
+				ability = self.ability,
 				attacker = attacker,
-				damage = mana_per_hit * ability:GetSpecialValueFor("mana_burn_as_damage") * 0.01,
-				damage_type = ability:GetAbilityDamageType(),
+				damage = self.mana_per_hit * self.damage,
+				damage_type = self.ability:GetAbilityDamageType(),
 				victim = target
 			})
         end

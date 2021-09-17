@@ -31,7 +31,7 @@ if IsServer() then
             caster:SetCursorCastTarget(target)
             caster:AddNewModifier(caster, self, "modifier_rattletrap_custom_hookshot_dash", {})
 
-            self:StartCooldown(self:GetCooldown(self:GetLevel() - 1))
+            self:UseResources(false, false, true)
         end
     end
 

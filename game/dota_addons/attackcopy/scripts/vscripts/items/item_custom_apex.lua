@@ -1,4 +1,4 @@
-LinkLuaModifier("modifier_bonus_primary_controller", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
+
 LinkLuaModifier("modifier_bonus_primary_token", "modifiers/modifier_bonus.lua", LUA_MODIFIER_MOTION_NONE)
 
 item_custom_apex = class({})
@@ -25,7 +25,6 @@ if IsServer() then
 	function modifier_item_custom_apex:OnCreated()
 		local ability = self:GetAbility()
 		self.parent = self:GetParent()
-		self.parent:AddNewModifier(self.parent, self, "modifier_bonus_primary_controller", {})
 		self.modifier = self.parent:AddNewModifier(self.parent, self, "modifier_bonus_primary_token", {
 			bonus = ability:GetSpecialValueFor("primary_stat_percent")})
 	end

@@ -1,57 +1,13 @@
+
 .DamageList
 {
 	width: 400px;
 	height: 600px;
-	margin-top:135px;
+	margin-top:125px;
 	horizontal-align: left;
 	vertical-align: top;
 }
-#PlayerDamageTypes
-{
-	flow-children:right;
-	width: 120px;
-	height: 18px;
-	background-color: #010000;
-}
-#PlayerPhysical
-{
-	width: 40px;
-	margin-top:3px;
-	margin-bottom:3px;
-	height: 18px;
-	background-color: #B9500B;
-}
-#Playerphysdamagepercent
-{
-	color:white;
-	font-size:13px;
-}
-#PlayerMagical
-{
-	width: 40px;
-	margin-top:3px;
-	margin-bottom:3px;
-	height: 18px;
-	background-color: #257DAE;
-}
-#Playermagdamagepercent
-{
-	color:white;
-	font-size:13px;
-}
-#PlayerPure
-{
-	width: 40px;
-	margin-top:3px;
-	margin-bottom:3px;
-	height: 18px;
-	background-color: #B2B2B2;
-}
-#Playerpuredamagepercent
-{
-	color:white;
-	font-size:13px;
-}
+
 #PlayerColor 
 {
 	horizontal-align: left;
@@ -65,70 +21,140 @@
 } 
 .Player
 {  
-	background-color: #010000;
-	opacity:0.6;
+	border-bottom-right-radius: 3px;
+	border-top-right-radius: 3px;
+	background-image: url("file://{images}/custom_game/bg_shop_guide_psd.png");
+	background-size: cover;
+	color:white;
+	margin-bottom:3px;
+	width: 136px;
+	height: 100px;
+	flow-children: down;
+	/*box-shadow: rgba(20, 20, 20, 0.5) -3px -3px 6px 6px;*/
+
+}
+.Player:hover
+{  
+	background-color: rgba(80, 80, 80, 0.7);
+}
+.Toggled {
+	width: 16px;
+	background-image: url("file://{images}/right_arrow.png");
+	background-color: rgba(80, 80, 80, 0.7);
+	background-size: 100% 100%; 
+	background-repeat: no-repeat;
+	margin-bottom:3px;
+}
+.Toggled:hover
+{  
+	background-color: rgba(120, 120, 120, 0.7);
+}
+.Toggled > Panel {
+	opacity: 0;
+}
+.Toggled > Label {
+	opacity: 0;
+}
+
+#PlayerHeroSignal {
+	margin-top: 4px;
+	font-size: 16px;
+	height: 22px;
+	font-family: Radiance;
+	text-overflow: shrink;
+	font-weight: bold;
+	brightness: 0.75;
+	horizontal-align: center;
+	border-style: solid;
+	border-width: 1px;
+	border-bottom-color: rgba(140, 140, 140, 0.6);
+	text-shadow: 0px 0px 10px #000;
+}
+#PlayerDamageTypes
+{
 	flow-children:right;
-	color:white;
-	margin-bottom:2px;
-
-}
-#LeftSide
-{
-	flow-children:down;
+	margin-top: -20px;
+	width: 120px;
+	horizontal-align: center;
+	height: 15px;
 }
 
-#RightSide
+#PlayerDamageTypes > Panel 
 {
-	flow-children:down;
+	height: 100%;
+	width: 33%;
 }
-#EmptySpace
+.PercentPanel > Label 
 {
+	text-overflow: shrink;
+	height: 100%;
 	color:white;
 	font-size:14px;
+	font-family: Radiance;
+	brightness: 0.75;
 }
-#PlayerHeroSignal
+#PlayerPhysical
 {
-	color:Yellow;
-	font-size:14px;
+	background-color: rgba(200, 30, 30, 0.6);
+}
+#PlayerMagical
+{
+	background-color: rgba(40, 40, 200, 0.6);
+}
+#PlayerPure
+{
+	background-color: rgba(255, 255, 255, 0.6);
+}
+#PlayerPure > Label
+{
+	color: black;
+}
+#Stats {
+	margin-top: 4px;
+	height: 84px;
+	width: 130px;
+	flow-children: down;
+	margin-left: 4px;
+} 
+
+
+.FlowRight
+{
+	width: 100%;
+	flow-children: right;
+}
+.FlowRight > .StatContainer
+{
+	width: 50%;
+}
+.StatContainer
+{
+	flow-children:right;
 }
 
-#PlayerDamageDealtSignal
-{
-	color:white;
-	font-size:14px;
+.LeftSide {
+	padding: 1px;
+	width: 24px;
+	font-size: 16px;
+	text-overflow: shrink;
+	height: 22px;
+	font-family: Radiance;
+	text-align: right;
+	color: gray;
+	brightness: 1.8;
+	text-shadow: 1px 1px 1px #000;
+	
+	
 }
-#PlayerDamageTakenSignal
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDamageHealedSignal
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDPSSignal
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDamageDealt
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDamageTaken
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDamageHealed
-{
-	color:white;
-	font-size:14px;
-}
-#PlayerDPS
-{
-	color:white;
-	font-size:14px;
+
+.RightSide {
+	font-size: 16px;
+	padding: 1px;
+	width: 45px;
+	text-overflow: shrink;
+	height: 22px;
+	font-family: Radiance;
+	brightness: 0.8;
+	text-shadow: 1px 1px 1px #000;
+	brightness: 0.75;
 }

@@ -8,7 +8,7 @@ function ApplyDPS(keys)
 	local caster = keys.caster
 	local target = keys.target
 	local ability = keys.ability
-	local health_percent = ability:GetLevelSpecialValueFor("damage_percent", ability:GetLevel() -1)/100
+	local health_percent = ability:GetSpecialValueFor("damage_percent") / 100 * ability:GetSpecialValueFor("tick_rate")
 	local health = target:GetMaxHealth()
 	
 	ApplyDamage({victim = target, attacker = caster, damage = health * health_percent, damage_type = ability:GetAbilityDamageType()})

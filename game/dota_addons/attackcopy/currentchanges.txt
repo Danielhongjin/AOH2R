@@ -1,13 +1,37 @@
-Fake couriers no longer block right clicking.
-Reduced early game boss armor.
-Various custom abilties now properly update total healing done.
+Conduit now spawns a set distance of 300 away from the direction the hero is casting. Improved particle effects.
 
-Juggernaut boss health reduced, damage increased.
+Jakiro reworked, Dual Breath talent reduced from 80x to 3x. Now has a more interesting alternative.
+Leshrac Diabolic Edict damage reduced to vanilla levels, talents reverted. Movement speed talent significantly improved.
 
-Blast staff active nerfed.
-Health bag stats changed.
-Mimic mace minimum cooldown improved from 2.5 to 2.0.
+TO-DO:
 
-Ancient Apparition adjusted talents and ability values.
-TO-DO
+Create an autocast button in options menu.
 
+replace IO ult.
+
+Implement score system.
+
+ursa
+luna
+tiny
+lone druid
+doom
+phantom lancer
+wraith king
+oracle
+
+
+Make each diamond give +1 all attributes.
+Make diamonds get used up on ancient "death".
+
+Think over an armor system.
+
+
+Integrate firebase into game.
+
+Create basic skill tree for replayability, spend exp to permanently upgrade yourself in all future games. Mostly small upgrades.
+Will exist to make higher difficulties possible.
+
+
+Modifying generic_target to be able to take multiple iterations.
+Making generic_aoe more reliable.

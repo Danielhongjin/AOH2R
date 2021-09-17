@@ -81,7 +81,7 @@ modifier_item_maiar_pendant_thinker = class({})
 function modifier_item_maiar_pendant_thinker:DeclareFunctions()
     return {
         MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
-		MODIFIER_PROPERTY_DISABLE_HEALING,
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
     }
 end
 
@@ -89,9 +89,6 @@ function modifier_item_maiar_pendant_thinker:GetModifierTotalPercentageManaRegen
     return self:GetAbility():GetSpecialValueFor("proc_mana_regen")
 end
 
-function modifier_item_maiar_pendant_thinker:GetDisableHealing()
-    return 1
-end
 
 function modifier_item_maiar_pendant_thinker:GetTexture()
 	return "maiar_pendant_thinker"
@@ -105,18 +102,42 @@ function modifier_item_maiar_pendant_thinker:GetEffectAttachType()
 end
 
 if IsServer() then
-
-function modifier_item_maiar_pendant_thinker:OnCreated()
-	local ability = self:GetAbility()
-	self.min_mana = ability:GetSpecialValueFor("min_mana")
-	self.parent = self:GetParent()
-	self.interval = ability:GetSpecialValueFor("interval")
-	self:StartIntervalThink(self.interval)
-end
-function modifier_item_maiar_pendant_thinker:OnIntervalThink()
-	if self.parent:GetManaPercent() > self.min_mana or not self.parent:HasItemInInventory("item_maiar_pendant") then
-		self:Destroy()
+	function modifier_item_maiar_pendant_thinker:OnCreated()
+		local ability = self:GetAbility()
+		self.min_mana = ability:GetSpecialValueFor("min_mana")
+		self.regen_reduction = ability:GetSpecialValueFor("hp_regen_reduction") * 0.01
+		self.parent = self:GetParent()
+		self.modifier = self.parent:AddNewModifier(self.parent, ability, "modifier_item_maiar_pendant_regen", {})
+		self.modifier:SetStackCount((self.parent:GetHealthRegen() + self.modifier:GetStackCount()) * self.regen_reduction)
+		self.interval = ability:GetSpecialValueFor("interval")
+		self:StartIntervalThink(self.interval)
+	end
+	
+	function modifier_item_maiar_pendant_thinker:OnIntervalThink()
+		self.modifier:SetStackCount((self.parent:GetHealthRegen() + self.modifier:GetStackCount()) * self.regen_reduction)
+		if self.parent:GetManaPercent() > self.min_mana or not self.parent:HasItemInInventory("item_maiar_pendant") then
+			self:Destroy()
+		end
+	end
+	
+	function modifier_item_maiar_pendant_thinker:OnDestroy()
+		self.modifier:Destroy()
 	end
 end
 
+LinkLuaModifier("modifier_item_maiar_pendant_regen", "items/item_maiar_pendant.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_item_maiar_pendant_regen = class({})
+
+function modifier_item_maiar_pendant_regen:IsHidden()
+    return true
+end
+
+function modifier_item_maiar_pendant_regen:DeclareFunctions()
+    return {
+		MODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT,
+    }
+end
+
+function modifier_item_maiar_pendant_regen:GetModifierConstantHealthRegen()
+    return -self:GetStackCount()
 end

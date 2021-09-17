@@ -43,7 +43,6 @@ function random_from_table(the_table)
 	if #the_table < 1 then
 		return nil
 	end
-
 	return the_table[RandomInt(1, #the_table)]
 end
 
@@ -171,8 +170,7 @@ function refresh_players()
 			if not hero:IsAlive() then
 				hero:RespawnUnit()
 			end
-			hero:SetHealth(hero:GetMaxHealth())
-			hero:SetMana(hero:GetMaxMana())
+			hero:AddNewModifier(hero, nil, "modifier_roundend_effect", {duration = 5})
 		end
 	end
 end
@@ -301,4 +299,61 @@ function get_item_true_cost(name)
 		end
 	end
 	return cost
+end
+
+LinkLuaModifier("modifier_roundend_effect", "lib/my.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_roundend_effect = class({})
+
+function modifier_roundend_effect:IsBuff()
+    return true
+end
+
+function modifier_roundend_effect:IsPurgable()
+	return false
+end
+
+function modifier_roundend_effect:GetTexture()
+    return "omniknight_guardian_angel"
+end
+
+function modifier_roundend_effect:RemoveOnDeath()
+	return true
+end
+
+function modifier_roundend_effect:IsHidden()
+	return false
+end
+
+function modifier_roundend_effect:DeclareFunctions()
+    return {
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+		MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
+    }
+end
+
+function modifier_roundend_effect:GetModifierHealthRegenPercentage()
+    return 10.0	
+end
+
+function modifier_roundend_effect:GetModifierTotalPercentageManaRegen()
+    return 10.0
+end
+
+function modifier_roundend_effect:OnCreated()
+	local parent = self:GetParent()
+	self.fx = ParticleManager:CreateParticle("particles/econ/events/ti10/fountain_regen_ti10_lvl3.vpcf", PATTACH_ABSORIGIN_FOLLOW, parent)
+	ParticleManager:SetParticleControlEnt(
+		self.fx,
+		0,
+		parent,
+		PATTACH_ABSORIGIN_FOLLOW,
+		"attach_origin",
+		parent:GetAbsOrigin(), -- unknown
+		true -- unknown, true
+	)
+end
+
+function modifier_roundend_effect:OnDestroy()
+	ParticleManager:DestroyParticle(self.fx, false)
+	ParticleManager:ReleaseParticleIndex(self.fx)
 end

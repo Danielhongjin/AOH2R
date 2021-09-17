@@ -17,15 +17,11 @@ modifier_item_broken_bow = class({})
 if IsServer() then
     function modifier_item_broken_bow:OnCreated(keys)
         local parent = self:GetParent()
-
-        if parent then
-            parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_broken_bow_thinker", {})
-        end
+		self.modifier = parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_broken_bow_thinker", {})
     end
 	function modifier_item_broken_bow:OnDestroy()
 		local parent = self:GetParent()
-		parent:RemoveModifierByName("modifier_item_broken_bow_thinker")
-		parent:RemoveModifierByName("modifier_item_broken_bow_count")
+		self.modifier:Destroy()
 	end
 end
 
@@ -118,6 +114,9 @@ if IsServer() then
 		self.count_modifier = self.parent:AddNewModifier(self.parent, self, "modifier_item_broken_bow_count", {})
 	end
 
+	function modifier_item_broken_bow_thinker:OnDestroy()
+		self.count_modifier:Destroy()
+	end
 
     function modifier_item_broken_bow_thinker:OnAttackLanded(keys)
         local attacker = keys.attacker

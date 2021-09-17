@@ -39,7 +39,7 @@ ANIMATIONS_VERSION = "0.83"
     EndAnimation(unit)
 
   --Start a running + hasted animation at .8 rate for 5 seconds
-    StartAnimation(unit, {duration=5, activity=ACT_DOTA_RUN, rate=0.8, translate="haste"})
+    StartAnimation(unit, {duration=5, activity=	, rate=0.8, translate="haste"})
 
   --Start a shield-bash animation for sven with variable rate
     StartAnimation(unit, {duration=1.5, activity=ACT_DOTA_ATTACK, rate=RandomFloat(.5, 1.5), translate="sven_warcry", translate2="sven_shield"})
@@ -93,6 +93,7 @@ local _ANIMATION_TRANSLATE_TO_CODE = {
   burning_fiend= 148,
   burrow= 229,
   burrowed= 51,
+  captured = 372,
   cat_dancer_gesture= 285,
   cauldron= 29,
   charge= 97,
@@ -227,6 +228,7 @@ local _ANIMATION_TRANSLATE_TO_CODE = {
   iron= 255,
   iron_surge= 99,
   item_style_2= 133,
+  jog= 374,
   jump_gesture= 294,
   laguna= 202,
   leap= 206,
@@ -432,8 +434,8 @@ local _ANIMATION_TRANSLATE_TO_CODE = {
   strength=367,
   twinblade_run=368,
   twinblade_run_injured=369,
+  walk = 373,
   windwalk=370,  
-
 }
 
 function StartAnimation(unit, table)

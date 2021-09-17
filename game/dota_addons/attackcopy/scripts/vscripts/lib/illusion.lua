@@ -31,7 +31,7 @@ function copy_items(target, illusion)
         local item = target:GetItemInSlot(itemSlot)
 		if item then
 			local itemName = item:GetName()
-			if itemName ~= "item_pocket_tower" and itemName ~= "item_pocket_rax" and itemName ~= "item_pocket_rax_ranged" and itemName ~= "item_pharaoh_crown" and item:GetCastPoint() ~= 1337 then
+			if itemName ~= "item_pocket_tower" and itemName ~= "item_pocket_rax" and itemName ~= "item_pocket_rax_ranged" and item:GetCastPoint() ~= 1337 then
 				local itemName = item:GetName()
 				local newItem = CreateItem(itemName, illusion, illusion)
 				illusion:AddItem(newItem)

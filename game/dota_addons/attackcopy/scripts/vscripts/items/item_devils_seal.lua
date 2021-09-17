@@ -80,7 +80,21 @@ if IsServer() then
 			self.delay, 
 			function()
 				ParticleManager:DestroyParticle(fx2, false)
-				self.parent:AddNewModifier(self.parent, self.ability, "modifier_devils_seal_buff", {})
+				local units = FindUnitsInRadius(self.parent:GetTeam(), 
+					self.parent:GetAbsOrigin(), 
+					nil, 
+					self.radius,
+					DOTA_UNIT_TARGET_TEAM_ENEMY, 
+					DOTA_UNIT_TARGET_BASIC + DOTA_UNIT_TARGET_HERO, 
+					DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE, 
+					0, 
+					false)
+				if #units > 0 then
+					self.parent:AddNewModifier(self.parent, self.ability, "modifier_devils_seal_buff", {})
+				else
+					self:Destroy()
+				end
+					
 			end
 		)
     end

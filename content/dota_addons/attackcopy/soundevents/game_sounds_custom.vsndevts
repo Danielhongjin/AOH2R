@@ -1,0 +1,452 @@
+	"AOH.MenuOpen"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ui/menu/chat_open.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.800000"
+					}
+				}
+			}
+		}
+	}
+
+}
+"AOH.MenuClose"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ui/menu/filter_close.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"1.000000"
+					}
+				}
+			}
+		}
+	}
+
+}
+"AOH.MenuSelection"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ui/menu/click_alt.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.800000"
+					}
+				}
+			}
+		}
+	}
+}
+"AOH.Horn1"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ambient/mega_horn_dire_2d.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.700000"
+					}
+				}
+			}
+		}
+	}
+}
+"AOH.Horn2"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ambient/mega_horn_dire.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.700000"
+					}
+				}
+			}
+		}
+	}
+}
+"AOH.Horn3"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ambient/mega_horn_radiant_2d.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.700000"
+					}
+				}
+			}
+		}
+	}
+}
+"AOH.Horn4"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ambient/mega_horn_radiant.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.700000"
+					}
+				}
+			}
+		}
+	}
+}
+"AOH.PerkSelected"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/misc/drum_hit01.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.700000"
+					}
+				}
+			}
+		}
+	}
+}
+"AOH.PerkUnlocked"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/ui/badge_levelup.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.700000"
+					}
+				}
+			}
+		}
+	}
+}
+"AOH.DashLoop"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/weapons/creep/neutral/wildkin_tornado_loop.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.400000"
+					}
+					"stop_at_time"
+					{
+						"value"		"3600"
+					}
+				}
+			}
+		}
+	}
+}
+"AOH.CreditsClicked"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/kept.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"1.000000"
+					}
+
+				}
+			}
+		}
+	}
+}
+"AOH.Reward"
+{
+	"operator_stacks"
+	{
+		"update_stack"
+		{
+			"reference_operator"
+			{
+				"operator"		"sos_reference_stack"
+				"reference_stack"		"dota_limit_speakers_ui"
+				"operator_variables"
+				{
+					"vsnd_files"
+					{
+						"value"
+						{
+							"value0"		"sounds/items/neutral_loot_drop01.vsnd"
+						}
+					}
+					"pitch"
+					{
+						"value" "1.000000"
+					}
+					
+					"memory_type"
+					{
+						"value"		"0"
+					}
+					"volume"
+					{
+						"value"		"0.900000"
+					}
+
+				}
+			}
+		}
+	}
+}

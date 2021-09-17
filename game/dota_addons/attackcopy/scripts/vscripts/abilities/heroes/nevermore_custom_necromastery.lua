@@ -43,12 +43,14 @@ if IsServer() then
 		self.parent = self:GetParent()
 		self.ability = self:GetAbility()
 		self.hasTalent = false
+		self.hasShard = false
 		self.max_souls = 0
 		self.release = self.ability:GetSpecialValueFor("necromastery_soul_release")
 		self.talent_ratio = 0
 		self.damage_per_soul = self.ability:GetSpecialValueFor("necromastery_damage_per_soul")
 		self:SetStackCount(1)
 		self.modifier = self.parent:AddNewModifier(self.parent, self.ability, "modifier_nevermore_custom_necromastery_buff", {})
+		self.shardModifier = self.parent:AddNewModifier(self.parent, self.ability, "modifier_nevermore_custom_necromastery_shard_buff", {})
 		if self.parent:HasScepter() then
 			self.max_souls = self.ability:GetSpecialValueFor("necromastery_max_souls_scepter")
 		else 
@@ -60,6 +62,7 @@ if IsServer() then
 
 	function modifier_nevermore_custom_necromastery:OnDestroy()
 		self.modifier:Destroy()
+		self.shardModifier:Destroy()
     end
 	function modifier_nevermore_custom_necromastery:OnRefresh()
 		if self.parent:HasScepter() then
@@ -67,9 +70,13 @@ if IsServer() then
 		else 
 			self.max_souls = self.ability:GetSpecialValueFor("necromastery_max_souls")
 		end
+		if self.parent:HasModifier("modifier_item_aghanims_shard") then
+			self.hasShard = true
+		end
 		if self.hasTalent then
 			self.damage_per_soul = self.ability:GetSpecialValueFor("necromastery_damage_per_soul") + self.talent_ratio
 		end
+		
     end
 	
 	function modifier_nevermore_custom_necromastery:OnIntervalThink()
@@ -90,6 +97,9 @@ if IsServer() then
 			if stacks < self.max_souls then
 				self:IncrementStackCount()
 				self.modifier:SetStackCount(self:GetStackCount() * self.damage_per_soul)
+				if self.hasShard then
+					self.shardModifier:SetStackCount(self:GetStackCount() * 0.33)
+				end
 				if stacks % 3 == 0 then
 					ProjectileManager:CreateTrackingProjectile({
 						Target = self.parent,
@@ -147,5 +157,29 @@ function modifier_nevermore_custom_necromastery_buff:DeclareFunctions()
 end
 
 function modifier_nevermore_custom_necromastery_buff:GetModifierPreAttack_BonusDamage()
+	return self:GetStackCount()
+end
+
+LinkLuaModifier("modifier_nevermore_custom_necromastery_shard_buff", "abilities/heroes/nevermore_custom_necromastery.lua", LUA_MODIFIER_MOTION_NONE)
+
+modifier_nevermore_custom_necromastery_shard_buff = class({})
+
+function modifier_nevermore_custom_necromastery_shard_buff:IsHidden()
+    return true
+end
+function modifier_nevermore_custom_necromastery_shard_buff:IsPurgable()
+	return false
+end
+
+function modifier_nevermore_custom_necromastery_shard_buff:RemoveOnDeath()
+	return false
+end
+function modifier_nevermore_custom_necromastery_shard_buff:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
+	}
+end
+
+function modifier_nevermore_custom_necromastery_shard_buff:GetModifierSpellAmplify_Percentage()
 	return self:GetStackCount()
 end

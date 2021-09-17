@@ -38,7 +38,7 @@ function item_blast_staff:OnSpellStart()
 
 
 			}
-			)
+		)
 	end
 	parent:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")
 	parent:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")
@@ -141,13 +141,12 @@ if IsServer() then
 	function modifier_item_blast_staff_proc:OnAbilityFullyCast(keys)
 		local used_ability = keys.ability
 		local unit = keys.unit
-		local target = used_ability:GetCursorPosition()
-		
-		if used_ability:GetCooldown(0) > 0 and unit == self.parent and keys.ability ~= self:GetAbility() and keys.ability:GetAbilityName() ~= "invoker_invoke" then
+		if unit == self.parent and used_ability:GetCooldown(0) > 0 and keys.ability ~= self.ability and keys.ability:GetAbilityName() ~= "invoker_invoke" then
 			if not self.parent:HasModifier("modifier_item_blast_staff") then
 				self:Destroy()
 				return nil
 			end
+			local target = used_ability:GetCursorPosition()
 			local direction = (target - self.parent:GetAbsOrigin()):Normalized()
 			if target == Vector(0,0,0) or direction == Vector(0,0,0) then
 				direction = self.parent:GetForwardVector()

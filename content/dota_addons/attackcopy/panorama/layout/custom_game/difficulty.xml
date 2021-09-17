@@ -14,49 +14,83 @@
 		<snippet name="Difficulty">
 			<Panel class="DifficultyWindow" hittest="false">
 				<Panel id="DifficultyText" hittest="false"> 
-					<Label class="DifficultyTextLabel" text="Difficulty Vote" />
+					<Label class="TextLabel"  text="#difficulty_text_label" />
 				</Panel> 
 				<Panel class="DifficultyList" hittest="false"> 
 					<Panel id="Easy" class="DifficultyBox"> 
-						<Label class="DifficultyLabel" text="Easy" />
-						<Label class="Description" text="Enemies 20% Less Damage" />
-						<Label class="Description" text="Enemies 30% Higher Cooldowns" />
-						<Label class="Description" text="Limited Max Round 36" />
+						<Label class="BoxLabel" text="#easy_label" />
+						<Label class="Description" text="#easy_description" />
 					</Panel>
 					<Panel id="Normal" class="DifficultyBox">
-						<Label class="DifficultyLabel" text="Normal" />
-						<Label class="Description" text="Default Difficulty" />
+						<Label class="BoxLabel" text="#normal_label" />
+						<Label class="Description" text="#medium_description" />
 					</Panel>
 					<Panel id="Hard" class="DifficultyBox">
-						<Label class="DifficultyLabel" text="Hard" />
-						<Label class="Description" text="Enemies 0.5% Mana Regeneration" />
-						<Label class="Description" text="Enemies 0.85% Health Regeneration" />
-						<Label class="Description" text="Enemies 20% Lower Cooldowns" />
-						<Label class="Description" text="No Round Healing" />
-						<Label class="Description" text="4 Second Round Wait" />
-						<Label class="Description" text="Heroes +12% Primary Attribute" />
+						<Label class="BoxLabel" text="#hard_label" />
+						<Label class="Description" text="#hard_description" />
+					</Panel>
+				</Panel> 
+				<Panel id="ModifierText" hittest="false"> 
+					<Label class="TextLabel"  text="#modifier_label" />
+				</Panel> 
+				<Panel class="ModifierList" hittest="false"> 
+					<Panel id="Laser" class="ModifierBox"> 
+						<Label class="BoxLabel" text="#laser_label" />
+						<Label class="Description" text="#laser_description" />
+					</Panel>
+					<Panel id="Nightmare" class="ModifierBox">
+						<Label class="BoxLabel" text="#nightmare_label" />
+						<Label class="Description" text="#nightmare_description" />
+					</Panel>
+					<Panel id="Double" class="ModifierBox">
+						<Label class="BoxLabel" text="#double_label" />
+						<Label class="Description" text="#double_description"/>
+					</Panel>
+					<Panel id="SuddenDeath" class="ModifierBox">
+						<Label class="BoxLabel" text="#sudden_death_label" />
+						<Label class="Description" text="#sudden_death_description"/>
 					</Panel>
 				</Panel>
 				<Panel id="DifficultyChoices" hittest="false"> 
 					<Panel class="DifficultyChoiceBox" id="player0" hittest="false"> 
 						<Label class="PlayerLabel" id="playerLabel0" text="N/A" />
 						<Label class="DifficultyChoiceLabel" id="playerLabelChoice0" text="N/A" />
+						<Label class="ModifierChoiceLabel Hidden" id="LaserChoice" text="#laser_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="NightmareChoice" text="#nightmare_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="DoubleChoice" text="#double_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="SuddenDeathChoice" text="#sudden_death_chosen" />
 					</Panel> 
 					<Panel class="DifficultyChoiceBox" id="player1" hittest="false"> 
 						<Label class="PlayerLabel" id="playerLabel1" text="N/A" />
 						<Label class="DifficultyChoiceLabel" id="playerLabelChoice1" text="N/A" />
+						<Label class="ModifierChoiceLabel Hidden" id="LaserChoice" text="#laser_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="NightmareChoice" text="#nightmare_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="DoubleChoice" text="#double_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="SuddenDeathChoice" text="#sudden_death_chosen" />
 					</Panel> 
 					<Panel class="DifficultyChoiceBox" id="player2" hittest="false"> 
 						<Label class="PlayerLabel" id="playerLabel2" text="N/A" />
 						<Label class="DifficultyChoiceLabel" id="playerLabelChoice2" text="N/A" />
+						<Label class="ModifierChoiceLabel Hidden" id="LaserChoice" text="#laser_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="NightmareChoice" text="#nightmare_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="DoubleChoice" text="#double_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="SuddenDeathChoice" text="#sudden_death_chosen" />
 					</Panel> 
 					<Panel class="DifficultyChoiceBox" id="player3" hittest="false"> 
 						<Label class="PlayerLabel" id="playerLabel3" text="N/A" />
 						<Label class="DifficultyChoiceLabel" id="playerLabelChoice3" text="N/A" />
+						<Label class="ModifierChoiceLabel Hidden" id="LaserChoice" text="#laser_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="NightmareChoice" text="#nightmare_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="DoubleChoice" text="#double_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="SuddenDeathChoice" text="#sudden_death_chosen" />
 					</Panel> 
 					<Panel class="DifficultyChoiceBox" id="player4" hittest="false"> 
 						<Label class="PlayerLabel" id="playerLabel4" text="N/A" />
 						<Label class="DifficultyChoiceLabel" id="playerLabelChoice4" text="N/A" />
+						<Label class="ModifierChoiceLabel Hidden" id="LaserChoice" text="#laser_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="NightmareChoice" text="#nightmare_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="DoubleChoice" text="#double_chosen" />
+						<Label class="ModifierChoiceLabel Hidden" id="SuddenDeathChoice" text="#sudden_death_chosen" />
 					</Panel> 
 				</Panel> 
 			</Panel>

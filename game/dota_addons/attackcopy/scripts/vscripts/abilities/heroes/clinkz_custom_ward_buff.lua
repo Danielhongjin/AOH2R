@@ -8,12 +8,6 @@ function aura_initiate(keys)
 	end
 end
 
-function LevelUpWardBuff (keys)
-	local caster = keys.caster
-	local ability_ward_buff = caster:AddAbility("clinkz_custom_ward_buff")
-	ability_ward_buff:SetLevel(1)
-end
-
 LinkLuaModifier("modifier_clinkz_custom_ward_buff", "abilities/heroes/clinkz_custom_ward_buff.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_clinkz_custom_ward_buff = class({})
 

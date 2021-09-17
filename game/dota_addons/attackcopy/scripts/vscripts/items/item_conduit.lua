@@ -9,18 +9,41 @@ function item_conduit:OnSpellStart()
 	local conduit = CreateUnitByName("npc_conduit", origin, true, target, nil, target:GetTeamNumber())
 	conduit:SetOwner(target)
 	local newhealth = math.floor(target:GetHealth() / (100 / self:GetSpecialValueFor("shared_life")))
-
-    conduit:AddNewModifier(target, self, "modifier_item_conduit", {
-        duration = self:GetSpecialValueFor("duration")
-    })
+	if not target:HasModifier("modifier_item_conduit_target") then
+		target:AddNewModifier(conduit, self, "modifier_item_conduit_target", {
+			duration = self:GetSpecialValueFor("duration")
+		})
+		conduit:AddNewModifier(target, self, "modifier_item_conduit", {
+			duration = self:GetSpecialValueFor("duration")
+		})
+	else
+		target:RemoveModifierByName("modifier_item_conduit_target")
+		target:AddNewModifier(conduit, self, "modifier_item_conduit_target", {
+			duration = self:GetSpecialValueFor("duration")
+		})
+		conduit:AddNewModifier(target, self, "modifier_item_conduit", {
+			duration = self:GetSpecialValueFor("duration")
+		})
+	end
 	local particle = ParticleManager:CreateParticle("particles/econ/items/sven/sven_warcry_ti5/sven_warcry_cast_arc_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, conduit) 
-	EmitSoundOn("Hero_Zuus.GodsWrath.Target", conduit)
 	conduit:SetBaseMaxHealth(newhealth)
 	conduit:SetMaxHealth(newhealth)
 	conduit:SetHealth(newhealth)
 	conduit:SetPhysicalArmorBaseValue(target:GetPhysicalArmorBaseValue())
 	conduit:SetBaseMagicalResistanceValue(target:GetBaseMagicalResistanceValue())
+	local vector = (target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Normalized()
+	FindClearSpaceForUnit(conduit, target:GetAbsOrigin() + (vector * 300), false)
+	for var = 0, 2 do
+		local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", PATTACH_POINT, self:GetParent())
+		ParticleManager:SetParticleControlEnt(fx, 0, conduit, PATTACH_POINT_FOLLOW, "attach_hitloc", conduit:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(fx, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+	end
+	EmitSoundOn("Hero_Zuus.GodsWrath.Target", conduit)
+	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", PATTACH_POINT, self:GetParent())
+	ParticleManager:SetParticleControlEnt(fx, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(fx, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 end
+
 function item_conduit:GetIntrinsicModifierName()
     return "modifier_item_conduit_buff"
 end
@@ -34,6 +57,7 @@ modifier_item_conduit_buff = class({})
 function modifier_item_conduit_buff:IsHidden()
     return true
 end
+
 
 
 function modifier_item_conduit_buff:GetAttributes()
@@ -77,12 +101,28 @@ function modifier_item_conduit_buff:GetModifierPreAttack_BonusDamage()
     return self:GetAbility():GetSpecialValueFor("bonus_damage")
 end
 
+LinkLuaModifier("modifier_item_conduit_target", "items/item_conduit.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_item_conduit_target = class({})
 
+function modifier_item_conduit_target:IsHidden()
+	return true
+end
+
+function modifier_item_conduit_target:IsPurgable()
+	return false
+end
+
+if IsServer() then
+
+    function modifier_item_conduit_target:OnDestroy()
+		self:GetCaster():RemoveModifierByName("modifier_item_conduit")
+    end
+end
 LinkLuaModifier("modifier_item_conduit", "items/item_conduit.lua", LUA_MODIFIER_MOTION_NONE)
-
-
 modifier_item_conduit = class({})
-
+function modifier_item_conduit:IsPurgable()
+	return false
+end
 
 if IsServer() then
     function modifier_item_conduit:OnDestroy()
@@ -90,13 +130,15 @@ if IsServer() then
         if parent:IsAlive() then
 			parent:ForceKill(false)
 			parent:RemoveSelf()
-			print("heyo conduit")
 		end
     end
 	
 	function modifier_item_conduit:OnCreated()
 		self.ability = self:GetAbility()
-
+		self.damage_type = self.ability:GetAbilityDamageType()
+		self.damage_ratio = self:GetAbility():GetSpecialValueFor("damage_ratio") * 0.01
+        self.caster = self:GetCaster()
+        self.parent = self:GetParent()
     end
 
     function modifier_item_conduit:DeclareFunctions()
@@ -109,29 +151,21 @@ if IsServer() then
 	end
     
     function modifier_item_conduit:OnTakeDamage(keys)
-        local caster = self:GetCaster()
-        local parent = self:GetParent()
 		local unit = keys.unit
-		if unit == parent then
+		if unit == self.parent then
 			local particle = ParticleManager:CreateParticle("particles/neutral_fx/harpy_chain_lightning.vpcf", PATTACH_POINT_FOLLOW, unit) 
-			ParticleManager:SetParticleControlEnt(particle, 0, parent, PATTACH_POINT_FOLLOW, "attach_hitloc", parent:GetAbsOrigin(), true) 
-			ParticleManager:SetParticleControlEnt(particle, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControlEnt(particle, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true) 
+			ParticleManager:SetParticleControlEnt(particle, 1, self.caster, PATTACH_POINT_FOLLOW, "attach_hitloc", self.caster:GetAbsOrigin(), true)
 			ParticleManager:ReleaseParticleIndex(particle)
 
 			ApplyDamage({
-			ability = self.ability,
-			attacker = keys.attacker,
-			damage = keys.original_damage,
-			damage_type = self.ability:GetAbilityDamageType(),
-			damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
-			victim = caster
-		
+				ability = self.ability,
+				attacker = keys.attacker,
+				damage = keys.damage * self.damage_ratio,
+				damage_type = self.damage_type,
+				damage_flags = DOTA_DAMAGE_FLAG_REFLECTION,
+				victim = self.caster,
 			})
-			if not parent:IsAlive() or not caster:IsAlive() then
-				parent:ForceKill(false)
-				parent:RemoveSelf()
-				self:Destroy()
-			end
 		end
     end
 

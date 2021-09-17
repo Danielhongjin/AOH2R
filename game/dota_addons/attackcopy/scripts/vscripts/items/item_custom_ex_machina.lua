@@ -9,7 +9,7 @@ item_custom_ex_machina = class({})
 function item_custom_ex_machina:OnSpellStart()
     local caster = self:GetCaster()
 
-
+	print(self:GetItemSlot())
     if not caster:IsTempestDouble() then
 
         caster:EmitSound("DOTA_Item.Refresher.Activate")

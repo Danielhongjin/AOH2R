@@ -32,7 +32,13 @@ if IsServer() then
 		self.ability = self:GetAbility()
 		self.itemAbility = self.parent:AddItemByName("item_flicker_boss")
 		self.interval = self.ability:GetSpecialValueFor("interval")
-		self:StartIntervalThink(self.interval)
+		Timers:CreateTimer(
+			0.01 * RandomInt(0, 100), 
+			function()
+				self:StartIntervalThink(self.interval)
+			end
+		)
+		
 	end
 end
 function modifier_custom_weaver_behavior:OnIntervalThink()

@@ -1,16 +1,14 @@
 axe_custom_counter_helix = class({})
 LinkLuaModifier( "modifier_axe_custom_counter_helix", "abilities/heroes/axe_custom_counter_helix.lua", LUA_MODIFIER_MOTION_NONE )
 
---------------------------------------------------------------------------------
--- Passive Modifier
+
 function axe_custom_counter_helix:GetIntrinsicModifierName()
 	return "modifier_axe_custom_counter_helix"
 end
 
 modifier_axe_custom_counter_helix = class({})
 
---------------------------------------------------------------------------------
--- Classifications
+
 function modifier_axe_custom_counter_helix:IsHidden()
 	return true
 end
@@ -19,45 +17,42 @@ function modifier_axe_custom_counter_helix:IsPurgable()
 	return false
 end
 
---------------------------------------------------------------------------------
--- Initializations
-	function modifier_axe_custom_counter_helix:OnCreated( kv )
-		-- references
-		self.ability = self:GetAbility()
-		self.radius = self.ability:GetSpecialValueFor( "radius" )
-		self.chance = self.ability:GetSpecialValueFor( "trigger_chance" ) + 1
-		self.hpRatio = self.ability:GetSpecialValueFor( "health_ratio" ) * 0.01
-		self.hasTalent = false
-		self.parent = self:GetParent()
-		self.teamNumber = self.parent:GetTeamNumber()
-		
-		self.damage = 0
-		local think_interval = 3
-		self:StartIntervalThink(think_interval)
-		if IsServer() then
-			self.baseDamage = self.ability:GetAbilityDamage()
+function modifier_axe_custom_counter_helix:OnCreated( kv )
+	-- references
+	self.ability = self:GetAbility()
+	self.radius = self.ability:GetSpecialValueFor( "radius" )
+	self.chance = self.ability:GetSpecialValueFor( "trigger_chance" ) + 1
+	self.hpRatio = self.ability:GetSpecialValueFor( "health_ratio" ) * 0.01
+	self.hasTalent = false
+	self.parent = self:GetParent()
+	self.teamNumber = self.parent:GetTeamNumber()
+	
+	self.damage = 0
+	local think_interval = 3
+	self:StartIntervalThink(think_interval)
+	if IsServer() then
+		self.baseDamage = self.ability:GetAbilityDamage()
 
-			self.damageTable = {
-				attacker = self:GetCaster(),
-				damage = damage,
-				damage_type = DAMAGE_TYPE_PURE,
-				ability = self.ability, --Optional.
-				damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
-			}
-		end
-		
+		self.damageTable = {
+			attacker = self:GetCaster(),
+			damage = damage,
+			damage_type = DAMAGE_TYPE_PURE,
+			ability = self.ability, --Optional.
+			damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
+		}
 	end
+	
+end
 if IsServer() then
 	function modifier_axe_custom_counter_helix:OnIntervalThink()
-		if not self.hasTalent then
-			local talent = self.parent:FindAbilityByName("special_bonus_unique_axe_3")
-			if talent and talent:GetLevel() > 0 then
-				self.hasTalent = true
-				self:StartIntervalThink(-1)
-			end
+		if self.parent:HasModifier("modifier_item_aghanims_shard") then
+			self.hasTalent = true
+			self.parent:AddNewModifier(self.parent, self, "modifier_axe_shard", {duration = -1})
+			self:StartIntervalThink(-1)	
 		end
 	end
 end
+
 
 function modifier_axe_custom_counter_helix:OnRefresh( kv )
 	if IsServer() then
@@ -115,21 +110,41 @@ function modifier_axe_custom_counter_helix:OnAttackLanded( params )
 	end
 end
 
---------------------------------------------------------------------------------
--- Graphics & Animations
 function modifier_axe_custom_counter_helix:PlayEffects()
-	-- Get Resources
 	local particle_cast = "particles/units/heroes/hero_axe/axe_counterhelix.vpcf"
 	local sound_cast = "Hero_Axe.CounterHelix"
 
-	-- Create Particle
 	local effect_cast = ParticleManager:CreateParticle( particle_cast, PATTACH_ABSORIGIN_FOLLOW, self.parent )
 	ParticleManager:ReleaseParticleIndex( effect_cast )
 	local effect_cast2 = ParticleManager:CreateParticle( "particles/units/heroes/hero_axe/axe_attack_blur_counterhelix.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
 	ParticleManager:ReleaseParticleIndex( effect_cast2 )
 	
-
-	-- Create Sound
 	EmitSoundOn( sound_cast, self:GetParent() )
 end
 
+LinkLuaModifier("modifier_axe_shard", "abilities/heroes/axe_custom_counter_helix.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_axe_shard = class({})
+
+
+function modifier_axe_shard:IsHidden()
+	return true
+end
+
+function modifier_axe_shard:IsPurgable()
+	return false
+end
+
+function modifier_axe_shard:RemoveOnDeath()
+	return false
+end
+
+function modifier_axe_shard:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT
+	}
+	return funcs
+end
+
+function modifier_axe_shard:GetModifierAttackSpeedBonus_Constant()
+	return 20
+end

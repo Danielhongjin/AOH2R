@@ -39,6 +39,10 @@ function player_data_get_value(playerID, key)
 	return 0
 end
 
+function player_data_increment_value(playerID, key, value)
+    local data = GameRules.GLOBAL_PLAYER_DATA[playerID]
+	data.values[key] = value + data.values[key]
+end
 
 function player_data_modify_value(playerID, key, value)
 	local new_value = player_data_get_value(playerID, key) + value

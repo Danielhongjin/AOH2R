@@ -3,23 +3,24 @@ require("lib/my")
 
 phantom_assassin_custom_stifling_dagger = class({})
 
+function phantom_assassin_custom_stifling_dagger:GetCooldown(iLevel)
+	local caster = self:GetCaster()
+	if caster:HasModifier("modifier_phantom_assassin_talent") then
+		return 0
+	end
+	return self.BaseClass.GetCooldown(self, iLevel)
+end
+
+function phantom_assassin_custom_stifling_dagger:GetManaCost(iLevel)
+	local caster = self:GetCaster()
+	if caster:HasModifier("modifier_phantom_assassin_talent") then
+		return 160
+	end
+	return self.BaseClass.GetManaCost(self, iLevel)
+end
 
 if IsServer() then
-    function phantom_assassin_custom_stifling_dagger:GetCooldown(iLevel)
-		local talent = self:GetCaster():FindAbilityByName("phantom_assassin_custom_bonus_unique_1")
-		if talent and talent:GetLevel() > 0 then
-			return 0
-		end
-        return self.BaseClass.GetCooldown(self, iLevel)
-    end
-	function phantom_assassin_custom_stifling_dagger:GetManaCost(iLevel)
-		local talent = self:GetCaster():FindAbilityByName("phantom_assassin_custom_bonus_unique_1")
-		if talent and talent:GetLevel() > 0 then
-			return self.BaseClass.GetManaCost(self, iLevel) * talent:GetSpecialValueFor("value")
-		end
-		return self.BaseClass.GetManaCost(self, iLevel)
-	end
-
+   
     function phantom_assassin_custom_stifling_dagger:OnSpellStart()	
 		self.caster = self:GetCaster()
         self.duration = self:GetSpecialValueFor("duration")
@@ -34,10 +35,12 @@ if IsServer() then
         local direction = self.caster:GetForwardVector() * self.dagger_range
         direction.z = 0.0
         direction = direction:Normalized()
-        
+        local talent = self.caster:FindAbilityByName("phantom_assassin_custom_bonus_unique_1")
+		if talent and talent:GetLevel() > 0 then
+			self.caster:AddNewModifier(self.caster, self, "modifier_phantom_assassin_talent", {})
+		end
         self:ThrowDagger(direction)
     end
-
 
     function phantom_assassin_custom_stifling_dagger:OnChannelThink(flInterval)
         self.accumulated_time = self.accumulated_time + flInterval 
@@ -84,4 +87,14 @@ if IsServer() then
         self.daggers_thrown = self.daggers_thrown + 1
 		self.caster:StartGestureWithPlaybackRate(ACT_DOTA_CAST_ABILITY_1, 1.33)
     end
+end
+
+LinkLuaModifier( "modifier_phantom_assassin_talent", "abilities/heroes/phantom_assassin_custom_stifling_dagger.lua", LUA_MODIFIER_MOTION_NONE )
+modifier_phantom_assassin_talent = class({})
+function modifier_phantom_assassin_talent:IsHidden()
+	return true
+end
+
+function modifier_phantom_assassin_talent:IsPurgable()
+	return true
 end

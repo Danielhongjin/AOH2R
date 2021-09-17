@@ -14,24 +14,13 @@
 	<snippets>
 		<snippet name="Team">
 			<Panel class="Team">
-				<Panel id="TeamInfo">
-					<Panel id="TeamDataPanel" class="LegendPanel HeaderColumn" />
 
-					<Label class="LegendPanel DeathsColumn" text="#dota_page_match_details_legend_deaths" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_deaths_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
-					<Label class="LegendPanel SavesColumn" text="#end_screen_legend_saves" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_saves_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
-					<Label class="LegendPanel GoldBagsColumn" text="#end_screen_legend_gold_bags" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_gold_bags_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+			</Panel>
+		</snippet>
+		
+		<snippet name="Achievements">
+			<Panel class="Achievements">
 
-					<Label class="LegendPanel ItemsColumn" text="#dota_page_match_details_legend_items" />
-					<Label class="LegendPanel BackpackItemsColumn" text="#dota_page_match_details_legend_backpack_items" />
-
-					<Label class="LegendPanel DamageTakenColumn" text="#end_screen_legend_damage_taken" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_damage_taken_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
-					<Label class="LegendPanel HeroHealingColumn" text="#dota_page_match_details_legend_hero_healing" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_hero_healing_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
-					<Label class="LegendPanel BossDamageColumn" text="#end_screen_legend_boss_damage" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_boss_damage_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
-
-					<Image class="LegendPanel StrColumn" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_strength_psd.vtex" onmouseover="UIShowTextTooltipStyled( #DOTA_SHOP_TAG_STR, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
-					<Image class="LegendPanel AgiColumn" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_psd.vtex" onmouseover="UIShowTextTooltipStyled( #DOTA_SHOP_TAG_INT, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
-					<Image class="LegendPanel IntColumn" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex" onmouseover="UIShowTextTooltipStyled( #DOTA_SHOP_TAG_AGI, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
-				</Panel>
 			</Panel>
 		</snippet>
 
@@ -39,32 +28,93 @@
 			<Panel class="Player">
 				<Panel class="HeaderColumn">
 					<Panel id="PlayerColor" />
-					<DOTAAvatarImage id="PlayerAvatar" />
-					<Image id="HeroIcon" />
 					<Panel id="NameAndHero" class="FullWidthHeight TopBottomFlow">
-						<DOTAUserName id="PlayerNameScoreboard" />
-						<Panel class="LeftRightFlow">
+						<Panel class="HeroBox">
+							<DOTAAvatarImage id="PlayerAvatar" />
+							<DOTAUserName id="PlayerNameScoreboard" />
+						</Panel>
+						<Panel class="PlayerBox">
+							<Image id="HeroIcon" />
 							<Label id="HeroLevelLabel" class="MonoNumbersFont" text="{d:hero_level}"/>
 							<Label id="LevelAndHero" text="{s:hero_name}"/>
 						</Panel>
 					</Panel>
 				</Panel>
-
-				<Label class="DeathsColumn" text="{d:deaths}" />
-				<Label class="SavesColumn" text="{d:saves}" />
-				<Label class="GoldBagsColumn" text="{d:goldBags}" />
-				<Panel id="ItemsContainer" class="ItemsColumn LeftRightFlow" />
-				<Panel id="BackpackItemsContainer" class="BackpackItemsColumn LeftRightFlow" />
-				<Label class="DamageTakenColumn" text="{s:damageTaken}" />
-				<Label class="HeroHealingColumn" text="{s:heroHealing}" />
-				<Label class="BossDamageColumn" text="{s:bossDamage}" />
-				<Label class="StrColumn" text="{d:strength}" />
-				<Label class="AgiColumn" text="{d:agility}" />
-				<Label class="IntColumn" text="{d:intellect}" />
+				<Panel class="PlayerStats" id="StatPanel">
+					<Panel class="PlayerStatLabels">
+						<Label class="DefinitionLabel" text="#end_screen_legend_damage_taken" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_damage_taken_tooltip, ShortTextTooltip)" onmouseout="UIHideTextTooltip()" />
+						<Label class="DefinitionLabel" text="#dota_page_match_details_legend_hero_healing" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_hero_healing_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+						<Label class="DefinitionLabel" text="#end_screen_legend_boss_damage" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_boss_damage_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
+					<Panel class="PlayerStatDefinitions">
+						<Label class="DefinitionLabel" text="{s:damageTaken}" />
+						<Label class="DefinitionLabel" text="{s:heroHealing}" />
+						<Label class="DefinitionLabel" text="{s:bossDamage}" />
+						
+					</Panel>
+				</Panel>
+				<Panel class="PlayerStats"  id="StatPanel2">
+					<Panel class="PlayerStatLabels">
+						<Label class="DefinitionLabel" text="#dota_page_match_details_legend_deaths" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_deaths_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+						<Label class="DefinitionLabel"  text="#end_screen_legend_saves" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_saves_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+						<Label class="DefinitionLabel" text="#end_screen_legend_gold_bags" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_gold_bags_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
+					<Panel class="PlayerStatDefinitions">
+						<Label class="DefinitionLabel" text="{d:deaths}" />
+						<Label class="DefinitionLabel" text="{d:saves}" />
+						<Label class="DefinitionLabel" text="{d:goldBags}" />
+					</Panel>
+				</Panel>
+				<Panel class="PlayerStats" id="AttributePanel">
+					<Panel class="PlayerStatLabels">
+						<Image class="AttributeIcon" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_strength_psd.vtex" onmouseover="UIShowTextTooltipStyled( #DOTA_SHOP_TAG_STR, ShortTextTooltip )" onmouseout="UIHideTextTooltip()"/>
+						<Image class="AttributeIcon" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_agility_psd.vtex" onmouseover="UIShowTextTooltipStyled( #DOTA_SHOP_TAG_INT, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+						<Image class="AttributeIcon" src="s2r://panorama/images/primary_attribute_icons/primary_attribute_icon_intelligence_psd.vtex" onmouseover="UIShowTextTooltipStyled( #DOTA_SHOP_TAG_AGI, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+					</Panel>
+					<Panel class="PlayerStatDefinitions">
+						<Label class="DefinitionLabel" text="{d:strength}" />
+						<Label class="DefinitionLabel" text="{d:agility}" />
+						<Label class="DefinitionLabel" text="{d:intellect}" />
+					</Panel>
+				</Panel>
+				<Panel class="PlayerInventoryWindow">
+					<Panel class="PlayerInventory">
+						<Panel class="InventorySlots" id="ItemsContainer"/>
+						
+					</Panel>
+					<Panel class="PlayerInventory">
+						<Panel class="InventorySlots" id="NeutralItemContainer"/>
+						<Panel class="InventorySlots" id="BackpackItemsContainer"/>
+					</Panel>
+				</Panel>
+				
+				
 			</Panel>
 		</snippet>
+		<snippet name="Award">
+			<Panel class="Award">
+				<Panel id="AwardStatBox">
+					<Label class="AwardLabel" text="{s:award_label}" />
+					<Label class="AwardStatLabel" text="{s:award_stat}" />
+				</Panel>
+				
+				<Panel id="AwardInfo">
+					<Panel class="AwardPlayerBox">
+						<Image id="AwardHeroIcon" />
+						<Label id="AwardLevelAndHero" text="{s:hero_name}"/>
+					</Panel>
+					<Panel class="HeroBox">
+						<DOTAAvatarImage id="AwardPlayerAvatar"/>
+						<DOTAUserName id="AwardPlayerNameScoreboard" />
+					</Panel>
+				</Panel>
+			</Panel>
+		</snippet>
+	
 	</snippets>
 
+	
+	
 	<Panel class="EndScreenBase" >
 		<Panel id="LoadingPanel">
 			<Label id="LoadingText" text="LOADING"/>
@@ -79,10 +129,39 @@
 		</Panel>
 		<Panel id="EndScreenWindow">
 			<Panel id="MatchResultBlock">
-				<Label id="EndScreenVictory" text="" />
-				<TextButton id="CloseButton" class="ButtonBevel" onactivate="FinishGame()" text="#CustomEndScreenClose" />
+				<Panel id="EndScreenDurationBox">
+					<Label id="EndScreenMinutesStatLabel" text="" />
+					<Label id="EndScreenMinutesLabel" text="#minutes" />
+					<Label id="EndScreenSecondsStatLabel" text="" />
+					<Label id="EndScreenSecondsLabel" text="#seconds" />
+					
+				</Panel>
+				<Panel id="MatchDetailBox">
+					<Panel id="DifficultyBox">
+						<Label class="Hidden" id="EasyLabel" text="#easy_label"/>
+						<Label class="Hidden" id="NormalLabel" text="#normal_label"/>
+						<Label class="Hidden" id="HardLabel" text="#hard_label"/>
+					</Panel>
+					<Panel id="ModifierBox">
+						<Label class="Modifier Hidden" id="LaserLabel" text="#laser_chosen"/>
+						<Label class="Modifier Hidden" id="NightmareLabel" text="#nightmare_chosen"/>
+						<Label class="Modifier Hidden" id="DoubleLabel" text="#double_chosen"/>
+						<Label class="Modifier Hidden" id="SuddenDeathLabel" text="#sudden_death_chosen"/>
+					</Panel>
+				</Panel>
+				<Panel id="DiscordBox">
+					<Image class="image_icon" src="file://{images}/custom_game/custom_game_info/discord_logo.png" onactivate="OnDiscordClick()" onmouseover="UIShowTextTooltipStyled(#discord_detail, ShortTextTooltip)" onmouseout="UIHideTextTooltip()"/>
+				</Panel>
+				<Panel id="VictoryLabelBox">
+					<Label id="EndScreenVictory" text="" />
+					<TextButton id="CloseButton" class="ButtonBevel" onactivate="FinishGame()" text="#CustomEndScreenClose" />
+					
+				</Panel>
 			</Panel>
-			<Panel id="TeamsContainer" />
+			<Panel id="InfoContainer">
+				<Panel id="TeamsContainer"/>
+				<Panel id="AwardContainer"/>
+			</Panel>
 		</Panel>
 	</Panel>
 </root>

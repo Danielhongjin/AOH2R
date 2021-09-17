@@ -1,10 +1,10 @@
 "AddonInfo"
 {
 	"TeamCount" 		"2"
-	"maps" 				"attackonherocopy"
+	"maps" 				"attackonhero"
 	"IsPlayable"  		"1"
 
-	"attackonherocopy"
+	"attackonhero"
 	{
 		"MaxPlayers" "5"
 	}

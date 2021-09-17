@@ -11,7 +11,7 @@ function abyssal_underlord_custom_dark_rift:OnUpgrade()
 	local caster = self:GetCaster()
 		caster:AddNewModifier(caster, self, "modifier_bonus_primary_controller", {})
 		self.modifier = caster:AddNewModifier(caster, self, "modifier_bonus_primary_token", {
-			bonus = self:GetSpecialValueFor("primary_stat_percent")
+			bonus = self:GetSpecialValueFor("primary_stat_percent_passive")
 		})
 	end
 end
@@ -49,7 +49,7 @@ function abyssal_underlord_custom_dark_rift:OnSpellStart()
 	end
 	target:AddNewModifier(caster, self, "modifier_bonus_primary_controller", {})
 	target:AddNewModifier(caster, self, "modifier_bonus_primary_token", {
-        duration = self:GetSpecialValueFor("duration"), bonus = self:GetSpecialValueFor("primary_stat_percent")
+        duration = self:GetSpecialValueFor("duration"), bonus = self:GetSpecialValueFor("primary_stat_percent_active")
 	})
 end
 

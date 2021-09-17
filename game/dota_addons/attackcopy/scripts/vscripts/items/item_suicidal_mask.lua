@@ -60,14 +60,14 @@ if IsServer() then
 
 
 
-		function modifier_item_suicidal_mask:OnAttackLanded(keys)
-			local attacker = keys.attacker
-			local target = keys.target
+	function modifier_item_suicidal_mask:OnAttackLanded(keys)
+		local attacker = keys.attacker
+		local target = keys.target
 
-			if attacker == self:GetParent() and attacker ~= target then
-				local heal = keys.damage * self:GetAbility():GetSpecialValueFor("lifesteal") / 100
-				attacker:Heal(heal, self:GetAbility())
-				ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
+		if attacker == self:GetParent() and attacker ~= target then
+			local heal = keys.damage * self:GetAbility():GetSpecialValueFor("lifesteal") / 100
+			attacker:Heal(heal, self:GetAbility())
+			ParticleManager:CreateParticle("particles/generic_gameplay/generic_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, attacker)
 		end
 	end
 end

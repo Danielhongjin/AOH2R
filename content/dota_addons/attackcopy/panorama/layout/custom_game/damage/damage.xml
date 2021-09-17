@@ -12,32 +12,41 @@
 	<snippets>
 	 
 		<snippet name="Player">
-		
-			<Panel class="Player"> 
-				<Panel id="LeftSide"> 
-					<Label id="PlayerHeroSignal" text="Player Hero" />
-					<Label id="PlayerDamageDealtSignal" text="Damage Dealt" />
-					<Label id="PlayerDamageTakenSignal" text="Damage Taken" /> 
-					<Label id="PlayerDamageHealedSignal" text="Damage Healed" />
-					<Label id="PlayerDPSSignal" text="DPS" />
-					<Panel id="PlayerDamageTypes"> 
-						<Panel id="PlayerPhysical">
-							<Label id="Playerphysdamagepercent" text="0%" />
+			<Panel class="Player" onactivate="ToggleStyle(Toggled)">
+				<Label id="PlayerHeroSignal" text="Player Hero" />		
+				<Panel id="Stats">
+					<Panel class="FlowRight">
+						<Panel class="StatContainer">
+							<Label class="LeftSide" id="PlayerDamageDealtSignal" text="DD" />
+							<Label class="RightSide" id="PlayerDamageDealt" text="Sample" />
 						</Panel>
-						<Panel id="PlayerMagical">
-							<Label id="Playermagdamagepercent" text="0%" />
-						</Panel>
-						<Panel id="PlayerPure">
-							<Label id="Playerpuredamagepercent" text="0%" />
+						<Panel class="StatContainer">
+							<Label class="LeftSide" id="PlayerDPSSignal" text="DPS" />
+							<Label class="RightSide" id="PlayerDPS" text="Sample" />
 						</Panel>
 					</Panel>
+					<Panel class="FlowRight">
+						<Panel class="StatContainer">
+							<Label class="LeftSide" id="PlayerDamageTakenSignal" text="DT" /> 
+							<Label class="RightSide" id="PlayerDamageTaken" text="Sample" /> 
+						</Panel>
+						<Panel class="StatContainer">
+							<Label class="LeftSide" id="PlayerDamageHealedSignal" text="DH" />
+							<Label class="RightSide" id="PlayerDamageHealed" text="Sample" />
+						</Panel>
+						
+					</Panel>
 				</Panel>
-				<Panel id = "RightSide">
-					<Label id="EmptySpace"		text=""	/>
-					<Label id="PlayerDamageDealt" text="Sample" />
-					<Label id="PlayerDamageTaken" text="Sample" /> 
-					<Label id="PlayerDamageHealed" text="Sample" />
-					<Label id="PlayerDPS" text="Sample" />
+				<Panel id="PlayerDamageTypes"> 
+					<Panel class="PercentPanel" id="PlayerPhysical">
+						<Label id="Playerphysdamagepercent" text="0%" />
+					</Panel>
+					<Panel class="PercentPanel" id="PlayerMagical">
+						<Label id="Playermagdamagepercent" text="0%" />
+					</Panel>
+					<Panel class="PercentPanel" id="PlayerPure">
+						<Label id="Playerpuredamagepercent" text="0%" />
+					</Panel>
 				</Panel>
 			</Panel>
 			

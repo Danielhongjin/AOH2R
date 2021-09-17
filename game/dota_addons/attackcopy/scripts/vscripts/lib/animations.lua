@@ -39,7 +39,7 @@ ANIMATIONS_VERSION = "0.83"
     EndAnimation(unit)
 
   --Start a running + hasted animation at .8 rate for 5 seconds
-    StartAnimation(unit, {duration=5, activity=ACT_DOTA_RUN, rate=0.8, translate="haste"})
+    StartAnimation(unit, {duration=5, activity=	, rate=0.8, translate="haste"})
 
   --Start a shield-bash animation for sven with variable rate
     StartAnimation(unit, {duration=1.5, activity=ACT_DOTA_ATTACK, rate=RandomFloat(.5, 1.5), translate="sven_warcry", translate2="sven_shield"})
@@ -436,7 +436,6 @@ local _ANIMATION_TRANSLATE_TO_CODE = {
   twinblade_run_injured=369,
   walk = 373,
   windwalk=370,  
-
 }
 
 function StartAnimation(unit, table)

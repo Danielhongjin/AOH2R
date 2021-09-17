@@ -6,7 +6,7 @@ if AOHSpawner == nil then
 end
 
 
-function AOHSpawner:ReadConfiguration(name, kv, gameRound)
+function AOHSpawner:ReadConfiguration(name, kv, gameRound, double)
 	self._gameRound = gameRound
 	self._dependentSpawners = {}
 
@@ -18,7 +18,6 @@ function AOHSpawner:ReadConfiguration(name, kv, gameRound)
 	self._waypointEntity = nil
 
 	self._nTotalUnitsToSpawn = tonumber(kv.TotalUnitsToSpawn or 0)
-	self._nUnitsPerSpawn = tonumber(kv.UnitsPerSpawn or 0)
 	self._nUnitsPerSpawn = tonumber(kv.UnitsPerSpawn or 1)
 
 	self._flInitialWait = tonumber(kv.WaitForTime or 0)
@@ -188,14 +187,25 @@ function AOHSpawner:_DoSpawn()
 	end
 	for iUnit = 1,nUnitsToSpawn do
 
-		local vSpawnLocation = vBaseSpawnLocation + RandomVector(RandomFloat(0, 200))
-
+		local vSpawnLocation = vBaseSpawnLocation + RandomVector(RandomFloat(-200, 200))
+		local xp = self._gameRound:GetXPPerCoreUnit()
+		if _G.AOHGameMode.modifier_total[2] == 1 then
+			xp = xp * 0.5
+			local entUnit = CreateUnitByName(self._szNPCClassName, vSpawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
+			if entUnit then
+				self._nUnitsCurrentlyAlive = self._nUnitsCurrentlyAlive + 1
+				entUnit.Holdout_IsCore = true
+				entUnit:SetDeathXP(xp)
+				vSpawnLocation = vBaseSpawnLocation + RandomVector(RandomFloat(-200, 200))
+			end
+		end
 		local entUnit = CreateUnitByName(self._szNPCClassName, vSpawnLocation, true, nil, nil, DOTA_TEAM_BADGUYS)
 		if entUnit then
 			self._nUnitsSpawnedThisRound = self._nUnitsSpawnedThisRound + 1
 			self._nUnitsCurrentlyAlive = self._nUnitsCurrentlyAlive + 1
 			entUnit.Holdout_IsCore = true
-			entUnit:SetDeathXP(self._gameRound:GetXPPerCoreUnit())
+			entUnit:SetDeathXP(xp)
 		end
+		
 	end
 end

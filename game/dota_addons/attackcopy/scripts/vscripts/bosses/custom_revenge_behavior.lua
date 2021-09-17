@@ -29,8 +29,6 @@ if IsServer() then
 	function modifier_custom_revenge_behavior:DeclareFunctions()
 		return {
 			MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
-			MODIFIER_EVENT_ON_ATTACK_LANDED,
-			MODIFIER_EVENT_ON_ABILITY_EXECUTED,
 		}
 	end
 	function modifier_custom_revenge_behavior:OnCreated()
@@ -38,6 +36,7 @@ if IsServer() then
 		self.parent:SetMana(0)
 		self.ability = self:GetAbility()
 		self.revengeAbility = self.parent:GetAbilityByIndex(16)
+		self.revengeAbility:StartCooldown(3600)
 		self.interval = self.ability:GetSpecialValueFor("interval")
 		self.health_threshold = self.ability:GetSpecialValueFor("health_threshold")
 		self.mana_regen_mult = self.ability:GetSpecialValueFor("mana_mult")
@@ -47,10 +46,7 @@ if IsServer() then
 		self.mana_regen_percent = 0
 		self.isDisabled = false
 		
-		self.currentlyRevenge = false
-		
 		self:StartIntervalThink(self.interval)
-		print(self.revengeAbility:GetAbilityName())
 	end
 	function modifier_custom_revenge_behavior:OnIntervalThink()
 		local health_lost = ((self.parent_previous_health - self.parent:GetHealth()) / self.parent_max_health) * 100
@@ -59,10 +55,10 @@ if IsServer() then
 		else
 			self.mana_regen_percent = 0
 		end
-		if self.isDisabled == true or self.parent:IsSilenced() then
+		if self.parent:IsStunned() or self.parent:IsSilenced() or self.parent:IsDisarmed() then
 			self.mana_regen_percent = self.mana_regen_percent + self.disable_regen
 		end 	
-		if self.parent:GetManaPercent() > 95 then
+		if self.parent:GetManaPercent() > 98 then
 			self.parent:Purge(false, true, false, true, false)
 			self:getPissed()
 			self.parent:SetMana(0)
@@ -71,36 +67,13 @@ if IsServer() then
 		self.isDisabled = true
 	end
 
-	function modifier_custom_revenge_behavior:OnAbilityExecuted(keys)
-		if keys.unit == self.parent then
-			self.isDisabled = false
-		end
-
-	end
-	function modifier_custom_revenge_behavior:OnAttackLanded(keys)
-		if keys.attacker == self.parent then
-			self.isDisabled = false
-		end
-	end
 	function modifier_custom_revenge_behavior:GetModifierTotalPercentageManaRegen()
 		return self.mana_regen_percent
 	end
 
 	function modifier_custom_revenge_behavior:getPissed()
-		if not self.currentlyRevenge then
-			self.currentlyRevenge = true
-			Timers:CreateTimer(
-			0, 
-			function()
-				if self.parent:IsChanneling() or self.parent:GetCurrentActiveAbility() ~= nil or self.parent:IsCommandRestricted() or self.parent:IsSilenced() then
-					return 0.5
-				end
-				self.parent:Heal(self.parent:GetMaxHealth() * 0.03, nil)
-				self.parent:CastAbilityNoTarget(self.revengeAbility, -1)
-				self.currentlyRevenge = false
-			end
-			)
-		end
+			self.revengeAbility:EndCooldown()
+			self.parent:Heal(self.parent:GetMaxHealth() * 0.03, nil)
 	end
 end
 

@@ -22,6 +22,8 @@ if IsServer() then
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self, --Optional.
 		}
+		local ticket_concession = caster:FindModifierByName("modifier_boss")
+		ticket_concession:Lockout()
 		local target = self:GetCursorTarget()
 		local fx = ParticleManager:CreateParticle("particles/custom/bear_maul.vpcf", PATTACH_OVERHEAD_FOLLOW, caster)
 		ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
@@ -74,6 +76,7 @@ if IsServer() then
 				else
 					ParticleManager:DestroyParticle(fx, true)
 					ParticleManager:ReleaseParticleIndex(fx)
+					ticket_concession:ReleaseLockout()
 				end
 			end
 		)

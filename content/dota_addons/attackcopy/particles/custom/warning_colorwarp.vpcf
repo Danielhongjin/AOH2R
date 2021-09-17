@@ -11,7 +11,6 @@
 	[
 		{
 			_class = "C_OP_EndCapTimedDecay"
-			m_flDecayTime = 1.0
 		},
 		{
 			_class = "C_OP_LerpEndCapVector"
@@ -84,7 +83,6 @@
 	[
 		{
 			m_name = "preview"
-			m_drivers = [  ]
 		},
 	]
 	m_Renderers = 
@@ -92,6 +90,7 @@
 		{
 			_class = "C_OP_RenderStatusEffect"
 			m_pTextureColorWarp = resource:"materials/models/heroes/statuseffects/colorwarp_morph_target.vtex"
+			m_pTextureDetail2 = resource:"materials/particle/lanaya/lanaya_refract_outline_single.vtex"
 		},
 	]
 	m_nBehaviorVersion = 10

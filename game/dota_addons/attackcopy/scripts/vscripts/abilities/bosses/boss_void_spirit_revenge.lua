@@ -17,11 +17,5 @@ function boss_void_spirit_revenge:OnSpellStart()
 	end
 	StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / delay})
 	caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
-	Timers:CreateTimer(
-		delay, 
-		function()
-			spell:EndCooldown()
-			spell:OnSpellStart()
-		end
-	)
+	spell:OnSpellStart()
 end

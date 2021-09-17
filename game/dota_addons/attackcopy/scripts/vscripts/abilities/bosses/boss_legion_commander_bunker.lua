@@ -33,7 +33,7 @@ end
 modifier_boss_legion_commander_bunker = class({})
 
 function modifier_boss_legion_commander_bunker:IsPurgable()
-	return true
+	return false
 end
 
 function modifier_boss_legion_commander_bunker:IsHidden()
@@ -81,7 +81,7 @@ if IsServer() then
 			ability = ability, --Optional.
 		}
 		self.parent:EmitSound("Hero_LegionCommander.PressTheAttack")
-		self.anim = self.parent:AddNewModifier(self.parent, ability, "modifier_anim", {duration = -1})
+		self.anim = self.parent:AddNewModifier(self.parent, ability, "modifier_anim", {duration = ability:GetSpecialValueFor("duration") - 1})
 		StartAnimation(self.parent, {duration=500, activity=ACT_DOTA_DISABLED, rate=1})
 		self.knight1 = CreateUnitByName("npc_dragon_knight", self.parent:GetAbsOrigin(), true, self.parent, self.parent, self.parent:GetTeamNumber())
 		FindClearSpaceForUnit(self.knight1, self.parent:GetAbsOrigin() + Vector(200, 0, 0), true)

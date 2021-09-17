@@ -2,6 +2,27 @@ require("lib/popup")
 
 templar_assassin_slipstrike = class({})
 
+if IsServer() then
+    function templar_assassin_slipstrike:OnInventoryContentsChanged()
+        if self.shard then
+            if self.shard ~= true and self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+                local ability = self:GetCaster():FindAbilityByName("templar_assassin_phase_rush")
+                ability:SetLevel(1)
+                ability:SetHidden(false)
+                self.shard = true
+            end
+        else
+            if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+                local ability = self:GetCaster():FindAbilityByName("templar_assassin_phase_rush")
+                ability:SetLevel(1)
+                ability:SetHidden(false)
+                self.shard = true
+            else
+                self.shard = false
+            end
+        end
+    end
+end
 function templar_assassin_slipstrike:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()

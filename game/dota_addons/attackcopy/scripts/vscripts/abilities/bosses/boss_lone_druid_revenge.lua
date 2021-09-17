@@ -16,8 +16,8 @@ function boss_lone_druid_revenge:OnSpellStart()
 	Timers:CreateTimer(
 		delay, 
 		function()
-			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() then
-				return 0.5
+			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() or caster:IsStunned() then
+				return 0.01
 			end
 			if caster.bear and IsValidEntity(caster.bear) and caster.bear:IsAlive() then
 				caster.bear:CastAbilityNoTarget(caster.bear:FindAbilityByName("boss_spiritbear_inner_fire_wrapper"), -1)

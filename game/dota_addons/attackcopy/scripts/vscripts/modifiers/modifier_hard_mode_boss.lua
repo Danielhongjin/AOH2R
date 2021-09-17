@@ -19,15 +19,11 @@ end
 
 function modifier_hard_mode_boss:DeclareFunctions()
 	local funcs = {
-        MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
 		MODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE,
 		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+		MODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE,
 	}
 	return funcs
-end
-
-function modifier_hard_mode_boss:GetModifierPercentageCooldown()
-    return 20
 end
 
 function modifier_hard_mode_boss:GetModifierTotalPercentageManaRegen()
@@ -35,5 +31,9 @@ function modifier_hard_mode_boss:GetModifierTotalPercentageManaRegen()
 end
 
 function modifier_hard_mode_boss:GetModifierHealthRegenPercentage()
-	return 0.65
+	return 0.15
+end
+
+function modifier_hard_mode_boss:GetModifierExtraHealthPercentage()
+	return 35
 end

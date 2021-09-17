@@ -83,15 +83,14 @@
 	{
 		"1" // Death Prophet	
 		{
-			"Title"						"Moth"
-			"MaxGold"					"3200"
+			"MaxGold"					"4700"
 			"BagCount"					"1"
 			"BagVariance"				"50"
 			"FixedXP"					"2500"
 
 			"a"
 			{
-				"NPCName"				"npc_boss_deathprophet"
+				"NPCName"				"npc_boss_death_prophet"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"20"
@@ -100,11 +99,10 @@
 		
 		"2" // Kobolds
 		{
-			"Title"						"Devils"
-			"MaxGold"					"3700"
+			"MaxGold"					"4800"
 			"BagCount"					"45"
 			"BagVariance"				"0"
-			"FixedXP"					"3400"
+			"FixedXP"					"2700"
 
 			"a" 
 			{
@@ -133,11 +131,10 @@
 		
 		"3" // Juggernaut
 		{
-			"Title"						"Martial Artist"
-			"MaxGold"					"4000"
+			"MaxGold"					"4900"
 			"BagCount"					"1"
 			"BagVariance"				"0"
-			"FixedXP"					"2000"
+			"FixedXP"					"2900"
 
 			"a"
 			{
@@ -150,11 +147,10 @@
 
 		"4" // Undying
 		{
-			"Title"						"Undead"
-			"MaxGold"					"4600"
+			"MaxGold"					"5000"
 			"BagCount"					"20"
 			"BagVariance"				"75"
-			"FixedXP"					"2500"
+			"FixedXP"					"3100"
 			
 			"a"
 			{
@@ -176,18 +172,17 @@
 		
 		"5" // Chaos Knight And Faceless Void
 		{
-			"Title"						"Other World"
-			"MaxGold"					"5000"
+			"MaxGold"					"5100"
 			"BagCount"					"6"
 			"BagVariance"				"20"
-			"FixedXP"					"4000"
+			"FixedXP"					"3300"
 
 			"a"
 			{
 				"NPCName"				"npc_boss_faceless_void"
 				"TotalUnitsToSpawn"		"5"
 				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"15"
+				"SpawnInterval"			"11"
 			}
 			
 			"b"
@@ -201,100 +196,92 @@
 
 		"6" // Tormented Souls
 		{
-			"Title"						"Tormented Souls"
-			"MaxGold"					"4000"
+			"MaxGold"					"5200"
 			"BagCount"					"35"
 			"BagVariance"				"25"
-			"FixedXP"					"3000"
-
-		// Stage 1 ================================================
-		"UnitMelee_1" // Duration 20s
-		{
-			"NPCName"				"npc_wandering_soul"
-			"TotalUnitsToSpawn"		"4"
-			"UnitsPerSpawn"			"4"
-			"SpawnInterval"			"20"
-		}
-		
-		"UnitRanged_1"
-		{
-			"GroupWithUnit"			"UnitMelee_1"
+			"FixedXP"					"3500"
+			"UnitMelee_1"
+			{
+				"NPCName"				"npc_wandering_soul"
+				"TotalUnitsToSpawn"		"4"
+				"UnitsPerSpawn"			"4"
+				"SpawnInterval"			"20"
+			}
 			
-			"NPCName"				"npc_wretched_soul"
-			"TotalUnitsToSpawn"		"2"
-			"UnitsPerSpawn"			"2"
-		}
-		
-		// Stage 2 ================================================
-		"UnitMelee_2" // Duration 120s + 10s WaitForTime
-		{
-			"WaitForUnit"			"UnitMelee_1"
-			"WaitForTime"			"10"
+			"UnitRanged_1"
+			{
+				"GroupWithUnit"			"UnitMelee_1"
+				
+				"NPCName"				"npc_wretched_soul"
+				"TotalUnitsToSpawn"		"2"
+				"UnitsPerSpawn"			"2"
+			}
+			"UnitMelee_2" // Duration 120s + 10s WaitForTime
+			{
+				"WaitForUnit"			"UnitMelee_1"
+				"WaitForTime"			"10"
+				
+				"NPCName"				"npc_wandering_soul"
+				"TotalUnitsToSpawn"		"10"
+				"UnitsPerSpawn"			"5"
+				"SpawnInterval"			"40"
+			}
 			
-			"NPCName"				"npc_wandering_soul"
-			"TotalUnitsToSpawn"		"10"
-			"UnitsPerSpawn"			"5"
-			"SpawnInterval"			"40"
-		}
-		
-		"UnitRanged_2"
-		{
-			"GroupWithUnit"			"UnitMelee_2"
+			"UnitRanged_2"
+			{
+				"GroupWithUnit"			"UnitMelee_2"
+				
+				"NPCName"				"npc_wretched_soul"
+				"TotalUnitsToSpawn"		"3"
+				"UnitsPerSpawn"			"1"
+			}
 			
-			"NPCName"				"npc_wretched_soul"
-			"TotalUnitsToSpawn"		"3"
-			"UnitsPerSpawn"			"1"
-		}
-		
-		"UnitOgreTank_2"
-		{
-			"GroupWithUnit"			"UnitMelee_2"
+			"UnitOgreTank_2"
+			{
+				"GroupWithUnit"			"UnitMelee_2"
+				
+				"NPCName"				"npc_tormented_soul"
+				"TotalUnitsToSpawn"		"1"
+				"UnitsPerSpawn"			"1"
+			}
+			"UnitMelee_2b" // Duration 120s + 10s
+			{
+				"WaitForUnit"			"UnitMelee_1"
+				"WaitForTime"			"10"
+				
+				"NPCName"				"npc_wandering_soul"
+				"TotalUnitsToSpawn"		"12"
+				"UnitsPerSpawn"			"4"
+				"SpawnInterval"			"20"
+			}
 			
-			"NPCName"				"npc_tormented_soul"
-			"TotalUnitsToSpawn"		"1"
-			"UnitsPerSpawn"			"1"
-		}
-		
-		// Stage 2 Concurrent =====================================
-		"UnitMelee_2b" // Duration 120s + 10s
-		{
-			"WaitForUnit"			"UnitMelee_1"
-			"WaitForTime"			"10"
+			"UnitRanged_2b"
+			{
+				"GroupWithUnit"			"UnitMelee_2b"
+				
+				"NPCName"				"npc_wretched_soul"
+				"TotalUnitsToSpawn"		"6"
+				"UnitsPerSpawn"			"2"
+			}
 			
-			"NPCName"				"npc_wandering_soul"
-			"TotalUnitsToSpawn"		"12"
-			"UnitsPerSpawn"			"4"
-			"SpawnInterval"			"20"
-		}
-		
-		"UnitRanged_2b"
-		{
-			"GroupWithUnit"			"UnitMelee_2b"
-			
-			"NPCName"				"npc_wretched_soul"
-			"TotalUnitsToSpawn"		"6"
-			"UnitsPerSpawn"			"2"
-		}
-		
-		"UnitMelee_2c" // Duration 100s + 30s
-		{
-			"WaitForUnit"			"UnitMelee_1"
-			"WaitForTime"			"30"
-			
-			"NPCName"				"npc_tormented_soul"
-			"TotalUnitsToSpawn"		"2"
-			"UnitsPerSpawn"			"1"
-			"SpawnInterval"			"15"
-		}
+			"UnitMelee_2c" // Duration 100s + 30s
+			{
+				"WaitForUnit"			"UnitMelee_1"
+				"WaitForTime"			"30"
+				
+				"NPCName"				"npc_tormented_soul"
+				"TotalUnitsToSpawn"		"2"
+				"UnitsPerSpawn"			"1"
+				"SpawnInterval"			"15"
+			}
 		}
 		
 		"7" // Witch Doctor
 		{
-			"Title"						"Dark Magic"
-			"MaxGold"					"4000" 
+			"MaxGold"					"5300" 
 			"BagCount"					"1"
 			"BagVariance"				"25"
-			"FixedXP"					"3000"
+			"FixedXP"					"3500"
 
 			"a"
 			{
@@ -303,28 +290,9 @@
 				"UnitsPerSpawn"			"1"
 			}
 		}
-		
-		"8" // Grimstroke
+		"8" // Ursa
 		{
-			"Title"						"Ink"
-			"MaxGold"					"4200"
-			"BagCount"					"1"
-			"BagVariance"				"100"
-			"FixedXP"					"3200"	
-			
-			"a"
-			{
-				"NPCName"				"npc_boss_grimstroke"
-				"TotalUnitsToSpawn"		"1"
-				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"25"
-			}
-		}
-		
-		"9" // Ursa
-		{
-			"Title"						"Scars"
-			"MaxGold"					"4400"
+			"MaxGold"					"5400"
 			"BagCount"					"1"
 			"BagVariance"				"0"
 			"FixedXP"					"3500"
@@ -337,11 +305,9 @@
 				"SpawnInterval"			"20"
 			}	
 		}
-		
-		"10" // Storm Spirit
+		"9" // Storm Spirit
 		{
-			"Title"						"Maelstrom"
-			"MaxGold"					"4600"
+			"MaxGold"					"5500"
 			"BagCount"					"10"
 			"BagVariance"				"40"
 			"FixedXP"					"3800"
@@ -354,10 +320,9 @@
 				"SpawnInterval"			"25"
 			}
 		}
-		"11" // Luna
+		"10" // Luna
 		{
-			"Title"						"Nightfall"
-			"MaxGold"					"4400"
+			"MaxGold"					"5600"
 			"BagCount"					"1"
 			"BagVariance"				"20"
 			"FixedXP"					"4100"
@@ -371,10 +336,9 @@
 			}
 		}
 		
-		"12" // Tiny
+		"11" // Tiny
 		{
-			"Title"						"Ignoring You"
-			"MaxGold"					"4600"
+			"MaxGold"					"5700"
 			"BagCount"					"5"
 			"BagVariance"				"20"
 			"FixedXP"					"4200"
@@ -395,37 +359,9 @@
 				"SpawnInterval"			"20"
 			}
 		}
-		
-		"13" // Sea Creatures
+		"12" // Swarm
 		{
-			"Title"						"Respect The Sea"
-			"MaxGold"					"4700"
-			"BagCount"					"13"
-			"BagVariance"				"30"
-			"FixedXP"					"4300"
-			
-			"a"
-			{
-				"NPCName"				"npc_boss_small_slardar"
-				"TotalUnitsToSpawn"		"20"
-				"UnitsPerSpawn"			"5"
-				"SpawnInterval"			"11"
-			}
-
-			"b"
-			{
-				"WaitForUnit"			"a"
-				
-				"NPCName"				"npc_boss_tidehunter"
-				"TotalUnitsToSpawn"		"1"
-				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"13"
-			}
-		}
-		"14" // Swarm
-		{
-			"Title"						"Insect Swarm"
-			"MaxGold"					"4600"
+			"MaxGold"					"5800"
 			"BagCount"					"32"
 			"BagVariance"				"30"
 			"FixedXP"					"4400"
@@ -447,15 +383,12 @@
 				"SpawnInterval"			"5"
 			}
 		}
-		
-		"15" // Dragon Guard
+		"13" // Dragon Guard
 		{
-			"Title"						"Outcast Blade"
-			"MaxGold"					"4800"
+			"MaxGold"					"5900"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"4600"
-		
 			"a"
 			{
 				"NPCName"				"npc_boss_legion_commander"
@@ -465,10 +398,9 @@
 			}
 		}
 		
-		"16" // Box
+		"14" // Box
 		{
-			"Title"						"What's In The Box?"
-			"MaxGold"					"4700"
+			"MaxGold"					"6000"
 			"BagCount"					"2"
 			"BagVariance"				"00"
 			"FixedXP"					"4500"
@@ -483,10 +415,9 @@
 
 		}
 		
-		"17" // Enigma 
+		"15" // Enigma 
 		{
-			"Title"						"Consumer of Worlds"
-			"MaxGold"					"4500"
+			"MaxGold"					"6100"
 			"BagCount"					"1"
 			"BagVariance"				"0"
 			"FixedXP"					"4700"
@@ -499,14 +430,12 @@
 				"SpawnInterval"			"1"
 			}
 		}
-		
-		"18" // Beastmaster
+		"16" // Beastmaster
 		{
-			"Title"						"Day At The Zoo"
-			"MaxGold"					"4700"
+			"MaxGold"					"6200"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"4000"
+			"FixedXP"					"5000"
 			
 			"a" 
 			{
@@ -531,28 +460,9 @@
 				"SpawnInterval"			"22"
 			}
 		}
-			
-		"19" // Zeus
+		"17" // Lone Druid
 		{
-			"Title"						"Cloud"
-			"MaxGold"					"5500"
-			"BagCount"					"1"
-			"BagVariance"				"30"
-			"FixedXP"					"5000"
-		
-			"a"
-			{
-				"NPCName"				"npc_boss_zeus"
-				"TotalUnitsToSpawn"		"1"
-				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"25"
-			}
-		}		
-		
-		"20" // Lone Druid
-		{
-			"Title"						"Wayward Druid"
-			"MaxGold"					"5700"
+			"MaxGold"					"6300"
 			"BagCount"					"1"
 			"BagVariance"				"20"
 			"FixedXP"					"5000"
@@ -566,14 +476,13 @@
 			}
 		}
 
-		"21" // Doom
+		"18" // Doom
 		{
-			"Title"						"Doom"
-			"MaxGold"					"5800"
+			"MaxGold"					"6400"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"5000"
-
+			
 			"a"
 			{
 				"NPCName"				"npc_boss_doom"
@@ -583,10 +492,9 @@
 			}
 		}
 		
-		"22" // Kunkka
+		"19" // Kunkka
 		{
-			"Title"						"Sunken Isles"
-			"MaxGold"					"5900"
+			"MaxGold"					"6500"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"5000"
@@ -600,10 +508,9 @@
 			}
 		}	
 
-		"23" // Techies
+		"20" // Techies
 		{
-			"Title"						"Don't Stand Still"
-			"MaxGold"					"6100"
+			"MaxGold"					"6600"
 			"BagCount"					"1"
 			"BagVariance"				"0"
 			"FixedXP"					"5100"
@@ -633,11 +540,9 @@
 			}
 			
 		}
-		
-		"24" // Crystal Maiden
-		{
-			"Title"						"Freeze"
-			"MaxGold"					"6300"
+		"21" // Crystal Maiden
+		{	
+			"MaxGold"					"6700"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"5000"
@@ -651,9 +556,8 @@
 			}
 		}	
 		
-		"25" // Abyssal Underlord
+		"22" // Abyssal Underlord
 		{
-			"Title"						"Homewrecker"
 			"MaxGold"					"6800"
 			"BagCount"					"1"
 			"BagVariance"				"0"
@@ -667,10 +571,9 @@
 				"SpawnInterval"			"25"
 			}
 		}
-		"26" // Shadow Friends
+		"23" // Shadow Friends
 		{
-			"Title"						"Shadow Friends"
-			"MaxGold"					"7300"
+			"MaxGold"					"6900"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"5500"
@@ -684,10 +587,9 @@
 			}
 		}
 		
-		"27" // Tree Haters Guild
+		"24" // Tree Haters Guild
 		{
-			"Title"						"Tree Haters Guild"
-			"MaxGold"					"7800"
+			"MaxGold"					"7000"
 			"BagCount"					"19"
 			"BagVariance"				"0"
 			"FixedXP"					"5100"
@@ -716,28 +618,25 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		
-		"28" // Phantom Lance
-		{
-			"Title"						"Real?"
-			"MaxGold"					"8300"
+		"25" // Phantom Lance
+		{		
+			"MaxGold"					"7100"
 			"BagCount"					"5"
 			"BagVariance"				"0"
 			"FixedXP"					"5600"
 		
 			"a"
 			{
-				"NPCName"				"npc_boss_phantomlancer"
+				"NPCName"				"npc_boss_phantom_lancer"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"1"
 			}
 		}
 		
-		"29" // Spectre
+		"26" // Spectre
 		{
-			"Title"						"Lost"
-			"MaxGold"					"8800"
+			"MaxGold"					"7200"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -751,10 +650,9 @@
 			}
 		}
 		
-		"30" // Void Spirit
+		"27" // Void Spirit
 		{
-			"Title"						"Enter the Void"
-			"MaxGold"					"9000"
+			"MaxGold"					"7300"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -767,10 +665,9 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"31" // Meteor
+		"28" // Meteor
 		{
-			"Title"						"Big Angry Ball"
-			"MaxGold"					"9000"
+			"MaxGold"					"7400"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6400"
@@ -783,27 +680,9 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"32" // Lich
-		{
-			"Title"						"Ethreain"
-			"MaxGold"					"9250"
-			"BagCount"					"1"
-			"BagVariance"				"30"
-			"FixedXP"					"6500"
-
-			"a"
-			{
-				"NPCName"				"npc_boss_lich_king"
-				"TotalUnitsToSpawn"		"1"
-				"UnitsPerSpawn"			"1"
-				"SpawnInterval"			"30"
-			}
-		}
-
-		"33" // SpiritBreaker
-		{
-			"Title"						"Spirits"
-			"MaxGold"					"9750"
+		"29" // SpiritBreaker
+		{	
+			"MaxGold"					"7500"
 			"BagCount"					"1"
 			"BagVariance"				"30"
 			"FixedXP"					"6500"
@@ -816,13 +695,12 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"34" // Invoker
+		"30" // Invoker
 		{
-			"Title"						"Armageddon"
-			"MaxGold"					"10000"
+			"MaxGold"					"7600"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"6500"
 				
 			"a"
 			{
@@ -832,13 +710,12 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"35" // Demon Marauder
+		"31" // Demon Marauder
 		{
-			"Title"						"Demon"
-			"MaxGold"					"10000"
+			"MaxGold"					"7700"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"7000"
 				
 			"a"
 			{
@@ -848,13 +725,12 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"36" // Army of Darkness
+		"32" // Army of Darkness
 		{
-			"Title"						"Army of Darkness"
-			"MaxGold"					"10000"
+			"MaxGold"					"7800"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"7000"
 				
 			"a"
 			{
@@ -864,45 +740,42 @@
 				"SpawnInterval"			"30"
 			}
 		}
-		"37" // Elder Titan
+		"33" // Elder Titan
 		{
-			"Title"						"Worldsmiths"
-			"MaxGold"					"10000"
+			"MaxGold"					"7900"
 			"BagCount"					"40"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"7500"
 
 			"a"
 			{
 				"NPCName"				"npc_boss_elder_titan"
-				"TotalUnitsToSpawn"		"3"
-				"UnitsPerSpawn"			"3"
+				"TotalUnitsToSpawn"		"2"
+				"UnitsPerSpawn"			"2"
 				"SpawnInterval"			"30"
 			}
 		}
-		"38" // Oracle
+		"34" // Oracle
 		{
-			"Title"						"Twisted Seer"
-			"MaxGold"					"20000"
+			"MaxGold"					"8000"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"7500"
 
 			"a"
 			{
-				"NPCName"				"npc_boss_oracle"
+				"NPCName"				"npc_boss_aghanim"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
 				"SpawnInterval"			"30"
 			}
 		}
-		"39" // Boss Party
+		"35" // Boss Party
 		{
-			"Title"						"Boss Party"
-			"MaxGold"					"24000"
+			"MaxGold"					"8100"
 			"BagCount"					"1"
 			"BagVariance"				"30"
-			"FixedXP"					"150000"
+			"FixedXP"					"15000"
 
 			"a"
 			{
@@ -939,7 +812,7 @@
 				"NPCName"				"npc_boss_oracle"
 				"TotalUnitsToSpawn"		"1"
 				"UnitsPerSpawn"			"1"
-				"WaitForTime"			"100"
+				"WaitForTime"			"85"
 			}
 		}
 	}

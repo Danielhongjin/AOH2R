@@ -20,6 +20,9 @@ function modifier_boss_abyssal_underlord_undead_cannon:CheckState()
 	return state
 end
 
+function modifier_boss_abyssal_underlord_undead_cannon:IsPurgable()
+	return false
+end
 
 function modifier_boss_abyssal_underlord_undead_cannon:IsHidden()
 	return false
@@ -121,73 +124,71 @@ function modifier_boss_abyssal_underlord_undead_cannon_beam:OnCreated(keys)
 	self.beam_radius = self.ability:GetSpecialValueFor("beam_radius")
 	local damage = keys.damage
 	
-	if self.parent and self.parent:IsAlive() and self.target then
-	local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, self.parent)
-	ParticleManager:SetParticleControl(fx, 0, self.parent:GetAbsOrigin())
-	ParticleManager:SetParticleControl(fx, 1, self.parent:GetAbsOrigin())
-	ParticleManager:SetParticleControl(fx, 2, self.target:GetAbsOrigin())
-	ParticleManager:SetParticleControl(fx, 3, Vector(self.beam_radius, self.beam_radius, 1))
-	ParticleManager:SetParticleControl(fx, 4, Vector(self.beam_delay, 1, 1))
-	ParticleManager:ReleaseParticleIndex(fx)
-	StartAnimation(self.parent, {duration = self.beam_delay, activity = ACT_DOTA_CAST_ABILITY_2, rate = 1 / self.beam_delay})
-	self.parent:AddNewModifier(self.parent, self, "modifier_anim", {duration = self.beam_delay + 1})
-	Timers:CreateTimer(
-		self.beam_delay, 
-		function()
-			if self.target:GetHealth() < damage then
-				self.target:ForceKill(false)
-			else
-				ApplyDamage({
-					victim = self.target,
-					attacker = self.parent,
-					damage = damage,
-					damage_type = self.ability:GetAbilityDamageType(),
-					ability = self.ability, --Optional.
-					damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
-				})
+	if self.parent and self.target then
+		local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, self.parent)
+		ParticleManager:SetParticleControl(fx, 0, self.parent:GetAbsOrigin())
+		ParticleManager:SetParticleControl(fx, 1, self.parent:GetAbsOrigin())
+		ParticleManager:SetParticleControl(fx, 2, self.target:GetAbsOrigin())
+		ParticleManager:SetParticleControl(fx, 3, Vector(self.beam_radius, self.beam_radius, 1))
+		ParticleManager:SetParticleControl(fx, 4, Vector(self.beam_delay, 1, 1))
+		ParticleManager:ReleaseParticleIndex(fx)
+		StartAnimation(self.parent, {duration = self.beam_delay, activity = ACT_DOTA_CAST_ABILITY_2, rate = 1 / self.beam_delay})
+		self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_anim", {duration = self.beam_delay + 1})
+		Timers:CreateTimer(
+			self.beam_delay, 
+			function()
+				if self.target:GetHealth() < damage then
+					ApplyDamage({
+						victim = self.target,
+						attacker = self.parent,
+						damage = damage,
+						damage_type = self.ability:GetAbilityDamageType(),
+						ability = self.ability, --Optional.
+						damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
+					})
+				end
+				self.parent:EmitSound("Hero_Phoenix.SuperNova.Explode")
+				self.target:EmitSound("Hero_Phoenix.SuperNova.Explode")
+				local fx = ParticleManager:CreateParticle("particles/custom_abyssal_underlord_beam.vpcf", PATTACH_POINT, self.parent)
+				ParticleManager:SetParticleControlEnt(fx, 9, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+				ParticleManager:SetParticleControl(fx, 1, self.target:GetAbsOrigin() + Vector(0, 0, 150))
+				local explosion = ParticleManager:CreateParticle("particles/custom/abbysal_underlord_custom_darkrift_end.vpcf", PATTACH_POINT, self.target)
+				ParticleManager:SetParticleControl(explosion, 0, self.target:GetAbsOrigin() + Vector(0, 0, 250))
+				ParticleManager:SetParticleControl(explosion, 5, self.target:GetAbsOrigin() + Vector(0, 0, 250))
+				ParticleManager:ReleaseParticleIndex(explosion)
+				
+				local explosion2 = ParticleManager:CreateParticle("particles/custom/abbysal_underlord_custom_darkrift_end.vpcf", PATTACH_POINT, self.parent)
+				ParticleManager:SetParticleControl(explosion2, 0, self.parent:GetAbsOrigin() + Vector(0, 0, 250))
+				ParticleManager:SetParticleControl(explosion2, 5, self.parent:GetAbsOrigin() + Vector(0, 0, 250))
+				ParticleManager:ReleaseParticleIndex(explosion2)
+				
+				local explosion3 = ParticleManager:CreateParticle("particles/custom/base_destruction.vpcf", PATTACH_ABSORIGIN, self.target)
+				ParticleManager:SetParticleControl(explosion3, 0, self.target:GetAbsOrigin())
+				ParticleManager:ReleaseParticleIndex(explosion3)
+				local enemies = FindUnitsInLine(self.parent:GetTeamNumber(),
+					self.parent:GetAbsOrigin(),
+					self.target:GetAbsOrigin(),
+					nil,
+					self.beam_radius,
+					DOTA_UNIT_TARGET_TEAM_BOTH,
+					DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
+					0
+				)
+				for _, enemy in ipairs(enemies) do
+					ApplyDamage({
+						victim = enemy,
+						attacker = self.parent,
+						damage = damage,
+						damage_type = self.ability:GetAbilityDamageType(),
+						ability = self.ability, --Optional.
+						damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
+					})
+				end
+				
 			end
-			self.parent:EmitSound("Hero_Phoenix.SuperNova.Explode")
-			self.target:EmitSound("Hero_Phoenix.SuperNova.Explode")
-			local fx = ParticleManager:CreateParticle("particles/custom_abyssal_underlord_beam.vpcf", PATTACH_POINT, self.parent)
-			ParticleManager:SetParticleControlEnt(fx, 9, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
-			ParticleManager:SetParticleControl(fx, 1, self.target:GetAbsOrigin() + Vector(0, 0, 150))
-			local explosion = ParticleManager:CreateParticle("particles/custom/abbysal_underlord_custom_darkrift_end.vpcf", PATTACH_POINT, self.target)
-			ParticleManager:SetParticleControl(explosion, 0, self.target:GetAbsOrigin() + Vector(0, 0, 250))
-			ParticleManager:SetParticleControl(explosion, 5, self.target:GetAbsOrigin() + Vector(0, 0, 250))
-			ParticleManager:ReleaseParticleIndex(explosion)
-			
-			local explosion2 = ParticleManager:CreateParticle("particles/custom/abbysal_underlord_custom_darkrift_end.vpcf", PATTACH_POINT, self.parent)
-			ParticleManager:SetParticleControl(explosion2, 0, self.parent:GetAbsOrigin() + Vector(0, 0, 250))
-			ParticleManager:SetParticleControl(explosion2, 5, self.parent:GetAbsOrigin() + Vector(0, 0, 250))
-			ParticleManager:ReleaseParticleIndex(explosion2)
-			
-			local explosion3 = ParticleManager:CreateParticle("particles/custom/base_destruction.vpcf", PATTACH_ABSORIGIN, self.target)
-			ParticleManager:SetParticleControl(explosion3, 0, self.target:GetAbsOrigin())
-			ParticleManager:ReleaseParticleIndex(explosion3)
-			local enemies = FindUnitsInLine(self.parent:GetTeamNumber(),
-				self.parent:GetAbsOrigin(),
-				self.target:GetAbsOrigin(),
-				nil,
-				self.beam_radius,
-				DOTA_UNIT_TARGET_TEAM_BOTH,
-				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-				0
-			)
-			for _, enemy in ipairs(enemies) do
-				ApplyDamage({
-					victim = enemy,
-					attacker = self.parent,
-					damage = damage,
-					damage_type = self.ability:GetAbilityDamageType(),
-					ability = self.ability, --Optional.
-					damage_flags = DOTA_DAMAGE_FLAG_NONE, --Optional.
-				})
-			end
-			
-		end
-	)
-	
-end
+		)
+		
+	end
 end
 
 

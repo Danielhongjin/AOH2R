@@ -13,6 +13,7 @@ if IsServer() then
 end
 function terrorblade_custom_dark_realm:OnSpellStart()
 	local caster = self:GetCaster()
+	caster:AddNewModifier(caster, self, "modifier_dark_realm_invincibility", {duration = self:GetChannelTime()})
 	self.duration_extend = self:GetSpecialValueFor("duration_extend")
 	self.outgoing_damage = self:GetSpecialValueFor("outgoing_damage")
 	self.incoming_damage = self:GetSpecialValueFor("incoming_damage")
@@ -53,6 +54,18 @@ function terrorblade_custom_dark_realm:OnChannelFinish()
 			end
 		end
     end
+end
+
+LinkLuaModifier("modifier_dark_realm_invincibility", "abilities/heroes/terrorblade_custom_dark_realm.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_dark_realm_invincibility = class({})
+
+function modifier_dark_realm_invincibility:CheckState()
+	local state = {
+		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
+		[MODIFIER_STATE_INVULNERABLE] = true,
+	}
+
+	return state
 end
 
 LinkLuaModifier("modifier_dark_realm_delay", "abilities/heroes/terrorblade_custom_dark_realm.lua", LUA_MODIFIER_MOTION_NONE)

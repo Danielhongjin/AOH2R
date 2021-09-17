@@ -187,15 +187,6 @@
 			}
 		},
 		{
-			_class = "C_OP_DistanceBetweenCPs"
-			m_flOutputMax = 0.01
-			m_flOutputMin = 1.0
-			m_flInputMax = 1000.0
-			m_flInputMin = 64.0
-			m_nOpEndCapState = 0
-			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
-		},
-		{
 			_class = "C_OP_Decay"
 		},
 		{

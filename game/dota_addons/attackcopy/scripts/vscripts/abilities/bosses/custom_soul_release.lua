@@ -48,7 +48,7 @@ function SoulReleaseOuter(keys)
 							ApplyDamage(damage_table)
 							ability:ApplyDataDrivenModifier(caster, unit, "modifier_soul_release_slow", {})
 						end
-						EmitSoundOn("Hero_Nevermore.RequiemOfSouls", caster)
+						caster:EmitSoundParams("Hero_Nevermore.RequiemOfSouls", 0, 0.5, 0)
 					end
 				)
 				i = i + 1

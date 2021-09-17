@@ -15,6 +15,7 @@ function boss_storm_spirit_sigil:OnSpellStart()
 	)
 end
 
+void_spirit_temp_ability = class(boss_storm_spirit_sigil)
 modifier_storm_sigil_behavior = class({})
 
 function modifier_storm_sigil_behavior:IsPurgable()
@@ -41,10 +42,23 @@ if IsServer() then
 		self.interval = self.ability:GetSpecialValueFor("interval")
 		self.delay = self.ability:GetSpecialValueFor("delay")
 		self.lightning_radius = self.ability:GetSpecialValueFor("lightning_radius")
-		self.fx = ParticleManager:CreateParticle("particles/custom/bear_maul.vpcf", PATTACH_OVERHEAD_FOLLOW, self.parent)
-		ParticleManager:SetParticleControlEnt(self.fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
-		ParticleManager:SetParticleControlEnt(self.fx, 1, self.target, PATTACH_POINT_FOLLOW, "attach_hitloc", self.target:GetAbsOrigin(), true)
-		ParticleManager:SetParticleControl(self.fx, 2, Vector(self:GetAbility():GetSpecialValueFor("duration"), 1, 0))
+		if self.ability:GetAbilityName() == "void_spirit_temp_ability" then
+			self.create_warnings = false
+		end
+		if self.create_warnings == true then
+			self.fx = ParticleManager:CreateParticle("particles/custom/bear_maul.vpcf", PATTACH_OVERHEAD_FOLLOW, self.parent)
+			self.create_warnings = true
+			
+			ParticleManager:SetParticleControlEnt(self.fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControlEnt(self.fx, 1, self.target, PATTACH_POINT_FOLLOW, "attach_hitloc", self.target:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControl(self.fx, 2, Vector(self:GetAbility():GetSpecialValueFor("duration"), 1, 0))
+			self.fx2 = ParticleManager:CreateParticle("particles/custom/follow_circle.vpcf", PATTACH_ABSORIGIN_FOLLOW, self.parent)
+			ParticleManager:SetParticleControlEnt(self.fx2, 0, self.parent, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
+			ParticleManager:SetParticleControl(self.fx2, 1, Vector(self.lightning_radius, 1, 1))
+		end
+		
+		
+		
 		self.damageTable = {
 			-- victim = target,
 			attacker = self.parent,
@@ -58,12 +72,14 @@ if IsServer() then
 	
 	function modifier_storm_sigil_behavior:OnIntervalThink()
 		local pos = self.parent:GetAbsOrigin() + Vector(RandomInt(-self.lightning_radius, self.lightning_radius), RandomInt(-self.lightning_radius, self.lightning_radius))
-		local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, self.parent)
-		ParticleManager:SetParticleControl(fx, 0, pos)
-		ParticleManager:SetParticleControl(fx, 1, Vector(self.radius, 1, 1))
-		ParticleManager:SetParticleControl(fx, 2, Vector(self.delay, 1, 1))
-		ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
-		ParticleManager:ReleaseParticleIndex(fx)
+		if self.create_warnings == true then
+			local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, self.parent)
+			ParticleManager:SetParticleControl(fx, 0, pos)
+			ParticleManager:SetParticleControl(fx, 1, Vector(self.radius, 1, 1))
+			ParticleManager:SetParticleControl(fx, 2, Vector(self.delay, 1, 1))
+			ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
+			ParticleManager:ReleaseParticleIndex(fx)
+		end
 		Timers:CreateTimer(
 			self.delay, 
 			function()
@@ -95,8 +111,12 @@ if IsServer() then
 	end	
 	
 	function modifier_storm_sigil_behavior:OnDestroy()
-		ParticleManager:DestroyParticle(self.fx, true)
-		ParticleManager:ReleaseParticleIndex(self.fx)
+		if self.create_warnings == true then
+			ParticleManager:DestroyParticle(self.fx, true)
+			ParticleManager:ReleaseParticleIndex(self.fx)
+			ParticleManager:DestroyParticle(self.fx2, true)
+			ParticleManager:ReleaseParticleIndex(self.fx2)
+		end
 		self.parent:ForceKill(false)
 	end
 end

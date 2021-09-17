@@ -1,5 +1,7 @@
 LinkLuaModifier("modifier_boss_void_spirit_counter", "abilities/bosses/boss_void_spirit_counter.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_anim", "abilities/other/generic.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_vulnerable", "abilities/other/generic.lua", LUA_MODIFIER_MOTION_NONE)
+LinkLuaModifier("modifier_generic_stunned_lua", "modifiers/modifier_generic_stunned_lua.lua", LUA_MODIFIER_MOTION_NONE)
 require("lib/timers")
 boss_void_spirit_counter = class({})
 
@@ -65,22 +67,40 @@ if IsServer() then
 		if self.parent == victim and not self.has_procced then
 			self.has_procced = true
 			local counter = self.parent:FindAbilityByName("boss_void_spirit_astral_step")
+			local counter_delay = self:GetAbility():GetSpecialValueFor("counter_delay")
 			local forward_vector = (attacker:GetAbsOrigin() - self.parent:GetAbsOrigin()):Normalized()
 			local point = forward_vector * self.range + self.parent:GetAbsOrigin()
 			local origin = self.parent:GetAbsOrigin()
+			self.parent:FaceTowards(point)
 			self.parent:SetCursorPosition(point)
-			counter:OnSpellStart()
+			local fx = ParticleManager:CreateParticle("particles/custom/line_aoe_warning.vpcf", PATTACH_WORLDORIGIN, self.parent)
+			ParticleManager:SetParticleControl(fx, 0, self.parent:GetAbsOrigin())
+			ParticleManager:SetParticleControl(fx, 1, self.parent:GetAbsOrigin())
+			ParticleManager:SetParticleControl(fx, 2, point)
+			ParticleManager:SetParticleControl(fx, 3, Vector(170, 170, 1))
+			ParticleManager:SetParticleControl(fx, 4, Vector(counter_delay * 1.05, 1, 1))
+			ParticleManager:ReleaseParticleIndex(fx)
 			Timers:CreateTimer(
-				0.25, 
+				counter_delay, 
 				function()
-					self.parent:SetCursorPosition(origin)
 					counter:OnSpellStart()
-					self:Destroy()
+					Timers:CreateTimer(
+						0.25, 
+						function()
+							self.parent:SetCursorPosition(origin)
+							counter:OnSpellStart()
+							self:Destroy()
+						end
+					)
 				end
 			)
 		end
 	end
 	
 	function modifier_boss_void_spirit_counter:OnDestroy()
+		if not self.has_procced == true then
+			self.parent:AddNewModifier(self.parent, self, "modifier_vulnerable", {duration = self:GetAbility():GetSpecialValueFor("vulnerable_duration")})
+			self.parent:AddNewModifier(self.parent, nil, "modifier_generic_stunned_lua", {duration = self:GetAbility():GetSpecialValueFor("vulnerable_duration")})
+		end
 	end
 end

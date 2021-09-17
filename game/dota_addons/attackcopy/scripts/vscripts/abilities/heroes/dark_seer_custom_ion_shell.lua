@@ -19,19 +19,19 @@ if IsServer() then
 		self.ability = self:GetAbility()
 		self.parent = self:GetParent()
 		-- Setting attributes
-		local ability_level = self.ability:GetLevel() - 1
-		self.radius = self.ability:GetLevelSpecialValueFor("radius", ability_level) 
-		self.interval = self.ability:GetLevelSpecialValueFor("think_interval", ability_level) 
-		self.damage = self.ability:GetLevelSpecialValueFor("damage_per_second", ability_level) * self.interval
+		self.radius = self.ability:GetSpecialValueFor("radius") 
+		self.interval = self.ability:GetSpecialValueFor("think_interval") 
+		self.damage = self.ability:GetSpecialValueFor("damage_per_second") * self.interval
+		local talent2 = self:GetCaster():FindAbilityByName("dark_seer_custom_bonus_unique_2")
+		if talent2 and talent2:GetLevel() > 0 then
+			self.interval = self.interval / talent2:GetSpecialValueFor("value")
+		end
 		local talent = self:GetCaster():FindAbilityByName("special_bonus_unique_dark_seer")
 		-- Talent modification
 		if talent and talent:GetLevel() > 0 then
 			self.damage = self.damage + talent:GetSpecialValueFor("value") * self.interval
 		end
-		local talent2 = self:GetCaster():FindAbilityByName("dark_seer_custom_bonus_unique_2")
-		if talent2 and talent2:GetLevel() > 0 then
-			self.interval = self.interval / talent2:GetSpecialValueFor("value")
-		end
+		
 		self.caster = self.ability:GetCaster()
 		-- Particle effects
 		self.particle2 = ParticleManager:CreateParticle("particles/units/heroes/hero_dark_seer/dark_seer_ion_shell.vpcf", PATTACH_POINT, self.caster)
@@ -45,7 +45,7 @@ if IsServer() then
 		self.damage_table.attacker = self.caster
 		self.damage_table.damage = self.damage
 		self.damage_table.damage_type = self.ability:GetAbilityDamageType() 
-		self.damage_table.damage_flags = 0,
+		self.damage_table.damage_flags = 0
 		self.damage_table.ability = self.ability
 		-- init
 		self:StartIntervalThink(self.interval)

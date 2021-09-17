@@ -1,19 +1,37 @@
-More translations to chinese by CandiFantasia hooray.
+Conduit now spawns a set distance of 300 away from the direction the hero is casting. Improved particle effects.
 
-Built in blink cooldown reduced from 14 to 4.5 seconds, range from 600 to 325. Easier to trigger than before, double entry window from 0.1 to 0.14 seconds.
-Built in blink now has a particle that shows the cooldown somewhat.
-Performance increased by changing blink code.
+Jakiro reworked, Dual Breath talent reduced from 80x to 3x. Now has a more interesting alternative.
+Leshrac Diabolic Edict damage reduced to vanilla levels, talents reverted. Movement speed talent significantly improved.
 
-Nearly all boss AOE damage has been increased to account for increased ability to dodge.
+TO-DO:
 
-Blink dagger range increased from 1200 to 1400. Duration from 1.5 seconds to 2.0.
+Create an autocast button in options menu.
 
-IO stat gain reduced across the board.
-CHECK CRYSTAL MAIDEN BLIZZARD ORB FOR PARTICLE EFFECT PARENT
-CHANGED FORMATED_NUMBER TO FORMATTED NUMBER: CHECK LIBRARIES
 replace IO ult.
 
 Implement score system.
 
-Fix playerhelp, make him not killable and move him out of game when he "dies".
-increase power of legion commander
+ursa
+luna
+tiny
+lone druid
+doom
+phantom lancer
+wraith king
+oracle
+
+
+Make each diamond give +1 all attributes.
+Make diamonds get used up on ancient "death".
+
+Think over an armor system.
+
+
+Integrate firebase into game.
+
+Create basic skill tree for replayability, spend exp to permanently upgrade yourself in all future games. Mostly small upgrades.
+Will exist to make higher difficulties possible.
+
+
+Modifying generic_target to be able to take multiple iterations.
+Making generic_aoe more reliable.

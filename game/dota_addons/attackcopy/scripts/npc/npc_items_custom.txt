@@ -109,6 +109,12 @@
 	"ItemCost"						"99999"
     "ItemPurchasable"				"0"
 }
+"item_aghanims_shard"
+{
+	"ItemCost"						"1800"
+	"ItemInitialStockTime"			"390.0"
+	"ItemInitialStockTimeTurbo"		"390.0"
+}
 "item_ancient_janggo"
 {
 	"AbilityCooldown"				"30.0"
@@ -118,11 +124,6 @@
 	"ItemRequiresCharges"			"0"
 	"AbilitySpecial"
 	{
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"8"
-		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -194,14 +195,9 @@
 		"09"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"unholy_health_drain_per_tick"	"6 13" 
-		}		
+			"unholy_health_drain_per_second"	"50 90"
+		}					
 		"10"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"unholy_health_drain_per_second_tooltip"	"54 117"
-		}	
-		"11"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"toggle_cooldown"		"0.036f"
@@ -278,14 +274,6 @@
 		}
 	}
 }
-"item_recipe_black_king_bar"
-{
-	"ItemCost"						"300"	
-	"ItemRequirements"
-	{
-		"01"						"item_ogre_axe;item_mithril_hammer;item_black_king_bar_free"
-	}
-}
 "item_black_king_bar"
 {
 	"AbilitySharedCooldown"			"blackking"
@@ -355,8 +343,92 @@
 
 "item_blink"
 {
-    "ItemPurchasable"			"0"
-}	
+    "ItemCost"						"400"
+    "AbilityCooldown"				"12"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "blink_range"			"1900"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "blink_damage_cooldown"	"0"
+        }
+    }
+}	"item_overwhelming_blink"
+	{
+		"AbilityCooldown"				"12"
+		"AbilitySpecial"
+		{
+            "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"1900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blink_damage_cooldown"	"0.0"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_pct"		"200"
+			}
+		}
+	}
+	"item_swift_blink"
+	{
+		"AbilityCooldown"				"12"
+		"AbilitySpecial"
+		{
+            "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"1900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blink_damage_cooldown"	"0.0"
+			}
+            "06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_speed"		"60"
+			}
+		}
+	}
+	"item_arcane_blink"
+	{
+		"AbilityCooldown"				"12"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blink_range"			"1900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blink_damage_cooldown"	"0.0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"base_cooldown"		"12"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"ultimate_cooldown"		"12"
+			}
+		}
+	}
 "item_bloodthorn"
 {
     "MaxUpgradeLevel"               "2"
@@ -428,13 +500,13 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_magical_armor"	"10"
-		}
+			"bonus_intellect"			"40"
+		}	
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"			"16 40"
-		}	
+			"mana_regen_multiplier"		"50 100"
+		}		
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -443,52 +515,57 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"mana_regen_multiplier"		"50 100"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
 			"spell_lifesteal_amp"			"30"
 		}	
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hero_lifesteal"		"7 10"
+		}			
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"regen_per_charge"		"0"
+			"creep_lifesteal"		"7 10"
 		}
 		"09"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"amp_per_charge"		"0"
+			"regen_per_charge"		"0"
 		}
-		"010"
+		"10"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"death_charges"				"0"
+			"var_type"				"FIELD_FLOAT"
+			"amp_per_charge"		"0"
 		}
 		"11"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"kill_charges"			"0"
+			"death_charges"				"0"
 		}
 		"12"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"charge_range"			"0"
+			"kill_charges"			"0"
 		}
 		"13"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"initial_charges_tooltip" "0"
+			"charge_range"			"1600"
 		}
 		"14"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"mana_cost_percentage" "15 30"
+			"initial_charges_tooltip" "14"
 		}
 		"15"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"restore_duration" "6.0"
+			"restore_duration" "2.0"
+		}
+		"16"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_cost_percentage" "30"
 		}
 	}	
 }
@@ -612,22 +689,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"6 9 12 15 18"
+			"bonus_int"		"14 17 20 23 26"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"550 750 950 1150"
+			"bonus_str"		"6 8 10 12 14"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"damage_delay"				"0"
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agi"		"6 8 10 12 14"
 		}
 		"04"
 		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"550 750 950 1150 1350"
+		}
+		"05"
+		{
 			"var_type"				"FIELD_FLOAT"
-			"mana_cost_tooltip"		"120 140 160 180 200"
+			"damage_delay"			"0"
 		}
 	}
 }
@@ -639,22 +721,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"6 9 12 15 18"
+			"bonus_int"				"14 17 20 23 26"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"550 750 950 1150"
+			"bonus_str"				"6 8 10 12 14"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"damage_delay"				"0"
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agi"				"6 8 10 12 14"
 		}
 		"04"
 		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"550 750 950 1150 1350"
+		}
+		"05"
+		{
 			"var_type"				"FIELD_FLOAT"
-			"mana_cost_tooltip"		"120 140 160 180 200"
+			"damage_delay"			"0"
 		}
 	}
 }
@@ -666,22 +753,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"6 9 12 15 18"
+			"bonus_int"				"14 17 20 23 26"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"550 750 950 1150"
+			"bonus_str"				"6 8 10 12 14"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"damage_delay"				"0"
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agi"				"6 8 10 12 14"
 		}
 		"04"
 		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"550 750 950 1150 1350"
+		}
+		"05"
+		{
 			"var_type"				"FIELD_FLOAT"
-			"mana_cost_tooltip"		"120 140 160 180 200"
+			"damage_delay"			"0"
 		}
 	}
 }
@@ -693,22 +785,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"6 9 12 15 18"
+			"bonus_int"				"14 17 20 23 26"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"550 750 950 1150"
+			"bonus_str"				"6 8 10 12 14"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"damage_delay"				"0"
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agi"				"6 8 10 12 14"
 		}
 		"04"
 		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"550 750 950 1150 1350"
+		}
+		"05"
+		{
 			"var_type"				"FIELD_FLOAT"
-			"mana_cost_tooltip"		"120 140 160 180 200"
+			"damage_delay"			"0"
 		}
 	}
 }
@@ -720,22 +817,27 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"6 9 12 15 18"
+			"bonus_int"				"14 17 20 23 26"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"550 750 950 1150"
+			"bonus_str"				"6 8 10 12 14"
 		}
 		"03"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"damage_delay"				"0"
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agi"				"6 8 10 12 14"
 		}
 		"04"
 		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"				"550 750 950 1150 1350"
+		}
+		"05"
+		{
 			"var_type"				"FIELD_FLOAT"
-			"mana_cost_tooltip"		"120 140 160 180 200"
+			"damage_delay"			"0"
 		}
 	}
 }
@@ -923,17 +1025,17 @@
 {
 	"AbilitySpecial"
 	{			
-		"03"
+		"02"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"fade_delay"				"0.4"
 		}
-		"04"
+		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"active_magical_armor"	"60"
 		}
-		"05"
+		"04"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"duration"	"6"
@@ -994,6 +1096,192 @@
         }
     }
 }
+"item_gungir"
+{
+	"MaxUpgradeLevel"               "2"
+	"ItemBaseLevel"                 "1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chain_chance"			"30 38"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chain_damage"			"200 280"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chain_strikes"			"4"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chain_radius"			"650"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"chain_delay"			"0.25"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"chain_cooldown"		"0.2"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"		"20 35"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"12 25"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"12 25"
+		}
+		"11"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"2.0"
+		}
+		"12"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"			"450"
+		}
+		"13"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"active_damage"			"330 550"
+		}
+	}
+}
+"item_recipe_gungir_2"
+{
+    "BaseClass"                     "item_recipe_gungir"
+    "ItemCost"						"800"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_gungir_2"
+    "ItemRequirements"
+    {
+        "01"						"item_gungir;item_ultimate_orb"
+    }
+}
+"item_gungir_2"
+{
+	"BaseClass"						"item_gungir"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"FightRecapLevel"				"1"
+	"SpellDispellableType"			"SPELL_DISPELLABLE_YES"
+	"AbilitySharedCooldown"			"atos"
+	"AbilityCooldown"				"12"
+	"AbilityCastRange"				"1100"
+	"AbilityCastPoint"				"0.0"
+	"AbilityManaCost"				"200"
+	"AbilityTextureName"		    "gungir_2"
+	"ItemShopTags"					"damage;attack_speed;unique"
+	"ItemQuality"					"artifact"
+	"ItemAliases"					"gleipnir;gliepnir;glaypnir"
+	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+	"ShouldBeSuggested"				"1"
+	"MaxUpgradeLevel"               "2"
+	"ItemBaseLevel"                 "2"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"30"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chain_chance"			"30 38"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chain_damage"			"200 280"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chain_strikes"			"4"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"chain_radius"			"650"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"chain_delay"			"0.25"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"chain_cooldown"		"0.2"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intellect"		"20 35"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"		"12 25"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_agility"			"12 25"
+		}
+		"11"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"2.0"
+		}
+		"12"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"			"450"
+		}
+		"13"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"active_damage"			"330 550"
+		}
+	}
+}
+"item_ultimate_scepter"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_all_stats"		"15"
+			}
+		}
+	}
 "item_recipe_ultimate_scepter_2"
 {
 	"ItemRequirements"
@@ -1079,31 +1367,21 @@
             "bonus_mana"			"325 425"
         }
         "03"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "health_regen"	        "10 18"
-        }
-        "04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"aura_health_regen"		"4.5 7.5"
+		}
+        "05"
         {
             "var_type"				"FIELD_INTEGER"
             "heal_increase"		    "25 40"
         }
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_charges"			"20"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"charge_radius"			"1200"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"8"
-		}
 		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_all_stats"		"8 15"
+		}
+		"09"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"restore_per_charge"	"45 90"
@@ -1116,11 +1394,6 @@
 	"AbilityCastRange"				"2000"
 	"AbilitySpecial"
 	{
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"bonus_health_regen"	"5.5"
-		}
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -1184,104 +1457,79 @@
     {
         "01"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_strength"		                        "10 20"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_strength"		"10 20"
         }
         "02"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_agility"			                        "26 38"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_agility"			"26 38"
         }
         "03"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_intellect"		                        "10 20"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_intellect"		"10 20"
         }
         "04"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_attack_speed"	                        "12 22"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_attack_speed"	"12 24"
         }
         "05"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_movement_speed"	                        "20 25"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_movement_speed"	"20 25"
         }
         "06"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_count"			                        "2"
+            "var_type"				"FIELD_INTEGER"
+            "images_count"			"2"
         }			
         "07"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_illusion_duration"			            "20"
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_illusion_duration"			"20"
         }
         "08"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_do_damage_percent_melee"	            "-30 -10"
+            "var_type"				"FIELD_INTEGER"
+            "images_do_damage_percent_melee"	"-30 -10"
         }
         "09"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_damage_outgoing_melee"			        "70 90"
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_outgoing_melee"			"70 90"
         }	
         "10"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_take_damage_percent_melee"	            "125 50"
+            "var_type"				"FIELD_INTEGER"
+            "images_take_damage_percent"	"225 150"
         }
         "11"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_damage_incoming_melee_total_pct"		"225 150"
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_incoming_total_pct"			"325 250"
         }			
         "12"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_do_damage_percent_ranged"	            "-50 -30"
+            "var_type"				"FIELD_INTEGER"
+            "images_do_damage_percent_ranged"	"-40 -20"
         }
         "13"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_damage_outgoing_ranged"			    "50 70"
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_outgoing_ranged"			"60 80"
         }
         "14"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_take_damage_percent_ranged"	            "200 125"
+            "var_type"				"FIELD_FLOAT"
+            "invuln_duration"		"0.1"
         }
         "15"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_damage_incoming_ranged_total_pct"		"300 225"
+            "var_type"				"FIELD_INTEGER"
+            "vision_radius"			"1000"
         }
-        "16"
-        {
-            "var_type"				                        "FIELD_INTEGER"
-            "cooldown_melee"		                        "20"
-        }
-        "17"
-        {
-            "var_type"				                        "FIELD_INTEGER"
-            "cooldown_ranged_tooltip"		                "30"
-        }
-        "18"
-        {
-            "var_type"				                        "FIELD_FLOAT"
-            "invuln_duration"		                        "0.1"
-        }
-        "19"
-        {
-            "var_type"				                        "FIELD_INTEGER"
-            "vision_radius"			                        "1000"
-        }
-        "20"
-        {
-            "var_type"				                        "FIELD_FLOAT"
-            "tooltip_ranged_cooldown_increase"	            "10"
-        }		
     }
 }
 "item_mask_of_madness"
@@ -1326,7 +1574,7 @@
 			"var_type"				"FIELD_FLOAT"
 			"aura_health_regen"		"6.0"
 		}
-		"05"
+		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"heal_amount"			"375"
@@ -1509,95 +1757,106 @@
 		}
 	}
 }
+"item_recipe_necronomicon"
+{
+    "ItemPurchasable"				"1"
+    "IsObsolete"                    "0"
+}
 "item_necronomicon"
 {
+    "ItemPurchasable"				"1"
+    "IsObsolete"                    "0"
 	"AbilityCooldown"				"35.0"
 	"AbilitySpecial"
 	{		
-		"05"
+		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_damage_tooltip"	"60 75 90"
 		}
-		"06"
+		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_mana_feedback"	"6 9 12"
 		}
-		"07"
+		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_mana_break_tooltip"	"6 9 12"
 		}
-		"11"
+		"12"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"archer_damage_tooltip"	"45 65 85"
 		}
 	}
+}
+"item_recipe_necronomicon_2"
+{
+    "ItemPurchasable"				"1"
+    "IsObsolete"                    "0"
 }
 "item_necronomicon_2"
 {
+    "ItemPurchasable"				"1"
+    "IsObsolete"                    "0"
 	"AbilityCooldown"				"35.0"
 	"AbilitySpecial"
 	{		
-		"05"
+		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_damage_tooltip"	"60 75 90"
 		}
-		"06"
+		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_mana_feedback"	"6 9 12"
 		}
-		"07"
+		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_mana_break_tooltip"	"6 9 12"
 		}
-		"11"
+		"12"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"archer_damage_tooltip"	"45 65 85"
 		}
-		"15"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"archer_attack_speed"	"5 7 9"
-		}	
 	}
+}
+"item_recipe_necronomicon_3"
+{
+    "ItemPurchasable"				"1"
+    "IsObsolete"                    "0"
 }
 "item_necronomicon_3"
 {
+    "ItemPurchasable"				"1"
+    "IsObsolete"                    "0"
 	"AbilityCooldown"				"35.0"
 	"AbilitySpecial"
 	{		
-		"05"
+		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_damage_tooltip"	"60 75 90"
 		}
-		"06"
+		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_mana_feedback"	"6 9 12"
 		}
-		"07"
+		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"warrior_mana_break_tooltip"	"6 9 12"
 		}
-		"11"
+		"12"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"archer_damage_tooltip"	"45 65 85"
 		}
-		"15"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"archer_attack_speed"	"5 7 9"
-		}	
 	}
 }
 "item_recipe_octarine_core"
@@ -2174,12 +2433,26 @@
 }
 "item_tome_of_knowledge"
 {
-    "ItemCost"						"400"
+    "ItemCost"						"600"
     "ItemStockMax"					"10"
-    "ItemStockTime"					"300.0"
-    "ItemInitialStockTime"			"300.0"
+    "ItemStockTime"					"1"
+    "ItemInitialStockTime"			"0.0"
+	"ItemStockInitial"				"1"
     "ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	"AbilityCooldown"				"150.0"
+	"AbilityCooldown"				"0.0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"xp_bonus"				"500"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"xp_per_use"			"50"
+		}
+	}
 }
 "item_tpscroll"
 {
@@ -2306,14 +2579,19 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"mana_regen_aura"		"1.5 4.0"
+			"armor_aura"		"3.0 5.0"
 		}
 		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"mana_regen_aura"		"1.5 4.0"
+		}
+		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"lifesteal_aura"			"7 10"
 		}
-		"03"
+		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"damage_aura"			"18 26"
@@ -2321,68 +2599,23 @@
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"6"
+			"aura_radius"	"1200"
 		}
 	}
 }
 "item_ward_observer"
 {
-    "ItemStockMax"					"10"
-    "ItemStockTime"					"60.0"
+	"ItemCost"						"50"
+    "ItemStockMax"					"4"
+    "ItemStockTime"					"75.0"
     "AbilitySpecial"
     {
-        "01"
-        {
-            "var_type"				        "FIELD_INTEGER"
-            "lifetime"				        "900"
-        }
-        "04"
-        {
-            "var_type"				        "FIELD_INTEGER"
-            "duration_minutes_tooltip"		"15"
-        }
-    }
-}
-"item_black_king_bar_free"
-{
-	"BaseClass"                     "item_black_king_bar"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityCooldown"				"20"
-	"ItemCost"						"700"
-	"ItemSellable"					"0"
-	"AbilityTextureName"		    "free_bar"
-	"ItemShopTags"					"str;damage;hard_to_tag"
-	"ItemQuality"					"common"
-	"ItemAliases"					"free bar"
-	"AbilitySharedCooldown"			"blackking"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_strength"		"0"
-		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"0"
+			"vision_range_tooltip"			"1201"
 		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"1"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_level"				"1"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"model_scale"			"0"     // Percentage over model scale
-		}
-	}
+    }
 }
 "item_boss_unstoppable"
 {
@@ -2398,14 +2631,8 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"	"310"
+			"radius"	"120"
 		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"interval"			"0.15"
-		}
-
 	}
 }
 "item_boss_resistance_20"
@@ -2619,6 +2846,7 @@
 	"ItemQuality"					"epic"
 	"ItemAliases"					"bkb;black king bar"
 	"ItemSellable"					"0"
+	"ItemPurchasable"				"0"
 	"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 	"ShouldBeSuggested"				"0"
 	"AbilitySpecial"
@@ -2697,7 +2925,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"75"
+			"bonus_damage"			"0"
 		}
 		"03"
 		{
@@ -3000,13 +3228,13 @@
 		"03"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"reduced_mana"			"20"
+			"reduced_mana"			"15"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 		"04"
 		{
 			"var_type"					"FIELD_INTEGER"
-			"reduced_attack_speed"			"15"
+			"reduced_attack_speed"			"10"
 			"CalculateSpellDamageTooltip"	"0"
 		}
 	}
@@ -3135,18 +3363,13 @@
 		"09"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"unholy_health_drain_per_tick"	"6 13" 
-		}		
+			"unholy_health_drain_per_second"	"50 90"
+		}					
 		"10"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"unholy_health_drain_per_second_tooltip"	"54 117"
-		}	
-		"11"
 		{
 			"var_type"				"FIELD_FLOAT"
 			"toggle_cooldown"		"0.036f"
-		}				
+		}							
 	}
 }
 "item_recipe_greater_demon_talon"
@@ -3324,7 +3547,6 @@
 }
 "item_recipe_arcane_staff"
 {
-    "ID"							"70081"
     "BaseClass"						"item_datadriven"
     "Model"							"models/props_gameplay/recipe.mdl"
     "AbilityTextureName"			"custom_recipe"
@@ -3334,43 +3556,150 @@
     "ItemResult"					"item_arcane_staff"
     "ItemRequirements"
     {
-        "01"						"item_relic;item_mystic_staff"
+        "01"						"item_demon_edge;item_mystic_staff"
     }
 }
 "item_arcane_staff"
 {
-//	crit percentage and the cost constant is baked into arcane_staff.lua. Not proud of this, but it's a cost saving measure.
-    "ID"							"70082"
+	//	the cost constant is baked into arcane_staff.lua. Not proud of this, but it's a cost saving measure.
     "BaseClass"						"item_lua"
     "ScriptFile"                    "items/arcane_staff.lua"
     "AbilityTextureName"		    "arcane_staff"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.2"
+	"AbilityCooldown"				"21.0"
     "ItemShopTags"					"crit"
     "ItemQuality"					"epic"
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
     "ItemAliases"					"ice staff"
+	"MaxUpgradeLevel"               "2"
+    "ItemBaseLevel"                 "1"
+	"AbilityManaCost"				"100"
     "AbilitySpecial"
     {
         "01"
         {
             "var_type"				"FIELD_INTEGER"
-            "damage"	            "70"
+            "bonus_damage"	            "40"
         }
         "02"
         {
             "var_type"				"FIELD_INTEGER"
-            "bonus_int" 	        "40"
+            "bonus_int" 	        "40 70"
         }
-        "03"
+		"03"
         {
             "var_type"				"FIELD_INTEGER"
-            "crit_damage_mult" 	    "290"
+            "crit_damage_base" 	    "150 225"
 			"CalculateSpellDamageTooltip"	"0"
         }
-		"04"
+        "04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "crit_damage_mult" 	    "165 190"
+			"CalculateSpellDamageTooltip"	"0"
+        }
+		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
-            "cost_constant" 	        "80"
+            "cost_constant" 	        "110"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+            "cost_multiplier" 	        "0.4"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bubble_duration"		"3.0"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bubble_heal_pct"		"4.0 5.5"
+		}
+    }
+}
+"item_recipe_arcane_staff_2"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_arcane_staff_2"
+    "ItemRequirements"
+    {
+        "01"						"item_arcane_staff;item_mystic_staff"
+    }
+}
+"item_arcane_staff_2"
+{
+	//	the cost constant is baked into arcane_staff.lua. Not proud of this, but it's a cost saving measure.
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/arcane_staff.lua"
+    "AbilityTextureName"		    "arcane_staff_2"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityCastRange"				"700"
+	"AbilityCastPoint"				"0.2"
+	"AbilityCooldown"				"21.0"
+    "ItemShopTags"					"crit"
+    "ItemQuality"					"epic"
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_SPECTATORS"
+    "ItemAliases"					"ice staff"
+	"MaxUpgradeLevel"               "2"
+    "ItemBaseLevel"                 "2"
+	"AbilityManaCost"				"100"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_damage"	            "40"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_int" 	        "40 70"
+        }
+		"03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "crit_damage_base" 	    "150 225"
+			"CalculateSpellDamageTooltip"	"0"
+        }
+        "04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "crit_damage_mult" 	    "165 190"
+			"CalculateSpellDamageTooltip"	"0"
+        }
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+            "cost_constant" 	        "110"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+            "cost_multiplier" 	        "0.4"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bubble_duration"		"3.0"
+		}
+		"08"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bubble_heal_pct"		"4.0 5.5"
 		}
     }
 }
@@ -3380,6 +3709,7 @@
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
     "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
     "AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+    "AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_NOT_CREEP_HERO"
     "Model"							"models/props_gameplay/gold_bag.vmdl"
     "ItemKillable"					"0"
     "AbilityCastRange"				"100"
@@ -3390,7 +3720,7 @@
     "ItemQuality"					"consumable"
     "ItemStackable"					"1"
     "ItemShareability"				"ITEM_FULLY_SHAREABLE"
-    "ItemPermanent"					"0"
+    "ItemPermanent"					"1"
     "ItemInitialCharges"			"1"
     "ItemKillable"					"0"
 }
@@ -3608,20 +3938,6 @@
         }
     }
 }
-
-"item_recipe_custom_blink"
-{
-    "BaseClass"						"item_datadriven"
-    "AbilityTextureName"			"custom_recipe"
-    "ItemCost"						"600"	
-    "ItemShopTags"					""
-    "ItemRecipe"					"1"
-    "ItemResult"					"item_custom_blink"
-    "ItemRequirements"
-    {
-        "01"						"item_black_king_bar_free"
-    }
-}
 "item_custom_blink"
 {
     "BaseClass"						"item_lua"
@@ -3631,6 +3947,8 @@
     "ItemQuality"					"epic"
     "ItemAliases"					"blink dagger"
     "AbilityCastRange"				"9999"
+	"ItemPurchasable"						"0"
+    "ItemCost"						"400"
 	"AbilityCastPoint"				"0.0"
 	"AbilityCooldown"				"13"
 	"AbilityManaCost"				"0"
@@ -4635,106 +4953,81 @@
     "ItemBaseLevel"                 "2"
     "AbilitySpecial"
     {
-        "01"
+       "01"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_strength"		                        "10 20"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_strength"		"10 20"
         }
         "02"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_agility"			                        "26 38"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_agility"			"26 38"
         }
         "03"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_intellect"		                        "10 20"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_intellect"		"10 20"
         }
         "04"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_attack_speed"	                        "12 22"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_attack_speed"	"12 24"
         }
         "05"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "bonus_movement_speed"	                        "20 25"
+            "var_type"				"FIELD_INTEGER"
+            "bonus_movement_speed"	"20 25"
         }
         "06"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_count"			                        "2"
+            "var_type"				"FIELD_INTEGER"
+            "images_count"			"2"
         }			
         "07"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_illusion_duration"			            "20"
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_illusion_duration"			"20"
         }
         "08"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_do_damage_percent_melee"	            "-30 -10"
+            "var_type"				"FIELD_INTEGER"
+            "images_do_damage_percent_melee"	"-30 -10"
         }
         "09"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_damage_outgoing_melee"			        "70 90"
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_outgoing_melee"			"70 90"
         }	
         "10"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_take_damage_percent_melee"	            "125 50"
+            "var_type"				"FIELD_INTEGER"
+            "images_take_damage_percent"	"225 150"
         }
         "11"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_damage_incoming_melee_total_pct"		"225 150"
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_incoming_total_pct"			"325 250"
         }			
         "12"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_do_damage_percent_ranged"	            "-50 -30"
+            "var_type"				"FIELD_INTEGER"
+            "images_do_damage_percent_ranged"	"-40 -20"
         }
         "13"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_damage_outgoing_ranged"			    "50 70"
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_outgoing_ranged"			"60 80"
         }
         "14"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "images_take_damage_percent_ranged"	            "200 125"
+            "var_type"				"FIELD_FLOAT"
+            "invuln_duration"		"0.1"
         }
         "15"
         {
-            "var_type"				                        "FIELD_INTEGER"
-            "tooltip_damage_incoming_ranged_total_pct"		"300 225"
+            "var_type"				"FIELD_INTEGER"
+            "vision_radius"			"1000"
         }
-        "16"
-        {
-            "var_type"				                        "FIELD_INTEGER"
-            "cooldown_melee"		                        "20"
-        }
-        "17"
-        {
-            "var_type"				                        "FIELD_INTEGER"
-            "cooldown_ranged_tooltip"		                "30"
-        }
-        "18"
-        {
-            "var_type"				                        "FIELD_FLOAT"
-            "invuln_duration"		                        "0.1"
-        }
-        "19"
-        {
-            "var_type"				                        "FIELD_INTEGER"
-            "vision_radius"			                        "1000"
-        }
-        "20"
-        {
-            "var_type"				                        "FIELD_FLOAT"
-            "tooltip_ranged_cooldown_increase"	            "10"
-        }		
     }
 }
 "item_recipe_great_shivas_guard"
@@ -4824,16 +5117,16 @@
 }
 "item_recipe_health_bag"
 {
-    "ID"							"70131"
-    "Model"							"models/props_gameplay/recipe.vmdl"
-    "BaseClass"						"item_recipe_magic_wand"
-    "ItemCost"						"0"	
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"1000"	
     "ItemShopTags"					""
     "ItemRecipe"					"1"
     "ItemResult"					"item_health_bag"
     "ItemRequirements"
     {
-        "01"						"item_crown;item_ring_of_tarrasque;item_ring_of_tarrasque"
+        "01"						"item_crown;item_ring_of_regen;item_vitality_booster"
     }
 }
 "item_health_bag"
@@ -4899,17 +5192,16 @@
 }
 "item_recipe_health_bag_2"
 {
-    "ID"							"70133"
-    "Model"							"models/props_gameplay/recipe.vmdl"
-    "BaseClass"						"item_recipe_magic_wand"
-	"AbilityTextureName"			"item_recipe"
-    "ItemCost"						"600"
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.mdl"
+    "AbilityTextureName"			"custom_recipe"
+    "ItemCost"						"1000"	
     "ItemShopTags"					""
     "ItemRecipe"					"1"
     "ItemResult"					"item_health_bag_2"
     "ItemRequirements"
     {
-        "01"						"item_health_bag;item_crown;item_ring_of_tarrasque"
+        "01"						"item_health_bag;item_ring_of_regen;item_vitality_booster"
     }
 }
 "item_health_bag_2"
@@ -4987,27 +5279,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"400"
+			"bonus_health"			"250"
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"60 90 120"
-		}
-		"04"
-		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.1 1.25 1.4"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"2"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"2"
+			"health_regen_pct"		"1.15 1.35 1.55"
 		}
 	}
 }
@@ -5048,27 +5325,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"400"
+			"bonus_health"			"250"
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"60 90 120"
-		}
-		"04"
-		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.1 1.25 1.4"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"2"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"2"
+			"health_regen_pct"		"1.15 1.35 1.55"
 		}
 	}
 }
@@ -5109,27 +5371,12 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"400"
+			"bonus_health"			"250"
 		}
 		"03"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"hp_regen_amp"			"60 90 120"
-		}
-		"04"
-		{
 			"var_type"				"FIELD_FLOAT"
-			"health_regen_pct"		"1.1 1.25 1.4"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cooldown_melee"		"2"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"cooldown_ranged_tooltip"		"2"
+			"health_regen_pct"		"1.15 1.35 1.55"
 		}
 	}
 }
@@ -5547,7 +5794,7 @@
     "ItemResult"					"item_custom_octarine_core_1"
     "ItemRequirements"
     {
-        "01"						"item_mystic_staff;item_soul_booster"
+        "01"						"item_voodoo_mask;item_soul_booster"
     }
 }
 "item_custom_octarine_core_1"
@@ -5565,20 +5812,21 @@
 	"ItemBaseLevel"             "1"
 	"AbilitySpecial"
 	{
+		
 		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_intelligence"	"25 50"
-		}
-		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_health"			"425 650"
 		}
-		"03"
+		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_mana"			"425 650"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_magical_armor"	"10 20"
 		}
 		"04"
 		{
@@ -5625,17 +5873,17 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_intelligence"	"25 50"
+			"bonus_health"			"425 650"
 		}
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_health"			"425 650"
+			"bonus_mana"			"425 650"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_mana"			"425 650"
+			"bonus_magical_armor"	"10 20"
 		}
 		"04"
 		{
@@ -5808,7 +6056,7 @@
         "04"
         {
             "var_type"				"FIELD_INTEGER"
-            "damage_to_mana"	    "20"
+            "damage_to_mana"	    "25"
         }
     }
 }
@@ -7292,19 +7540,24 @@
 		"01"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"mana_regen_aura"		"1.5 4.0"
+			"armor_aura"		"3.0 5.0"
 		}
 		"02"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"lifesteal_aura"		"7 10"
+			"var_type"				"FIELD_FLOAT"
+			"mana_regen_aura"		"1.5 4.0"
 		}
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage_aura"			"18 26"
+			"lifesteal_aura"			"7 10"
 		}
 		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_aura"			"18 26"
+		}
+		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"aura_radius"	"1200"
@@ -7384,7 +7637,7 @@
     "ItemResult"					"item_wicked_locket"
     "ItemRequirements"
     {
-        "01"						"item_holy_locket;item_ring_of_tarrasque"
+        "01"						"item_holy_locket;item_ring_of_regen;item_ring_of_regen"
     }
 }
 "item_wicked_locket"
@@ -7416,34 +7669,44 @@
             "bonus_mana"			"325 425"
         }
         "03"
-        {
-            "var_type"				"FIELD_FLOAT"
-            "health_regen"	        "10 18"
-        }
-        "04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"aura_health_regen"		"4.5 7.5"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"			"1200"
+		}
+        "05"
         {
             "var_type"				"FIELD_INTEGER"
             "heal_increase"		    "25 40"
         }
-		"05"
+		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"max_charges"			"20"
 		}
-		"06"
+		"07"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"charge_radius"			"1200"
 		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_all_stats"		"8"
-		}
 		"08"
 		{
 			"var_type"				"FIELD_INTEGER"
+			"bonus_all_stats"		"8 15"
+		}
+		"09"
+		{
+			"var_type"				"FIELD_INTEGER"
 			"restore_per_charge"	"45 90"
+		}
+		"10"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"charge_gain_timer"		"15"
 		}
 	}
 }
@@ -7510,7 +7773,7 @@
     "AbilityCastPoint"				"0.0"
     "AbilityCooldown"				"0.0"
     "AbilityManaCost"				"0"
-    "ItemCost"						"99999"
+    "ItemCost"						"999999"
     "ItemPurchasable"				"0"
     "AbilitySpecial"
     {
@@ -7522,7 +7785,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"damage"				"100000"
+			"damage"				"200000"
 		}
 		"03"
 		{
@@ -7536,13 +7799,69 @@
 		}
     }
 }
+"item_dev_manafill"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_dagon"
+	"AbilityCastRange"				"99999"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	"ItemCost"						"999999"
+	"ItemPurchasable"				"0"
+
+	"AbilitySpecial"
+	{
+	}
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"items/dev_tools.lua"
+			"Function"			"manafill"
+		}
+	}
+}
+"item_dev_25"
+{
+	"BaseClass"						"item_datadriven"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"Model"							"models/props_gameplay/red_box.vmdl" 
+	"Effect"						"particles/generic_gameplay/dropped_item.vpcf"
+	"AbilityTextureName"			"item_dagon_5"
+	"AbilityCastRange"				"99999"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCooldown"				"0"
+	"AbilityManaCost"				"0"
+	"ItemCost"						"999999"
+	"ItemPurchasable"				"0"
+
+	"AbilitySpecial"
+	{
+	}
+	"OnSpellStart"
+	{
+		"RunScript"
+		{
+			"ScriptFile"		"items/dev_tools.lua"
+			"Function"			"damage25"
+		}
+	}
+}
 "item_dev_heart"
 {
     "ID"							"70194"
     "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
     "BaseClass"						"item_heart"
     "AbilityTextureName"		    "item_heart"
-    "ItemCost"						"99999"
+    "ItemCost"						"999999"
     "ItemPurchasable"				"0"
     "AbilitySpecial"
     {
@@ -7577,6 +7896,57 @@
 			"cooldown_ranged_tooltip"		"0"
 		}
     }
+}
+"item_dev_octarine_core"
+{
+	"BaseClass"						"item_octarine_core"
+	"AbilityTextureName"			"item_octarine_core"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"ItemCost"						"999999"
+	"ItemPurchasable"				"0"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_intelligence"	"0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"0"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"100000"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_magical_armor"	"0"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_cooldown"		"95"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hero_lifesteal"		"0"
+		}			
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"creep_lifesteal"		"0"
+		}	
+		"08"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"active_duration"		"0"
+		}
+	}
 }
 "item_empty_1"
 {
@@ -7649,6 +8019,46 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_armor"		"3"
+		}
+	}
+}
+"item_recipe_chipped_vest"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_chipped_vest"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_chipped_vest"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemSellable"					"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hp_regen"			"11.5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_return_hero"			"40"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_return_creep"			"40"
 		}
 	}
 }
@@ -7737,14 +8147,14 @@
 	"ItemSellable"					"0"
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"range"	"1500"
-		}
+        {
+            "var_type"				"FIELD_INTEGER"
+            "max_range"	"600"
+        }
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -7832,6 +8242,45 @@
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
 	"ItemPurchasable"				"1"
+}
+"item_recipe_mysterious_hat"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"350"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_mysterious_hat"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_1"	
+    }
+}
+"item_mysterious_hat"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_health"			"100"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"spell_amp"			"8"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"manacost_reduction"			"8"
+		}		
+	}
 }
 "item_enchanted_mango"
 {
@@ -8496,7 +8945,7 @@
 	"ItemSellable"					"0"
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"02"
@@ -8519,6 +8968,89 @@
 	"ItemSellable"					"0"
 	"ItemCost"						"2000"	
 }
+"item_recipe_ceremonial_robe"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_ceremonial_robe"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_ceremonial_robe"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_mana"			"350"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"aura_radius"			"1200"
+		}		
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"status_resistance"			"10"
+		}	
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance"			"10"
+		}		
+	}
+}
+"item_recipe_cloak_of_flames"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_cloak_of_flames"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_cloak_of_flames"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor"			"6"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"magic_resistance"			"12"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"			"65"
+		}	
+	}
+}
 "item_recipe_craggy_coat"
 {
     "BaseClass"						"item_datadriven"
@@ -8540,7 +9072,7 @@
 	"ItemSellable"					"0"
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -8633,7 +9165,7 @@
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"ItemIsNeutralDrop"				"0"
 	"ItemSellable"					"0"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"ItemPermanent"					"1"
 	"ItemRequiresCharges"			"0"
 	"ItemDisplayCharges"			"0"
@@ -8723,24 +9255,6 @@
 	"ItemIsNeutralDrop"				"0"
 	"ItemSellable"					"0"
 	"ItemPurchasable"				"1"
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"17"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_lifesteal"			"17"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_amp"			"20"
-		}
-	}
 }
 "item_recipe_pocket_tower"
 {
@@ -8793,6 +9307,60 @@
 		}			
 	}
 }
+"item_recipe_quicksilver_amulet"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"1200"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_quicksilver_amulet"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_3"	
+    }
+}
+"item_quicksilver_amulet"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_movement"			"5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_attack"			"10"
+		}		
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_movement"			"5"
+		}	
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_attack"			"15"
+		}	
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"anim_increase"			"30"
+		}	
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"projectile_increase"			"30"
+		}		
+	}
+	}
 "item_recipe_spy_gadget"
 {
     "BaseClass"						"item_datadriven"
@@ -8983,13 +9551,13 @@
 		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_magical_armor"	"10"
-		}
+			"bonus_intellect"			"40"
+		}	
 		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"bonus_intellect"			"16 40"
-		}	
+			"mana_regen_multiplier"		"50 100"
+		}		
 		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
@@ -8998,52 +9566,57 @@
 		"06"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"mana_regen_multiplier"		"50 100"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
 			"spell_lifesteal_amp"			"30"
 		}	
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"hero_lifesteal"		"7 10"
+		}			
 		"08"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"regen_per_charge"		"0"
+			"creep_lifesteal"		"7 10"
 		}
 		"09"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"amp_per_charge"		"0"
+			"regen_per_charge"		"0"
 		}
-		"010"
+		"10"
 		{
-			"var_type"				"FIELD_INTEGER"
-			"death_charges"				"0"
+			"var_type"				"FIELD_FLOAT"
+			"amp_per_charge"		"0"
 		}
 		"11"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"kill_charges"			"0"
+			"death_charges"				"0"
 		}
 		"12"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"charge_range"			"0"
+			"kill_charges"			"0"
 		}
 		"13"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"initial_charges_tooltip" "0"
+			"charge_range"			"1600"
 		}
 		"14"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"mana_cost_percentage" "15 30"
+			"initial_charges_tooltip" "14"
 		}
 		"15"
 		{
 			"var_type"				"FIELD_FLOAT"
-			"restore_duration" "6.0"
+			"restore_duration" "2.0"
+		}
+		"16"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"mana_cost_percentage" "30"
 		}
 	}	
 }
@@ -9068,7 +9641,7 @@
 	"ItemGloballyCombinable"		"0"
 	"ItemIsNeutralDrop"				"0"
 	"ItemSellable"					"0"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"AbilitySpecial"
 	{
 		"01"
@@ -9253,29 +9826,24 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"radius"	"265"
+			"radius"	"85"
 		}
 		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"interval"			"0.15"
-		}
-		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_health_pct"			"10"
 		}
-		"04"
+		"03"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"spell_amp_pct"			"70"
 		}
-		"05"
+		"04"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_attack_speed"			"-60"
 		}
-		"06"
+		"05"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_health"			"400"
@@ -9419,7 +9987,79 @@
 		}
 	}
 }
-
+"item_recipe_penta_edged_sword"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"100"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_penta_edged_sword"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"
+    }
+}
+"item_penta_edged_sword"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"			"50"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"maim_slow_attack"			"40"
+		}		
+	}
+}
+"item_recipe_stormcrafter"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"2500"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_stormcrafter"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_4"	
+    }
+}
+"item_stormcrafter"
+{
+	"ItemIsNeutralDrop"				"0"
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage"			"150"
+		}		
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"interval"			"1"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"bonus_mana_regen"			"8"
+		}		
+	}
+}
 "item_recipe_ultimate_dagon"
 {
     "ID"							"70173"
@@ -9447,6 +10087,7 @@
     "AbilityCastPoint"				"0.0"
     "AbilityCooldown"				"10.0"
     "AbilitySharedCooldown"			"dagon"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
     "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
     "AbilityManaCost"				"300"
 	"ItemCost"						"12600"
@@ -9498,7 +10139,7 @@
 	"ItemSellable"					"0"
 	"ItemCost"						"0"
 	"ItemGloballyCombinable"		"0"
-	"ItemPurchasable"				"1"
+	"ItemPurchasable"				"0"
 	"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	"AbilitySpecial"
 	{
@@ -9557,7 +10198,7 @@
 		"01"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"primary_stat_percent"		"45"
+			"primary_stat_percent"		"40"
 		}
 	}
 }
@@ -9791,7 +10432,7 @@
 	"ItemIsNeutralDrop"				"1"
 	"ItemRequirements"
 	{
-		"01"						"item_custom_blink;item_meteor_hammer;item_chest_5"
+		"01"						"item_blink;item_meteor_hammer;item_chest_5"
 	}
 }
 "item_fallen_sky"
@@ -9850,6 +10491,11 @@
 		{
 			"var_type"				"FIELD_INTEGER"
 			"impact_damage_units"		"1250"
+		}
+		"15"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"blink_damage_cooldown"	"0.0"
 		}
 	}
 }
@@ -9917,6 +10563,55 @@
 			"var_type"				"FIELD_FLOAT"
 			"cooldown"		"50"
 		}
+	}
+}
+"item_recipe_giants_ring"
+{
+    "BaseClass"						"item_datadriven"
+    "Model"							"models/props_gameplay/recipe.vmdl"
+    "AbilityTextureName"			"item_recipe"
+    "ItemCost"						"6000"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_giants_ring"
+	"ItemIsNeutralDrop"				"1"
+    "ItemRequirements"
+    {
+        "01"						"item_chest_5"
+    }
+}
+"item_giants_ring"
+{
+	"ItemCost"						"0"
+	"ItemGloballyCombinable"		"0"
+	"ItemPurchasable"				"1"
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_strength"			"40"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movement_speed"			"60"
+		}		
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"model_scale"			"60"
+		}	
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"pct_str_damage_per_second"			"150"
+		}	
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_radius"			"100"
+		}		
 	}
 }
 "item_phoenix_ash"
@@ -9993,7 +10688,7 @@
 		"02"
 		{
 			"var_type"				"FIELD_INTEGER"
-			"vision_bonus"			"1500"
+			"vision_bonus"			"1000"
 		}
 		"03"
 		{

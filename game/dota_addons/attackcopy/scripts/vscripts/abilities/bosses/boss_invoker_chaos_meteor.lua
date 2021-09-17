@@ -8,7 +8,7 @@ LinkLuaModifier( "modifier_invoker_chaos_meteor_lua_burn", "abilities/bosses/bos
 function boss_invoker_chaos_meteor:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()
-	local point = self:GetCursorPosition()
+	local point = caster:GetCursorPosition()
 	-- create thinker
 	CreateModifierThinker(
 		caster, -- player source

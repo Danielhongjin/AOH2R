@@ -1,0 +1,56 @@
+<root>
+
+    <styles>
+        <include src="s2r://panorama/styles/custom_game_info.vcss_c"/>
+    </styles>
+
+    <scripts>
+        <include src="s2r://panorama/scripts/utils.vjs_c"/>
+        <include src="s2r://panorama/scripts/custom_game_info.vjs_c"/>
+    </scripts>
+
+    <Panel class="custom_game_info_root_panel">
+
+        <Button id="game_info_button" onactivate="on_info_button_click()">
+            <Panel class="button_icon_panel"/>
+        </Button>
+
+        <Panel class="game_info_panel">
+
+            <Panel class="title_panel">
+                <Label class="title" text="#game_info_game_name"/>
+				<Label class="title_major" text="#game_info_game_name_major"/>
+            </Panel>
+
+            <Panel class="description_root_panel">
+ 
+                <Panel class="description_panel" onmouseover="UIShowTextTooltipStyled(#dash_info_detailed, ShortTextTooltip)" onmouseout="UIHideTextTooltip()">
+					<Image id="dash_image" src="file://{images}/custom_game/custom_game_info/dash.png" /> 
+                    <Label class="description" text="#game_info_dash"/>
+                </Panel>
+
+                <Panel class="description_panel" onmouseover="UIShowTextTooltipStyled(#outpost_info_detailed, ShortTextTooltip)" onmouseout="UIHideTextTooltip()">
+					<Image id="outpost_image" src="file://{images}/custom_game/custom_game_info/outpost.png" />
+					<Label class="description" text="#game_info_outposts"/>
+                </Panel> 
+                <Panel class="description_panel" onmouseover="UIShowTextTooltipStyled(#item_info_detailed, ShortTextTooltip)" onmouseout="UIHideTextTooltip()">
+					<Image id="item_image" src="file://{images}/custom_game/custom_game_info/item_spread.png" />
+					<Label class="description" text="#game_info_items"/>
+                </Panel> 
+                <Panel class="description_panel">
+                    <Panel class="sideway">
+                        <Image class="image_icon" src="file://{images}/custom_game/custom_game_info/discord_logo.png" onactivate="OnDiscordClick()"/>
+                        <Label class="footer" text="#game_info_footer"/>
+                    </Panel>
+                </Panel>
+				<Label class="endtext_footer" text="#game_info_endtext_footer"/>
+				<Label class="endtext" text="#game_info_endtext" onmouseover="UIShowTextTooltipStyled(#game_info_endtext_detailed, ShortTextTooltip)" onmouseout="UIHideTextTooltip()"/>
+				<Label class="endtext_footer" text="#game_info_endtext_footer_footer"/> 
+            </Panel>
+
+
+        </Panel>
+
+    </Panel>
+
+</root>

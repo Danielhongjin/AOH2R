@@ -19,7 +19,9 @@ function boss_kobold_command:OnSpellStart()
 		false
 	)
 	for _,ally in pairs(allies) do
-		ally:AddNewModifier(target, self, "modifier_kobold_command", {duration = self:GetSpecialValueFor("duration")})
+		if not ally:HasModifier("modifier_kobold_command") then
+			ally:AddNewModifier(target, self, "modifier_kobold_command", {duration = self:GetSpecialValueFor("duration")})
+		end
 	end
 end
 
@@ -81,24 +83,19 @@ if IsServer() then
 		ParticleManager:SetParticleControlEnt(self.fx, 0, self.parent, PATTACH_POINT_FOLLOW, "attach_hitloc", self.parent:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(self.fx, 1, self.target, PATTACH_POINT_FOLLOW, "attach_hitloc", self.target:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControl(self.fx, 2, Vector(self:GetAbility():GetSpecialValueFor("duration"), 1, 0))
+		self.parent:SetForceAttackTarget(self.target)
 		self:StartIntervalThink(0.25)
 	end
 	
 	
 	function modifier_kobold_command:OnIntervalThink()
-		if not self.target:IsMagicImmune() then
-			local attackOrder = {
-				UnitIndex = self.parent:entindex(), 
-				OrderType = DOTA_UNIT_ORDER_ATTACK_TARGET,
-				TargetIndex = self.target:entindex()
-			}
-			ExecuteOrderFromTable(attackOrder)
-		else
+		if self.target:IsMagicImmune() then
 			self:Destroy()
 		end
 	end	
 	
 	function modifier_kobold_command:OnDestroy()
+		self.parent:SetForceAttackTarget(nil)
 		ParticleManager:DestroyParticle(self.fx, true)
 		ParticleManager:ReleaseParticleIndex(self.fx)
 	end

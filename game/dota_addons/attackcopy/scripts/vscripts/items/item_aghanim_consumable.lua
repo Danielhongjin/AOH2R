@@ -69,13 +69,13 @@ function modifier_item_aghanim_permanent:GetModifierScepter()
 	return 1
 end
 function modifier_item_aghanim_permanent:GetModifierBonusStats_Agility()
-	return 10
+	return 15
 end
 function modifier_item_aghanim_permanent:GetModifierBonusStats_Strength()
-	return 10
+	return 15
 end
 function modifier_item_aghanim_permanent:GetModifierBonusStats_Intellect()
-	return 10
+	return 15
 end
 function modifier_item_aghanim_permanent:GetModifierHealthBonus()
 	return 175

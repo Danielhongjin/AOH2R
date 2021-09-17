@@ -1,0 +1,65 @@
+<root>
+
+    <styles>
+        <include src="s2r://panorama/styles/hud.vcss_c"/>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+    </styles>
+
+    <scripts>
+        <include src="s2r://panorama/scripts/utils.vjs_c"/>
+        <include src="s2r://panorama/scripts/hud.vjs_c"/>
+    </scripts>
+	<snippets>
+		<snippet name="boss_healthbar">
+		
+			<Panel class="boss_healthbar">
+				<Label id="boss_name" text="" />		
+				<Panel id="boss_hp_container">
+					<Panel id="damage_track"/>
+					<DOTAScenePanel id="boss_hp" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>	
+				</Panel>
+				<Panel id="boss_mana_container">
+					<DOTAScenePanel id="boss_mana" map="scenes/hud/healthbarburner" renderdeferred="false" rendershadows="false" camera="camera_1" hittest="false" particleonly="true"/>
+				</Panel>
+			</Panel>
+			
+		</snippet> 
+		
+	</snippets>
+	<Panel class="screenspace" hittest="false">
+		<Panel id="boss_healthbar_box">
+			
+		</Panel>
+		<Panel class="options_root_panel">
+
+			<Button id="options_button" onactivate="on_options_button_click()">
+				<Panel class="button_icon_panel"/>
+			</Button>
+
+			<Panel class="options_panel">
+
+				<Panel class="settings_window">
+					<Label class="settings_label" text="#dash_slider_label"/>
+					<Panel class="slider_container" onmouseover="UIShowTextTooltipStyled( #dash_slider_description, ShortTextTooltip)" onmouseout="UIHideTextTooltip()">
+						
+						<DOTASettingsSlider id="dash_slider" class="slider" min="0" max="100"/>
+					</Panel>
+					<TextButton id="apply_button" class="ButtonBevel" text="#dota_apply" onactivate="submit_settings()"/>
+				</Panel>
+				<Panel class="settings_window credits_window">
+					<Label class="settings_label" text="Credits"/>
+					<Label class="credits_label" text="#primary_russian_translator_label"/>
+					<Label class="credits_label_name" text="#primary_russian_translator"/>
+					<Label class="credits_label" text="#primary_developer_label"/>
+					<Label class="credits_label_name" text="#primary_developer"/>
+					<Label class="credits_label" text="#original_creator_label"/>
+					<Label class="credits_label_name" text="#original_creator"/>
+					<TextButton id="credits_button" class="ButtonBevel credits_button" text="#credits_button" onactivate="credits_clicked()"/>
+				</Panel>
+
+			</Panel>
+
+		</Panel>
+	</Panel>
+
+</root>

@@ -38,14 +38,14 @@ if IsServer() then
 	function modifier_skeleton_king_hidden_skeleton:OnCreated()
 		self.parent = self:GetParent()
 		local ability = self:GetAbility()
-		self.skeleton = self.parent:FindAbilityByName("skeleton_king_mortal_strike")
+		self.skeleton = self.parent:FindAbilityByName("skeleton_king_vampiric_aura")
 		self.minimum = ability:GetSpecialValueFor("minimum_stacks")
 		Timers:CreateTimer(
 			function()
-				if not self.parent:HasModifier("modifier_skeleton_king_mortal_strike") then
+				if not self.parent:HasModifier("modifier_skeleton_king_vampiric_aura") then
 					return 0.25
 				else 
-					self.modifier = self.parent:FindModifierByName("modifier_skeleton_king_mortal_strike")
+					self.modifier = self.parent:FindModifierByName("modifier_skeleton_king_vampiric_aura")
 					self.modifier:SetStackCount(self.minimum)
 				end
 			end
@@ -54,7 +54,7 @@ if IsServer() then
 	function modifier_skeleton_king_hidden_skeleton:OnAbilityFullyCast(keys)
 		local used_ability = keys.ability
 		local unit = keys.unit
-		if unit == self.parent and keys.ability:GetAbilityName() == "skeleton_king_mortal_strike" then
+		if unit == self.parent and keys.ability:GetAbilityName() == "skeleton_king_vampiric_aura" then
 			self.modifier:SetStackCount(self.minimum)
 		end
 	end

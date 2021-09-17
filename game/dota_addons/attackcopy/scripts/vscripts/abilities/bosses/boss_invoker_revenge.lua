@@ -1,7 +1,7 @@
 require("lib/timers")
 require("lib/my")
 require("lib/ai")
-
+LinkLuaModifier("modifier_anim", "abilities/other/generic.lua", LUA_MODIFIER_MOTION_NONE)
 boss_invoker_revenge = class({})
 
 
@@ -17,7 +17,7 @@ function boss_invoker_revenge:OnSpellStart()
 			if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() then
 				return 0.5
 			end
-			caster:CastAbilityNoTarget(caster:FindAbilityByName("boss_invoker_solar_strike"), -1)
+			caster:FindAbilityByName("boss_invoker_solar_strike"):OnSpellStart()
 		end
 	)
 end

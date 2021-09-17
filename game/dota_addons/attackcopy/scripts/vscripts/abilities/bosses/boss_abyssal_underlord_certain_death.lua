@@ -1,5 +1,6 @@
 require("lib/ai")
 require("lib/my")
+LinkLuaModifier("modifier_anim", "abilities/other/generic.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_target_delay", "abilities/other/generic.lua", LUA_MODIFIER_MOTION_NONE)
 boss_abyssal_underlord_certain_death = class({})
 
@@ -8,25 +9,41 @@ function boss_abyssal_underlord_certain_death:OnSpellStart()
 	local caster = self:GetCaster()
 	local heroes = ai_alive_heroes()
 	local delay = self:GetSpecialValueFor("delay")
+	local ticket_concession = caster:FindModifierByName("modifier_boss")
+	local ticket = ticket_concession:RequestTicket()
 	if #heroes ~= 0 then
-		StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / delay})
-		caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
-		for _, hero in ipairs(heroes) do
-			hero:AddNewModifier(caster, self, "modifier_target_delay", {duration = delay})
-		end
 		Timers:CreateTimer(
-			delay, 
 			function()
-				EmitSoundOn("Hero_Bane.Nightmare", caster)
-				for _, hero in ipairs(heroes) do
-					local orb = CreateUnitByName("npc_death_orb", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeam())
-					orb:AddNewModifier(
-						hero,
-						self,
-						"modifier_boss_abyssal_underlord_certain_death_behavior",
-						{duration = self:GetSpecialValueFor("duration")}
-					)
+				if caster:IsChanneling() or caster:GetCurrentActiveAbility() ~= nil or caster:IsCommandRestricted() or not ticket_concession:QueryTicket(ticket) then
+					return 0.1
 				end
+				StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / delay})
+				caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
+				for _, hero in ipairs(heroes) do
+					hero:AddNewModifier(caster, self, "modifier_target_delay", {duration = delay})
+				end
+				local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
+				ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
+				ParticleManager:SetParticleControl(fx, 1, Vector(800, 1, 1))
+				ParticleManager:SetParticleControl(fx, 2, Vector(delay, 1, 1))
+				ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
+				ParticleManager:ReleaseParticleIndex(fx)
+				Timers:CreateTimer(
+					delay, 
+					function()
+						EmitSoundOn("Hero_Bane.Nightmare", caster)
+						for _, hero in ipairs(heroes) do
+							local orb = CreateUnitByName("npc_death_orb", caster:GetAbsOrigin(), false, caster, caster, caster:GetTeam())
+							orb:AddNewModifier(
+								hero,
+								self,
+								"modifier_boss_abyssal_underlord_certain_death_behavior",
+								{duration = self:GetSpecialValueFor("duration")}
+							)
+							ticket_concession:ReleaseTicket()
+						end
+					end
+				)
 			end
 		)
 	end
@@ -39,7 +56,6 @@ function modifier_boss_abyssal_underlord_certain_death_behavior:CheckState()
 	local state = {
 		[MODIFIER_STATE_UNSELECTABLE] = true,
 		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
-		[MODIFIER_STATE_NO_HEALTH_BAR] = true,
 	}
 	return state
 end

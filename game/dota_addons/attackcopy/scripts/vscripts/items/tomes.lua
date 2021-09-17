@@ -9,7 +9,7 @@ if IsServer() then
 
         local bonus = self:GetSpecialValueFor("bonus")
         caster[self.modify_function](caster, bonus)
-        caster:CalculateStatBonus()
+        caster:CalculateStatBonus(true)
 
         if caster:HasModifier(self.modifier_name) then
             local modifier = caster:FindModifierByName(self.modifier_name)

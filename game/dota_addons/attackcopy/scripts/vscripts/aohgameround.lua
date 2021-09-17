@@ -14,7 +14,6 @@ end
 function AOHGameRound:ReadConfiguration(kv, gameMode, roundNumber)
 	self._gameMode = gameMode
 	self._nRoundNumber = roundNumber
-	self._sTitle = kv.Title or ""
 	self._nMaxGold = tonumber(kv.MaxGold or 0)
 	self._nBagCount = tonumber(kv.BagCount or 0)
 	self._nBagVariance = tonumber(kv.BagVariance or 0)
@@ -24,7 +23,7 @@ function AOHGameRound:ReadConfiguration(kv, gameMode, roundNumber)
 	for k, v in pairs(kv) do
 		if type(v) == "table" and v.NPCName then
 			local spawner = AOHSpawner()
-			spawner:ReadConfiguration(k, v, self)
+			spawner:ReadConfiguration(k, v, self, gameMode.modifier_total[2])
 			self._vSpawners[ k ] = spawner
 		end
 	end
@@ -44,8 +43,11 @@ end
 
 function AOHGameRound:Begin(goldRatio, expRatio)
 
-	local title = "Round " .. self._nRoundNumber .. ": " .. self._sTitle
-	Notifications:TopToAll({text=title, duration=6})
+	local title = "#Round" .. self._nRoundNumber
+	local sub_title = "Round " .. self._nRoundNumber
+	Notifications:TopToAll({text=sub_title, duration=6, style={color = "grey", ["font-family"]="GOUDY TRAJAN MEDIUM", ["font-size"]="40px"}})
+	Notifications:TopToAll({text=title, duration=6, style={["font-family"]="GOUDY TRAJAN MEDIUM", ["font-size"]="90px", ["margin-top"] = "-20px"}})
+	
 
 	self._vEnemiesRemaining = {}
 	self._vEventHandles = {
@@ -235,11 +237,22 @@ function AOHGameRound:_CheckForGoldBagDrop(killedUnit)
 	end
 	self._nGoldRemainingInRound = math.max(0, self._nGoldRemainingInRound - nGoldToDrop)
 	self._nGoldBagsRemaining = math.max(0, self._nGoldBagsRemaining - 1)
-
-	local newItem = CreateItem("item_bag_of_gold", nil, nil)
-	newItem:SetPurchaseTime(0)
-	newItem:SetCurrentCharges(nGoldToDrop)
-	local drop = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), newItem)
-	local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
-	newItem:LaunchLoot(true, 300, 0.75, dropTarget)
+	for _, v in pairs(_G.AOHGameMode.Players) do
+		v:ModifyGold(nGoldToDrop / AOHGameMode.player_count, true, DOTA_ModifyGold_CreepKill)
+		local fx = ParticleManager:CreateParticle("particles/generic_gameplay/lasthit_coins.vpcf", PATTACH_ABSORIGIN, v)
+		create_popup({
+			target = v,
+			value = nGoldToDrop / AOHGameMode.player_count,
+			color = Vector(200, 195, 47),
+			type = "goldbounty",
+			pos = 0
+		})
+		ParticleManager:SetParticleControl(fx, 1, v:GetAbsOrigin())
+	end
+	-- local newItem = CreateItem("item_bag_of_gold", nil, nil)
+	-- newItem:SetPurchaseTime(0)
+	-- newItem:SetCurrentCharges(nGoldToDrop)
+	-- local drop = CreateItemOnPositionSync(killedUnit:GetAbsOrigin(), newItem)
+	-- local dropTarget = killedUnit:GetAbsOrigin() + RandomVector(RandomFloat(50, 350))
+	-- newItem:LaunchLoot(true, 300, 0.75, dropTarget)
 end

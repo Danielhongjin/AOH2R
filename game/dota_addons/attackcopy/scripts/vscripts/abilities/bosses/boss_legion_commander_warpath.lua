@@ -122,13 +122,6 @@ function modifier_boss_legion_commander_warpath_attack:IsHidden()
 	return false
 end
 
-function modifier_boss_legion_commander_warpath_attack:CheckState()
-	local state = {
-		[MODIFIER_STATE_SILENCED] = true,
-	}
-	return state
-end
-
 if IsServer() then
 	function modifier_boss_legion_commander_warpath_attack:OnCreated(keys)
 		self.parent = self:GetParent()
@@ -137,9 +130,25 @@ if IsServer() then
 		self.interval = ability:GetSpecialValueFor("rebuke_interval")
 		self.rebuke = self.parent:FindAbilityByName("boss_legion_commander_gods_rebuke_wrapper")
 		self.rebuke:EndCooldown()
+		self.overwhelming = self.parent:FindAbilityByName("boss_legion_commander_overwhelming_odds_wrapper")
+		self.overwhelming_cooldown = self.overwhelming:GetCooldownTimeRemaining()
+		self.overwhelming:EndCooldown()
+		self.overwhelming:StartCooldown(9999)
+		self.bunker = self.parent:FindAbilityByName("boss_legion_commander_bunker")
+		self.bunker_cooldown = self.bunker:GetCooldownTimeRemaining()
+		self.bunker:EndCooldown()
+		self.bunker:StartCooldown(9999)
+		
 		self:StartIntervalThink(self.interval)
 	end
-	
+	function modifier_boss_legion_commander_warpath_attack:OnDestroy()
+		if self.parent then
+			self.overwhelming:EndCooldown()
+			self.overwhelming:StartCooldown(self.overwhelming_cooldown)
+			self.bunker:EndCooldown()
+			self.bunker:StartCooldown(self.bunker_cooldown)
+		end
+	end
 	function modifier_boss_legion_commander_warpath_attack:OnIntervalThink()
 		if self.rebuke:IsCooldownReady() then
 			local units = FindUnitsInRadius(self.parent:GetTeam(), 
@@ -154,8 +163,8 @@ if IsServer() then
         
 			for _, unit in ipairs(units) do
 				if unit then
-					self.parent:SetCursorCastTarget(unit)
-					self.rebuke:OnSpellStart()
+					self.parent:CastAbilityOnPosition(unit:GetAbsOrigin(), self.rebuke, -1)
+					self.rebuke:EndCooldown()
 					self.rebuke:StartCooldown(1.25)
 					break
 				end

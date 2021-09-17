@@ -11,6 +11,7 @@ function boss_legion_commander_revenge:OnSpellStart()
 	find_item(caster, "item_black_king_bar_boss"):CastAbility()
 	local particle = ParticleManager:CreateParticle("particles/econ/items/lich/frozen_chains_ti6/lich_frozenchains_frostnova_g2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) 
 	EmitSoundOn("Hero_Antimage.ManaVoidCast", caster)
+	local spell = caster:FindAbilityByName("boss_legion_commander_warpath")
 	Timers:CreateTimer(
 		delay, 
 		function()
@@ -18,7 +19,8 @@ function boss_legion_commander_revenge:OnSpellStart()
 				return 0.5
 			end
 			caster:Purge(false, true, false, true, false)
-			caster:CastAbilityNoTarget(caster:FindAbilityByName("boss_legion_commander_warpath"), -1)
+			spell:EndCooldown()
+			caster:CastAbilityNoTarget(spell, -1)
 		end
 	)
 end

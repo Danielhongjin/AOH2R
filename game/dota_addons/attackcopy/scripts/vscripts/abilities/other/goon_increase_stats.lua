@@ -19,6 +19,8 @@ function on_created(keys)
 	caster:AddItemByName("item_boss_resistance_25")
 	caster:SetHasInventory(false)
 	caster:SetCanSellItems(false)
+	caster:AddNewModifier(caster, ability, "modifier_goon_invincibility", {})
+	caster:AddNewModifier(caster, nil, "modifier_builtin_blink", {duration = -1})
 	local has5 = false
 	local has10 = false
 	local has15 = false
@@ -89,11 +91,9 @@ function on_created(keys)
 	)
 end	
 
-
+LinkLuaModifier("modifier_builtin_blink", "abilities/other/hero_attribute_fix.lua", LUA_MODIFIER_MOTION_NONE)
 LinkLuaModifier("modifier_goon_increase_stats", "abilities/other/goon_increase_stats.lua", LUA_MODIFIER_MOTION_NONE)
-
 modifier_goon_increase_stats = class({})
-
 
 function modifier_goon_increase_stats:GetTexture()
     return "dragon_knight_dragon_blood"
@@ -121,4 +121,79 @@ function modifier_goon_increase_stats:OnCreated()
 end
 function modifier_goon_increase_stats:OnDestroy()
 	ParticleManager:DestroyParticle(self.particle, true)
+end
+
+
+LinkLuaModifier("modifier_goon_invincibility", "abilities/other/goon_increase_stats.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_goon_invincibility = class({})
+function modifier_goon_invincibility:IsHidden()
+	return true
+end
+function modifier_goon_invincibility:IsPurgable()
+	return false
+end
+function modifier_goon_invincibility:RemoveOnDeath()
+	return false
+end
+
+function modifier_goon_invincibility:DeclareFunctions()
+    return {
+		MODIFIER_EVENT_ON_TAKEDAMAGE,
+    }
+end
+function modifier_goon_invincibility:OnCreated()
+	self.parent = self:GetParent()
+end
+function modifier_goon_invincibility:OnTakeDamage(keys)
+	local attacker = keys.attacker
+	local unit = keys.unit
+	if self.parent == unit and self.parent:GetHealth() < 1 then
+		if not self.parent:HasModifier("modifier_goon_injured") then
+			self.parent:SetHealth(1)
+			self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_goon_revive", {duration = self:GetAbility():GetSpecialValueFor("reincarnate_time")})
+		end
+	end
+end
+
+LinkLuaModifier("modifier_goon_revive", "abilities/other/goon_increase_stats.lua", LUA_MODIFIER_MOTION_NONE)
+modifier_goon_revive = class({})
+
+function modifier_goon_revive:GetTexture()
+    return "dragon_knight_dragon_tail"
+end
+
+function modifier_goon_revive:DeclareFunctions()
+	return {
+		MODIFIER_PROPERTY_MIN_HEALTH,
+		MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE,
+	}
+end
+function modifier_goon_revive:CheckState()
+	local state = {
+		[MODIFIER_STATE_INVULNERABLE] = true,
+		[MODIFIER_STATE_ATTACK_IMMUNE] = true,
+		[MODIFIER_STATE_STUNNED] = true,
+	}
+	return state
+end
+function modifier_goon_revive:IsPurgable()
+	return false
+end
+function modifier_goon_revive:GetMinHealth()
+	return 1
+end
+function modifier_goon_revive:GetModifierHealthRegenPercentage()
+	return 6
+end
+
+function modifier_goon_revive:GetTexture()
+	return "plain_ring_invincibility"
+end
+
+function modifier_goon_revive:GetEffectName()
+	return "particles/econ/items/winter_wyvern/winter_wyvern_ti7/wyvern_cold_embrace_ti7buff.vpcf"
+end
+
+function modifier_goon_revive:GetEffectAttachType()
+	return PATTACH_ABSORIGIN_FOLLOW
 end

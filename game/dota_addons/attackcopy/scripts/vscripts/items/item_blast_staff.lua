@@ -38,7 +38,7 @@ function item_blast_staff:OnSpellStart()
 
 
 			}
-			)
+		)
 	end
 	parent:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")
 	parent:EmitSound("Hero_Alchemist.UnstableConcoction.Stun")

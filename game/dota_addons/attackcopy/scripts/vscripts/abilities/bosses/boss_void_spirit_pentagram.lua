@@ -19,8 +19,24 @@ function boss_void_spirit_pentagram:OnSpellStart()
 	local count = 0
 	local ring_count = 1
 	local anim_duration = (interval * total) * (rings + 1) + interval + (delay_per_ring * rings)
+	local delay = self:GetSpecialValueFor("delay")
 	caster:AddNewModifier(caster, ability, "modifier_anim", {duration = anim_duration})
+	if caster:IsMoving() then
+		caster:Stop()
+	end
+	find_item(caster, "item_black_king_bar_boss"):CastAbility()
+	local particle = ParticleManager:CreateParticle("particles/econ/items/lich/frozen_chains_ti6/lich_frozenchains_frostnova_g2.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster) 
+	EmitSoundOn("Hero_Antimage.ManaVoidCast", caster)
+	local fx = ParticleManager:CreateParticle("particles/custom/aoe_warning.vpcf", PATTACH_WORLDORIGIN, caster)
+	ParticleManager:SetParticleControl(fx, 0, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(fx, 1, Vector(radius, 1, 1))
+	ParticleManager:SetParticleControl(fx, 2, Vector(delay, 1, 1))
+	ParticleManager:SetParticleControl(fx, 3, Vector(200, 10, 10))
+	ParticleManager:ReleaseParticleIndex(fx)
+	StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_1, rate = 1 / delay})
+	caster:AddNewModifier(caster, ability, "modifier_anim", {duration = delay})
 	Timers:CreateTimer(
+		delay,
 		function()
 			b = i / points
 			angle = 360 * b * math.floor(points / 2 + 1)

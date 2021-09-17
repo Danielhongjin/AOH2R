@@ -32,7 +32,11 @@
 		{
 			_class = "C_OP_FadeAndKill"
 			m_flEndFadeInTime = 0.0
-			m_flStartFadeOutTime = 0.66
+			m_flStartFadeOutTime = 0.75
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 0, 255, 0, 255 ]
 		},
 	]
 	m_Initializers = 

@@ -40,20 +40,22 @@ function boss_abyssal_underlord_undead_cannon_init:OnSpellStart()
 	Timers:CreateTimer(
 		delay, 
 		function()
-			local structure1 = Entities:FindByName(nil, "structure1")
-			local structure2 = Entities:FindByName(nil, "structure2")
-			local structure3 = Entities:FindByName(nil, "dota_goodguys_fort")
-			if structure1 and structure1:IsAlive() then
-				caster:SetCursorCastTarget(structure1)
-				
-			elseif structure2 and structure2:IsAlive() then
-				caster:SetCursorCastTarget(structure2)
-			elseif structure3 and structure3:IsAlive() then
-				caster:SetCursorCastTarget(structure3)
+			if caster:IsAlive() then
+				local structure1 = Entities:FindByName(nil, "structure1")
+				local structure2 = Entities:FindByName(nil, "structure2")
+				local structure3 = Entities:FindByName(nil, "dota_goodguys_fort")
+				if structure1 and structure1:IsAlive() then
+					caster:SetCursorCastTarget(structure1)
+					
+				elseif structure2 and structure2:IsAlive() then
+					caster:SetCursorCastTarget(structure2)
+				elseif structure3 and structure3:IsAlive() then
+					caster:SetCursorCastTarget(structure3)
+				end
+				Notifications:TopToAll({text="UNDERLORD IS TARGETING YOUR BASE", style={color="red", ["font-size"]="70px"}, duration=5})
+				MinimapEvent(2, caster, caster:GetAbsOrigin().x, caster:GetAbsOrigin().y, DOTA_MINIMAP_EVENT_BASE_UNDER_ATTACK, 5)
+				cannon:OnSpellStart()
 			end
-			Notifications:TopToAll({text="UNDERLORD IS TARGETING YOUR BASE", style={color="red", ["font-size"]="70px"}, duration=5})
-			MinimapEvent(2, caster, caster:GetAbsOrigin().x, caster:GetAbsOrigin().y, DOTA_MINIMAP_EVENT_BASE_UNDER_ATTACK, 5)
-			cannon:OnSpellStart()
 		end
 	)
 	

@@ -1,0 +1,418 @@
+
+.Skill
+{
+	margin-top: 24%;
+	width: 1500px;
+	height: 580px;
+	horizontal-align: right;
+	flow-children: left;
+	transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+	transform: translateX(1000px);
+	
+}
+
+.skill_bar_button
+{
+    width: 25px;
+    height: 150px;
+    horizontal-align: left;
+	border-bottom-left-radius: 3px;
+	border-top-left-radius: 3px;
+	background-image: url("file://{images}/custom_game/bg_scoreboard_psd.png");
+    margin-top: 50px;
+	
+}
+
+
+.skill_bar_button:hover
+{
+	background-color: #202020;
+}
+
+.skill_bar_button_label
+{
+	text-align: center;
+	horizontal-align: center;
+	vertical-align: center;
+	font-size: 16px;
+	color: gold;
+	font-family: GOUDY TRAJAN MEDIUM;
+	text-shadow: 2px 2px 2px #000;
+}
+.button_icon_panel
+{
+    horizontal-align: center;	
+    vertical-align: center;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+	
+}
+
+.button_icon_panel:hover
+{
+    brightness: 10.0;
+}
+#SkillBar
+{
+	width: 1000px; 
+	height: 100%;
+	flow-children: down;
+	transform: translateX( 0px );
+    transition-property: transform, opacity;
+    transition-duration: 0.24s;
+	transition-timing-function: ease-in-out;
+} 
+#SkillBarNamePanel
+{
+	horizontal-align: center;
+	height: 80px;
+	width: 100%;
+	background-color: rgba(40, 40, 40, 0.2);
+	
+}
+#SkillBarLabel
+{
+	margin-top: 10px;
+	horizontal-align: center;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+	font-size:40px;
+	color: gold;
+	font-family: GOUDY TRAJAN MEDIUM;
+	text-shadow: 0px 0px 6px #000;
+} 
+#AvailableCurrencyPanel
+{
+	height: 80px;
+	width: 100%;
+	flow-children: right;
+}
+.FlowRight
+{
+	
+	height: 100%;
+	width: 100%;
+	flow-children: right;
+}
+#CurrencyPanel
+{
+	height: 100%;
+	width: 225px;
+	background-image: url("file://{images}/custom_game/bg_shop_guide_psd.png");
+	background-size: cover;
+	flow-children: down;
+}
+#Skills
+{
+	padding-top: 15px;
+	height: 100%;
+	width: 800px;
+	flow-children: right;
+	background-image: url("file://{images}/custom_game/bg_mainshop_psd.png");
+	background-size: cover;
+}
+.SkillTierContainer
+{
+	flow-children: down;
+	width: 140px;
+	margin-left: 8px;
+	margin-right: 8px;
+	height: 100%;
+	margin-bottom: 1%;
+	border-style: solid;
+	border-width: 1px;
+	border-top-color: #555555;
+	border-left-color: #494949;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+	background-image: url("file://{images}/custom_game/bg_tooltip_psd.png");
+	background-repeat: no-repeat;
+	/*box-shadow: rgba(20, 20, 20, 0.8) -3px -3px 6px 6px;*/
+	background-size: 100% 120%;
+	background-position: 0px -35px;
+}
+.CostPanel
+{
+	margin-top: 8px;
+	margin-bottom: 12px;
+	padding-left: 30px;
+	height: 20px;
+	width: 100%;
+	flow-children: right;
+}
+.CostLabel
+{
+	font-size: 18px;
+}
+.CostImage
+{
+	margin-left: 5px;
+	height: 20px;
+	width: 24px;
+}
+#AvailableCurrencyPanel
+{
+	height: 40px;
+	width: 125px;
+	horizontal-align: center;
+	flow-children: left;
+	background-color: rgba(180, 180, 40, 0.2);
+	/*box-shadow: rgba(180, 180, 40, 0.9) -3px -3px 6px 6px;*/
+	background-size: cover;
+	padding-left: 5px;
+}
+.CurrencyLabel
+{
+	font-size: 30px;
+	margin-top: 3px;
+	margin-right: 3px;
+	width: 85px;
+	text-overflow: shrink;
+	color: white;
+	text-align: right;
+}
+.CurrencyImage
+{
+	horizontal-align: right;
+	margin-right: 5px;
+	margin-top: 8px;
+	height: 25px;
+	wash-color: #59b0A325;
+	width: 32px;
+}
+#BuyPanel
+{
+	horizontal-align: center;
+	flow-children: down;
+	margin-top: 8px;
+	height: 200px;
+	width: 100%;
+}
+#BuyButtons
+{
+	margin-top: 10px;
+	horizontal-align: center;
+	height: 200px;
+	width: 100%;
+	flow-children: down;
+}
+#BuyButtons < TextButton 
+{
+	horizontal-align: center;
+}
+#BuyButton
+{
+	background-color: rgba(40, 140, 40, 0.7);
+}
+#SellButton
+{
+	background-color: rgba(140, 40, 40, 0.7);
+}
+#GambleButton
+{
+	horizontal-align: center;
+}
+#ValuePanel
+{
+	flow-children: right;
+}
+.CurrencyImageValue
+{
+	margin-top: 10px;
+	height: 25px;
+	wash-color: #59b0A325;
+	width: 32px;
+	margin-left: 40px;
+}
+
+.ValueLabel
+{
+	font-size: 30px;
+	
+	margin-top: 3px;
+	width: 60px;
+	text-overflow: shrink;
+	color: white;
+}
+.GoldImage
+{
+	margin-top: 4px;
+	margin-left: -5px;
+	height: 32px;
+	wash-color: #59b0A325;
+	width: 32px;
+}
+.Equals
+{
+	margin-left: 7px;
+	width: 20px;
+}
+.SkillTierBox
+{
+	
+	flow-children: down;
+	width: 100%;
+	height: 100%;
+}
+.SkillTierLabel
+{
+	padding-top: 10px;
+	text-align: center;
+	font-weight: thin;
+	font-size: 20px;
+	height: 30px;
+	width: 100%;
+	font-family: GOUDY TRAJAN MEDIUM;
+	text-shadow: 1px 1px 1px #000;
+	color: gold;
+}
+.SkillBox
+{
+	flow-children: down;
+	text-align: center;
+	width: 95%;
+	margin-left: 5%;
+	margin-right: 5%;
+	height: 110px;
+	margin-top: 10px;
+	background-color: rgba(40, 40, 40, 0.8);
+	border-style: solid;
+	border-width: 1px;
+	border-top-color: #555555;
+	border-left-color: #494949;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+	/*box-shadow: #00000055 -2px -2px 4px 4px;*/
+	
+	
+}
+.SkillBox:hover
+{
+	border-top-color: #aaaaaa77;
+	border-left-color: #aaaaaa33;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #AcA511 ), to( #9c9d28 ) );
+	/*box-shadow: rgba(200, 200, 20, 0.8) -5px -5px 10px 10px;*/
+	brightness: 1.2;
+}
+#SkillIcon
+{	
+	margin-top: 6px;
+	width: 55px;
+	height: 55px;
+	horizontal-align: center;
+	vertical-align: center;
+	background-color: rgba(0, 0, 0, 0.87);
+	border: 2px solid #000;
+}
+#SkillLabel
+{
+	font-size: 18px;
+	width: 100%;
+	text-overflow: shrink;
+	color: gold;
+	horizontal-align: center;
+	text-align: center;
+}
+
+.active {
+	/*box-shadow: rgba(200, 200, 20, 0.8) -6px -6px 12px 12px;*/
+	background-color: rgba(200, 200, 20, 0.6);
+}
+.skillbaractive {
+	/*box-shadow: rgba(200, 200, 20, 0.8) -6px -6px 12px 12px;*/
+	background-color: rgba(100, 100, 20, 0.4);
+}
+.skillbarbuttonactive {
+	background-color: rgba(150, 150, 20, 0.6);
+}
+.neutral {
+	/*box-shadow: rgba(20, 20, 20, 0.8) -6px -6px 12px 12px;*/
+}
+.inactive {
+	/*box-shadow: rgba(20, 20, 20, 0.8) -6px -6px 12px 12px;*/
+	saturation: 0;
+}
+.notselected {
+	border-top-color: #aaaaaa77;
+	border-left-color: #aaaaaa33;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2c2597 ), to( #1c1d15 ) );
+	/*box-shadow: rgba(20, 20, 90, 0.8) -5px -5px 10px 10px;*/
+}
+.selected {
+	border-top-color: #aaaaaa77;
+	border-left-color: #aaaaaa33;
+	border-bottom-color: #333333;
+	border-right-color: #404040;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #9c9537 ), to( #9c8d15 ) );
+	/*box-shadow: rgba(20, 20, 90, 0.8) -5px -5px 10px 10px;*/
+}
+.1
+{
+}
+.2
+{
+}
+.3
+{
+}
+.4
+{
+}
+.5
+{
+}
+.FailedTransaction
+{
+	animation-duration: 0.75s;
+	animation-name: FailedTransaction;
+	animation-timing-function: ease-in-out;
+}
+.SuccessTransaction
+{
+	animation-duration: 0.75s;
+	animation-name: AddCurrency;
+	animation-timing-function: ease-in-out;
+}
+.CurrencyAnimation
+{
+	animation-duration: 0.75s;
+	animation-delay: 2.4s;
+  animation-name: AddCurrency;
+  animation-timing-function: ease-in-out;
+}
+@keyframes 'FailedTransaction' {
+    0% {
+    }
+    50% {
+		brightness: 4;
+		saturation: 4;
+		box-shadow: rgba(180, 40, 40, 0.8) -6px -6px 12px 12px;
+		wash-color: #59b0A325;
+		blur: gaussian( 2.5 );
+    }
+    100% {
+    }
+}
+@keyframes 'AddCurrency' {
+    0% {
+    }
+    50% {
+		brightness: 4;
+		saturation: 4;
+		box-shadow: rgba(180, 180, 40, 0.8) -6px -6px 12px 12px;
+		wash-color: #59b0A325;
+		blur: gaussian( 2.5 );
+    }
+    100% {
+    }
+}

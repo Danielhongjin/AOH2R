@@ -13,6 +13,8 @@ mars_custom_spear = class({})
 LinkLuaModifier( "modifier_mars_spear_of_mars_lua", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_HORIZONTAL )
 LinkLuaModifier( "modifier_mars_spear_of_mars_lua_checker", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_HORIZONTAL )
 LinkLuaModifier( "modifier_mars_spear_of_mars_lua_debuff", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_mars_spear_of_mars_linger_thinker", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_HORIZONTAL )
+LinkLuaModifier( "modifier_mars_spear_of_mars_debuff", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_generic_stunned_lua", "modifiers/modifier_generic_stunned_lua", LUA_MODIFIER_MOTION_NONE )
 LinkLuaModifier( "modifier_mars_talent", "abilities/heroes/mars_spear_of_mars_lua", LUA_MODIFIER_MOTION_NONE )
 
@@ -31,14 +33,20 @@ function mars_custom_spear:OnSpellStart()
 	-- unit identifier
 	local caster = self:GetCaster()
 	local point = self:GetCursorPosition()
-
+    
 	-- load data
 	local projectile_name = "particles/units/heroes/hero_mars/mars_spear.vpcf"
 	local projectile_distance = self:GetSpecialValueFor("spear_range") + caster:GetCastRangeBonus()
 	local projectile_speed = self:GetSpecialValueFor("spear_speed")
 	local projectile_radius = self:GetSpecialValueFor("spear_width")
 	local projectile_vision = self:GetSpecialValueFor("spear_vision")
-
+    self.shard = false
+    if self:GetCaster():HasModifier("modifier_item_aghanims_shard") then
+        self.shard = true
+        self.linger_time = self:GetSpecialValueFor("shard_duration")
+        projectile_distance = projectile_distance + self:GetSpecialValueFor("spear_bonus_range")
+    end
+    
 	-- calculate direction
 	local direction = point - caster:GetOrigin()
 	direction.z = 0
@@ -80,6 +88,7 @@ function mars_custom_spear:OnSpellStart()
 	if talent and talent:GetLevel() > 0 then
 		local modifier = caster:AddNewModifier(caster, self, "modifier_mars_talent", {})
 	end
+    
 end
 
 --------------------------------------------------------------------------------
@@ -101,6 +110,7 @@ function mars_projectiles:Init( projectileID )
 	-- set location
 	self[projectileID].location = ProjectileManager:GetLinearProjectileLocation( projectileID )
 	self[projectileID].init_pos = self[projectileID].location
+    self[projectileID].flip = 0
 
 	-- set direction
 	local direction = ProjectileManager:GetLinearProjectileVelocity( projectileID )
@@ -197,19 +207,25 @@ function mars_custom_spear:OnProjectileThinkHandle( iProjectileHandle )
 	-- save location
 	local location = ProjectileManager:GetLinearProjectileLocation( iProjectileHandle )
 	data.location = location
-
+    if self.shard then
+        data.flip = data.flip + 1
+        if data.flip > 1 then
+            CreateModifierThinker(self:GetCaster(), self, "modifier_mars_spear_of_mars_linger_thinker", { duration = self.linger_time }, GetGroundPosition( location, self:GetCaster() ), self:GetCaster():GetTeamNumber(), false)
+            data.flip = 0
+        end
+    end
 	-- check skewered unit, and dragged (caught unit not necessarily dragged)
 	if not data.unit then return end
 	if not data.active then
 		-- check distance, mainly to avoid being pinned while behind the tree/cliffs
-		local difference = (data.unit:GetOrigin()-data.init_pos):Length2D() - (data.location-data.init_pos):Length2D()
-		if difference>0 then return end
+		local difference = (data.unit:GetOrigin()-data.init_pos):Length2D() - (location-data.init_pos):Length2D()
+		if difference > 0 then return end
 		data.active = true
 	end
 
 
 	-- search for blocker
-	local thinkers = Entities:FindAllByClassnameWithin( "npc_dota_thinker", data.location, wall_radius )
+	local thinkers = Entities:FindAllByClassnameWithin( "npc_dota_thinker", location, wall_radius )
 	for _,thinker in pairs(thinkers) do
 		if thinker:IsPhantomBlocker() then
 			self:Pinned( iProjectileHandle )
@@ -218,18 +234,24 @@ function mars_custom_spear:OnProjectileThinkHandle( iProjectileHandle )
 	end
 
 	-- search for high ground
-	local base_loc = GetGroundPosition( data.location, data.unit )
+	local base_loc = GetGroundPosition( location, data.unit )
+    
 	local search_loc = GetGroundPosition( base_loc + data.direction*wall_radius, data.unit )
-	if search_loc.z-base_loc.z>10 and (not GridNav:IsTraversable( search_loc )) then
+	if search_loc.z - base_loc.z > 10 and (not GridNav:IsTraversable( search_loc )) then
 		self:Pinned( iProjectileHandle )
 		return
 	end
 
 	-- search for tree
-	if GridNav:IsNearbyTree( data.location, tree_radius, false) then
-		-- pinned
-		self:Pinned( iProjectileHandle )
-		return
+	if GridNav:IsNearbyTree( location, tree_radius, false) then
+        if self.shard then
+            self:ShardTreePinned( iProjectileHandle )
+            GridNav:DestroyTreesAroundPoint(location, tree_radius, false)
+        else
+            self:Pinned( iProjectileHandle )
+            return
+        end
+		
 	end
 	
 	if not data.unit:HasModifier("modifier_mars_spear_of_mars_lua_checker") and data.unit:IsAlive() then
@@ -248,7 +270,7 @@ function mars_custom_spear:OnProjectileThinkHandle( iProjectileHandle )
 	-- search for buildings
 	local buildings = FindUnitsInRadius(
 		self:GetCaster():GetTeamNumber(),	-- int, your team number
-		data.location,	-- point, center point
+		location,	-- point, center point
 		nil,	-- handle, cacheUnit. (not known)
 		building_radius,	-- float, radius. or use FIND_UNITS_EVERYWHERE
 		DOTA_UNIT_TARGET_TEAM_BOTH,	-- int, team filter
@@ -263,8 +285,27 @@ function mars_custom_spear:OnProjectileThinkHandle( iProjectileHandle )
 		self:Pinned( iProjectileHandle )
 		return
 	end
+    
 end
-
+function mars_custom_spear:ShardTreePinned( iProjectileHandle )
+    local data = self.projectiles[iProjectileHandle]
+    local duration = self:GetSpecialValueFor("stun_duration")
+    self:GetCaster():PerformAttack(data.unit, true, true, true, true, true, false, true) 
+    AddFOWViewer(self:GetCaster():GetTeamNumber(), data.unit:GetOrigin(), 100, 2, false)
+    data.unit:AddNewModifier(
+	self:GetCaster(), -- player source
+	self, -- ability source
+	"modifier_mars_spear_of_mars_lua_debuff", -- modifier name
+	{
+		duration = duration,
+		projectile = iProjectileHandle,
+	}
+	)
+    local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_base_attack_impact_fire.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetCaster() )
+    ParticleManager:SetParticleControlEnt( nFXIndex, 0, data.unit, PATTACH_POINT_FOLLOW, "attach_hitloc", data.unit:GetAbsOrigin(), true )
+    ParticleManager:ReleaseParticleIndex( nFXIndex )
+    EmitSoundOn("Hero_Mars.Spear.Root", data.unit )
+end
 function mars_custom_spear:Pinned( iProjectileHandle )
 	local data = self.projectiles[iProjectileHandle]
 	local duration = self:GetSpecialValueFor("stun_duration")
@@ -275,30 +316,25 @@ function mars_custom_spear:Pinned( iProjectileHandle )
     end
 	local projectile_vision = self:GetSpecialValueFor("spear_vision")
 
-	-- add viewer
 	AddFOWViewer( self:GetCaster():GetTeamNumber(), data.unit:GetOrigin(), projectile_vision, duration, false)
-
-
-	data.unit:AddNewModifier(
+	
+    data.unit:AddNewModifier(
 	self:GetCaster(), -- player source
 	self, -- ability source
 	"modifier_mars_spear_of_mars_lua_debuff", -- modifier name
 	{
 		duration = duration,
 		projectile = iProjectileHandle,
-	} -- kv
+	}
 	)
+    
 	ProjectileManager:DestroyLinearProjectile( iProjectileHandle )
 	if data.modifier then
 		if not data.modifier:IsNull() then
 			data.modifier:Destroy()
-
-			data.unit:SetOrigin( GetGroundPosition( data.location, data.unit ) )
+            FindClearSpaceForUnit(data.unit, GetGroundPosition( data.location, data.unit), false)
 		end
 	end
-	
-
-
 	-- play effects
 	self:PlayEffects( iProjectileHandle, duration )
 
@@ -396,7 +432,6 @@ function modifier_mars_spear_of_mars_lua:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_OVERRIDE_ANIMATION,
 	}
-
 	return funcs
 end
 
@@ -555,4 +590,119 @@ end
 
 function modifier_mars_spear_of_mars_lua_debuff:GetStatusEffectName()
 	return "particles/status_fx/status_effect_mars_spear.vpcf"
+end
+
+
+modifier_mars_spear_of_mars_linger_thinker = class({})
+
+--------------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_linger_thinker:IsHidden()
+	return true
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_linger_thinker:IsAura()
+	return true
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_linger_thinker:GetModifierAura()
+	return "modifier_mars_spear_of_mars_debuff"
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_linger_thinker:GetAuraSearchTeam()
+	return DOTA_UNIT_TARGET_TEAM_ENEMY
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_linger_thinker:GetAuraSearchType()
+	return DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_CREEP + DOTA_UNIT_TARGET_BASIC
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_linger_thinker:GetAuraRadius()
+	return self.radius
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_linger_thinker:OnCreated( kv )
+	self.radius = self:GetAbility():GetSpecialValueFor("shard_radius")
+	if IsServer() then
+		EmitSoundOn( "n_black_dragon.Fireball.Target", self:GetParent() )
+		self.nFXIndex = ParticleManager:CreateParticle( "particles/custom/mars_linger_fire.vpcf", PATTACH_CUSTOMORIGIN, nil )
+		ParticleManager:SetParticleControl( self.nFXIndex, 0, self:GetParent():GetAbsOrigin() )
+	end
+end
+
+--------------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_linger_thinker:OnDestroy()
+	if IsServer() then
+		StopSoundOn( "n_black_dragon.Fireball.Target", self:GetParent() )
+		ParticleManager:DestroyParticle( self.nFXIndex, false )
+	end
+end
+
+
+modifier_mars_spear_of_mars_debuff = class({})
+
+
+function modifier_mars_spear_of_mars_debuff:IsHidden()
+	return true
+end
+
+
+function modifier_mars_spear_of_mars_debuff:OnCreated( kv )
+	if IsServer() then
+        local interval = self:GetAbility():GetSpecialValueFor("shard_damage_interval")
+        self.damage = self:GetAbility():GetSpecialValueFor("shard_dps") * interval
+		self:OnIntervalThink()
+		self:StartIntervalThink(interval)
+		EmitSoundOn( "Hero_Huskar.Burning_Spear", self:GetParent() )
+	end
+end
+
+function modifier_mars_spear_of_mars_debuff:DeclareFunctions()
+	local funcs = {
+		MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE,
+	}
+	return funcs
+end
+
+function modifier_mars_spear_of_mars_debuff:GetModifierMoveSpeedBonus_Percentage()
+	return -20
+end
+
+function modifier_mars_spear_of_mars_debuff:OnDestroy()
+	if IsServer() then
+		StopSoundOn( "Hero_Huskar.Burning_Spear", self:GetParent() )
+	end
+end
+
+-----------------------------------------------------------------------------
+
+function modifier_mars_spear_of_mars_debuff:OnIntervalThink()
+	if IsServer() then
+		local damageInfo = 
+		{
+			victim = self:GetParent(),
+			attacker = self:GetCaster(),
+			damage = self.damage,
+			damage_type = DAMAGE_TYPE_MAGICAL,
+			ability = self:GetAbility(),
+		}
+		ApplyDamage( damageInfo )
+
+		local nFXIndex = ParticleManager:CreateParticle( "particles/econ/items/shadow_fiend/sf_fire_arcana/sf_fire_arcana_base_attack_impact_fire.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent() )
+		ParticleManager:SetParticleControlEnt( nFXIndex, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true )
+		ParticleManager:ReleaseParticleIndex( nFXIndex )
+	end
 end

@@ -190,7 +190,7 @@ function modifier_watch_tower_meltdown:OnDestroy()
 			damage_type = DAMAGE_TYPE_PURE,
 		})
 		target:SetMana(0)
-		if target ~= self.parent then
+		if target ~= self.parent and target.SetMana then
 			target:AddNewModifier(target, nil, "modifier_watch_tower_stun", {duration = duration})
 		end
 	end
@@ -231,17 +231,18 @@ function modifier_watch_tower_stun:DeclareFunctions()
 	}
 	return funcs
 end
+if IsServer() then
+	function modifier_watch_tower_stun:OnCreated()
+		self.parent = self:GetParent()
+		self:StartIntervalThink(0.1)
+	end
 
-function modifier_watch_tower_stun:OnCreated()
-	self.parent = self:GetParent()
-	self:StartIntervalThink(0.1)
-end
-
-function modifier_watch_tower_stun:OnIntervalThink()
-	if self.parent then
-		self.parent:SetMana(0)
-	else
-		self:Destroy()
+	function modifier_watch_tower_stun:OnIntervalThink()
+		if self.parent then
+			self.parent:SetMana(0)
+		else
+			self:Destroy()
+		end
 	end
 end
 function modifier_watch_tower_stun:CheckState()

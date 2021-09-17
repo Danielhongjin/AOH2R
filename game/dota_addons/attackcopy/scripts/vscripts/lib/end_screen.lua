@@ -30,11 +30,12 @@ end
 function end_screen_get_data(isWinner)
 	local game_mode = _G.AOHGameMode
     local time = GameRules:GetDOTATime(false, true)
-    local matchID = tostring(GameRules:GetMatchID())
 	local highest_damage = 0
 	local highest_healing = 0
 	local highest_damage_taken = 0
 	local highest_dps = 0
+	local difficulty = game_mode._difficulty
+	
 	for playerID = 0, DOTA_MAX_TEAM_PLAYERS - 1 do
 		if PlayerResource:IsValidPlayerID(playerID) then
 			if player_data_get_value(playerID, "bossDamage") > player_data_get_value(highest_damage, "bossDamage") then
@@ -52,13 +53,15 @@ function end_screen_get_data(isWinner)
 		end
 	end
     local data = {
-        version = "2.1.2",
+        version = "2.0A",
         matchID = matchID,
         mapName = GetMapName(),
         players = {},
         isWinner = isWinner,
         duration = math.floor(time),
         flags = {},
+		difficulty = difficulty,
+		modifiers = game_mode.modifier_total,
 		highestDamage = highest_damage,
 		highestHealing = highest_healing,
 		highestDamageTaken = highest_damage_taken,

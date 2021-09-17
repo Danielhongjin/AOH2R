@@ -33,7 +33,7 @@ function modifier_item_glare_edge:DeclareFunctions()
         MODIFIER_PROPERTY_STATS_AGILITY_BONUS,
         MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
 		MODIFIER_PROPERTY_STATS_STRENGTH_BONUS,
-        MODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE,
+        MODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE,
 		MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT,
     }
 end
@@ -50,8 +50,8 @@ function modifier_item_glare_edge:GetModifierBonusStats_Strength()
     return self:GetAbility():GetSpecialValueFor("bonus_all")
 end
 
-function modifier_item_glare_edge:GetModifierPreAttack_BonusDamage()
-    return -self:GetStackCount()
+function modifier_item_glare_edge:GetModifierDamageOutgoing_Percentage()
+    return -self:GetAbility():GetSpecialValueFor("reduced_damage")
 end
 
 function modifier_item_glare_edge:GetModifierAttackSpeedBonus_Constant()
@@ -59,59 +59,15 @@ function modifier_item_glare_edge:GetModifierAttackSpeedBonus_Constant()
 end
 if IsServer() then
 	function modifier_item_glare_edge:OnCreated(keys)
-		self.parent = self:GetParent()
-		self.modifier = self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_glare_edge_thinker", {})
-		self.modifier_base = self.parent:AddNewModifier(self.parent, self:GetAbility(), "modifier_item_glare_edge_base_damage", {})
-		self.reduced_damage = self:GetAbility():GetSpecialValueFor("reduced_damage") * 0.01
-		
-		local base_damage = (self.parent:GetBaseDamageMin() + self.parent:GetBaseDamageMax()) / 2
-		self.modifier_base:SetStackCount((base_damage + self.modifier_base:GetStackCount()) * self.reduced_damage)
-		self:SetStackCount((self.parent:GetAverageTrueAttackDamage(self.parent) - base_damage + self:GetStackCount()) * self.reduced_damage)
-		self:StartIntervalThink(0.25)
-	end
-
-	function modifier_item_glare_edge:OnIntervalThink()
-		local base_damage = (self.parent:GetBaseDamageMin() + self.parent:GetBaseDamageMax()) / 2
-		self.modifier_base:SetStackCount((base_damage + self.modifier_base:GetStackCount()) * self.reduced_damage)
-		self:SetStackCount((self.parent:GetAverageTrueAttackDamage(self.parent) - base_damage + self:GetStackCount()) * self.reduced_damage)
+		local parent = self:GetParent()
+		self.modifier = parent:AddNewModifier(parent, self:GetAbility(), "modifier_item_glare_edge_thinker", {})
 	end
 	
 	function modifier_item_glare_edge:OnDestroy(keys)
-		self.parent = self:GetParent()
 		self.modifier:Destroy()
-		self.modifier_base:Destroy()
 	end
 end
 
-LinkLuaModifier("modifier_item_glare_edge_base_damage", "items/glare_edge.lua", LUA_MODIFIER_MOTION_NONE)
-
-modifier_item_glare_edge_base_damage = class({})
-
-function modifier_item_glare_edge_base_damage:IsHidden()
-    return true
-end
-
-function modifier_item_glare_edge_base_damage:IsPurgable()
-	return false
-end
-
-function modifier_item_glare_edge_base_damage:RemoveOnDeath()
-    return false
-end
-
-function modifier_item_glare_edge_base_damage:GetAttributes()
-    return MODIFIER_ATTRIBUTE_MULTIPLE
-end
-
-function modifier_item_glare_edge_base_damage:DeclareFunctions()
-    return {
-        MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE
-    }
-end
-
-function modifier_item_glare_edge_base_damage:GetModifierBaseAttack_BonusDamage()
-	return -self:GetStackCount()
-end
 
 LinkLuaModifier("modifier_item_glare_edge_thinker", "items/glare_edge.lua", LUA_MODIFIER_MOTION_NONE)
 modifier_item_glare_edge_thinker = class({})
@@ -152,7 +108,6 @@ if IsServer() then
 				attacker = attacker,
 				damage = keys.damage * self.magic_percent,
 				damage_type = DAMAGE_TYPE_MAGICAL,
-				damage_flags = 16,
 				victim = target,
 			})
 			local fx = ParticleManager:CreateParticle("particles/custom/glare_edge.vpcf", PATTACH_POINT_FOLLOW, target)

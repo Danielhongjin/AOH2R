@@ -8,19 +8,7 @@ boss_invoker_trance = class({})
 function boss_invoker_trance:OnSpellStart()
 	local caster = self:GetCaster()
 	local delay = self:GetSpecialValueFor("delay")
-	Timers:CreateTimer(
-		0, 
-		function()
-			StartAnimation(caster, {duration = delay, activity = ACT_DOTA_CAST_ABILITY_4, rate = 1 / delay})
-			caster:AddNewModifier(caster, self, "modifier_anim", {duration = delay})
-			Timers:CreateTimer(
-				delay, 
-				function()
-					caster:AddNewModifier(caster, self, "modifier_boss_invoker_trance", {duration = self:GetSpecialValueFor("duration")})
-				end
-			)
-		end
-	)
+	caster:AddNewModifier(caster, self, "modifier_boss_invoker_trance", {duration = self:GetSpecialValueFor("duration")})
 	
 		
 	
@@ -46,6 +34,8 @@ function modifier_boss_invoker_trance:DeclareFunctions()
 function modifier_boss_invoker_trance:CheckState()
 	local state = {
 		[MODIFIER_STATE_SILENCED] = true,
+		[MODIFIER_STATE_DISARMED] = true,
+		[MODIFIER_STATE_ROOTED] = true,
 	}
 	return state
 end
@@ -81,6 +71,8 @@ if IsServer() then
 		self.ability = self:GetAbility()
 		self.radius = self.ability:GetSpecialValueFor("radius")
 		self.interval = self.ability:GetSpecialValueFor("interval")
+		self.ticket_concession = self.parent:FindModifierByName("modifier_boss")
+		self.ticket_concession:Lockout()
 		self.damageTable = {
 			-- victim = target,
 			attacker = self.parent,
@@ -88,7 +80,7 @@ if IsServer() then
 			damage_type = DAMAGE_TYPE_MAGICAL,
 			ability = self.ability, --Optional.
 		}
-		self.anim = self.parent:AddNewModifier(self.parent, ability, "modifier_anim", {duration = -1})
+		self.parent:AddNewModifier(self.parent, ability, "modifier_anim", {duration = self.ability:GetSpecialValueFor("duration") - 1})
 		StartAnimation(self.parent, {duration=5000, activity=ACT_DOTA_DISABLED, rate=1})
 		self.parent:Stop()
 
@@ -134,9 +126,7 @@ if IsServer() then
 	end	
 	
 	function modifier_boss_invoker_trance:OnDestroy()
-		if self.anim then
-			self.anim:Destroy()
-		end
+		self.ticket_concession:ReleaseLockout()
 		EndAnimation(self.parent)
 		ParticleManager:DestroyParticle(self.fx, true)
 		ParticleManager:ReleaseParticleIndex(self.fx)

@@ -19,15 +19,18 @@ end
 
 function huskar_sacred_flame:OnProjectileHit(target, pos)
 	if target ~= nil then
+		local modifier = nil
 		if not target:HasModifier("modifier_huskar_burning_spear_debuff") then
 			if not self.caster:IsIllusion() then
-				local debuff = target:AddNewModifier(self.caster, self.spear, "modifier_huskar_burning_spear_debuff", {duration = self.spear:GetDuration()})
+				modifier = target:AddNewModifier(self.caster, self.spear, "modifier_huskar_burning_spear_debuff", {duration = self.spear:GetDuration()})
 			else
 				return
 			end
+		else
+			modifier = target:FindModifierByName("modifier_huskar_burning_spear_debuff")
 		end
 		target:EmitSoundParams("Hero_Huskar.Life_Break.Impact", 0, 0.3, 0)
-		local modifier = target:FindModifierByName("modifier_huskar_burning_spear_debuff")
+		
 		local count = modifier:GetStackCount()
 		if self.caster:HasScepter() then
 			local debuff = target:FindModifierByName("modifier_huskar_burning_spear_debuff")

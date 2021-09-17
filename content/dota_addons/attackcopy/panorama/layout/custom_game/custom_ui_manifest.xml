@@ -35,6 +35,9 @@
     <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/barebones_worldpanels.xml" />
 	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/damage/damage.xml"/>
 	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/difficulty.xml"/>
+	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/skill_bar.xml"/>
+	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/custom_game_info.xml" />
+	<CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hud.xml" />
 	<CustomUIElement type="EndScreen" layoutfile="file://{resources}/layout/custom_game/end_screen.xml" />
 
     <!-- From Overthrow.

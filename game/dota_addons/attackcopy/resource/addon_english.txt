@@ -4,6 +4,43 @@
 
 	"Tokens"
 	{
+		"Round1"										"Moth"
+		"Round2"										"Devils"
+		"Round3"										"Martial Artist"
+		"Round4"										"Undead"
+		"Round5"										"Other World"
+		"Round6"										"Tormented Souls"
+		"Round7"										"Dark Magic"
+		"Round8"										"Scars"
+		"Round9"										"Maelstrom"
+		"Round10"										"Nightfall"
+		"Round11"										"Ignoring You"
+		"Round12"										"Insect Swarm"
+		"Round13"										"Outcast Blade"
+		"Round14"										"What's In The Box?"
+		"Round15"										"Consumer of Worlds"
+		"Round16"										"Day At The Zoo"
+		"Round17"										"Wayward Druid"
+		"Round18"										"Doom"
+		"Round19"										"Sunken Isles"
+		"Round20"										"Don't Stand Still"
+		"Round21"										"Freeze"
+		"Round22"										"Homewrecker"
+		"Round23"										"Shadow Friends"
+		"Round24"										"Tree Haters Guild"
+		"Round25"										"Real?"
+		"Round26"										"Lost"
+		"Round27"										"Enter the Void"
+		"Round28"										"Big Angry Ball"
+		"Round29"										"Spirits"
+		"Round30"										"Armageddon"
+		"Round31"										"Demon"
+		"Round32"										"Army of Darkness"
+		"Round33"										"Worldsmiths"
+		"Round34"										"Completely Original Boss"
+		"Round35"										"Boss Party"
+		
+
 		"addon_game_name"								"Attack On Hero 2 Rebalanced"
 		"difficulty_text_label"							"Difficulty Vote"
 		"easy_label"									"Easy"
@@ -11,20 +48,199 @@
 		"hard_label"									"Hard"
 		"easy_description"								"Enemies 20% Less Damage\nEnemies 30% Higher Cooldowns\nLimited Max Round 37"
 		"medium_description"								"Default Difficulty"
-		"hard_description"								"Enemies 0.5% Mana Regeneration\nEnemies 0.65% Health Regeneration\nEnemies 20% Lower Cooldowns\nNo Round Healing\n5 Second Round Wait\nHeroes +12% Primary Attribute"
+		"hard_description"								"Enemies 0.5% Mana Regeneration\nEnemies 0.15% Health Regeneration\nEnemies +35% Total Health\nNo Round Healing\n7 Second Round Wait\nHeroes +12% Primary Attribute\nEnemy AOE abilities +1 cast\nHeroes Dash 15% Cooldown Reduction"
 		"seconds"									"Seconds"
 		"minutes"									"Minutes"
+		
+		"dash_slider_label"										"Dash Timing Centiseconds"
+		"dash_slider_description"								"Governs how many centiseconds each move command is recorded. A higher value makes dashes easier to perform."
+		
+		"primary_russian_translator_label"						"Primary Russian Translator"
+		"primary_russian_translator"							"★[NightForest]★"
+		"primary_developer_label"								"May 2019-Present Developer"
+		"primary_developer"										"BeaglePleaser9000"
+		"original_creator_label"								"Jan 2019-May 2019 Original Developer"
+		"original_creator"										"Cebtibia"
+		
 		
 		"damage_dealt_award"									"Highest Damage Dealt"
 		"damage_taken_award"									"Highest Damage Taken"
 		"healing_award"											"Highest Healing"
 		"dps_award"												"Highest DPS"
+		"modifier_label"										"Game Modifiers"
 		
-		"DOTA_Tooltip_Ability_item_bag_of_gold"			"Bag Of Gold"
-		"DOTA_Tooltip_Ability_item_tombstone"			"Ressurect Teammate"
+		"laser_label"											"Laser Hell"
+		"laser_description"										"Lasers from the Sky Deal 35% Damage\nHeroes 10% Movement Speed\nHeroes +20 Attack Speed"
+		"laser_chosen"											"+Laser Hell"
 		
-"DOTA_Tooltip_modifier_builtin_blink_cooldown"                     "Blink Cooldown"
-"DOTA_Tooltip_modifier_builtin_blink_cooldown_Description"         "Your built in blink is on cooldown."
+		"nightmare_label"										"Dark Dreams"
+		"nightmare_description"									"Zero Base Vision\nHeroes + Units 10% Cooldown Reduction"
+		"nightmare_chosen"										"+Dark Dreams"
+		
+		"double_label"											"Seeing Doubles"
+		"double_description"									"Doubled Boss Count\n25% less health per boss\nBosses 15% Increased Cooldowns\nHeroes +12% Secondary Attributes"
+		"double_chosen"											"+Seeing Doubles"
+		
+		"sudden_death_label"									"Sudden Death"
+		"sudden_death_description"								"Heroes 40% Less Health\nHeroes 66% Bonus Status Resistance\nHeroes +10 All Attributes\n2x Gold Income"
+		"sudden_death_chosen"									"+Sudden Death"
+		
+		"vote_override"											"Host's Pick"
+		"DOTA_LevelUpAttributes"	"+3/6/10/15/21/28/36 to All Attributes"
+"skill_bar_label"										"Perks"
+"skill_bar_button_label"								"P\nE\nR\nK\nS"
+"cost1"											"Cost: 1"
+"cost2"											"Cost: 2"
+"cost3"											"Cost: 3"
+"cost4"											"Cost: 4"
+"cost5"											"Cost: 5"
+"credits_button"										"Got It"
+"credits_clicked"										"Kept you waiting huh?"
+
+"modifier_skill_equalizer"								"Equalizer"
+"modifier_skill_equalizer_Description"						"Equalizes your health/mana by converting 66% of health/mana regeneration to the lower stat. Mana to health is 50% more effective."
+"modifier_skill_flashcaster"							"Flashcaster"
+"modifier_skill_flashcaster_Description"					"Lowers your cast times by 40% and increases mana regeneration by 3."
+"modifier_skill_dashcooldown"							"Fast Legs"
+"modifier_skill_dashcooldown_Description"					"Reduces Dash's cooldown by 25%."
+"modifier_skill_dashimmunity"							"Shielded Dash"
+"modifier_skill_dashimmunity_Description"					"Increases your Dash spell immunity duration by 3x."
+"DOTA_Tooltip_modifier_skill_equalizer"					"Equalizer"
+"DOTA_Tooltip_modifier_skill_equalizer_Description"		"Equalizes your health/mana by converting 66%% of health/mana regeneration to the lower stat. Mana to health is 50%% more effective."
+"DOTA_Tooltip_modifier_skill_flashcaster"							"Flashcaster"
+"DOTA_Tooltip_modifier_skill_flashcaster_Description"					"Lowers your cast times by 40%% and increases mana regeneration by 3."
+"DOTA_Tooltip_modifier_skill_dashcooldown"							"Fast Legs"
+"DOTA_Tooltip_modifier_skill_dashcooldown_Description"					"Reduces Dash's cooldown by 25%%."
+"DOTA_Tooltip_modifier_skill_dashimmunity"							"Shielded Dash"
+"DOTA_Tooltip_modifier_skill_dashimmunity_Description"					"Increases your Dash spell immunity duration by 3x."
+
+"modifier_skill_minitalon"								"Demon\nInfluence"
+"modifier_skill_minitalon_Description"						"Every instance of damage deals an additional 75 physical damage."
+"modifier_skill_lightbones"							"Light Flesh"
+"modifier_skill_lightbones_Description"					"Lowers your total health by 20% and grants 12% cooldown reduction. Your hero gains a minimum 350 movespeed."
+"modifier_skill_atronach"							"Atronach"
+"modifier_skill_atronach_Description"					"Increases total mana by 50% and reduces mana regeneration by 75%. Grants 12% bonus intelligence."
+"modifier_skill_overtuned"							"Overtuned"
+"modifier_skill_overtuned_Description"					"Increases all your attributes by 15% at the cost of 1.5% of your maximum health per second."
+"DOTA_Tooltip_modifier_skill_minitalon"								"Demon Influence"
+"DOTA_Tooltip_modifier_skill_minitalon_Description"						"Every instance of damage deals an additional 60 physical damage."
+"DOTA_Tooltip_modifier_skill_lightbones"							"Light Flesh"
+"DOTA_Tooltip_modifier_skill_lightbones_Description"					"Lowers your total health by 20% and grants 12% cooldown reduction. Your hero gains a minimum 350 movespeed."
+"DOTA_Tooltip_modifier_skill_atronach"							"Atronach"
+"DOTA_Tooltip_modifier_skill_atronach_Description"					"Doubles your total mana and reduces mana regeneration by 75%%. Grants 12%% bonus intelligence."
+"DOTA_Tooltip_modifier_skill_overtuned"							"Overtuned"
+"DOTA_Tooltip_modifier_skill_overtuned_Description"					"Increases all your attributes by 15%% at the cost of 1.5%% of your maximum health per second."
+
+"modifier_skill_trident"								"Folded Trident"
+"modifier_skill_trident_Description"					"Grants the ability to throw tridents. Enemies take an immediate autoattack, as well as a bonus attack if they are hit during an animation."
+"modifier_skill_transfusion"							"Forced\nTransfusion"
+"modifier_skill_transfusion_Description"				"Grants the ability to tranfuse health for damage or healing."
+"modifier_skill_dashdamage"								"Dash Through"
+"modifier_skill_dashdamage_Description"					"Dashes now deal damage equal to your speed to enemies."
+"modifier_skill_flames"									"Lina's\nBlessing"
+"modifier_skill_flames_Description"						"Autoattacks by your hero or to your hero build up stacks and deal 3 magic damage per stack to the enemy. Stacks last 8 seconds."
+"DOTA_Tooltip_modifier_skill_trident"					"Folded Trident"
+"DOTA_Tooltip_modifier_skill_trident_Description"		"Grants the ability to throw tridents. Enemies take an immediate autoattack, as well as a bonus attack if they are hit during an animation."
+"DOTA_Tooltip_modifier_skill_transfusion"				"Forced Transfusion"
+"DOTA_Tooltip_modifier_skill_transfusion_Description"	"Grants the ability to tranfuse health for damage or healing. Channel time dictates how much health is transfused."
+"DOTA_Tooltip_modifier_skill_dashdamage"				"Dash Through"
+"DOTA_Tooltip_modifier_skill_dashdamage_Description"	"Dashes now deal damage equal to your speed to enemies."
+"DOTA_Tooltip_modifier_skill_flames"					"Lina's Blessing"
+"DOTA_Tooltip_modifier_skill_flames_Description"		"Autoattacks by your hero or to your hero build up stacks and deal 3 magic damage per stack to the enemy. Stacks last 8 seconds."
+
+"DOTA_Tooltip_modifier_builtin_blink_dashdamage"							"Dash Through"
+"DOTA_Tooltip_modifier_builtin_blink_dashdamage"					"Taking damage from Dash Through."
+
+"modifier_skill_noevil"								"Do No Evil"
+"modifier_skill_noevil_Description"					"Grants you bonus damage percentage inverse to the percentage of damage you have contributed to the team's total, up to 40%.<br><br>E.G. If the team does 10 damage and you do 0 damage, you get a 40% damage increase."
+"modifier_skill_jack"								"Balanced\nEnergies"
+"modifier_skill_jack_Description"					"Non-primary attributes give you 0.5 damage per point."
+"modifier_skill_cardio"								"Marathon"
+"modifier_skill_cardio_Description"					"Dashes now last forever and lock the camera to your hero if you dash far away. You can stop by pressing S or moving near your hero.<br><br>Your hero slows down to 50% of its original dash speed over time."
+"modifier_skill_bloodmana"							"Bloodmana"
+"modifier_skill_bloodmana_Description"				"Spells cost health instead of mana."
+"DOTA_Tooltip_modifier_skill_noevil"								"Do No Evil"
+"DOTA_Tooltip_modifier_skill_noevil_Description"						"Grants you bonus damage percentage inverse to the percentage of damage you have contributed to the team's total, up to 40%%."
+"DOTA_Tooltip_modifier_skill_jack"							"Balanced Energies"
+"DOTA_Tooltip_modifier_skill_jack_Description"					"Non-primary attributes give you 0.5 damage per point."
+"DOTA_Tooltip_modifier_skill_cardio"								"Marathon"
+"DOTA_Tooltip_modifier_skill_cardio_Description"					"Dashes now last forever and lock the camera to your hero if you dash far away. You can stop by pressing S or moving near your hero."
+"DOTA_Tooltip_modifier_skill_bloodmana"								"Bloodmana"
+"DOTA_Tooltip_modifier_skill_bloodmana_Description"						"Spells cost health instead of mana."
+
+"DOTA_Tooltip_ability_skill_trident"								"Folded Trident"
+"DOTA_Tooltip_ability_skill_trident_Description"					"Throws a compact trident that moves your hero to units it collides with. If the target is an enemy it performs an immediate autoattack. <br><br> Enemies in animation state take an additional autoattack."
+"DOTA_Tooltip_ability_skill_trident_Lore"							"Where'd you hide this thing?"
+"DOTA_Tooltip_ability_skill_trident_range"							"RANGE:"
+
+"DOTA_Tooltip_ability_skill_transfusion"								"Forced Transfusion"
+"DOTA_Tooltip_ability_skill_transfusion_Description"					"Sacrifices health to damage or heal. If an ally is targeted your health percentages are pooled and distributed evenly, with a %friendly_bias%%% bias towards your ally. \nIf an enemy is targeted, this deals %health_pct%%% of your health in magic damage."
+"DOTA_Tooltip_ability_skill_transfusion_Lore"							"Not the most pleasant way to get healing."
+"DOTA_Tooltip_ability_skill_transfusion_Note0"							"Cannot be used on an ally with a higher health percentage than you."
+
+
+"modifier_skill_midas"								"Midas Touch"
+"modifier_skill_midas_Description"					"Attacks deal 20 magic damage per gold crystal. Rounds have a 1/3 chance of awarding you a free gold crystal."
+"modifier_skill_license"								"Duelist\nLicense"
+"modifier_skill_license_Description"					"Abilities automatically double cast. Has a 5 second cooldown."
+"modifier_skill_luck"								"Lucky Strike"
+"modifier_skill_luck_Description"					"Attacks have a 5% chance of critting for 50%-1900%, and you have a 5% chance of evading damage. Round ends will award 2% bonus to a random attribute."
+"modifier_skill_wavedash"							"Wavedash"
+"modifier_skill_wavedash_Description"				"Slows your attack speed by 35%, but causes attacks after dashes to deal 400% damage."
+"DOTA_Tooltip_modifier_skill_midas"								"Midas Touch"
+"DOTA_Tooltip_modifier_skill_midas_Description"					"Attacks deal 20 magic damage per gold crystal. Rounds have a 1/3 chance of awarding you a free gold crystal."
+"DOTA_Tooltip_modifier_skill_license"								"Duelist\nLicense"
+"DOTA_Tooltip_modifier_skill_license_Description"					"Abilities automatically double cast. Has a 5 second cooldown."
+"DOTA_Tooltip_modifier_skill_license_cooldown"								"Duelist\nLicense"
+"DOTA_Tooltip_modifier_skill_license_cooldown_Description"					"Duelist License passive is on cooldown."
+"DOTA_Tooltip_modifier_skill_luck"								"Lucky Strike"
+"DOTA_Tooltip_modifier_skill_luck_Description"					"Attacks have a 5%% chance of critting for 50%%-1900%%, and you have a 5%% chance of evading damage. Round ends will award 2%% bonus to a random attribute."
+"DOTA_Tooltip_modifier_skill_wavedash"							"Wavedash"
+"DOTA_Tooltip_modifier_skill_wavedash_Description"				"Slows your attack speed by 35%%, but causes attacks after dashes to deal 400%% damage."
+
+"DOTA_Tooltip_modifier_builtin_blink_dashattack"							"Wavedash"
+"DOTA_Tooltip_modifier_builtin_blink_dashattack"					"Your next attack deals 400% damage."
+
+"DOTA_Tooltip_Ability_item_bag_of_gold"			"Bag Of Gold"
+"DOTA_Tooltip_Ability_item_tombstone"			"Ressurect Teammate"
+
+"DOTA_Tooltip_modifier_boss"				"Rolling Stone"
+"DOTA_Tooltip_modifier_boss_Description"				"This boss gains 1 percent damage every 3 seconds."
+
+"DOTA_Tooltip_modifier_main_boss"				"Revenge Counter"
+"DOTA_Tooltip_modifier_main_boss_Description"			"If this counter reaches 0 you're going to have a bad time."
+
+
+"DOTA_Tooltip_modifier_easy_mode_boss"								"EASY MODE"
+"DOTA_Tooltip_modifier_easy_mode_boss_Description"					"This boss casts spells 25%% less frequently and deals 20%% less damage."
+
+"DOTA_Tooltip_modifier_hard_mode_boss"								"HARD MODE"
+"DOTA_Tooltip_modifier_hard_mode_boss_Description"					"This boss casts spells more frequently and regenerates mana quicker."
+
+"DOTA_Tooltip_modifier_hard_mode_player"							"Blessed"
+"DOTA_Tooltip_modifier_hard_mode_player_Description"				"Hard mode gives you 12%% primary attribute bonus."
+
+"DOTA_Tooltip_modifier_laser_player"								"Laser Hell"
+"DOTA_Tooltip_modifier_laser_player_Description"					"You gain %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% bonus movespeed and %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% bonus attack speed."
+
+"DOTA_Tooltip_modifier_nightmare_player"							"Dark Dreams"
+"DOTA_Tooltip_modifier_nightmare_player_Description"				"You have 0 base vision, but you gain %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE%%% cooldown reduction."
+
+"DOTA_Tooltip_modifier_double_player"								"Seeing Doubles"
+"DOTA_Tooltip_modifier_double_player_Description"					"You gain 12%% secondary attributes."
+
+"DOTA_Tooltip_modifier_double_boss"								"Seeing Doubles"
+"DOTA_Tooltip_modifier_double_boss_Description"					"This boss has %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%% less health and %dMODIFIER_PROPERTY_COOLDOWN_PERCENTAGE%%% higher cooldowns."
+
+"DOTA_Tooltip_modifier_sudden_death_player"								"Sudden Death"
+"DOTA_Tooltip_modifier_sudden_death_player_Description"					"You have %dMODIFIER_PROPERTY_EXTRA_HEALTH_PERCENTAGE%%% less health, but %dMODIFIER_PROPERTY_STATUS_RESISTANCE%%% status resistance and %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS% bonus stats."
+
+
+
+"DOTA_Tooltip_modifier_builtin_blink_immunity"                     "Dash Immunity"
+"DOTA_Tooltip_modifier_builtin_blink_immunity_Description"         "Temporarily spell immune."
+"DOTA_Tooltip_modifier_builtin_blink_cooldown"                     "Dash Cooldown"
+"DOTA_Tooltip_modifier_builtin_blink_cooldown_Description"         "Your built in dash is on cooldown."
 	
 "DOTA_Tooltip_modifier_roundend_effect"					"Divine Grace"
 "DOTA_Tooltip_modifier_roundend_effect_Description"					"Heals %fMODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE%%% HP and %fMODIFIER_PROPERTY_MANA_REGEN_TOTAL_PERCENTAGE%%% mana per second."
@@ -62,13 +278,18 @@
 "DOTA_Tooltip_Ability_item_dev_heart_Description"					"Good for tanking i guess"
 "DOTA_Tooltip_Ability_item_dev_dagon"					"Developer Dagon"
 "DOTA_Tooltip_Ability_item_dev_dagon_Description"					"Kills things good"
+"DOTA_Tooltip_Ability_item_dev_octarine_core"					"Developer Dagon"
+"DOTA_Tooltip_Ability_item_dev_octarine_core_Description"					"Gives 95% cooldown reduction good"
+"DOTA_Tooltip_Ability_item_dev_25"					"Developer Dagon"
+"DOTA_Tooltip_Ability_item_dev_25_Description"					"Does exactly 25% of the target's health in damage good"
+"DOTA_Tooltip_Ability_item_dev_manafill"					"Developer Mana Fill"
+"DOTA_Tooltip_Ability_item_dev_manafill_Description"					"Fills the mana of the target good"
 
 "DOTA_Tooltip_ability_special_bonus_unique_chen_1"	"+5 Holy Persuasion Max Units, Mass Persuasion"
 "DOTA_Tooltip_ability_special_bonus_unique_chen_1_Description"	"Holy persuasion will convert surrounding units as well."
 "DOTA_Tooltip_Ability_special_bonus_unique_chen_custom_1"         					"Burden Removes No Health"
 "DOTA_Tooltip_Ability_special_bonus_unique_chen_custom_2"         					"+{s:value} Holy Persuasion Max Units, Mass Persuasion "
 "DOTA_Tooltip_ability_special_bonus_unique_gyrocopter_1_Description"	"Massively reduces Homing Missile cooldown."
-"DOTA_Tooltip_ability_special_bonus_unique_huskar"	"+{s:value}s Life Break Channel"
 "DOTA_Tooltip_ability_special_bonus_unique_invoker_11"	"+{s:value} Forged Spirit Armor Stacks"
 "DOTA_Tooltip_Ability_special_bonus_unique_necrophos_2"					"+{s:value} Heartstopper Aura Ratio"
 "DOTA_Tooltip_Ability_special_bonus_unique_nyx"									"+{s:value} Spiked Carapace Multiplier"
@@ -81,7 +302,9 @@
 "DOTA_Tooltip_Ability_ogre_magi_custom_bonus_unique_2_Description"					"Multiplies number of casts by 2, but removes 30% of your total health on failure. Can only occur once every 6 seconds."
 "DOTA_Tooltip_Ability_ogre_magi_custom_bonus_unique_1"          					"+10% all Cast Chances"
 "DOTA_Tooltip_Ability_special_custom_bonus_unique_sniper_1"					"+10% Custom Rifle Damage"
+"DOTA_Tooltip_ability_special_bonus_100_crit_75"			"+{s:crit_chance}% Critical Strike ({s:crit_multiplier}%)"
 "DOTA_Tooltip_ability_special_bonus_50_crit_175"			"+{s:crit_chance}% Critical Strike ({s:crit_multiplier}%)"
+"DOTA_Tooltip_ability_special_bonus_intelligence_50"	"+{s:value} Intelligence"
 "DOTA_Tooltip_ability_special_bonus_intelligence_100"	"+{s:value} Intelligence"
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_100"	"+100 Base Damage"
 "DOTA_Tooltip_ability_special_bonus_attack_base_damage_200"	"+200 Base Damage"
@@ -118,15 +341,15 @@
 "DOTA_Tooltip_ability_item_radiance_boss_bonus_damage"						"+$damage"	
 "DOTA_Tooltip_ability_item_empty_1"					"Nothing to see here"
 "DOTA_Tooltip_ability_item_empty_2"					"Nothing to see here"
-"DOTA_Tooltip_ability_item_chest_1"					"Petty Chest"
+"DOTA_Tooltip_ability_item_chest_1"					"<font color='#e8ad64'>Petty Chest</font>"
 "DOTA_Tooltip_ability_item_chest_1_Description"		"Can be used to build a tier 1 neutral item. Cannot be sold.\n You get one for free at round 6."
-"DOTA_Tooltip_ability_item_chest_2"					"Chest"
+"DOTA_Tooltip_ability_item_chest_2"					"<font color='#c4e66e'>Chest</font>"
 "DOTA_Tooltip_ability_item_chest_2_Description"		"Can be used to build a tier 2 neutral item. Cannot be sold.\n You get one for free at round 12."
-"DOTA_Tooltip_ability_item_chest_3"					"Greater Chest"
+"DOTA_Tooltip_ability_item_chest_3"					"<font color='#78c4f0'>Greater Chest</font>"
 "DOTA_Tooltip_ability_item_chest_3_Description"		"Can be used to build a tier 3 neutral item. Cannot be sold.\n You get one for free at round 18."
-"DOTA_Tooltip_ability_item_chest_4"					"Major Chest"
+"DOTA_Tooltip_ability_item_chest_4"					"<font color='#f07775'>Major Chest</font>"
 "DOTA_Tooltip_ability_item_chest_4_Description"		"Can be used to build a tier 4 neutral item. Cannot be sold.\n You get one for free at round 24."
-"DOTA_Tooltip_ability_item_chest_5"					"Stellar Chest"
+"DOTA_Tooltip_ability_item_chest_5"					"<font color='#f0d737'>Stellar Chest</font>"
 "DOTA_Tooltip_ability_item_chest_5_Description"		"Can be used to build a tier 5 neutral item. Cannot be sold.\n You get one for free at round 30."
 
 //Level 1 Chest
@@ -296,34 +519,22 @@
 "DOTA_Tooltip_ability_batrider_flaming_lasso_Note1"					"If Batrider moves more than 825 units in 0.05 seconds the lasso breaks."
 "DOTA_Tooltip_modifier_skeleton_king_mortal_strike_summon"				"Mortal Strike"
 
-"DOTA_Tooltip_modifier_boss"				"Rolling Stone"
-"DOTA_Tooltip_modifier_boss_Description"				"This boss gains 1 percent damage every 3 seconds."
-
-"DOTA_Tooltip_modifier_easy_mode_boss"				"EASY MODE"
-"DOTA_Tooltip_modifier_easy_mode_boss_Description"				"This boss casts spells 25%% less frequently and deals 20%% less damage."
-
-"DOTA_Tooltip_modifier_hard_mode_boss"				"HARD MODE"
-"DOTA_Tooltip_modifier_hard_mode_boss_Description"				"This boss casts spells more frequently and regenerates mana quicker."
-
-"DOTA_Tooltip_modifier_hard_mode_player"				"Blessed"
-"DOTA_Tooltip_modifier_hard_mode_player_Description"				"Hard mode gives you 12%% primary attribute bonus."
-
 "npc_legion_summon"                     "Dragon Knight"
 "npc_playerhelp"                     	"Hired Goon"
 "npc_courier_replacement"                     	"Fake Courier"
 "npc_punching_bag"                     "Please don't hit me"
 "npc_armored_punching_bag"                     "Go ahead, make my day"
-"npc_tormented_soul"                     "Tormented Soul (Boss)"
-"npc_wretched_soul"                     "Wretched Soul (Boss)"
-"npc_wandering_soul"                     "Wandering Soul (Boss)"
+"npc_tormented_soul"                     "Tormented Soul"
+"npc_wretched_soul"                     "Wretched Soul"
+"npc_wandering_soul"                     "Wandering Soul"
 "DOTA_Tooltip_ability_custom_thundercall"							"Thundercall"
-"DOTA_Tooltip_ability_custom_thundercall_Description"				"Calls lightning to strike around the caster at a set interval with increasing radius. Once the radius reaches its maximum distance, the lightning bolts return towards the caster. Each series of bolts deals %damage_multiplier%%% increased damage than the last and slows the target for a short duration."
+"DOTA_Tooltip_ability_custom_thundercall_Description"				"Calls lightning to strike around the caster at a set interval with increasing radius. Once the radius reaches its maximum distance, the lightning bolts return towards the caster. Each series of bolts deals %damage_increase% increased damage than the last and slows the target for a short duration."
 "DOTA_Tooltip_ability_custom_thundercall_damage"					"INITIAL DAMAGE:"
 "DOTA_Tooltip_ability_custom_thundercall_radius"					"MAX RADIUS:"
 "npc_conduit"                     "Conduit"
 
 
-"npc_boss_abyssal_underlord"                     "Abyssal Underlord (Boss)"
+"npc_boss_abyssal_underlord"                     "Abyssal Underlord"
 
 "DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm"					"Firestorm"
 "DOTA_Tooltip_ability_boss_abyssal_underlord_firestorm_Description"      "Channels while pummeling a target with firey shrapnel from the sky. The longer this ability channels, the more accurate and frequent the shrapnel becomes."
@@ -357,7 +568,35 @@
 "DOTA_Tooltip_ability_boss_abyssal_underlord_certain_death_damage"						"DAMAGE PER SECOND:"
 "DOTA_Tooltip_ability_boss_abyssal_underlord_certain_death_health"						"SHROUD HEALTH:"
 
-"npc_boss_ancient_apparition"                     "Ancient Apparition (Boss)"
+
+"npc_boss_aghanim"                     "Aghanim"
+
+"DOTA_Tooltip_ability_boss_aghanim_crystal_attack"					"Crystal Attack"
+"DOTA_Tooltip_ability_boss_aghanim_crystal_attack_Description"      "Launches crystals at nearby enemies, dealing physical damage and knocking back affected units. Suppresses regeneration by %heal_suppression_pct%%% for %debuff_duration% seconds."
+"DOTA_Tooltip_ability_boss_aghanim_crystal_attack_attack_damage"           "DAMAGE:"
+
+"DOTA_Tooltip_ability_boss_aghanim_staff_beams"					"Incineration Beams"
+"DOTA_Tooltip_ability_boss_aghanim_staff_beams_Description"      "Targets all enemies with an incinerating beam, dealing percent damage and following the target. Leaves behind flames that linger for %linger_time% seconds."
+"DOTA_Tooltip_ability_boss_aghanim_staff_beams_beam_speed"           "BEAM SPEED:"
+"DOTA_Tooltip_ability_boss_aghanim_staff_beams_beam_dps_pct"          "%BEAM DPS:"
+
+"DOTA_Tooltip_ability_boss_aghanim_summon_portals"					"Portal Spears"
+"DOTA_Tooltip_ability_boss_aghanim_summon_portals_Description"      "Aghanim conjures floating spears that target an enemy. After %portal_time% seconds the spears launch one by one, dragging and stunning hit enemies."
+"DOTA_Tooltip_ability_boss_aghanim_summon_portals_staff_crush_damage"           "SPEAR DAMAGE:"
+
+"DOTA_Tooltip_ability_boss_aghanim_blink"					"Blink"
+"DOTA_Tooltip_ability_boss_aghanim_blink_Description"      "Aghanim teleports to a target."
+
+"DOTA_Tooltip_ability_boss_aghanim_spell_swap"					"Spellsteal"
+"DOTA_Tooltip_ability_boss_aghanim_spell_swap_Description"      "Targets all enemies with a spell siphon. After %channel_time% seconds Aghanim steals an ability at random and places it in a crystal. Breaking the crystal will restore the ability."
+"DOTA_Tooltip_ability_boss_aghanim_spell_swap_num_crystal_hits"           "Crystal Health:"
+
+"DOTA_Tooltip_ability_boss_aghanim_shard_attack"					"Shard Storm"
+"DOTA_Tooltip_ability_boss_aghanim_shard_attack_Description"      "Conjures multiple shards that rotate away erratically. "
+"DOTA_Tooltip_ability_boss_aghanim_shard_attack_spiral_projectile_damage"           "DAMAGE:"
+
+
+"npc_boss_ancient_apparition"                     "Ancient Apparition"
 
 
 "DOTA_Tooltip_ability_custom_no_heal_aura"					"No Heal Aura"
@@ -368,7 +607,7 @@
 "DOTA_Tooltip_modifier_custom_no_heal_effect"					"No Heal"
 "DOTA_Tooltip_modifier_custom_no_heal_effect_Description"		"Ancient Apparition is blocking your health regeneration."
 
-"npc_boss_antimage"                     "Antimage (Boss)"
+"npc_boss_antimage"                     "Antimage"
 
 
 "DOTA_Tooltip_ability_custom_aura_mana_drain"				    "Mana Drain Aura"
@@ -406,10 +645,10 @@
 "DOTA_Tooltip_Ability_custom_antimage_revenge_explosion_radius"            "Explosion Radius:"
 "DOTA_Tooltip_Ability_custom_antimage_revenge_damage"            "Explosion Damage:"
 
-"npc_boss_beastmaster"                     "Beastmaster (Boss)"
-"npc_boss_boar"                     		"Boar (Boss)"
-"npc_boss_alpha_wolf"                     "Wolf (Boss)"
-"npc_boss_hawk"                     "Hawk (Boss)"
+"npc_boss_beastmaster"                     "Beastmaster"
+"npc_boss_boar"                     		"Boar"
+"npc_boss_alpha_wolf"                     "Wolf"
+"npc_boss_hawk"                     "Hawk"
 
 "DOTA_Tooltip_ability_boss_beastmaster_wild_axes"									"Wild Axes"
 "DOTA_Tooltip_ability_boss_beastmaster_wild_axes_Description"						"Beastmaster sends his axes flying and calls them home again, slicing through enemy units and trees along their path."
@@ -441,7 +680,7 @@
 "DOTA_Tooltip_ability_boss_beastmaster_primal_roar_slow_movement_speed_pct"			"%MOVEMENT SLOW:"
 "DOTA_Tooltip_ability_boss_beastmaster_primal_roar_slow_attack_speed_pct"			"ATTACK SLOW:"
 
-"npc_boss_bloodseeker"                     "Bloodseeker (Boss)"
+"npc_boss_bloodseeker"                     "Bloodseeker"
 
 
 "DOTA_Tooltip_ability_custom_blood_bath"									"Blood Rite"
@@ -458,7 +697,7 @@
 "DOTA_Tooltip_ability_custom_rupture_duration"								"DURATION:"
 "DOTA_Tooltip_ability_custom_rupture_movement_damage_pct"					"%MOVE DAMAGE:"
 "DOTA_Tooltip_ability_custom_rupture_cast_range_tooltip"					"CAST RANGE:"
-"npc_boss_chaos_knight"                     "Chaos Knight (Boss)"
+"npc_boss_chaos_knight"                     "Chaos Knight"
 
 
 "DOTA_Tooltip_ability_custom_chaos_bolt"					"Chaos Bolt"
@@ -470,10 +709,10 @@
 "DOTA_Tooltip_ability_custom_chaos_bolt_damage_max"		    "MAXIMUM DAMAGE:"
 "DOTA_Tooltip_ability_custom_chaos_bolt_Note0"			    "The stun duration and damage values dealt are inversely related."
 
-"npc_boss_clockwerk_rush"                     "Clockwerk (Boss)"
+"npc_boss_clockwerk_rush"                     "Clockwerk"
 
 
-"npc_boss_crystal_maiden"                     "Crystal Maiden (Boss)"
+"npc_boss_crystal_maiden"                     "Crystal Maiden"
 "npc_blizzard_orb"								"Frozen Sigil"
 
 "DOTA_Tooltip_ability_custom_crystal_nova"								"Crystal Nova"
@@ -515,35 +754,33 @@
 "DOTA_Tooltip_ability_custom_blizzard_orb_Note0"						"Frozen sigils will recast freezing field if interrupted."
 "DOTA_Tooltip_ability_custom_blizzard_orb_duration"						"DURATION:" 
 
+"npc_boss_death_prophet"                     "Death Prophet"
 
-"npc_boss_deathprophet"                     "Deathprophet (Boss)"
+"DOTA_Tooltip_ability_boss_death_prophet_carrion_swarm"								"Crypt Swarm"
+"DOTA_Tooltip_ability_boss_death_prophet_carrion_swarm_Description"					"Sends a swarm of winged beasts to savage enemy units in front of Death Prophet."
+"DOTA_Tooltip_ability_boss_death_prophet_carrion_swarm_Lore"						"Krobelus' many trips to the grave gather a flock of the damned."
+"DOTA_Tooltip_ability_boss_death_prophet_carrion_swarm_Note0"						"Can hit units up to 1110 range away."
+"DOTA_Tooltip_ability_boss_death_prophet_carrion_swarm_range"						"RANGE:"
 
+"DOTA_Tooltip_ability_boss_death_prophet_exorcism"									"Exorcism"
+"DOTA_Tooltip_ability_boss_death_prophet_exorcism_Description"						"Unleashes evil spirits to drain the life of nearby enemy units and structures. At the end of the spell's duration, Death Prophet is healed in proportion to the damage dealt. Lasts %abilityduration% seconds."
+"DOTA_Tooltip_ability_boss_death_prophet_exorcism_Lore"								"Shouldn't you be dealing with this right now?."
+"DOTA_Tooltip_ability_boss_death_prophet_exorcism_radius"							"RADIUS:"
+"DOTA_Tooltip_ability_boss_death_prophet_exorcism_spirits"							"SPIRITS:"
+"DOTA_Tooltip_ability_boss_death_prophet_exorcism_heal_percent"						"%LIFE DRAIN:"
+"DOTA_Tooltip_ability_boss_death_prophet_exorcism_average_damage"					"SPIRIT DAMAGE:"
 
-"DOTA_Tooltip_ability_custom_carrion_swarm"								"Crypt Swarm"
-"DOTA_Tooltip_ability_custom_carrion_swarm_Description"					"Sends a swarm of winged beasts to savage enemy units in front of Death Prophet."
-"DOTA_Tooltip_ability_custom_carrion_swarm_Lore"						"Krobelus' many trips to the grave gather a flock of the damned."
-"DOTA_Tooltip_ability_custom_carrion_swarm_Note0"						"Can hit units up to 1110 range away."
-"DOTA_Tooltip_ability_custom_carrion_swarm_range"						"RANGE:"
+"DOTA_Tooltip_ability_boss_death_prophet_spirit_siphon"								"Spirit Siphon"
+"DOTA_Tooltip_ability_boss_death_prophet_spirit_siphon_Description"					"Creates a spirit link between Death Prophet and an enemy unit, draining %damage% + %damage_pct%%% Max HP per second and steal %movement_slow%%% movement speed from the enemy."
+"DOTA_Tooltip_ability_boss_death_prophet_spirit_siphon_lore"                        	"Krobelus willingly shows others the path she alone cannot follow."
+"DOTA_Tooltip_ability_boss_death_prophet_spirit_siphon_damage"                       "BASE DAMAGE:"
+"DOTA_Tooltip_ability_boss_death_prophet_spirit_siphon_damage_pct"                   "%MAX HP AS DAMAGE:"
+"DOTA_Tooltip_ability_boss_death_prophet_spirit_siphon_movement_steal"                "%SPEED STEAL:"
+"DOTA_Tooltip_ability_boss_death_prophet_spirit_siphon_haunt_duration"                "DURATION:"
+"DOTA_Tooltip_ability_boss_death_prophet_spirit_siphon_charge_restore_time"          "CHARGE RESTORE TIME:"
 
-"DOTA_Tooltip_ability_custom_exorcism"									"Exorcism"
-"DOTA_Tooltip_ability_custom_exorcism_Description"						"Unleashes evil spirits to drain the life of nearby enemy units and structures. At the end of the spell's duration, Death Prophet is healed in proportion to the damage dealt. Lasts 20 seconds.\n\nTriggers at 40 percent health."
-"DOTA_Tooltip_ability_custom_exorcism_Lore"								"Shouldn't you be dealing with this right now?."
-"DOTA_Tooltip_ability_custom_exorcism_radius"							"RADIUS:"
-"DOTA_Tooltip_ability_custom_exorcism_spirits"							"SPIRITS:"
-"DOTA_Tooltip_ability_custom_exorcism_heal_percent"						"%LIFE DRAIN:"
-"DOTA_Tooltip_ability_custom_exorcism_average_damage"					"SPIRIT DAMAGE:"
-
-"DOTA_Tooltip_ability_custom_spirit_siphon"								"Spirit Siphon"
-"DOTA_Tooltip_ability_custom_spirit_siphon_Description"					"Creates a spirit link between Death Prophet and an enemy unit, draining %damage% + %damage_pct%%% Max HP per second and steal %movement_slow%%% movement speed from the enemy."
-"DOTA_Tooltip_ability_custom_spirit_siphon_lore"                        	"Krobelus willingly shows others the path she alone cannot follow."
-"DOTA_Tooltip_ability_custom_spirit_siphon_damage"                       "BASE DAMAGE:"
-"DOTA_Tooltip_ability_custom_spirit_siphon_damage_pct"                   "%MAX HP AS DAMAGE:"
-"DOTA_Tooltip_ability_custom_spirit_siphon_movement_steal"                "%SPEED STEAL:"
-"DOTA_Tooltip_ability_custom_spirit_siphon_haunt_duration"                "DURATION:"
-"DOTA_Tooltip_ability_custom_spirit_siphon_charge_restore_time"          "CHARGE RESTORE TIME:"
-
-"npc_boss_terrorblade"                     							"Terrorblade (Boss)"
-"npc_boss_terrorblade_clone"                     							"Terrorblade Clone (Boss)"
+"npc_boss_terrorblade"                     							"Terrorblade"
+"npc_boss_terrorblade_clone"                     							"Terrorblade Clone"
 
 "DOTA_Tooltip_ability_custom_life_drain"											"Life Drain"
 "DOTA_Tooltip_ability_custom_life_drain_Description"								"CHANNELED - When cast on an enemy, Terrorblade drains health from the target enemy unit to heal himself and granting vision over the target. If Terrorblade has full HP, and the enemy target is a Hero, Life Drain will restore mana instead."
@@ -552,7 +789,7 @@
 "DOTA_Tooltip_ability_custom_life_drain_abilitychanneltime"							"MAX DURATION:"		
 "DOTA_Tooltip_ability_custom_life_drain_scepter_health_drain"					"SCEPTER DRAIN PER SECOND:"
 "DOTA_Tooltip_ability_custom_life_drain_scepter_cooldown"					"SCEPTER COOLDOWN:"
-"DOTA_Tooltip_ability_custom_life_drain_aghanim_description"						"Removes cooldown and increases damage."
+"DOTA_Tooltip_ability_custom_life_drain_scepter_description"						"Removes cooldown and increases damage."
 		
 
 "DOTA_Tooltip_ability_custom_reflection"							"Reflection"
@@ -582,7 +819,7 @@
 "DOTA_Tooltip_ability_custom_shockwave_Description"						"The Terrorblade Clone tears open an unstable rift to the underworld, creating a shockwave that travels in a line along the ground, dealing damage to enemies it hits."
 "DOTA_Tooltip_ability_custom_shockwave_distance"							"TRAVEL DISTANCE:"
 		
-"npc_boss_doom"                     "Doom (Boss)"
+"npc_boss_doom"                     "Doom"
 
 "DOTA_Tooltip_ability_custom_infernal_blade"						"Infernal Blade"
 "DOTA_Tooltip_ability_custom_infernal_blade_Description"			"Doom swings his burning sword, igniting the enemy. Stuns for %ministun_duration% seconds and applies a %burn_duration% second burn that deals %burn_damage% + %burn_damage_pct%%% of the target's Max HP as damage per second."
@@ -607,7 +844,7 @@
 "DOTA_Tooltip_ability_custom_doom_Note0"					"Units afflicted by Doom can be denied when their HP drops below 25%."
 "DOTA_Tooltip_ability_custom_doom_duration"					"DURATION:"
 "DOTA_Tooltip_ability_custom_doom_damage"					"DAMAGE PER SECOND:"
-"DOTA_Tooltip_ability_custom_doom_aghanim_description"		"Will suspend Doom's duration while the affected unit is within 900 range. Also causes it to remove positive buffs from the target when cast, and break most passive abilities while active."
+"DOTA_Tooltip_ability_custom_doom_scepter_description"		"Will suspend Doom's duration while the affected unit is within 900 range. Also causes it to remove positive buffs from the target when cast, and break most passive abilities while active."
 "DOTA_Tooltip_ability_custom_arena"						"Cagefight"
 "DOTA_Tooltip_ability_custom_arena_Description"			"Triggers when Doom falls below 40 percent health. After a two second delay Doom explodes, dealing 600 damage to enemies around and summons an electric cage that traps enemies.\n\n Doom moves 25 percent faster after casting." 
 "DOTA_Tooltip_ability_custom_arena_Lore"						"No one escapes doom's grasp."
@@ -617,16 +854,16 @@
 "DOTA_Tooltip_ability_custom_arena_radius"					"RADIUS:"	
 
 
-"npc_boss_elder_titan"                     "Elder Titan (Boss)"
-"npc_stone_spire"                     "Stone Spire (Boss)"
-"DOTA_Tooltip_ability_custom_ground_smash"							"Ground Smash"
-"DOTA_Tooltip_ability_custom_ground_smash_Description"				"Slams the ground with immense force, dealing damage to enemies based on their max health."
-"DOTA_Tooltip_ability_custom_ground_smash_damage_pct"				"%DAMAGE PERCENT:"
-"DOTA_Tooltip_ability_custom_ground_smash_stun_duration"			"STUN DURATION:"
-"DOTA_Tooltip_ability_custom_shifting_quake"						"Shifting Quake"
-"DOTA_Tooltip_ability_custom_shifting_quake_Description"			"Creates a quake that expands outward in a line, dealing damage over time and stunning enemies. Damage is based on target's current health."
-"DOTA_Tooltip_ability_custom_shifting_quake_damage_pct"				"%DAMAGE PERCENT:"
-"DOTA_Tooltip_ability_custom_shifting_quake_stun_duration"			"STUN DURATION:"
+"npc_boss_elder_titan"                     "Elder Titan"
+"npc_stone_spire"                     "Stone Spire"
+"DOTA_Tooltip_ability_boss_elder_titan_ground_smash"							"Ground Smash"
+"DOTA_Tooltip_ability_boss_elder_titan_ground_smash_Description"				"Slams the ground with immense force, dealing damage to enemies based on their max health."
+"DOTA_Tooltip_ability_boss_elder_titan_ground_smash_damage_pct"				"%DAMAGE PERCENT:"
+"DOTA_Tooltip_ability_boss_elder_titan_ground_smash_stun_duration"			"STUN DURATION:"
+"DOTA_Tooltip_ability_boss_elder_titan_shifting_quake"						"Shifting Quake"
+"DOTA_Tooltip_ability_boss_elder_titan_shifting_quake_Description"			"Creates a quake that expands outward in a line, dealing damage over time and stunning enemies. Damage is based on target's current health."
+"DOTA_Tooltip_ability_boss_elder_titan_shifting_quake_damage_pct"				"%DAMAGE PERCENT:"
+"DOTA_Tooltip_ability_boss_elder_titan_shifting_quake_stun_duration"			"STUN DURATION:"
 "DOTA_Tooltip_ability_custom_rock_hard"								"Rock Hard"
 "DOTA_Tooltip_ability_custom_rock_hard_Description"					"The Worldsmith turns his body rock hard, reflecting damage dealt to him back to the attacker."
 "DOTA_Tooltip_ability_custom_rock_hard_reflect"						"%REFLECT:"
@@ -635,10 +872,10 @@
 "DOTA_Tooltip_modifier_rock_hard_Description"						"Reflecting damage back to the attacker."
 "DOTA_Tooltip_modifier_rock_hard_initial"									"Watch the fuck out"
 "DOTA_Tooltip_modifier_rock_hard_initial_Description"						"Why are you reading this"
-"DOTA_Tooltip_ability_custom_earth_splitter"						"Earth Splitter"
-"DOTA_Tooltip_ability_custom_earth_splitter_damage_pct"				"%DAMAGE PERCENT:"
-"DOTA_Tooltip_ability_custom_stone_spire"							"Stone Spire"
-"DOTA_Tooltip_ability_custom_stone_spire_Description"				"Plants a Stone Spire near the caster. The Stone Spire hurls boulders at enemies and surrounds itself with trembling shockwaves."
+"DOTA_Tooltip_ability_boss_elder_titan_earth_splitter"						"Earth Splitter"
+"DOTA_Tooltip_ability_boss_elder_titan_earth_splitter_damage_pct"				"%DAMAGE PERCENT:"
+"DOTA_Tooltip_ability_boss_elder_titan_stone_spire"							"Stone Spire"
+"DOTA_Tooltip_ability_boss_elder_titan_stone_spire_Description"				"Plants a Stone Spire near the caster. The Stone Spire hurls boulders at enemies and surrounds itself with trembling shockwaves."
 "DOTA_Tooltip_ability_custom_stone_spire_duration"					"DURATION"
 "DOTA_Tooltip_ability_custom_trembling_waves"						"Trembling Shockwave"
 "DOTA_Tooltip_ability_custom_trembling_waves_Description"			"The caster releases constant shockwaves that deals damage and knocks back enemies."
@@ -646,37 +883,43 @@
 "DOTA_Tooltip_ability_custom_trembling_waves_interval"				"INTERVAL:"
 "DOTA_Tooltip_ability_custom_trembling_waves_radius"				"RADIUS:"
 
-"npc_boss_ember_spirit"                     "Ember Spirit (Boss)"
-"npc_boss_enigma"                     "Enigma (Boss)"
+"npc_boss_ember_spirit"                     "Ember Spirit"
+"npc_boss_enigma"                     "Enigma"
+
+"DOTA_Tooltip_ability_boss_enigma_malefice"											"Malefice"
+"DOTA_Tooltip_ability_boss_enigma_malefice_Description"								"Focuses Enigma's power on a target, causing it to take damage and become repeatedly stunned for multiple instances.  An instance strikes every %tick_rate% seconds."
+"DOTA_Tooltip_ability_boss_enigma_malefice_Lore"										"Strange gravities pull at the core of those who would oppose you, holding them in place."
+"DOTA_Tooltip_ability_boss_enigma_malefice_stun_duration"							"STUN DURATION:"
+"DOTA_Tooltip_ability_boss_enigma_malefice_damage"									"DAMAGE PER HIT:"
+"DOTA_Tooltip_ability_boss_enigma_malefice_tooltip_stuns"							"INSTANCES:"
+
+"DOTA_Tooltip_ability_boss_enigma_midnight_pulse"							"Midnight Pulse"
+"DOTA_Tooltip_ability_boss_enigma_midnight_pulse_Description"						"Steeps an area in dark resonance, damaging enemy units based on their max HP."
+"DOTA_Tooltip_ability_boss_enigma_midnight_pulse_Lore"								"A section of the world slowly descends into the void."
+"DOTA_Tooltip_ability_boss_enigma_midnight_pulse_Note0"								"Damage goes through spell immunity."
+"DOTA_Tooltip_ability_boss_enigma_midnight_pulse_duration"							"DURATION:"
+"DOTA_Tooltip_ability_boss_enigma_midnight_pulse_damage_percent"						"%DAMAGE PER SECOND:"
+"DOTA_Tooltip_ability_boss_enigma_midnight_pulse_radius"								"RADIUS:"
+
+"DOTA_Tooltip_ability_boss_enigma_black_hole"										"Black Hole"
+"DOTA_Tooltip_ability_boss_enigma_black_hole_Description"							"CHANNELED - Summons a vortex that sucks in nearby enemy units.  Enemies affected by Black Hole cannot move, attack, or cast spells.\n\nUpgradable by Aghanim's Scepter."
+"DOTA_Tooltip_ability_boss_enigma_black_hole_Lore"									"The ground trembles as Enigma channels his ultimate vortex of destruction, a singularity with the power to end worlds."
+"DOTA_Tooltip_ability_boss_enigma_black_hole_Note0"									"Disables enemies through spell immunity."
+"DOTA_Tooltip_ability_boss_enigma_black_hole_far_damage"								"DAMAGE PER SECOND:"
+"DOTA_Tooltip_ability_boss_enigma_black_hole_far_radius"								"RADIUS:"
+"DOTA_Tooltip_ability_boss_enigma_black_hole_duration"								"DURATION:"
+"DOTA_Tooltip_ability_boss_enigma_shadow_blast"							"Shadow Barrage"
+"DOTA_Tooltip_ability_boss_enigma_shadow_blast_Description"				"Fires %strikes% blasts in lines that deals percent damage and slows any targets they hit."
+"DOTA_Tooltip_ability_boss_enigma_shadow_blast_damage_pct"				"%DAMAGE PERCENT"
+"DOTA_Tooltip_ability_boss_enigma_shadow_blast_duration"					"DURATION:"
+"DOTA_Tooltip_ability_boss_enigma_shadow_blast_move_slow_tooltip"		"%MOVE SLOW"
+"DOTA_Tooltip_ability_boss_enigma_fundamental_burst"						"Fundamental Burst"
+"DOTA_Tooltip_ability_boss_enigma_fundamental_burst_Description"			"Releases a series of energy bursts in a spiralled pattern."
+"DOTA_Tooltip_ability_boss_enigma_fundamental_burst_damage"				"DAMAGE:"
+"DOTA_Tooltip_ability_boss_enigma_fundamental_burst_duration"			"DURATION:"
 
 
-"DOTA_Tooltip_ability_custom_time_dilation"								"Time Dilation"
-"DOTA_Tooltip_ability_custom_time_dilation_Description"					"Faceless Void traps all nearby enemies in a time dilation field for %duration% seconds, freezing their cooldowns and slowing their movement and attack speed by %slow%%% for each cooldown frozen."
-"DOTA_Tooltip_ability_custom_time_dilation_lore"						"For those facing off against Darkterror, each moment seems to stretch into eternity."
-"DOTA_Tooltip_ability_custom_time_dilation_radius"					    "RADIUS:"
-"DOTA_Tooltip_ability_custom_time_dilation_duration"					"DURATION:"
-"DOTA_Tooltip_ability_custom_time_dilation_slow"					    "%SLOW PER COOLDOWN:"
-
-
-"DOTA_Tooltip_ability_custom_black_hole"										"Black Hole"
-"DOTA_Tooltip_ability_custom_black_hole_Description"							"CHANNELED - Summons a vortex that sucks in nearby enemy units.  Enemies affected by Black Hole cannot move, attack, or cast spells.\n\nUpgradable by Aghanim's Scepter."
-"DOTA_Tooltip_ability_custom_black_hole_Lore"									"The ground trembles as Enigma channels his ultimate vortex of destruction, a singularity with the power to end worlds."
-"DOTA_Tooltip_ability_custom_black_hole_Note0"									"Disables enemies through spell immunity."
-"DOTA_Tooltip_ability_custom_black_hole_far_damage"								"DAMAGE PER SECOND:"
-"DOTA_Tooltip_ability_custom_black_hole_far_radius"								"RADIUS:"
-"DOTA_Tooltip_ability_custom_black_hole_duration"								"DURATION:"
-"DOTA_Tooltip_ability_custom_shadow_blast_en"							"Shadow Blast"
-"DOTA_Tooltip_ability_custom_shadow_blast_en_Description"				"Fires three blasts in a line that deals percent damage and slows any targets they hit."
-"DOTA_Tooltip_ability_custom_shadow_blast_en_damage_pct"				"%DAMAGE PERCENT"
-"DOTA_Tooltip_ability_custom_shadow_blast_en_duration"					"DURATION:"
-"DOTA_Tooltip_ability_custom_shadow_blast_en_move_slow_tooltip"		"%MOVE SLOW"
-"DOTA_Tooltip_ability_custom_fundamental_burst"						"Fundamental Burst"
-"DOTA_Tooltip_ability_custom_fundamental_burst_Description"			"Releases a series of energy bursts in a spiralled pattern."
-"DOTA_Tooltip_ability_custom_fundamental_burst_damage"				"DAMAGE:"
-"DOTA_Tooltip_ability_custom_fundamental_burst_duration"			"DURATION:"
-
-
-"npc_boss_faceless_void"                     "Faceless Void (Boss)"
+"npc_boss_faceless_void"                     "Faceless Void"
 
 "DOTA_Tooltip_ability_custom_time_lock"									"Time Lock"
 "DOTA_Tooltip_ability_custom_time_lock_Description"						"Adds the chance for an attack to lock an enemy unit in time while attacking it a second time."
@@ -707,7 +950,7 @@
 "DOTA_Tooltip_ability_custom_reality_rift_armor_reduction"	"ARMOR REDUCTION:"
 
 
-"npc_boss_forged_spirit"                     "Forged Spirit (Boss)"
+"npc_boss_forged_spirit"                     "Forged Spirit"
 "DOTA_Tooltip_ability_custom_mortimer_kisses"					"Mortimer Kisses"
 "DOTA_Tooltip_ability_custom_mortimer_kisses_Description"		"Forged spirit launches a glob of magma that deals impact damage and create a pool of fire, which slows and applies damage over time."
 "DOTA_Tooltip_ability_custom_mortimer_kisses_Note1"			"Has a minimum travel time of %min_lob_travel_time% and maximum travel time of %max_lob_travel_time%."
@@ -723,7 +966,7 @@
 "DOTA_Tooltip_ability_custom_forged_inner_fire_disarm_duration"						"DISARM DURATION:"
 "DOTA_Tooltip_ability_custom_forged_inner_fire_radius"								"RADIUS:"
 "DOTA_Tooltip_ability_custom_forged_inner_fire_knockback_distance"					"KNOCKBACK TO:"
-"npc_boss_grimstroke"                     "Grimstroke (Boss)"
+"npc_boss_grimstroke"                     "Grimstroke"
 
 
 "DOTA_Tooltip_ability_custom_dark_artistry"								    "Stroke of Fate"
@@ -755,34 +998,43 @@
 "DOTA_Tooltip_ability_custom_spirit_walk_tick_dps_tooltip"		"INK TENDRILS DPS:"
 "DOTA_Tooltip_ability_custom_spirit_walk_abilitycastrange"	"CAST RANGE:"
 		
-"npc_boss_juggernaut"                     "Juggernaut (Boss)"
+"npc_boss_juggernaut"                     "Juggernaut"
 
 
-"DOTA_Tooltip_ability_custom_blade_fury"									"Blade Fury"
-"DOTA_Tooltip_ability_custom_blade_fury_Description"						"Causes a bladestorm of destructive force around Juggernaut, rendering him immune to magic and dealing damage to nearby enemy units. \n\nDISPEL TYPE: Basic Dispel"
-"DOTA_Tooltip_ability_custom_blade_fury_Lore"								"Yurnero's renowned katana techniques are feared by warriors and sorcerors alike."
-"DOTA_Tooltip_ability_custom_blade_fury_Note0"								"This skill doesn't affect mechanical units."
-"DOTA_Tooltip_ability_custom_blade_fury_Note1"								"You can use items during Blade Fury."
-"DOTA_Tooltip_ability_custom_blade_fury_Note2"								"Juggernaut can still perform attacks while in Blade Fury. However, only units that are not affected by Blade Fury, such as wards or structures, will take damage from these attacks."
-"DOTA_Tooltip_ability_custom_blade_fury_Note3"								"Deals a total of 400/525/650/775 damage."
-"DOTA_Tooltip_ability_custom_blade_fury_blade_fury_radius"					"RADIUS:"
-"DOTA_Tooltip_ability_custom_blade_fury_blade_fury_damage"					"DAMAGE:"
-"DOTA_Tooltip_ability_custom_blade_fury_duration"					        "DURATION:"
-"DOTA_Tooltip_ability_custom_blade_vortex"							"Blade Vortex"
-"DOTA_Tooltip_ability_custom_blade_vortex_Description"				"Summons a vortex of animated blades at a location that deals damage to units caught in the radius."
-"DOTA_Tooltip_ability_custom_blade_vortex_duration"					"DURATION:"		
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury"									"Blade Fury"
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_Description"						"Causes a bladestorm of destructive force around Juggernaut, rendering him immune to magic and dealing damage to nearby enemy units. \n\nDISPEL TYPE: Basic Dispel"
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_Lore"								"Yurnero's renowned katana techniques are feared by warriors and sorcerors alike."
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_Note0"								"This skill doesn't affect mechanical units."
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_Note1"								"You can use items during Blade Fury."
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_Note2"								"Juggernaut can still perform attacks while in Blade Fury. However, only units that are not affected by Blade Fury, such as wards or structures, will take damage from these attacks."
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_Note3"								"Deals a total of 400/525/650/775 damage."
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_blade_fury_radius"					"RADIUS:"
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_blade_fury_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_boss_juggernaut_blade_fury_duration"					        "DURATION:"
 
-"DOTA_Tooltip_ability_custom_omni_slash_jugg"									"Omnislash"
-"DOTA_Tooltip_ability_custom_omni_slash_jugg_Description"						"Juggernaut leaps towards the target enemy units, and then slashes the target and other nearby enemy units at an increased attack rate. Juggernaut is invulnerable for the duration."
-"DOTA_Tooltip_ability_custom_omni_slash_jugg_Lore"								"'The fruits of discipline; with practice comes strength.'"
-"DOTA_Tooltip_ability_custom_omni_slash_jugg_attack_rate_multiplier"				"SLASHES RATE MULTIPLIER:"
-"DOTA_Tooltip_ability_custom_omni_slash_jugg_duration"							"DURATION:"
-"DOTA_Tooltip_ability_custom_omni_slash_jugg_omni_slash_radius"					"SLASH JUMP RADIUS:"
+"DOTA_Tooltip_ability_boss_juggernaut_counter"						"Astral Counter"
+"DOTA_Tooltip_ability_boss_juggernaut_counter_Description"			"Juggernaut stops and focuses inward. Attacking him in this state will cause him to immediately counter with a weak Omnislash. If Juggernaut does not successfully counter a strike, he becomes vulnerable for %vulnerable_duration% seconds."
+"DOTA_Tooltip_ability_boss_juggernaut_counter_duration"				"DURATION:"
+
+"DOTA_Tooltip_modifier_boss_juggernaut_counter"					"Counter"
+"DOTA_Tooltip_modifier_boss_juggernaut_counter_Description"		"Whatever you do, don't attack this guy."
+
+"DOTA_Tooltip_ability_boss_juggernaut_instant_strike"							"Leading Blade"
+"DOTA_Tooltip_ability_boss_juggernaut_instant_strike_Description"				"Casts forth a dagger. If it hits an enemy, it deals damage and causes Juggernaut to instantly cast a weak omnislash on the target. Successful hits will refresh Leading Blade's cooldown."
+"DOTA_Tooltip_ability_boss_juggernaut_instant_strike_damage"					"DAMAGE:"		
+"DOTA_Tooltip_ability_boss_juggernaut_instant_strike_range"					"RANGE:"		
+
+"DOTA_Tooltip_ability_boss_juggernaut_omni_slash"									"Omnislash"
+"DOTA_Tooltip_ability_boss_juggernaut_omni_slash_Description"						"Juggernaut leaps towards the target enemy units, and then slashes the target and other nearby enemy units at an increased attack rate. Juggernaut is invulnerable for the duration."
+"DOTA_Tooltip_ability_boss_juggernaut_omni_slash_Lore"								"'The fruits of discipline; with practice comes strength.'"
+"DOTA_Tooltip_ability_boss_juggernaut_omni_slash_attack_rate_multiplier"				"SLASHES RATE MULTIPLIER:"
+"DOTA_Tooltip_ability_boss_juggernaut_omni_slash_duration"							"DURATION:"
+"DOTA_Tooltip_ability_boss_juggernaut_omni_slash_omni_slash_radius"					"SLASH JUMP RADIUS:"
 
 
-"npc_boss_kobold_foreman"                     "Kobold Foreman (Boss)"
-"npc_boss_kobold_minion"                     "Kobold Minion (Boss)"
-"npc_boss_kobold_soldier"                     "Kobold Soldier (Boss)"
+"npc_boss_kobold_foreman"                     "Kobold Foreman"
+"npc_boss_kobold_minion"                     "Kobold Minion"
+"npc_boss_kobold_soldier"                     "Kobold Soldier"
 
 "DOTA_Tooltip_modifier_kobold_command"							"Charge!"
 "DOTA_Tooltip_modifier_kobold_command_Description"				"This unit is rushing you. Use spell immunity you dumbass."
@@ -802,7 +1054,7 @@
 "DOTA_Tooltip_ability_custom_acid_spray_armor_reduction"					"ARMOR REDUCTION:"
 
 
-"npc_boss_kunkka"                     "Kunkka (Boss)"
+"npc_boss_kunkka"                     "Kunkka"
 
 
 "DOTA_Tooltip_ability_custom_torrent"											"Torrent"
@@ -836,8 +1088,8 @@
 "DOTA_Tooltip_ability_custom_summon_ancient_apparition"							"Ancient Apparition"
 "DOTA_Tooltip_ability_custom_summon_ancient_apparition_Description"				"Summons an Ancient Apparition to help."
 
-"npc_boss_legion_commander"                     "Legion Commander (Boss)"
-"npc_dragon_knight"                     "Dragon Knight (Boss)"
+"npc_boss_legion_commander"                     "Legion Commander"
+"npc_dragon_knight"                     "Dragon Knight"
 
 "DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds"				"Overwhelming Odds"
 "DOTA_Tooltip_ability_boss_legion_commander_overwhelming_odds_Description"	"Turns the enemies' numbers against them, dealing damage and granting you bonus movement speed per unit or per hero.  Deals bonus damage to illusions and summoned units as a percent of their current health."
@@ -884,8 +1136,8 @@
 "DOTA_Tooltip_ability_boss_legion_commander_warpath_explosion_interval"			"EXPLOSION DELAY:"
 "DOTA_Tooltip_ability_boss_legion_commander_warpath_explosion_radius"			"EXPLOSION RADIUS:"
 
-"npc_boss_lich_king"                     "Lich (Boss)"
-"npc_boss_frosty_effigy"                     "Frost Effigy (Boss)"
+"npc_boss_lich_king"                     "Lich"
+"npc_boss_frosty_effigy"                     "Frost Effigy"
 
 "DOTA_Tooltip_ability_custom_frost_blast"							"Frost Blast"
 "DOTA_Tooltip_ability_custom_frost_blast_Description"				"Damages the main target and deals damage to nearby allies of the target as well. Slows the attack and movement speed of all enemies hit."
@@ -925,8 +1177,8 @@
 "DOTA_Tooltip_modifier_frozen_wasteland"							"Frozen"
 "DOTA_Tooltip_modifier_frozen_wasteland_Description"				"Rooted in place."
 
-"npc_boss_lone_druid"                     "Lone Druid (Boss)"
-"npc_boss_spiritbear"                     "Spirit Bear (Boss)"
+"npc_boss_lone_druid"                     "Lone Druid"
+"npc_boss_spiritbear"                     "Spirit Bear"
 
 "DOTA_Tooltip_ability_boss_lone_druid_spirit_bear"								"Summon Spirit Bear"
 "DOTA_Tooltip_ability_boss_lone_druid_spirit_bear_Description"					"Summons a powerful Spirit Bear companion that can equip items.  If the bear moves %bear_distance% it takes %bear_degen%%% of its max life per second. %lifesteal%%% of Spirit Bear's attack damage heals the Lone Druid."
@@ -959,7 +1211,7 @@
 "DOTA_Tooltip_ability_boss_lone_druid_true_form_duration"							"DURATION:"
 "DOTA_Tooltip_ability_boss_lone_druid_true_form_transformation_time"				"TRANSFORM TIME:"
 
-"npc_boss_luna"                     "Luna (Boss)"
+"npc_boss_luna"                     "Luna"
 
 "DOTA_Tooltip_ability_custom_moon_glaive"											"Moon Glaives"
 "DOTA_Tooltip_ability_custom_moon_glaive_Description"								"Empowers Luna's glaives, causing her attacks to bounce between enemy units. Deals less damage with each bounce."
@@ -982,7 +1234,7 @@
 "DOTA_Tooltip_ability_custom_luna_invis_duration"									"DURATION:"
 
 
-"npc_boss_mirana"                     "Mirana (Boss)"
+"npc_boss_mirana"                     "Mirana"
 
 
 "DOTA_Tooltip_ability_custom_sacred_arrow"												"Sacred Arrow"
@@ -998,7 +1250,7 @@
 
 "DOTA_Tooltip_ability_custom_leap"												"Leap"
 "DOTA_Tooltip_ability_custom_leap_Description"									"Mirana leaps forward into battle, empowering herself with a ferocious roar that grants bonus attack and movement speed. Speed bonus lasts %leap_bonus_duration% seconds."
-"npc_boss_nevermore"                     "Shadow Fiend (Boss)"
+"npc_boss_nevermore"                     "Shadow Fiend"
 "DOTA_Tooltip_ability_custom_desolation"							"Desolation"
 "DOTA_Tooltip_ability_custom_desolation_Description"				"Razes the ground in a line dealing damage to all targets hit."
 "DOTA_Tooltip_ability_custom_desolation_damage"						"DAMAGE:"
@@ -1013,7 +1265,7 @@
 "DOTA_Tooltip_ability_custom_shadow_caller"							"Shadow Caller"
 "DOTA_Tooltip_ability_custom_shadow_caller_Description"				"Nevermore calls up his friends from the Shadow Realm to fight alongside him."
 
-"npc_boss_nyx"                     "Nyx (Boss)"
+"npc_boss_nyx"                     "Nyx"
 
 "DOTA_Tooltip_ability_custom_nyx_impale"								"Impale"
 "DOTA_Tooltip_ability_custom_nyx_impale_Description"					"Rock spikes burst from the earth along a straight path. Enemy units are hurled into the air, then are stunned and take damage when they fall."
@@ -1044,7 +1296,7 @@
 "DOTA_Tooltip_ability_custom_nyx_inner_fire_radius"								"RADIUS:"
 "DOTA_Tooltip_ability_custom_nyx_inner_fire_knockback_distance"					"KNOCKBACK TO:"
 
-"npc_boss_oracle"                     "Oracle (Boss)"
+"npc_boss_oracle"                     "Oracle"
 "DOTA_Tooltip_ability_custom_purifying_flames"						"Purifying Flames"
 "DOTA_Tooltip_ability_custom_purifying_flames_Description"			"Burns away impurities, dealing heavy magic damage to the target before causing them to regenerate health over time after a 2.5 second delay. The amount of health regenerated over its duration exceeds the amount of initial damage."
 "DOTA_Tooltip_ability_custom_purifying_flames_Lore"					"Like a hall of mirrors might amplify the light of a single candle, the shattered walls of the universe can transform the light of prophecy into a burning torch."
@@ -1088,7 +1340,35 @@
 "DOTA_Tooltip_modifier_false_promise_warning"								"False Promise Warning"
 "DOTA_Tooltip_modifier_false_promise_warning"					"I guess you may as well read this seeing as you're about to die."
 
-"npc_boss_razor"                     "Razor (Boss)"
+"npc_boss_phantom_lancer"			"Phantom Lancer"
+"npc_boss_phantom_lancer_illusion"			"Phantom Lancer"
+
+"DOTA_Tooltip_ability_boss_phantom_lancer_spiritlance"										"Spirit Lance"
+"DOTA_Tooltip_ability_boss_phantom_lancer_spiritlance_Description"							"Launches a spirit lance in a line. If the lance hits an enemy, phantom lancer immediately casts omnislash on the victim."
+"DOTA_Tooltip_ability_boss_phantom_lancer_spiritlance_Lore"							"Azwraith's proficiency at spearing his family's meal of fish is proving quite useful in the battlefield."
+
+"DOTA_Tooltip_ability_boss_phantom_lancer_doppelganger"								"Doppelganger"
+"DOTA_Tooltip_ability_boss_phantom_lancer_doppelganger_Description"					"Phantom Lancer briefly vanishes from the battlefield. After %delay% second, Phantom Lancer and any of his nearby illusions reappear at a random position within the targeted location, along with two additional doppelgangers.\n\nDISPEL TYPE: Basic Dispel"
+"DOTA_Tooltip_ability_phantom_lancer_doppelganger_Lore"							"Dread Magus Vorn's death imbued the Phantom Lancer with the ability to bend and fracture all spectrums of light."
+"DOTA_Tooltip_ability_boss_phantom_lancer_doppelganger_target_aoe"		"TARGET AREA SIZE:"
+"DOTA_Tooltip_ability_boss_phantom_lancer_doppelganger_search_radius"	"ILLUSION GATHER RANGE:"
+"DOTA_Tooltip_ability_boss_phantom_lancer_doppelganger_delay"			"REAPPEAR DELAY:"		
+"DOTA_Tooltip_ability_boss_phantom_lancer_doppelganger_illusion_duration"						"DOPPELGANGER DURATION:"
+
+
+"DOTA_Tooltip_ability_boss_phantom_lancer_counter"						"Counter"
+"DOTA_Tooltip_ability_boss_phantom_lancer_counter_Description"			"Phantom Lancer stops and focuses inward. Attacking him in this state will cause him to immediately counter with a weak Omnislash. If Phantom Lancer does not successfully counter a strike, he becomes vulnerable for %vulnerable_duration% seconds."
+"DOTA_Tooltip_ability_boss_phantom_lancer_counter_duration"				"DURATION:"
+
+"DOTA_Tooltip_ability_boss_phantom_lancer_omni_slash"									"Omnislash"
+"DOTA_Tooltip_ability_boss_phantom_lancer_omni_slash_Description"						"Juggernaut leaps towards the target enemy units, and then slashes the target and other nearby enemy units at an increased attack rate. Juggernaut is invulnerable for the duration."
+"DOTA_Tooltip_ability_boss_phantom_lancer_omni_slash_Lore"								"'The fruits of discipline; with practice comes strength.'"
+"DOTA_Tooltip_ability_boss_phantom_lancer_omni_slash_attack_rate_multiplier"				"SLASHES RATE MULTIPLIER:"
+"DOTA_Tooltip_ability_boss_phantom_lancer_omni_slash_duration"							"DURATION:"
+"DOTA_Tooltip_ability_boss_phantom_lancer_omni_slash_omni_slash_radius"					"SLASH JUMP RADIUS:"
+
+
+"npc_boss_razor"                     "Razor"
 
 
 "DOTA_Tooltip_ability_custom_static_link"										"Static Link"
@@ -1128,8 +1408,8 @@
 "DOTA_Tooltip_ability_custom_plasma_field_slow_duration"						"SLOW DURATION:"
 "DOTA_Tooltip_ability_custom_plasma_field_radius"								"RADIUS:"
 		
-"npc_boss_invoker"                     "Invoker (Boss)"
-"npc_degen_ward"                     "Degen Ward (Boss)"
+"npc_boss_invoker"                     "Invoker"
+"npc_degen_ward"                     "Degen Ward"
 
 "DOTA_Tooltip_ability_boss_invoker_telekinesis"							"Telekinesis"
 "DOTA_Tooltip_ability_boss_invoker_telekinesis_Description"				"Invoker uses his telekinetic powers to lift the enemy into the air briefly and then hurls them back at the ground. The unit lands on the ground with such force that it stuns nearby enemies."
@@ -1175,9 +1455,10 @@
 "DOTA_Tooltip_modifier_boss_invoker_trance"								"Trance"
 "DOTA_Tooltip_modifier_boss_invoker_trance_Description"					"If you're reading this modifier, who's stopping your hero from walking into this guy?"
 
+"npc_boss_meteor"					"Meteor"
 "npc_shadow_demon"                     "Shadow Demon"
-"npc_boss_shredder"                     "Timbersaw (Boss)"
-"npc_boss_small_slardar"                     "Small Slardar (Boss)"
+"npc_boss_shredder"                     "Timbersaw"
+"npc_boss_small_slardar"                     "Small Slardar"
 
 
 "DOTA_Tooltip_ability_custom_slithereen_crush"									"Slithereen Crush"
@@ -1189,8 +1470,8 @@
 "DOTA_Tooltip_ability_custom_slithereen_crush_crush_extra_slow_duration"		"SLOW DURATION:"
 "DOTA_Tooltip_ability_custom_slithereen_crush_crush_radius"					    "RADIUS:"
 
-"npc_boss_skeleton_king"                     "Undead Lord (Boss)"
-"npc_boss_skeleton_king_angry"                     "Angry Undead Lord (Boss)"
+"npc_boss_skeleton_king"                     "Undead Lord"
+"npc_boss_skeleton_king_angry"                     "Angry Undead Lord"
 "npc_skeletal_knight"						"Skeletal Knight"
 "npc_skeletal_archer"						"Skeletal Archer"
 
@@ -1249,7 +1530,7 @@
 "DOTA_Tooltip_ability_custom_reincarnation_Description"					"Undead Lord revives on death, becoming stronger and faster in the process."
 
 
-"npc_boss_spectre"                     "Spectre (Boss)"
+"npc_boss_spectre"                     "Spectre"
 
 
 "DOTA_Tooltip_ability_custom_spectral_dagger"						"Spectral Dagger"
@@ -1270,7 +1551,6 @@
 "DOTA_Tooltip_ability_custom_dispersion_min_radius"				    "MIN RADIUS:"
 "DOTA_Tooltip_ability_custom_dispersion_max_radius"				    "MAX RADIUS:"
 
-
 "DOTA_Tooltip_ability_custom_aphotic_shield"						"Mirror"
 "DOTA_Tooltip_ability_custom_aphotic_shield_Description"			"Spectre covers himself with a shield made of mirrors. When the shield expires, it deals damage equal to %percentage%% of all damage Spectre received while protected."
 "DOTA_Tooltip_ability_custom_aphotic_shield_Lore"					"Sometimes, your enemy is yourself."
@@ -1281,16 +1561,16 @@
 "DOTA_Tooltip_modifier_custom_aphotic_shield"                       "Mirror Shield"
 "DOTA_Tooltip_modifier_custom_aphotic_shield_Description"           "Damage is being stored and will be released on expired."
 
-"npc_boss_spiritbreaker"                     "Spirit Breaker (Boss)"
+"npc_boss_spiritbreaker"                     "Spirit Breaker"
 
-"DOTA_Tooltip_ability_custom_charge_of_darkness"					"Charge of Darkness"
-"DOTA_Tooltip_ability_custom_charge_of_darkness_Lore"				"Barathrum erupts from the darkness with unwieldy force."
-"DOTA_Tooltip_ability_custom_charge_of_darkness_Description"		"Spirit Breaker fixes his sight on an enemy unit and starts charging through all objects.  All enemy units passed through and the targeted unit will be hit by a Greater Bash."
-"DOTA_Tooltip_ability_custom_charge_of_darkness_Note0"				"Spirit Breaker passes through trees, cliffs, and units."
-"DOTA_Tooltip_ability_custom_charge_of_darkness_Note1"				"The charge indicator is visible only to allies."
-"DOTA_Tooltip_ability_custom_charge_of_darkness_Note2"				"Spirit Breaker gains shared vision of the target."
-"DOTA_Tooltip_ability_custom_charge_of_darkness_movement_speed"		"CHARGE BONUS SPEED:"
-"DOTA_Tooltip_ability_custom_charge_of_darkness_stun_duration"		"STUN DURATION:"
+"DOTA_Tooltip_ability_boss_spirit_breaker_charge_of_darkness"					"Charge of Darkness"
+"DOTA_Tooltip_ability_boss_spirit_breaker_charge_of_darkness_Lore"				"Barathrum erupts from the darkness with unwieldy force."
+"DOTA_Tooltip_ability_boss_spirit_breaker_charge_of_darkness_Description"		"Spirit Breaker fixes his sight on an enemy unit and starts charging through all objects.  All enemy units passed through and the targeted unit will be hit by a Greater Bash."
+"DOTA_Tooltip_ability_boss_spirit_breaker_charge_of_darkness_Note0"				"Spirit Breaker passes through trees, cliffs, and units."
+"DOTA_Tooltip_ability_boss_spirit_breaker_charge_of_darkness_Note1"				"The charge indicator is visible only to allies."
+"DOTA_Tooltip_ability_boss_spirit_breaker_charge_of_darkness_Note2"				"Spirit Breaker gains shared vision of the target."
+"DOTA_Tooltip_ability_boss_spirit_breaker_charge_of_darkness_movement_speed"		"CHARGE BONUS SPEED:"
+"DOTA_Tooltip_ability_boss_spirit_breaker_charge_of_darkness_stun_duration"		"STUN DURATION:"
 
 "DOTA_Tooltip_ability_custom_spiritbreaker_inner_fire"									"Inner Fire"
 "DOTA_Tooltip_ability_custom_spiritbreaker_inner_fire_Description"						"Spirit breaker pounds the earth, pushing enemies back and dealing damage."
@@ -1315,7 +1595,7 @@
 "DOTA_Tooltip_ability_custom_spirits_explode_radius"						"EXPLOSION RADIUS:"
 "DOTA_Tooltip_ability_custom_spirits_spirit_duration"						"DURATION:"
 
-"npc_boss_storm_spirit"                     "Storm Spirit (Boss)"
+"npc_boss_storm_spirit"                     "Storm Spirit"
 
 "DOTA_Tooltip_ability_boss_storm_spirit_thundercall"							"Thundercall"
 "DOTA_Tooltip_ability_boss_storm_spirit_thundercall_Description"				"Calls lightning to outward in a spiral, returning to the caster at the end. <br><br>Each series of bolts deals %damage_increase% increased damage than the last and slows the target for a short duration."
@@ -1328,11 +1608,13 @@
 "DOTA_Tooltip_ability_boss_storm_spirit_static_remnant_static_remnant_damage_radius"	"RADIUS:"
 "DOTA_Tooltip_ability_boss_storm_spirit_static_remnant_static_remnant_damage"		"DAMAGE:"
 
-"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex"								"Electric Vortex"
-"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex_Description"					"A vortex that pulls an enemy unit to Storm Spirit's location."
-"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex_Lore"						"Raijin's thunderous, boisterous energy often draws others into an electrifying situation."
-"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex_electric_vortex_pull_distance"				"PULL DISTANCE:"
-"DOTA_Tooltip_ability_boss_storm_spirit_electric_vortex_abilityduration"			"DURATION:"
+"DOTA_Tooltip_ability_boss_storm_spirit_lightning_bolt"										"Lightning Bolt"
+"DOTA_Tooltip_ability_boss_storm_spirit_lightning_bolt_Description"							"Calls down a bolt of lightning to strike an enemy unit, causing damage and a mini-stun. When cast, Lightning Bolt briefly provides unobstructed vision and True Sight around the target in a %sight_radius_night% radius. Can be cast on the ground, affecting the closest enemy hero in %spread_aoe% range."
+"DOTA_Tooltip_ability_boss_storm_spirit_lightning_bolt_abilitycastrange"					"CAST RANGE:"
+"DOTA_Tooltip_ability_boss_storm_spirit_lightning_bolt_sight_radius_day"						"SIGHT RADIUS:"
+"DOTA_Tooltip_ability_boss_storm_spirit_lightning_bolt_sight_duration"						"SIGHT DURATION:"
+"DOTA_Tooltip_ability_boss_storm_spirit_lightning_bolt_Lore"									"A shocking punishment for rebellious heathen."
+"DOTA_Tooltip_ability_boss_storm_spirit_lightning_bolt_Note0"								"You can interrupt channeling spells and items with this ability."
 
 "DOTA_Tooltip_ability_boss_storm_spirit_sigil"							"Storm Sigil"
 "DOTA_Tooltip_ability_boss_storm_spirit_sigil_Description"				"Summons a storm sigil that chases an enemy. Sigils rapidly call down lightning around them, and are fragile."
@@ -1360,7 +1642,7 @@
 "DOTA_Tooltip_ability_boss_storm_spirit_teleport_path_radius"			"PATH RADIUS:"
 
 
-"npc_boss_tidehunter"                     "Tidehunter (Boss)"
+"npc_boss_tidehunter"                     "Tidehunter"
 
 
 "DOTA_Tooltip_ability_custom_torrent_tide"											"Torrent"
@@ -1382,8 +1664,8 @@
 "DOTA_Tooltip_ability_custom_ravage_Note1"									"Ravage waves move outwards at a speed of 400."
 "DOTA_Tooltip_ability_custom_ravage_radius"									"RADIUS:"
 "DOTA_Tooltip_ability_custom_ravage_duration"								"DURATION:"
-"npc_boss_techies_direct"                     "Techies (Boss)"
-"npc_boss_techies_indirect"                     "Techie Sappers (Boss)"
+"npc_boss_techies_direct"                     "Techies"
+"npc_boss_techies_indirect"                     "Techie Sappers"
 
 "DOTA_Tooltip_ability_custom_land_mines"						"Proximity Mines"
 "DOTA_Tooltip_ability_custom_land_mines_Lore"			"The bane of Toterin!"
@@ -1399,8 +1681,8 @@
 "DOTA_Tooltip_ability_custom_suicide_radius"				    "RADIUS:"
 "DOTA_Tooltip_ability_custom_suicide_silence_duration"			"SILENCE DURATION:"
 
-"npc_boss_tiny"                     "Tiny (Boss)"
-"npc_boss_treant"                     "Treant (Boss)"
+"npc_boss_tiny"                     "Tiny"
+"npc_boss_treant"                     "Treant"
 
 "DOTA_Tooltip_ability_custom_overgrowth"						"Overgrowth"
 "DOTA_Tooltip_ability_custom_overgrowth_Description"			"Summons an overgrowth of vines and branches around Treant that prevent afflicted enemies from moving, blinking, going invisible, or attacking."
@@ -1429,7 +1711,7 @@
 "DOTA_Tooltip_ability_custom_inner_beast_radius"							"RADIUS:"
 "DOTA_Tooltip_ability_custom_inner_beast_bonus_attack_speed"				"BONUS ATTACK SPEED:"
 
-"npc_boss_undying"                     "Undying (Boss)"
+"npc_boss_undying"                     "Undying"
 
 "DOTA_Tooltip_ability_boss_undying_soul_rip"							"Soul Rip"
 "DOTA_Tooltip_ability_boss_undying_soul_rip_Description"				"Undying rips health away from all nearby units and uses it to heal an ally, or damage an enemy. Soul Rip can also be used to heal Tombstone."
@@ -1455,7 +1737,7 @@
 "DOTA_Tooltip_ability_boss_undying_flesh_golem_slow_duration"		"SLOW DURATION:"
 "DOTA_Tooltip_ability_boss_undying_flesh_golem_movement_bonus"		"MOVEMENT BONUS:"
 
-"npc_boss_ursa"                     "Ursa (Boss)"
+"npc_boss_ursa"                     "Ursa"
 
 "DOTA_Tooltip_ability_custom_fury_swipes"										"Fury Swipes"
 "DOTA_Tooltip_ability_custom_fury_swipes_Lore"									"In nature, the wounded rarely survive the attacks of hungry predators."
@@ -1463,7 +1745,7 @@
 "DOTA_Tooltip_ability_custom_fury_swipes_damage_per_stack"						"DAMAGE PER ATTACK:"
 "DOTA_Tooltip_ability_custom_fury_swipes_bonus_reset_time"						"RESET TIME:"
 
-"npc_boss_void_spirit"                     "Void Spirit (Boss)"
+"npc_boss_void_spirit"                     "Void Spirit"
 
 "DOTA_Tooltip_ability_boss_void_spirit_aether_remnant"					"Aether Remnant"
 "DOTA_Tooltip_ability_boss_void_spirit_aether_remnant_Description"		"Vector targeted. Void Spirit dispatches a remnant to the target location. The remnant stands watch over the region, facing the direction of his vector. When a unit crosses its gaze, the remnant pulls it in and damages it."
@@ -1503,7 +1785,7 @@
 "DOTA_Tooltip_modifier_boss_void_spirit_resonant_pulse_physical_buff_Description"	"Absorbing physical damage."
 
 "DOTA_Tooltip_ability_boss_void_spirit_counter"						"Astral Counter"
-"DOTA_Tooltip_ability_boss_void_spirit_counter_Description"			"Void spirit stops and focuses inward. Attacking him in this state will cause him to immediately counter with Astral Step."
+"DOTA_Tooltip_ability_boss_void_spirit_counter_Description"			"Void spirit stops and focuses inward. Attacking him in this state will cause him to immediately counter with Astral Step. If Void Spirit does not successfully counter a strike, he becomes vulnerable for %vulnerable_duration% seconds."
 "DOTA_Tooltip_ability_boss_void_spirit_counter_duration"				"DURATION:"
 
 "DOTA_Tooltip_modifier_boss_void_spirit_counter"					"Counter"
@@ -1514,7 +1796,7 @@
 "DOTA_Tooltip_ability_boss_void_spirit_pentagram_rings"				"RINGS:"
 
 
-"npc_boss_weaver"                     "Weaver (Boss)"
+"npc_boss_weaver"                     "Weaver"
 "DOTA_Tooltip_ability_weaver_envenomed_attack"								"Envenomed Attack"
 "DOTA_Tooltip_ability_weaver_envenomed_attack_Description"					"Weaver's attacks are infused with crippling venom. Heroes recover from the poison more quickly."
 "DOTA_Tooltip_ability_weaver_envenomed_attack_damage_per_second"			"DAMAGE PER SECOND:"
@@ -1522,14 +1804,14 @@
 "DOTA_Tooltip_ability_weaver_envenomed_attack_hero_duration"				"HERO DURATION:"
 "DOTA_Tooltip_ability_weaver_envenomed_attack_regen_reduction"				"%REGEN REDUCTION:"
 
-"npc_boss_wisp"                     "Wisp (Boss)" 
+"npc_boss_wisp"                     "Wisp" 
 "DOTA_Tooltip_ability_custom_black_hole_wisp"							"Black Hole"
 "DOTA_Tooltip_ability_custom_black_hole_wisp_Description"				"Summons a vortex that sucks in nearby enemy units."
 "DOTA_Tooltip_ability_custom_black_hole_wisp_far_damage"								"DAMAGE PER SECOND:"
 "DOTA_Tooltip_ability_custom_black_hole_wisp_far_radius"								"RADIUS:"
 "DOTA_Tooltip_ability_custom_black_hole_wisp_duration"					"DURATION:"
 
-"DOTA_Tooltip_ability_enigma_black_hole_duration"								"DURATION:"
+
 "DOTA_Tooltip_ability_wisp_ice_shards"							"Ice Shards"
 "DOTA_Tooltip_ability_wisp_ice_shards_Description"				"Wisp compresses shards of ice into a ball of frozen energy that damages all enemies it comes in contact with. When the ball reaches its target destination the shards are released, creating a barrier that lasts for %shard_duration% seconds."
 "DOTA_Tooltip_ability_wisp_ice_shards_shard_width"				"RADIUS:"
@@ -1552,7 +1834,7 @@
 "DOTA_Tooltip_ability_custom_soul_releaser_slow_tooltip"				"%SLOW:"
 
 
-"npc_boss_wisp_friendly"                     "The Box (Boss)" 
+"npc_boss_wisp_friendly"                     "The Box" 
 
 "DOTA_Tooltip_ability_boss_wisp_friendly_counter"								"Don't Hit The Box"
 "DOTA_Tooltip_ability_boss_wisp_friendly_counter_Description"					"This is a fairly friendly box. It won't attack if you don't attack it, but you're probably not going to read this. Wisp dies if it is ignored. I wonder what's inside?"
@@ -1571,7 +1853,7 @@
 "DOTA_Tooltip_ability_boss_wisp_friendly_electric_vortex_abilityduration"			"DURATION:"
 
 
-"npc_boss_witch_doctor"                     "Witch Doctor (Boss)"
+"npc_boss_witch_doctor"                     "Witch Doctor"
 
 
 "DOTA_Tooltip_ability_custom_paralyzing_cask"								"Paralyzing Cask"
@@ -1598,7 +1880,7 @@
 "DOTA_Tooltip_ability_custom_death_ward_Note2"							    "Death Ward attacks once every 0.22 seconds."
 "DOTA_Tooltip_ability_custom_death_ward_damage"							    "DAMAGE:"
 
-"npc_boss_winter_wyvern"								"Winter Wyvern (Boss)"
+"npc_boss_winter_wyvern"								"Winter Wyvern"
 "DOTA_Tooltip_ability_custom_arctic_burn"						"Arctic Burn"
 "DOTA_Tooltip_ability_custom_arctic_burn_Description"			"Winter Wyvern soars upon an arctic wind, granting her unobstructed movement and allowing her to exhale a blistering chill into each attack. While soaring, her attacks travel further and faster, and slow enemies with a magical freeze that strips them of %percent_damage%%% of their current health each second. Her sight is also hardened against night's chill, granting her %night_vision_bonus% additional vision range at night while soaring.\n\nUpgradable by Aghanim's Scepter."
 "DOTA_Tooltip_ability_custom_arctic_burn_Lore"					"The same organ where some dragons stoke their inner flame is, in Auroth, a crucible of unimaginable cold. From deep within her frosty gullet, an exhalation sends enemies into burning agony."
@@ -1617,7 +1899,7 @@
 "DOTA_Tooltip_ability_custom_splinter_blast_movespeed_slow_tooltip"		"%MOVEMENT SLOW:"
 "DOTA_Tooltip_ability_custom_splinter_blast_duration"			"SLOW DURATION:"	
 
-"npc_boss_zeus"                     "Zeus (Boss)"
+"npc_boss_zeus"                     "Zeus"
 
 
 "DOTA_Tooltip_ability_custom_arc_lightning"										"Arc Lightning"
@@ -1657,7 +1939,7 @@
 "DOTA_Tooltip_Ability_custom_greased_lightning_damage"            "Damage:"
 
 
-"npc_boss_zombie"                     "Zombie (Boss)"
+"npc_boss_zombie"                     "Zombie"
 
 "DOTA_Tooltip_ability_custom_zombie_deathstrike"		"Deathlust"
 "DOTA_Tooltip_ability_custom_zombie_deathstrike_Description"		"Slows enemy units on attack.  If the attacked unit's health goes below the threshold, the zombie receives enhanced movement and attack speed."
@@ -1668,14 +1950,14 @@
 "DOTA_Tooltip_ability_custom_zombie_deathstrike_bonus_move_speed"			"%BONUS MOVE SPEED:"
 "DOTA_Tooltip_ability_custom_zombie_deathstrike_bonus_attack_speed"			"BONUS ATTACK SPEED:"
 
-"npc_dummy_unit"                     "Dummy Unit (Boss)"
+"npc_dummy_unit"                     "Dummy Unit"
 
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift"						    "<font color='#f2da5b'>Unstable Rift</font>"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_Description"			    "Opens an unstable rift at a target hero's location, increasing its primary attribute by %primary_stat_percent_active%%% and storing the stats of all nearby heroes. After a delay, explodes spreading damage evenly over all enemies hit. Cooldown is %cooldown_reduce% seconds lower when cast on allies.\n Passively increases Underlord's primary attribute by %primary_stat_percent_passive%%%"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_duration"					"DURATION:"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_stat_damage_pct_tooltip"			"DAMAGE PER STAT:"
 "DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_radius"					"RADIUS:"
-"DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_aghanim_description"		"Dark Bomb will immediately cast Pit of Malice and Firestorm on explosion."
+"DOTA_Tooltip_ability_abyssal_underlord_custom_dark_rift_scepter_description"		"Dark Bomb will immediately cast Pit of Malice and Firestorm on explosion."
 
 
 "DOTA_Tooltip_modifier_abyssal_underlord_custom_dark_rift"                        "Unstable Rift"
@@ -1706,13 +1988,14 @@
 "DOTA_Tooltip_ability_axe_custom_counter_helix_radius"									"RADIUS:"
 "DOTA_Tooltip_ability_axe_custom_counter_helix_trigger_chance"							"%CHANCE TO HELIX:"
 "DOTA_Tooltip_ability_axe_custom_counter_helix_health_ratio"							"%HEALTH RATIO:"
-
+"DOTA_Tooltip_ability_axe_custom_counter_helix_shard_description"                      "Causes Axe's attacks to have a chance to proc a Counter Helix. Attack procs ignore Counter Helix cooldown. Increases attack speed by 20."
+		
 "DOTA_Tooltip_ability_axe_custom_last_cleave"									"<font color='#f2da5b'>Culling Blade</font>"
 "DOTA_Tooltip_ability_axe_custom_last_cleave_Description"						"Axe spots a weakness and strikes, dealing damage that increases with his strength. Whenever an ally hero dies, Culling Blade's cooldown is refreshed.\n\nUpgradeable by Aghanim's Scepter."
 "DOTA_Tooltip_ability_axe_custom_last_cleave_Lore"								"Mogul Khan is the embodiment of battle and fury, launching into a gruesome fatality against those who dare engage the Axe in combat."
 "DOTA_Tooltip_ability_axe_custom_last_cleave_base_damage"					    "BASE DAMAGE:"
 "DOTA_Tooltip_ability_axe_custom_last_cleave_str_multiply"					    "STRENGTH MULTIPLIER:"
-"DOTA_Tooltip_ability_axe_custom_last_cleave_aghanim_description"		        "Culling Blade deals pure damage."
+"DOTA_Tooltip_ability_axe_custom_last_cleave_scepter_description"		        "Culling Blade deals pure damage."
 "DOTA_Tooltip_Ability_faceless_void_backtrack"						"Backtrack"
 "DOTA_Tooltip_Ability_faceless_void_backtrack_Description"			"Faceless Void's reflexes can sense danger before they occur, allowing him to avoid incoming damage."
 "DOTA_Tooltip_Ability_faceless_void_backtrack_lore"					"Darkterror's 6th sense sees what has yet to be seen."
@@ -1730,9 +2013,19 @@
 "DOTA_Tooltip_Ability_bloodseeker_custom_rampage_increased_damage"			    "%BONUS DAMAGE:"
 "DOTA_Tooltip_Ability_bloodseeker_custom_rampage_max_hp"			            "%HEALTH CAP:"
 
-
 "DOTA_Tooltip_modifier_bloodseeker_custom_rampage"                              "Rampage"
 "DOTA_Tooltip_modifier_bloodseeker_custom_rampage_Description"                  "Damage increased, health sealed."
+
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture"										"Rupture"
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture_Description"							"Causes an enemy unit's skin to rupture. If the unit moves, it takes damage based on the distance moved.  The damage is dealt through spell immunity."
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture_scepter_description"				"Grants Bloodseeker two charges of Rupture"
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture_Lore"									"When the Bloodseeker hunts you, injuries become fatalities."
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture_duration"								"DURATION:"
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture_movement_damage_pct"					"%MOVE DAMAGE:"
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture_abilitycastrange"					"CAST RANGE:"
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture_max_charges_scepter"					        "SCEPTER CHARGES:"
+"DOTA_Tooltip_ability_bloodseeker_custom_rupture_charge_restore_time_scepter"					"SCEPTER REPLENISH TIME:"
+		
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada"									"<font color='#f2da5b'>Jinada</font>"
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Description"						"Bounty Hunter plans his next hit, stealing gold with it. Deals damage based on your current gold."
 "DOTA_Tooltip_ability_bounty_hunter_custom_jinada_Lore"								"Whispering an enchantment he learned from Soruq to his faithful blades, Gondar targets vital tendons and joints to disable his opponents."
@@ -1742,15 +2035,15 @@
 
 
 "DOTA_Tooltip_ability_centaur_custom_return"								"<font color='#f2da5b'>Return</font>"
-"DOTA_Tooltip_ability_centaur_custom_return_Description"					"Centaur counters all attacks, dealing damage back to the attacker based on a percentage of Centaur's strength."
+"DOTA_Tooltip_ability_centaur_custom_return_Description"							"Centaur counters all attacks, dealing damage back to the attacker. Returns a fixed amount plus a percentage of your strength."
 "DOTA_Tooltip_ability_centaur_custom_return_Lore"							"Bradwarden has no need to parry his opponent's attacks; his armor-like hide does it for him."
-"DOTA_Tooltip_ability_centaur_custom_return_base_damage"					"DAMAGE:"
-"DOTA_Tooltip_ability_centaur_custom_return_str_bonus"						"%STRENGTH BONUS DAMAGE:"
+"DOTA_Tooltip_ability_centaur_custom_return_base_damage"					"RETURN DAMAGE:"
+"DOTA_Tooltip_ability_centaur_custom_return_str_bonus"						"%STR RETURN DAMAGE:"
 "DOTA_Tooltip_ability_chen_custom_holy_persuasion"								"<font color='#f2da5b'>Holy Persuasion</font>"
 "DOTA_Tooltip_ability_chen_custom_holy_persuasion_Description"					"Chen takes control of an enemy or neutral creep. Converted creeps have heightened magic resistance. \n\nUpgradable by Aghanim's Scepter."
 "DOTA_Tooltip_ability_chen_custom_holy_persuasion_max_units"					"MAX UNITS:"
 "DOTA_Tooltip_ability_chen_custom_holy_persuasion_magic_resistance"					"%BONUS MAGIC RESISTANCE:"
-"DOTA_Tooltip_ability_chen_custom_holy_persuasion_aghanim_description"		"Allows Holy Persuasion to target Ancient Creeps, maximum one per level of Avatar"
+"DOTA_Tooltip_ability_chen_custom_holy_persuasion_scepter_description"		"Allows Holy Persuasion to target Ancient Creeps, maximum one per level of Hand of God"
 "DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff"                      "Holy Persuasion"
 "DOTA_Tooltip_modifier_chen_custom_holy_persuasion_buff_description"           "Persuaded to Chen's cause."	
 
@@ -1769,13 +2062,14 @@
 "DOTA_Tooltip_ability_frostivus2018_clinkz_searing_arrows_damage_bonus"				"BONUS DAMAGE:"
 
 "DOTA_Tooltip_ability_clinkz_custom_wind_walk"						"Skeleton Walk"
-"DOTA_Tooltip_ability_clinkz_custom_wind_walk_Description"			"Clinkz moves invisibly through units until the moment he attacks or uses an ability.\n\nUpgradable by Aghanim's Scepter."
+"DOTA_Tooltip_ability_clinkz_custom_wind_walk_Description"			"Clinkz moves invisibly through units until the moment he attacks or uses an ability."
 "DOTA_Tooltip_ability_clinkz_custom_wind_walk_Lore"					"With a burst of fire and puff of smoke, the Bone Fletcher was nowhere to be seen."
 "DOTA_Tooltip_ability_clinkz_custom_wind_walk_Note0"					"Will not break most channeling of spells or items upon activation."
 "DOTA_Tooltip_ability_clinkz_custom_wind_walk_Note1"					"Has a fadetime of 0.6 seconds."
 "DOTA_Tooltip_ability_clinkz_custom_wind_walk_duration"				"DURATION:"
 "DOTA_Tooltip_ability_clinkz_custom_wind_walk_move_speed_bonus_pct"	"%BONUS MOVEMENT SPEED:"
-"DOTA_Tooltip_ability_clinkz_custom_wind_walk_aghanim_description"	"Creates two skeletons near Clinkz when exiting Skeleton Walk."
+"DOTA_Tooltip_ability_clinkz_custom_wind_walk_shard_description"						"Causes Skeleton Walk to create two Burning Army Skeletons."
+
 "DOTA_Tooltip_modifier_wind_walk"						"Skeleton Walk"
 "DOTA_Tooltip_modifier_wind_walk_Description"			"Invisible, and movement speed increased by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%.  Can move through units."
 
@@ -1783,6 +2077,17 @@
 "DOTA_Tooltip_modifier_clinkz_custom_wind_walk"						"Skeleton Walk"
 "DOTA_Tooltip_modifier_clinkz_custom_wind_walk_Description"			"This unit is invisible."
 
+"DOTA_Tooltip_ability_clinkz_custom_death_pact"										"Death Pact"
+"DOTA_Tooltip_ability_clinkz_custom_death_pact_Description"							"Clinkz consumes the target enemy unit or friendly unit, dealing damage and gaining max health and damage based on the unamplified damage.\n\nAll healing is disabled while Death Pact is active."
+"DOTA_Tooltip_ability_clinkz_custom_death_pact_Lore"									"Sutherex' bond of life and death has become a part of Clinkz, and his old bones are refreshed with repetition of the pact on lesser beings."
+"DOTA_Tooltip_ability_clinkz_custom_death_pact_Note0"									"Increases Clinkz' current and max HP."
+"DOTA_Tooltip_ability_clinkz_custom_death_pact_duration"								"DURATION:"
+"DOTA_Tooltip_ability_clinkz_custom_death_pact_damage_pct"							"%DAMAGE:"
+"DOTA_Tooltip_ability_clinkz_custom_death_pact_health_gain_pct"						"%BONUS HEALTH:"
+"DOTA_Tooltip_ability_clinkz_custom_death_pact_damage_gain_pct"						"%BONUS DAMAGE:"
+"DOTA_Tooltip_modifier_clinkz_custom_death_pact"						"Death Pact"
+"DOTA_Tooltip_modifier_clinkz_custom_death_pact_Description"			"Max health increased by %dMODIFIER_PROPERTY_HEALTH_BONUS% and bonus damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%."
+		
 "DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army"					"Burning Army"
 "DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_Description"		"Clinkz summons an army of fiery ranged skeleton archers. Archers are immobile and die with 2 attacks from a hero. Skeletons use your current Searing Arrows ability and attack any units nearby. Base damage is equal to your hero's base damage. Attack range is equal to your hero's attack range. "
 "DOTA_Tooltip_ability_frostivus2018_clinkz_burning_army_duration"			"DURATION:"
@@ -1875,19 +2180,6 @@
 "DOTA_Tooltip_ability_grimstroke_custom_ink_creature_Lore"						"Grimstroke holds no sorrow for the downfall of his people. Only for Yaovhi, she who was most dear to him, does he feel even a semblance of longing."
 "DOTA_Tooltip_ability_grimstroke_custom_ink_creature_damage"				    "DAMAGE:"
 "DOTA_Tooltip_ability_grimstroke_custom_ink_creature_heal"				        "HEAL:"
-"DOTA_Tooltip_ability_grimstroke_custom_soulstore"							"<font color='#f2da5b'>Soulstore</font>"
-"DOTA_Tooltip_ability_grimstroke_custom_soulstore_Description"				"Grimstroke stores the essence of magic every time he uses a spell. On cast, Grimstroke consumes all the stacks stored to deal damage to an enemy or heal an ally. Stacks up to %max_stack% times."
-"DOTA_Tooltip_ability_grimstroke_custom_soulstore_Lore"						"The Ascended were chosen sons of Ashkavor, granted immense power by the bonds forged between their own souls and those they were charged with protecting. In the years that followed the ruination of his kin, Grimstroke discovered much more sinister applications for the binding rituals…"
-"DOTA_Tooltip_ability_grimstroke_custom_soulstore_damage"				    "STACK DAMAGE:"
-"DOTA_Tooltip_ability_grimstroke_custom_soulstore_heal"				        "STACK HEAL:"
-
-
-"DOTA_Tooltip_modifier_grimstroke_custom_soulstore_hud"                      "Soul Stored"
-"DOTA_Tooltip_modifier_grimstroke_custom_soulstore_hud_Description"          "Can be used to heal or deal damage."
-
-
-"DOTA_Tooltip_modifier_grimstroke_custom_soulstore_buff"                     "Soulstore"
-"DOTA_Tooltip_modifier_grimstroke_custom_soulstore_buff_Description"         "Being affected by Grimstroke Soulstore."
 
 "DOTA_Tooltip_ability_grimstroke_custom_phantoms_embrace"                                    "Phantom's Embrace"
 "DOTA_Tooltip_ability_grimstroke_custom_phantoms_embrace_Description"						"Summons a phantom that moves quickly towards. The phantom redirects damage taken by it to the target. The lodestone has %shared_life%%% of the target's current health."
@@ -1897,6 +2189,7 @@
 
 "DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage"							    "<font color='#f2da5b'>Rocket Barrage</font>"
 "DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage_Description"				    "Launches a rocket at a random target at %attack_mult%x gyrocopter's attack speed. If Flak Cannon is active, affects one additional enemy."
+"DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage_shard_description"          "Rocket Barrage hits an extra target."
 "DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage_Lore"						"Aurel's new craft has an increased payload for rockets, enhancing their rapid-fire capabilities."
 "DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage_radius"						"RADIUS:"
 "DOTA_Tooltip_ability_gyrocopter_custom_rocket_barrage_rocket_damage"				"ROCKET DAMAGE:"
@@ -1905,14 +2198,14 @@
 
 "DOTA_Tooltip_modifier_gyrocopter_custom_rocket_barrage"                            "Rocket Barrage"
 "DOTA_Tooltip_modifier_gyrocopter_custom_rocket_barrage_Description"                "Launching rockets at nearby enemies."
-"DOTA_Tooltip_ability_gyrocopter_call_down_aghanim_description"				"Adds a Side Gunner that at random attacks enemy units within a 600 radius every 0.9 seconds."
+"DOTA_Tooltip_ability_gyrocopter_call_down_scepter_description"				"Adds a Side Gunner that at random attacks enemy units within a 600 radius every 0.9 seconds."
 
 "DOTA_Tooltip_ability_huskar_sacred_flame"										"<font color='#f2da5b'>Sacred Flame</font>"
 "DOTA_Tooltip_ability_huskar_sacred_flame_Description"							"Every attack has a chance to be imbued with white flames, dealing pure damage based on how many stacks of Burning Spear the victim holds. <br><br> Will only be used if huskar has enough mana."
 "DOTA_Tooltip_ability_huskar_sacred_flame_Note0"								"Damage is halved for illusions."
 "DOTA_Tooltip_ability_huskar_sacred_flame_damage"										"DAMAGE PER STACK:"
 "DOTA_Tooltip_ability_huskar_sacred_flame_chance"										"%CHANCE:"
-"DOTA_Tooltip_ability_huskar_sacred_flame_aghanim_description"										"Sacred Flame increases the stack count of burning spear by one."
+"DOTA_Tooltip_ability_huskar_sacred_flame_scepter_description"										"Sacred Flame increases the stack count of burning spear by one."
 
 
 "DOTA_Tooltip_ability_invoker_custom_forged_spirit_melting_strike"							"<font color='#f2da5b'>Melting Strike</font>"
@@ -1927,11 +2220,13 @@
 "DOTA_Tooltip_ability_keeper_of_the_light_will_o_wisp_Note0"				"Refresher is 50% effective on this ability."
 
 "DOTA_Tooltip_ability_legion_commander_warpath"                         "<font color='#f2da5b'>Warpath</font>"
-"DOTA_Tooltip_ability_legion_commander_warpath_Description"			    "Temporarily increases your damage on cast and causes autoattacks to launch a second attack. Every cast increases how much damage this ability grants. <br><br> While active, Legion Commander cannot die."
+"DOTA_Tooltip_ability_legion_commander_warpath_Description"			    "Temporarily increases your damage on cast and causes autoattacks to launch a second attack. Every cast increases how much damage this ability grants. <br><br> While active Legion Commander cannot die."
 "DOTA_Tooltip_ability_legion_commander_warpath_duration"					"DURATION:"
 "DOTA_Tooltip_ability_legion_commander_warpath_reward_damage"				"BONUS DAMAGE:"
 "DOTA_Tooltip_ability_legion_commander_warpath_duration_scepter"			"SCEPTER DURATION:"
-"DOTA_Tooltip_ability_legion_commander_warpath_aghanim_description"		"Increases Warpath duration, and grants you %scepter_ratio%%% of your warpath stacks as permanent damage."
+"DOTA_Tooltip_ability_legion_commander_warpath_scepter_description"		"Increases Warpath duration, and grants you %scepter_ratio%%% of your warpath stacks as permanent damage."
+"DOTA_Tooltip_ability_legion_commander_warpath_shard_description"			"While Warpath is active, every 1.5 seconds, an Overwhelming Odds is cast centered on a random enemy unit within 900 radius. Prioritizes heroes."
+		
 
 "DOTA_Tooltip_modifier_legion_commander_damage"                   "Warpath"
 "DOTA_Tooltip_modifier_legion_commander_damage_Description"       "Damage increased by %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE%. Attacks launch an arrow at the victim."
@@ -1965,7 +2260,7 @@
 "DOTA_Tooltip_ability_lion_custom_finger_of_death_damage_per_use"						"DAMAGE PER USE:"
 "DOTA_Tooltip_ability_lion_custom_finger_of_death_cooldown_scepter"					    "SCEPTER COOLDOWN:"
 "DOTA_Tooltip_ability_lion_custom_finger_of_death_splash_radius_scepter"				"SCEPTER AREA OF EFFECT:"
-"DOTA_Tooltip_ability_lion_custom_finger_of_death_aghanim_description"					"Increases damage. Decreases cooldown. Finger of Death hits all units in a small area."
+"DOTA_Tooltip_ability_lion_custom_finger_of_death_scepter_description"					"Increases damage. Decreases cooldown. Finger of Death hits all units in a small area."
 
 
 
@@ -1977,6 +2272,7 @@
 
 "DOTA_Tooltip_ability_mars_custom_spear"								"Spear of Mars"
 "DOTA_Tooltip_ability_mars_custom_spear_Description"					"Mars throws his legendary Spear with deadly precision, damaging each enemy unit it strikes. The first enemy hero it hits is skewered on the spear, pushing it back. If a skewered hero hits a tree, building, or cliff, they will be impaled to it and stunned. Heroes skewered on Arena of Blood take damage again."
+"DOTA_Tooltip_ability_mars_custom_spear_shard_description"				"Spear of Mars impales up to two units and leaves a fire trail behind for 10 seconds. Deals %shard_dps% damage per second and slows by 20%%. <br><br>Skewered units no longer stop on trees, and now receive an instant attack from Mars."
 "DOTA_Tooltip_ability_mars_custom_spear_Lore"							"The legendary Spear of Mars still glows with the heat of the forge god's fires."
 "DOTA_Tooltip_ability_mars_custom_spear_Note0"							"Spear of Mars can hit invisible units and reveals them if they are stunned."
 "DOTA_Tooltip_ability_mars_custom_spear_Note1"							"Spear of Mars will only pin a units to cliffs onto elevated areas, otherwise it will push them off onto lower ground."
@@ -1993,7 +2289,7 @@
 "DOTA_Tooltip_ability_meepo_custom_divided_we_stand_Lore"				    "Do I know you?"
 "DOTA_Tooltip_ability_meepo_custom_divided_we_stand_n_clones"	            "NUMBER OF MEEPO CLONES:"
 "DOTA_Tooltip_ability_meepo_custom_divided_we_stand_n_clones_scepter"       "NUMBER OF MEEPO CLONES (SCEPTER):"
-"DOTA_Tooltip_ability_meepo_custom_divided_we_stand_aghanim_description"    "Adds an extra Meepo."
+"DOTA_Tooltip_ability_meepo_custom_divided_we_stand_scepter_description"    "Adds an extra Meepo."
 
 
 "DOTA_Tooltip_modifier_meepo_custom_divided_we_stand"                       "Meepo Clone"
@@ -2014,14 +2310,16 @@
 
 "DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_buff"			        "Jingu Mastery"
 "DOTA_Tooltip_modifier_monkey_king_custom_jingu_mastery_buff_Description"	    "Bonus Damage and Lifesteal"
-"DOTA_Tooltip_Ability_naga_siren_custom_aquatica_grace"							    "<font color='#f2da5b'>Aquatica Grace</font>"
-"DOTA_Tooltip_Ability_naga_siren_custom_aquatica_grace_Description"				    "Naga Siren applies a protection to all her illusions, granting %damage_reduction%%% damage reduction."
-"DOTA_Tooltip_Ability_naga_siren_custom_aquatica_grace_Lore"		                "The only way to escape the onslaught of a Slithereen is to never oppose one in the first place."
-"DOTA_Tooltip_Ability_naga_siren_custom_aquatica_grace_duration"                    "DURATION:"
 
+"DOTA_Tooltip_Ability_naga_siren_custom_sword_dance"							    "<font color='#f2da5b'>Sword Dance</font>"
+"DOTA_Tooltip_Ability_naga_siren_custom_sword_dance_Description"				    "Naga Siren moves her blades at unreal speeds, reducing all incoming damage by 25% of her attack damage but reducing magic resistance by %magic_resist_bonus%%%. <br><br>Grants %initial_stacks%%% increased attack damage, which increases by %damage_multiplier%%% multiplicatively each time she attacks or is attacked."
+"DOTA_Tooltip_Ability_naga_siren_custom_sword_dance_scepter_description"            "Increases initial damage bonus to %scepter_initial_stacks%%%."
+"DOTA_Tooltip_Ability_naga_siren_custom_sword_dance_Lore"		                "The only way to escape the onslaught of a Slithereen is to never oppose one in the first place."
+"DOTA_Tooltip_Ability_naga_siren_custom_sword_dance_duration"                    "DURATION:"
 
-"DOTA_Tooltip_modifier_naga_siren_custom_aquatica_grace_buff"                       "Aquatica Grace"
-"DOTA_Tooltip_modifier_naga_siren_custom_aquatica_grace_buff_Description"           "Granting damage immunity."
+"DOTA_Tooltip_modifier_naga_siren_custom_sword_dance"                       "Sword Dance"
+"DOTA_Tooltip_modifier_naga_siren_custom_sword_dance_Description"           "Grants damage reduction and increased damage per attack."
+
 "DOTA_Tooltip_Ability_necrolyte_intelligence_supremacy"						"<font color='#f2da5b'>Heartstopper Aura</font>"
 "DOTA_Tooltip_Ability_necrolyte_intelligence_supremacy_Description"			"Damages nearby enemies based on your intelligence every second."
 "DOTA_Tooltip_Ability_necrolyte_intelligence_supremacy_int_multiplier"      "INT MULTIPLIER:"
@@ -2041,7 +2339,7 @@
 "DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_Note2"								"Refresher only reduces 25% of this ability's cooldown."
 "DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_damage_per_health"				"DAMAGE PER MISSING HP:"
 "DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_stun_duration"					"STUN DURATION:"
-"DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_aghanim_description"				"If Reaper's Scythe does not kill the target, refreshes necrolyte's non-ultimate cooldowns."
+"DOTA_Tooltip_ability_necrolyte_custom_reapers_scythe_scepter_description"				"If Reaper's Scythe does not kill the target, refreshes necrolyte's non-ultimate cooldowns."
 
 
 "DOTA_Tooltip_ability_nevermore_custom_necromastery"									"Necromastery"
@@ -2050,14 +2348,13 @@
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_max_souls"			    "MAX SOULS:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_damage_per_soul"		"DAMAGE PER SOUL:"
 "DOTA_Tooltip_ability_nevermore_custom_necromastery_necromastery_max_souls_scepter"     "SCEPTER MAX SOULS:"
-"DOTA_Tooltip_ability_nevermore_custom_necromastery_aghanim_description"				"Increases max souls by %scepter_bonus_souls%."
-
+"DOTA_Tooltip_ability_nevermore_custom_necromastery_shard_description"					"Necromastery provides 0.33%% Spell Amp per soul."
 
 "DOTA_Tooltip_modifier_nevermore_custom_necromastery"				                "Necromastery"
 "DOTA_Tooltip_modifier_nevermore_custom_necromastery_Description"	                "Stored souls granting an additional %dMODIFIER_PROPERTY_PREATTACK_BONUS_DAMAGE% bonus damage."
 "DOTA_Tooltip_ability_nevermore_custom_requiem"										"<font color='#f2da5b'>Requiem of Souls</font>"
 "DOTA_Tooltip_ability_nevermore_custom_requiem_Description"							"Shadow Fiend gathers his captured souls to release them as lines of demonic energy. Units near Shadow Fiend when the souls are released can be damaged by several lines of energy. Lines of energy are created for every %requiem_soul_conversion% souls captured through Necromastery.<br><br> Requiem of Souls is automatically cast whenever Shadow Fiend dies, regardless of its cooldown.\n\nUpgradable by Aghanim's Scepter."
-"DOTA_Tooltip_ability_nevermore_custom_requiem_aghanim_description"				    "Causes Requiem of Souls to return back to Shadow Fiend. The wave back to Shadow Fiend deals less damage."	
+"DOTA_Tooltip_ability_nevermore_custom_requiem_scepter_description"				    "Increases Necromastery Max Souls and causes Requiem of Souls to return back to Shadow Fiend. The wave back to Shadow Fiend deals less damage, but heals Shadow Fiend for all the damage it dealt."
 "DOTA_Tooltip_ability_nevermore_custom_requiem_cast_time_tooltip"                  	"CAST DELAY:"
 "DOTA_Tooltip_ability_nevermore_custom_requiem_damage"                  	        "LINE DAMAGE:"
 "DOTA_Tooltip_ability_nevermore_custom_requiem_damage_pct_scepter"                  "%SCEPTER DAMAGE ON RETURN:"
@@ -2078,9 +2375,10 @@
 
 
 "DOTA_Tooltip_ability_nyx_assassin_custom_vendetta"							    "<font color='#f2da5b'>Vendetta</font>"
-"DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_Description"				    "Every %interval% seconds Nyx gains a stack, up to %max_crit_stacks%. Attacks consume stacks and convert them into bonus damage. Can be cast to turn Nyx Assassin invisible and gain spell amp and movement speed. Spells do not break Vendetta."
+"DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_Description"				    "Every %interval% seconds Nyx gains a stack, up to %max_crit_stacks%. Attacks consume stacks and convert them into bonus damage. Can be cast to turn Nyx Assassin invisible and gain movement speed. Attacking dispels the invisibility and deals %damage_pct%%% bonus magical damage."
+"DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_shard_description"           "Causes Nyx's Vendetta attack bonus to deal pure damage. Also increases Vendetta movement speed by 40%, unlocking max speed."
 "DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_Lore"						"The scarab kills for the glory of his queen."
-"DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_Note0"						"Has a 0 second fadetime."
+"DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_Note0"						"Crit stacking scales with cooldown reduction."
 "DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_crit_increase"				"%DAMAGE PER STACK:"
 "DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_duration"					"ACTIVE DURATION:"
 "DOTA_Tooltip_ability_nyx_assassin_custom_vendetta_movement_speed"				"%MOVEMENT SPEED:"
@@ -2090,12 +2388,11 @@
 "DOTA_Tooltip_modifier_nyx_assassin_custom_vendetta_invis"                      "Vendetta"
 "DOTA_Tooltip_modifier_nyx_assassin_custom_vendetta_invis_Description"          "Moving %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% faster and is phased."
 
-
 "DOTA_Tooltip_modifier_nyx_assassin_custom_vendetta_crit"                       "Vendetta Stack"
 "DOTA_Tooltip_modifier_nyx_assassin_custom_vendetta_crit_Description"           "Each stack increases your next attack damage."
 
 "DOTA_Tooltip_ability_obsidian_destroyer_custom_mana_amp"							"<font color='#f2da5b'>Essence Amplification</font>"
-"DOTA_Tooltip_ability_obsidian_destroyer_custom_mana_amp_Description"							"You regenerate %mana_regen_pct%%% of your maximum mana per second. Increases your mana per intelligence on activation for %duration% seconds."
+"DOTA_Tooltip_ability_obsidian_destroyer_custom_mana_amp_Description"							"You regenerate %mana_regen_pct%%% of your maximum mana per second. Increases your mana per intelligence by %mana_amp% points for %duration% seconds when activated."
 "DOTA_Tooltip_ability_obsidian_destroyer_custom_mana_amp_mana_amp"							"MANA PER INT:"
 "DOTA_Tooltip_ability_obsidian_destroyer_custom_mana_amp_Note0"							"Does not benefit from refresher."
 "DOTA_Tooltip_ability_obsidian_destroyer_custom_mana_amp_Lore"					"The crystals of the Outworld produce arcane power, and the Harbinger channels it into the world of mortals."
@@ -2109,7 +2406,7 @@
 "DOTA_Tooltip_ability_obsidian_destroyer_custom_sanity_eclipse_radius"						"RADIUS:"
 "DOTA_Tooltip_ability_obsidian_destroyer_custom_sanity_eclipse_duration"					"STUN DURATION:"
 "DOTA_Tooltip_ability_obsidian_destroyer_custom_sanity_eclipse_damage_multiplier_scepter"	"SCEPTER MULTIPLIER:"
-"DOTA_Tooltip_ability_obsidian_destroyer_custom_sanity_eclipse_aghanim_description"		"Increases the damage per mana multiplier to %damage_multiplier_scepter%."
+"DOTA_Tooltip_ability_obsidian_destroyer_custom_sanity_eclipse_scepter_description"		"Increases the damage per mana multiplier to %damage_multiplier_scepter%."
 
 "DOTA_Tooltip_Ability_ogre_magi_custom_multicast"						"<font color='#f2da5b'>Multicast</font>"
 "DOTA_Tooltip_Ability_ogre_magi_custom_multicast_Description"						"Enables Ogre Magi to cast his abilities and items multiple times with each use."
@@ -2121,6 +2418,7 @@
 "DOTA_Tooltip_modifier_omniknight_pacify"					"Divine Sanction"
 "DOTA_Tooltip_modifier_omniknight_pacify_Description"		"This unit deals reduced magic damage."
 
+"DOTA_Tooltip_ability_phantom_assassin_fan_of_knives_Description"   "Phantom Assassin releases sharp blades around her in a 550 AoE, dealing %pct_health_damage_initial%%% of a victim's max health on impact and applying break for 3 seconds."
 
 "DOTA_Tooltip_ability_phantom_assassin_custom_stifling_dagger"							"<font color='#f2da5b'>Fan of Knives</font>"
 "DOTA_Tooltip_ability_phantom_assassin_custom_stifling_dagger_Description"				"Throws a flurry of daggers at the area around the target point, each one hitting the first unit in its path.  The daggers slow enemy movement speed, and deal a percentage of Phantom Assassin's attack damage as Physical damage and applies effects from items and abilities. Dagger rate is affected by attack speed."
@@ -2133,7 +2431,7 @@
 "DOTA_Tooltip_ability_phantom_assassin_custom_stifling_dagger_dagger_rate_base"				"DAGGER RATE:"
 "DOTA_Tooltip_ability_phantom_assassin_custom_stifling_dagger_dagger_range"				"DAGGER RANGE:"
 
-"DOTA_Tooltip_ability_phantom_lancer_doppelwalk_Description"					"Phantom Lancer briefly vanishes from the battlefield. After %delay% second, Phantom Lancer and any of his nearby illusions reappear at a random position within the targeted location, along with two additional doppelgangers. Extends duration of all illusions. The two added doppelgangers have different properties: one takes normal damage and deals none, while the other takes 600%% damage and deals 120%% damage.\n\nDISPEL TYPE: Basic Dispel"
+"DOTA_Tooltip_ability_phantom_lancer_doppelganger_Description"					"Phantom Lancer briefly vanishes from the battlefield. After %delay% second, Phantom Lancer and any of his nearby illusions reappear at a random position within the targeted location, along with two additional doppelgangers. Extends duration of all illusions. The two added doppelgangers have different properties: one takes normal damage and deals none, while the other takes 600%% damage and deals 120%% damage.\n\nDISPEL TYPE: Basic Dispel"
 
 "DOTA_Tooltip_ability_phoenix_sun_ray_toggle_move_Description"			"Toggles incredibly fast forward movement during Sun Ray firing."
 "DOTA_Tooltip_ability_phoenix_supernova_Note0"				"Refresher is 50% effective on this ability."
@@ -2204,20 +2502,25 @@
 
 "DOTA_Tooltip_modifier_riki_custom_trick_hit"							"Trick Hit"
 "DOTA_Tooltip_modifier_riki_custom_trick_hit_Description"				"Agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%, loses on attack."
-"DOTA_Tooltip_Ability_shadow_demon_custom_hyperactivity"						"<font color='#f2da5b'>Hyperactivity</font>"
-"DOTA_Tooltip_Ability_shadow_demon_custom_hyperactivity_Description"			"Shadow Demon gets hyperactive for a brief duration, reducing all used abilities cooldowns to %cooldown%.\nDoes not affect Refresher Orb, Arcane Boots, Guardian Greaves, Charged Conduit, Scythe Of Vyse, or Disruption."
-"DOTA_Tooltip_Ability_shadow_demon_custom_hyperactivity_duration"               "DURATION:"
-"DOTA_Tooltip_Ability_shadow_demon_custom_hyperactivity_lore"				    "Give up now."
 
+"DOTA_Tooltip_Ability_shadow_demon_dark_trance"						"<font color='#f2da5b'>Dark Trance</font>"
+"DOTA_Tooltip_Ability_shadow_demon_dark_trance_Description"			"Shadow Demon pulls on the scattered shards of his power, reducing all spellcasts cooldowns to a set time.\nDoes not affect Refresher Orb, Arcane Boots, Guardian Greaves, Charged Conduit, Scythe Of Vyse, or Disruption."
+"DOTA_Tooltip_Ability_shadow_demon_dark_trance_duration"               "DURATION:"
+"DOTA_Tooltip_Ability_shadow_demon_dark_trance_cooldown"               "SPELLCAST COOLDOWNS:"
+"DOTA_Tooltip_Ability_shadow_demon_dark_trance_scepter_reduce"         "SCEPTER COOLDOWN REDUCTION:"
+"DOTA_Tooltip_Ability_shadow_demon_dark_trance_lore"				   "Once Shadow Demon no longer has any need for his collected cultist, he releases it from its subservience - and its life."
+"DOTA_Tooltip_Ability_shadow_demon_dark_trance_scepter_description"    "Reduces cooldowns by a further %scepter_reduce% seconds."
 
-"DOTA_Tooltip_modifier_shadow_demon_custom_hyperactivity_buff"                  "Hyperactivity"
-"DOTA_Tooltip_modifier_shadow_demon_custom_hyperactivity_buff_Description"      "All cooldown reduced."
+"DOTA_Tooltip_modifier_shadow_demon_dark_trance_buff"                  "Dark Trance"
+"DOTA_Tooltip_modifier_shadow_demon_dark_trance_buff_Description"      "All cooldown reduced."
+
 "DOTA_Tooltip_Ability_shadow_demon_custom_soul_catcher"						    "<font color='#f2da5b'>Soul Catcher</font>"
 "DOTA_Tooltip_Ability_shadow_demon_custom_soul_catcher_Description"			    "Catches the soul of a target, causing it to take damage over time. Multiple instances stacks."
 "DOTA_Tooltip_Ability_shadow_demon_custom_soul_catcher_duration"                "DURATION:"
 "DOTA_Tooltip_Ability_shadow_demon_custom_soul_catcher_damage"                  "TOTAL DAMAGE:"
 "DOTA_Tooltip_Ability_shadow_demon_custom_soul_catcher_lore"				    "Trying to resist the Shadow Demon's corruption is mostly a useless endeavor."
-
+"DOTA_Tooltip_ability_shadow_demon_custom_soul_catcher_shard_description"       "Allows Soul Catcher to be cast on allies, continuously healing for its damage values."
+	
 
 "DOTA_Tooltip_modifier_shadow_demon_custom_soul_catcher_buff"                   "Soul Catcher"
 "DOTA_Tooltip_modifier_shadow_demon_custom_soul_catcher_buff_Description"       "Taking damage over time."
@@ -2248,7 +2551,7 @@
 "DOTA_Tooltip_ability_skywrath_mage_custom_mystic_flare_radius"			"RADIUS:"
 "DOTA_Tooltip_ability_skywrath_mage_custom_mystic_flare_duration"			"DURATION:"
 "DOTA_Tooltip_ability_skywrath_mage_custom_mystic_flare_damage"			"DAMAGE:"
-"DOTA_Tooltip_ability_skywrath_mage_custom_mystic_flare_aghanim_description"		"Anytime Skywrath Mage casts an ability, a different random nearby target will be hit with the same ability."
+"DOTA_Tooltip_ability_skywrath_mage_custom_mystic_flare_scepter_description"		"Anytime Skywrath Mage casts an ability, a different random nearby target will be hit with the same ability."
 "DOTA_Tooltip_modifier_skywrath_mage_custom_concussive_shot_slow"			"Concussive Shot"
 "DOTA_Tooltip_modifier_skywrath_mage_custom_concussive_shot_slow_Description"	 "Slowed by %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%%."
 "DOTA_Tooltip_modifier_skywrath_mage_custom_ancient_seal"						"Ancient Seal"
@@ -2285,10 +2588,11 @@
 "DOTA_Tooltip_ability_spectre_custom_dispersion_damage_reflection_pct"		"%DAMAGE REFLECTED:"
 "DOTA_Tooltip_ability_spectre_custom_dispersion_min_radius"				"MIN RADIUS:"
 "DOTA_Tooltip_ability_spectre_custom_dispersion_max_radius"				"MAX RADIUS:"
+"DOTA_Tooltip_ability_spectre_custom_dispersion_shard_description"         "Summons a permanent illusion that deals %damage_incoming%%% damage and takes %damage_outgoing%%% damage. Revives on death after a %revive_delay% second delay."
 
 "DOTA_Tooltip_ability_spectre_custom_haunt"								"Haunt"
 "DOTA_Tooltip_ability_spectre_custom_haunt_Description"					"Creates a spectral nemesis to attack each enemy hero after a short delay. At any moment during the duration, Spectre can use Reality to exchange places of a given haunt.\n\nHaunt illusions are uncontrollable and take less damage.  They move at 400 base movement speed and ignore terrain. Maximum of 5 illusions per cast.\n\nUpgradable by Aghanim's Scepter."
-"DOTA_Tooltip_ability_spectre_custom_haunt_aghanim_description"			"Grants you a new ability, Shadow Step. Allows you to perform a single target unit Haunt. Shadow step is only unlocked after casting Haunt once."
+"DOTA_Tooltip_ability_spectre_custom_haunt_scepter_description"			"Grants you a new ability, Shadow Step. Allows you to perform a single target unit Haunt. Shadow step is only unlocked after casting Haunt once."
 "DOTA_Tooltip_ability_spectre_custom_haunt_Lore"							"At the height of combat, Mercurial's physical manifestation shatters, and the shadowy pieces haunt those who still cling to life."
 "DOTA_Tooltip_ability_spectre_custom_haunt_Note0"							"Haunt illusions are uncontrollable and move at 400 base movement speed."
 "DOTA_Tooltip_ability_spectre_custom_haunt_duration"						"HAUNT DURATION:"
@@ -2320,11 +2624,21 @@
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_attack_damage"			    "%ATTACK DAMAGE:"
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_range"			    		"RANGE:"
 "DOTA_Tooltip_ability_templar_assassin_slipstrike_bonus_agi"			    "BONUS AGILITY ON ANIMATION HIT:"
-"DOTA_Tooltip_ability_templar_assassin_slipstrike_aghanim_description"				"Successfully hitting an animating enemy grants %bonus_agi% permanent agility. Missing an enemy will teleport you to the dagger's location and refund 1/2 the cooldown."
+"DOTA_Tooltip_ability_templar_assassin_slipstrike_scepter_description"				"Successfully hitting an animating enemy grants %bonus_agi% permanent agility. Missing an enemy will teleport you to the dagger's location and refund 1/2 the cooldown."
 
 "DOTA_Tooltip_modifier_templar_assassin_slipstrike"				"Slipstrike"
 "DOTA_Tooltip_modifier_templar_assassin_slipstrike_description"	"Agility increased by %dMODIFIER_PROPERTY_STATS_AGILITY_BONUS%."
 
+"DOTA_Tooltip_ability_templar_assassin_phase_rush"							    "Phase Rush"
+"DOTA_Tooltip_ability_templar_assassin_phase_rush_Description"				    "Templar Assassin deals bonus percentage damage per distance covered recently, 1% for every %movement_ratio% distance. <br><br> Can be toggled to phase rush, disarming Templar Assassin and increasing her movement speed while greatly reducing magic resistance. Costs %health_degen%%% health and mana per second."
+"DOTA_Tooltip_ability_templar_assassin_phase_rush_Note0"                  "Templar Assassin has 100% evasion while phase rushing."
+"DOTA_Tooltip_ability_templar_assassin_phase_rush_bonus_movespeed"         "%TOGGLE MOVESPEED:"
+"DOTA_Tooltip_ability_templar_assassin_phase_rush_bonus_resist"             "%TOGGLE NEGATIVE MAGIC RESISTANCE:"
+
+"DOTA_Tooltip_modifier_modifier_templar_assassin_phase_rush"                    "Alacrity"
+"DOTA_Tooltip_modifier_modifier_templar_assassin_phase_rush_Description"        "Templar Assasin deals %dMODIFIER_PROPERTY_TOTALDAMAGEOUTGOING_PERCENTAGE%%% bonus damage."
+"DOTA_Tooltip_modifier_modifier_templar_assassin_phase_rush_toggle"                    "Phase Rush"
+"DOTA_Tooltip_modifier_modifier_templar_assassin_phase_rush_toggle_Description"        "Templar Assasin moves %dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% faster."
 
 "DOTA_Tooltip_ability_terrorblade_custom_reflection"						"<font color='#f2da5b'>Reflection</font>"
 "DOTA_Tooltip_ability_terrorblade_custom_reflection_Description"			"Terrorblade brings forth an invulnerable dark reflection of a target unit. Affected units are slowed."
@@ -2349,7 +2663,7 @@
 "DOTA_Tooltip_ability_tinker_custom_heat_seeking_missile_damage"						"DAMAGE:"
 "DOTA_Tooltip_ability_tinker_custom_heat_seeking_missile_targets"						"TARGETS:"
 "DOTA_Tooltip_ability_tinker_custom_heat_seeking_missile_targets_scepter"				"SCEPTER TARGETS:"
-"DOTA_Tooltip_ability_tinker_custom_heat_seeking_missile_aghanim_description"			"Increases Heat-Seeking Missile target count."
+"DOTA_Tooltip_ability_tinker_custom_heat_seeking_missile_scepter_description"			"Increases Heat-Seeking Missile target count."
 
 "DOTA_Tooltip_ability_tinker_rearm_fix"												"<font color='#f2da5b'>Rearm</font>"
 "DOTA_Tooltip_ability_tinker_rearm_fix_Description"									"CHANNELED - Resets the cooldown on most of Tinker's items and abilities.\nRearm works on all items except Abyssal Blade, Aeon Disk, Arcane Boots, Black King Bar, Bloodthorn, Charged Conduit, Ethereal Blade, Eul's Scepter of Divinity, Guardian Greaves, Hand Of Midas, Health Bag, Helm Of The Dominator, Linken's Sphere, Meteor Hammer, Necronomicon 2, Necronomicon 3, Necronomicon, Nullifier, Orchid, Pipe, Refresher Orb, Rod Of Atos, Scythe Of Vyse and Silver Edge."
@@ -2370,7 +2684,8 @@
 "DOTA_Tooltip_ability_undying_custom_decay_damage"				        "DAMAGE:"
 "DOTA_Tooltip_ability_undying_custom_decay_str_bonus"					"STRENGTH STEAL:"
 "DOTA_Tooltip_ability_undying_custom_decay_duration"				    "STEAL DURATION:"
-"DOTA_Tooltip_ability_undying_custom_decay_aghanim_description"			"Reduces cooldown by 3 seconds."
+"DOTA_Tooltip_ability_undying_custom_decay_scepter_description"			"Reduces cooldown by 3 seconds."
+"DOTA_Tooltip_ability_undying_custom_decay_shard_description"			"Spawns a zombie on the target that lasts %shard_duration% seconds."
 
 "DOTA_Tooltip_modifier_undying_custom_decay_hud"						"Decay"
 "DOTA_Tooltip_modifier_undying_custom_decay_hud_Description"			"Strength increased by %dMODIFIER_PROPERTY_STATS_STRENGTH_BONUS%."
@@ -2406,6 +2721,25 @@
 "DOTA_Tooltip_modifier_visage_custom_str_to_int"				        "Attribute Shift (Intelligence)"
 "DOTA_Tooltip_modifier_visage_custom_str_to_int_Description"	        "Gaining Intelligence at the cost of Strength"
 
+"DOTA_Tooltip_ability_void_spirit_temp_ability"							"Void Sigil"
+"DOTA_Tooltip_ability_void_spirit_temp_ability_Description"				"Summons a void sigil that chases an enemy. Sigils rapidly call down lightning around them, and are fragile."
+"DOTA_Tooltip_ability_void_spirit_temp_ability_damage"					"DAMAGE:"
+"DOTA_Tooltip_ability_void_spirit_temp_ability_interval"					"INTERVAL:"
+"DOTA_Tooltip_ability_void_spirit_temp_ability_duration"					"DURATION:"
+"DOTA_Tooltip_ability_void_spirit_temp_ability_lightning_radius"			"RADIUS:"
+"DOTA_Tooltip_ability_void_spirit_temp_ability_Lore"					"Coding is hard ok"
+
+"DOTA_Tooltip_ability_windrunner_custom_powershot"										"Powershot"
+"DOTA_Tooltip_ability_windrunner_custom_powershot_Description"							"Windranger charges her bow for up to %abilitychanneltime% second for a single powerful shot, which deals more damage the longer it is charged. The arrow damages enemies along its path. For each enemy that Powershot hits, its damage is reduced by %damage_reduction%%%."
+"DOTA_Tooltip_ability_windrunner_custom_powershot_shard_description"                      "Powershot damage scales up with the percentage of health missing from the target, up to 66%."
+"DOTA_Tooltip_ability_windrunner_custom_powershot_Lore"								"During her early years of training, Lyralei learned to fire powerful arrows that cleaved even trees to reach their targets."
+"DOTA_Tooltip_ability_windrunner_custom_powershot_Note0"								"Powershot will destroy trees in its area of effect."
+"DOTA_Tooltip_ability_windrunner_custom_powershot_arrow_range"							"RANGE:"
+"DOTA_Tooltip_ability_windrunner_custom_powershot_powershot_damage"					"DAMAGE:"
+
+"DOTA_Tooltip_ability_windrunner_force_fire_toggle"										"Focus Fire Autocast"
+"DOTA_Tooltip_ability_windrunner_force_fire_toggle_Description"							"Toggle on to make attacks cast Focus Fire on the target.<br><br>Will not toggle on if Focus Fire is not levelled. Works on illusions."
+
 "DOTA_Tooltip_ability_winter_wyvern_winters_curse_Description"		"Winter Wyvern freezes an enemy in place while striking those nearby with a maddening curse which causes them to attack their frozen ally with increased attack speed. The frozen ally and those cursed to attack their ally take less damage from their enemies."
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull"							"<font color='#f2da5b'>Death Skull</font>"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_Description"				"Fires skulls in a direction, dealing damage to the first enemies that they find.\n\nUpgradeable by Aghanim's Scepter."
@@ -2413,7 +2747,7 @@
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_damage"					"DAMAGE:"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_int_as_damage"		    "%INT AS BONUS DAMAGE:"
 "DOTA_Tooltip_Ability_witch_doctor_custom_death_skull_interval"			        "SHOOT SPEED:"
-"DOTA_Tooltip_ability_witch_doctor_custom_death_skull_aghanim_description"		"Death Skull shoots at your attack speed."
+"DOTA_Tooltip_ability_witch_doctor_custom_death_skull_scepter_description"		"Death Skull shoots at your attack speed."
 "DOTA_Tooltip_Ability_zuus_custom_thundergods_wrath"				    "<font color='#f2da5b'>Thundergod's Wrath</font>"
 "DOTA_Tooltip_Ability_zuus_custom_thundergods_wrath_Description"		"After cast, the next thunder spell used will be recasted %casts% times.\nNimbus is not recasted by Thundergod's Wrath."
 "DOTA_Tooltip_Ability_zuus_custom_thundergods_wrath_lore"				"The Lord of Heaven smites all who oppose him."
@@ -2442,17 +2776,17 @@
 "DOTA_Tooltip_ability_ancient_increase_stats_armor_per_round"                   "ARMOR PER ROUND"
 
 "DOTA_Tooltip_ability_goon_increase_stats"									"Guard"
-"DOTA_Tooltip_ability_goon_increase_stats_Description"						"Every round increases this unit's health, armor, and magical resistance. Items are upgraded every 5 levels. Receives a buff after round 25.<br><br>This unit reincarnates after 15 seconds. "
-"DOTA_Tooltip_ability_goon_increase_stats_Lore"								"Wouldn't want this to die, would we?"
+"DOTA_Tooltip_ability_goon_increase_stats_Description"						"Every round increases this unit's health, armor, and magical resistance. Items are upgraded every 5 levels. Receives a buff after round 25.<br><br>This unit reincarnates after %reincarnate_time% seconds. "
+"DOTA_Tooltip_ability_goon_increase_stats_Lore"								"A castaway prince, eager to prove his worth and save his people. He's definitely more heroic than you."
 "DOTA_Tooltip_ability_goon_increase_stats_health_per_round"                  "HEALTH PER ROUND:"
 "DOTA_Tooltip_ability_goon_increase_stats_armor_per_round"                   "PHYSICAL ARMOR PER ROUND:"
 "DOTA_Tooltip_ability_goon_increase_stats_magical_armor_per_round"                   "MAGIC RESISTANCE PER ROUND:"
 
 "DOTA_Tooltip_modifier_goon_increase_stats"                   "The Chosen One"
-"DOTA_Tooltip_modifier_goon_increase_stats_Description"       "Receiving a bonus 100 attack speed and 33 percent additional magic damage. Strange that he's the chosen one."
+"DOTA_Tooltip_modifier_goon_increase_stats_Description"       "Receiving a bonus %dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed and %dMODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE% percent additional magic damage. Strange that he's the chosen one."
 
-"DOTA_Tooltip_modifier_playerhelp_revive"                   "Occupational Hazards"
-"DOTA_Tooltip_modifier_playerhelp_revive_Description"       "Hard to find good help these days."
+"DOTA_Tooltip_modifier_goon_revive"                   "Occupational Hazards"
+"DOTA_Tooltip_modifier_goon_revive_Description"       "Hard to find good help these days."
 
 "DOTA_Tooltip_ability_goon_placeholder1"									"Ability Placeholder"
 "DOTA_Tooltip_ability_goon_placeholder1_Description"						"Nothing to see here."
@@ -2466,7 +2800,7 @@
 "DOTA_Tooltip_ability_goon_spell_steal_Note0"							"Cannot steal item abilities."
 "DOTA_Tooltip_ability_goon_spell_steal_duration"						"DURATION:"
 "DOTA_Tooltip_ability_goon_spell_steal_cooldown_scepter"		"SCEPTER COOLDOWN:"
-"DOTA_Tooltip_ability_goon_spell_steal_aghanim_description"		"Decreases cooldown, increases cast range and upgrades the spell to the Scepter level."
+"DOTA_Tooltip_ability_goon_spell_steal_scepter_description"		"Decreases cooldown, increases cast range and upgrades the spell to the Scepter level."
 
 
 "DOTA_Tooltip_ability_tower_custom_refund"									"Life Insurance"
@@ -2477,14 +2811,20 @@
 "DOTA_Tooltip_ability_rax_custom_refund_Lore" 							"You don't even want to know how much the policy cost you."
 
 "game_info_game_name"               "Attack On Hero 2"
-"game_info_objective"               "In Attack On Hero 2, you must defend the Ancient from multiple waves of bosses."
-"game_info_loose_condition"         "If all the heroes on your team or your Ancient is destroyed, you loose."
-"game_info_tombstone"               "A tombstone is created when heroes die. Heroes can click on it to revive the dead, after a brief channel."
-"game_info_drops"                   "Bosses may drop items and gold on death. These drops expire after 2 minutes."
-"game_info_items"                   "The shop is filled with new items and new upgrades, these will help your journey."
-"game_info_survivability"           "Never underestimate how important survivability is."
-"game_info_discord"                 "You can join us on Discord by clicking on the image."
+"game_info_game_name_major"         "Rebalanced"
+"game_info_objective"               "You must protect the Ancient from multiple waves of bosses."
+"game_info_dash"         		"All heroes have a built in dash ability. Double clicking on a point will make your hero dash in that direction."
+"dash_info_detailed"			"Dashes move you 4x faster for 0.2 seconds, and can be augmented with movespeed and cooldown reduction. 3.5 second cooldown.\nCertain talents will improve their functionality."
+"game_info_outposts"         		"Outposts are scattered across the map that can quickly heal you."
+"outpost_info_detailed"			"Outposts will disable autoattacks and spellcasting while healing you. Health regenerates at 4% and mana regenerates at 3%."
+"game_info_items"                   "The shop is filled with new items and new upgrades for you to discover."
+"item_info_detailed"			"There's not much for me to write here. If your hero seems weak but does a lot of different damage instances, why not try demon talon?"
 "game_info_footer"                  "Good Luck, Have Fun!"
+
+"game_info_endtext_footer"                  "Wow, you found the easter egg!"
+"game_info_endtext"                  "I believe in you!\nYou're the best!"
+"game_info_endtext_detailed"                  "&#x2665;&#x2665;&#x2665;Love you&#x2665;&#x2665;&#x2665;"
+"game_info_endtext_footer_footer"				"Dude pay attention to the game. No more easter eggs for you."
 "end_screen_legend_boss_damage"                 "DD"
 "end_screen_legend_boss_damage_tooltip"         "Damage done"
 
@@ -2496,6 +2836,8 @@
 
 "end_screen_legend_saves"                       "R"
 "end_screen_legend_saves_tooltip"               "Players ressurected"
+
+"discord_detail"                            	"Hi hows it going"
 
 "end_screen_victory"                            "VICTORY"
 "end_screen_defeat"                             "DEFEAT"
@@ -2509,15 +2851,23 @@
 
 
 "DOTA_Tooltip_Ability_item_arcane_staff"                            "Arcane Staff"
-"DOTA_Tooltip_Ability_item_arcane_staff_Description"			    "<h1>Passive: Arcane Crit</h1> Every instance of magical or pure damage that you cause deals %crit_damage_mult%%% damage, but spends mana equal to half of the added damage. Intelligence reduces mana cost.\n<font color='#F2A93E'>Arcane Crit does not stack.</font>"
-"DOTA_Tooltip_Ability_item_arcane_staff_Lore"				        "A staff made of permafrost, impossible to hold without gloves."
-"DOTA_Tooltip_Ability_item_arcane_staff_Note0"						"Mana cost is damage * 0.35 * (%cost_constant% / (%cost_constant% + intelligence))."
-"DOTA_Tooltip_Ability_item_arcane_staff_Note1"						"Will not fire if you have less than 150 mana."
-"DOTA_Tooltip_Ability_item_arcane_staff_damage"		                "+$damage"	
+"DOTA_Tooltip_Ability_item_arcane_staff_Description"			    "<h1>Active: Permafrost</h1> Traps a friendly unit in a protective healing crystal for %bubble_duration% seconds that regenerates %bubble_heal_pct%%% health per second.\n<h1>Passive: Arcane Afterburner</h1> Every instance of magical or pure damage that you cause launches a magic orb that deals %crit_damage_base% + %crit_damage_mult%%% of the instance's damage, but spends mana based on the added damage. Intelligence reduces mana cost."
+"DOTA_Tooltip_Ability_item_arcane_staff_Lore"				        "A runed artifact meant to recycle excess mana. While a failure, it serves as a potent weapon."
+"DOTA_Tooltip_Ability_item_arcane_staff_Note0"						"Mana cost is added damage * %cost_multiplier%%%  * (%cost_constant% / (%cost_constant% + intelligence))."
+"DOTA_Tooltip_Ability_item_arcane_staff_Note1"						"Deals diminishing damage for frequent procs."
+"DOTA_Tooltip_Ability_item_arcane_staff_bonus_damage"		                "+$damage"	
 "DOTA_Tooltip_Ability_item_arcane_staff_bonus_int"		            "+$int"
 
+"DOTA_Tooltip_Ability_item_arcane_staff_2"                            "Supercharged Arcane Staff"
+"DOTA_Tooltip_Ability_item_arcane_staff_2_Description"			    "<h1>Active: Permafrost</h1> Traps a friendly unit in a protective healing crystal for %bubble_duration% seconds that regenerates %bubble_heal_pct%%% health per second.\n<h1>Passive: Arcane Afterburner</h1> Every instance of magical or pure damage that you cause launches a magic orb that deals %crit_damage_base% + %crit_damage_mult%%% of the instance's damage, but spends mana based on the added damage. Intelligence reduces mana cost."
+"DOTA_Tooltip_Ability_item_arcane_staff_2_Lore"				        "A runed artifact meant to recycle excess mana. While a failure, it serves as a potent weapon."
+"DOTA_Tooltip_Ability_item_arcane_staff_2_Note0"						"Mana cost is added damage * %cost_multiplier%%% * (%cost_constant% / (%cost_constant% + intelligence))."
+"DOTA_Tooltip_Ability_item_arcane_staff_2_Note1"						"Deals diminishing damage for frequent procs."
+"DOTA_Tooltip_Ability_item_arcane_staff_2_bonus_damage"		                "+$damage"	
+"DOTA_Tooltip_Ability_item_arcane_staff_2_bonus_int"		            "+$int"
+
 "DOTA_Tooltip_ability_item_armlet_2"						"Greater Armlet"	
-"DOTA_Tooltip_ability_item_armlet_2_Description"							"<h1>Toggle: Unholy Strength</h1>When active, Unholy Strength grants +%unholy_bonus_damage% damage, +%unholy_bonus_strength% strength and +%unholy_bonus_armor% armor, but drains %unholy_health_drain_per_second_tooltip% health per second.<br><br> You cannot die from the health drain when Unholy Strength is activated, nor from the strength loss when Unholy Strength is deactivated."
+"DOTA_Tooltip_ability_item_armlet_2_Description"							"<h1>Toggle: Unholy Strength</h1>When active, Unholy Strength grants +%unholy_bonus_damage% damage, +%unholy_bonus_strength% strength and +%unholy_bonus_armor% armor, but drains %unholy_health_drain_per_second% health per second.<br><br> You cannot die from the health drain when Unholy Strength is activated, nor from the strength loss when Unholy Strength is deactivated."
 "DOTA_Tooltip_ability_item_armlet_2_Lore"									"Weapon of choice among brutes, the bearer sacrifices his life energy to gain immense strength and power."
 "DOTA_Tooltip_ability_item_armlet_2_Note0"								"The strength change will affect both maximum and current HP, but you cannot die from the change."
 "DOTA_Tooltip_ability_item_armlet_2_Note1"								"The strength change occurs over 0.6 seconds."
@@ -2531,11 +2881,6 @@
 "DOTA_Tooltip_ability_item_black_king_bar_boss_Description"					"<h1>Active: Avatar</h1> Grants Spell Immunity and 100%% Magic Damage Resistance.  Duration decreases with each use. <br><br>Duration: %duration%"
 "DOTA_Tooltip_ability_item_black_king_bar_boss_Lore"							"Too bad you can't have one."
 "DOTA_Tooltip_ability_item_black_king_bar_boss_bonus_damage"					"+$damage"
-
-
-"DOTA_Tooltip_ability_item_black_king_bar_free"              		 "Free Bar"
-"DOTA_Tooltip_ability_item_black_king_bar_free_Description"					"<h1>Active: Avatar</h1> Temporarily grants spell immunity. <br><br>Duration: %duration%"
-"DOTA_Tooltip_ability_item_black_king_bar_free_Lore"							"Don't go selling it."
 
 "DOTA_Tooltip_Ability_item_recipe_blast_staff_1"               "Recipe: Blast Staff"
 "DOTA_Tooltip_Ability_item_blast_staff_1"					    "Blast Staff"
@@ -2637,7 +2982,7 @@
 "DOTA_Tooltip_modifier_item_warriors_seal"					"Favor the Bold"
 "DOTA_Tooltip_modifier_item_warriors_seal_Description"		"Every charge provides damage resistance."
 "DOTA_Tooltip_ability_item_wicked_locket"                       "Cursed Locket"
-"DOTA_Tooltip_ability_item_wicked_locket_Description"				"<h1>Active: Energy Charge</h1>Instantly restores %restore_per_charge% health and mana per charge stored. <br><br>Max %max_charges% charges. Gains a charge whenever a visible enemy within %charge_radius% range uses an ability.  \n\n <h1>Passive: Holy Blessing</h1>Amplifies heals you provide by %heal_increase%%%." 
+"DOTA_Tooltip_ability_item_wicked_locket_Description"				"<h1>Active: Energy Charge</h1>Target an allied unit to instantly restore %restore_per_charge% health and mana per charge stored. <br><br>Max %max_charges% charges. Automatically gains a charge every %charge_gain_timer% seconds and whenever a visible enemy within %charge_radius% range uses an ability.\n\n<h1>Passive: Holy Blessing</h1>Amplifies heals you provide by %heal_increase%%%.\n\n<h1>Passive: Regeneration Aura</h1>Grants %aura_health_regen% health regeneration to allies.<br><br>Radius: %aura_radius%"
 "DOTA_Tooltip_ability_item_wicked_locket_bonus_health"					"+$health"
 "DOTA_Tooltip_ability_item_wicked_locket_bonus_mana"					"+$mana"
 "DOTA_Tooltip_ability_item_wicked_locket_health_regen"				"+$hp_regen"
@@ -2707,7 +3052,10 @@
 "DOTA_Tooltip_ability_item_dark_bloodstone_bonus_intellect"					"+$int"
 "DOTA_Tooltip_ability_item_dark_bloodstone_spell_amp"					"%+Base Spell Amplification"
 "DOTA_Tooltip_ability_item_dark_bloodstone_manacost_reduction"			"%+Manacost and Manaloss Reduction"
-
+"DOTA_Tooltip_ability_item_dark_bloodstone_creep_lifesteal"					"%+Spell Lifesteal"
+"DOTA_Tooltip_ability_item_dark_bloodstone_mana_regen_multiplier"			"%+Mana Regen Amplification"
+"DOTA_Tooltip_ability_item_dark_bloodstone_spell_lifesteal_amp"				"%+Spell Lifesteal Amplification"
+		
 "DOTA_Tooltip_modifier_item_bloodstone_active"				        "Bloodpact"
 "DOTA_Tooltip_modifier_item_bloodstone_active_Description"	        "This unit is regenerating %dMODIFIER_PROPERTY_HEALTH_REGEN_CONSTANT% health per second."
 
@@ -2802,6 +3150,15 @@
 "DOTA_Tooltip_ability_item_great_shivas_guard_Note2" 						"Multiple instances of Freezing Aura do not stack."
 "DOTA_Tooltip_ability_item_great_shivas_guard_bonus_intellect"				"+$int"
 "DOTA_Tooltip_ability_item_great_shivas_guard_bonus_armor"					"+$armor"
+
+"DOTA_Tooltip_ability_item_gungir_2"								"Focused Gleipnir"
+"DOTA_Tooltip_ability_item_gungir_2_Description"					"<h1>Active: Eternal Chains</h1>Roots all enemies in a target %radius% radius for %duration% seconds and deals %active_damage% damage.<br><br>Range: %abilitycastrange% \n\n<h1>Passive: Chain Lightning</h1>Grants a %chain_chance%%% chance on attack to release a bolt of electricity that leaps between %chain_strikes% targets within a %chain_radius% radius, dealing %chain_damage% magical damage to each. Lightning proc pierces evasion."
+"DOTA_Tooltip_ability_item_gungir_2_Lore"							"Bindings forged by impossible means to leash an ancient evil."
+"DOTA_Tooltip_ability_item_gungir_2_bonus_damage"					"+$damage"
+"DOTA_Tooltip_ability_item_gungir_2_bonus_intellect"				"+$int"
+"DOTA_Tooltip_ability_item_gungir_2_bonus_strength"					"+$str"
+"DOTA_Tooltip_ability_item_gungir_2_bonus_agility"					"+$agi"
+
 "DOTA_Tooltip_ability_item_health_bag"                          "Health Bag"
 "DOTA_Tooltip_ability_item_health_bag_Description"			    "<h1>Active: Open Bag</h1> Provides %base_heal% plus %heal_pct%%% max health healing per second. <br><br> Lasts %duration% seconds." 
 "DOTA_Tooltip_ability_item_health_bag_Lore"						"Holds the essence of life, captured by ForaMon."
@@ -2821,17 +3178,14 @@
 "DOTA_Tooltip_ability_item_health_bag_2_bonus_health"			"+$health"
 "DOTA_Tooltip_ability_item_health_bag_2_bonus_all_stats"	    "+$all"
 
-"DOTA_Tooltip_Ability_item_heart_Description"						"<h1>Passive: Regeneration Amplification</h1>Increases all passive health regeneration by %hp_regen_amp%%%. <br><br>If damage is taken from an enemy hero or Roshan, this amplification is disabled for %cooldown_melee% seconds."
 
 "DOTA_Tooltip_Ability_item_great_heart"				            "Great Heart of Tarrasque"
-"DOTA_Tooltip_ability_item_great_heart_Description"			    "<h1>Passive: Regeneration Amplification</h1>Increases all passive health regeneration by %hp_regen_amp%%%. <br><br>If damage is taken from an enemy hero or Roshan, this amplification is disabled for %cooldown_melee% seconds."
 "DOTA_Tooltip_ability_item_great_heart_Lore"				    "Preserved heart of an extinct monster, it bolsters the bearer's fortitude."
 "DOTA_Tooltip_ability_item_great_heart_bonus_strength"		    "+$str"
 "DOTA_Tooltip_ability_item_great_heart_bonus_health"            "+$health"
 "DOTA_Tooltip_ability_item_great_heart_health_regen_pct"							"%+Max Health Regen"
 
 "DOTA_Tooltip_Ability_item_ultimate_heart"				        "Ultimate Heart of Tarrasque"
-"DOTA_Tooltip_ability_item_ultimate_heart_Description"			"<h1>Passive: Regeneration Amplification</h1>Increases all passive health regeneration by %hp_regen_amp%%%. <br><br>If damage is taken from an enemy hero or Roshan, this amplification is disabled for %cooldown_melee% seconds."
 "DOTA_Tooltip_ability_item_ultimate_heart_Lore"				    "Preserved heart of an extinct monster, it bolsters the bearer's fortitude."
 "DOTA_Tooltip_ability_item_ultimate_heart_bonus_strength"		"+$str"
 "DOTA_Tooltip_ability_item_ultimate_heart_bonus_health"         "+$health"
@@ -3055,15 +3409,15 @@
 "DOTA_Tooltip_ability_item_ultimate_dagon_bonus_all_stats"		"+$all"
 "DOTA_Tooltip_Ability_item_custom_octarine_core_1"	                        "Octarine Core"
 "DOTA_Tooltip_ability_item_custom_octarine_core_1_Description"				"<h1>Passive: Cooldown Reduction</h1>Reduces the cooldown time of all spells and items by %bonus_cooldown%%%.\n<h1>Passive: Spell Lifesteal</h1>%lifesteal%%% of spell damage dealt to enemy heroes is returned to the caster as health, regardless of spell damage type."
-"DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_intelligence"		"+$int"
 "DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_health"				"+$health"
 "DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_mana"				"+$mana"
+"DOTA_Tooltip_ability_item_custom_octarine_core_1_bonus_magical_armor"		"%+$spell_resist"	
 "DOTA_Tooltip_ability_item_custom_octarine_core_1_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
 "DOTA_Tooltip_Ability_item_custom_octarine_core_2"	                        "Ultimate Octarine Core"
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_Description"				"<h1>Passive: Cooldown Reduction</h1>Reduces the cooldown time of all spells and items by %bonus_cooldown%%%.\n<h1>Passive: Spell Lifesteal</h1>%lifesteal%%% of spell damage dealt to enemy heroes is returned to the caster as health, regardless of spell damage type."
-"DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_intelligence"		"+$int"
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_health"				"+$health"
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_mana"				"+$mana"
+"DOTA_Tooltip_ability_item_custom_octarine_core_2_bonus_magical_armor"				"%+$spell_resist"	
 "DOTA_Tooltip_ability_item_custom_octarine_core_2_Lore"						"At the core of spellcraft are spectrums only the very gifted can sense."
 "DOTA_Tooltip_Ability_item_ultimate_rapier"									"Ultimate Rapier"
 "DOTA_Tooltip_Ability_item_ultimate_rapier_Description"						"<h1>Passive: Flawless</h1> Increases your secondary attributes by %secondary_stat_percent%%%. \n<h1>Passive: Peerless</h1>%base_damage_ratio%%% of this item's bonus damage is base damage."
@@ -3084,7 +3438,7 @@
 "DOTA_Tooltip_ability_item_vladmir_temp_Note0"								"Does not stack with armor auras from Ring of Basilius, Ring of Aquila, or Vladmir's Offering."
 
 "DOTA_Tooltip_ability_item_vladmir's_soul"									"Vladmir's Bane"
-"DOTA_Tooltip_ability_item_vladmir's_soul_Description"							"<h1>Passive: Vladmir's Aura</h1>Grants %lifesteal_aura%%% lifesteal, %damage_aura%%% bonus damage, and %mana_regen_aura% mana regeneration to nearby allies. <br><br>Radius: %aura_radius%"
+"DOTA_Tooltip_ability_item_vladmir's_soul_Description"						"<h1>Passive: Vladmir's Aura</h1>Grants %lifesteal_aura%%% lifesteal, %damage_aura%%% bonus damage, %mana_regen_aura% mana regeneration, and %armor_aura% armor to nearby allies. <br><br>Radius: %aura_radius%"
 "DOTA_Tooltip_ability_item_vladmir's_soul_Lore"								"An eerie mask that that contains all the pent up hatred of a fallen vampire."
 "DOTA_Tooltip_ability_item_vladmir's_soul_Note0"								"Does not stack with armor auras from Ring of Basilius, Ring of Aquila, or Vladmir's Offering."
 

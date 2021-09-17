@@ -1,4 +1,4 @@
-<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf26:version{26288658-411e-4f14-b698-2e1e5d00dec6} -->
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:vpcf27:version{36c3961f-02a4-4c52-bf8f-6e3147d7d142} -->
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
@@ -185,15 +185,6 @@
 			{
 				m_nEndControlPointNumber = 1
 			}
-		},
-		{
-			_class = "C_OP_DistanceBetweenCPs"
-			m_flOutputMax = 0.01
-			m_flOutputMin = 1.0
-			m_flInputMax = 1000.0
-			m_flInputMin = 64.0
-			m_nOpEndCapState = 0
-			m_nSetMethod = "PARTICLE_SET_SCALE_INITIAL_VALUE"
 		},
 		{
 			_class = "C_OP_Decay"

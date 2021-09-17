@@ -42,7 +42,7 @@
 				</Panel>
 				<Panel class="PlayerStats" id="StatPanel">
 					<Panel class="PlayerStatLabels">
-						<Label class="DefinitionLabel" text="#end_screen_legend_damage_taken" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_damage_taken_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
+						<Label class="DefinitionLabel" text="#end_screen_legend_damage_taken" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_damage_taken_tooltip, ShortTextTooltip)" onmouseout="UIHideTextTooltip()" />
 						<Label class="DefinitionLabel" text="#dota_page_match_details_legend_hero_healing" onmouseover="UIShowTextTooltipStyled( #dota_page_match_details_legend_hero_healing_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 						<Label class="DefinitionLabel" text="#end_screen_legend_boss_damage" onmouseover="UIShowTextTooltipStyled( #end_screen_legend_boss_damage_tooltip, ShortTextTooltip )" onmouseout="UIHideTextTooltip()" />
 					</Panel>
@@ -129,15 +129,34 @@
 		</Panel>
 		<Panel id="EndScreenWindow">
 			<Panel id="MatchResultBlock">
-					<Panel id="EndScreenDurationBox">
+				<Panel id="EndScreenDurationBox">
 					<Label id="EndScreenMinutesStatLabel" text="" />
 					<Label id="EndScreenMinutesLabel" text="#minutes" />
 					<Label id="EndScreenSecondsStatLabel" text="" />
 					<Label id="EndScreenSecondsLabel" text="#seconds" />
 					
 				</Panel>
-				<Label id="EndScreenVictory" text="" />
-				<TextButton id="CloseButton" class="ButtonBevel" onactivate="FinishGame()" text="#CustomEndScreenClose" />
+				<Panel id="MatchDetailBox">
+					<Panel id="DifficultyBox">
+						<Label class="Hidden" id="EasyLabel" text="#easy_label"/>
+						<Label class="Hidden" id="NormalLabel" text="#normal_label"/>
+						<Label class="Hidden" id="HardLabel" text="#hard_label"/>
+					</Panel>
+					<Panel id="ModifierBox">
+						<Label class="Modifier Hidden" id="LaserLabel" text="#laser_chosen"/>
+						<Label class="Modifier Hidden" id="NightmareLabel" text="#nightmare_chosen"/>
+						<Label class="Modifier Hidden" id="DoubleLabel" text="#double_chosen"/>
+						<Label class="Modifier Hidden" id="SuddenDeathLabel" text="#sudden_death_chosen"/>
+					</Panel>
+				</Panel>
+				<Panel id="DiscordBox">
+					<Image class="image_icon" src="file://{images}/custom_game/custom_game_info/discord_logo.png" onactivate="OnDiscordClick()" onmouseover="UIShowTextTooltipStyled(#discord_detail, ShortTextTooltip)" onmouseout="UIHideTextTooltip()"/>
+				</Panel>
+				<Panel id="VictoryLabelBox">
+					<Label id="EndScreenVictory" text="" />
+					<TextButton id="CloseButton" class="ButtonBevel" onactivate="FinishGame()" text="#CustomEndScreenClose" />
+					
+				</Panel>
 			</Panel>
 			<Panel id="InfoContainer">
 				<Panel id="TeamsContainer"/>

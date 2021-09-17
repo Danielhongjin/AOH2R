@@ -28,7 +28,7 @@ function modifier_item_custom_octarine_core:DeclareFunctions()
     return {
 		MODIFIER_PROPERTY_HEALTH_BONUS,
 		MODIFIER_PROPERTY_MANA_BONUS,
-		MODIFIER_PROPERTY_STATS_INTELLECT_BONUS,
+		MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS,
 		MODIFIER_EVENT_ON_TAKEDAMAGE,
     }
 end
@@ -42,8 +42,8 @@ function modifier_item_custom_octarine_core:GetModifierManaBonus()
     return self:GetAbility():GetSpecialValueFor("bonus_mana")
 end
 
-function modifier_item_custom_octarine_core:GetModifierBonusStats_Intellect()
-    return self:GetAbility():GetSpecialValueFor("bonus_intelligence")
+function modifier_item_custom_octarine_core:GetModifierMagicalResistanceBonus()
+    return self:GetAbility():GetSpecialValueFor("bonus_magical_armor")
 end
 
 
@@ -89,7 +89,7 @@ end
 
 function modifier_item_custom_octarine_core_reduction:DeclareFunctions()
     return {
-		MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
+				MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE,
     }
 end
 function modifier_item_custom_octarine_core_reduction:IsPurgable()

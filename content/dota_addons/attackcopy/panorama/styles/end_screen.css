@@ -2,7 +2,17 @@
   width: 100%;
   height: 100%;
 }
- 
+.Hidden {
+	width: 0;
+	height: 0;
+}
+
+.Hidden > Panel {
+	opacity: 0;
+}
+.Hidden > Label {
+	opacity: 0;
+}
 #LoadingPanel {
   width: 500px;
   margin-top: -20px;
@@ -76,6 +86,16 @@
   margin-top: 20px;
   horizontal-align: center;
 }
+.image_icon
+{
+	horizontal-align: center;
+    width: 50px;
+    height: 50px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
 
 #EndScreenWindow {
   width: 100%;
@@ -88,9 +108,8 @@
 #EndScreenWindow #MatchResultBlock {
   width: 1650px;
   height: 20%;
-  background-color: rgba(20, 20, 20, 0.5);
-  box-shadow: rgba(20, 20, 20, 0.5) -5px -5px 10px 10px;
   horizontal-align: center;
+  flow-children: right;
 }
 
 #EndScreenWindow #MatchResultBlock #EndScreenVictory {
@@ -103,16 +122,75 @@
 }
 
 #EndScreenDurationBox {
-	margin-left: 5%;
-	margin-top: 25%;
-	horizontal-align: left;
+	padding-top: 20%;
+	padding-left: 5%;
+	height: 100%;
+	width: 30%;
+	flow-children: right;
+}
+#MatchDetailBox {
+	width: 45%;
+	flow-children: right;
+	height: 100%;
+}
+#DifficultyBox {
+	padding-top: 10%;
+	width: 60%;
+	flow-children: down;
+	height: 100%;
 }
 
-#EndScreenWindow #MatchResultBlock #CloseButton {
-  width: 20%;
-  height: 38px;
-  margin: 12px;
-  align: right bottom;
+#DifficultyBox > Label{
+	font-size: 100px;
+	font-weight: bold;
+	text-shadow: 4px 4px 8px 3.0 #333333b0;
+	flow-children: down;
+	width:100%;
+	text-overflow: shrink;
+}
+#EasyLabel {
+	color: rgb(0, 210, 0);
+}
+#NormalLabel {
+	color: white;
+}
+#HardLabel {
+	color: red;
+}
+#ModifierBox {
+	padding-top: 10%;
+	width: 40%;
+	flow-children: down;
+	height: 100%;
+}
+#ModifierBox > Label{
+	color: yellow;
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 4px 4px 8px 3.0 #333333b0;
+	width: 100%;
+	text-overflow: shrink;
+}
+#DiscordBox {
+	width: 5%;
+}
+.image_icon
+{
+	margin-top: 20px;
+    width: 50px;
+    height: 50px;
+}
+#VictoryLabelBox {
+	flow-children: down;
+	width: 20%;
+	height: 100%;
+}
+#VictoryLabelBox #CloseButton {
+	width: 70%;
+	height: 38px;
+	margin-top: 20px;
+	horizontal-align: right;
+	margin-right: 20px;
 }
 
 #EndScreenWindow #MatchResultBlock #MatchResultPlayer {
@@ -174,17 +252,12 @@
   flow-children: down;
 }
 
-#EndScreenDurationBox {
-	flow-children: right;
-	height: 60px;
-}
-
 #EndScreenSecondsStatLabel, 
 #EndScreenMinutesStatLabel {
 	font-size: 45px;
 	margin-left: 15px;
 	letter-spacing: 2px;
-	
+	color: rgb(220, 220, 220);
 	height: 100%;
 	vertical-align: center;
 }
@@ -195,7 +268,7 @@
 	height: 100%;
 	margin-left: 5px;
 	vertical-align: center;
-	color: gray;
+	color: rgb(160, 160, 160);
 }
 
 #TeamsContainer #AwardContainer {
@@ -495,7 +568,7 @@
 #NeutralItemContainer {
 }
 #BackpackItemsContainer {
-	margin-left: 146px;
+	margin-left: 148px;
 }
 .Player #ItemsContainer,
 .Player ,
@@ -550,4 +623,14 @@
       opacity: 1;
       transform: translateX(0);
     }
-  }
+}
+
+.Victory {
+	background-color: rgba(40, 140, 40, 0.6);
+	box-shadow: rgba(20, 150, 20, 0.5) -5px -5px 10px 10px;
+}
+
+.Defeat {
+	background-color: rgba(150, 40, 40, 0.6);
+	box-shadow: rgba(140, 20, 20, 0.5) -5px -5px 10px 10px;
+}

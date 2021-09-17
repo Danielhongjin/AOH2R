@@ -111,7 +111,8 @@ if IsServer() then
 		ParticleManager:ReleaseParticleIndex(fx)
 		self.parent:EmitSound("Hero_LegionCommander.Duel.Cast")
 		self.parent:EmitSound("Hero_LegionCommander.Duel.FP")
-		self:StartIntervalThink(6)
+		self.count = 0
+		self:StartIntervalThink(1.5)
 	end
 	
 	function modifier_legion_commander_warpath:OnAttacked(keys)
@@ -139,7 +140,31 @@ if IsServer() then
 	end
 	
 	function modifier_legion_commander_warpath:OnIntervalThink()
-		self.parent:EmitSound("Hero_LegionCommander.Duel.FP")
+		self.count = self.count + 1
+		if self.parent:HasModifier("modifier_item_aghanims_shard") then
+			local enemies = FindUnitsInRadius(
+				self.parent:GetTeamNumber(),	-- int, your team number
+				self.parent:GetOrigin(),	-- point, center point
+				nil,	-- handle, cacheUnit. (not known)
+				900,	-- float, radius. or use FIND_UNITS_EVERYWHERE
+				DOTA_UNIT_TARGET_TEAM_ENEMY,	-- int, team filter
+				DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,	-- int, type filter
+				DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE + DOTA_UNIT_TARGET_FLAG_NO_INVIS,	-- int, flag filter
+				0,	-- int, order filter
+				false	-- bool, can grow cache
+			)
+			-- prioritize hero
+			for _,enemy in pairs(enemies) do
+				self.parent:SetCursorCastTarget(enemy)
+				self.parent:FindAbilityByName("legion_commander_overwhelming_odds"):OnSpellStart()
+				break
+			end
+			
+		end
+		if self.count == 4 then
+			self.parent:EmitSound("Hero_LegionCommander.Duel.FP")
+			self.count = 0
+		end
 	end	
 	
 	function modifier_legion_commander_warpath:OnDestroy()

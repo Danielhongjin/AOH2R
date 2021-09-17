@@ -1,6 +1,6 @@
 function Spawn(entityKeyValues)
 	if thisEntity:GetTeamNumber() == DOTA_TEAM_BADGUYS then
-		thisEntity:SetContextThink("AIThink", AIThink, 0)
+		thisEntity:SetContextThink("AIThink", AIThink, 0.25)
 	end
 end
 

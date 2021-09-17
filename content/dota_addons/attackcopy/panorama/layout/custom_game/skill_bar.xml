@@ -1,0 +1,106 @@
+<root>
+
+	<styles>
+		<include src="s2r://panorama/styles/dotastyles.vcss_c" />
+		<include src="file://{resources}/styles/custom_game/skill_bar.css"/>
+		
+	</styles>
+	
+	<scripts>
+		<include src="file://{resources}/scripts/custom_game/skill_bar.js"/>
+		<include src="s2r://panorama/scripts/utils.vjs_c"/>
+	</scripts>
+	
+	<snippets>
+
+		<snippet name="SkillBox">
+			<Panel class="SkillBox inactive" onmouseover="UIShowTextTooltipStyled({s:tooltip}, ShortTextTooltip)" onmouseout="UIHideTextTooltip()">
+				<Image id="SkillIcon" src=""/>
+				<Label id="SkillLabel" text="{s:skill_name}"/>
+			</Panel>
+		</snippet>
+	</snippets>
+	<Panel class ="Skill" hittest="false">
+		
+		<Panel id="SkillBar" hittest="true">
+			<Panel class="FlowRight">
+				<Panel id="CurrencyPanel">
+					<Panel id="SkillBarNamePanel">
+						<Label id="SkillBarLabel" text="#skill_bar_label" />	
+					</Panel>
+					<Panel id="AvailableCurrencyPanel">
+						<Image class="CurrencyImage" src= "file://{images}/custom_game/icons/diamond.png"/>
+						<Label id="CurrentCurrency" class="CurrencyLabel" text="{s:current_currency}"/>
+					</Panel>
+					
+					<Panel id="BuyPanel">
+						<Panel id="ValuePanel">
+							<Image class="CurrencyImageValue" src= "file://{images}/custom_game/icons/diamond.png"/>
+							<Label class="ValueLabel Equals" text="="/>
+							<Label id="CurrencyValueLabel" class="ValueLabel" text=""/>
+							<Image class="GoldImage" src= "file://{images}/hud/icon_gold_psd.vtex"/>
+						</Panel>
+						<Panel id="BuyButtons">
+							<TextButton id="BuyButton" class="ButtonBevel" text="#buy" onactivate="buy()"/>
+							<TextButton id="SellButton" class="ButtonBevel" text="#sell" onactivate="sell()"/>
+						</Panel>
+					</Panel>
+				</Panel>
+				<Panel id="Skills">
+					<Panel class="SkillTierContainer">
+						<Label class="SkillTierLabel" text="#tier1"/>
+						<Panel class="CostPanel">
+							<Label class="CostLabel" text="#cost1"/>
+							<Image class="CostImage" src= "file://{images}/custom_game/icons/diamond.png"/>
+						</Panel>
+						<Panel id="Tier1" class="SkillTierBox">
+						</Panel>
+					</Panel>
+					<Panel class="SkillTierContainer">
+						<Label class="SkillTierLabel" text="#tier2"/>
+						<Panel class="CostPanel">
+							<Label class="CostLabel" text="#cost1"/>
+							<Image class="CostImage" src= "file://{images}/custom_game/icons/diamond.png"/>
+						</Panel>
+						<Panel id="Tier2" class="SkillTierBox">
+						</Panel>
+					</Panel>
+					<Panel class="SkillTierContainer">
+						<Label class="SkillTierLabel" text="#tier3"/>
+						<Panel class="CostPanel">
+							<Label class="CostLabel" text="#cost2"/>
+							<Image class="CostImage" src= "file://{images}/custom_game/icons/diamond.png"/>
+						</Panel>
+						<Panel id="Tier3" class="SkillTierBox">
+						</Panel>
+					</Panel>
+					<Panel class="SkillTierContainer">
+						<Label class="SkillTierLabel" text="#tier4"/>
+						<Panel class="CostPanel">
+							<Label class="CostLabel" text="#cost2"/>
+							<Image class="CostImage" src= "file://{images}/custom_game/icons/diamond.png"/>
+						</Panel>
+						<Panel id="Tier4" class="SkillTierBox">
+						</Panel>
+					</Panel>
+					<Panel class="SkillTierContainer">
+						<Label class="SkillTierLabel" text="#tier5"/>
+						<Panel class="CostPanel">
+							<Label class="CostLabel" text="#cost3"/>
+							<Image class="CostImage" src= "file://{images}/custom_game/icons/diamond.png"/>
+						</Panel>
+						<Panel id="Tier5" class="SkillTierBox">
+						</Panel>
+					</Panel>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Button id="skill_bar_button" class="skill_bar_button" onactivate="on_skill_bar_button_click()">
+            <Panel class="button_icon_panel" id="button_icon_panel">
+				<Label class="skill_bar_button_label" text="#skill_bar_button_label"/>
+			</Panel>
+        </Button>
+	</Panel>
+
+
+</root>

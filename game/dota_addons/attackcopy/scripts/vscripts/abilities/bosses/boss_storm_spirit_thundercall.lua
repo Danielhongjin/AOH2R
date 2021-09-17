@@ -73,7 +73,7 @@ function thundercall(keys)
 			elseif range >= distance and phase == 0 then
 				phase = 1
 				return interval
-			elseif range >= range_variance then
+			elseif range >= range_variance + 100 then
 				return interval
 			else
 				return nil

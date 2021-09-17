@@ -1,5 +1,6 @@
 "dota_shops"
 {
+	
 
 	"attributes"
 	{
@@ -22,7 +23,7 @@
 		"item"		"item_mystic_staff"
 		"item"		"item_reaver"
 		"item"		"item_eagle"
-		
+		"item"		"item_aghanims_shard"
 		
 	}
 
@@ -39,11 +40,11 @@
 		"item"		"item_ocean_heart"
 		"item"		"item_broom_handle"
 		"item"		"item_trusty_shovel"
-		"item"		"item_spider_legs"
-		"item"		"item_flicker"
+		"item"		"item_chipped_vest"
+		"item"		"item_mysterious_hat"
 		"item"		"item_chest_2"	
 		"item"		"item_grove_bow"				  
-		"item"		"item_vampire_fangs"			  
+		"item"		"item_quicksilver_amulet"			  
 		"item"		"item_ring_of_aquila"			  
 		"item"		"item_pupils_gift"				  
 		"item"		"item_imp_claw"					  
@@ -55,8 +56,8 @@
 		"item"		"item_empty_1"		
 		"item"		"item_chest_3"
 		"item"		"item_helm_of_the_undying"		  
-		"item"		"item_craggy_coat"				  
-		"item"		"item_greater_faerie_fire"		  
+		"item"		"item_cloak_of_flames"				  
+		"item"		"item_ceremonial_robe"		  
 		"item"		"item_enchanted_quiver"			  
 		"item"		"item_paladin_sword"			  
 		"item"		"item_pocket_tower"		  		  
@@ -73,7 +74,6 @@
 		"item"		"item_clarity"	
 		"item"		"item_ward_observer"
 		"item"		"item_rock"
-		"item"		"item_blight_stone"
 		"item"		"item_cloak"
 		"item"		"item_lifesteal"
 		"item"		"item_quarterstaff"
@@ -81,7 +81,7 @@
 		"item"		"item_javelin"
 		"item"		"item_claymore"
 		"item"		"item_platemail"
-		"item"		"item_custom_blink"
+		"item"		"item_blink"
 		"item"		"item_mithril_hammer"
 		"item"		"item_hyperstone"
 		"item"		"item_demon_edge"
@@ -91,16 +91,18 @@
 	"basics"
 	{
 		"item"		"item_soul_ring"
+		"item"		"item_orb_of_corrosion"
+		"item"		"item_falcon_blade"
 		"item"		"item_power_treads"
 		"item"		"item_phase_boots"
 		"item"		"item_pers"
  		"item"		"item_mask_of_madness"
 		"item"		"item_travel_boots"		
-		"item"		"item_moon_shard"	
-		"item"		"item_high_tech_boots"
+		"item"		"item_moon_shard"
 		"item"		"item_plain_ring"
 		"item"		"item_conduit"
 		"item"		"item_dynamo_core"
+		
 	}
 
 	// Level 2 - Blue Recipes
@@ -129,10 +131,10 @@
 		"item"		"item_veil_of_discord"		
 		"item"		"item_force_staff"
 		"item"		"item_aether_lens"
+		"item"		"item_witch_blade"
 		"item"		"item_necronomicon"
 		"item"		"item_dagon"
 		"item"		"item_cyclone"
-		//"item"		"item_rod_of_atos"
 		"item"		"item_solar_crest"
 		"item"		"item_orchid"	
 		"item"		"item_ultimate_scepter"
@@ -143,6 +145,8 @@
 		"item"		"item_arcane_staff"
 		"item"		"item_blast_staff_1"
 		"item"		"item_echo_wand"
+		"item"		"item_gungir"
+		"item"		"item_wind_waker"
 	}
 		
 	// Level 3 - Purple Recipes	
@@ -201,7 +205,8 @@
  		"item"		"item_kaya"
 		"item"		"item_echo_sabre"	
  		"item"		"item_glare_edge"
- 		"item"		"item_diffusal_blade"			
+ 		"item"		"item_diffusal_blade"	
+		"item"		"item_mage_slayer"		
  		"item"		"item_heavens_halberd"
  		"item"		"item_desolator"
  		"item"		"item_satanic"		
@@ -215,10 +220,10 @@
 	{					
 		"item"		"item_chest_4"			  
 		"item"		"item_ultimate_dagon"			  
-		"item"		"item_witless_shako"			  
+		"item"		"item_penta_edged_sword"			  
 		"item"		"item_ninja_gear"				  
 		"item"		"item_illusionsts_cape"			  
-		"item"		"item_havoc_hammer"				  
+		"item"		"item_stormcrafter"				  
 		"item"		"item_panic_button"				  
 		"item"		"item_minotaur_horn"			  
 		"item"		"item_pocket_rax"		  		  
@@ -238,6 +243,7 @@
 		"item"		"item_custom_ex_machina"		  
 		"item"		"item_desolator_2"	
 		"item"		"item_dredged_trident"
+		"item"		"item_giants_ring"
 		
 	}
 

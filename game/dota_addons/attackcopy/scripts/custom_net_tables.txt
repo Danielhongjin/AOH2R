@@ -2,6 +2,7 @@
 {
   custom_net_tables =
   [
-    "end_game_scoreboard"
+    "end_game_scoreboard",
+	"damage_stats"
   ]
 }

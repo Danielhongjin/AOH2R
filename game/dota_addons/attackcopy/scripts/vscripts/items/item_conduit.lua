@@ -26,12 +26,22 @@ function item_conduit:OnSpellStart()
 		})
 	end
 	local particle = ParticleManager:CreateParticle("particles/econ/items/sven/sven_warcry_ti5/sven_warcry_cast_arc_lightning.vpcf", PATTACH_ABSORIGIN_FOLLOW, conduit) 
-	EmitSoundOn("Hero_Zuus.GodsWrath.Target", conduit)
 	conduit:SetBaseMaxHealth(newhealth)
 	conduit:SetMaxHealth(newhealth)
 	conduit:SetHealth(newhealth)
 	conduit:SetPhysicalArmorBaseValue(target:GetPhysicalArmorBaseValue())
 	conduit:SetBaseMagicalResistanceValue(target:GetBaseMagicalResistanceValue())
+	local vector = (target:GetAbsOrigin() - self:GetParent():GetAbsOrigin()):Normalized()
+	FindClearSpaceForUnit(conduit, target:GetAbsOrigin() + (vector * 300), false)
+	for var = 0, 2 do
+		local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", PATTACH_POINT, self:GetParent())
+		ParticleManager:SetParticleControlEnt(fx, 0, conduit, PATTACH_POINT_FOLLOW, "attach_hitloc", conduit:GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(fx, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+	end
+	EmitSoundOn("Hero_Zuus.GodsWrath.Target", conduit)
+	local fx = ParticleManager:CreateParticle("particles/units/heroes/hero_zuus/zuus_arc_lightning_.vpcf", PATTACH_POINT, self:GetParent())
+	ParticleManager:SetParticleControlEnt(fx, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(fx, 1, enemy, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
 end
 
 function item_conduit:GetIntrinsicModifierName()

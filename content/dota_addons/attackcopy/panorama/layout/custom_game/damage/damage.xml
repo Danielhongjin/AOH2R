@@ -12,22 +12,29 @@
 	<snippets>
 	 
 		<snippet name="Player">
-		
 			<Panel class="Player" onactivate="ToggleStyle(Toggled)">
 				<Label id="PlayerHeroSignal" text="Player Hero" />		
 				<Panel id="Stats">
-					<Panel id="LeftSide"> 
-						<Label id="PlayerDamageDealtSignal" text="Damage Dealt" />
-						<Label id="PlayerDamageTakenSignal" text="Damage Taken" /> 
-						<Label id="PlayerDamageHealedSignal" text="Damage Healed" />
-						<Label id="PlayerDPSSignal" text="DPS" />
-						
+					<Panel class="FlowRight">
+						<Panel class="StatContainer">
+							<Label class="LeftSide" id="PlayerDamageDealtSignal" text="DD" />
+							<Label class="RightSide" id="PlayerDamageDealt" text="Sample" />
+						</Panel>
+						<Panel class="StatContainer">
+							<Label class="LeftSide" id="PlayerDPSSignal" text="DPS" />
+							<Label class="RightSide" id="PlayerDPS" text="Sample" />
+						</Panel>
 					</Panel>
-					<Panel id = "RightSide">
-						<Label id="PlayerDamageDealt" text="Sample" />
-						<Label id="PlayerDamageTaken" text="Sample" /> 
-						<Label id="PlayerDamageHealed" text="Sample" />
-						<Label id="PlayerDPS" text="Sample" />
+					<Panel class="FlowRight">
+						<Panel class="StatContainer">
+							<Label class="LeftSide" id="PlayerDamageTakenSignal" text="DT" /> 
+							<Label class="RightSide" id="PlayerDamageTaken" text="Sample" /> 
+						</Panel>
+						<Panel class="StatContainer">
+							<Label class="LeftSide" id="PlayerDamageHealedSignal" text="DH" />
+							<Label class="RightSide" id="PlayerDamageHealed" text="Sample" />
+						</Panel>
+						
 					</Panel>
 				</Panel>
 				<Panel id="PlayerDamageTypes"> 

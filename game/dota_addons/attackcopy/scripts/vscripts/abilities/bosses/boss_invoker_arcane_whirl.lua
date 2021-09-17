@@ -19,9 +19,11 @@ function arcane_whirl_start(event)
 	
 	local wex = ParticleManager:CreateParticle("particles/econ/items/invoker/invoker_apex/invoker_apex_wex_orb.vpcf", PATTACH_POINT, caster)
 	ParticleManager:SetParticleControl(wex, 1, caster:GetAbsOrigin() + Vector(0, 0, 400))
-	
+	local ticket_concession = caster:FindModifierByName("modifier_boss")
+	ticket_concession:Lockout()
 	EmitSoundOn("Hero_Rubick.SpellSteal.Complete", caster)
-	Timers:CreateTimer(function()
+	Timers:CreateTimer(
+		function()
 			b = i / points
 			angle = 360 * b
 			caster_pos = caster:GetAbsOrigin()
@@ -59,6 +61,7 @@ function arcane_whirl_start(event)
 				return think_interval
 			else
 				StartAnimation(caster, {duration = 0.3, activity = ACT_DOTA_CAST_ABILITY_1, translate = "spin"})
+				ticket_concession:ReleaseLockout()
 				return nil
 			end
 		end

@@ -43,7 +43,6 @@ function random_from_table(the_table)
 	if #the_table < 1 then
 		return nil
 	end
-
 	return the_table[RandomInt(1, #the_table)]
 end
 

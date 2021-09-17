@@ -1,3 +1,4 @@
+--[ I don't recall why neutral items needed this bizarre method of handing things, they just did. ]--
 require("lib/popup")
 item_custom_ballista = class({})
 

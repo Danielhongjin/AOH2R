@@ -32,7 +32,7 @@ if IsServer() then
 		self.interval = self.ability:GetSpecialValueFor("interval")
 		self.cooldown = self.ability:GetSpecialValueFor("cooldown")
 		self.counter = self.parent:FindAbilityByName("boss_wisp_friendly_deafening_blast")
-		self.pull = self.parent:FindAbilityByName("boss_wisp_friendly_electric_vortex")
+		self.pull = self.parent:FindAbilityByName("boss_wisp_friendly_electric_vortex_wrapper")
 		self:StartIntervalThink(self.interval)
 	end
 

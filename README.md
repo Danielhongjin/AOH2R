@@ -13,7 +13,7 @@ Note that boss behavior is, at a core level, just the normal dota 2 creep behavi
 ## Setup
 1. Plop the contents into your Steam\steamapps\common\dota 2 beta folder, wherever that is.
 2. Install dota 2 tools.
-3. Figure out how to get this thing to launch. Iit involved going into content\dota_addons\attackcopy\maps and opening attackonhero.vmap with the tools hammer editor to build and playtest.)
+3. Figure out how to get this thing to launch. It involved going into content\dota_addons\attackcopy\maps and opening attackonhero.vmap with the tools hammer editor to build and playtest.)
 4. Experience the sheer absurdity of how badly I coded back in the day.
 
 ## Where Some Things Are
@@ -24,7 +24,7 @@ I'm including this section because I never got around to fixing where certain co
    1. Dashing is a whole deal of things communicating. Frontend hud.js for clientside handling (alleviates backend strain), dashmanager.lua for serverside handling, hero_attribute_fix.lua for dash stats and upgrades, and aohgamemode.lua for big-ass ugly setup code. 
 3. Global damage effects like Talon items and Arcane Staff -> global_damage_effects.lua. It was implemented this way for performance reasons, but try not to add too much to it. 
    1. Any instance of OnTakeDamage should probably be handled here. On any instance of any event, every modifier listening to that event will fire regardless of the source/target. OnTakeDamage is the most common one and tends to create feedback loops, so try to work around that.
-4. Boss ticketing behavior -> modifier_boss.lua and generics.lua. Truly awful ticketing system, should be replaced with a callback methodology.
+4. Boss ticketing behavior -> modifier_boss.lua and generics.lua. Truly awful ticketing system, should be replaced with a subscriber/reporter pattern.
 5. Boss backend health bar + revenge handler -> modifier_main_boss.lua. Should be split into two files, but oh well.
 
 

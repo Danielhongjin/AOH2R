@@ -1,15 +1,15 @@
 # Attack on Hero 2 Rebalanced
 
-## What Is This? 
-Dota 2 custom map and game mode. The core concept of the game was the same as the priors, but I focused more on UX and allowing for many diferent paths to the correct answer.  
+## What Is This?  
+Dota 2 custom map and game mode. The core concept of the game was the same as the priors, but I focused more on UX and allowing for many diferent paths to the correct answer.
 The code is spaghetti. I was a terrible developer back then. I apologize :(
 
-Boss abilities are implemented using datadriven templates to either orchestrate the casting of an original ability, or to call on a custom lua ability script. All boss abilities should ideally be datadriven calling some other script.  
-Boss ability scheduling is handled by a (terrible) ticketing system where abilities will submit a ticket to a ticket concession and spin until their number comes up. Please replace with a sane solution if possible, or I'll go insane.  
+Boss abilities use datadriven templates to either wrap a vanilla dota 2 ability, or to call on a custom lua ability script. All boss abilities should be datadriven calling some other script. Usually a generic telegraphing wrapper script (found in generics.lua).  
   
-Note that boss behavior is, at a core level, just the normal dota 2 creep behavior. Everything is build up around that foundation, and the methods used to implement abilities/behaviors were made to streamline developing for that specifically. 
+Boss ability scheduling uses a (terrible) ticketing system. Abilities will submit a ticket to a ticket concession modifier and spin until their number comes up. Please replace with a sane solution if possible, or I'll go insane.  
   
-
+Note that boss behavior is, at a core level, just the normal dota 2 creep behavior. The methods used to implement abilities/behaviors streamline developing for that assumption.
+  
 ## Setup
 1. Plop the contents into your Steam\steamapps\common\dota 2 beta folder, wherever that is.
 2. Install dota 2 tools.

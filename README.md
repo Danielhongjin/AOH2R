@@ -13,7 +13,7 @@ Note that boss behavior is, at a core level, just the normal dota 2 creep behavi
 ## Setup
 1. Plop the contents into your Steam\steamapps\common\dota 2 beta folder, wherever that is.
 2. Install dota 2 tools.
-3. Figure out how to get this thing to launch. (I recall it involved going into content\dota_addons\attackcopy\maps and opening attackonhero.vmap with the tools)
+3. Figure out how to get this thing to launch. Iit involved going into content\dota_addons\attackcopy\maps and opening attackonhero.vmap with the tools hammer editor to build and playtest.)
 4. Experience the sheer absurdity of how badly I coded back in the day.
 
 ## Where Some Things Are

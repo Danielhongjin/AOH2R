@@ -23,7 +23,7 @@ I'm including this section because I never got around to fixing where certain co
 2. Hero attribute modification + dash modifiers -> hero_attribute_fix.lua
    1. Dashing is a whole deal of things communicating. Frontend hud.js for clientside handling (alleviates backend strain), dashmanager.lua for serverside handling, hero_attribute_fix.lua for dash stats and upgrades, and aohgamemode.lua for big-ass ugly setup code. 
 3. Global damage effects like Talon items and Arcane Staff -> global_damage_effects.lua. It was implemented this way for performance reasons, but try not to add too much to it. 
-   1. Any instance of OnTakeDamage should probably be handled here depending on how many copies you expect to have lying around. Demon talon on phantom lancer before I implemented this was a performance disaster, for instance. O(N) complexity.
+   1. Any instance of OnTakeDamage should probably be handled here. On any instance of any event, every modifier listening to that event will fire regardless of the source/target. OnTakeDamage is the most common one and tends to create feedback loops, so try to work around that.
 4. Boss ticketing behavior -> modifier_boss.lua and generics.lua. Truly awful ticketing system, should be replaced with a callback methodology.
 5. Boss backend health bar + revenge handler -> modifier_main_boss.lua. Should be split into two files, but oh well.
 

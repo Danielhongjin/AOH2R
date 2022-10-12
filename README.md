@@ -1,4 +1,4 @@
-# AOH2R
+# Attack on Hero 2 Rebalanced# AOH2R
 
 ## What Is This? 
 Dota 2 custom map and game mode. The core concept of the game was the same as the priors, but I focused more on UX and allowing for many diferent paths to the correct answer.  

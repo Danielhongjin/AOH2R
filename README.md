@@ -12,11 +12,11 @@ Note that boss behavior is, at a core level, just the normal dota 2 creep behavi
 
 ## Setup
 1. Plop the contents into your Steam\steamapps\common\dota 2 beta folder, wherever that is.
-2. Install dota 2 workshop or whatever it's called.
-3. Figure out how to get this thing to launch.
+2. Install dota 2 tools.
+3. Figure out how to get this thing to launch. (I recall it involved going into content\dota_addons\attackcopy\maps and opening attackonhero.vmap with the tools)
 4. Experience the sheer absurdity of how badly I coded back in the day.
 
-## Where Some Things Be
+## Where Some Things Are
 I'm including this section because I never got around to fixing where certain code exists in the project, it was definitely on my to-do list though. 
 1. Reusable boss ability wrappers (The thing that adds delays, scheduling, telegraphy) -> generics.lua
    1. If you see a circle on the ground or above the head, this is what creates that.

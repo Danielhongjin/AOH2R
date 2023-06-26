@@ -1,7 +1,4 @@
-Conduit now spawns a set distance of 300 away from the direction the hero is casting. Improved particle effects.
-
-Jakiro reworked, Dual Breath talent reduced from 80x to 3x. Now has a more interesting alternative.
-Leshrac Diabolic Edict damage reduced to vanilla levels, talents reverted. Movement speed talent significantly improved.
+Spirit Breaker boss behavior reliability increased, charge of darkness delay and cooldown increased. Radius decreased.
 
 TO-DO:
 

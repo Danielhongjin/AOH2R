@@ -1135,9 +1135,9 @@
 
     "Ability1"					            "custom_paralyzing_cask"
     "Ability2"					            "custom_maledict"
-    "Ability3"					            "custom_death_ward"
-		"Ability4"					            "custom_paralyzing_cask_wrapper"
-		"Ability5"					            "custom_maledict_wrapper"
+    "Ability3"					            ""
+	"Ability4"					            "custom_paralyzing_cask_wrapper"
+	"Ability5"					            "custom_maledict_wrapper"
     "ArmorPhysical"                         "5"
     "AttackCapabilities"            		"DOTA_UNIT_CAP_RANGED_ATTACK"
     "AttackDamageMin"                       "200"

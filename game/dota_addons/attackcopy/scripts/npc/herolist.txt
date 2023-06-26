@@ -30,6 +30,7 @@
 	"npc_dota_hero_life_stealer" "1"
 	"npc_dota_hero_lina" "1"
 	"npc_dota_hero_lion" "1"
+	"npc_dota_hero_marci" "1"
 	"npc_dota_hero_mirana" "1"
 	"npc_dota_hero_morphling" "1"
 	"npc_dota_hero_necrolyte" "1"
@@ -37,7 +38,6 @@
 	"npc_dota_hero_night_stalker" "1"
 	"npc_dota_hero_omniknight" "1"
 	"npc_dota_hero_puck" "1"
-	
 	"npc_dota_hero_pugna" "1"
 	"npc_dota_hero_rattletrap" "1"
 	"npc_dota_hero_razor" "1"
@@ -111,6 +111,7 @@
 	"npc_dota_hero_ember_spirit" "1"
 	"npc_dota_hero_legion_commander" "1"
 	"npc_dota_hero_phoenix" "1"
+	"npc_dota_hero_primal_beast" "1"
 	"npc_dota_hero_terrorblade" "1"
 	"npc_dota_hero_techies" "1"
 	"npc_dota_hero_oracle" "1"

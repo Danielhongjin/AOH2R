@@ -917,7 +917,39 @@
 			}
 		}
 	}
-	
+	"special_bonus_unique_marci_guardian_magic_immune"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"value"				"2.0"
+			}
+		}
+	}
+	"special_bonus_unique_marci_guardian_lifesteal"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"6"
+			}
+		}
+	}
+	"special_bonus_unique_marci_lunge_range"
+	{
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"value"				"800"
+			}
+		}
+	}
 	"special_bonus_unique_mars_spear_cooldown"
 	{
 		"AbilitySpecial"
@@ -5491,6 +5523,232 @@
 				"polarity_damage"		"100 250 400"
 			}
 		}
+	}
+	"marci_guardian"
+	{
+		"AbilityCooldown"				"36 28 20 12"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"buff_duration"		"6"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal_pct"			"18"
+				"LinkedSpecialBonus"	"special_bonus_unique_marci_guardian_lifesteal"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"bonus_damage"		"70 100 130 160"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attack_range"	"0"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"nearest_ally_search_range"	"700"
+			}
+		}
+	}
+	"marci_companion_run"
+	{
+		"AbilityCastPoint"				"0.1"
+		"AbilityCooldown"				"13 11 9 7"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_speed"			"2500"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_jump_distance"		"800"
+				"LinkedSpecialBonus"	"special_bonus_unique_marci_lunge_range"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"landing_radius"		"425"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"impact_damage"			"160 230 300 390"
+				"LinkedSpecialBonus"	"special_bonus_unique_marci_lunge_damage"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"movement_slow_pct"		"30 40 50 60"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"debuff_duration"		"3.0"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_lob_travel_time"	"0.1"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_lob_travel_time"	"0.2"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"min_height_above_lowest"	"250.0"
+			}
+			"11"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"min_height_above_highest"	"200.0"
+			}
+			"12"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"min_acceleration"		"6000.0"
+			}
+			"13"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_acceleration"		"6000.0"
+			}
+			"14"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"vector_preview_radius"	"100"
+			}
+			"15"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ally_buff_duration"	"5.0"
+			}
+			"16"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"ally_movespeed_pct"	"55.0"
+			}
+		}
+	}
+	"marci_grapple"
+	{
+		"AbilityCooldown"				"16 14 12 10"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"landing_radius"	"275"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"air_duration"		"0.5"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"air_height"		"150"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"pull_offset"		"75"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"throw_distance_behind"	"850"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"pull_angle"		"230"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.2 1.5 1.8 2.1"
+				"LinkedSpecialBonus"	"special_bonus_unique_marci_grapple_stun_duration"
+			}
+			"08"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"impact_damage"		"70 130 190 250"
+			}
+		}
+	}
+	"marci_unleash"
+	{
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+		"AbilityCastPoint"				"0"
+		"AbilityCooldown"				"30"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"7"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"charges_per_flurry"	"10 11 12"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"flurry_bonus_attack_speed"	"475 725 875"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"time_between_flurries"	"0"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pulse_radius"			"800"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"pulse_debuff_duration"	"2.0"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"pulse_damage"			"500 600 700"
+			}
+			"10"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"max_time_window_per_hit"	"1.5"
+			}
+			"11"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_movespeed"		"15"
+			}
+			"12"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"recovery_fixed_attack_rate"	"2.0"
+			}
+		}
+		"AbilityCastAnimation"		"ACT_DOTA_CAST_ABILITY_4"
 	}
 	"mars_arena_of_blood"
 	{

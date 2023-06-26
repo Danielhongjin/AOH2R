@@ -8,16 +8,11 @@ item_custom_ex_machina = class({})
 
 function item_custom_ex_machina:OnSpellStart()
     local caster = self:GetCaster()
-
-	print(self:GetItemSlot())
     if not caster:IsTempestDouble() then
-
         caster:EmitSound("DOTA_Item.Refresher.Activate")
-
         local fx = ParticleManager:CreateParticle("particles/items2_fx/refresher.vpcf", PATTACH_ABSORIGIN_FOLLOW, caster)
         ParticleManager:SetParticleControlEnt(fx, 0, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
         ParticleManager:ReleaseParticleIndex(fx)
-
         refresh_items(caster, {item_maiar_pendant = true, item_conduit = true, item_custom_fusion_rune = true, item_custom_ex_machina = true, item_plain_ring = true, item_helm_of_the_undying = true, item_echo_wand = true})
     end
 end

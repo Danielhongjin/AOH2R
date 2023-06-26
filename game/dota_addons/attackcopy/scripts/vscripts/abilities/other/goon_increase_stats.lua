@@ -11,7 +11,7 @@ function on_created(keys)
 
 	local round = 0
 	local armor_base = caster:GetPhysicalArmorBaseValue()
-	local magical_armor_base = caster:GetMagicalArmorValue()
+	local magical_armor_base = caster:GetMagicalResistanceValue()
 	local armor_per_round = ability:GetSpecialValueFor("armor_per_round")
 	local previous_round = 1
 	caster:AddItemByName("item_force_blade")

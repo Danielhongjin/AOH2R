@@ -4342,6 +4342,13 @@
 		}	
 	}
 }
+"huskar_custom_bonus_unique_1"
+{
+    "ID"					"70071"
+    "BaseClass"				"special_bonus_undefined"
+    "AbilityType"			"DOTA_ABILITY_TYPE_ATTRIBUTES"
+    "AbilityBehavior"		"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+}
 "huskar_sacred_flame"
 {
     "BaseClass"						"ability_lua"
@@ -19476,7 +19483,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName" 			"elder_titan_echo_stomp"				
-		"AbilityCooldown"				"7"
+		"AbilityCooldown"				"15"
 		"AbilityCastRange"				"1350"
 		"AbilityManaCost"				"0"
 		"IsCastableWhileHidden" "1"
@@ -19485,12 +19492,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"radius"			"300"
+				"radius"			"250"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"delay"			"1.0"
+				"delay"			"1.55"
 			}
 			"03"
 			{
@@ -19510,7 +19517,7 @@
 			"06"
 			{
 				"var_type"				"FIELD_FLOAT"
-				"iteration_delay"			"1.6"
+				"iteration_delay"			"2.2"
 			}
 		}
 		"OnSpellStart"
@@ -19539,7 +19546,7 @@
 		"AbilitySound"					"Hero_Spirit_Breaker.ChargeOfDarkness"
 		"AbilityCastPoint"				"0"
 		"AbilityCastRange"				"0"
-		"AbilityCooldown"				"9"
+		"AbilityCooldown"				"1.5"
 		"AbilityManaCost"				"0"
 		"AbilityModifierSupportValue"	".30" // applies multiple modifiers
 		"AbilitySpecial"
@@ -19557,7 +19564,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bash_radius"			"300"
+				"bash_radius"			"250"
 			}
 			"04"
 			{
@@ -19634,7 +19641,7 @@
 			"10"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"default_radius"			"300"
+				"default_radius"			"1000"
 			}
 			"11"
 			{
@@ -19983,7 +19990,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"pull_radius"					"2000"
+				"pull_radius"					"600"
 			}
 			"02"
 			{
@@ -20049,8 +20056,8 @@
 		"AbilityCastPoint"				"0.1"
 		"AbilityCastRange"				"9000"
 		"AbilityCastRangeBuffer"		"9000"
-		"AbilityCooldown"				"25"
-		"AbilityManaCost"				"125"
+		"AbilityCooldown"				"19"
+		"AbilityManaCost"				"0"
 		"AbilitySpecial"
 		{
 			"01"

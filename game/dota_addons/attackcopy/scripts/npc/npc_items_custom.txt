@@ -5030,6 +5030,114 @@
         }
     }
 }
+"item_recipe_great_manta"
+{
+    "ID"							"70127"
+    "BaseClass"						"item_recipe_manta"
+    "ItemCost"						"1300"	
+    "ItemShopTags"					""
+    "ItemRecipe"					"1"
+    "ItemResult"					"item_great_manta"
+    "ItemRequirements"
+    {
+        "01"						"item_manta;item_yasha"
+    }
+}
+"item_great_manta"
+{
+    "ID"							"70128"
+    "BaseClass"                     "item_manta"
+    "AbilityTextureName"		    "great_manta"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+    "AbilitySharedCooldown"			"manta"
+    "AbilityCooldown"				"30.0"
+    "AbilityCastPoint"				"0.0"
+    "AbilityManaCost"				"125"
+    "ItemShopTags"					"agi;str;int;attack_speed;move_speed;hard_to_tag"
+    "ItemQuality"					"epic"
+    "ItemAliases"					"manta style"
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+    "MaxUpgradeLevel"               "2"
+    "ItemBaseLevel"                 "2"
+    "AbilitySpecial"
+    {
+       "01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_strength"		"10 20"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_agility"			"26 38"
+        }
+        "03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_intellect"		"10 20"
+        }
+        "04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_attack_speed"	"12 24"
+        }
+        "05"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_movement_speed"	"20 25"
+        }
+        "06"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "images_count"			"2"
+        }			
+        "07"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_illusion_duration"			"20"
+        }
+        "08"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "images_do_damage_percent_melee"	"-30 -10"
+        }
+        "09"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_outgoing_melee"			"70 90"
+        }	
+        "10"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "images_take_damage_percent"	"225 150"
+        }
+        "11"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_incoming_total_pct"			"325 250"
+        }			
+        "12"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "images_do_damage_percent_ranged"	"-40 -20"
+        }
+        "13"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_outgoing_ranged"			"60 80"
+        }
+        "14"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "invuln_duration"		"0.1"
+        }
+        "15"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "vision_radius"			"1000"
+        }
+    }
+}
 "item_recipe_great_shivas_guard"
 {
     "ID"							"70129"
@@ -6900,6 +7008,94 @@
         {
             "var_type"				    "FIELD_INTEGER"
             "tooltip_range"			    "800"
+        }
+    }
+}
+"item_shadow_banner"
+{
+    "BaseClass"						"item_lua"
+    "ScriptFile"                    "items/item_shadow_banner.lua"
+    "AbilityTextureName"		    "sanguine"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "ItemShopTags"					"lifesteal"
+    "ItemQuality"					"rare"
+    "ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_TO_SPECTATORS"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_strength"		"15"
+        }
+        "02"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_agility"			"32"
+        }
+        "03"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_intellect"		"15"
+        }
+        "04"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_attack_speed"	"16"
+        }
+        "05"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "bonus_movement_speed"	"25"
+        }
+        "06"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "images_count"			"1"
+        }			
+        "07"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "illusion_respawn_time"			"10"
+        }
+        "08"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "images_do_damage_percent_melee"	"15"
+        }
+        "09"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_outgoing_melee"			"115"
+        }	
+        "10"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "images_take_damage_percent"	"100"
+        }
+        "11"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_incoming_total_pct"			"200"
+        }			
+        "12"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "images_do_damage_percent_ranged"	"0"
+        }
+        "13"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "tooltip_damage_outgoing_ranged"			"100"
+        }
+        "14"
+        {
+            "var_type"				"FIELD_FLOAT"
+            "invuln_duration"		"1"
+        }
+        "15"
+        {
+            "var_type"				"FIELD_INTEGER"
+            "vision_radius"			"1000"
         }
     }
 }

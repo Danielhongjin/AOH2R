@@ -264,14 +264,18 @@
 "npc_dota_hero_gyrocopter"
 {
 	"Ability1"	"gyrocopter_custom_rocket_barrage"
+	"Ability10"	"special_bonus_cooldown_reduction_8"
+	"Ability11"	"special_bonus_strength_10"
 	"Ability13"	"special_bonus_attack_speed_40"
 	"Ability15"	"special_bonus_unique_gyrocopter_4"
+	"Ability16" "special_bonus_unique_gyrocopter_5"
 	"Ability17"	"gyrocopter_custom_bonus_unique_1"
 }
 "npc_dota_hero_huskar"
 {
 	"Ability6"	"huskar_sacred_flame"
 	"Ability15"	"special_bonus_intelligence_50"
+	"Ability16"	"special_bonus_all_stats_20"
 }
 "npc_dota_hero_invoker"
 {
@@ -376,6 +380,31 @@
 {
 	"Ability15"	"special_bonus_unique_magnus"
 	"Ability17"	"special_bonus_spell_amplify_100"
+}
+"npc_dota_hero_marci"
+{
+	"Ability10"		"special_bonus_armor_8"
+	"Ability11"		"special_bonus_magic_resistance_15"
+	"Ability12"		"special_bonus_cooldown_reduction_10"
+	"Ability13"		"special_bonus_unique_marci_lunge_range"
+	"Ability14"		"special_bonus_unique_marci_guardian_lifesteal"
+	"Ability15"		"special_bonus_unique_marci_guardian_magic_immune"
+	"Ability16"		"special_bonus_reincarnation_90"
+	"Ability17"		"special_bonus_magic_resistance_25"
+	"AttackRate"				"1.600000"
+	"AttackAnimationPoint"		"0.300000"
+	"AttributePrimary"			"DOTA_ATTRIBUTE_STRENGTH"
+	"AttributeBaseStrength"		"28"
+	"AttributeStrengthGain"		"2.700000"
+	"AttributeIntelligenceGain"	"3.600000"
+	"AttributeAgilityGain"		"2.700000"
+	"AttributeBaseAgility"		"20"
+	"AttributeAgilityGain"		"2.40000"
+	"StatusHealthRegen"		"6.25"
+	"ArmorPhysical"		"6"
+	"MagicalResistance"	"30"
+	"MovementSpeed"			"330"
+	"MovementTurnRate"		"0.900000"
 }
 "npc_dota_hero_mars"
 {
